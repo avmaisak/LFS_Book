@@ -3,6 +3,7 @@
 <?dbhtml filename="sysvinit.html" dir="appendixa"?>
 
 &aa-sysvinit-desc;
+&aa-sysvinit-dep;
 
 </sect1>
 
