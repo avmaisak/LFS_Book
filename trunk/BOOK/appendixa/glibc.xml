@@ -3,6 +3,7 @@
 <?dbhtml filename="glibc.html" dir="appendixa"?>
 
 &aa-glibc-desc;
+&aa-glibc-dep;
 
 </sect1>
 
