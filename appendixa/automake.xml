@@ -2,6 +2,7 @@
 <title>Automake</title>
 <?dbhtml filename="automake.html" dir="appendixa"?>
 
+&aa-automake-down;
 &aa-automake-desc;
 &aa-automake-dep;
 

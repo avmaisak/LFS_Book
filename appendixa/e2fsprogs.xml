@@ -2,6 +2,7 @@
 <title>E2fsprogs</title>
 <?dbhtml filename="e2fsprogs.html" dir="appendixa"?>
 
+&aa-e2fsprogs-down;
 &aa-e2fsprogs-desc;
 &aa-e2fsprogs-dep;
 

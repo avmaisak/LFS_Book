@@ -2,6 +2,7 @@
 <title>Shadow Password Suite</title>
 <?dbhtml filename="shadow.html" dir="appendixa"?>
 
+&aa-shadowpwd-down;
 &aa-shadowpwd-desc;
 &aa-shadowpwd-dep;
 

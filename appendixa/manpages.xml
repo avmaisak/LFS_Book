@@ -2,6 +2,7 @@
 <title>Man-pages</title>
 <?dbhtml filename="man-pages.html" dir="appendixa"?>
 
+&aa-manpages-down;
 &aa-manpages-desc;
 &aa-manpages-dep;
 

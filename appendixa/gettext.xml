@@ -2,6 +2,7 @@
 <title>Gettext</title>
 <?dbhtml filename="gettext.html" dir="appendixa"?>
 
+&aa-gettext-down;
 &aa-gettext-desc;
 &aa-gettext-dep;
 
