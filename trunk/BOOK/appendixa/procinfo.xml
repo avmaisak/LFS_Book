@@ -2,6 +2,7 @@
 <title>Procinfo</title>
 <?dbhtml filename="procinfo.html" dir="appendixa"?>
 
+&aa-procinfo-down;
 &aa-procinfo-desc;
 &aa-procinfo-dep;
 

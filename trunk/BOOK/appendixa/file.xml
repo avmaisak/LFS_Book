@@ -2,6 +2,7 @@
 <title>File</title>
 <?dbhtml filename="file.html" dir="appendixa"?>
 
+&aa-file-down;
 &aa-file-desc;
 &aa-file-dep;
 

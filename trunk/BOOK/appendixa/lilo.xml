@@ -2,6 +2,7 @@
 <title>Lilo</title>
 <?dbhtml filename="lilo.html" dir="appendixa"?>
 
+&aa-lilo-down;
 &aa-lilo-desc;
 &aa-lilo-dep;
 

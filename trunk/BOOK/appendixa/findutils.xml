@@ -2,6 +2,7 @@
 <title>Findutils</title>
 <?dbhtml filename="findutils.html" dir="appendixa"?>
 
+&aa-findutils-down;
 &aa-findutils-desc;
 &aa-findutils-dep;
 
