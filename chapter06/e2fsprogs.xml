@@ -44,6 +44,10 @@
   <sect2 role="installation">
     <title>Installation of E2fsprogs</title>
 
+    <para>First, fix a script that adjusts testing output:</para>
+
+<screen><userinput remap="pre">sed -i -e 's:\[\.-\]::' tests/filter.sed</userinput></screen>
+
     <para>The E2fsprogs documentation recommends that the package be built in
     a subdirectory of the source tree: </para>
 
@@ -521,18 +525,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
           </indexterm>
         </listitem>
       </varlistentry>
-<!--
-      <varlistentry id="libquota">
-        <term><filename class="libraryfile">libquota</filename></term>
-        <listitem>
-          <para>Provides an interface for creating and updating quota files
-          and ext4 superblock fields</para>
-          <indexterm zone="ch-system-e2fsprogs libquota">
-            <primary sortas="c-libquota">libquota</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
--->
+
       <varlistentry id="libss">
         <term><filename class="libraryfile">libss</filename></term>
         <listitem>

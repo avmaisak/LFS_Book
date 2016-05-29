@@ -41,3 +41,4 @@
 <!ENTITY sysvinit-consolidated-patch "sysvinit-&sysvinit-version;-consolidated-1.patch">
 <!ENTITY sysvinit-consolidated-patch-md5 "0b7b5ea568a878fdcc4057b2bf36e5cb">
 <!ENTITY sysvinit-consolidated-patch-size "3.9 KB">
+

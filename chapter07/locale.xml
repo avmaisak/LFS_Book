@@ -5,39 +5,16 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-scripts-profile" revision="sysv">
-  <?dbhtml filename="profile.html"?>
+<sect1 id="ch-scripts-locale" revision="systemd">
+  <?dbhtml filename="locale.html"?>
 
-  <title>The Bash Shell Startup Files</title>
+  <title>Configuring the System Locale</title>
 
-  <indexterm zone="ch-scripts-profile">
-    <primary sortas="e-/etc/profile">/etc/profile</primary>
+  <indexterm zone="ch-scripts-locale">
+    <primary sortas="e-etc-locale-conf">/etc/locale.conf</primary>
   </indexterm>
 
-  <para>The shell program <command>/bin/bash</command> (hereafter referred to
-  as <quote>the shell</quote>) uses a collection of startup files to help
-  create an environment to run in. Each file has a specific use and may affect
-  login and interactive environments differently. The files in the <filename
-  class="directory">/etc</filename> directory provide global settings. If an
-  equivalent file exists in the home directory, it may override the global
-  settings.</para>
-
-  <para>An interactive login shell is started after a successful login, using
-  <command>/bin/login</command>, by reading the <filename>/etc/passwd</filename>
-  file. An interactive non-login shell is started at the command-line (e.g.,
-  <prompt>[prompt]$</prompt><command>/bin/bash</command>). A non-interactive
-  shell is usually present when a shell script is running. It is non-interactive
-  because it is processing a script and not waiting for user input between
-  commands.</para>
-
-  <para>For more information, see <command>info bash</command> under the
-  <emphasis>Bash Startup Files and Interactive Shells</emphasis> section.</para>
-
-  <para>The files <filename>/etc/profile</filename> and
-  <filename>~/.bash_profile</filename> are read when the shell is
-  invoked as an interactive login shell.</para>
-
-  <para>The base <filename>/etc/profile</filename> below sets some
+  <para>The <filename>/etc/locale.conf</filename> below sets some
   environment variables necessary for native language support. Setting
   them properly results in:</para>
 
@@ -135,15 +112,28 @@ LC_ALL=&lt;locale name&gt; locale int_prefix</userinput></screen>
   might provide some useful information.</para>
 
   <para>Once the proper locale settings have been determined, create the
-  <filename>/etc/profile</filename> file:</para>
+  <filename>/etc/locale.conf</filename> file:</para>
 
-<screen><userinput>cat &gt; /etc/profile &lt;&lt; "EOF"
-<literal># Begin /etc/profile
-
-export LANG=<replaceable>&lt;ll&gt;_&lt;CC&gt;.&lt;charmap&gt;&lt;@modifiers&gt;</replaceable>
-
-# End /etc/profile</literal>
+<screen><userinput>cat &gt; /etc/locale.conf &lt;&lt; "EOF"
+<literal>LANG=<replaceable>&lt;ll&gt;_&lt;CC&gt;.&lt;charmap&gt;&lt;@modifiers&gt;</replaceable></literal>
 EOF</userinput></screen>
+
+  <para>Note that you can modify <filename>/etc/locale.conf</filename> with
+  systemd <command>localectl</command> utility. To use <command>localectl</command>
+  for the example above, run:</para>
+
+<screen role="nodump"><userinput>localectl set-locale LANG="<replaceable>&lt;ll&gt;_&lt;CC&gt;.&lt;charmap&gt;&lt;@modifiers&gt;</replaceable>"</userinput></screen>
+
+  <para>You can also specify other language specific environment variables such
+  as <envar>LANG</envar>, <envar>LC_CTYPE</envar>, <envar>LC_NUMERIC</envar> or
+  any other environment variable from <command>locale</command> output. Just
+  separate them with a space. An example where <envar>LANG</envar> is set as
+  en_US.UTF-8 but <envar>LC_CTYPE</envar> is set as just en_US is:</para>
+
+<screen role="nodump"><userinput>localectl set-locale LANG="en_US.UTF-8" LC_CTYPE="en_US"</userinput></screen>
+
+  <note><para>Please note that <command>localectl</command> command can
+  be used  only on a system booted with systemd.</para></note>
 
   <para>The <quote>C</quote> (default) and <quote>en_US</quote> (the recommended
   one for United States English users) locales are different. <quote>C</quote>
@@ -155,7 +145,7 @@ EOF</userinput></screen>
   8-bit</quote>). So you can use the <quote>C</quote> locale only if you are sure that
   you will never need 8-bit characters.</para>
 
-  <para>UTF-8 based locales are not supported well by some programs.
+  <para>UTF-8 based locales are not supported well by many programs.
   Work is in progress to document and, if possible, fix such problems, see
   <ulink url="&blfs-book;introduction/locale-issues.html"/>.</para>
 
