@@ -8,23 +8,22 @@
 <sect1 id="pre-foreword">
   <?dbhtml filename="foreword.html"?>
 
-  <title>Foreword</title>
+  <title>Предисловие</title>
 
-<para>My journey to learn and better understand Linux began over a decade ago,
-back in 1998. I had just installed my first Linux distribution and had
-quickly become intrigued with the whole concept and philosophy behind
-Linux.</para>
+<para>Мое путешествие в изучении Linux началось более десяти лет назад,
+еще в 1998 году. Я только установил свой первый Linux дистрибутив и
+был очень заинтригован его концепцией и философией.</para>
 
-<para>There are always many ways to accomplish a single task. The same can be
-said about Linux distributions. A great many have existed over the years.  Some
-still exist, some have morphed into something else, yet others have been
-relegated to our memories.  They all do things differently to suit the needs of
-their target audience.  Because so many different ways to accomplish the same
-end goal exist, I began to realize I no longer had to be limited by any one
-implementation. Prior to discovering Linux, we simply put up with issues in
-other Operating Systems as you had no choice. It was what it was, whether you
-liked it or not. With Linux, the concept of choice began to emerge.  If you
-didn't like something, you were free, even encouraged, to change it.</para>
+<para>Всегда есть множество способов выполнить задачу. То же самое можно 
+сказать о Linux дистрибутивах. [[ A great many have existed over the years ]]. Некоторые
+все еще существуют, некоторые из них превратились во что-то еще, но другие
+отнесены к нашим воспоминаниям. Все они делают все по-другому, чтобы удовлетворить потребности
+их целевой аудитории. Потому что так много разных способов добиться того же
+конечная цель существует, я начал понимать, что мне больше не нужно ограничивать никого
+реализация. До открытия Linux мы просто сталкиваемся с проблемами в
+других операционных систем, так как у вас не было выбора. Это было то, что было, будь вы
+понравилось или нет. С Linux появилась концепция выбора. если ты
+что-то не понравилось, вы были свободны, даже поощрялись, чтобы изменить его.</para>
 
 <para>I tried a number of distributions and could not decide on any one. They
 were great systems in their own right. It wasn't a matter of right and
