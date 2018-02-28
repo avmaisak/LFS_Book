@@ -12,7 +12,7 @@
 <!ENTITY copyrightdate   "1999-2018"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "8.2">
 
-<!ENTITY lfs-root        "http://www.linuxfromscratch.org/">
+<!ENTITY lfs-root        "https://linuxfromscratch.org.ru/">
 <!ENTITY blfs-root       "&lfs-root;blfs/">
 <!ENTITY blfs-book       "&blfs-root;view/&short-version;/">
 <!ENTITY faq-root        "&lfs-root;faq/">
@@ -35,12 +35,12 @@
 
 <!ENTITY anduin-sources  "http://anduin.linuxfromscratch.org/LFS">
 
-<!ENTITY buildtime       "Approximate build time">
-<!ENTITY diskspace       "Required disk space">
-<!ENTITY dependencies    "Installation depends on">
-<!ENTITY testsuites      "Test suite depends on">
-<!ENTITY before          "Must be installed before">
-<!ENTITY external        "Optional dependencies">
+<!ENTITY buildtime       "Приблизительное время сборки">
+<!ENTITY diskspace       "Требуемое дисковое пространство">
+<!ENTITY dependencies    "Установка зависит от">
+<!ENTITY testsuites      "Набор тестов зависит от">
+<!ENTITY before          "Должен быть установлен до">
+<!ENTITY external        "Необязательные зависимости">
                          
 <!ENTITY gnu             "http://ftp.gnu.org/gnu/">
 <!ENTITY gnu-software    "http://www.gnu.org/software/">
