@@ -8,18 +8,11 @@
 <sect1 id="pre-audience">
   <?dbhtml filename="audience.html"?>
 
-  <title>Audience</title>
+  <title>Аудитория, на которую расчитана эта книга</title>
 
-<para>There are many reasons why you would want to read this book. One of the
-questions many people raise is, <quote>why go through all the hassle of manually
-building a Linux system from scratch when you can just download and install
-an existing one?</quote></para>
+<para>Есть много причин, по которым вы хотели бы прочитать эту книгу. Один из вопросов, который поднимают многие люди, заключается в том, «зачем проходить через все трудности ручного построения системы Linux с нуля, когда вы можете просто загрузить и установить существующую?»</quote></para>
 
-<para>One important reason for this project's existence is to help you learn
-how a Linux system works from the inside out. Building an LFS system helps
-demonstrate what makes Linux tick, and how things work together and depend on
-each other. One of the best things that this learning experience can provide is
-the ability to customize a Linux system to suit your own unique needs.</para>
+<para>Одна из важных причин существования этого проекта - помочь вам узнать, как работает система Linux изнутри. Создание системы LFS помогает продемонстрировать, что делает Linux тиком, и как все работает вместе и зависит друг от друга. Одна из лучших вещей, которые может обеспечить этот опыт обучения, - это возможность настроить систему Linux в соответствии с вашими собственными уникальными потребностями.</para>
 
 <para>Another key benefit of LFS is that it allows you to have more control
 over the system without relying on someone else's Linux implementation. With
