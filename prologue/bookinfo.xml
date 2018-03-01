@@ -7,16 +7,16 @@
 
 <bookinfo>
   <title>Linux From Scratch</title>
-  <subtitle revision='sysv'   >Version &version; </subtitle>
-  <subtitle revision='systemd'>Version &versiond;</subtitle>
+  <subtitle revision='sysv'   >Версия &version; </subtitle>
+  <subtitle revision='systemd'>Версия &versiond;</subtitle>
 
   <authorgroup>
     <author>
-      <firstname>Created by Gerard</firstname>
+      <firstname>Создатель -  Gerard</firstname>
       <surname>Beekmans</surname>
     </author>
     <author>
-      <firstname>Managing Editor: Bruce</firstname>
+      <firstname>Главный редактор: Bruce</firstname>
       <surname>Dubbs</surname>
     </author>
     <!--
@@ -26,7 +26,7 @@
     </author>
     -->
     <author revision="systemd">
-      <firstname>Editor: DJ</firstname>
+      <firstname>Редактор: DJ</firstname>
       <surname>Lucas</surname>
     </author>
   </authorgroup>
@@ -38,15 +38,15 @@
 
   <legalnotice>
 
-    <para>Copyright &copy; &copyrightdate;, Gerard Beekmans</para>
+    <para>Авторские права &copy; &copyrightdate;, Gerard Beekmans</para>
 
-    <para>All rights reserved.</para>
+    <para>Все права защищены.</para>
 
-    <para>This book is licensed under a <xref linkend="CC"/>.</para>
-    <para>Computer instructions may be extracted from the book under the
+    <para>Эта книга лицензирована в соответствии с <xref linkend="CC"/>.</para>
+    <para>Инструкции для компьютера могут быть извлечены из книги под лицензией
           <xref linkend="MIT"/>.</para>
 
-    <para><trademark class='registered'>Linux</trademark> is a registered trademark of
+    <para><trademark class='registered'>Linux</trademark>является зарегистрированным товарным знаком 
     Linus Torvalds.</para>
 
   </legalnotice>
