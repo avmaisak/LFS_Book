@@ -8,46 +8,37 @@
 <sect1 id="pre-architecture">
   <?dbhtml filename="architecture.html"?>
 
-  <title>LFS Target Architectures</title>
+  <title>Целевые архитектуры LFS</title>
 
-<para>The primary target architectures of LFS are the AMD/Intel x86 (32-bit)
-and x86_64 (64-bit) CPUs.  On the other hand, the instructions in this book are
-also known to work, with some modifications, with the Power PC and ARM CPUs. To
-build a system that utilizes one of these CPUs, the main prerequisite, in
-addition to those on the next few pages, is an existing Linux system such as an
-earlier LFS installation, Ubuntu, Red Hat/Fedora, SuSE, or other distribution
-that targets the architecture that you have. Also note that a 32-bit
-distribution can be installed and used as a host system on a 64-bit AMD/Intel
-computer.</para>
+<para>Основными целевыми архитектурами LFS являются AMD / Intel x86 (32-разрядная) 
+и x86_64 (64-разрядная). С другой стороны, инструкции в этой книге также работают,с некоторыми модификациями,
+с Power PC и ARM процессорами. Чтобы собрать систему, которая должна работать на одном из вышеуказанных процессоров, 
+главным условием является существующая операционная система Linux, например уже ранее собранная LFS, Ubuntu, Red Hat/Fedora, SuSE, или 
+другой дистрибутив, который нацелен на требуемую архитектуру. Также обратите внимание, что 32-разрядный
+дистрибутив может быть установлен и использоваться как хост-система на 64-разрядном AMD / Intel компьютере.</para>
 
-<para>Some other facts about 64-bit systems need to be added here. When
-compared to a 32-bit system, the sizes of executable programs are slightly
-larger and the execution speeds of arbitrary programs are only slightly faster.
-For example, in a test build of LFS-6.5 on a Core2Duo CPU based system, the
-following statistics were measured:</para>
+<para>Также, необходимо тометить некоторые факты о 64-разрядных системах. 
+По сравнению с 32-разрядной системой, размеры исполняемых программ немного больше, а скорость выполнения - немного быстрее. 
+Например, в тестовой сборке LFS-6.5 на базе процессора Intel Core2Duo были выведены следующие статистические данные:</para>
 
-<screen><computeroutput>Architecture Build Time     Build Size
-32-bit       198.5 minutes  648 MB
-64-bit       190.6 minutes  709 MB</computeroutput></screen>
+<screen><computeroutput>Архитектура Время сборки     Размер сборки
+32-bit       198.5 минут  648 MB
+64-bit       190.6 минут  709 MB</computeroutput></screen>
 
-<para>As you can see, the 64-bit build is only 4% faster and is 9% larger than
-the 32-bit build.  The gain from going to a 64-bit system is relatively
-minimal. Of course, if you have more than 4GB of RAM or want to manipulate
-data that exceeds 4GB, the advantages of a 64-bit system are substantial.</para>
+<para>Как видите, 64-разрядная система была собрана на 4% быстрее, и на 19% большего размера, чем 32-разрядная версия.
+Преимущества 64-разрядной системы относительно небольшое. Безусловно, если у Вас более чем 4GB оперативной памяти, 
+и вы будете работать с такими данными, которые превышают этот порог, то преимущества 64-разрядной системы существенны.</para>
 
-<note><para>The above discussion is only appropriate when comparing 
-builds on the same hardware.  Modern 64-bit systems are considerably
-faster than older 64-bit systems and the LFS authors recommend building
-on a 64-bit system when given a choice.</para></note>
+<note><para>Обсуждение выше применимо, если выполнять сборку на одном и том же аппаратном обеспечении. Современные 64-разрядные 
+системы значительно быстрее, чем старые 64-битные системы, а авторы этой книги рекомендуют выбирать 64-разрядную машину для сборки.</para></note>
 
-<para>The default 64-bit build that results from LFS is considered a "pure"
-64-bit system. That is, it supports 64-bit executables only. Building a
-"multi-lib" system requires compiling many applications twice, once for a
-32-bit system and once for a 64-bit system. This is not directly supported in
-LFS because it would interfere with the educational objective of providing the
-instructions needed for a straightforward base Linux system.  You can refer to
-the <ulink url="http://trac.clfs.org/">Cross Linux From Scratch</ulink>
-project for this advanced topic.</para>
+<para>По умолчанию 64-разрядная сборка LFS, считается «чистой» 64-разрядной системой. 
+То есть она поддерживает только 64-разрядные исполняемые файлы. Сборка
+"multi-lib" системы требует компиляциии многих программ дважды - 
+один раз для 32-битной и один раз для 64-битной. Напрямую в книге данная опция не поддерживается,
+потому что это будет только мешать образовательной цели этой книги, обсеспечивающей инструкции, необходимые для сборки базовой системы.
+Вы можете перейти по ссылке проекта <ulink url="http://trac.clfs.org/">Cross Linux From Scratch</ulink>
+для изучения этого вопроса.</para>
 
 <!-- This does not appear to be valid for LFS/BLFS any more
 <para>There is one last comment about 64-bit systems. There are some older

@@ -9,10 +9,10 @@
   <?dbhtml dir="appendices"?>
   <?dbhtml filename="acknowledgments.html"?>
 
-  <title>Acknowledgments</title>
+  <title>Благодарности</title>
 
-  <para>We would like to thank the following people and organizations
-  for their contributions to the Linux From Scratch Project.</para>
+  <para>Мы хотели бы поблагодарить следующих людей и организации
+   за их вклад в проект Linux From Scratch.</para>
 
   <itemizedlist>
 
@@ -50,15 +50,15 @@
     </listitem>
 
     <listitem>
-      <para>Countless other people on the various LFS and BLFS mailing lists
-      who helped make this book possible by giving their suggestions, testing
-      the book, and submitting bug reports, instructions, and their
-      experiences with installing various packages.</para>
+      <para>Многие другие люди в списках рассылки LFS и BLFS
+       которые помогли сделать эту книгу, предоставив свои предложения, тестирование
+       книги, а также отправки отчетов об ошибках, инструкций и их
+       опыт установки различных пакетов..</para>
     </listitem>
 
   </itemizedlist>
 
-  <bridgehead renderas="sect2">Translators</bridgehead>
+  <bridgehead renderas="sect2">Переводчики</bridgehead>
 
   <itemizedlist>
 
@@ -100,7 +100,7 @@
 
   </itemizedlist>
 
-  <bridgehead renderas="sect2">Mirror Maintainers</bridgehead>
+  <bridgehead renderas="sect2">Сопровождающие зеркала проекта</bridgehead>
 
   <bridgehead renderas="sect3">North American Mirrors</bridgehead>
 
@@ -249,7 +249,7 @@
 
   </itemizedlist>
 
-  <bridgehead renderas="sect2">Former Project Team Members</bridgehead>
+  <bridgehead renderas="sect2">Бывшие члены команды проекта</bridgehead>
 
   <itemizedlist>
 
