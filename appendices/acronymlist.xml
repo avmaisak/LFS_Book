@@ -9,7 +9,7 @@
   <?dbhtml dir="appendices"?>
   <?dbhtml filename="acronymlist.html"?>
 
-  <title>Acronyms and Terms</title>
+  <title>Сокращения и условные обозначения</title>
 
   <variablelist>
     <?dbfo list-presentation="list"?>
