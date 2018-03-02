@@ -8,7 +8,7 @@
 <sect1 id="ch-intro-how">
   <?dbhtml filename="how.html"?>
 
-  <title>How to Build an LFS System</title>
+  <title>Как выполнить сборку системы LFS</title>
 
   <para>The LFS system will be built by using an already installed
   Linux distribution (such as Debian, OpenMandriva, Fedora, or openSUSE). This
