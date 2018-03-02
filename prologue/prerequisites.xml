@@ -8,42 +8,39 @@
 <sect1 id="pre-prerequisites">
   <?dbhtml filename="prerequisites.html"?>
 
-  <title>Prerequisites</title>
+  <title>Предпосылки</title>
 
-  <para>Building an LFS system is not a simple task. It requires a certain
-  level of existing knowledge of Unix system administration in order to resolve
-  problems and correctly execute the commands listed. In particular, as an
-  absolute minimum, you should already have the ability to use the
-  command line (shell) to copy or move files and directories, list directory
-  and file contents, and change the current directory. It is also expected that
-  you have a reasonable knowledge of using and installing Linux
-  software.</para>
+  <para>Сборка системы LFS - не простая задача. От вас потребуются знания в 
+  администрировании систем семейства Unix, для того, чтобы вы смогли устранять проблемы  в процессе 
+  сборки, и правлильно выполнять ввод требуемых комманд. Как минимум, вы должны уметь пользоваться
+  коммандной оболочкой, копировать и выполнять перемещение файлов и каталогов, порсматривать списки каталогов и 
+  содержимое файлов и изменять текущий каталог. Также ожидается что у вас есть знания о процессе установки 
+  программного обеспечения в системах Linux.</para>
 
-  <para>Because the LFS book assumes <emphasis>at least</emphasis> this basic
-  level of skill, the various LFS support forums are unlikely to be able to
-  provide you with much assistance in these areas. You will find that your
-  questions regarding such basic knowledge will likely go unanswered or you
-  will simply be referred to the LFS essential pre-reading list.</para>
+  <para>Поскольку книга LFS предполагает, что у Вас уже есть необходимые навыки, 
+  различные источники справочной информации и поддержки LFS вряд ли смогут оказать вам помощь в этих вопросах.
+  Вы обнаружите что Ваши вопросы по поводу базовых знаний, скорее всего останутся без ответа, или Вам будут
+  указывать на ссылки по информации предварительного ознакомления.</para>
 
-  <para>Before building an LFS system, we recommend reading the following:</para>
+  <para>Перед созданием системы LFS мы рекомендуем прочитать следующее:</para>
 
   <itemizedlist>
     <listitem>
       <para>Software-Building-HOWTO
       <ulink url="http://www.tldp.org/HOWTO/Software-Building-HOWTO.html"/></para>
 
-      <para>This is a comprehensive guide to building and installing
-      <quote>generic</quote> Unix software packages under Linux. Although it
-      was written some time ago, it still provides a good summary of the
-      basic techniques needed to build and install software.</para>
+      <para>Это исчерпывающее руководство по сборке и установке 
+      <quote>универсальных</quote> Unix пакетов программ на системе Linux.
+      Несмотря на то что книга написана достаточно давно, она дает качественную информацию 
+      по основным методам, необходимым для сборки и установки программного обеспечения.</para>
     </listitem>
 
     <listitem>
-      <para>Beginner's Guide to Installing from Source
+      <para>Руководство для новичков, как устанавливать программное обеспечение из исходных кодов
       <ulink url="http://moi.vonos.net/linux/beginners-installing-from-source/"/></para>
 
-      <para>This guide provides a good summary of basic skills and
-      techniques needed to build software from source code.</para>
+      <para>Руководство дает качественную информацию по основным методам, необходимым 
+      для сборки и установки программного обеспечения.</para>
     </listitem>
 <!--
     <listitem>
