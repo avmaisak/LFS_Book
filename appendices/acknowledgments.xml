@@ -102,7 +102,7 @@
 
   <bridgehead renderas="sect2">Сопровождающие зеркала проекта</bridgehead>
 
-  <bridgehead renderas="sect3">North American Mirrors</bridgehead>
+  <bridgehead renderas="sect3">Северная Америка</bridgehead>
 
   <itemizedlist>
 
@@ -128,7 +128,7 @@
 
   </itemizedlist>
 
-  <bridgehead renderas="sect3">South American Mirrors</bridgehead>
+  <bridgehead renderas="sect3">Южная Америка</bridgehead>
 
   <itemizedlist>
 
@@ -145,7 +145,7 @@
 
   </itemizedlist>
 
-  <bridgehead renderas="sect3">European Mirrors</bridgehead>
+  <bridgehead renderas="sect3">Европа</bridgehead>
 
   <itemizedlist>
 
@@ -206,18 +206,27 @@
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:gyouja@pilgrims.ru">Vitaly Chekasin</ulink>
-      &lt;gyouja@pilgrims.ru&gt; &ndash; lfs.pilgrims.ru mirror</para>
-    </listitem>
-
-    <listitem>
       <para><ulink url="mailto:kontakt@wankoo.org">Benjamin Heil</ulink>
       &lt;kontakt@wankoo.org&gt; &ndash; lfs.wankoo.org mirror</para>
     </listitem>
 
   </itemizedlist>
 
-  <bridgehead renderas="sect3">Asian Mirrors</bridgehead>
+  <bridgehead renderas="sect3">Россия</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para><ulink url="mailto:gyouja@pilgrims.ru">Vitaly Chekasin</ulink>
+      &lt;gyouja@pilgrims.ru&gt; &ndash; lfs.pilgrims.ru mirror</para>
+    </listitem>
+
+    <listitem>
+      <para><ulink url="mailto:am@rus-bit.com">Anton Maisak</ulink>
+      &lt;am@rus-bit.com&gt; &ndash; linuxfromscratch.org.ru mirror</para>
+    </listitem>
+
+  </itemizedlist>
+
+  <bridgehead renderas="sect3">Азия</bridgehead>
 
   <itemizedlist>
 
@@ -238,7 +247,7 @@
 
   </itemizedlist>
 
-  <bridgehead renderas="sect3">Australian Mirrors</bridgehead>
+  <bridgehead renderas="sect3">Австралия</bridgehead>
 
   <itemizedlist>
 
