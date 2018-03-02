@@ -18,27 +18,16 @@
 
   <para>Для каждого пакета, который мы будем собирать, будет перечисленно три, а иногда даже четыре типа зависимостей.
   Первый список перечисляет какие пакеты должны быть, для компиляции и установки текущего пакета. 
-  Второй список перечисляет какие пакеты, помимо тех, которые указаны в первом списке, должны быть, чтобы запустить наборы тестов. 
-  Третий список перечисляет какие пакеты требуют, чтобы указанный пакет был собран и установлен прежде чем каждый из них. 
-  В большинстве случаев так происходит потому что 
-
-  The first lists what other packages need to be
-  available in order to compile and install the package in question. The second
-  lists what packages, in addition to those on the first list, need to be
-  available in order to run the test suites. The third list of dependencies are
-  packages that require this package to be built and installed in its final
-  location before they are built and installed. In most cases, this is because
-  these packages will hard code paths to binaries within their scripts. If not
-  built in a certain order, this could result in paths of /tools/bin/[binary]
-  being placed inside scripts installed to the final system. This is obviously
-  not desirable.</para>
-
-  <para>The last list of dependencies are optional packages that are not
-  addressed in LFS, but could be useful to the user.  These packages may have
-  additional mandatory or optional dependencies of their own.  For these
-  dependencies, the recommended practice is to install them after completion of
-  the LFS book and then go back and rebuild the LFS package.  In several cases,
-  re-installation is addressed in BLFS.</para>
+  Второй список перечисляет какие пакеты, помимо тех, которые указаны в первом списке, должны присутствовать, чтобы запустить наборы тестов. 
+  Третий список перечисляет какие пакеты требуют, чтобы указанный пакет был собран и установлен до их сборки и установки. 
+  В большинстве случаев это происходит потому, что скрипты конфигурации пакетов жестко прописывают ссылки на другие файлы.
+  Если выполнять сборку не в требуемом порядке, это можем привести к тому, что результаты действий будут сохраняться по
+  пути /tools/bin/[binary], что само собой не желательно.</para>
+  <para>Последий список зависимостей - это опциональные пакеты, которые могут не упоминаться в книге LFS, но все же, могут быть 
+  полезными для пользователя. Эти пакеты могут иметь дополнительные как обязательные,  так и необязательные зависимости.
+  Такие зависимости - рекомендуется разрешать после завершения сборки всей системы LFS. В некоторых случаях, 
+  повторная установка некоторых таких пакетов рассматривается в BLFS.
+  </para>
 
 <!-- Begin Acl dependency info -->
   <bridgehead renderas="sect2" id="acl-dep">acl</bridgehead>
