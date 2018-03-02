@@ -10,41 +10,35 @@
 
   <title>Аудитория, на которую расчитана эта книга</title>
 
-<para>Есть много причин, по которым вы хотели бы прочитать эту книгу. Один из вопросов, который поднимают многие люди, заключается в том, «зачем проходить через все трудности ручного построения системы Linux с нуля, когда вы можете просто загрузить и установить существующую?»</para>
+<para>Есть много причин, по которым вы хотели бы прочитать эту книгу. 
+Один из вопросов, который задают многие пользователи -  «зачем проходить через все трудности ручной  
+сборки системы Linux с нуля, когда вы можете просто загрузить и установить существующую?»</para>
 
-<para>Одна из важных причин существования этого проекта - помочь вам узнать, как работает система Linux изнутри. Создание системы LFS помогает продемонстрировать, что делает Linux тиком, и как все работает вместе и зависит друг от друга. Одна из лучших вещей, которые может обеспечить этот опыт обучения, - это возможность настроить систему Linux в соответствии с вашими собственными уникальными потребностями.</para>
+<para>Одна из главных причин существования этого проекта - помочь вам узнать, как работает система Linux изнутри. 
+Создание системы LFS поможет узнать как все работает вместе и как каждый компонент системы взаимодействует друг с другом. 
+Немаловажно, что книга даёт опыт в обучении и как следствие, возможность настроить систему Linux 
+в соответствии с вашими потребностями.</para>
 
-<para>Another key benefit of LFS is that it allows you to have more control
-over the system without relying on someone else's Linux implementation. With
-LFS, you are in the driver's seat and dictate every aspect of the
-system.</para>
+<para>Другим ключевым преимуществом  является то, что LFS предоставляет более глубокий контроль над системой, не полагаясь
+на другую реализацию Linux. Вы - находитесь в центре, и можете диктовать каждый аспект Вашей системы.</para>
 
-<para>LFS allows you to create very compact Linux systems. When installing
-regular distributions, you are often forced to install a great many
-programs which are probably never used or understood. These programs waste
-resources. You may argue that with today's hard drive and CPUs, such
-resources are no longer a consideration. Sometimes, however, you are still
-constrained by size considerations if nothing else. Think about bootable
-CDs, USB sticks, and embedded systems. Those are areas where LFS can be
-beneficial.</para>
+<para>LFS позвлолит создать очень компактную Linux систему. Когда вы устанавливаете какой-нибудь дистрибутив, 
+вам принудительно будет установлено большое количество программ, которыми вы скорее всего никогда не вопсользуетесь.
+Эти программы будут только расходовать системные ресурсы. Безусловно, это спорное замечание, так как на сегодняшний день, 
+современное аппартное обеспечение досаточно производительное, и можно не беспокоится о нехватке или дефиците ресурсов.
+А если взять во внимание загрузку с компакт-диска, с USB-накопителя, встраиваемые системы - выгода LFS в этих аспектах очевидна.</para>
 
-<para>Another advantage of a custom built Linux system is security. By compiling
-the entire system from source code, you are empowered to audit everything
-and apply all the security patches desired. It is no longer necessary to
-wait for somebody else to compile binary packages that fix a security hole.
-Unless you examine the patch and implement it yourself, you have no
-guarantee that the new binary package was built correctly and adequately
-fixes the problem.</para>
+<para>Еще одним преимуществом собственной сборки Linux системы является безопасность. При компиляции каждого компонента 
+ системы из исходных кодов, вы можете всё проверить и применить патчи безопасности. Теперь не надо ждать, когда кто-нибудь
+ скомпилирует пакет, с требуемым исправлением безопасности. Если вы не изучите патч и не реализуете его самостоятельно,
+ нет гарантий что новый пакет был собран корректно и утраняет проблему.</para>
 
-<para>The goal of Linux From Scratch is to build a complete and usable
-foundation-level system. If you do not wish to build your own Linux system
-from scratch, you may nevertheless benefit from the information in this
-book.</para>
+<para>Цель проекта Linux From Scratch это собрать окончательную и удобную систему базового уровня. Если вы не 
+хотите создавать собственную Linux систему с нуля, информация в этой книге может быть в любом случае полезна.</para>
 
-<para>There are too many other good reasons to build your own LFS system to
-list them all here. In the end, education is by far the most powerful of
-reasons. As you continue in your LFS experience, you will discover the power
-that information and knowledge truly bring.</para>
+<para>Есть еще множество причин, зачем выполнять сборку вашей собственной системы LFS. 
+В конечном счёте - образовательная цель, безусловно является самой важной. По мере того, как вы будете работать с LFS,
+вы обнаружите силу, которую приносят знания и информация.</para>
 
 </sect1>
 
