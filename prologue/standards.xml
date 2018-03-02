@@ -8,13 +8,12 @@
 <sect1 id="pre-standards">
   <?dbhtml filename="standards.html"?>
 
-  <title>LFS and Standards</title>
+  <title>LFS and стандарты</title>
 
   <!--<sect2>
     <title/> -->
 
-     <para>The structure of LFS follows Linux standards as closely as
-     possible.  The primary standards are:</para>
+     <para>Структура LFS следует стандартам Linux на столько, на сколько это возможно:</para>
 
     <itemizedlist>
       <listitem>
