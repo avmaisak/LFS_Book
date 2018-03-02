@@ -15,7 +15,7 @@
 
 <refsynopsisdiv>
 <src:fragment xml:id="htmlhelp.encoding.frag">
-<xsl:param name="htmlhelp.encoding">iso-8859-1</xsl:param>
+<xsl:param name="htmlhelp.encoding">UTF-8</xsl:param>
 </src:fragment>
 </refsynopsisdiv>
 

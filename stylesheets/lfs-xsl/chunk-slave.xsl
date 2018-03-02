@@ -16,7 +16,7 @@ $Date$
   <xsl:import href="docbook-xsl-1.78.1/xhtml/docbook.xsl"/>
 
   <!-- Use ISO-8859-1 for output instead of default UTF-8 -->
-  <xsl:param name="chunker.output.encoding" select="'ISO-8859-1'"/>
+  <xsl:param name="chunker.output.encoding" select="'UTF-8'"/>
 
   <!-- Including our customized elements templates -->
   <xsl:include href="common.xsl"/>
