@@ -10,34 +10,26 @@
 
   <title>Структура</title>
 
-  <para>This book is divided into the following parts.</para>
+  <para>Эта книга разделена на следующие части.</para>
 
   <sect2>
-    <title>Part I - Introduction</title>
-
-    <para>Part I explains a few important notes on how to proceed with the
-    LFS installation.  This section also provides meta-information about
-    the book.</para>
+    <title>Часть I - Введение</title>
+    <para>Эта часть дает разъяснения о некоторых выжных замечаниях о  процессе установки LFS. Также, здесь будет представлена метаинформация об этой книге.</para>
   </sect2>
 
   <sect2>
-    <title>Part II - Preparing for the Build</title>
-
-    <para>Part II describes how to prepare for the building process&mdash;making
-    a partition, downloading the packages, and compiling temporary
-    tools.</para>
+    <title>Часть II - Подготовка к сборке</title>
+    <para>Эта часть описывает как выполнить подготовку к процессу сборки&mdash;создать разделы на жестком диске,
+    загрузить необходимые пакеты, и выполнить компиляцию временного инструментария.</para>
   </sect2>
 
   <sect2>
-    <title>Part III - Building the LFS System</title>
+    <title>Часть III - Сборка системы LFS</title>
 
-    <para>Part III guides the reader through the building of the LFS
-    system&mdash;compiling and installing all the packages one by one,
-    setting up the boot scripts, and installing the kernel. The resulting
-    Linux system is the foundation on which other software can be built to
-    expand the system as desired. At the end of this book, there is an
-    easy to use reference listing all of the programs, libraries, and
-    important files that have been installed.</para>
+    <para>Эта часть описывает процесс сборки системы LFS. Процесс компиляции и установки каждого необходимого
+    пакета, настройка загрузочных скриптов, и установку ядра. Результатом сборки будет система, которая является 
+    основой для дальнейшего расширения в Вашему желанию. В конце книги есть удобный перечень программ, библиотек и 
+    необходимых файлов, которые были установлены.</para>
   </sect2>
 
 </sect1>
