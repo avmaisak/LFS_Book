@@ -1,4 +1,4 @@
-<!ENTITY version         "SVN-20180302">
+<!ENTITY version         "20180226">
 <!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; 
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
