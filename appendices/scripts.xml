@@ -36,22 +36,21 @@
   <?dbhtml dir="scripts"?>
   <?dbhtml filename="scripts.html"?>
 
-  <title>Boot and sysconfig scripts version-&lfs-bootscripts-version;</title>
+  <title>Скрипты загрузки и системной конфигурациии версия-&lfs-bootscripts-version;</title>
 
-  <para>The scripts in this appendix are listed by the directory where they
-  normally reside.  The order is <filename
+  <para>Скрипты в этом приложении перечислены с указанием места, где как правило, они должны находится. 
+ <filename
   class='directory'>/etc/rc.d/init.d</filename>, <filename
   class='directory'>/etc/sysconfig</filename>, <filename
   class='directory'>/etc/sysconfig/network-devices</filename>, and <filename
-  class='directory'>/etc/sysconfig/network-devices/services</filename>.  Within
-  each section, the files are listed in the order they are normally called.
-  </para>
+  class='directory'>/etc/sysconfig/network-devices/services</filename>. Каждый раздел перечислен в том порядке,
+  в котором как правило происходит вызов</para>
 
   <sect1 id="rc" role="wrap">
     <title>/etc/rc.d/init.d/rc</title>
 
-    <para>The <systemitem>rc</systemitem> script is the first script called by
-    <application>init</application> and initiates the boot process.</para>
+    <para> <systemitem>rc</systemitem> скрипт является первым вызываемым скриптом системой инициализации
+    <application>init</application> и предназначен для выполнения процесса загрузки.</para>
 
     <screen>&rc;</screen>
   </sect1>
