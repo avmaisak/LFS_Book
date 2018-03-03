@@ -94,31 +94,30 @@
       <listitem>
         <para>Check</para>
         <para>Этот пакет включает в себя средства тестирования для других программ.
-        Он будет установлен толко во временный набор инструментов.</para>
+        Он будет установлен толко во временный инструментарий.</para>
       </listitem>
 
       <listitem>
         <para>Coreutils</para>
 
-        <para>This package contains a number of essential programs for viewing
-        and manipulating files and directories. These programs are needed for
-        command line file management, and are necessary for the installation
-        procedures of every package in LFS.</para>
+        <para>Этот пакет включает в себя программы для просмотра и манипулирования 
+         файлами и каталогами. Эти программы необходимы для управления файлами через коммандную
+         строку, и необходимы для процедуры установки каждого пакета в LFS.</para>
       </listitem>
 
       <listitem revision="systemd">
         <para>D-Bus</para>
 
-        <para>This package contains programs to implement a message bus system, 
-        which a simple way for applications to talk to one another.
+        <para>Этот пакет включает в себя программы которые реализуют систему межпроцессного взаимодействия, 
+         которая позволяет приложениям в операционной системе "общаться" друг с другом.
         </para>
       </listitem>
 
       <listitem>
         <para>DejaGNU</para>
 
-        <para>This package contains a framework for testing other programs.
-        It is only installed in the temporary toolchain.</para>
+        <para>Этот пакет включает в себя фреймворк для тестирования других программ.
+        Он будет установлен толко во временный инструментарий.</para>
       </listitem>
 
       <listitem>
