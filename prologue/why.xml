@@ -24,35 +24,33 @@
       <listitem>
         <para>Acl</para>
 
-        <para>This package contains utilities to administer Access 
-        Control Lists, which are used to define more fine-grained 
-        discretionary access rights for files and directories. 
-        </para>
+        <para>Access Control List или ACL — список управления доступом, который определяет, 
+        кто или что может получать доступ к объекту (программе, процессу или файлу), и какие 
+        именно операции разрешено или запрещено выполнять субъекту (пользователю, группе пользователей).
+        Данный пакет содержит утилиты  для администрирования списками управления доступом (ACL).</para>
       </listitem>
 
       <listitem>
         <para>Attr</para>
 
-        <para>This package contains programs for administering  
-        extended attributes on filesystem objects. 
-        </para>
+        <para>Этот пакет содержит программы для администрирования
+         расширенных атрибутов объектов файловой системы.</para>
       </listitem>
 
       <listitem>
         <para>Autoconf</para>
 
-        <para>This package contains programs for producing shell scripts that
-        can automatically configure source code from a developer's
-        template. It is often needed to rebuild a package after updates
-        to the build procedures.</para>
+        <para>Этот пакет включает в себя программы для воспроизведения сценариев коммандной оболочки
+         которые могут выполнять автоматическую настройку исходного кода из определенного пользовательского
+         файла-шаблона. Он также необходим для перекомпиляции пакета после обновления процедур сборки.</para>
       </listitem>
 
       <listitem>
         <para>Automake</para>
 
-        <para>This package contains programs for generating Make files from
-        a template. It is often needed to rebuild a package after updates
-        to the build procedures.</para>
+        <para>Пакет включает в себя программы для генерации Make файлов из шаблона.
+        This package contains programs for generating Make files from
+        a template. Он также необходим для перекомпиляции пакета после обновления процедур сборки.</para>
       </listitem>
 
       <listitem>
