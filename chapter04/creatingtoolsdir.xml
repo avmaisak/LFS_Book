@@ -8,7 +8,7 @@
 <sect1 id="ch-tools-creatingtoolsdir">
   <?dbhtml filename="creatingtoolsdir.html"?>
 
-  <title>Creating the $LFS/tools Directory</title>
+  <title>Создание каталога $LFS/tools</title>
 
   <para>All programs compiled in <xref linkend="chapter-temporary-tools"/>
   will be installed under <filename class="directory">$LFS/tools</filename>

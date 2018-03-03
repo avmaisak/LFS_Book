@@ -53,7 +53,7 @@
 
     <para>This package does not come with a test suite.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make RAISE_SETFCAP=no lib=lib prefix=/usr install
 chmod -v 755 /usr/lib/libcap.so</userinput></screen>

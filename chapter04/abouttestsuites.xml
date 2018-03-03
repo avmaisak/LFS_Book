@@ -8,7 +8,7 @@
 <sect1 id="prepare-abouttestsuites">
   <?dbhtml filename="abouttestsuites.html"?>
 
-  <title>About the Test Suites</title>
+  <title>О тестировании</title>
 
   <para>Most packages provide a test suite. Running the test suite for a
   newly built package is a good idea because it can provide a <quote>sanity

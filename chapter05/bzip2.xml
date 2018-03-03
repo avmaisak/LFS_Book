@@ -48,7 +48,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make PREFIX=/tools install</userinput></screen>
 

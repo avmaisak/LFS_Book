@@ -64,7 +64,7 @@
     instance, using -j4 can reduce the test time by over 60
     percent.</para></note>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

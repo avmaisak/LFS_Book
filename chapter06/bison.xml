@@ -63,7 +63,7 @@
     bison checks can be run with <command>make check</command>.  Three
     tests related to lalr1.cc fail for unknown reasons.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

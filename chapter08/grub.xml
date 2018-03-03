@@ -17,7 +17,7 @@
   <title>Using GRUB to Set Up the Boot Process</title>
 
   <sect2>
-    <title>Introduction</title>
+    <title>Введение</title>
 
     <warning><para>Configuring GRUB incorrectly can render your system
     inoperable without an alternate boot device such as a CD-ROM.  This

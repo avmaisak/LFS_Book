@@ -65,7 +65,7 @@
     <para>This document specifies how DocBook elements are mapped to paragraph and character styles in a word processor.  The specifications are used to write conversions between DocBook XML and word processor XML formats, such as Microsoft's WordProcessingML (WordML), OpenOffice's OpenDocument and Apple's Pages.</para>
   </abstract>
   <section>
-    <title>Introduction</title>
+    <title>Введение</title>
     <para>Microsoft Word 2003 introduced WordProcessingML (WordML), an XML vocabulary for Word documents.  Since then, other popular word processors have become available that use XML as their data representation, namely Apple's Pages and OpenOffice.  By converting Word (or OpenOffice or Pages) to XML, it becomes possible to convert a word processing document to DocBook and vice versa using XSL transformations. Such conversions then enable the following.</para>
     <itemizedlist>
       <listitem>

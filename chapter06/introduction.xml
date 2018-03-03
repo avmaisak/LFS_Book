@@ -8,7 +8,7 @@
 <sect1 id="ch-system-introduction">
   <?dbhtml filename="introduction.html"?>
 
-  <title>Introduction</title>
+  <title>Введение</title>
 
   <para>In this chapter, we enter the building site and start constructing the
   LFS system in earnest. That is, we chroot into the temporary mini Linux system,

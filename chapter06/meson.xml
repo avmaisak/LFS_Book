@@ -46,7 +46,7 @@
 
     <para>This package does not come with a test suite.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">python3 setup.py install</userinput></screen>
 

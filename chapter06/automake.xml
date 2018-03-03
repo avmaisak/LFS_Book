@@ -61,7 +61,7 @@ make -j4 check</userinput></screen>
     <para>Two tests are known to fail in the LFS environment:
     check12.sh and check12-w.sh.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

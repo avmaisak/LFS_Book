@@ -154,7 +154,7 @@ cd       build</userinput></screen>
 
     <para>One test, debug_msg.sh, is known to fail.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make tooldir=/usr install</userinput></screen>
 

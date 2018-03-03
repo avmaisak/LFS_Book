@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-introduction" revision="sysv">
   <?dbhtml filename="introduction.html"?>
 
-  <title>Introduction</title>
+  <title>Введение</title>
 
     <para>Booting a Linux system involves several tasks.  The process must
     mount both virtual and real file systems, initialize devices, activate swap,

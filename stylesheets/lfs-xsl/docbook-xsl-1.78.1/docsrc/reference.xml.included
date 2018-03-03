@@ -29670,7 +29670,7 @@ will be used to indent the TOC.</para>
     </releaseinfo>
   </info>
   <partintro id="partintro" xml:base="../html/pi.xml">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is generated reference documentation for all
       user-specifiable processing instructions (PIs) in the DocBook
@@ -30822,7 +30822,7 @@ specifications in one processing instruction:
   </info>
 
   <partintro id="partintro" xml:base="../fo/pi.xml">
-    <title>Introduction</title>
+    <title>Введение</title>
 
     
 <para>This is generated reference documentation for all
@@ -31822,7 +31822,7 @@ specifications in one processing instruction:
     </releaseinfo>
   </info>
   <partintro id="partintro" xml:base="../manpages/pi.xml">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is generated reference documentation for all
       user-specifiable processing instructions (PIs) in the DocBook
@@ -31891,7 +31891,7 @@ specifications in one processing instruction:
     </releaseinfo>
   </info>
   <partintro id="partintro" xml:base="../common/pi.xml">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is generated reference documentation for all
       user-specifiable processing instructions (PIs) in the
@@ -32930,7 +32930,7 @@ and preserving the delimiters as text nodes between the tokens.</para>
 </reference><reference id="relativeuri" xml:base="../lib/lib.xml">
 <title>Relative URI Functions</title>
 
-<partintro id="partintro"><title>Introduction</title>
+<partintro id="partintro"><title>Введение</title>
 
 <para>These functions manipulate relative URI references.</para>
 
@@ -33136,7 +33136,7 @@ which would effectively move <quote>up</quote> the hierarchy.</para>
   </info>
   
   <partintro id="partintro">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is technical reference documentation for the &#8220;base&#8221;
       set of common templates in the DocBook XSL Stylesheets.</para>
@@ -33774,7 +33774,7 @@ unchanged.</para>
   </info>
   
   <partintro id="partintro">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is technical reference documentation for the &#8220;refentry
     metadata&#8221; templates in the DocBook XSL Stylesheets.</para>
@@ -34552,7 +34552,7 @@ unchanged.</para>
   </info>
   
   <partintro id="partintro">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is technical reference documentation for the
       miscellaneous utility templates in the DocBook XSL
@@ -34808,7 +34808,7 @@ unchanged.</para>
   </info>
   
   <partintro id="partintro">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is technical reference documentation for the
       character-map templates in the DocBook XSL Stylesheets.</para>
@@ -34992,7 +34992,7 @@ unchanged.</para>
     </releaseinfo>
   </info>
   <partintro id="partintro" xml:base="../fo/table.xml">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is technical reference documentation for the FO
       table-processing templates in the DocBook XSL Stylesheets.</para>
@@ -35127,7 +35127,7 @@ proportional-column-width() function.</para>
     </releaseinfo>
   </info>
   <partintro id="intro_partintro" xml:base="../template/titlepage.xml">
-    <title>Introduction</title>
+    <title>Введение</title>
     
 <para>This is technical reference documentation for the
       &#8220;titlepage&#8221; templates in the DocBook XSL Stylesheets.</para>

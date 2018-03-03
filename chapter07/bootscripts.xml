@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of LFS-Bootscripts</title>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

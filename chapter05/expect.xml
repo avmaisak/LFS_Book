@@ -94,7 +94,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
     test suite failures here are not surprising and are not considered
     critical.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make SCRIPTS="" install</userinput></screen>
 

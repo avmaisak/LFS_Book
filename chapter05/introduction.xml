@@ -8,7 +8,7 @@
 <sect1 id="ch-tools-introduction">
   <?dbhtml filename="introduction.html"?>
 
-  <title>Introduction</title>
+  <title>Введение</title>
 
   <para>This chapter shows how to build a minimal Linux system.
   This system will contain just enough tools to start constructing the final

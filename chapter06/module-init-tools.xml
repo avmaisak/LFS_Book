@@ -68,7 +68,7 @@ make clean</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make INSTALL=install install</userinput></screen>
 
