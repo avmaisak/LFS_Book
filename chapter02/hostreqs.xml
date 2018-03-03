@@ -8,7 +8,7 @@
 <sect1 id="pre-hostreqs" xreflabel="Host System Requirements">
   <?dbhtml filename="hostreqs.html"?>
 
-  <title>Host System Requirements</title>
+  <title>Требования к хост-системе</title>
 
     <para>Your host system should have the following software with the
     minimum versions indicated. This should not be an issue for most

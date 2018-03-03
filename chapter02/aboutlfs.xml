@@ -8,7 +8,7 @@
 <sect1 id="ch-partitioning-aboutlfs">
   <?dbhtml filename="aboutlfs.html"?>
 
-  <title>Setting The $LFS Variable</title>
+  <title>Настройка переменной окружения $LFS</title>
 
   <para>Throughout this book, the environment variable <envar>LFS</envar> will
   be used several times. You should ensure that this variable is always defined

@@ -8,7 +8,7 @@
 <sect1 id="materials-patches">
   <?dbhtml filename="patches.html"?>
 
-  <title>Needed Patches</title>
+  <title>Необходимые патчи</title>
 
   <para>In addition to the packages, several patches are also required.
   These patches correct any mistakes in the packages that should be

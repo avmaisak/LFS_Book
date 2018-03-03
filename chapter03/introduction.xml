@@ -8,7 +8,7 @@
 <sect1 id="materials-introduction">
   <?dbhtml filename="introduction.html"?>
 
-  <title>Introduction</title>
+  <title>Введение</title>
 
   <para>This chapter includes a list of packages that need to be downloaded in
   order to build a basic Linux system. The listed version numbers correspond to

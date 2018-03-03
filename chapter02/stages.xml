@@ -8,7 +8,7 @@
 <sect1 id="stages">
   <?dbhtml filename="stages.html"?>
 
-  <title>Building LFS in Stages</title>
+  <title>Этапы сборки системы LFS</title>
 
   <para>LFS is designed to be built in one session.  That is, the
   instructions assume that the system will not be shut down

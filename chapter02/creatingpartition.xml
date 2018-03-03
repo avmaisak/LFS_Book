@@ -8,7 +8,7 @@
 <sect1 id="space-creatingpartition">
   <?dbhtml filename="creatingpartition.html"?>
 
-  <title>Creating a New Partition</title>
+  <title>Создание нового раздела</title>
 
   <para>Like most other operating systems, LFS is usually installed on a
   dedicated partition. The recommended approach to building an LFS system

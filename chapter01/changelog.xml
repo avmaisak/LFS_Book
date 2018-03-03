@@ -8,7 +8,7 @@
 <sect1 id="ch-scatter-changelog">
   <?dbhtml filename="changelog.html"?>
 
-  <title>Changelog</title>
+  <title>Журнал изменений</title>
 
   <para>This is version 
         <phrase revision="sysv">&version;</phrase>

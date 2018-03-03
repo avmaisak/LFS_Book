@@ -8,7 +8,7 @@
 <sect1 id="space-creatingfilesystem">
   <?dbhtml filename="creatingfilesystem.html"?>
 
-  <title>Creating a File System on the Partition</title>
+  <title>Создание файловой системы на разделе</title>
 
   <para>Now that a blank partition has been set up, the file system can be
   created.  LFS can use any file system recognized by the Linux kernel, but the 

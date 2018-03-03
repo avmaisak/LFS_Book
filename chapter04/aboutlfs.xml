@@ -8,7 +8,7 @@
 <sect1 id="prepare-aboutlfs">
   <?dbhtml filename="aboutlfs.html"?>
 
-  <title>About $LFS</title>
+  <title>О переменной окружения $LFS</title>
 
   <para>Throughout this book, the environment variable <envar>LFS</envar> will
   be used. It is paramount that this variable is always defined.

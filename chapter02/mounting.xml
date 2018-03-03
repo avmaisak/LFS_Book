@@ -8,7 +8,7 @@
 <sect1 id="space-mounting">
   <?dbhtml filename="mounting.html"?>
 
-  <title>Mounting the New Partition</title>
+  <title>Монтирование нового раздела</title>
 
   <para>Now that a file system has been created, the partition needs to
   be made accessible. In order to do this, the partition needs to be
