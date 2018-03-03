@@ -56,46 +56,45 @@
       <listitem>
         <para>Bash</para>
 
-        <para>This package satisfies an LSB core requirement to provide
-        a Bourne Shell interface to the system.  It was chosen over
-        other shell packages because of its common usage and extensive
-        capabilities beyond basic shell functions.</para>
+        <para>Этот пакет выплоняет требования стандарта LFS Core для обеспечения интерфейса
+        Bourne Shell в системе. Он был выбран из числа других оболочек из-за
+        широкого распространения, возможностей которые выходят далеко за пределы базовых функций
+        программ-оболочек.</para>
+
       </listitem>
 
       <listitem>
         <para>Bc</para>
 
-        <para>This package provides an arbitrary precision numeric processing language. 
-        It satisfies a requirement needed when building the Linux kernel.</para>
+        <para>Этот пакет предоставляет произвольный язык обработки числовой точности. Он необходим для сборки Linux ядра.</para>
       </listitem>
 
       <listitem>
         <para>Binutils</para>
 
-        <para>This package contains a linker, an assembler, and other
-        tools for handling object files. The programs in this package are
-        needed to compile most of the packages in an LFS system and beyond.</para>
+        <para>Этот пакет включает в себя линковщик, ассемблер, и другие утилиты и инструменты для работы с 
+        объектными файлам. Программы в этом пакете необходимы для компиляции как большинства пакетов системы LFS,
+        так и многих пакетов за её пределами.</para>
       </listitem>
 
       <listitem>
         <para>Bison</para>
 
-        <para>This package contains the GNU version of yacc (Yet Another
-        Compiler Compiler) needed to build several other LFS programs.</para>
+        <para>Этот пакет включает в себя GNU версию yacc (Ещё один компилятор компиляторов)
+         необходимый для сборки некоторых пакетов для системы LFS.</para>
       </listitem>
 
       <listitem>
         <para>Bzip2</para>
 
-        <para>This package contains programs for compressing and decompressing
-        files.  It is required to decompress many LFS packages.</para>
+        <para>Этот пакет включает в себя для сжатия и распаковки файлов. Он необходим для 
+        распаковки многих пакетов LFS.</para>
       </listitem>
 
       <listitem>
         <para>Check</para>
-
-        <para>This package contains a test harness for other programs.
-        It is only installed in the temporary toolchain.</para>
+        <para>Этот пакет велючает в себя средства тестирования для других программ.
+        Он будет установлен толко во временный набор инструментов.</para>
       </listitem>
 
       <listitem>

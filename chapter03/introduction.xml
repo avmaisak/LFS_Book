@@ -50,13 +50,13 @@
 <screen role="nodump"><userinput>chmod -v a+wt $LFS/sources</userinput></screen>
 
   <para>An easy way to download all of the packages and patches is by using
-  <ulink url="https://linuxfromscratch.org.ru/lfs/view/stable/wget-list">wget-list</ulink> as an input to
+  <ulink url="wget-list">wget-list</ulink> as an input to
   <command>wget</command>. For example:</para>
 
 <screen role="nodump"><userinput>wget --input-file=wget-list --continue --directory-prefix=$LFS/sources</userinput></screen>
 
   <para>Additionally, starting with LFS-7.0, there is a separate file,
-  <ulink url="https://linuxfromscratch.org.ru/lfs/view/stable/md5sums">md5sums</ulink>, which can be used to verify that all
+  <ulink url="md5sums">md5sums</ulink>, which can be used to verify that all
   the correct packages are available before proceeding.  Place that file in
   <filename class="directory">$LFS/sources</filename> and run:</para>
 
