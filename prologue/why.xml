@@ -12,17 +12,12 @@
 
     <para>
     Как говорилось ранее, целью проекта Linux From Scratch является 
-    сборка окончательной и удобной системы базового уровня.
-    Она будет включать в себя все пакеты необходимые для саморепликации и распространения, а также 
+    сборка системы базового уровня.
+    Она будет включать в себя пакеты необходимые для саморепликации и распространения, а также 
     относительно небольшой набор программ, с помощью которых можно расширять 
-    систему в любом направлении на усмотрение пользователя.  
-    
-    foundation-level system.  This includes all packages needed to replicate
-    itself while providing a relatively minimal base from which to customize
-    a more complete system based on the choices of the user.  This does not
-    mean that LFS is the smallest system possible.  Several important packages
-    are included that are not strictly required.  The lists below document the
-    rationale for each package in the book.</para>
+    систему в любом направлении на ваше усмотрение. Это не значит, что LFS является максимально
+    компактной. Есть пакеты, которые включены но строго не требуются. В списке, которы расположен ниже,
+    имеется описание для каждого пакета.</para>
 
     <itemizedlist>
 
