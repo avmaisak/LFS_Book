@@ -8,9 +8,15 @@
 <sect1 id="pre-why">
   <?dbhtml filename="package-choices.html"?>
 
-  <title>Rationale for Packages in the Book</title>
+  <title>Информация о пакетах, используемых в этой книге</title>
 
-    <para>As stated earlier, the goal of LFS is to build a complete and usable
+    <para>
+    Как говорилось ранее, целью проекта Linux From Scratch является 
+    сборка окончательной и удобной системы базового уровня.
+    Она будет включать в себя все пакеты необходимые для саморепликации и распространения, а также 
+    относительно небольшой набор программ, с помощью которых можно расширять 
+    систему в любом направлении на усмотрение пользователя.  
+    
     foundation-level system.  This includes all packages needed to replicate
     itself while providing a relatively minimal base from which to customize
     a more complete system based on the choices of the user.  This does not
