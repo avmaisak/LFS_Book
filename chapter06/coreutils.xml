@@ -88,7 +88,7 @@
       </varlistentry>
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">FORCE_UNSAFE_CONFIGURE=1 make</userinput></screen>
 
@@ -128,7 +128,7 @@
 
 <screen><userinput remap="test">sed -i '/dummy/d' /etc/group</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

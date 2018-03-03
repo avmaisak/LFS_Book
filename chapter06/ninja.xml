@@ -86,7 +86,7 @@
 ./ninja ninja_test
 ./ninja_test --gtest_filter=-SubprocessTest.SetWithLots</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">install -vm755 ninja /usr/bin/
 install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja

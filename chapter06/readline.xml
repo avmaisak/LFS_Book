@@ -55,7 +55,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
             --disable-static \
             --docdir=/usr/share/doc/readline-&readline-version;</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make SHLIB_LIBS="-L/tools/lib -lncursesw"</userinput></screen>
 
@@ -74,7 +74,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
     <para>This package does not come with a test suite.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make SHLIB_LIBS="-L/tools/lib -lncurses" install</userinput></screen>
 

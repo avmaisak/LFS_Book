@@ -139,11 +139,11 @@ cd       build</userinput></screen>
     building as a "parallel make".  If this occurs, rerun the make command
     with a "-j1" option.</para></note>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

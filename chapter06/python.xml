@@ -79,14 +79,14 @@
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>The test suite requires TK and and X Windows session and cannot
     be run until Python 3 is reinstalled in BLFS.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install
 chmod -v 755 /usr/lib/libpython3.6m.so

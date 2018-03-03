@@ -25,7 +25,7 @@
     </releaseinfo>
   </info>
   <partintro id="partintro">
-    <title>Introduction</title>
+    <title>Введение</title>
     <para>This is generated reference documentation for all
       user-specifiable processing instructions (PIs) in the
       “common” part of the DocBook XSL stylesheets.

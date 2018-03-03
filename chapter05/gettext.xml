@@ -73,7 +73,7 @@ EMACS="no" ./configure --prefix=/tools --disable-shared</userinput></screen>
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make -C gnulib-lib
 make -C intl pluralx.c

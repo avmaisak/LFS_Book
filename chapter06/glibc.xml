@@ -139,7 +139,7 @@ unset GCC_INCDIR</userinput></screen>
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -208,7 +208,7 @@ unset GCC_INCDIR</userinput></screen>
 
 <screen><userinput remap="install">sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

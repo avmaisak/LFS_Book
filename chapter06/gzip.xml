@@ -45,7 +45,7 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -56,7 +56,7 @@
     <para>Two tests are known to fail in the LFS environment:
     help-version and zmore.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

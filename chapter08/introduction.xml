@@ -8,7 +8,7 @@
 <sect1 id="ch-bootable-introduction">
   <?dbhtml filename="introduction.html"?>
 
-  <title>Introduction</title>
+  <title>Введение</title>
 
   <para>It is time to make the LFS system bootable. This chapter
   discusses creating an <filename>fstab</filename> file, building a

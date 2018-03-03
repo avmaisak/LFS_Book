@@ -48,7 +48,7 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/bison-&bison-version;</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -63,7 +63,7 @@
     bison checks can be run with <command>make check</command>.  Three
     tests related to lalr1.cc fail for unknown reasons.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

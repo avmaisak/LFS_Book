@@ -92,7 +92,7 @@ ln -sfv libncurses.so.6 /usr/lib/libncurses.so</userinput></screen>
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -103,7 +103,7 @@ ln -sfv libncurses.so.6 /usr/lib/libncurses.so</userinput></screen>
 
 <screen><userinput remap="test">echo "quit" | ./bc/bc -l Test/checklib.b</userinput></screen>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

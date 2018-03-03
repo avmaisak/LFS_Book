@@ -142,7 +142,7 @@
         <para>Overview of the package.</para>
       </abstract>
     </chapterinfo>
-    <title>Introduction</title>
+    <title>Введение</title>
     <para>A common requirement for technical publications groups is to produce a Web-based help
       format that includes a table of contents pane, a search feature, and an index similar to what
       you get from the Microsoft HTML Help (.chm) format or Eclipse help. If the content is help for

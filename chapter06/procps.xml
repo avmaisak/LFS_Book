@@ -69,7 +69,7 @@
       </varlistentry>
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -86,7 +86,7 @@ make check</userinput></screen>
     <para>One ps test may fail, but passes if the tests are rerun at 
     the end of Chapter&nbsp;6.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

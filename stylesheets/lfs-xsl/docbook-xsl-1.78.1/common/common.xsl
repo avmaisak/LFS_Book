@@ -29,7 +29,7 @@
   </info>
   <!-- * yes, partintro is a valid child of a reference... -->
   <partintro xml:id="partintro">
-    <title>Introduction</title>
+    <title>Введение</title>
     <para>This is technical reference documentation for the “base”
       set of common templates in the DocBook XSL Stylesheets.</para>
     <para>This is not intended to be user documentation. It is

@@ -72,13 +72,13 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&sysvinit-consolidated-patch;</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make -C src</userinput></screen>
 
     <para>This package does not come with a test suite.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make -C src install</userinput></screen>
 

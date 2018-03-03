@@ -51,7 +51,7 @@
          shared                \
          zlib-dynamic</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -62,7 +62,7 @@
     <para>One subtest in the test 40-test_rehash.t fails in the lfs chroot 
     environment, but passes when run as a regular user.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
 make MANSUFFIX=ssl install</userinput></screen>

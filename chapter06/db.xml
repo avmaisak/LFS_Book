@@ -91,7 +91,7 @@
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -101,7 +101,7 @@
     <filename class="directory">/tools</filename>, not against Glibc in
     <filename class="directory">/usr</filename>.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make docdir=/usr/share/doc/db-&db-version; install</userinput></screen>
 

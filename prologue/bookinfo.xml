@@ -39,15 +39,10 @@
   <legalnotice>
 
     <para>Авторские права &copy; &copyrightdate;, Gerard Beekmans</para>
-
     <para>Все права защищены.</para>
-
     <para>Эта книга лицензирована в соответствии с <xref linkend="CC"/>.</para>
-    <para>Инструкции для компьютера могут быть извлечены из книги под лицензией
-          <xref linkend="MIT"/>.</para>
-
-    <para><trademark class='registered'>Linux</trademark>является зарегистрированным товарным знаком 
-    Linus Torvalds.</para>
+    <para>Инструкции для компьютера могут быть извлечены из книги под лицензией <xref linkend="MIT"/>.</para>
+    <para><trademark class='registered'>Linux</trademark>является зарегистрированным товарным знаком Linus Torvalds.</para>
 
   </legalnotice>
 

@@ -76,7 +76,7 @@
     are exercised correctly. Details on the <envar>TZ</envar> environment
     variable are provided in <xref linkend="chapter-bootscripts"/>.</para>
 
-    <para>Install the package:</para>
+    <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 

@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-introduction" revision="systemd">
   <?dbhtml filename="introduction.html"?>
 
-  <title>Introduction</title>
+  <title>Введение</title>
 
   <para>This chapter discusses configuration files and systemd services.
   First, the general configuration files needed to set up networking are
