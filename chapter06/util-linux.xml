@@ -96,7 +96,7 @@
     building components that require packages not in LFS or are 
     inconsistent with programs installed by other packages.</para>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

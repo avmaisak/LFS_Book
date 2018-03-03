@@ -116,7 +116,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

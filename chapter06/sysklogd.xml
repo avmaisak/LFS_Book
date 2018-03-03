@@ -47,7 +47,7 @@
 <screen><userinput remap="pre">sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
 sed -i 's/union wait/int/' syslogd.c</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

@@ -95,7 +95,7 @@ RANLIB=$LFS_TGT-ranlib         \
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

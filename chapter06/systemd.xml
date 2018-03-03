@@ -163,7 +163,7 @@ meson --prefix=/usr                \
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
 <!--

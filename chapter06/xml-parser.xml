@@ -45,7 +45,7 @@
 
 <screen><userinput remap="configure">perl Makefile.PL</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

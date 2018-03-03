@@ -64,7 +64,7 @@ make clean</userinput></screen>
 <screen><userinput remap="configure">DOCBOOKTOMAN=/bin/true ./configure --prefix=/ \
     --enable-zlib-dynamic --mandir=/usr/share/man</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

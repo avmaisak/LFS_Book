@@ -88,7 +88,7 @@
       </varlistentry>
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">FORCE_UNSAFE_CONFIGURE=1 make</userinput></screen>
 

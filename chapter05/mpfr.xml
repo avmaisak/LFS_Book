@@ -47,7 +47,7 @@
 
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-thread-safe</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

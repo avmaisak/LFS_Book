@@ -44,7 +44,7 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/gperf-&gperf-version;</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

@@ -71,7 +71,7 @@ EOF</userinput></screen>
             --disable-static        \
             --config-cache</userinput></screen>
 
-<para>Compile the package:</para>
+<para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">LIBRARY_PATH=/tools/lib make</userinput></screen>
 

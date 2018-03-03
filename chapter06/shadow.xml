@@ -98,7 +98,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

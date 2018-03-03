@@ -57,7 +57,7 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
