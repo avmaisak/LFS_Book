@@ -9,7 +9,7 @@
   </info>
   
   <partintro xml:id="partintro">
-    <title>Введение</title>
+    <title>Introduction</title>
     
 <para>This is technical reference documentation for the “base”
       set of common templates in the DocBook XSL Stylesheets.</para>

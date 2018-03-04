@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-$LastChangedBy$
-$Date$
+$LastChangedBy: matthew $
+$Date: 2013-10-10 03:46:50 +0400 (Чт, 10 окт 2013) $
 -->
 
 <!DOCTYPE xsl:stylesheet [

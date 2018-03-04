@@ -29,7 +29,7 @@ $Id: ebnf.xsl 9664 2012-11-07 20:02:17Z bobstayton $
 <title>HTML EBNF Reference</title>
 
 <partintro>
-<section><title>Введение</title>
+<section><title>Introduction</title>
 
 <para>This is technical reference documentation for the DocBook XSL
 Stylesheets; it documents (some of) the parameters, templates, and

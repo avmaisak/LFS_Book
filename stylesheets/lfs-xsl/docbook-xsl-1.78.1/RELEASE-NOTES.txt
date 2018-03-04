@@ -1,6 +1,6 @@
 Release Notes for the DocBook XSL Stylesheets
 
-$Revision$ $Date$
+$Revision: 10355 $ $Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
 
 2013-03-17
 

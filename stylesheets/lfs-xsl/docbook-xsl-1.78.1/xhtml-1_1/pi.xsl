@@ -19,7 +19,7 @@
     </releaseinfo>
   </info>
   <partintro xmlns="http://www.w3.org/1999/xhtml" xml:id="partintro">
-    <title>Введение</title>
+    <title>Introduction</title>
     <para>This is generated reference documentation for all
       user-specifiable processing instructions (PIs) in the DocBook
       XSL stylesheets for HTML output.

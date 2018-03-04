@@ -24,7 +24,7 @@
   </info>
 
   <partintro id="partintro">
-    <title>Введение</title>
+    <title>Introduction</title>
 
     <para>This is generated reference documentation for all
       user-specifiable processing instructions (PIs) in the DocBook

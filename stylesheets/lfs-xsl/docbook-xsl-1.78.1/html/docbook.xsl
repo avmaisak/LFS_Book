@@ -8,7 +8,7 @@
                 version='1.0'>
 
 <xsl:output method="html"
-            encoding="UTF-8"
+            encoding="ISO-8859-1"
             indent="no"/>
 
 <!-- ********************************************************************

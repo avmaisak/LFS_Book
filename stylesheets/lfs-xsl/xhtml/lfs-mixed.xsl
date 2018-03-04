@@ -1,8 +1,8 @@
-<?xml version='1.0' encoding="UTF-8"?>
+<?xml version='1.0' encoding='ISO-8859-1'?>
 
 <!--
-$LastChangedBy$
-$Date$
+$LastChangedBy: bdubbs $
+$Date: 2012-08-30 00:45:23 +0400 (Чт, 30 авг 2012) $
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

@@ -31,7 +31,7 @@
     </releaseinfo>
   </info>
   <partintro xml:id="partintro">
-    <title>Введение</title>
+    <title>Introduction</title>
     <para>This is technical reference documentation for the FO
       table-processing templates in the DocBook XSL Stylesheets.</para>
     <para>This is not intended to be user documentation.  It is
