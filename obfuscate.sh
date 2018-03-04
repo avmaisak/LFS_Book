@@ -35,5 +35,6 @@ for i in `grep -o '"mailto:.*@.*"' ${1} |sed -e 's|^"mailto:||' -e 's|"$||'`; do
       -e "s|$i|$plaintext|" ${1}.tmp > ${1}
   rm ${1}.tmp
 done
+
 #rm $FILE.tmp
 #exit 0
