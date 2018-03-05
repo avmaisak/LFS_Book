@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Binutils package contains a linker, an assembler, and other
+    <para>The Binutils пакет включает в себя  a linker, an assembler, and other
     tools for handling object files.</para>
 
     <segmentedlist>

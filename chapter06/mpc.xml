@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The MPC package contains a library for the arithmetic of complex
+    <para>The MPC пакет включает в себя  a library for the arithmetic of complex
     numbers with arbitrarily high precision and correct rounding of the
     result.</para>
 

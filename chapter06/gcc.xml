@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The GCC package contains the GNU compiler collection, which includes
+    <para>The GCC пакет включает в себя  the GNU compiler collection, which includes
     the C and C++ compilers.</para>
 
     <segmentedlist>

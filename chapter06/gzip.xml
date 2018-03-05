@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Gzip package contains программы для  compressing and decompressing
+    <para>The Gzip пакет включает в себя  программы для  compressing and decompressing
     files.</para>
 
     <segmentedlist>

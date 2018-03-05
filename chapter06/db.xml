@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Berkeley DB package contains programs and utilities used by many
+    <para>The Berkeley DB пакет включает в себя  programs and utilities used by many
     other applications for database related functions.</para>
 
     <segmentedlist>

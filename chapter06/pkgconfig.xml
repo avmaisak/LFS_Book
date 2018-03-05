@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para> The pkg-config package contains a tool for passing the include path
+    <para> The pkg-config пакет включает в себя  a tool for passing the include path
     and/or library paths to build tools during the configure and make file
     execution.</para>
 

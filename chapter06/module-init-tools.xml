@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Module-Init-Tools package contains программы для  handling kernel
+    <para>The Module-Init-Tools пакет включает в себя  программы для  handling kernel
     modules in Linux kernels greater than or equal to version 2.5.47.</para>
 
     <segmentedlist>

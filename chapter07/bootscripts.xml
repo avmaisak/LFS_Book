@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The LFS-Bootscripts package contains a set of scripts to start/stop
+    <para>The LFS-Bootscripts пакет включает в себя  a set of scripts to start/stop
     the LFS system at bootup/shutdown.  
     The configuration files and procedures needed to
     customize the boot process are described in the following sections.</para>

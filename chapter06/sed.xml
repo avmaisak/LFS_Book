@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Sed package contains a stream editor.</para>
+    <para>The Sed пакет включает в себя  a stream editor.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

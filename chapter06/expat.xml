@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Expat package contains a stream oriented C library for
+    <para>The Expat пакет включает в себя  a stream oriented C library for
     parsing XML.</para>
 
     <segmentedlist>

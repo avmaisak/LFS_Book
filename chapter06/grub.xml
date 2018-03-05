@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The GRUB package contains the GRand Unified Bootloader.</para>
+    <para>The GRUB пакет включает в себя  the GRand Unified Bootloader.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The GMP package contains math libraries. These have useful functions
+    <para>The GMP пакет включает в себя  math libraries. These have useful functions
     for arbitrary precision arithmetic.</para>
 
     <segmentedlist>

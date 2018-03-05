@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Diffutils package contains programs that show the differences
+    <para>The Diffutils пакет включает в себя  programs that show the differences
     between files or directories.</para>
 
     <segmentedlist>

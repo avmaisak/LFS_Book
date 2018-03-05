@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Xz package contains программы для  compressing and decompressing
+    <para>The Xz пакет включает в себя  программы для  compressing and decompressing
     files. It provides capabilities for the lzma and the newer xz compression
     formats.  Compressing text files with <command>xz</command> yields a better
     compression percentage than with the traditional <command>gzip</command> or

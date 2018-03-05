@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The OpenSSL package contains  management tools and libraries relating
+    <para>The OpenSSL пакет включает в себя   management tools and libraries relating
     to cryptography. These are useful for providing cryptographic functions
     to other packages, such as OpenSSH, email applications and web browsers
     (for accessing HTTPS sites).  </para>

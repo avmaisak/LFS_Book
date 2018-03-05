@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Ncurses package contains libraries for terminal-independent
+    <para>The Ncurses пакет включает в себя  libraries for terminal-independent
     handling of character screens.</para>
 
     <segmentedlist>

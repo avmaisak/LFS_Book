@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Zlib package contains compression and decompression routines used by
+    <para>The Zlib пакет включает в себя  compression and decompression routines used by
     some programs.</para>
 
     <segmentedlist>

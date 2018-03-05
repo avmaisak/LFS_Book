@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Gawk package contains программы для  manipulating text files.</para>
+    <para>The Gawk пакет включает в себя  программы для  manipulating text files.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

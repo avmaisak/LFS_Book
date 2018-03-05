@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Bison package contains a parser generator.</para>
+    <para>The Bison пакет включает в себя  a parser generator.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

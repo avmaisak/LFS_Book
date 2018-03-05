@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Texinfo package contains программы для  reading, writing, and
+    <para>The Texinfo пакет включает в себя  программы для  reading, writing, and
     converting info pages.</para>
 
     <segmentedlist>

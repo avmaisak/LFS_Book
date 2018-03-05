@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The File package contains a utility for determining the type of a given
+    <para>The File пакет включает в себя  a utility for determining the type of a given
     file or files.</para>
 
     <segmentedlist>

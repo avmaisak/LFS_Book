@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Tar package contains an archiving program.</para>
+    <para>The Tar пакет включает в себя  an archiving program.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

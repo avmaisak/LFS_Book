@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The M4 package contains a macro processor.</para>
+    <para>The M4 пакет включает в себя  a macro processor.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

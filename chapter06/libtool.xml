@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Libtool package contains the GNU generic library support script.
+    <para>The Libtool пакет включает в себя  the GNU generic library support script.
     It wraps the complexity of using shared libraries in a consistent, portable
     interface.</para>
 

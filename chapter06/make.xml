@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Make package contains a program for compiling packages.</para>
+    <para>The Make пакет включает в себя  a program for compiling packages.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

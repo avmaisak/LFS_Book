@@ -24,7 +24,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Util-linux package contains miscellaneous utility programs.</para>
+    <para>The Util-linux пакет включает в себя  miscellaneous utility programs.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

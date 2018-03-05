@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Kmod package contains libraries and utilities for loading kernel
+    <para>The Kmod пакет включает в себя  libraries and utilities for loading kernel
     modules</para>
 
     <segmentedlist>
