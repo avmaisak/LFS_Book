@@ -30,13 +30,13 @@
         <para><ulink url="http://refspecs.linuxfoundation.org/lsb.shtml">Linux
         Standard Base (LSB) Version 5.0</ulink></para>
 
-        <para>The LSB has four separate standards: Core, Desktop,
-        Runtime Languages, and Imaging. In addition to generic requirements
-        there are also architecture specific requirements.  There are also two
-        areas for trial use: Gtk3 and Graphics.  LFS attempts to conform to the
-        architectures discussed in the previous section.</para>
+        <para>LSB имеет четрые отдельных стандарта: Core, Desktop, Runtime Languages и Imaging. 
+				Кроме того, существуют требования специфичные для архитектуры. Есть также две области 
+				для пробного или ознакомительного использования: Gtk3 и Graphics. LFS старается соответствовать 
+				 стандартам предусмотренными архитектурами, рассмотренными в предыдущем разделе.</para>
 
-        <note><para>Many people do not agree with the requirements of the LSB.
+        <note><para>
+				Many people do not agree with the requirements of the LSB.
         The main purpose of defining it is to ensure that proprietary software
         will be able to be installed and run properly on a compliant system.
         Since LFS is source based, the user has complete control over what
