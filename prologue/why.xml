@@ -45,7 +45,7 @@
         <para>Automake</para>
 
         <para>Пакет включает в себя программы для генерации Make файлов из шаблона.
-        This package contains programs for generating Make files from
+        Этот пакет включает в себя programs for generating Make files from
         a template. Он также необходим для перекомпиляции пакета после обновления процедур сборки.</para>
       </listitem>
 
@@ -119,128 +119,120 @@
       <listitem>
         <para>Diffutils</para>
 
-        <para>This package contains programs that show the differences
-        between files or directories. These programs can be used to create
-        patches, and are also used in many packages' build procedures.</para>
+        <para>Этот пакет включает в себя программы, которые отображают разницу в содержимом между файлами и каталогами.
+				Эти программы могут быть использованы, для создания патчей, а также они используются в процедурах сборки для большинства пакетов.</para>
       </listitem>
 
       <listitem>
         <para>E2fsprogs</para>
 
-        <para>This package contains the utilities for handling the ext2, ext3
-        and ext4 file systems.  These are the most common and thoroughly
-        tested file systems that Linux supports.</para>
+        <para>Этот пакет включает в себя утилиты для обработки файловых систем ext2, ext3 и ext4. 
+				Это наиболее распространенные и тщательно протестированные файловые системы, поддерживаемые Linux.</para>
       </listitem>
 
       <listitem revision="sysv">
         <para>Eudev</para>
-
-        <para>This package is a device manager.  It dynamically controls the entries
-        in the /dev directory as devices are added or removed from the system.
+        <para>Этот пакет является диспетчером устройств. Он  контролирует записи
+         в каталоге /dev, так как устройства добавляются или удаляются из системы динамически.
         </para>
       </listitem>
 
       <listitem>
         <para>Expat</para>
 
-        <para>This package contains a relatively small XML parsing library.  It
-        is required by the XML::Parser Perl module.</para>
+        <para>Этот пакет включает в себя небольшую библиотеку для парсинга XML. Она необходима для
+				пакета модуля Perl -  XML::Parser.</para>
       </listitem>
 
       <listitem>
         <para>Expect</para>
 
-        <para>This package contains a program for carrying out scripted
-        dialogues with other interactive programs.  It is commonly used
-        for testing other packages.  It is only installed in the temporary
-        toolchain.</para>
+        <para>Этот пакет включает в себя инструменты для автоматизации и тестирования, 
+				и является расширением к скрипт-языку Tcl, для многих интерактивных приложений.
+				Он будет установлен только во временный инструментарий.</para>
       </listitem>
 
       <listitem>
         <para>File</para>
 
-        <para>This package contains a utility for determining the type of a
-        given file or files. A few packages need it to build.</para>
+        <para>Этот пакет включает в себя утилиты для определения типов файлов. Некоторым пакетам требуется,
+				чтобы этот пакет был установлен.</para>
       </listitem>
 
       <listitem>
         <para>Findutils</para>
 
-        <para>This package contains programs to find files in a file system.
-        It is used in many packages' build scripts.</para>
+        <para>Этот пакет включает в себя программы для поиска файлов в файловой системе.
+				Он используется в процедурах сборки для большинства пакетов.</para>
       </listitem>
 
       <listitem>
         <para>Flex</para>
 
-        <para>This package contains a utility for generating programs that
-        recognize patterns in text.  It is the GNU version of the lex
-        (lexical analyzer) program.  It is required to build several
-        LFS packages.</para>
+        <para>Этот пакет включает в себя утилиты для генерации программ, которые
+         распознают шаблоны в тексте.Это GNU версия lex (lexical analyzer). 
+				Пакет необходим для сборки некоторых пакетов LFS.</para>
       </listitem>
 
       <listitem>
         <para>Gawk</para>
 
-        <para>This package contains programs for manipulating text files.
-        It is the GNU version of awk (Aho-Weinberg-Kernighan). It is used in
-        many other packages' build scripts.</para>
+        <para>Этот пакет включает в себя программы для манипулирования текстовыми файлами.
+				 Это GNU версия awk (Aho-Weinberg-Kernighan).Он используется в процедурах сборки для большинства пакетов.</para>
       </listitem>
 
       <listitem>
         <para>Gcc</para>
 
-        <para>This package is the Gnu Compiler Collection.  It contains the
-        C and C++ compilers as well as several others not built by LFS.
-        </para>
+        <para>Этот пакет содержит в себе набор компиляторов GNU, таких как C и С++ и других, которые не будут включены в LFS</para>
       </listitem>
 
       <listitem>
         <para>GDBM</para>
 
-        <para>This package contains the GNU Database Manager library.  It
+        <para>Этот пакет включает в себя GNU Database Manager library.  It
         is used by one other LFS package, Man-DB.</para>
       </listitem>
 
       <listitem>
         <para>Gettext</para>
 
-        <para>This package contains utilities and libraries for
+        <para>Этот пакет включает в себя utilities and libraries for
         internationalization and localization of numerous packages.</para>
       </listitem>
 
       <listitem>
         <para>Glibc</para>
 
-        <para>This package contains the main C library.  Linux programs would
+        <para>Этот пакет включает в себя the main C library.  Linux programs would
         not run without it.</para>
       </listitem>
 
       <listitem>
         <para>GMP</para>
 
-        <para>This package contains math libraries that provide useful functions
+        <para>Этот пакет включает в себя math libraries that provide useful functions
         for arbitrary precision arithmetic.  It is required to build Gcc.</para>
       </listitem>
 
       <listitem>
         <para>Gperf</para>
 
-        <para>This package contains a program that generates a perfect hash
+        <para>Этот пакет включает в себя a program that generates a perfect hash
         function from a key set. It is required for Eudev.</para>
       </listitem>
 
       <listitem>
         <para>Grep</para>
 
-        <para>This package contains programs for searching through files. These
+        <para>Этот пакет включает в себя programs for searching through files. These
         programs are used by most packages' build scripts.</para>
       </listitem>
 
       <listitem>
         <para>Groff</para>
 
-        <para>This package contains programs for processing and formatting text.
+        <para>Этот пакет включает в себя programs for processing and formatting text.
         One important function of these programs is to format man pages.</para>
       </listitem>
 
@@ -255,7 +247,7 @@
       <listitem>
         <para>Gzip</para>
 
-        <para>This package contains programs for compressing and
+        <para>Этот пакет включает в себя programs for compressing and
         decompressing files. It is needed to decompress many packages in LFS
         and beyond.</para>
       </listitem>
@@ -270,21 +262,21 @@
       <listitem>
         <para>Inetutils</para>
 
-        <para>This package contains programs for basic network
+        <para>Этот пакет включает в себя programs for basic network
         administration.</para>
       </listitem>
 
       <listitem>
         <para>Intltool</para>
 
-        <para>This package contains tools for extracting translatable 
+        <para>Этот пакет включает в себя tools for extracting translatable 
         strings from source files.</para>
       </listitem>
 
       <listitem>
         <para>IProute2</para>
 
-        <para>This package contains programs for basic and advanced IPv4 and
+        <para>Этот пакет включает в себя programs for basic and advanced IPv4 and
         IPv6 networking.  It was chosen over the other common network
         tools package (net-tools) for its IPv6 capabilities.  </para>
       </listitem>
@@ -292,21 +284,21 @@
       <listitem>
         <para>Kbd</para>
 
-        <para>This package contains key-table files, keyboard utilities
+        <para>Этот пакет включает в себя key-table files, keyboard utilities
         for non-US keyboards, and a number of console fonts.</para>
       </listitem>
 
       <listitem>
         <para>Kmod</para>
 
-        <para>This package contains programs needed to administer Linux
+        <para>Этот пакет включает в себя programs needed to administer Linux
         kernel modules.</para>
       </listitem>
 
       <listitem>
         <para>Less</para>
 
-        <para>This package contains a very nice text file viewer that
+        <para>Этот пакет включает в себя a very nice text file viewer that
         allows scrolling up or down when viewing a file. It is also used by
         Man-DB for viewing manpages.</para>
       </listitem>
@@ -343,7 +335,7 @@
       <listitem>
         <para>Libtool</para>
 
-        <para>This package contains the GNU generic library support
+        <para>Этот пакет включает в себя the GNU generic library support
         script. It wraps the complexity of using shared libraries in a
         consistent, portable interface.  It is needed by the test
         suites in other LFS packages.</para>
@@ -359,21 +351,21 @@
       <listitem>
         <para>M4</para>
 
-        <para>This package contains a general text macro processor useful
+        <para>Этот пакет включает в себя a general text macro processor useful
         as a build tool for other programs.</para>
       </listitem>
 
       <listitem>
         <para>Make</para>
 
-        <para>This package contains a program for directing the building
+        <para>Этот пакет включает в себя a program for directing the building
         of packages.  It is required by almost every package in LFS.</para>
       </listitem>
 
       <listitem>
         <para>Man-DB</para>
 
-        <para>This package contains programs for finding and viewing man pages.
+        <para>Этот пакет включает в себя programs for finding and viewing man pages.
         It was chosen instead of the <application>man</application> package
         due to superior internationalization capabilities.  It supplies
         the man program.</para>
@@ -382,7 +374,7 @@
       <listitem>
         <para>Man-pages</para>
 
-        <para>This package contains the actual contents of the basic
+        <para>Этот пакет включает в себя the actual contents of the basic
         Linux man pages.</para>
       </listitem>
 
@@ -399,21 +391,21 @@
       <listitem>
         <para>MPC</para>
 
-        <para>This package contains functions for the arithmetic of complex
+        <para>Этот пакет включает в себя functions for the arithmetic of complex
         numbers. It is required by Gcc.</para>
       </listitem>
 
       <listitem>
         <para>MPFR</para>
 
-        <para>This package contains functions for multiple precision
+        <para>Этот пакет включает в себя functions for multiple precision
         arithmetic.  It is required by Gcc.</para>
       </listitem>
 
       <listitem>
         <para>Ninja</para>
 
-        <para>This package contains a small build system with a focus on speed.
+        <para>Этот пакет включает в себя a small build system with a focus on speed.
         It is designed to have its input files generated by a higher-level build
         system, and to run builds as fast as possible.</para>
 
@@ -422,7 +414,7 @@
       <listitem>
         <para>Ncurses</para>
 
-        <para>This package contains libraries for terminal-independent
+        <para>Этот пакет включает в себя libraries for terminal-independent
         handling of character screens.  It is often used to provide
         cursor control for a menuing system. It is needed by a number of
         packages in LFS.</para>
@@ -431,7 +423,7 @@
       <listitem>
         <para>Patch</para>
 
-        <para>This package contains a program for modifying or creating files by
+        <para>Этот пакет включает в себя a program for modifying or creating files by
         applying a <emphasis>patch</emphasis> file typically created
         by the <application>diff</application> program.  It is needed by
         the build procedure for several LFS packages.</para>
@@ -455,7 +447,7 @@
       <listitem>
         <para>Procps-NG</para>
 
-        <para>This package contains programs for monitoring processes. These
+        <para>Этот пакет включает в себя programs for monitoring processes. These
         programs are useful for system administration, and are also used by
         the LFS Bootscripts.</para>
       </listitem>
@@ -463,7 +455,7 @@
       <listitem>
         <para>Psmisc</para>
 
-        <para>This package contains programs for displaying information
+        <para>Этот пакет включает в себя programs for displaying information
         about running processes. These programs are useful for system
         administration.</para>
       </listitem>
@@ -494,14 +486,14 @@
       <listitem>
         <para>Shadow</para>
 
-        <para>This package contains programs for handling passwords
+        <para>Этот пакет включает в себя programs for handling passwords
         in a secure way.</para>
       </listitem>
 
       <listitem revision="sysv">
         <para>Sysklogd</para>
 
-        <para>This package contains programs for logging system messages,
+        <para>Этот пакет включает в себя programs for logging system messages,
         such as those given by the kernel or daemon processes when unusual
         events occur.</para>
       </listitem>
@@ -533,7 +525,7 @@
       <listitem>
         <para>Tcl</para>
 
-        <para>This package contains the Tool Command Language used
+        <para>Этот пакет включает в себя the Tool Command Language used
         in many test suites in LFS packages.  It is only installed in
         the temporary toolchain.</para>
       </listitem>
@@ -541,7 +533,7 @@
       <listitem>
         <para>Texinfo</para>
 
-        <para>This package contains programs for reading, writing, and
+        <para>Этот пакет включает в себя programs for reading, writing, and
         converting info pages.  It is used in the installation
         procedures of many LFS packages.</para>
       </listitem>
@@ -549,7 +541,7 @@
       <listitem>
         <para>Util-linux</para>
 
-        <para>This package contains miscellaneous utility programs.
+        <para>Этот пакет включает в себя miscellaneous utility programs.
         Among them are utilities for handling file systems, consoles,
         partitions, and messages.</para>
       </listitem>
@@ -557,7 +549,7 @@
       <listitem>
         <para>Vim</para>
 
-        <para>This package contains an editor. It was chosen because of its
+        <para>Этот пакет включает в себя an editor. It was chosen because of its
         compatibility with the classic vi editor and its huge number of powerful
         capabilities.  An editor is a very personal choice for
         many users and any other editor could be substituted if desired.</para>
@@ -572,7 +564,7 @@
       <listitem>
         <para>XZ Utils</para>
 
-        <para>This package contains programs for compressing and decompressing
+        <para>Этот пакет включает в себя programs for compressing and decompressing
         files.  It provides the highest compression generally available
         and is useful for decompressing packages in XZ or LZMA format.</para>
       </listitem>
@@ -580,7 +572,7 @@
       <listitem>
         <para>Zlib</para>
 
-        <para>This package contains compression and decompression routines
+        <para>Этот пакет включает в себя compression and decompression routines
         used by some programs.</para>
       </listitem>
 
