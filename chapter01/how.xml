@@ -10,30 +10,14 @@
 
   <title>Как выполнить сборку системы LFS</title>
 
-  <para>The LFS system will be built by using an already installed
-  Linux distribution (such as Debian, OpenMandriva, Fedora, or openSUSE). This
-  existing Linux system (the host) will be used as a starting point to
-  provide necessary programs, including a compiler, linker, and shell,
-  to build the new system. Select the <quote>development</quote> option
-  during the distribution installation to be able to access these
-  tools.</para>
+  <para>Сборка системы LFS будет выполнена с помощью уже установленного дистрибутива Linux 
+  (например Debian, OpenMandriva, Fedora, или openSUSE). Именно эта система (хост) будет служить
+  отправной точкой. Необходимые компоненты хоста, такие как компилятор, линковщик и командная оболочка 
+  будут использованы для сборки новой системы. Выберите режим или опцию <quote>development (режим разработчика)</quote> 
+  в процессе установки или конфигурирования хост системы чтобы использовать необходимые компоненты.</para>
 
   <para>As an alternative to installing a separate distribution onto your
-  machine, you may wish to use <!-- the Linux From Scratch LiveCD or --> a LiveCD from a
-  commercial distribution. <!-- The LFS LiveCD works well as a host system,
-  providing all the tools you need to successfully follow the instructions in
-  this book. The LiveCD version is behind the current book, but is still useful
-  as a host for building the current book.  The <quote>-nosrc</quote> or
-  <quote>-min</quote> editions of the LiveCD are the most appropriate for
-  building a current LFS system.  For more information about the LFS LiveCD or
-  to download a copy, visit <ulink url="&livecd-root;"/>. --></para>
-
-  <!--
-  <note>
-    <para>The LFS LiveCD might not work on newer hardware configurations,
-    failing to boot or failing to detect some devices such as some SATA hard
-    drives.</para>
-  </note> -->
+  machine, you may wish to use a LiveCD from a commercial distribution. </para>
 
   <para><xref linkend="chapter-partitioning"/> of this book describes how
   to create a new Linux native partition and file system. This is the place
