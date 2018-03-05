@@ -178,129 +178,123 @@
         <para>Gawk</para>
 
         <para>Этот пакет включает в себя программы для манипулирования текстовыми файлами.
-				 Это GNU версия awk (Aho-Weinberg-Kernighan).Он используется в процедурах сборки для большинства пакетов.</para>
+				 Это GNU версия awk (Aho-Weinberg-Kernighan). Он используется в процедурах сборки для большинства пакетов.</para>
       </listitem>
 
       <listitem>
         <para>Gcc</para>
 
-        <para>Этот пакет содержит в себе набор компиляторов GNU, таких как C и С++ и других, которые не будут включены в LFS</para>
+        <para>Этот пакет содержит в себе набор компиляторов GNU, для таких языков, как C и С++.
+        Поддержка других языков не предусмотрена в LFS</para>
       </listitem>
 
       <listitem>
         <para>GDBM</para>
 
-        <para>Этот пакет включает в себя GNU Database Manager library.  It
-        is used by one other LFS package, Man-DB.</para>
+        <para>Этот пакет включает в себя библиотеку GNU Database Manager (менеджер баз данных GNU).  
+        Они используется пакетом Man-DB.</para>
       </listitem>
 
       <listitem>
         <para>Gettext</para>
 
-        <para>Этот пакет включает в себя utilities and libraries for
-        internationalization and localization of numerous packages.</para>
+        <para>Этот пакет включает в себя утилиты и библиотеки для работы с локализацией и интернационализацией
+        необходимые для некоторых пакетов.</para>
       </listitem>
 
       <listitem>
         <para>Glibc</para>
 
-        <para>Этот пакет включает в себя the main C library.  Linux programs would
-        not run without it.</para>
+        <para>Этот пакет включает в себя стандартную библиотеку языка Си (GNU C Library). Linux программы
+        не смогу без нее работать.</para>
       </listitem>
 
       <listitem>
         <para>GMP</para>
 
-        <para>Этот пакет включает в себя math libraries that provide useful functions
-        for arbitrary precision arithmetic.  It is required to build Gcc.</para>
+        <para>Этот пакет включает в себя библиотеки для математических вычислений и предоставляет 
+        полезные функции для вычислений с  плавающей точкой. Он необходим для того, чтобы скомпилировать пакет Gcc.</para>
       </listitem>
 
       <listitem>
         <para>Gperf</para>
 
-        <para>Этот пакет включает в себя a program that generates a perfect hash
-        function from a key set. It is required for Eudev.</para>
+        <para>Этот пакет включает в себя программу, которая генерирует отличные хэш функции из набора ключей.
+        Она необходима для пакета Eudev.</para>
       </listitem>
 
       <listitem>
         <para>Grep</para>
-
-        <para>Этот пакет включает в себя programs for searching through files. These
-        programs are used by most packages' build scripts.</para>
+ 
+        <para>Этот пакет включает в себя программу, которая находит на вводе строки, отвечающие заданному регулярному выражению, и выводит их, если вывод не отменён специальным ключом. 
+        Пакет используется в процедурах сборки для большинства пакетов.</para>
       </listitem>
 
       <listitem>
         <para>Groff</para>
 
-        <para>Этот пакет включает в себя programs for processing and formatting text.
-        One important function of these programs is to format man pages.</para>
+        <para>Этот пакет включает в себя программы для обработки и форматирования текста.
+        Одна из самых важных функций - форматирование man страниц.</para>
       </listitem>
 
       <listitem>
         <para>GRUB</para>
 
-        <para>This package is the Grand Unified Boot Loader.  It is one
-        of several boot loaders available, but is the most flexible.
-        </para>
+        <para>Пакет является загрузчиком операционной системы (GRand Unified Bootloader). 
+        Этот пакет один из загрузчиков, но он является самым гибким.</para>
       </listitem>
 
       <listitem>
         <para>Gzip</para>
 
-        <para>Этот пакет включает в себя programs for compressing and
-        decompressing files. It is needed to decompress many packages in LFS
-        and beyond.</para>
+        <para>Этот пакет включает в себя программы для сжатия и распаковки файлов. Он необходим, чтобы 
+        выполнять распаковку многих пакетов LFS.</para>
       </listitem>
 
       <listitem>
         <para>Iana-etc</para>
 
-        <para>This package provides data for network services and protocols.
-        It is needed to enable proper networking capabilities.</para>
+        <para>Этот пакет предоставляет данные для сетевых служб и протоколов.
+         Он необходим для обеспечения правильных сетевых возможностей.</para>
       </listitem>
 
       <listitem>
         <para>Inetutils</para>
 
-        <para>Этот пакет включает в себя programs for basic network
-        administration.</para>
+        <para>Этот пакет включает в себя программы programs для администрирования сетевых возможностей.</para>
       </listitem>
 
       <listitem>
         <para>Intltool</para>
 
-        <para>Этот пакет включает в себя tools for extracting translatable 
-        strings from source files.</para>
+        <para>Этот пакет включает в себя инструменты для извлечения переводимых строк из файлов с исходными кодами.</para>
       </listitem>
 
       <listitem>
         <para>IProute2</para>
 
-        <para>Этот пакет включает в себя programs for basic and advanced IPv4 and
-        IPv6 networking.  It was chosen over the other common network
-        tools package (net-tools) for its IPv6 capabilities.  </para>
+        <para>Этот пакет включает в себя программы для работы с сетью по протоколам IPv4 и IPv6.
+        Он был выбран из с других пакетов для работы с сетью из-за его поддержки IPv6 протокола.</para>
       </listitem>
 
       <listitem>
         <para>Kbd</para>
 
-        <para>Этот пакет включает в себя key-table files, keyboard utilities
-        for non-US keyboards, and a number of console fonts.</para>
+        <para>Этот пакет включает в себя key-table файлы, утилиты для клавиатуры для не US наборов,
+        а также консольные шрифты.</para>
       </listitem>
 
       <listitem>
         <para>Kmod</para>
 
-        <para>Этот пакет включает в себя programs needed to administer Linux
-        kernel modules.</para>
+        <para>Этот пакет включает в себя программы для администрирования модулей ядра Linux.</para>
       </listitem>
 
       <listitem>
         <para>Less</para>
 
-        <para>Этот пакет включает в себя a very nice text file viewer that
-        allows scrolling up or down when viewing a file. It is also used by
-        Man-DB for viewing manpages.</para>
+        <para>Этот пакет включает в себя замечательный просмотрщик текстовых файлов.
+        Он также используется пакетом Man-DB для просмотра страниц руководств.</para>
       </listitem>
 
       <listitem>
