@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Inetutils package contains programs for basic networking.</para>
+    <para>The Inetutils package contains программы для  basic networking.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

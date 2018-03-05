@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Autoconf package contains programs for producing shell scripts that
+    <para>The Autoconf package contains программы для  producing shell scripts that
     can automatically configure source code.</para>
 
     <segmentedlist>

@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Procps-ng package contains programs for monitoring processes.</para>
+    <para>The Procps-ng package contains программы для  monitoring processes.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

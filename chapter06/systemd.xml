@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The systemd package contains programs for controlling the startup,
+    <para>The systemd package contains программы для  controlling the startup,
     running, and shutdown of the system.</para>
 
     <segmentedlist>

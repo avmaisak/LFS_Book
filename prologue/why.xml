@@ -45,7 +45,7 @@
         <para>Automake</para>
 
         <para>Пакет включает в себя программы для генерации Make файлов из шаблона.
-        Этот пакет включает в себя programs for generating Make files from
+        Этот пакет включает в себя программы для  generating Make files from
         a template. Он также необходим для перекомпиляции пакета после обновления процедур сборки.</para>
       </listitem>
 
@@ -357,7 +357,7 @@
       <listitem>
         <para>Man-DB</para>
 
-        <para>Этот пакет включает в себя programs for finding and viewing man pages.
+        <para>Этот пакет включает в себя программы для  finding and viewing man pages.
         It was chosen instead of the <application>man</application> package
         due to superior internationalization capabilities.  It supplies
         the man program.</para>
@@ -439,7 +439,7 @@
       <listitem>
         <para>Procps-NG</para>
 
-        <para>Этот пакет включает в себя programs for monitoring processes. These
+        <para>Этот пакет включает в себя программы для  monitoring processes. These
         programs are useful for system administration, and are also used by
         the LFS Bootscripts.</para>
       </listitem>
@@ -447,7 +447,7 @@
       <listitem>
         <para>Psmisc</para>
 
-        <para>Этот пакет включает в себя programs for displaying information
+        <para>Этот пакет включает в себя программы для  displaying information
         about running processes. These programs are useful for system
         administration.</para>
       </listitem>
@@ -478,14 +478,14 @@
       <listitem>
         <para>Shadow</para>
 
-        <para>Этот пакет включает в себя programs for handling passwords
+        <para>Этот пакет включает в себя программы для  handling passwords
         in a secure way.</para>
       </listitem>
 
       <listitem revision="sysv">
         <para>Sysklogd</para>
 
-        <para>Этот пакет включает в себя programs for logging system messages,
+        <para>Этот пакет включает в себя программы для  logging system messages,
         such as those given by the kernel or daemon processes when unusual
         events occur.</para>
       </listitem>
@@ -525,7 +525,7 @@
       <listitem>
         <para>Texinfo</para>
 
-        <para>Этот пакет включает в себя programs for reading, writing, and
+        <para>Этот пакет включает в себя программы для  reading, writing, and
         converting info pages.  It is used in the installation
         procedures of many LFS packages.</para>
       </listitem>
@@ -556,7 +556,7 @@
       <listitem>
         <para>XZ Utils</para>
 
-        <para>Этот пакет включает в себя programs for compressing and decompressing
+        <para>Этот пакет включает в себя программы для  compressing and decompressing
         files.  It provides the highest compression generally available
         and is useful for decompressing packages in XZ or LZMA format.</para>
       </listitem>

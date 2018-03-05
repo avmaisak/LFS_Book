@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Eudev package contains programs for dynamic creation of device
+    <para>The Eudev package contains программы для  dynamic creation of device
     nodes.</para> 
 
     <segmentedlist>

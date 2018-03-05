@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Shadow package contains programs for handling passwords in a secure
+    <para>The Shadow package contains программы для  handling passwords in a secure
     way.</para>
 
     <segmentedlist>

@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Automake package contains programs for generating Makefiles for use
+    <para>The Automake package contains программы для  generating Makefiles for use
     with Autoconf.</para>
 
     <segmentedlist>
