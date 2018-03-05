@@ -10,19 +10,16 @@
 
   <title>Журнал изменений</title>
 
-  <para>This is version 
+  <para>Эта версия  
         <phrase revision="sysv">&version;</phrase>
         <phrase revision="systemd">&versiond;</phrase>
-  of the Linux From Scratch book, dated
-  &releasedate;. If this book is more than six months old, a newer and better
-  version is probably already available. To find out, please check one of the
-  mirrors via <ulink url="&lfs-root;mirrors.html"/>.</para>
+  книги Linux From Scratch, датирована
+  &releasedate;. Если эта книге больше чем пол года, более свежая версия возможно уже доступна. Чтобы найти новую версию, вы можете воспользоваться зеркалами проекта <ulink url="&lfs-root;mirrors.html"/>.</para>
 
-  <para>Below is a list of changes made since the previous release of the
-  book.</para>
+  <para>Ниже представлен перечень изменений, сделанных с предыдущей версии.</para>
 
   <itemizedlist>
-    <title>Changelog Entries:</title>
+    <title>Журнал изменений:</title>
 
 <!-- Changelog template
 
