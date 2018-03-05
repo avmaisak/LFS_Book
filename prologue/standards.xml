@@ -36,24 +36,21 @@
 				 стандартам предусмотренными архитектурами, рассмотренными в предыдущем разделе.</para>
 
         <note><para>
-				Many people do not agree with the requirements of the LSB.
-        The main purpose of defining it is to ensure that proprietary software
-        will be able to be installed and run properly on a compliant system.
-        Since LFS is source based, the user has complete control over what
-        packages are desired and many choose not to install some packages that
-        are specified by the LSB.</para></note>
+				Многие не согласны с требованиями LSB. Основные цели стандартов - быть уверенным в том, 
+				что проприетарное ПО будет правильно установлено и сможет корректно работать на совместимой системе.
+				Поскольку LFS установка программ идёт из исходных кодов, у пользователя имеется полный контроль над тем,
+				какие пакеты ему необходимы и многие предпочитают не устанавливать некоторые пакеты, которые определяются в 
+				стандартах LSB.</para></note>
 
       </listitem>
     </itemizedlist>
 
-    <para>Creating a complete LFS system capable of passing the LSB
-    certifications tests is possible, but not without many additional packages
-    that are beyond the scope of LFS.  These additional packages have
-    installation instructions in BLFS. </para>
+    <para>Создание окончательной системы LFS, способной успешно выполнять сертификационные тесты LSB - возможно 
+		с установкой некоторых дополнительных пакетов, которые выходят за рамки этой книги. Но инструкции по их установке
+		есть в книге BLFS.</para>
 
     <variablelist>
-      <bridgehead renderas="sect3">Packages supplied by LFS needed to
-          satisfy the LSB Requirements</bridgehead>
+      <bridgehead renderas="sect3">Пакеты LFS которые необходимы для следования требованиям LSB</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -97,8 +94,7 @@
     </variablelist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Packages supplied by BLFS needed to
-          satisfy the LSB Requirements</bridgehead>
+			<bridgehead renderas="sect3">Пакеты BLFS которые необходимы для следования требованиям LSB</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -144,8 +140,7 @@
     </variablelist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Packages not supplied by LFS or BLFS
-      needed to satisfy the LSB Requirements</bridgehead>
+			<bridgehead renderas="sect3">Пакеты которые отсутствуют в LFS и BLFS, которые необходимы для следования требованиям LSB</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
