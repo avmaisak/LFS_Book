@@ -41,17 +41,15 @@
   с собранной на предыдущем шаге библиотекой C. Оставшиеся пакеты <xref
   linkend="chapter-temporary-tools"/> будут использовать состояние 
   временного набора после второго прохода. Когда все будет готово, процесс установки 
-  новой LFS системы больше не будет зависеть от 
-  
-  When this is done, the LFS installation process will no
-  longer depend on the host distribution, with the exception of the running
-  kernel. </para>
+  новой LFS системы больше не будет зависеть от хоста, за исключением запущенного ядра
+  Linux.</para>
 
-  <para>This effort to isolate the new system from the host distribution may
-  seem excessive. A full technical explanation as to why this is done is provided in
-  <xref linkend="ch-tools-toolchaintechnotes"/>.</para>
+  <para>Изоляция процесса сборки новой системы от хост системы может выглядеть чрезмерной. Полное техническое 
+  обоснование, почему сделано так, представлено в главе.<xref linkend="ch-tools-toolchaintechnotes"/>.</para>
 
-  <para>In <xref linkend="chapter-building-system"/>, the full LFS system is
+  <para>В главе <xref linkend="chapter-building-system"/>, 
+  вся LFS система будет собрана. Командой <command>chroot</command> (операция изменения корневого каталога в Unix-подобных операционных системах)
+  the full LFS system is
   built. The <command>chroot</command> (change root) program is used to enter
   a virtual environment and start a new shell whose root directory will be
   set to the LFS partition. This is very similar to rebooting and instructing
