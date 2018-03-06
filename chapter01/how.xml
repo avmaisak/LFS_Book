@@ -16,36 +16,34 @@
   будут использованы для сборки новой системы. Выберите режим или опцию <quote>development (режим разработчика)</quote> 
   в процессе установки или конфигурирования хост системы чтобы использовать необходимые компоненты.</para>
 
-  <para>As an alternative to installing a separate distribution onto your
-  machine, you may wish to use a LiveCD from a commercial distribution. </para>
+  <para>Иным вариантом, может быть установка отдельного дистрибутива на вашу машину,
+  вы можете использовать LiveCD коммерческого дистрибутива.</para>
 
-  <para><xref linkend="chapter-partitioning"/> of this book describes how
-  to create a new Linux native partition and file system. This is the place
-  where the new LFS system will be compiled and installed. <xref
-  linkend="chapter-getting-materials"/> explains which packages and
-  patches need to be downloaded to build an LFS system and how to store
-  them on the new file system. <xref linkend="chapter-final-preps"/>
-  discusses the setup of an appropriate working environment. Please read
-  <xref linkend="chapter-final-preps"/> carefully as it explains several
-  important issues you need be aware of before beginning to
-  work your way through <xref linkend="chapter-temporary-tools"/> and beyond.</para>
+  <para>В разделе <xref linkend="chapter-partitioning"/> описывается процесс создания новых разделов Linux. Это
+  место, где будет выполняться компиляция, и куда будет установлена новая система LFS. В разделе <xref
+  linkend="chapter-getting-materials"/> описывается процесс настройки рабочего окружения. В разделе <xref
+  linkend="chapter-getting-materials"/> идут разъяснения о том, какие пакеты и патчи необходимо загрузить чтобы 
+  выполнить сборку LFS, а также каким образом их хранить на файловой системе. В разделе <xref linkend="chapter-final-preps"/> обсуждается процесс настройки рабочего окружения.
+  <xref linkend="chapter-final-preps"/> внимательно изучите раздел, так как в нем обсуждаются важные моменты,
+  которые вам нужно знать до того, как вы приступите к процессу сборки.<xref linkend="chapter-temporary-tools"/>.</para>
 
-  <para><xref linkend="chapter-temporary-tools"/> explains the
-  installation of a number of packages that will form the basic
-  development suite (or toolchain) which is used to build the actual
-  system in <xref linkend="chapter-building-system"/>. Some of these
-  packages are needed to resolve circular dependencies&mdash;for example,
-  to compile a compiler, you need a compiler.</para>
+  <para>Раздел <xref linkend="chapter-temporary-tools"/> содержит информацию о пакетах,
+  которые будут использоваться для создания базовой среды для разработки (набор инструментов, тулчейн, toolchain), которые в свою очередь, будут использованы для последующей сборки окончательной системы LFS (<xref linkend="chapter-building-system"/>). Некоторые из пакетов требуют разрешения цикличной зависимости, например,
+  чтобы выполнить сборку компилятора, вам нужен компилятор.</para>
 
-  <para><xref linkend="chapter-temporary-tools"/> also shows you how to
-  build a first pass of the toolchain, including Binutils and GCC (first pass
-  basically means these two core packages will be reinstalled).
-  The next step is to build Glibc, the C library. Glibc will be compiled by
-  the toolchain programs built in the first pass. Then, a second pass of the
-  toolchain will be built. This time, the toolchain will be dynamically linked
-  against the newly built Glibc. The remaining <xref
-  linkend="chapter-temporary-tools"/> packages are built using this second
-  pass toolchain. When this is done, the LFS installation process will no
+  <para>Раздел <xref linkend="chapter-temporary-tools"/> также объясняет какие образом
+  выполнить первый проход сборки набора инструментов, используя пакеты Binutils и GCC
+  (в первом проходе , обычно два этих пакета будут переустановлены). Следующим шагом
+  будет инструкция по сборке пакета Glibc - библиотеки C. Библиотека C будет 
+  скомпилирована теми средствами, которые были установлены на этапе первого 
+  прохода сборки временного набора инструментов. Далее, следует второй проход сборки 
+  временного набора инструментов. На этот раз набор инструментов будет динамически слинкован 
+  с собранной на предыдущем шаге библиотекой C. Оставшиеся пакеты <xref
+  linkend="chapter-temporary-tools"/> будут использовать состояние 
+  временного набора после второго прохода. Когда все будет готово, процесс установки 
+  новой LFS системы больше не будет зависеть от 
+  
+  When this is done, the LFS installation process will no
   longer depend on the host distribution, with the exception of the running
   kernel. </para>
 
