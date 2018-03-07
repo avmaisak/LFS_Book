@@ -11,19 +11,20 @@
   <title>Ресурсы</title>
 
   <sect2 id="ch-intro-faq">
-    <title>FAQ</title>
+    <title>Часто задаваемые вопросы</title>
 
-    <para>If during the building of the LFS system you encounter any
-    errors, have any questions, or think there is a typo in the book,
-    please start by consulting the Frequently Asked Questions (FAQ)
-    that is located at <ulink url="&faq-root;"/>.</para>
+    <para>Если в процессе сборки LFS вы столкнулись с ошибками, у вас появились вопросы, или считаете, что в 
+    книге есть опечатка, пожалуйста, начните с раздела часто задаваемых вопросов (FAQ), который 
+    находится по адресу <ulink url="&faq-root;"/>.</para>
 
   </sect2>
 
   <sect2 id="ch-intro-maillists" xreflabel="Chapter&nbsp;1 - Mailing Lists">
-    <title>Mailing Lists</title>
+    <title>Списки рассылки</title>
 
-    <para>The <uri>linuxfromscratch.org</uri> server hosts a number of mailing
+    <para>На сервере <uri>linuxfromscratch.org</uri> есть несколько спсков рассылки, которые используются для 
+    разработки проекта LFS.
+    server hosts a number of mailing
     lists used for the development of the LFS project. These lists include the
     main development and support lists, among others. If the FAQ does not solve
     the problem you are having, the next step would be to search the mailing
