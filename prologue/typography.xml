@@ -23,14 +23,14 @@
 
    </para>
 
-  <para>В некоторых случаях логическая строка разделяется до двух или более линий
+  <para>В некоторых случаях строка разделяется до двух или более линий
    с использованием символа обратного слэша в конце строки.</para>
 
 <screen role="nodump"><userinput>CC="gcc -B/usr/bin/" ../binutils-2.18/configure \
   --prefix=/tools --disable-nls --disable-werror</userinput></screen>
 
   <para>Обратите внимание, что после обратного слэша должнен быть перевод строки.
-  Другие символы, пробелы- приведут к некорректному результату.
+  Другие символы после - приведут к некорректному результату.
   </para>
 
 <screen><computeroutput>install-info: unknown option '--dir-file=/mnt/lfs/usr/info/dir'</computeroutput></screen>
