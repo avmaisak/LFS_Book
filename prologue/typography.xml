@@ -35,19 +35,18 @@
 
 <screen><computeroutput>install-info: unknown option '--dir-file=/mnt/lfs/usr/info/dir'</computeroutput></screen>
 
-  <para>This form of text (fixed-width text) shows screen output, usually as
-  the result of commands issued.  This format is also used to show filenames,
-  such as <filename>/etc/ld.so.conf</filename>.</para>
+  <para>Вышеуказанная форма с текстом фиксированной ширины показывает вывод результатов на экран, 
+  а также  показывает имена файлов, таких как <filename>/etc/ld.so.conf</filename>.</para>
 
-  <para><emphasis>Emphasis</emphasis></para>
+  <para><emphasis>акцент</emphasis></para>
 
-  <para>This form of text is used for several purposes in the book. Its main
-  purpose is to emphasize important points or items.</para>
+  <para>Эта форма текста используется в нескольких целях в книге. Его основная
+  цель состоит в том, чтобы подчеркнуть важную информацию, на которую следует обратить особое внимание.</para>
 
   <para><ulink url="&lfs-root;"/></para>
 
-  <para>This format is used for hyperlinks both within the LFS community and to
-  external pages. It includes HOWTOs, download locations, and websites.</para>
+  <para>Этот формат используется для ссылок на страницы проекта LFS, а также на
+   внешние источники. Может включать справочную информацию, ссылки на загрузки и различные сайты.</para>
 
 <screen role="nodump"><userinput>cat &gt; $LFS/etc/group &lt;&lt; "EOF"
 <literal>root:x:0:
@@ -55,37 +54,33 @@ bin:x:1:
 ......</literal>
 EOF</userinput></screen>
 
-  <para>This format is used when creating configuration files. The first command
-  tells the system to create the file <filename>$LFS/etc/group</filename> from
-  whatever is typed on the following lines until the sequence End Of File (EOF)
-  is encountered. Therefore, this entire section is generally typed as
-  seen.</para>
+  <para>Этот формат используется при создании файлов конфигурации. Первая команда 
+  создает файл<filename>$LFS/etc/group</filename> из всего содержимого текста, пока не встретит
+  флаг конца файла (EOF). Обычно информация в таком блоке вводится так, как показано.</para>
 
-  <para><replaceable>&lt;REPLACED TEXT&gt;</replaceable></para>
+  <para><replaceable>&lt;ЗАМЕНА ТЕКСТА&gt;</replaceable></para>
 
-  <para>This format is used to encapsulate text that is not to be typed
-  as seen or for copy-and-paste operations.</para>
+  <para>
+  Этот формат используется для обозначения текста, который не должен вводиться так как отображен.</para>
 
-  <para><replaceable>[OPTIONAL TEXT]</replaceable></para>
+  <para><replaceable>[ДОПОЛНИТЕЛЬНЫЙ ТЕКСТ]</replaceable></para>
 
-  <para>This format is used to encapsulate text that is optional.</para>
+  <para> Этот формат используется для обозначения текста, который можно внести опционально.</para>
 
   <para><filename>passwd(5)</filename></para>
 
-  <para>This format is used to refer to a specific manual (man) page. The number inside parentheses
-  indicates a specific section inside the manuals. For example,
-  <command>passwd</command> has two man pages. Per LFS installation instructions,
-  those two man pages will be located at
-  <filename>/usr/share/man/man1/passwd.1</filename> and
-  <filename>/usr/share/man/man5/passwd.5</filename>. When the book uses <filename>passwd(5)</filename> it is
-  specifically referring to <filename>/usr/share/man/man5/passwd.5</filename>.
-  <command>man passwd</command> will print the first man page it finds that
-  matches <quote>passwd</quote>, which will be
-  <filename>/usr/share/man/man1/passwd.1</filename>. For this example, you will
-  need to run <command>man 5 passwd</command> in order to read the specific page
-  being referred to. It should be noted that most man pages do not have duplicate
-  page names in different sections. Therefore, <command>man <replaceable>&lt;program
-  name&gt;</replaceable></command> is generally sufficient.</para>
+  <para>Этот формат используется для ссылки на страницы руководств to refer to a specific manual (man) page.
+  Число, которое указанно внутри скобок, указывает на конкретный раздел руковдоства. 
+  Например,<command>passwd</command> имеет две страницы. В книге LFS Per,
+  эти две страницы будут расположены по адресу
+  <filename>/usr/share/man/man1/passwd.1</filename> и
+  <filename>/usr/share/man/man5/passwd.5</filename>. Когда в книгу указанно <filename>passwd(5)</filename> то 
+  необходимо ссылаться на файл <filename>/usr/share/man/man5/passwd.5</filename>.
+  Команда <command>man passwd</command> отобразит первую страницу руководства по фразе <quote>passwd</quote>, 
+  которая будет ссылаться по пути <filename>/usr/share/man/man1/passwd.1</filename>. 
+  Например вам необходимо запустить команду <command>man 5 passwd</command> для прочтения указанной страницы.
+  Следует отметить, что большинство страниц руководства не имеют дубликатов названий страниц в разных разделах.
+  А значит, указание команды <command>man <replaceable>&lt;название программы&gt;</replaceable></command> вполне достаточно.</para>
 
 </sect1>
 
