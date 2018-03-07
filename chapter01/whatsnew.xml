@@ -11,8 +11,8 @@
 
   <title>Что нового в релизе</title>
 
-  <para>Below is a list of package updates made since the previous
-  release of the book.</para>
+  <para>Ниже приведен список обновлений пакетов, сделанных с предыдущего
+   выпуска книги.</para>
 
   <!--
     Every package in the book is listed in the "Upgraded to:" section.
@@ -21,7 +21,7 @@
   -->
 
   <itemizedlist>
-    <title>Upgraded to:</title>
+    <title>Обновлено:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
     <!--<listitem>
     <para>Нет</para>
@@ -254,7 +254,7 @@
   </itemizedlist>-->
 
   <itemizedlist>
-    <title>Added:</title>
+    <title>Добавлено:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
@@ -279,7 +279,7 @@
   </itemizedlist>
 
   <itemizedlist>
-    <title>Removed:</title>
+    <title>Удалено:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
