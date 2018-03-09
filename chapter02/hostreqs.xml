@@ -10,33 +10,33 @@
 
   <title>Требования к хост-системе</title>
 
-    <para>Your host system should have the following software with the
-    minimum versions indicated. This should not be an issue for most
-    modern Linux distributions. Also note that many distributions will
-    place software headers into separate packages, often in the form of
-    <quote>&lt;package-name&gt;-devel</quote> or
-    <quote>&lt;package-name&gt;-dev</quote>. Be sure to install those if
-    your distribution provides them.</para>
+    <para>Ваша хост система должна иметь следующее программное обеспечение с 
+    минимальными версиями, которые будут указаны. Это не должно вызвать проблем 
+    у современных дистрибутивов. Также необходимо знать, что некоторые дистрибутивы 
+    хранят заголовочные файлы в отдельных пакетах, часто в таком формате:
+    <quote>&lt;package-name&gt;-devel</quote> или
+    <quote>&lt;package-name&gt;-dev</quote>. 
+    Убедитесь что они были установлены, в случае если ваш дистрибутив их предоставляет.</para>
 
-   <para>Earlier versions of the listed software packages may work, but have
-   not been tested.</para>
+   <para>
+   Более ранние версии списка программного обеспечения могут работать, но этот момент
+   не проверялся (тестирование не производилось).</para>
 
   <itemizedlist spacing="compact">
 
     <listitem>
       <para><emphasis role="strong">Bash-3.2</emphasis> (/bin/sh
-      should be a symbolic or hard link to bash)</para>
+      должен быть символической или жесткой ссылкой на bash)</para>
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Binutils-2.17</emphasis> (Versions
-      greater than &binutils-version; are not recommended as they have
-      not been tested)</para>
+      <para><emphasis role="strong">Binutils-2.17</emphasis> (Версия старше чем 
+       &binutils-version; не рекомендуется, потому что тестирование таковой не проводилось.</para>
     </listitem>
 
     <listitem>
       <para><emphasis role="strong">Bison-2.3</emphasis> (/usr/bin/yacc
-      should be a link to bison or small script that executes bison)</para>
+      должен быть ссылкой на bison или небольшим скриптом который выполняет bison)</para>
     </listitem>
 
     <listitem>
@@ -57,13 +57,13 @@
 
     <listitem>
       <para><emphasis role="strong">Gawk-4.0.1</emphasis> (/usr/bin/awk
-      should be a link to gawk)</para>
+      должен быть ссылкой на gawk)</para>
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">GCC-4.7</emphasis> including the C++
-      compiler, <command>g++</command> (Versions greater than &gcc-version; are
-      not recommended as they have not been tested)</para>
+      <para><emphasis role="strong">GCC-4.7</emphasis> включая компилятор C++
+      , <command>g++</command> (Версия старше чем  &gcc-version; не рекомендуется, 
+      потому что тестирование таковой не проводилось.)</para>
 <!--
       <note><para>On some distributions, there have been reports that some
       libraries used by gcc can be in an inconsistent state and that this
@@ -77,9 +77,9 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Glibc-2.11</emphasis> (Versions
-      greater than &glibc-version; are not recommended as they have
-      not been tested)</para>
+      <para><emphasis role="strong">Glibc-2.11</emphasis> (Версия старше чем
+       &glibc-version; не рекомендуется, 
+      потому что тестирование таковой не проводилось.)</para>
     </listitem>
 
     <listitem>
@@ -91,12 +91,10 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Linux Kernel-&min-kernel;</emphasis></para>
+      <para><emphasis role="strong">Ядро Linux &min-kernel;</emphasis></para>
 
-      <para>The reason for the kernel version requirement is that we specify
-      that version when building <application>glibc</application> in Chapter&nbsp;6
-      at the recommendation of the developers.  It is also required by
-      udev.</para>
+      <para>Причина минимальной версии ядра - указание такой версии при сборке пакета <application>glibc</application> в главе&nbsp;6, которая является рекомендацией разработчиков.
+      Она также необходима для пакета udev.</para>
 
       <para>If the host kernel is earlier than &min-kernel; you will need to replace
       the kernel with a more up to date version. There are two ways
