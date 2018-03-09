@@ -12,10 +12,8 @@
 
   <para>
   В этой главе, инструменты хост-системы необходимые для сборки LFS,
-  будут проверены и при необходимости установлены.
-  In this chapter, the host tools needed for building LFS
-  are checked and, if necessary, installed.  Then a partition which will 
-  host the LFS system is prepared. We will create the partition 
-  itself, create a file system on it, and mount it.</para>
+  будут проверены и при необходимости установлены. Будет выполнена подготовка 
+  дискового раздела где будет размещаться система LFS, создание файловой системы и последующее 
+  монтирование.</para>
 
 </sect1>
