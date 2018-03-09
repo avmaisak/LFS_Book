@@ -10,10 +10,10 @@
 
   <title>Создание нового раздела</title>
 
-  <para>Like most other operating systems, LFS is usually installed on a
-  dedicated partition. The recommended approach to building an LFS system
-  is to use an available empty partition or, if you have enough unpartitioned
-  space, to create one.</para>
+  <para>Как большинство других операционных систем, LFS обычно устанавливается на
+   выделенный раздел. Рекомендуемый подход к созданию системы LFS
+   заключается в использовании доступного пустого раздела или, если у вас достаточно 
+   неразмеченного свободного пространства, вы можете использовать его.</para>
 
 <!--
 
@@ -30,24 +30,20 @@
 
 -->
 
-  <para>A minimal system requires a partition of around 6 gigabytes (GB).
-  This is enough to store all the source tarballs and compile the packages.
-  However, if the LFS system is intended to be the primary Linux system,
-  additional software will probably be installed which will require additional
-  space. A 20 GB partition is a reasonable size to provide for growth.  The LFS
-  system itself will not take up this much room.  A large portion of this
-  requirement is to provide sufficient free temporary storage as well as
-  for adding additional capabilities after LFS is complete. Additionally, compiling
-  packages can require a lot of disk space which will be reclaimed after the
-  package is installed.</para>
+  <para>Минимальная система требует раздела емкостью 6 гигабайт. Этого размера
+  будет достаточно для хранения всех архивов с исходными кодами всех пакетов 
+  и их компиляции. Однако, если в дальнейшем вы захотите чтобы система LFS была 
+  первичной Linux системой, и предполагается, что будут установлены другие пакеты,
+  которое потребует дополнительного дискового пространства, создание раздела ёмкостью 
+  в 20 гигабайт будет более разумным. Сама система LFS не займет столько места. Большая 
+  часть пространства будет использована для временного хранения и для её последующего 
+  расширения. Кроме того, при компиляции пакетов потребуется много дополнительного дискового 
+  пространства, которое будет восполнено после установки пакета.</para>
 
-  <para>Because there is not always enough Random Access Memory (RAM) available
-  for compilation processes, it is a good idea to use a small disk partition as
-  <systemitem class="filesystem">swap</systemitem> space. This is used by the
-  kernel to store seldom-used data and leave more memory available for active
-  processes. The <systemitem class="filesystem">swap</systemitem> partition for
-  an LFS system can be the same as the one used by the host system, in which
-  case it is not necessary to create another one.</para>
+  <para>Так как не доступной оперативной памяти (RAM) может быть не достаточно, 
+  рекомендуется использовать небольшой дисковый раздел <systemitem class="filesystem">swap</systemitem>. Он будет использоваться ядром для хранения 
+  редко используемых данных и будет освобождать больше оперативной памяти для активных процессов. Раздел <systemitem class="filesystem">swap</systemitem> для системы LFS можно использовать 
+  тот же, что используется хост-системой, и создавать новый - необязательно.</para>
 
   <para>Start a disk partitioning program such as <command>cfdisk</command>
   or <command>fdisk</command> with a command line option naming the hard
