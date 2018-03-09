@@ -93,18 +93,11 @@
     <listitem>
       <para><emphasis role="strong">Ядро Linux &min-kernel;</emphasis></para>
 
-      <para>Причина минимальной версии ядра - указание такой версии при сборке пакета <application>glibc</application> в главе&nbsp;6, которая является рекомендацией разработчиков.
-      Она также необходима для пакета udev.</para>
+      <para>Причина минимальной версии ядра - указание такой версии при сборке пакета <application>glibc</application> в главе&nbsp;6, которая является рекомендацией разработчиков. Она также необходима для пакета udev.</para>
 
-      <para>If the host kernel is earlier than &min-kernel; you will need to replace
-      the kernel with a more up to date version. There are two ways
-      you can go about this. First, see if your Linux vendor provides a &min-kernel;
-      or later kernel package. If so, you may wish to install it. If your
-      vendor doesn't offer an acceptable kernel package, or you would prefer not to
-      install it, you can compile a kernel yourself. Instructions for
-      compiling the kernel and configuring the boot loader (assuming the host
-      uses GRUB) are located in <xref linkend="chapter-bootable"/>.</para>
-
+      <para>Если версия ядра хост системы более ранняя, чем &min-kernel; вам придется заменить его на более свежую. Существует как минимум два способа как это cделать. Сперва посмотрите, предоставляет ли дистрибутив хост системы ядро версии &min-kernel; или более позднюю. Если этот так - нужно его обновить. В ином случае, вы можете выполнить сборку 
+      ядра самостоятельно. Инструкции для компиляции ядра и настройка загрузчика представлены в 
+      главе <xref linkend="chapter-bootable"/> (При условии что в хост системе используется загрузчик GRUB).</para>
     </listitem>
 
     <listitem>
@@ -142,12 +135,8 @@
   </itemizedlist>
 
   <important>
-    <para>Note that the symlinks mentioned above are required to build an LFS
-    system using the instructions contained within this book. Symlinks that
-    point to other software (such as dash, mawk, etc.) may work, but are not
-    tested or supported by the LFS development team, and may require either
-    deviation from the instructions or additional patches to some
-    packages.</para>
+    <para>Обратите внимание, что упомянутые выше символические ссылки необходимы для создания системы LFS используя инструкции, содержащиеся в этой книге. Символические ссылки которые 
+    указывают на программы (такие как dash, mawk, и т.д.) могут работать, но они не тестировались и не поддерживаются командой разработчиков LFS и возможно потребуются отклонения от инструкций или применение дополнительных патчей  для некоторых пакетов.</para>
   </important>
 
   <!-- Use an empty sect2 element to prevent a pdf warning.  -->
@@ -157,8 +146,8 @@
   </bridgehead>
   <!--<title> </title>-->
 
-  <para >To see whether your host system has all the appropriate versions, and
-  the ability to compile programs, run the following:</para>
+  <para >Чтобы узнать, имеет ли ваша хост-система все соответствующие версии и
+   возможность компиляции программ, выполните следующие действия:</para>
 
 <!-- ANY additional lines in the script cause a pdf rendering problem-->
 <screen role="nodump"><userinput>cat &gt; version-check.sh &lt;&lt; "EOF"
