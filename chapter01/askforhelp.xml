@@ -10,28 +10,27 @@
 
   <title>Помощь</title>
 
-  <para>If an issue or a question is encountered while working through
-  this book, please check the FAQ page at <ulink url="&faq-root;#generalfaq"/>.
-  Questions are often already answered there. If your question is not
-  answered on this page, try to find the source of the problem. The
-  following hint will give you some guidance for troubleshooting:
-  <ulink url="&hints-root;errors.txt"/>.</para>
+  <para>Если у Вас возникла проблема или вопрос, в процессе чтения книги,
+  посетите раздел часто задаваемых вопросов, который расположен по адресу 
+  <ulink url="&faq-root;#generalfaq"/>. Как правило здесь вы сможете найти 
+  ответы на большинство вопросов, однако, если вы не нашли ответа, по ссылке
+  <ulink url="&hints-root;errors.txt"/> вы найдете некоторые рекомендации для
+  устранения проблем.</para>
 
-  <para>If you cannot find your problem listed in the FAQ, search the mailing
-  lists at <ulink url="&lfs-root;search.html"/>.</para>
+  <para>Если вам не удалось найти решение проблемы в рпзделе часто задаваемых 
+  вопросов, поищите информацию по спискам рассылок по адресу 
+  <ulink url="&lfs-root;search.html"/>.</para>
 
-  <para>We also have a wonderful LFS community that is willing to offer
-  assistance through the mailing lists and IRC (see the <xref
-  linkend="ch-intro-resources"/> section of this book). However,
-  we get several support questions every day and many of them can be easily
-  answered by going to the FAQ and by searching the mailing lists first.
-  So, for us to offer the best assistance possible, you need to do some
-  research on your own first. That allows us to focus on the more unusual
-  support needs. If your searches do not produce a solution, please include
-  all relevant information (mentioned below) in your request for help.</para>
+  <para>У нас также есть замечательное сообщество LFS, которое готово предложить
+   помощь через списки рассылки и IRC (ознакомьтесь с разделом <xref
+  linkend="ch-intro-resources"/>). Однако, мы получаем много вопросов каждый день, и на многие 
+  из них легко можно найти ответ в разделе часто задаваемых вопросов, или в списках рассылки. 
+  Для того, чтобы мы смогли помочь вам лучше,  необходимо для начала исследовать проблему самостоятельно.
+  Это позволит сосредоточится на более необычных проблемах. Если поиск ответа не дает результатов, 
+  вым необходимо включить всю необходимую информацию , которая указана ниже, в ваш запрос о помощи.</para>
 
   <sect2>
-    <title>Things to Mention</title>
+    <title>Что нужно сделать</title>
 
     <para>Apart from a brief explanation of the problem being experienced,
     the essential things to include in any request for help are:</para>
