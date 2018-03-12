@@ -143,7 +143,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
       <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>c2ph, corelist, cpan, enc2xs, encguess, h2ph, h2xs, instmodsh,

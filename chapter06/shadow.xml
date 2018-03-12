@@ -210,7 +210,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>chage, chfn, chgpasswd, chpasswd, chsh, expiry, faillog, gpasswd,

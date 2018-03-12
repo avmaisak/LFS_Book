@@ -75,7 +75,7 @@
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>autoconf, autoheader, autom4te, autoreconf, autoscan, autoupdate,

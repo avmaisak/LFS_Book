@@ -103,7 +103,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
       <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>bunzip2 (link to bzip2), bzcat (link to bzip2), bzcmp (link to

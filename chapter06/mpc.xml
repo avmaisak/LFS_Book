@@ -70,7 +70,7 @@ make install-html</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>libmpc.so</seg>

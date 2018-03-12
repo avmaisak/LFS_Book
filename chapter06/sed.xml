@@ -82,7 +82,7 @@ install -m644 doc/sed.html /usr/share/doc/sed-&sed-version;</userinput></screen>
 
     <segmentedlist>
       <segtitle>Installed program</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>sed</seg>

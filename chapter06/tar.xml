@@ -87,7 +87,7 @@ make -C doc install-html docdir=/usr/share/doc/tar-&tar-version;</userinput></sc
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
         <seg>tar</seg>
