@@ -611,7 +611,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
         <term><command>systemd-run</command></term>
         <listitem>
           <para>Used to create and start a transient .service or a .scope unit
-          and run the specified command in it</para>
+          и выполните команду the specified command in it</para>
           <indexterm zone="ch-system-systemd systemd-run">
             <primary sortas="b-systemd-run">systemd-run</primary>
           </indexterm>

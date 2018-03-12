@@ -30,7 +30,7 @@
     <para>System V is the classic boot process that has been used in Unix and
     Unix-like systems such as Linux since about 1983.  It consists of a small
     program, <command>init</command>, that sets up basic programs such as
-    <command>login</command> (via getty) and runs a script.  This script,
+    <command>login</command> (via getty) и выполните командуs a script.  This script,
     usually named <command>rc</command>,  controls the execution of a set of
     additional scripts that perform the tasks required to initialize the
     system.</para>

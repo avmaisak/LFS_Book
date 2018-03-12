@@ -107,7 +107,7 @@
     be available in the currently running system, and must be built as a
     module.  Building it into the kernel will prevent booting.  For complete
     coverage, other BLFS packages must be installed.  If desired, this test can
-    be run after rebooting into the completed LFS system and running:</para>
+    be run after rebooting into the completed LFS system и выполните командуning:</para>
 
     <screen role="nodump"><userinput>bash tests/run.sh --srcdir=$PWD --builddir=$PWD</userinput></screen> 
     </warning>
@@ -563,7 +563,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
         <listitem>
           <para>Shows which users last logged in (and out), searching back 
           through the <filename>/var/log/wtmp</filename> file; it also shows 
-          system boots, shutdowns, and run-level changes</para>
+          system boots, shutdowns, и выполните команду-level changes</para>
           <indexterm zone="ch-system-util-linux last">
             <primary sortas="b-last">last</primary>
           </indexterm>

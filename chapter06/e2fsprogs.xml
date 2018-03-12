@@ -120,7 +120,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To set up and run the test suite we need to first link some 
+    <para>To set up и выполните команду the test suite we need to first link some 
     libraries from /tools/lib to a location where the test programs look.
     To run the tests, issue:</para>
 

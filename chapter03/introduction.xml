@@ -10,55 +10,31 @@
 
   <title>Введение</title>
 
-  <para>This chapter includes a list of packages that need to be downloaded in
-  order to build a basic Linux system. The listed version numbers correspond to
-  versions of the software that are known to work, and this book is based on
-  their use. We highly recommend against using newer versions because the build
-  commands for one version may not work with a newer version. The newest package
-  versions may also have problems that require work-arounds. These work-arounds
-  will be developed and stabilized in the development version of the
-  book.</para>
+  <para>В этой главе будут инструкции о том какие пакеты и патчи необходимо загрузить для создания системы LFS. 
+  Указанные версии пакетов проверены и работают в текущей версии этой книги. Мы не рекомендуем использовать новые версии пакетов, потом что сборка пакета одной версии может не работать на более новой версии. Также могут возникнуть проблемы, для решения которых потребуются обходные пути. Такие проблемы решаются в нестабильных релизах книги.</para>
 
-  <para>Download locations may not always be accessible. If a download
-  location has changed since this book was published, Google (<ulink
-  url="http://www.google.com/"/>) provides a useful search engine for
-  most packages. If this search is unsuccessful, try one of the
-  alternative means of downloading discussed at <ulink
+  <para>Источники загрузки пакетов могут быть недоступны. Если источник изменился со времени публикации этой версии книги, 
+  Google (<ulink url="http://www.google.com/"/>) является удобным инструментом для поиска пакетов. Если этот поиск не увенчался успехом, попробуйте один из альтернативных способов загрузки, обсуждаемых в <ulink
   url="&lfs-root;lfs/packages.html#packages"/>. </para>
 
-  <para>Downloaded packages and patches will need to be stored somewhere
-  that is conveniently available throughout the entire build. A working
-  directory is also required to unpack the sources and build them.
-  <filename class="directory">$LFS/sources</filename> can be used both
-  as the place to store the tarballs and patches and as a working
-  directory. By using this directory, the required elements will be
-  located on the LFS partition and will be available during all stages
-  of the building process.</para>
+  <para>Загруженные пакеты и патчи необходимо где-нибудь сохранить. Необходим рабочий каталог, в котором можно будет распаковывать пакеты и выполнять их настройку и компиляцию. Каталог <filename class="directory">$LFS/sources может быть использован как место для хранения, а также как место для настройки и компиляции. Используя этот каталог, необходимые элементы будут расположены и доступны на всех этапах создания системы LFS.</para>
 
-  <para>To create this directory, execute the following command, as user
-  <systemitem class="username">root</systemitem>, before starting the download
-  session:</para>
+  <para>Чтобы создать такой каталог, выполните следующую команду как пользователь <systemitem class="username">root</systemitem>, до начала процесса загрузки пакетов и патчей:</para>
 
 <screen role="nodump"><userinput>mkdir -v $LFS/sources</userinput></screen>
 
-  <para>Make this directory writable and sticky. <quote>Sticky</quote>
-  means that even if multiple users have write permission on a
-  directory, only the owner of a file can delete the file within a
-  sticky directory. The following command will enable the write and
-  sticky modes:</para>
+  <para>Сделайте этот каталог доступным для записи и липким. <quote>Липким</quote>
+  означает, что даже если у некоторых пользователей есть разрешение на запись в этот каталог, то только владелец сможет удалить содержимое каталога. следующая команда позволит это сделать:</para>
 
 <screen role="nodump"><userinput>chmod -v a+wt $LFS/sources</userinput></screen>
 
-  <para>An easy way to download all of the packages and patches is by using
-  <ulink url="wget-list">wget-list</ulink> as an input to
-  <command>wget</command>. For example:</para>
+  <para>Самым простым способом загрузки всех требуемых пакетов и патчей  - воспользоваться файлом <ulink url="wget-list">wget-list</ulink>. Далее его можно передать как параметр программе <command>wget</command>. 
+  Например:</para>
 
 <screen role="nodump"><userinput>wget --input-file=wget-list --continue --directory-prefix=$LFS/sources</userinput></screen>
 
-  <para>Additionally, starting with LFS-7.0, there is a separate file,
-  <ulink url="md5sums">md5sums</ulink>, which can be used to verify that all
-  the correct packages are available before proceeding.  Place that file in
-  <filename class="directory">$LFS/sources</filename> and run:</para>
+  <para>Также, начиная с версии книги 7.0, есть два отдельный файл - <ulink url="md5sums">md5sums</ulink>, 
+  который может понадобится для проверки пакетов. Поместите этот файл в каталог <filename class="directory">$LFS/sources</filename> и выполните команду:</para>
 
 <screen role="nodump"><userinput>pushd $LFS/sources
 md5sum -c md5sums

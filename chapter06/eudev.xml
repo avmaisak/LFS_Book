@@ -169,7 +169,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
         <term><command>udevd</command></term>
         <listitem>
           <para>A daemon that listens for uevents on the netlink socket,
-          creates devices and runs the configured external programs in
+          creates devices и выполните командуs the configured external programs in
           response to these uevents</para>
           <indexterm zone="ch-system-eudev udevd">
             <primary sortas="b-udevd">udevd</primary>

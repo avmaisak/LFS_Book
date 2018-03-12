@@ -38,9 +38,9 @@ parameter (if the source is in English).</para>
   setting a non-zero value for
   <parameter>man.charmap.use.subset</parameter> may significantly
   increase the time needed to process your documents. Or it may
-  not. For example, if you set it and run it with xsltproc, it seems
+  not. For example, if you set it и выполните команду it with xsltproc, it seems
   to dramatically increase processing time; on the other hand, if you
-  set it and run it with Saxon, it does not seem to increase
+  set it и выполните команду it with Saxon, it does not seem to increase
   processing time nearly as much.</para>
 
   <para>If processing time is not a important concern and/or you can

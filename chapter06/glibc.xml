@@ -212,7 +212,7 @@ unset GCC_INCDIR</userinput></screen>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Install the configuration file and runtime directory for
+    <para>Install the configuration file и выполните командуtime directory for
     <command>nscd</command>:</para>
 
 <screen><userinput remap="install">cp -v ../nscd/nscd.conf /etc/nscd.conf
