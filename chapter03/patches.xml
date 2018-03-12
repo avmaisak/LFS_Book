@@ -126,11 +126,6 @@
 
   <para>Размер патчей примерно: <returnvalue/></para>
 
-  <para>В дополнение к необходимым патчам, существует множество опциональных, созданных сообществом LFS. Эти патчи исправляют проблемы или добавляют функциональность которая не включена по умолчанию. 
-  In addition to the above required patches, there exist a number of
-  optional patches created by the LFS community. These optional patches
-  solve minor problems or enable functionality that is not enabled by
-  default. Не забудьте ознакомиться с базой патчей, расположенной по адресу
-  <ulink url="&lfs-root;patches/downloads/"/> и воспользуйтесь ими в требованиями к вашей системе.</para>
+  <para>В дополнение к необходимым патчам, существует множество опциональных, созданных сообществом LFS. Эти патчи исправляют проблемы или добавляют функциональность которая не включена по умолчанию. Не забудьте ознакомиться с базой патчей, расположенной по адресу <ulink url="&lfs-root;patches/downloads/"/> и воспользуйтесь ими в соответствии с требованиями к вашей системе.</para>
 
 </sect1>
