@@ -97,7 +97,7 @@ make html</userinput></screen>
       Do not skip it under any circumstances.</para>
     </important>
 
-    <para>Test the results:</para>
+    <para>Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
  

@@ -148,7 +148,7 @@ cd       build</userinput></screen>
       Do not skip it under any circumstances.</para>
     </important>
 
-    <para>Test the results:</para>
+    <para>Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
 
