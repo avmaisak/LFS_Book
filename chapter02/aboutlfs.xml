@@ -10,49 +10,28 @@
 
   <title>Настройка переменной окружения $LFS</title>
 
-  <para>Во многих главах и разделах книги присутствует переменная окружения <envar>LFS</envar>. До выполнения процесса сборки,  необходимо удедиться в том, что переменная определена. Переменная должна хранить путь до каталога, где будет выполняться процесс сборки LFS системы. Например, мы будем использовать каталог - <filename class="directory">/mnt/lfs</filename>. Несомненно, вы можете изменить путь на ваше усмотрение. Если сборка выполняется на отдельном разделе, каталог может быть точкой монитрования раздела. Определите каталог, где будет храниться система LFS и выполните следующую команду:</para>
+  <para>Во многих главах и разделах книги присутствует переменная окружения <envar>LFS</envar>. До выполнения процесса сборки,  необходимо убедиться в том, что переменная определена. Переменная должна хранить путь до каталога, где будет выполняться процесс сборки LFS системы. Например, мы будем использовать каталог - <filename class="directory">/mnt/lfs</filename>. Несомненно, вы можете изменить путь на ваше усмотрение. Если сборка выполняется на отдельном разделе, каталог может быть точкой монитрования раздела. Определите каталог, где будет храниться система LFS и выполните следующую команду:</para>
 
 <screen role="nodump"><userinput>export LFS=<replaceable>/mnt/lfs</replaceable></userinput></screen>
 
-  <para>Having this variable set is beneficial in that commands such as
-  <command>mkdir -v $LFS/tools</command> can be typed literally. The shell
-  will automatically replace <quote>$LFS</quote> with
-  <quote>/mnt/lfs</quote> (or whatever the variable was set to) when it
-  processes the command line.</para>
+  <para>Имя такую переменную, очень удобно выполнять команды, например <command>mkdir -v $LFS/tools</command> 
+  могут быть набраны буквально. Командная оболочка автоматически заменит символы <quote>$LFS</quote> в <quote>/mnt/lfs</quote> (или иным значением, которые вы присвоили этой переменной) во время обработки команды.</para>
 
   <caution>
-  <para>Do not forget to check that <envar>LFS</envar> is set whenever
-  you leave and reenter the current working environment (such as when doing a
-  <command>su</command> to <systemitem class="username">root</systemitem> or
-  another user). Check that the <envar>LFS</envar> variable is set up
-  properly with:</para>
+  <para>Не забудьте проверить что переменная <envar>LFS</envar> устанавливается каждый раз, когда выходите и заново заходите в рабочую оболочку (например, при выполнении команды <command>su</command> в <systemitem class="username">root</systemitem> или другого пользователя). Проверьте что переменная установлена правильно. Введите команду чтобы в этом убедиться:</para>
 
 <screen role="nodump"><userinput>echo $LFS</userinput></screen>
 
-  <para>Make sure the output shows the path to your LFS system's build
-  location, which is <filename class="directory">/mnt/lfs</filename> if the
-  provided example was followed. If the output is incorrect, use the command
-  given earlier on this  page to set <envar>$LFS</envar> to the correct
-  directory name.</para>
+  <para>Убедитесь что вывод отображает путь к тому каталогу, где будет выполнена сборка системы LFS (<filename class="directory">/mnt/lfs</filename>). Если вывод неправильный, используйте команду которая обсуждалась выше, для 
+  установки переменной LFS требуемого значения пути к системе LFS.</para>
   </caution>
 
-  <note><para>One way to ensure that the <envar>LFS</envar> variable is always
-  set is to edit the <filename>.bash_profile</filename> file in both your
-  personal home directory and in  <filename>/root/.bash_profile</filename> and
-  enter the export command above.  In addition, the shell specified in the
-  <filename>/etc/passwd</filename> file for all users that need the
-  <envar>LFS</envar> variable needs to be bash to ensure that the
-  <filename>/root/.bash_profile</filename> file is incorporated as a part of
-  the login process.</para>
+  <note><para>
+  Ещё один способ удостовериться что значение переменной корректное - указать ее значение в файле <filename>.bash_profile</filename> в домашнем каталоге и в каталоге <filename>/root/.bash_profile</filename>. Кроме того, оболочка, которая указанна в файле <filename>/etc/passwd</filename> для всех пользователей, которым необходимо наличие переменной <envar>LFS</envar> нужна bash для гарантии того, что файл <filename>/root/.bash_profile</filename> используется процессом авторизации в систему.</para>
   
-  <para>Another consideration is the method that is used to log into the
-  host system.  If logging in through a graphical display manager, the
-  user's <filename>.bash_profile</filename> is not normally used when
-  a virtual terminal is started.  In this case, add the export command to
-  the <filename>.bashrc</filename> file for the user and root.  In addition, 
-  some distributions have instructions to not run the <filename>.bashrc</filename> 
-  instructions in a non-interactive bash invocation.  Be sure to add the
-  export command before the test for non-interactive use.</para>
+  <para>Есть ещё один метод который используется при входе в хост-систему. Если при входе в хост-систему используется графический менеджер, пользовательский файл <filename>.bash_profile</filename> не будет корректно использоваться при запуске виртуального терминала. В этом случае, необходимо добавить команду export в файл <filename>.bashrc</filename> 
+  для необходимого пользователя а также для пользователя root. К тому же некоторые дистрибутивы имеют инструкции не запускать файл <filename>.bashrc</filename>  в неинтерактивном вызове bash. Обязательно добавьте export перед тем, как 
+  проверить работу в неинтерактивном режиме.</para>
   
   </note>
 
