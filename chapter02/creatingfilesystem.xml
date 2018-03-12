@@ -10,45 +10,33 @@
 
   <title>Создание файловой системы на разделе</title>
 
-  <para>Now that a blank partition has been set up, the file system can be
-  created.  LFS can use any file system recognized by the Linux kernel, but the 
-  most common types are ext3 and ext4.  The choice of file system can be 
-  complex and depends on the characteristics of the files and the size of 
-  the partition.  For example:</para>
+  <para>На данный момент, были созданы пустые разделы. Файловые системы могут быть созданы.
+  LFS может использовать люьые файловые системы, которые могут быть распознаны ядром Linux. В основном это файловые системы ext3 и ext4.
+  Выбор файловой системы может зависеть от характеристик хранимых файлов и размера раздела. Например:</para>
 
   <variablelist>
     <varlistentry>
       <term>ext2</term>
-      <listitem><para>is suitable for small partitions that are updated infrequently
-      such as /boot.</para>
+      <listitem><para>подходит для небольших разделов, которые обновляются нечасто, например для раздела /boot.</para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>ext3</term>
-      <listitem><para>is an upgrade to ext2 that includes a journal
-      to help recover the partition's status in the case of an unclean 
-      shutdown.  It is commonly used as a general purpose file system.
-      </para>
+      <listitem><para>Это обновленная ффайловая система ext2, включающая в себя журнал, для восстановления в случае некорректного 
+      выключения. Обычно используется как файловая система общего назначения.</para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>ext4</term>
-      <listitem><para>is the latest version of the ext file system family of
-      partition types.  It provides several new capabilities including
-      nano-second timestamps, creation and use of very large files (16 TB), and
-      speed improvements.</para>
+      <listitem><para>Является на данный момент последней версией файловой системы семейств ext. Она поддерживает много  новых возможностей таких как nano-second метки времени, создание и использование очень больших файлов (16 Терабайт), и улучшения быстродействия.</para>
       </listitem>
     </varlistentry>
   </variablelist>
 
-  <para>Other file systems, including FAT32, NTFS, ReiserFS, JFS, and XFS are
-  useful for specialized purposes.  More information about these file systems
-  can be found at <ulink
-  url="http://en.wikipedia.org/wiki/Comparison_of_file_systems"/>.</para>
+  <para>Другие файловые системы, такие как FAT32, NTFS, ReiserFS, JFS, и XFS полензы для конкретных задач. Подробную информацию по о файловых системах можно изучить по ссылке <ulink
+  url="https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC"/>.</para>
 
-  <para>LFS assumes that the root file system (/) is of type ext4.  To create
-  an <systemitem class="filesystem">ext4</systemitem> file system on the LFS
-  partition, run the following:</para>
+  <para>LFS предполагает, что корневая файловая система будет ext4. Чтобы выполнить форматирование раздела используя эту файловую систему, выполните следующую команду:</para>
 
 <screen role="nodump"><userinput>mkfs -v -t ext4 /dev/<replaceable>&lt;xxx&gt;</replaceable></userinput></screen>
 
@@ -88,10 +76,8 @@ cd /tmp
 rm -rfv e2fsprogs-&e2fsprogs-version;</userinput></screen>
   </note>
 -->
-  <para>If you are using an existing <systemitem class="filesystem">swap
-  </systemitem> partition, there is no need to format it. If a new
-  <systemitem class="filesystem"> swap</systemitem> partition was created,
-  it will need to be initialized with this command:</para>
+  <para>Если вы используете существующий <systemitem class="filesystem">swap</systemitem> раздел, форматироать его не требуется. 
+  Если был создан новый раздел <systemitem class="filesystem"> swap</systemitem> его необходимо инициализировать командой:</para>
 
 <screen role="nodump"><userinput>mkswap /dev/<replaceable>&lt;yyy&gt;</replaceable></userinput></screen>
 
