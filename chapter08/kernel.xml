@@ -115,7 +115,7 @@ Kernel hacking  ---&gt;
 
     <note revision="systemd">
       <para>While "The IPv6 Protocol" is not strictly
-      required, it is highly recommended by the systemd developers.</para>
+      required, it is настоятельно рекомендуется by the systemd developers.</para>
     </note>
 
     <para revision="sysv">There are several other options that may be desired
