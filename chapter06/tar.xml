@@ -96,7 +96,7 @@ make -C doc install-html docdir=/usr/share/doc/tar-&tar-version;</userinput></sc
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Краткое описание</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 

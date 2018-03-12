@@ -184,7 +184,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Краткое описание</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
