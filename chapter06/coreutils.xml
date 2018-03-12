@@ -159,7 +159,7 @@ sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8</userinput></screen>
     <title>Contents of Coreutils</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed library</segtitle>
       <segtitle>Installed directory</segtitle>
 

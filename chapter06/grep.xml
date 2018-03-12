@@ -62,7 +62,7 @@
     <title>Contents of Grep</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>egrep, fgrep, and grep</seg>

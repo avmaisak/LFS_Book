@@ -94,7 +94,7 @@ EOF</userinput></screen>
     <title>Contents of Sysklogd</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>klogd and syslogd</seg>

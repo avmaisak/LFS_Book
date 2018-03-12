@@ -212,7 +212,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
     <title>Contents of systemd</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

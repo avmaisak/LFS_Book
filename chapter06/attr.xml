@@ -94,7 +94,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
     <title>Contents of Attr</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed library</segtitle>
       <segtitle>Installed directories</segtitle>
 

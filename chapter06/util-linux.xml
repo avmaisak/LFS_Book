@@ -129,7 +129,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
     <title>Contents of Util-linux</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

@@ -136,7 +136,7 @@ tar --strip-components=1  \
     <title>Contents of Python 3</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed Library</segtitle>
       <segtitle>Installed Directories</segtitle>
 

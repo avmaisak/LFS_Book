@@ -209,7 +209,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
     <title>Contents of Shadow</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>

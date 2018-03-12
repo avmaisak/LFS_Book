@@ -113,7 +113,7 @@ ln -sfv libncurses.so.6 /usr/lib/libncurses.so</userinput></screen>
     <title>Contents of Bc</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>bc and dc</seg>

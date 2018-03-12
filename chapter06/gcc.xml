@@ -315,7 +315,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
     <title>Contents of GCC</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

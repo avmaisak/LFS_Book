@@ -101,7 +101,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
     <title>Contents of Kmod</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed library</segtitle>
 
       <seglistitem>

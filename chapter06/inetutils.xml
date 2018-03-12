@@ -125,7 +125,7 @@ mv -v /usr/bin/ifconfig /sbin</userinput></screen>
     <title>Contents of Inetutils</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>dnsdomainname, ftp, ifconfig, hostname, ping, ping6, 

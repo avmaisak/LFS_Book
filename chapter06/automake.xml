@@ -72,7 +72,7 @@ make -j4 check</userinput></screen>
     <title>Contents of Automake</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

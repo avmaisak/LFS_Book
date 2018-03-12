@@ -100,7 +100,7 @@ ln -v -sf ../../lib/libpcre.so.0 /usr/lib/libpcre.so</userinput></screen>
     <title>Contents of PCRE</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

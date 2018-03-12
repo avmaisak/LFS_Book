@@ -456,7 +456,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
     <title>Contents of Glibc</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

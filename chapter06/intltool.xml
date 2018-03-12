@@ -68,7 +68,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
     <title>Contents of Intltool</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

@@ -96,7 +96,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
     <title>Contents of Libcap</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed library</segtitle>
 
       <seglistitem>

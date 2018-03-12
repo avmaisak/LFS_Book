@@ -78,7 +78,7 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
     <title>Contents of OpenSSL</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

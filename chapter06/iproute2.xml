@@ -83,7 +83,7 @@ rm -fv man/man8/arpd.8</userinput></screen>
     <title>Contents of IPRoute2</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

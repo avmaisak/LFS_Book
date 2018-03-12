@@ -70,7 +70,7 @@
     <title>Contents of Gzip</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>gunzip, gzexe, gzip, uncompress (hard link with gunzip), zcat, zcmp, 

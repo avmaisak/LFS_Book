@@ -67,7 +67,7 @@ mv -v /usr/bin/killall /bin</userinput></screen>
     <title>Contents of Psmisc</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>fuser, killall, peekfd, prtstat, pstree, and pstree.x11 (link to pstree)</seg>

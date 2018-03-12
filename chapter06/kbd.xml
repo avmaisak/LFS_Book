@@ -125,7 +125,7 @@ cp -R -v docs/doc/* /usr/share/doc/kbd-&kbd-version;</userinput></screen>
     <title>Contents of Kbd</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

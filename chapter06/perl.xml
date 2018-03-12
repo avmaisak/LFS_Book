@@ -141,7 +141,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
     <title>Contents of Perl</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directory</segtitle>
 

@@ -91,7 +91,7 @@ make clean</userinput></screen>
     <title>Contents of Module-Init-Tools</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>depmod, insmod, insmod.static, lsmod, modinfo, modprobe, and rmmod</seg>

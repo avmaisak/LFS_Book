@@ -105,7 +105,7 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
     <title>Contents of Bash</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>

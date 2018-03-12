@@ -88,7 +88,7 @@
     <title>Contents of Sysvinit</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>bootlogd, fstab-decode, halt, init, killall5, 

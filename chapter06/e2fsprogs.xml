@@ -167,7 +167,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
     <title>Contents of E2fsprogs</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 

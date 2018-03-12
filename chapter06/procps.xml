@@ -102,7 +102,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
     <title>Contents of Procps-ng</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Installed library</segtitle>
       <segtitle>Installed directories</segtitle>
 

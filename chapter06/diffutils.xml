@@ -64,7 +64,7 @@
     <title>Contents of Diffutils</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
         <seg>cmp, diff, diff3, and sdiff</seg>
