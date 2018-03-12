@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Installation of Meson</title>
 
-    <para>Compile Meson with the following command:</para>
+    <para>Compile Meson with the следующую команду:</para>
 
 <screen><userinput remap="make">python3 setup.py build</userinput></screen>
 

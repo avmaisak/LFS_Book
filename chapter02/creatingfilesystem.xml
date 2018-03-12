@@ -51,7 +51,7 @@
     LFS in Chapter&nbsp;9, as those features will not be supported by the LFS-installed
     E2fsprogs; you will get an error similar to <quote>unsupported filesystem
     features, upgrade your e2fsprogs</quote>. To check if your host system
-    uses custom enhancements, run the following command:</para>
+    uses custom enhancements, run the следующую команду:</para>
 
 <screen role="nodump"><userinput>debugfs -R feature /dev/<replaceable>&lt;xxx&gt;</replaceable></userinput></screen>
 

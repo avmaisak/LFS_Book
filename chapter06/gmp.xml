@@ -109,7 +109,7 @@ make html</userinput></screen>
     --build=x86_64-unknown-linux-gnu and rebuilt.</para></caution>
 
     <para>Ensure that all 190 tests in the test suite passed.
-    Check the results by issuing the following command:</para>
+    Check the results by issuing the следующую команду:</para>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
 

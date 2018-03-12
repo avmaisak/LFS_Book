@@ -187,7 +187,7 @@ EOF</userinput></screen>
       <title>Static resolv.conf Configuration</title>
 
       <para>If a static <filename>/etc/resolv.conf</filename> is desired,
-      create it by running the following command:</para>
+      create it by running the следующую команду:</para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/resolv.conf &lt;&lt; "EOF"
 <literal># Begin /etc/resolv.conf
@@ -288,7 +288,7 @@ EOF</userinput></screen>
 
      <para>If using DHCP, DHCPv6, IPv6 Autoconfiguration, or if a network card
      is not going to be configured, create the <filename>/etc/hosts</filename>
-     file by running the following command:</para>
+     file by running the следующую команду:</para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
 <literal># Begin /etc/hosts

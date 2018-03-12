@@ -59,7 +59,7 @@
 
     <para>Compilation is now complete. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
-    the Texinfo test suite anyway, issue the following command:</para>
+    the Texinfo test suite anyway, issue the следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 

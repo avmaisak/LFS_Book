@@ -3024,7 +3024,7 @@ output generated from those man pages by the <command>man
 
 <tip>
   <para>You can generate PostScript output for any man page by
-    running the following command:</para>
+    running the следующую команду:</para>
   <programlisting>  man <replaceable>FOO</replaceable> -Tps &gt; <replaceable>FOO</replaceable>.ps</programlisting>
   <para>You can then generate PDF output by running the following
     command:</para>

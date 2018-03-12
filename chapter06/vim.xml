@@ -162,7 +162,7 @@ EOF</userinput></screen>
     <filename>/usr/share/vim/vim80/defaults.vim</filename>.</para>
 -->
     <para>Documentation for other available options can be obtained by
-    running the following command:</para>
+    running the следующую команду:</para>
 
 <screen role="nodump"><userinput>vim -c ':options'</userinput></screen>
 

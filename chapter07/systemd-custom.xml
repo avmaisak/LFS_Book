@@ -31,7 +31,7 @@
 
     <para>The normal behavior for systemd is to clear the screen at
     the end of the boot sequence. If desired, this behavior may be
-    changed by running the following command:</para>
+    changed by running the следующую команду:</para>
 
 <screen role="nodump"><userinput>mkdir -pv /etc/systemd/system/getty@tty1.service.d
 

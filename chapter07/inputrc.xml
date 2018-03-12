@@ -33,7 +33,7 @@
 
   <para>Below is a generic global <filename>inputrc</filename> along with comments
   to explain what the various options do. Note that comments cannot be on the same
-  line as commands. Create the file using the following command:</para>
+  line as commands. Create the file using the следующую команду:</para>
 
 <screen><userinput>cat &gt; /etc/inputrc &lt;&lt; "EOF"
 <literal># Begin /etc/inputrc

@@ -2724,7 +2724,7 @@ The following changes have been made to the epub code since the 1.75.2 release.
 
     If you navigate to a checkout of DocBook-XSL and go to:
     xsl/epub/bin/spec/files
-    You can now run the following command:
+    You can now run the следующую команду:
 
     ../../dbtoepub -f DejaVuSerif.otf -f DejaVuSerif-Italic.otf -c test.css
     -s test_cust.xsl orm.book.001.xml
@@ -4189,7 +4189,7 @@ The following changes have been made to the params since the 1.74.0 release.
     troff (AT&T troff) command is installed. NOTE: The value of this parameter
     only affects PostScript output generated from the man command. It has no
     effect on output generated using the FO backend. TIP: You can generate
-    PostScript output for any man page by running the following command: man
+    PostScript output for any man page by running the следующую команду: man
     FOO -Tps > FOO.ps You can then generate PDF output by running the following
     command: ps2pdf FOO.ps
 

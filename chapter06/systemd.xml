@@ -167,7 +167,7 @@ meson --prefix=/usr                \
 
 <screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
 <!--
-    <para>To test the package, execute the following command:</para>
+    <para>To test the package, execute the следующую команду:</para>
 
 <screen><userinput remap="test">LANG=en_US.UTF-8 ninja test</userinput></screen>
 -->

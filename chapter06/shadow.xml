@@ -137,7 +137,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
     must be Shadow-compliant. That is, they need to be able to work with
     shadowed passwords.</para>
 
-    <para>To enable shadowed passwords, run the following command:</para>
+    <para>To enable shadowed passwords, run the следующую команду:</para>
 
 <screen><userinput>pwconv</userinput></screen>
 
