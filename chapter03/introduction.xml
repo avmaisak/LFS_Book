@@ -28,7 +28,7 @@
 
 <screen role="nodump"><userinput>chmod -v a+wt $LFS/sources</userinput></screen>
 
-  <para>Самым простым способом загрузки всех требуемых пакетов и патчей  - воспользоваться файлом <ulink url="wget-list">wget-list</ulink>. Далее его можно передать как параметр программе <command>wget</command>. 
+  <para>Самый простой способ загрузки всех требуемых пакетов и патчей  - воспользоваться файлом <ulink url="wget-list">wget-list</ulink>. Далее его можно передать как параметр программе <command>wget</command>. 
   Например:</para>
 
 <screen role="nodump"><userinput>wget --input-file=wget-list --continue --directory-prefix=$LFS/sources</userinput></screen>
