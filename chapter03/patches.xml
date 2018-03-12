@@ -10,11 +10,7 @@
 
   <title>Необходимые патчи</title>
 
-  <para>In addition to the packages, several patches are also required.
-  These patches correct any mistakes in the packages that should be
-  fixed by the maintainer.  The patches also make small modifications to
-  make the packages easier to work with. The following patches will be
-  needed to build an LFS system:</para>
+  <para>К пакетам потребуются патчи. Они исправляют ошибки в пакетах которые должны быть исправлены владельцем пакета. Патчи также вносять небольшие модификации чтобы облегчить работу с пакетами. Следующие патчи необходимы для сборки системы LFS:</para>
 
   <variablelist role="materials">
 <!--
@@ -128,13 +124,13 @@
 
   </variablelist>
 
-  <para>Total size of these patches: about <returnvalue/></para>
+  <para>Размер патчей примерно: <returnvalue/></para>
 
-  <para>In addition to the above required patches, there exist a number of
+  <para>В дополнение к необходимым патчам, существует множество опциональных, созданных сообществом LFS. Эти патчи исправляют проблемы или добавляют функциональность которая не включена по умолчанию. 
+  In addition to the above required patches, there exist a number of
   optional patches created by the LFS community. These optional patches
   solve minor problems or enable functionality that is not enabled by
-  default. Feel free to peruse the patches database located at
-  <ulink url="&lfs-root;patches/downloads/"/> and acquire any additional
-  patches to suit your system needs.</para>
+  default. Не забудьте ознакомиться с базой патчей, расположенной по адресу
+  <ulink url="&lfs-root;patches/downloads/"/> и воспользуйтесь ими в требованиями к вашей системе.</para>
 
 </sect1>

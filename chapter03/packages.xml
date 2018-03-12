@@ -438,15 +438,9 @@
         <para>Контрольная сумма MD5: <literal>&linux-md5;</literal></para>
 
         <note>
-          <para>The Linux kernel is updated relatively often, many times due to
-          discoveries of security vulnerabilities.  The latest available
-          &linux-major-version;.&linux-minor-version;.x kernel version should be
-          used, unless the errata page says otherwise.</para>
+          <para>Ядро Linux обновляется достаточно часто, по причине разрешения проблем безопасности. Необходимо использовать последний стабильный релиз  &linux-major-version;.&linux-minor-version;.x версии ядра, если в разделе опечаток и неточностей не указано иное.</para>
 
-          <para>For users with limited speed or expensive bandwidth who wish to
-          update the Linux kernel, a baseline version of the package and
-          patches can be downloaded separately.  This may save some time or
-          cost for a subsequent patch level upgrade within a minor release.
+          <para>Для пользователей, у которых ограниченный или тарифицируемый выход в сеть интернет, и который хотят обновить ядро Linux, можно скачать базовую версию ядра а затем применить к ней патчи, которые могут быть загружены отдельно. Обновление до последней версии при помощи патчей может сэкономить время и стоимость.
           </para>
 
         </note>
