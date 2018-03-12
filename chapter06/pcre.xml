@@ -101,7 +101,7 @@ ln -v -sf ../../lib/libpcre.so.0 /usr/lib/libpcre.so</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

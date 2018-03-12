@@ -168,7 +168,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

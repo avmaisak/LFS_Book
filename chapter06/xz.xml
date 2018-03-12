@@ -73,7 +73,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

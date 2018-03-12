@@ -130,7 +130,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

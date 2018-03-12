@@ -124,7 +124,7 @@ make install-html</userinput></screen>
     <title>Contents of GMP</title>
 
     <segmentedlist>
-      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>

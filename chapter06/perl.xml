@@ -142,7 +142,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>

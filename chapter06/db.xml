@@ -129,7 +129,7 @@
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
 
       <seglistitem>
         <seg>db_archive, db_checkpoint, db_codegen, db_deadlock, db_dump,

@@ -73,7 +73,7 @@ install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-&expat-version;</user
 
     <segmentedlist>
       <segtitle>Installed program</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>

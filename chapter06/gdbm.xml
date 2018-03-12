@@ -82,7 +82,7 @@
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
 
       <seglistitem>
         <seg>gdbm_dump, gdbm_load, and gdbmtool</seg>

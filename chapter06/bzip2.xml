@@ -102,7 +102,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed libraries</segtitle>
+      <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>
