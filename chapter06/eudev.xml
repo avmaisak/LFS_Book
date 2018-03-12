@@ -87,7 +87,7 @@ will also be used as a part of installation:</para>
 <screen><userinput remap="test">mkdir -pv /lib/udev/rules.d
 mkdir -pv /etc/udev/rules.d</userinput></screen>
 
-<para>To test the results, issue:</para>
+<para>Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>
 

@@ -10,7 +10,8 @@
 
   <title>Введение</title>
 
-  <para>In this chapter, we will perform a few additional tasks to prepare
+  <para>В этой главе будет выполнено несколько задач для подготовке к тому, чтобы приступить к созданию набора инструментов
+  In this chapter, we will perform a few additional tasks to prepare
   for building the temporary system. We will create a directory in
   <filename class="directory">$LFS</filename> for the installation of the
   temporary tools, add an unprivileged user to reduce risk,

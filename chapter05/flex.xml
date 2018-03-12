@@ -63,7 +63,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To test the results, issue:</para>
+    <para>Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
