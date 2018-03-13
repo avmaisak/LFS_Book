@@ -44,7 +44,7 @@
 
 <screen><userinput remap="pre">sed -i 's/extras//' Makefile.in</userinput></screen>
 
-    <para>Prepare Gawk for compilation:</para>
+    <para>Подготовьте Gawk для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

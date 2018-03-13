@@ -91,7 +91,7 @@ esac</userinput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Glibc for compilation:</para>
+    <para>Подготовьте Glibc для компиляции:</para>
 
 <screen><userinput remap="configure">CC="gcc -isystem $GCC_INCDIR -isystem /usr/include" \
 ../configure --prefix=/usr                          \

@@ -44,7 +44,7 @@
   <sect2 role="installation">
     <title>Installation of GDBM</title>
 
-    <para>Prepare GDBM for compilation:</para>
+    <para>Подготовьте GDBM для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr \
             --disable-static \

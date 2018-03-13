@@ -52,7 +52,7 @@
 <screen><userinput remap="pre">sed -i '/^TESTS =/d' gettext-runtime/tests/Makefile.in &amp;&amp;
 sed -i 's/test-lock..EXEEXT.//' gettext-tools/gnulib-tests/Makefile.in</userinput></screen>
 
-    <para>Prepare Gettext for compilation:</para>
+    <para>Подготовьте Gettext для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \
             --disable-static \

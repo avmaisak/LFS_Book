@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Sed</title>
 
-    <para>Prepare Sed for compilation:</para>
+    <para>Подготовьте Sed для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

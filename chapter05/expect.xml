@@ -49,7 +49,7 @@
 <screen><userinput remap="pre">cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
 
-    <para>Now prepare Expect for compilation:</para>
+    <para>Now prepare Expect для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools       \
             --with-tcl=/tools/lib \

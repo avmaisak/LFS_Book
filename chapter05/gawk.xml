@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Gawk</title>
 
-    <para>Prepare Gawk for compilation:</para>
+    <para>Подготовьте Gawk для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

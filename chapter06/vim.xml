@@ -58,7 +58,7 @@
 
 <screen><userinput remap="pre">sed -i '/call/{s/split/xsplit/;s/303/492/}' src/testdir/test_recover.vim</userinput></screen>
 
-    <para>Prepare Vim for compilation:</para>
+    <para>Подготовьте Vim для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

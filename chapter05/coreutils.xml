@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para>Prepare Coreutils for compilation:</para>
+    <para>Подготовьте Coreutils для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-install-program=hostname</userinput></screen>
 

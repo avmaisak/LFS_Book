@@ -59,7 +59,7 @@ sed -i -e 's@../../configure@DOCBOOKTOMAN=/bin/true &amp;@' tests/runtests
 ./tests/runtests
 make clean</userinput></screen>
 
-    <para>Prepare Module-Init-Tools for compilation:</para>
+    <para>Подготовьте Module-Init-Tools для компиляции:</para>
 
 <screen><userinput remap="configure">DOCBOOKTOMAN=/bin/true ./configure --prefix=/ \
     --enable-zlib-dynamic --mandir=/usr/share/man</userinput></screen>

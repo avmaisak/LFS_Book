@@ -70,7 +70,7 @@ cd       build</userinput></screen>
     <note><para>The approximate build SBU values and required disk space
     in Chapter&nbsp;5 does not include test suite data.</para></note>
 
-    <para>Now prepare Binutils for compilation:</para>
+    <para>Now prepare Binutils для компиляции:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/tools            \
              --with-sysroot=$LFS        \

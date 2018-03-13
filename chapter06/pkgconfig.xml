@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Installation of Pkg-config</title>
 
-    <para>Prepare Pkg-config for compilation:</para>
+    <para>Подготовьте Pkg-config для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr              \
             --with-internal-glib       \

@@ -61,7 +61,7 @@
 <screen><userinput remap="pre">sed -i -e "/TABS-1;/a if (x > (TABS-1)) x = (TABS-1);" \
     libacl/__acl_to_any_text.c</userinput></screen>
 
-    <para>Prepare Acl for compilation:</para>
+    <para>Подготовьте Acl для компиляции:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr    \
             --bindir=/bin    \

@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Installation of Gperf</title>
 
-    <para>Prepare Gperf for compilation:</para>
+    <para>Подготовьте Gperf для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/gperf-&gperf-version;</userinput></screen>
 

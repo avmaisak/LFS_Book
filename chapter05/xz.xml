@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Xz</title>
 
-    <para>Prepare Xz for compilation:</para>
+    <para>Подготовьте Xz для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

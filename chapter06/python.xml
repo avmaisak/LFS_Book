@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Installation of Python 3</title>
 
-    <para>Prepare Python for compilation:</para>
+    <para>Подготовьте Python для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr       \
             --enable-shared     \

@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Installation of Diffutils</title>
 
-    <para>Prepare Diffutils for compilation:</para>
+    <para>Подготовьте Diffutils для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

@@ -48,7 +48,7 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
 -->
-    <para>Prepare Bash for compilation:</para>
+    <para>Подготовьте Bash для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --without-bash-malloc</userinput></screen>
 

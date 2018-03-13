@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Installation of M4</title>
 
-    <para>Prepare M4 for compilation:</para>
+    <para>Подготовьте M4 для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

@@ -126,7 +126,7 @@ esac</userinput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare GCC for compilation:</para>
+    <para>Подготовьте GCC для компиляции:</para>
 
 <screen><userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \

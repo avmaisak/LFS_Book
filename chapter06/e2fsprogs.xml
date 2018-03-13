@@ -54,7 +54,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd build</userinput></screen>
 
-    <para>Prepare E2fsprogs for compilation:</para>
+    <para>Подготовьте E2fsprogs для компиляции:</para>
 
 <screen><userinput remap="configure">LIBS=-L/tools/lib                    \
 CFLAGS=-I/tools/include              \

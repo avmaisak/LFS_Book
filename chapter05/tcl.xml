@@ -52,7 +52,7 @@
     to run the LFS tests.  For the full package, see the  
     <ulink url='&blfs-book;general/tcl.html'>BLFS Tcl procedures</ulink>.</para>
 
-    <para>Prepare Tcl for compilation:</para>
+    <para>Подготовьте Tcl для компиляции:</para>
 
 <screen><userinput remap="configure">cd unix
 ./configure --prefix=/tools</userinput></screen>
