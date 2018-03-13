@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Check</title>
+    <title>Installation of Check</title>
 
-    <para>Подготовьте Check для компиляции:</para>
+    <para>Prepare Check for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
@@ -48,7 +48,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>На этом компиляция завершена.  To run the Check test suite, issue the
+    <para>Compilation is now complete.  To run the Check test suite, issue the
     следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>

@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка E2fsprogs</title>
+    <title>Installation of E2fsprogs</title>
 
     <para>The E2fsprogs documentation recommends that the package be built in
     a subdirectory of the source tree: </para>
@@ -48,7 +48,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd build</userinput></screen>
 
-    <para>Подготовьте E2fsprogs для компиляции:</para>
+    <para>Prepare E2fsprogs for compilation:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/tools --disable-libblkid --disable-libuuid</userinput></screen>
 

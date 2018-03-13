@@ -42,9 +42,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Xz</title>
+    <title>Installation of Xz</title>
 
-    <para>Подготовьте Xz for compilation with:</para>
+    <para>Prepare Xz for compilation with:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \
             --disable-static \

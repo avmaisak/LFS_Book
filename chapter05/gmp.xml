@@ -41,9 +41,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка GMP</title>
+    <title>Installation of GMP</title>
 
-    <para>Подготовьте GMP для компиляции:</para>
+    <para>Prepare GMP for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-mpbsd</userinput></screen>
 

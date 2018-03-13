@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Procps-ng</title>
+    <title>Installation of Procps-ng</title>
 
-    <para>Подготовьте procps-ng для компиляции:</para>
+    <para>Prepare procps-ng for compilation:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr                            \
             --exec-prefix=                           \
@@ -58,7 +58,7 @@
             --with-systemd</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--disable-kill</parameter></term>

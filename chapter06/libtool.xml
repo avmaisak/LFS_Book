@@ -40,9 +40,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Libtool</title>
+    <title>Installation of Libtool</title>
 
-    <para>Подготовьте Libtool для компиляции:</para>
+    <para>Prepare Libtool for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

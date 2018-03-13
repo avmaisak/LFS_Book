@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Automake</title>
+    <title>Installation of Automake</title>
 
-    <para>Подготовьте Automake для компиляции:</para>
+    <para>Prepare Automake for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/automake-&automake-version;</userinput></screen>
 

@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка GCC</title>
+    <title>Installation of GCC</title>
 
     <para>If building on x86_64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
@@ -61,7 +61,7 @@ esac</userinput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Подготовьте GCC для компиляции:</para>
+    <para>Prepare GCC for compilation:</para>
 
 <screen><userinput remap="configure">SED=sed                               \
 ../configure --prefix=/usr            \
@@ -101,7 +101,7 @@ cd       build</userinput></screen>
 
     <important>
       <para>In this section, the test suite for GCC is considered
-      critical. Не пропускайте выполнение тестов ни при каких обстоятельствах.</para>
+      critical. Do not skip it under any circumstance.</para>
     </important>
 
    <para>One set of tests in the GCC test suite is known to exhaust the stack,

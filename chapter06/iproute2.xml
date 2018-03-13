@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка IPRoute2</title>
+    <title>Installation of IPRoute2</title>
 
     <para>The <command>arpd</command> program included in this package will not
     be built since it is dependent on Berkeley DB, which is not installed in

@@ -38,14 +38,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Less</title>
+    <title>Installation of Less</title>
 
-    <para>Подготовьте Less для компиляции:</para>
+    <para>Prepare Less for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --sysconfdir=/etc</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--sysconfdir=/etc</parameter></term>

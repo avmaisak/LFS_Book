@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Kbd</title>
+    <title>Installation of Kbd</title>
 
     <para>The behaviour of the Backspace and Delete keys is not consistent
     across the keymaps in the Kbd package. The following patch fixes this
@@ -58,12 +58,12 @@
 <screen><userinput remap="pre">sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
 sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in</userinput></screen>
 
-    <para>Подготовьте Kbd для компиляции:</para>
+    <para>Prepare Kbd for compilation:</para>
 
 <screen><userinput remap="configure">PKG_CONFIG_PATH=/tools/lib/pkgconfig ./configure --prefix=/usr --disable-vlock</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 <!--
       <varlistentry>
         <term><parameter>- -datadir=/lib/kbd</parameter></term>

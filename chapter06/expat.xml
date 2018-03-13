@@ -39,13 +39,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Expat</title>
+    <title>Installation of Expat</title>
 
     <para>First fix a problem with the regession tests in the LFS environment:</para>
 
 <screen><userinput remap="pre">sed -i 's|usr/bin/env |bin/|' run.sh.in</userinput></screen>
 
-    <para>Подготовьте Expat для компиляции:</para>
+    <para>Prepare Expat for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
 

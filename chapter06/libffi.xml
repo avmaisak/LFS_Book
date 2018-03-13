@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Libffi</title>
+    <title>Installation of Libffi</title>
 
     <para>Modify the Makefile to install headers into the standard
     <filename class="directory">/usr/include</filename> directory instead of
@@ -53,7 +53,7 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
     -e 's/^Cflags: -I${includedir}/Cflags:/' \
     -i libffi.pc.in</userinput></screen>
 
-    <para>Подготовьте libffi для компиляции:</para>
+    <para>Prepare libffi for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
 

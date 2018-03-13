@@ -40,9 +40,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка MPC</title>
+    <title>Installation of MPC</title>
 
-    <para>Подготовьте MPC для компиляции:</para>
+    <para>Prepare MPC for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \
             --disable-static \

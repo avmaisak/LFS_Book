@@ -41,13 +41,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Ncurses</title>
+    <title>Installation of Ncurses</title>
 
     <para>First, ensure that <command>gawk</command> is found first during configuration:</para>
 
 <screen><userinput remap="pre">sed -i s/mawk// configure</userinput></screen>
 
-    <para>Подготовьте Ncurses для компиляции:</para>
+    <para>Prepare Ncurses for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools \
             --with-shared   \
@@ -57,7 +57,7 @@
             --enable-overwrite</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--without-ada</parameter></term>

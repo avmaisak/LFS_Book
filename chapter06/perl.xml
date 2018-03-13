@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Perl</title>
+    <title>Installation of Perl</title>
 
     <para>First create a basic <filename>/etc/hosts</filename> file to be
     referenced in one of Perl's configuration files as well as the optional
@@ -75,7 +75,7 @@ export BUILD_BZIP2=0</userinput></screen>
                   -Dusethreads</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>-Dvendorprefix=/usr</parameter></term>

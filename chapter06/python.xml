@@ -40,9 +40,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Python 3</title>
+    <title>Installation of Python 3</title>
 
-    <para>Подготовьте Python для компиляции:</para>
+    <para>Prepare Python for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr       \
             --enable-shared     \
@@ -51,7 +51,7 @@
             --with-ensurepip=yes</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
     <varlistentry>
       <term><parameter>--with-system-expat</parameter></term>

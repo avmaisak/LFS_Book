@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Kmod</title>
+    <title>Installation of Kmod</title>
 
-    <para>Подготовьте Kmod для компиляции:</para>
+    <para>Prepare Kmod for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
             --bindir=/bin          \
@@ -51,7 +51,7 @@
             --with-zlib</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--with-xz, --with-zlib</parameter></term>

@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Attr</title>
+    <title>Installation of Attr</title>
 
     <para>Modify the documentation directory so that it is a versioned
     directory:</para>
@@ -55,7 +55,7 @@
 
 <screen><userinput remap="pre">sed -i 's:{(:\\{(:' test/run</userinput></screen>
 
-    <para>Подготовьте Attr для компиляции:</para>
+    <para>Prepare Attr for compilation:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr \
             --bindir=/bin \

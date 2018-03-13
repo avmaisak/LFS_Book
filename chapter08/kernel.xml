@@ -38,14 +38,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка the kernel</title>
+    <title>Installation of the kernel</title>
 
     <para>Building the kernel involves a few steps&mdash;configuration,
     compilation, and installation. Read the <filename>README</filename> file
     in the kernel source tree for alternative methods to the way this book
     configures the kernel.</para>
 
-    <para>Подготовьте for compilation by running the следующую команду:</para>
+    <para>Prepare for compilation by running the следующую команду:</para>
 
 <screen><userinput remap="pre">make mrproper</userinput></screen>
 

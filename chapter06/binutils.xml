@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Binutils</title>
+    <title>Installation of Binutils</title>
 
     <para>Verify that the PTYs are working properly inside the chroot
     environment by performing a simple test:</para>
@@ -63,7 +63,7 @@ Ask your system administrator to create more.</computeroutput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Подготовьте Binutils для компиляции:</para>
+    <para>Prepare Binutils for compilation:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/usr       \
              --enable-gold       \
@@ -145,7 +145,7 @@ cd       build</userinput></screen>
 
     <important>
       <para>The test suite for Binutils in this section is considered critical.
-      Не пропускайте выполнение тестов ни при каких обстоятельствах..</para>
+      Do not skip it under any circumstances.</para>
     </important>
 
     <para>Для выполнения тестов, выполните команду:</para>

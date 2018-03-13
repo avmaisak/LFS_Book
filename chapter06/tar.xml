@@ -38,20 +38,20 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Tar</title>
+    <title>Installation of Tar</title>
 <!--
     <para>Add a program that generates a man page for tar from the source code:</para>
  
  <screen><userinput remap="pre">patch -Np1 -i ../&tar-manpage-patch;</userinput></screen>
 -->
-    <para>Подготовьте Tar для компиляции:</para>
+    <para>Prepare Tar for compilation:</para>
 
 <screen><userinput remap="configure">FORCE_UNSAFE_CONFIGURE=1  \
 ./configure --prefix=/usr \
             --bindir=/bin</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><envar>FORCE_UNSAFE_CONFIGURE=1</envar></term>

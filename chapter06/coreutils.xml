@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Coreutils</title>
+    <title>Installation of Coreutils</title>
 
     <para>POSIX requires that programs from Coreutils recognize character
     boundaries correctly even in multibyte locales. The following patch fixes
@@ -60,14 +60,14 @@
 
 <screen><userinput remap="pre">sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk</userinput></screen>
 
-    <para>Now prepare Coreutils для компиляции:</para>
+    <para>Now prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">FORCE_UNSAFE_CONFIGURE=1 ./configure \
             --prefix=/usr            \
             --enable-no-install-program=kill,uptime</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><envar>FORCE_UNSAFE_CONFIGURE=1</envar></term>

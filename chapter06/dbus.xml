@@ -44,9 +44,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка D-Bus</title>
+    <title>Installation of D-Bus</title>
 
-    <para>Подготовьте D-Bus для компиляции:</para>
+    <para>Prepare D-Bus for compilation:</para>
 
 <screen><userinput remap="configure">  ./configure --prefix=/usr                       \
               --sysconfdir=/etc                   \
@@ -58,7 +58,7 @@
               --with-console-auth-dir=/run/console</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--with-console-auth-dir=/run/console</parameter></term>

@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Inetutils</title>
+    <title>Installation of Inetutils</title>
 
-    <para>Подготовьте Inetutils для компиляции:</para>
+    <para>Prepare Inetutils for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr        \
             --localstatedir=/var \
@@ -53,7 +53,7 @@
             --disable-servers</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--disable-logger</parameter></term>

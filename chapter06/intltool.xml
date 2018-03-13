@@ -39,13 +39,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Intltool</title>
+    <title>Installation of Intltool</title>
 
     <para>First fix a warning that is caused by perl-5.22 and later:</para>
 
 <screen><userinput remap="pre">sed -i 's:\\\${:\\\$\\{:' intltool-update.in</userinput></screen>
 
-    <para>Подготовьте Intltool для компиляции:</para>
+    <para>Prepare Intltool for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

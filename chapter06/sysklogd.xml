@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Sysklogd</title>
+    <title>Installation of Sysklogd</title>
 
     <para>First, fix problems that causes a segmentation fault under
     some conditions in klogd and fix an obsolete program construct:</para>

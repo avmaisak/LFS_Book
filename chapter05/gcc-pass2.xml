@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка GCC</title>
+    <title>Installation of GCC</title>
 
     <para>Our first build of GCC has installed a couple of internal system
     headers.  Normally one of them, <filename>limits.h</filename>, will in turn
@@ -116,7 +116,7 @@ cd       build</userinput></screen>
     <para>Before starting to build GCC, remember to unset any environment
     variables that override the default optimization flags.</para>
 
-    <para>Now prepare GCC для компиляции:</para>
+    <para>Now prepare GCC for compilation:</para>
 
 <screen><userinput remap="configure">CC=$LFS_TGT-gcc                                    \
 CXX=$LFS_TGT-g++                                   \

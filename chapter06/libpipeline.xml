@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Libpipeline</title>
+    <title>Installation of Libpipeline</title>
 
-    <para>Подготовьте Libpipeline для компиляции:</para>
+    <para>Prepare Libpipeline for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
@@ -49,7 +49,7 @@
 <screen><userinput remap="configure">PKG_CONFIG_PATH=/tools/lib/pkgconfig ./configure - -prefix=/usr</userinput></screen>
 
     <variablelist>
-      <title><title>Значение параметров конфигурации:</title></title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>PKG_CONFIG_PATH</parameter></term>

@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Eudev</title>
+    <title>Installation of Eudev</title>
 
     <para>First, fix a test script:</para>
 
@@ -57,7 +57,7 @@ BLKID_LIBS="-lblkid"
 BLKID_CFLAGS="-I/tools/include"
 EOF</userinput></screen>
 
-<para>Подготовьте Eudev для компиляции:</para>
+<para>Prepare Eudev for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
             --bindir=/sbin          \

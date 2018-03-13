@@ -39,12 +39,12 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Libelf</title>
+    <title>Installation of Libelf</title>
 
       <para>Libelf is part of elfutils-&elfutils-version; package. Use
       the elfutils-&elfutils-version;.tar.xz as the source tarball.</para>
 
-    <para>Подготовьте Libelf для компиляции:</para>
+    <para>Prepare Libelf for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

@@ -38,13 +38,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Bison</title>
+    <title>Installation of Bison</title>
 <!-- bison only installs a static library
     <para>Inhibit static library installation:</para>
 
 <screen><userinput remap="pre">sed -i '/lib_LIBRARIES =/d' Makefile.in</userinput></screen>    
 -->
-    <para>Подготовьте Bison для компиляции:</para>
+    <para>Prepare Bison for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/bison-&bison-version;</userinput></screen>
 

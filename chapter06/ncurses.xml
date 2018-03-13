@@ -39,13 +39,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Ncurses</title>
+    <title>Installation of Ncurses</title>
 
     <para>Don't install a static library that is not handled by configure:</para>
 
 <screen><userinput remap="pre">sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in</userinput></screen>
 
-    <para>Подготовьте Ncurses для компиляции:</para>
+    <para>Prepare Ncurses for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
             --mandir=/usr/share/man \

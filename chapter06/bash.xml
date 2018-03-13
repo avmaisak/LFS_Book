@@ -38,13 +38,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Bash</title>
+    <title>Installation of Bash</title>
 <!--
     <para>Incorporate some upstream fixes:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
 -->
-    <para>Подготовьте Bash для компиляции:</para>
+    <para>Prepare Bash for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                       \
             --docdir=/usr/share/doc/bash-&bash-version; \

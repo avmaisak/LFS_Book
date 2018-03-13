@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка Gperf</title>
+    <title>Installation of Gperf</title>
 
-    <para>Подготовьте Gperf для компиляции:</para>
+    <para>Prepare Gperf for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/gperf-&gperf-version;</userinput></screen>
 
