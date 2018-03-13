@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Groff</title>
+    <title>Установка Groff</title>
 
     <para>Groff expects the environment variable <envar>PAGE</envar> to
     contain the default paper size. For users in the United States,
@@ -49,7 +49,7 @@
     by echoing either <quote>A4</quote> or <quote>letter</quote> to the
     <filename>/etc/papersize</filename> file.</para>
 
-    <para>Prepare Groff for compilation:</para>
+    <para>Подготовьте Groff для компиляции:</para>
 
 <screen><userinput remap="configure">PAGE=<replaceable>&lt;paper_size&gt;</replaceable> ./configure --prefix=/usr</userinput></screen>
 

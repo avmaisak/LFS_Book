@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Inetutils</title>
+    <title>Установка Inetutils</title>
 
-    <para>Prepare Inetutils for compilation:</para>
+    <para>Подготовьте Inetutils для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr        \
             --localstatedir=/var \

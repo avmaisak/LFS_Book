@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Autoconf</title>
+    <title>Установка Autoconf</title>
 
-    <para>Prepare Autoconf for compilation:</para>
+    <para>Подготовьте Autoconf для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

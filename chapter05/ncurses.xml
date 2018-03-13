@@ -41,13 +41,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Ncurses</title>
+    <title>Установка Ncurses</title>
 
     <para>First, ensure that <command>gawk</command> is found first during configuration:</para>
 
 <screen><userinput remap="pre">sed -i s/mawk// configure</userinput></screen>
 
-    <para>Prepare Ncurses for compilation:</para>
+    <para>Подготовьте Ncurses для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools \
             --with-shared   \

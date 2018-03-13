@@ -41,14 +41,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Bash</title>
+    <title>Установка Bash</title>
 <!--
     <para>First, apply the following patch to fix various bugs that have been
     addressed upstream:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
 -->
-    <para>Prepare Bash for compilation:</para>
+    <para>Подготовьте Bash для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --without-bash-malloc</userinput></screen>
 
@@ -72,7 +72,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
+    <para>На этом компиляция завершена. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
     the Bash test suite anyway, issue the следующую команду:</para>
 

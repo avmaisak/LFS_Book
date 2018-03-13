@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Less</title>
+    <title>Установка Less</title>
 
-    <para>Prepare Less for compilation:</para>
+    <para>Подготовьте Less для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --sysconfdir=/etc</userinput></screen>
 

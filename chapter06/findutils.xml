@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Findutils</title>
+    <title>Установка Findutils</title>
 
    <!-- this has been fixed in upstream gnulib, when a new version of
    findutils is released, please check #4055 to see if the change has been
@@ -50,7 +50,7 @@
 
 <screen><userinput remap="pre">sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in</userinput></screen>
 
-    <para>Prepare Findutils for compilation:</para>
+    <para>Подготовьте Findutils для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --localstatedir=/var/lib/locate</userinput></screen>
 

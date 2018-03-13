@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of File</title>
+    <title>Установка File</title>
 
-    <para>Prepare File for compilation:</para>
+    <para>Подготовьте File для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

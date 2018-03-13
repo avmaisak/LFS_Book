@@ -42,7 +42,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of E2fsprogs</title>
+    <title>Установка E2fsprogs</title>
 <!--
     <para>First, fix a script that adjusts testing output:</para>
 
@@ -54,7 +54,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd build</userinput></screen>
 
-    <para>Prepare E2fsprogs for compilation:</para>
+    <para>Подготовьте E2fsprogs для компиляции:</para>
 
 <screen><userinput remap="configure">LIBS=-L/tools/lib                    \
 CFLAGS=-I/tools/include              \

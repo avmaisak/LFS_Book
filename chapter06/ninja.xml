@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Ninja</title>
+    <title>Установка Ninja</title>
 
     <para>When run, ninja normally runs a maximum number of processes
     in parallel.  By default this is the number of cores on the system 

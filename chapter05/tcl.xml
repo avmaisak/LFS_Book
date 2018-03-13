@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Tcl-core</title>
+    <title>Установка Tcl-core</title>
 
     <para>This package and the next two (Expect and DejaGNU) are
     installed to support running the test suites for GCC and Binutils and other
@@ -52,7 +52,7 @@
     to run the LFS tests.  For the full package, see the  
     <ulink url='&blfs-book;general/tcl.html'>BLFS Tcl procedures</ulink>.</para>
 
-    <para>Prepare Tcl for compilation:</para>
+    <para>Подготовьте Tcl для компиляции:</para>
 
 <screen><userinput remap="configure">cd unix
 ./configure --prefix=/tools</userinput></screen>
@@ -61,7 +61,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
+    <para>На этом компиляция завершена. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
     the Tcl test suite anyway, issue the следующую команду:</para>
 

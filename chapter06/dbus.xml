@@ -44,9 +44,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of D-Bus</title>
+    <title>Установка D-Bus</title>
 
-    <para>Prepare D-Bus for compilation:</para>
+    <para>Подготовьте D-Bus для компиляции:</para>
 
 <screen><userinput remap="configure">  ./configure --prefix=/usr                       \
               --sysconfdir=/etc                   \

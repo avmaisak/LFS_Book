@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of MPFR</title>
+    <title>Установка MPFR</title>
 
-    <para>Prepare MPFR for compilation:</para>
+    <para>Подготовьте MPFR для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr        \
             --disable-static     \
@@ -55,7 +55,7 @@ make html</userinput></screen>
 
     <important>
       <para>The test suite for MPFR in this section is considered critical.
-      Do not skip it under any circumstances.</para>
+      Не пропускайте выполнение тестов ни при каких обстоятельствах..</para>
     </important>
 
     <para>Test the results and ensure that all tests passed:</para>

@@ -41,9 +41,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of M4</title>
+    <title>Установка M4</title>
 
-    <para>Prepare M4 for compilation:</para>
+    <para>Подготовьте M4 для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 
@@ -51,7 +51,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
+    <para>На этом компиляция завершена. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
     the M4 test suite anyway, issue the следующую команду:</para>
 

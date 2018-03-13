@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GRUB</title>
+    <title>Установка GRUB</title>
 
-    <para>Prepare GRUB for compilation:</para>
+    <para>Подготовьте GRUB для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
             --sbindir=/sbin        \

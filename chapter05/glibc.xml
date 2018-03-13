@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glibc</title>
+    <title>Установка Glibc</title>
 
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>
@@ -49,7 +49,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Next, prepare Glibc for compilation:</para>
+    <para>Next, prepare Glibc для компиляции:</para>
 
 <screen><userinput remap="configure">../configure                             \
       --prefix=/tools                    \

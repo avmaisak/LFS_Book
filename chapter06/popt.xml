@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Popt</title>
+    <title>Установка Popt</title>
 
-    <para>Prepare Popt4 for compilation:</para>
+    <para>Подготовьте Popt4 для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

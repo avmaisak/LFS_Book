@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Texinfo</title>
+    <title>Установка Texinfo</title>
 
-    <para>Prepare Texinfo for compilation:</para>
+    <para>Подготовьте Texinfo для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
 

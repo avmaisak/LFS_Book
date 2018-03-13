@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Gzip</title>
+    <title>Установка Gzip</title>
 
-    <para>Prepare Gzip for compilation:</para>
+    <para>Подготовьте Gzip для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
