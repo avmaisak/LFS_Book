@@ -140,7 +140,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. Ordinarily we would now run the
+    <para><title>На этом компиляция завершена. Ordinarily we would now run the
     test suite, but at this early stage the test suite framework (Tcl,
     Expect, and DejaGNU) is not yet in place. The benefits of running the
     tests at this point are minimal since the programs from this

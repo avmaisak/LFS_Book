@@ -48,7 +48,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete.  To run the Check test suite, issue the
+    <para><title>На этом компиляция завершена.  To run the Check test suite, issue the
     следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
