@@ -145,7 +145,7 @@ unset GCC_INCDIR</userinput></screen>
 
     <important>
       <para>In this section, the test suite for Glibc is considered critical.
-      Do not skip it under any circumstance.</para>
+      Не пропускайте выполнение тестов ни при каких обстоятельствах.</para>
     </important>
 
     <para>Generally a few tests do not pass. The test failures listed below

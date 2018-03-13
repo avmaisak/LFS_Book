@@ -94,7 +94,7 @@ make html</userinput></screen>
 
     <important>
       <para>The test suite for GMP in this section is considered critical.
-      Do not skip it under any circumstances.</para>
+      Не пропускайте выполнение тестов ни при каких обстоятельствах..</para>
     </important>
 
     <para>Для выполнения тестов, выполните команду:</para>

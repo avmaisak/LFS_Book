@@ -101,7 +101,7 @@ cd       build</userinput></screen>
 
     <important>
       <para>In this section, the test suite for GCC is considered
-      critical. Do not skip it under any circumstance.</para>
+      critical. Не пропускайте выполнение тестов ни при каких обстоятельствах.</para>
     </important>
 
    <para>One set of tests in the GCC test suite is known to exhaust the stack,
