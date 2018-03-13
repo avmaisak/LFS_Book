@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Sed</title>
+    <title>Установка  Sed</title>
 
     <para>First fix an issue in the LFS environment and remove a failing test:</para>
 

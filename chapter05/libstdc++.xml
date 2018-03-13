@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Target Libstdc++</title>
+    <title>Установка  Target Libstdc++</title>
 
     <note>
       <para><application>Libstdc++</application> is part of the GCC sources.

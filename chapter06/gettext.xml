@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Gettext</title>
+    <title>Установка  Gettext</title>
 
    <!-- this has been fixed in upstream gnulib, when a new version of
    gettext is released, please check #4055 to see if the change has been

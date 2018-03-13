@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Coreutils</title>
+    <title>Установка  Coreutils</title>
 
     <para>POSIX requires that programs from Coreutils recognize character
     boundaries correctly even in multibyte locales. The following patch fixes

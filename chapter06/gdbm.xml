@@ -42,7 +42,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GDBM</title>
+    <title>Установка  GDBM</title>
 
     <para>Подготовьте GDBM для компиляции:</para>
 

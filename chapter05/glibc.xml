@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glibc</title>
+    <title>Установка  Glibc</title>
 
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>

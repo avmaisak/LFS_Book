@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Perl</title>
+    <title>Установка  Perl</title>
 
     <para>First create a basic <filename>/etc/hosts</filename> file to be
     referenced in one of Perl's configuration files as well as the optional

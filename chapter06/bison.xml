@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Bison</title>
+    <title>Установка  Bison</title>
 <!-- bison only installs a static library
     <para>Inhibit static library installation:</para>
 

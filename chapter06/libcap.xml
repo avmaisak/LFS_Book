@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Libcap</title>
+    <title>Установка  Libcap</title>
 
     <para>Prevent a static library from being installed:</para>
 
