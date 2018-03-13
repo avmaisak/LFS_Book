@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Attr</title>
+    <title>Установка Attr</title>
 
     <para>Modify the documentation directory so that it is a versioned
     directory:</para>

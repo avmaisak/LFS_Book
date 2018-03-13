@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Readline</title>
+    <title>Установка Readline</title>
 
     <para>Reinstalling Readline will cause the old libraries to be moved to
     &lt;libraryname&gt;.old. While this is normally not a problem, in some cases

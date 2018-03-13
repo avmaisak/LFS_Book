@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Findutils</title>
+    <title>Установка Findutils</title>
 
    <!-- this has been fixed in upstream gnulib, when a new version of
    findutils is released, please check #4055 to see if the change has been

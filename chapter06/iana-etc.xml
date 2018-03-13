@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Iana-Etc</title>
+    <title>Установка Iana-Etc</title>
 
     <para>The following command converts the raw data provided by IANA into the
     correct formats for the <filename>/etc/protocols</filename> and

@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Acl</title>
+    <title>Установка Acl</title>
 
     <para>Modify the documentation directory so that it is a versioned
     directory:</para>

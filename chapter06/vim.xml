@@ -47,7 +47,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Vim</title>
+    <title>Установка Vim</title>
 
     <para>First, change the default location of the <filename>vimrc</filename>
     configuration file to <filename class="directory">/etc</filename>:</para>

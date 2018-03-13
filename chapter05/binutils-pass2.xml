@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Binutils</title>
+    <title>Установка Binutils</title>
 
     <para>Create a separate build directory again:</para>
 

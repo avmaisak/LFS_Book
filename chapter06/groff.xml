@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Groff</title>
+    <title>Установка Groff</title>
 
     <para>Groff expects the environment variable <envar>PAGE</envar> to
     contain the default paper size. For users in the United States,

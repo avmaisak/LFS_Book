@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Linux API Headers</title>
+    <title>Установка Linux API Headers</title>
 
     <para>The Linux kernel needs to expose an Application Programming Interface
     (API) for the system's C library (Glibc in LFS) to use.  This is done

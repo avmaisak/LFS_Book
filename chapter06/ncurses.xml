@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Ncurses</title>
+    <title>Установка Ncurses</title>
 
     <para>Don't install a static library that is not handled by configure:</para>
 

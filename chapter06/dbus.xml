@@ -44,7 +44,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  D-Bus</title>
+    <title>Установка D-Bus</title>
 
     <para>Подготовьте D-Bus для компиляции:</para>
 

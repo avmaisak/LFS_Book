@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  GMP</title>
+    <title>Установка GMP</title>
 
     <note>
       <para>If you are building for 32-bit x86, but you have a CPU which is

@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Libelf</title>
+    <title>Установка Libelf</title>
 
       <para>Libelf is part of elfutils-&elfutils-version; package. Use
       the elfutils-&elfutils-version;.tar.xz as the source tarball.</para>

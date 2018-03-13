@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Bc</title>
+    <title>Установка Bc</title>
 
     <para>First, change an internal script to use <command>sed</command> instead 
     of <command>ed</command>:</para>

@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Flex</title>
+    <title>Установка Flex</title>
 
     <para>First, fix a problem introduced with glibc-2.26:</para>
 

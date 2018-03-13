@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Cross GCC</title>
+    <title>Установка Cross GCC</title>
 
     <para>GCC now requires the GMP, MPFR and MPC packages. As these packages may
     not be included in your host distribution, they will be built with

@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Ncurses</title>
+    <title>Установка Ncurses</title>
 
     <para>First, ensure that <command>gawk</command> is found first during configuration:</para>
 

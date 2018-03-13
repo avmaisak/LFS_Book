@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  XML::Parser</title>
+    <title>Установка XML::Parser</title>
 
     <para>Подготовьте XML::Parser для компиляции:</para>
 

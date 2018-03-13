@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Bzip2</title>
+    <title>Установка Bzip2</title>
 
     <para>Apply a patch that will install the documentation for this package:</para>
 

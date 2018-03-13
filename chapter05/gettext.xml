@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка  Gettext</title>
+    <title>Установка Gettext</title>
 
     <para>For our temporary set of tools, we only need to build and install
     three programs from Gettext.</para>
