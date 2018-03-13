@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Util-linux</title>
+    <title>Установка Util-linux</title>
 
-    <para>Prepare Util-linux for compilation:</para>
+    <para>Подготовьте Util-linux для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools                \
             --without-python               \

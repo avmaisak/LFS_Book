@@ -41,14 +41,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Coreutils</title>
+    <title>Установка Coreutils</title>
 
-    <para>Prepare Coreutils for compilation:</para>
+    <para>Подготовьте Coreutils для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-install-program=hostname</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><envar>--enable-install-program=hostname</envar></term>
@@ -64,7 +64,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
+    <para>На этом компиляция завершена. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
     the Coreutils test suite anyway, issue the следующую команду:</para>
 

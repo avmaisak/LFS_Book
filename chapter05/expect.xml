@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Expect</title>
+    <title>Установка Expect</title>
 
     <para>First, force Expect's configure script to use <filename>/bin/stty</filename>
     instead of a <filename>/usr/local/bin/stty</filename> it may find on the host system.
@@ -49,14 +49,14 @@
 <screen><userinput remap="pre">cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
 
-    <para>Now prepare Expect for compilation:</para>
+    <para>Now prepare Expect для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools       \
             --with-tcl=/tools/lib \
             --with-tclinclude=/tools/include</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><parameter>--with-tcl=/tools/lib</parameter></term>
@@ -83,7 +83,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
+    <para>На этом компиляция завершена. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
     the Expect test suite anyway, issue the следующую команду:</para>
 

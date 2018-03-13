@@ -40,9 +40,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of PCRE</title>
+    <title>Установка PCRE</title>
 
-    <para>Prepare PCRE for compilation:</para>
+    <para>Подготовьте PCRE для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr \
             --docdir=/usr/share/doc/pcre-&pcre-version; \
@@ -52,7 +52,7 @@
             --enable-pcregrep-libbz2</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><parameter>--enable-utf8</parameter></term>

@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GMP</title>
+    <title>Установка GMP</title>
 
     <note>
       <para>If you are building for 32-bit x86, but you have a CPU which is
@@ -54,13 +54,13 @@
       <para>The default settings of GMP produce libraries optimized for
       the host processor.  If libraries suitable for processors less
       capable than the host's CPU are desired, generic libraries can be 
-      created by running the following:
+      created выполнив следующую команду:
 
 <screen role="nodump"><userinput>cp -v configfsf.guess config.guess
 cp -v configfsf.sub   config.sub</userinput></screen></para>
     </note>
 
-    <para>Prepare GMP for compilation:</para>
+    <para>Подготовьте GMP для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \
             --enable-cxx     \
@@ -94,7 +94,7 @@ make html</userinput></screen>
 
     <important>
       <para>The test suite for GMP in this section is considered critical.
-      Do not skip it under any circumstances.</para>
+      Не пропускайте выполнение тестов ни при каких обстоятельствах..</para>
     </important>
 
     <para>Для выполнения тестов, выполните команду:</para>

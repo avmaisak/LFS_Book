@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of systemd</title>
+    <title>Установка systemd</title>
 
     <para>Create a symlink to work around missing xsltproc:</para>
 
@@ -58,7 +58,7 @@
 
 <screen><userinput remap="pre">sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in</userinput></screen>
 
-    <para>Prepare systemd for compilation:</para>
+    <para>Подготовьте systemd для компиляции:</para>
 
     <screen><userinput remap="configure">mkdir -p build
 cd       build

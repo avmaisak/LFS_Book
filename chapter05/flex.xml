@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Flex</title>
+    <title>Установка Flex</title>
 <!--
     <para>Flex contains several known bugs. These can be fixed with the
     following patch:</para>
@@ -55,7 +55,7 @@
 
 <screen><userinput remap="pre">touch doc/flex.1</userinput></screen>
 -->
-    <para>Prepare Flex for compilation:</para>
+    <para>Подготовьте Flex для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

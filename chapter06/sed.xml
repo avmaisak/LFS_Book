@@ -38,14 +38,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Sed</title>
+    <title>Установка Sed</title>
 
     <para>First fix an issue in the LFS environment and remove a failing test:</para>
 
 <screen><userinput remap="pre">sed -i 's/usr/tools/'                 build-aux/help2man
 sed -i 's/testsuite.panic-tests.sh//' Makefile.in</userinput></screen>
 
-    <para>Prepare Sed for compilation:</para>
+    <para>Подготовьте Sed для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --bindir=/bin</userinput></screen>
 <!--

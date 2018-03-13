@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glibc</title>
+    <title>Установка Glibc</title>
 
     <note><para>The Glibc build system is self-contained and will install
     perfectly, even though the compiler specs file and linker are still
@@ -91,7 +91,7 @@ esac</userinput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Glibc for compilation:</para>
+    <para>Подготовьте Glibc для компиляции:</para>
 
 <screen><userinput remap="configure">CC="gcc -isystem $GCC_INCDIR -isystem /usr/include" \
 ../configure --prefix=/usr                          \
@@ -145,7 +145,7 @@ unset GCC_INCDIR</userinput></screen>
 
     <important>
       <para>In this section, the test suite for Glibc is considered critical.
-      Do not skip it under any circumstance.</para>
+      Не пропускайте выполнение тестов ни при каких обстоятельствах.</para>
     </important>
 
     <para>Generally a few tests do not pass. The test failures listed below

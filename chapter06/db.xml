@@ -59,20 +59,20 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Berkeley DB</title>
+    <title>Установка Berkeley DB</title>
 
     <para>Apply an upstream patch so that replication clients can open a
     sequence:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&db-fixes-patch;</userinput></screen>
 
-    <para>Prepare Berkeley DB for compilation:</para>
+    <para>Подготовьте Berkeley DB для компиляции:</para>
 
 <screen><userinput remap="configure">cd build_unix
 ../dist/configure --prefix=/usr --enable-compat185 --enable-cxx</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><parameter>--enable-compat185</parameter></term>

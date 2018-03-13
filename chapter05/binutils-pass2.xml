@@ -41,14 +41,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Binutils</title>
+    <title>Установка Binutils</title>
 
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Binutils for compilation:</para>
+    <para>Подготовьте Binutils для компиляции:</para>
 
 <screen><userinput remap="configure">CC=$LFS_TGT-gcc                \
 AR=$LFS_TGT-ar                 \

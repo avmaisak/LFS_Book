@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Cross GCC</title>
+    <title>Установка Cross GCC</title>
 
     <para>GCC now requires the GMP, MPFR and MPC packages. As these packages may
     not be included in your host distribution, they will be built with
@@ -126,7 +126,7 @@ esac</userinput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare GCC for compilation:</para>
+    <para>Подготовьте GCC для компиляции:</para>
 
 <screen><userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
@@ -151,7 +151,7 @@ cd       build</userinput></screen>
     --disable-libstdcxx                            \
     --enable-languages=c,c++</userinput></screen>
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><parameter>--with-newlib</parameter></term>
@@ -241,7 +241,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. At this point, the test suite would
+    <para>На этом компиляция завершена. At this point, the test suite would
     normally be run, but, as mentioned before, the test suite framework is
     not in place yet. The benefits of running the tests at this point
     are minimal since the programs from this first pass will soon be

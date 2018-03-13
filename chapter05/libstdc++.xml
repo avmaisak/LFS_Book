@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Target Libstdc++</title>
+    <title>Установка Target Libstdc++</title>
 
     <note>
       <para><application>Libstdc++</application> is part of the GCC sources.
@@ -53,7 +53,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Libstdc++ for compilation:</para>
+    <para>Подготовьте Libstdc++ для компиляции:</para>
 
 <screen><userinput remap="configure">../libstdc++-v3/configure           \
     --host=$LFS_TGT                 \
@@ -65,7 +65,7 @@ cd       build</userinput></screen>
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><parameter>--host=...</parameter></term>

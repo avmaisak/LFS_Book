@@ -39,9 +39,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Psmisc</title>
+    <title>Установка Psmisc</title>
 
-    <para>Prepare Psmisc for compilation:</para>
+    <para>Подготовьте Psmisc для компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

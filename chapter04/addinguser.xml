@@ -8,23 +8,16 @@
 <sect1 id="ch-tools-addinguser">
   <?dbhtml filename="addinguser.html"?>
 
-  <title>Adding the LFS User</title>
+  <title>Создание пользователя LFS</title>
 
-  <para>When logged in as user <systemitem class="username">root</systemitem>,
-  making a single mistake can damage or destroy a system. Therefore, we
-  recommend building the packages in this chapter as an unprivileged user.
-  You could use your own user name, but to make it easier to set up a clean
-  working environment, create a new user called <systemitem
-  class="username">lfs</systemitem> as a member of a new group (also named
-  <systemitem class="groupname">lfs</systemitem>) and use this user during
-  the installation process. As <systemitem class="username">root</systemitem>,
-  issue the following commands to add the new user:</para>
+  <para>Когда мы находимся в системе под пользователем <systemitem class="username">root</systemitem>, одна единственная ошибка может привести к повреждению или поломке хост-системы. Следовательно мы рекомендуем выполнять сборку пакетов для временного набора инструментов в этой главе от обычного пользователя, без привилегий. Вы можете использовать произвольного пользователя, но для упрощения настройки чистого рабочего окружения создайте нового пользователя с именем <systemitem
+  class="username">lfs</systemitem> как члена группы <systemitem class="groupname">lfs</systemitem> и используйте этого пользователя на время всего процесса установки временного набора инструментов. Выполните команду от пользователя <systemitem class="username">root</systemitem>:</para>
 
 <screen><userinput>groupadd lfs
 useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
 
   <variablelist>
-    <title>The meaning of the command line options:</title>
+    <title>Значение параметров командной строки:</title>
 
     <varlistentry>
       <term><parameter>-s /bin/bash</parameter></term>
