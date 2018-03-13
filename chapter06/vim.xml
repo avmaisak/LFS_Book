@@ -123,7 +123,7 @@ done</userinput></screen>
     change to <quote>compatible</quote> mode that it should be the first
     setting in the configuration file. This is necessary because it changes
     other settings, and overrides must come after this setting. Create a default
-    <command>vim</command> configuration file by running the following:</para>
+    <command>vim</command> configuration file выполнив следующую команду:</para>
 
 <screen><userinput>cat &gt; /etc/vimrc &lt;&lt; "EOF"
 <literal>" Begin /etc/vimrc
