@@ -75,7 +75,7 @@ export BUILD_BZIP2=0</userinput></screen>
                   -Dusethreads</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
       <varlistentry>
         <term><parameter>-Dvendorprefix=/usr</parameter></term>

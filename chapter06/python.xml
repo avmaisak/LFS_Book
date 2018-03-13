@@ -51,7 +51,7 @@
             --with-ensurepip=yes</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title><title>Значение параметров конфигурации:</title></title>
 
     <varlistentry>
       <term><parameter>--with-system-expat</parameter></term>
