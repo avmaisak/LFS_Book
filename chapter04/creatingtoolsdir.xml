@@ -10,39 +10,22 @@
 
   <title>Создание каталога $LFS/tools</title>
 
-  <para>All programs compiled in <xref linkend="chapter-temporary-tools"/>
-  will be installed under <filename class="directory">$LFS/tools</filename>
-  to keep them separate from the programs compiled in <xref
-  linkend="chapter-building-system"/>. The programs compiled here are
-  temporary tools and will not be a part of the final LFS system. By keeping
-  these programs in a separate directory, they can easily be discarded later
-  after their use. This also prevents these programs from ending up in the
-  host production directories (easy to do by accident in <xref
-  linkend="chapter-temporary-tools"/>).</para>
+  <para>Все программы которые будут скомпилированны в главе <xref linkend="chapter-temporary-tools"/> будут установлены в каталог <filename class="directory">$LFS/tools</filename> чтообы можно было оставить их отдельно от сборки конечной системы в главе <xref
+  linkend="chapter-building-system"/>. Программы которые будут скомпилированны - временные иснтрументы и не будут входить в конечную сборку LFS системы. После использования временных инструментов, от них можно избавиться. Использование каталога $LFS/tools для хранения временного набора инструментов также полезно для того, чтобы не засорять рабочие каталоги хост-системы (что можно случайно сделать в <xref linkend="chapter-temporary-tools"/>).</para>
 
-  <para>Create the required directory by running the following as
-  <systemitem class="username">root</systemitem>:</para>
+  <para>Создайте каталог, выполнив команду от пользователя <systemitem class="username">root</systemitem>:</para>
 
 <screen><userinput>mkdir -v $LFS/tools</userinput></screen>
 
-  <para>The next step is to create a <filename class="symlink">/tools</filename>
-  symlink on the host system. This will point to the newly-created directory on
-  the LFS partition. Run this command as <systemitem
-  class="username">root</systemitem> as well:</para>
+  <para>Соедующим шагом, будет создание символической ссылки <filename class="symlink">/tools</filename> в хост-системе, которая будет указывать на созданный каталог с временными инструментами. Запустите команду от пользователя <systemitem class="username">root</systemitem>:</para>
 
 <screen><userinput>ln -sv $LFS/tools /</userinput></screen>
 
   <note>
-    <para>The above command is correct. The <command>ln</command> command
-    has a few syntactic variations, so be sure to check
-    <command>info coreutils ln</command> and <filename>ln(1)</filename>
-    before reporting what you may think is an error.</para>
+    <para>Вышеприведенная команда верна. Команда <command>ln</command> имеет несколько синтаксических вариаций, поэтому обязательно проверьте <command>info coreutils ln</command> and <filename>ln(1)</filename> перед тем, как сообщить о предполагаемой ошибке.</para>
   </note>
 
-  <para>The created symlink enables the toolchain to be compiled so that it
-  always refers to <filename class="directory">/tools</filename>, meaning
-  that the compiler, assembler, and linker will work both in Chapter&nbsp;5
-  (when we are still using some tools from the host) and in the next (when
-  we are <quote>chrooted</quote> to the LFS partition).</para>
+  <para>Созданная символическая ссылка позволяет выполнить компиляцию временного набора инструментов по ссылке <filename class="directory">/tools</filename>, это озночает что компилятор, ассммблер и линковщик смогут работать как в главе&nbsp;5 
+  (на тот момент, когда мы все еще используем некоторые инструменты хост-системы) и в дальнейшем (когда мы выполним команду <quote>chroot</quote> в раздел LFS).</para>
 
 </sect1>
