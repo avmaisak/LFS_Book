@@ -17,7 +17,7 @@
 
 <screen><userinput>mkdir -v $LFS/tools</userinput></screen>
 
-  <para>Соедующим шагом, будет создание символической ссылки <filename class="symlink">/tools</filename> в хост-системе, которая будет указывать на созданный каталог с временными инструментами. Запустите команду от пользователя <systemitem class="username">root</systemitem>:</para>
+  <para>Следующим шагом, будет создание символической ссылки <filename class="symlink">/tools</filename> в хост-системе, которая будет указывать на созданный каталог с временными инструментами. Запустите команду от пользователя <systemitem class="username">root</systemitem>:</para>
 
 <screen><userinput>ln -sv $LFS/tools /</userinput></screen>
 
