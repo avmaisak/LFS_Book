@@ -10,14 +10,6 @@
 
   <title>Введение</title>
 
-  <para>В этой главе будет выполнено несколько задач для подготовке к тому, чтобы приступить к созданию набора инструментов
-  In this chapter, we will perform a few additional tasks to prepare
-  for building the temporary system. We will create a directory in
-  <filename class="directory">$LFS</filename> for the installation of the
-  temporary tools, add an unprivileged user to reduce risk,
-  and create an appropriate build environment for that user. We will also
-  explain the unit of time we use to measure how long LFS packages take to
-  build, or <quote>SBUs</quote>, and give some information about package
-  test suites.</para>
+  <para>В этой главе будет выполнено несколько задач для подготовки к сборки временной системы. Мы создадим каталог в <filename class="directory">$LFS</filename> для установки временного набора инструментов, и добавим непривилегированного прользователя, чтобы снизить риск, и насторим окружение для этого пользователя. Также будут даны объяснения по поводу стандартной единицы времени сборки (SBU), для того, чтобы была возможность оценить приблизительное время сборки каждого пакета. Также, будет предоставлена информация по поводу набора тестов для пакетов.</para>
 
 </sect1>
