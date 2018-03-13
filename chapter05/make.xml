@@ -67,7 +67,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para><title>На этом компиляция завершена. As discussed earlier, running the test
+    <para>На этом компиляция завершена. As discussed earlier, running the test
     suite is not mandatory for the temporary tools here in this chapter. To run
     the Make test suite anyway, issue the следующую команду:</para>
 
