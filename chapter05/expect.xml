@@ -56,7 +56,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
             --with-tclinclude=/tools/include</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--with-tcl=/tools/lib</parameter></term>

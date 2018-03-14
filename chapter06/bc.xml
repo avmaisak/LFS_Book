@@ -78,7 +78,7 @@ ln -sfv libncurses.so.6 /usr/lib/libncurses.so</userinput></screen>
             --infodir=/usr/share/info</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--with-readline</parameter></term>

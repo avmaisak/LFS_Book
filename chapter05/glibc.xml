@@ -61,7 +61,7 @@ cd       build</userinput></screen>
       libc_cv_c_cleanup=yes</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>

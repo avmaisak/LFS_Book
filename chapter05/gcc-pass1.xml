@@ -151,7 +151,7 @@ cd       build</userinput></screen>
     --disable-libstdcxx                            \
     --enable-languages=c,c++</userinput></screen>
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--with-newlib</parameter></term>

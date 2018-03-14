@@ -55,7 +55,7 @@
 <screen><userinput remap="configure">./configure --prefix=/usr --localstatedir=/var/lib/locate</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--localstatedir</parameter></term>

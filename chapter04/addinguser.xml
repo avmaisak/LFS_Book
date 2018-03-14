@@ -16,7 +16,7 @@
 useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
 
   <variablelist>
-    <title>The meaning of the command line options:</title>
+    <title>Значение параметров командной строки:</title>
 
     <varlistentry>
       <term><parameter>-s /bin/bash</parameter></term>

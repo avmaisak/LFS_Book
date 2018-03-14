@@ -72,7 +72,7 @@
 ../dist/configure --prefix=/usr --enable-compat185 --enable-cxx</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--enable-compat185</parameter></term>

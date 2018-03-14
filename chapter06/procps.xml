@@ -58,7 +58,7 @@
             --with-systemd</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--disable-kill</parameter></term>

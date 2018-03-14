@@ -53,7 +53,7 @@
 <screen><userinput remap="configure">./configure --prefix=/tools --without-bash-malloc</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--without-bash-malloc</parameter></term>

@@ -52,7 +52,7 @@
             --enable-pcregrep-libbz2</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--enable-utf8</parameter></term>

@@ -48,7 +48,7 @@
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-install-program=hostname</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>Значение параметров конфигурации:</title>
 
       <varlistentry>
         <term><envar>--enable-install-program=hostname</envar></term>
