@@ -10,7 +10,9 @@
 
   <title>Информация о SBU (Стандартная единица времени сборки)</title>
 
-  <para>Many people would like to know beforehand approximately how long
+  <para>Многим хотелось бы знать заранее приблизительное время, которое будет затрачено на компиляцию и установку каждого пакета. Так как система LFS может быть создана на разных системах, точное время не оценить. На компиляцию и сборку самого большого пакета (Glibc) может уйти примерно 20 минут на быстрых компьютерах, но может и занять до трёх дней 
+  
+  Many people would like to know beforehand approximately how long
   it takes to compile and install each package. Because Linux From
   Scratch can be built on many different systems, it is impossible to
   provide accurate time estimates. The biggest package (Glibc) will
