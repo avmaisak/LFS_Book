@@ -21,7 +21,7 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
     <varlistentry>
       <term><parameter>-s /bin/bash</parameter></term>
       <listitem>
-        <para>This makes <command>bash</command> the default shell for user
+        <para>Устанавливает <command>bash</command> оболочкой по умолчанию для пользователя 
         <systemitem class="username">lfs</systemitem>.</para>
       </listitem>
     </varlistentry>
@@ -29,15 +29,15 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
     <varlistentry>
       <term><parameter>-g lfs</parameter></term>
       <listitem>
-        <para>This option adds user <systemitem class="username">lfs</systemitem>
-        to group <systemitem class="groupname">lfs</systemitem>.</para>
+        <para>Опция добавляет пользователя <systemitem class="username">lfs</systemitem>
+        в созданную группу <systemitem class="groupname">lfs</systemitem>.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter>-m</parameter></term>
       <listitem>
-        <para>This creates a home directory for <systemitem
+        <para>Создает домашний каталог для пользователя <systemitem
         class="username">lfs</systemitem>.</para>
       </listitem>
     </varlistentry>
@@ -45,50 +45,40 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
     <varlistentry>
       <term><parameter>-k /dev/null</parameter></term>
       <listitem>
-        <para>This parameter prevents possible copying of files from a skeleton
-        directory (default is <filename class="directory">/etc/skel</filename>)
-        by changing the input location to the special null device.</para>
+        <para>Этот параметр предотвращает возможное копирование файлов из предустановленного набора каталогов 
+        (по умолчанию <filename class="directory">/etc/skel</filename>), изменив местоположение ввода на специальное null  устройство.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter>lfs</parameter></term>
       <listitem>
-        <para>This is the actual name for the created group and user.</para>
+        <para>Это наименнование созданного пользователя и группы.</para>
       </listitem>
     </varlistentry>
 
   </variablelist>
 
-  <para>To log in as <systemitem class="username">lfs</systemitem> (as opposed
-  to switching to user <systemitem class="username">lfs</systemitem> when logged
-  in as <systemitem class="username">root</systemitem>, which does not require
-  the <systemitem class="username">lfs</systemitem> user to have a password),
-  give <systemitem class="username">lfs</systemitem> a password:</para>
+  <para>Чтобы войти в систему как пользователь lfs  (в отличие от смены пользователя <systemitem class="username">lfs</systemitem> когда вы авторизованы как пользователь <systemitem class="username">root</systemitem>, для которого не требуется , чтобы пользователь  <systemitem class="username">lfs</systemitem> имел пароль), создадим для учётной записи пароль:</para>
 
 <screen role="nodump"><userinput>passwd lfs</userinput></screen>
 
-  <para>Grant <systemitem class="username">lfs</systemitem> full access to
-  <filename class="directory">$LFS/tools</filename> by making
-  <systemitem class="username">lfs</systemitem> the directory owner:</para>
+  <para>Предоставим <systemitem class="username">lfs</systemitem> полный доступ к 
+  <filename class="directory">$LFS/tools</filename> сделав пользователя 
+  <systemitem class="username">lfs</systemitem> владельцем каталога:</para>
 
 <screen><userinput>chown -v lfs $LFS/tools</userinput></screen>
 
-  <para>If a separate working directory was created as suggested, give
-  user <systemitem class="username">lfs</systemitem> ownership of this
-  directory:</para>
+  <para>Если был создан отдельный рабочий каталог, как предлагается, предоставьте пользователю <systemitem class="username">lfs</systemitem> права на следующий каталог:</para>
 
 <screen><userinput>chown -v lfs $LFS/sources</userinput></screen>
 
-  <para>Next, login as user <systemitem class="username">lfs</systemitem>.
-  This can be done via a virtual console, through a display manager, or with
-  the following substitute user command:</para>
+  <para>Далее, выполним вход как пользователь <systemitem class="username">lfs</systemitem>. Это действие можно выполнить в графической оболочке, используя виртуальный терминал, или в обычной пользовательской среде:</para>
 
 <screen role="nodump"><userinput>su - lfs</userinput></screen>
 
-  <para>The <quote><parameter>-</parameter></quote> instructs
-  <command>su</command> to start a login shell as opposed to a non-login shell.
-  The difference between these two types of shells can be found in detail in
-  <filename>bash(1)</filename> and <command>info bash</command>.</para>
+  <para>Аргумент <quote><parameter>-</parameter></quote> предает значение для команды <command>su</command> для начала 
+  запуска login-оболочки,  в отличие от обычной. Различия между двумя типами оболочек можно подробно изучить в 
+  <filename>bash(1)</filename> и <command>информация о bash</command>.</para>
 
 </sect1>
