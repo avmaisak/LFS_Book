@@ -8,30 +8,20 @@
 <sect1 id="ch-tools-settingenviron">
   <?dbhtml filename="settingenvironment.html"?>
 
-  <title>Setting Up the Environment</title>
+  <title>Настройка окружения</title>
 
-  <para>Set up a good working environment by creating two new startup files
-  for the <command>bash</command> shell. While logged in as user
-  <systemitem class="username">lfs</systemitem>, issue the following command
-  to create a new <filename>.bash_profile</filename>:</para>
+  <para>Настроим хорошо работающее окружение. Создадим два файла для оболочки <command>bash</command>. При входе в систему как пользователь <systemitem class="username">lfs</systemitem> выполните следующую команду для создания нового файла <filename>.bash_profile</filename>:</para>
 
 <screen><userinput>cat &gt; ~/.bash_profile &lt;&lt; "EOF"
 <literal>exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash</literal>
 EOF</userinput></screen>
 
-  <para>When logged on as user <systemitem class="username">lfs</systemitem>,
-  the initial shell is usually a <emphasis>login</emphasis> shell which reads
-  the <filename>/etc/profile</filename> of the host (probably containing some
-  settings and environment variables) and then <filename>.bash_profile</filename>.
-  The <command>exec env -i.../bin/bash</command> command in the
-  <filename>.bash_profile</filename> file replaces the running shell with a new
-  one with a completely empty environment, except for the <envar>HOME</envar>,
-  <envar>TERM</envar>, and <envar>PS1</envar> variables. This ensures that no
-  unwanted and potentially hazardous environment variables from the host system
-  leak into the build environment. The technique used here achieves the goal of
-  ensuring a clean environment.</para>
+  <para>Когда выполнен вход под пользователем <systemitem class="username">lfs</systemitem>, при инициализации оболочки   <emphasis>login</emphasis>, будет читать данные из файла <filename>/etc/profile</filename> хост-системы (который возможно будет содержать некоторые настройки и дополнительные переменные), и затем данные из файла <filename>.bash_profile</filename>. Команда <command>exec env -i.../bin/bash</command> в файле <filename>.bash_profile</filename> заменяет запущенную оболочку новой полностью пустой средой, кроме таких переменных, как <envar>HOME</envar>, <envar>TERM</envar>, и <envar>PS1</envar>. Такой подход гарантирует, что нежелательные и потенциально опасные переменные окружения хост-системы не попадут в среду сборки. В результате чего мы получаем чистое окружение.</para>
 
-  <para>The new instance of the shell is a <emphasis>non-login</emphasis>
+  <para>Новый экземпляр оболочки - это <emphasis>non-login</emphasis> оболочка, которая не выполняет чтение файла <filename>/etc/profile</filename> или <filename>.bash_profile</filename>.я
+
+
+  The new instance of the shell is a <emphasis>non-login</emphasis>
   shell, which does not read the <filename>/etc/profile</filename> or
   <filename>.bash_profile</filename> files, but rather reads the
   <filename>.bashrc</filename> file instead. Create the
