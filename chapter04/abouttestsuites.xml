@@ -15,30 +15,11 @@
   <para>Некоторые наборы тестов важнее, чем остальные. Например наборы тестов для главных пакетов временного инструментария - &mdash;GCC, Binutils, и Glibc&mdash; чрезвычайно важны и необходимы,  для правильной работы всей системы. Наборы тестов для пакетов GCC и Glibc могуть занять очень много времени, особенно на слабом оборудовании. Но их выполнение настоятельно рекомендуется.</para>
 
   <note>
-    <para>Опыт показывает, что выполнение тестов пакетов, в главе <xref linkend="chapter-temporary-tools"/> не будет содержательным. Хост-система в любом случае будет оказывать влияние на выполнение тестов в .
-    
-    Experience has shown that there is little to be gained from running
-    the test suites in <xref linkend="chapter-temporary-tools"/>. There can be
-    no escaping the fact that the host system always exerts some influence on
-    the tests in that chapter, often causing inexplicable failures. Because
-    the tools built in <xref linkend="chapter-temporary-tools"/> are temporary
-    and eventually discarded, we do not recommend running the test suites in
-    <xref linkend="chapter-temporary-tools"/> for the average reader. The
-    instructions for running those test suites are provided for the benefit of
-    testers and developers, but they are strictly optional.</para>
+    <para>Опыт показывает, что выполнение тестов пакетов, в главе <xref linkend="chapter-temporary-tools"/> не будет содержательным. Хост-система в любом случае будет оказывать влияние на выполнение тестов, и может приводить к непрогнозируемым результатам, к тому же инструменты созданные в главе <xref linkend="chapter-temporary-tools"/> временные и потом будет исключены. Мы не рекомендуем выполнять тесты в этой главе для рядового читателя. Инструкции по тестированию в основном представлены для тестировщиков и разработчиков и не обязательны.</para>
   </note>
 
-  <para>A common issue with running the test suites for Binutils and GCC
-  is running out of pseudo terminals (PTYs). This can result in a high
-  number of failing tests. This may happen for several reasons, but the
-  most likely cause is that the host system does not have the
-  <systemitem class="filesystem">devpts</systemitem> file system set up
-  correctly. This issue is discussed in greater detail at
-  <ulink url="&lfs-root;lfs/faq.html#no-ptys"/>.</para>
+  <para>Общая проблема при тестировании пакетов Binutils и GCC связана я псевдотерминалами (PTYs). И может выдавать большое количество неудачно завершенных тестов. Причин может быть множество, но скорее всего причина в том, в хост-системе не правильно настроена файловая система <systemitem class="filesystem">devpts</systemitem>. Этот вопрос обсуждается более подробно на этой странице: <ulink url="&lfs-root;lfs/faq.html#no-ptys"/>.</para>
 
-  <para>Sometimes package test suites will fail, but for reasons which the
-  developers are aware of and have deemed non-critical. Consult the logs located
-  at <ulink url="&test-results;"/> to verify whether or not these failures are
-  expected. This site is valid for all tests throughout this book.</para>
+  <para>Иногда при выполнении тестирования пакетов результат будет неудачным, но разработчики могут считать такую ситуацию не критичной. Ознакомьтесь с отчётами, расположенными по ссылке <ulink url="&test-results;"/> чтобы проверить являются ли проблемы ожидаемыми. В отчёте представлены результаты тестирования всех пакетов книги.</para>
 
 </sect1>
