@@ -10,53 +10,24 @@
 
   <title>Информация о SBU (Стандартная единица времени сборки)</title>
 
-  <para>Многим хотелось бы знать заранее приблизительное время, которое будет затрачено на компиляцию и установку каждого пакета. Так как система LFS может быть создана на разных системах, точное время не оценить. На компиляцию и сборку самого большого пакета (Glibc) может уйти примерно 20 минут на быстрых компьютерах, но может и занять до трёх дней 
-  
-  Many people would like to know beforehand approximately how long
-  it takes to compile and install each package. Because Linux From
-  Scratch can be built on many different systems, it is impossible to
-  provide accurate time estimates. The biggest package (Glibc) will
-  take approximately 20 minutes on the fastest systems, but could take
-  up to three days on slower systems! Instead of providing actual times,
-  the Standard Build Unit (SBU) measure will be
-  used instead.</para>
+  <para>Многим хотелось бы знать заранее приблизительное время, которое будет затрачено на компиляцию и установку каждого пакета. Так как система LFS может быть создана на разных машинах, точное время не оценить. На компиляцию и сборку одного из больших пакетов - Glibc, может уйти примерно 20 минут на быстрых компьютерах, но на медленных машинах может занять до трёх дней! Вместо фактического времени, будет использоваться показатель SBU (Стандартная единица времени сборки).</para>
 
-  <para>The SBU measure works as follows. The first package to be compiled
-  from this book is Binutils in <xref linkend="chapter-temporary-tools"/>. The
-  time it takes to compile this package is what will be referred to as the
-  Standard Build Unit or SBU. All other compile times will be expressed relative
-  to this time.</para>
+  <para>Показатель SBU вычисляется следующим образом: первый пакет, который будет скомпилирован в этой книге - является Binutils, сборка которого обсуждается в разделе <xref linkend="chapter-temporary-tools"/>. Время, которое будет затрачено на компиляцию этого пакета будет определено как одна единица времени сборки (Standard Build Unit) или (SBU). Все остальные значения времени при компиляции других пакетов будет счиаться относительно этой единицы.</para>
 
-  <para>For example, consider a package whose compilation time is 4.5
-  SBUs. This means that if a system took 10 minutes to compile and
-  install the first pass of Binutils, it will take
-  <emphasis>approximately</emphasis> 45 minutes to build this example package.
-  Fortunately, most build times are shorter than the one for Binutils.</para>
+  <para>Например, рассмотрим пакет, время сборки которого равно 4.5 SBU. Это означает, если сборка и установка пакета Binutils заняла 10 минут, то время на сборки и установки будет приблизительно 45 минут. К счастью, время сборки многих пакетов гораздо меньше, чем у Binutils.</para>
 
-  <para>In general, SBUs are not entirely accurate because they depend on many
-  factors, including the host system's version of GCC.  They are provided here
-  to give an estimate of how long it might take to install a package, but the
-  numbers can vary by as much as dozens of minutes in some cases.</para>
+  <para>В целом, информация о SBU может быть не точна и значения могут различаться в пределах нескольких десятков минут. Потому что существует множество факторов, таки как версия GCC хост-системы и прочие аспекты.</para>
 
   <note>
-    <para>For many modern systems with multiple processors (or cores) the
-    compilation time for a package can be reduced by performing a "parallel
-    make" by either setting an environment variable or telling the
-    <command>make</command> program how many processors are available.  For
-    instance, a Core2Duo can support two simultaneous processes with:</para>
+    <para>Для многих современных компьютеров, с несколькими процессорами или ядрами, время компиляции пакета можно сократить, выполняя процедуру "параллельной сборки", указанием в переменной окружения или аргументом при использовании программы <command>make</command> сколько процессоров доступно. Например процессор Core2Duo может выполнять сборку в два потока, если указать следующее:</para>
 
     <screen><userinput>export MAKEFLAGS='-j 2'</userinput></screen>
 
-    <para>or just building with:</para>
+    <para>или выполнить компиляции с указанием:</para>
 
     <screen><userinput>make -j2</userinput></screen>
 
-    <para>When multiple processors are used in this way, the SBU units in the
-    book will vary even more than they normally would.  In some cases, the make
-    step will simply fail.  Analyzing the output of the build process will also
-    be more difficult because the lines of different processes will be
-    interleaved.  If you run into a problem with a build step, revert back to a
-    single processor build to properly analyze the error messages.</para>
+    <para>Когда используется несколько процессоров, информация SBU будет искажена больше чем при выполнении сборки в один поток. В некоторых случаях процесс сборки может завершиться неудачно. К тому же анализ выходного потока при совершении сборки будет трудночитаем, так как вывод будет содержать строки вперемешку с разных потоков. Если произошла проблема сборки в несколько потоков, выполните сборку в один поток, и проанализируйте сообщение об ошибке.</para>
   </note>
 
 </sect1>
