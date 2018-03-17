@@ -10,22 +10,14 @@
 
   <title>О тестировании</title>
 
-  <para>Most packages provide a test suite. Running the test suite for a
-  newly built package is a good idea because it can provide a <quote>sanity
-  check</quote> indicating that everything compiled correctly. A test suite
-  that passes its set of checks usually proves that the package is
-  functioning as the developer intended. It does not, however, guarantee
-  that the package is totally bug free.</para>
+  <para>Многие пакеты содержат инструменты для тестирования. Выполнить наборы тестов для  скомпилированного пакета может быть хорошей идеей, чтобы проверить работоспособность и убедиться что все работает так, как предполагалось разработчиками пакета. Однако это не гарантирует что пакет не содержит ошибок.</para>
 
-  <para>Some test suites are more important than others. For example,
-  the test suites for the core toolchain packages&mdash;GCC, Binutils, and
-  Glibc&mdash;are of the utmost importance due to their central role in a
-  properly functioning system. The test suites for GCC and Glibc can
-  take a very long time to complete, especially on slower hardware, but
-  are strongly recommended.</para>
+  <para>Некоторые наборы тестов важнее, чем остальные. Например наборы тестов для главных пакетов временного инструментария - &mdash;GCC, Binutils, и Glibc&mdash; чрезвычайно важны и необходимы,  для правильной работы всей системы. Наборы тестов для пакетов GCC и Glibc могуть занять очень много времени, особенно на слабом оборудовании. Но их выполнение настоятельно рекомендуется.</para>
 
   <note>
-    <para>Experience has shown that there is little to be gained from running
+    <para>Опыт показывает, что выполнение тестов пакетов, в главе <xref linkend="chapter-temporary-tools"/> не будет содержательным. Хост-система в любом случае будет оказывать влияние на выполнение тестов в .
+    
+    Experience has shown that there is little to be gained from running
     the test suites in <xref linkend="chapter-temporary-tools"/>. There can be
     no escaping the fact that the host system always exerts some influence on
     the tests in that chapter, often causing inexplicable failures. Because
