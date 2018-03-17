@@ -12,7 +12,7 @@
 <!ENTITY copyrightdate   "1999-2018"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "8.2">
 
-<!ENTITY lfs-root        "http://www.linuxfromscratch.org/">
+<!ENTITY lfs-root        "https://linuxfromscratch.org.ru/">
 <!ENTITY blfs-root       "&lfs-root;blfs/">
 <!ENTITY blfs-book       "&blfs-root;view/&short-version;/">
 <!ENTITY faq-root        "&lfs-root;faq/">
