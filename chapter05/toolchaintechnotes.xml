@@ -28,7 +28,7 @@
 
   <itemizedlist>
     <listitem>
-      <para>Выполнив настройку названия платформы хост-системы, изменив поле &quot;vendor&quot; 
+      <para>Выполнив настройку названия платформы хост-системы, изменив поле &quot;vendor&quot;
       целевого триплета с помощью переменной окружения <envar>LFS_TGT</envar>, чтобы выполнить первую сборку пакетов Binutils и GCC с совместимым кросс-линковщиком и кросс-компилятором. Вместо того, чтобы создать файлы для другой архитектуры, кросс-линковщик и кросс-компилятор создадут файлы совместимые с текущим аппаратным обеспечением.</para>
     </listitem>
     <listitem>
@@ -39,14 +39,7 @@
     </listitem>
   </itemizedlist>
 
-  <para>Binutils is installed first because the <command>configure</command>
-  runs of both GCC and Glibc perform various feature tests on the assembler
-  and linker to determine which software features to enable or disable. This
-  is more important than one might first realize. An incorrectly configured
-  GCC or Glibc can result in a subtly broken toolchain, where the impact of
-  such breakage might not show up until near the end of the build of an
-  entire distribution. A test suite failure will usually highlight this error
-  before too much additional work is performed.</para>
+  <para>Пакет Binutils устанавливается первым, потому что команда <command>configure</command> запускает GCC и Glibc и выполняет различные функциональные тесты ассемблера и линковщика для определения какие функции программного обеспечения включить или выключить. Некорректно настроеный GCC или Glibc могут привести к неработоспособности всего временного набора инструментов, и такая проблема может проявиться только в конце сборки дистрибутива. Сбои при выполнении тестов могут сигнализировать о наличии таких обшибок.</para>
 
   <para>Binutils installs its assembler and linker in two locations,
   <filename class="directory">/tools/bin</filename> and <filename
