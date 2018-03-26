@@ -39,82 +39,31 @@
     </listitem>
   </itemizedlist>
 
-  <para>Пакет Binutils устанавливается первым, потому что команда <command>configure</command> запускает GCC и Glibc и выполняет различные функциональные тесты ассемблера и линковщика для определения какие функции программного обеспечения включить или выключить. Некорректно настроеный GCC или Glibc могут привести к неработоспособности всего временного набора инструментов, и такая проблема может проявиться только в конце сборки дистрибутива. Сбои при выполнении тестов могут сигнализировать о наличии таких обшибок.</para>
+  <para>Пакет Binutils устанавливается первым, потому что команда <command>configure</command> запускает GCC и Glibc и выполняет различные функциональные тесты ассемблера и линковщика для определения какие функции программного обеспечения включить или выключить. Некорректно настроенный GCC или Glibc могут привести к неработоспособности всего временного набора инструментов, и такая проблема может проявиться только в конце сборки дистрибутива. Сбои при выполнении тестов могут сигнализировать о наличии таких ошибок.</para>
 
-  <para>Binutils installs its assembler and linker in two locations,
-  <filename class="directory">/tools/bin</filename> and <filename
-  class="directory">/tools/$LFS_TGT/bin</filename>. The tools in one
-  location are hard linked to the other. An important facet of the linker is
-  its library search order. Detailed information can be obtained from
-  <command>ld</command> by passing it the <parameter>--verbose</parameter>
-  flag. For example, an <userinput>ld --verbose | grep SEARCH</userinput>
-  will illustrate the current search paths and their order. It shows which
-  files are linked by <command>ld</command> by compiling a dummy program and
-  passing the <parameter>--verbose</parameter> switch to the linker. For example,
-  <userinput>gcc dummy.c -Wl,--verbose 2&gt;&amp;1 | grep succeeded</userinput>
-  will show all the files successfully opened during the linking.</para>
+  <para>Пакет Binutils выполняет установку нового ассемблера и линковщика в два каталога:
+<filename class="directory">/tools/bin</filename> и <filename class="directory">/tools/$LFS_TGT/bin</filename>. Инструменты в одном каталоге жестко связаны. Важной особенностью линковщика является порядок поиска библиотек. Детальную информацию можно получить используя команду <command>ld</command> с аргументом <userinput>ld --verbose | grep SEARCH</userinput>. Например команда <userinput>ld --verbose | grep SEARCH</userinput> покажет текущие пути поиска и их порядок. Она показывает, какие файлы связаны <command>ld</command> при компиляции проверочной программы и указание аргумента <parameter>--verbose</parameter> линковщику. Например команда <userinput>gcc dummy.c -Wl,--verbose 2&gt;&amp;1 | grep succeeded</userinput> покажет что все файлы были успешно открыты в процессе линковки.</para>
 
-  <para>The next package installed is GCC. An example of what can be
-  seen during its run of <command>configure</command> is:</para>
+  <para>Следующий пакет который будет установлен - GCC. Пример вывода в процессе выполнения команды <command>configure</command> будет:</para>
 
 <screen><computeroutput>checking what assembler to use... /tools/i686-lfs-linux-gnu/bin/as
 checking what linker to use... /tools/i686-lfs-linux-gnu/bin/ld</computeroutput></screen>
 
-  <para>This is important for the reasons mentioned above. It also demonstrates
-  that GCC's configure script does not search the PATH directories to find which
-  tools to use. However, during the actual operation of <command>gcc</command>
-  itself, the same search paths are not necessarily used. To find out which
-  standard linker <command>gcc</command> will use, run:
-  <userinput>gcc -print-prog-name=ld</userinput>.</para>
+  <para>Это важный момент, по причинам указанным выше. Также демонстрируется что сценарий конфигурирования GCC не выполнят поиск по каталогам переменной окружения PATH для поиска инструментов. Однаком во время самой работы <command>gcc</command> необязательно, что одни и те же пути будет использованы. Чтобы узнать, какой стандартный линковщик <command>gcc</command> будет использовать, запустите команду: <userinput>gcc -print-prog-name=ld</userinput>.</para>
 
-  <para>Detailed information can be obtained from <command>gcc</command> by
-  passing it the <parameter>-v</parameter> command line option while compiling
-  a dummy program. For example, <userinput>gcc -v dummy.c</userinput> will show
-  detailed information about the preprocessor, compilation, and assembly stages,
-  including <command>gcc</command>'s included search paths and their order.</para>
+  <para>Подробная информация может быть получена в<command>gcc</command> указанием  аргумента <parameter>-v</parameter> при компиляции проверочной программы. Например команда <userinput>gcc -v dummy.c</userinput> покажет подробную информацию о препроцессоре, компиляции и стадий сборки, включая пути поиска <command>gcc</command> и их порядок.</para>
 
-  <para>Next installed are sanitized Linux API headers. These allow the standard
-  C library (Glibc) to interface with features that the Linux kernel will
-  provide.</para>
+  <para>Далее будут установлены изолированные заголовочные файлы Linux API (Linux API headers). Это позволит библиотеке C (Glibc) взаимодействовать с функциями, которые предоставляет ядро Linux.</para>
 
-  <para>The next package installed is Glibc. The most important considerations
-  for building Glibc are the compiler, binary tools, and kernel headers. The
-  compiler is generally not an issue since Glibc will always use the compiler
-  relating to the <parameter>--host</parameter> parameter passed to its
-  configure script; e.g. in our case, the compiler will be
-  <command>i686-lfs-linux-gnu-gcc</command>. The binary tools and kernel
-  headers can be a bit more complicated. Therefore, take no risks and use the
-  available configure switches to enforce the correct selections. After the run
-  of <command>configure</command>, check the contents of the
-  <filename>config.make</filename> file in the <filename
-  class="directory">glibc-build</filename> directory for all important details.
-  Note the use of <parameter>CC="i686-lfs-gnu-gcc"</parameter> to control which
-  binary tools are used and the use of the <parameter>-nostdinc</parameter> and
-  <parameter>-isystem</parameter> flags to control the compiler's include
-  search path. These items highlight an important aspect of the Glibc
-  package&mdash;it is very self-sufficient in terms of its build machinery and
-  generally does not rely on toolchain defaults.</para>
+  <para>Следующий пакет который будет установлен - Glibc. Необходимые компоненты для сборки Glibc - это компилятор, инструменты для работы с бинарными файлами, и заголовочные файлы ядра Linux (Linux API headers). Проблем с компилятором, как правило, не должно быть. Поскольку Glibc будет всегда использовать компилятор ссылающийся на аргумент <parameter>--host</parameter> который будет указан программе <command>configure</command>; например, в нашем случае, компилятором будет <command>i686-lfs-linux-gnu-gcc</command>.С инструментами для работы с бинарными файлами, и заголовочными файлы ядра Linux (Linux API headers) все будет немного сложнее. Поэтому не рискуйте и используйте  доступные опции конфигурации чтобы быть абсолютно уверенным в корректности. После запуска программы <command>configure</command> проверьте содержимое файла <filename>config.make</filename> в каталоге <filename class="directory">glibc-build</filename>. Убедитесь, что используется <parameter>CC="i686-lfs-gnu-gcc"</parameter> для контроля, каким инструментом для работы с бинарными файлами и используются ли аргументы   <parameter>-nostdinc</parameter> и <parameter>-isystem</parameter> для контроля какие пути поиска будет использовать компилятор. Эти пункты подчеркивают важный аспект пакета Glibc&mdash;он очень самодостаточен с точки зрения его механизма сборки и
+   обычно не полагается на значения по умолчанию для временного набора инструментов.</para>
 
-  <para>During the second pass of Binutils, we are able to utilize the
-  <parameter>--with-lib-path</parameter> configure switch to control
-  <command>ld</command>'s library search path.</para>
+  <para>Во время второго прохода сборки пакета Binutils мы можем использовать аргумент <parameter>--with-lib-path</parameter> чтобы сконфигурировать пути поиска для библиотеки <command>ld</command>.</para>
 
-  <para>For the second pass of GCC, its sources also need to be modified to
-  tell GCC to use the new dynamic linker. Failure to do so will result in the
-  GCC programs themselves having the name of the dynamic linker from the host
-  system's <filename class="directory">/lib</filename> directory embedded into
-  them, which would defeat the goal of getting away from the host. From this
-  point onwards, the core toolchain is self-contained and self-hosted. The
-  remainder of the <xref linkend="chapter-temporary-tools"/> packages all build
-  against the new Glibc in <filename
-  class="directory">/tools</filename>.</para>
+  <para>Для второго прохода сборки GCC, понадобится модификация исходных кодов этого пакета чтобы сообщить GCC использовать новый, созданный ранее динамический линковщик. Несоблюдение этого требования приведет к тому, что программы будут использовать динамический линковщик хост системы, который находится в каталоге <filename class="directory">/lib</filename>, что противоречит задачи изоляции временного набора инструментов. Начиная с этого момента ядро временного набора инструментов полностью самодостаточна и независима. Остальная часть пакетов в главе <xref linkend="chapter-temporary-tools"/> будет скомпилирована с новым пакетом Glibc в каталоге <filename
+  class="directory">/tools</filename>..</para>
 
-  <para>Upon entering the chroot environment in <xref
-  linkend="chapter-building-system"/>, the first major package to be
-  installed is Glibc, due to its self-sufficient nature mentioned above.
-  Once this Glibc is installed into <filename
-  class="directory">/usr</filename>, we will perform a quick changeover of the
-  toolchain defaults, and then proceed in building the rest of the target
-  LFS system.</para>
+  <para>При входе в среду chroot в главе <xref
+  linkend="chapter-building-system"/>, первый основной пакет, который будет скомпилирован - это пакет Glibc, в силу упомянутых выше аспектов самодостаточности. Как только Glibc будет установлен в каталог <filename class="directory">/usr</filename> мы выполним переключение с настроек по умолчанию временного набора инструментов и приступим к сборке остальной части.</para>
 
 </sect1>
