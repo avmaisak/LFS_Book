@@ -14,7 +14,7 @@
     <address>&gcc-url;</address>
   </sect1info>
 
-  <title>GCC-&gcc-version; - Pass 1</title>
+  <title>GCC-&gcc-version; - Проход 1</title>
 
   <indexterm zone="ch-tools-gcc-pass1">
     <primary sortas="a-GCC">GCC</primary>
@@ -41,13 +41,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Cross GCC</title>
+    <title>Установка кросс-пакета GCC</title>
 
-    <para>GCC now requires the GMP, MPFR and MPC packages. As these packages may
-    not be included in your host distribution, they will be built with
-    GCC.  Unpack each package into the GCC source directory and rename the
-    resulting directories so the GCC build procedures will automatically
-    use them:</para>
+    <para>Пакет GCC требует пакеты GMP, MPFR и MPC. Так как эти пакеты могут не быть установлены вв хост-системе, они будут скомпилированы вместе с GCC. Распакуйте каждый пакет в каталог с исходным кодом пакета GCC и переименуйте их чтобы эти пакеты использовались в процессе сборки GCC и были скомпилированы автоматически.</para>
 
     <note><para>There are frequent misunderstandings about this chapter.  The
     procedures are the same as every other chapter as explained earlier (<xref
@@ -120,7 +116,7 @@ esac</userinput></screen>
 
 <screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
 -->
-    <para>The GCC documentation recommends building GCC 
+    <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
 
 <screen><userinput remap="pre">mkdir -v build

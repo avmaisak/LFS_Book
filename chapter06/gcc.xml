@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The GCC пакет включает в себя  the GNU compiler collection, which includes
-    the C and C++ compilers.</para>
+    <para>Этот пакет содержит в себе набор компиляторов GNU, для таких языков, как C и С++.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -85,7 +84,7 @@ cd       build</userinput></screen>
           path to /tools/bin/sed.</para>
         </listitem>
       </varlistentry>
- 
+
       <varlistentry>
         <term><parameter>--with-system-zlib</parameter></term>
         <listitem>
@@ -155,7 +154,7 @@ cd       build</userinput></screen>
 <screen><userinput remap="install">ln -sv gcc /usr/bin/cc</userinput></screen>
 
     <para>Add a compatibility symlink to enable building programs with
-    Link Time Optimization (LTO):</para> 
+    Link Time Optimization (LTO):</para>
 
 <screen><userinput remap="install">install -v -dm755 /usr/lib/bfd-plugins
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
@@ -323,13 +322,13 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <seg>c++, cc (link to gcc), cpp, g++, gcc,
         gcc-ar, gcc-nm, gcc-ranlib, and gcov</seg>
 
-        <seg>libasan.{a,so}, libatomic.{a,so}, libgcc.a, libgcc_eh.a, 
+        <seg>libasan.{a,so}, libatomic.{a,so}, libgcc.a, libgcc_eh.a,
         libgcc_s.so, libgcov.a, libgomp.{a,so}, libiberty.a, libitm.{a,so},
-        liblto_plugin.so, 
+        liblto_plugin.so,
         libquadmath.{a,so}, libssp.{a,so},
         libssp_nonshared.a, libstdc++.{a,so}, libsupc++.a, and libtsan.{a,so}</seg>
 
-        <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and 
+        <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
         /usr/share/gcc-&gcc-version;</seg>
       </seglistitem>
     </segmentedlist>
