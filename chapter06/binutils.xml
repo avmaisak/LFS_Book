@@ -22,9 +22,10 @@
 
   <sect2 role="package">
     <title/>
+<para>Этот пакет включает в себя линковщик, ассемблер, и другие утилиты и инструменты для работы с
+        объектными файлам. Программы в этом пакете необходимы для компиляции как большинства пакетов системы LFS,
+        так и многих пакетов за её пределами.</para>
 
-    <para>The Binutils пакет включает в себя  a linker, an assembler, and other
-    tools for handling object files.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -57,7 +58,7 @@
 <screen><computeroutput>The system has no more ptys.
 Ask your system administrator to create more.</computeroutput></screen>
 
-    <para>The Binutils documentation recommends building Binutils 
+    <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -261,7 +262,7 @@ cd       build</userinput></screen>
       <varlistentry id="ld.gold">
         <term><command>ld.gold</command></term>
         <listitem>
-          <para>A cut down version of ld that only supports the 
+          <para>A cut down version of ld that only supports the
           elf object file format</para>
           <indexterm zone="ch-system-binutils ld.gold">
             <primary sortas="b-ld.gold">ld.gold</primary>

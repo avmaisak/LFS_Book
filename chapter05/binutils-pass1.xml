@@ -14,7 +14,7 @@
     <address>&binutils-url;</address>
   </sect1info>
 
-  <title>Binutils-&binutils-version; - Pass 1</title>
+  <title>Binutils-&binutils-version; - Проход 1</title>
 
   <indexterm zone="ch-tools-binutils-pass1">
     <primary sortas="a-Binutils">Binutils</primary>
@@ -41,36 +41,26 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Cross Binutils</title>
+    <title>Установка кросс-пакета Binutils</title>
 
-    <note><para>Go back and re-read the notes in the previous section.
-    Understanding the notes labeled important will save you a lot
-    of problems later.</para></note>
+    <note><para>Вернитесь назад и перечитайте информацию в предыдущем разделе.
+     Понимание значительно сэкономит вам время и поможет избежать дальнейших проблем.</para></note>
 
-    <para>It is important that Binutils be the first package compiled
-    because both Glibc and GCC perform various tests on the available
-    linker and assembler to determine which of their own features to
-    enable.</para>
+    <para>Очень важно чтобы пакет BinUtils был скомпилирован первым. потому что пакеты Glibc и  GCC в процессе конфигурирования выполняют проверки доступности линковщика и ассемблера, чтобы определить какие функциональные возможности включить или выключить.</para>
 
-    <para>The Binutils documentation recommends building Binutils 
-    in a dedicated build directory:</para>
+    <para>В документации пакета Binutils рекомендуется выполнять сборку в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
     <note>
-      <para>In order for the SBU values listed in the rest of the book
-      to be of any use, measure the time it takes to build this package from
-      the configuration, up to and including the first install. To achieve
-      this easily, wrap the commands in a <command>time</command>
-      command like this: <userinput>time { ./configure ... &amp;&amp; ...
+      <para>Для того, чтобы воспользоваться значением SBU (Стандартная единица времени сборки) в процессе компиляции пакетов во всей книге, необходимо измерить время конфигурирования и последующей компиляции этого пакета. Это можно легко сделать. Необходимо обернуть команды следующей инструкцией:<userinput>time { ./configure ... &amp;&amp; ...
       &amp;&amp; make install; }</userinput>.</para>
     </note>
 
-    <note><para>The approximate build SBU values and required disk space
-    in Chapter&nbsp;5 does not include test suite data.</para></note>
+    <note><para>Приблизительное время сборки, значение SBU и требуемое дисковое пространство в главе &nbsp;5 не включает информацию по выполнению наборов тестов пакетов.</para></note>
 
-    <para>Now prepare Binutils for compilation:</para>
+    <para>Теперь, подготовьте пакет Binutils для компиляции:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/tools            \
              --with-sysroot=$LFS        \
@@ -85,62 +75,55 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--prefix=/tools</parameter></term>
         <listitem>
-          <para>This tells the configure script to prepare to install the
-          Binutils programs in the <filename class="directory">/tools</filename>
-          directory.</para>
+          <para>Указывает сценарию configure подготовить установку программ пакета Binutils в каталог <filename class="directory">/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-sysroot=$LFS</parameter></term>
         <listitem>
-          <para>For cross compilation, this tells the build system to look in
-          $LFS for the target system libraries as needed.</para>
+          <para>Для выполнения кросс-компиляции, значение передается в систему сборки для поиска в каталоге $LFS целевых системных библиотек по мере необходимости.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-lib-path=/tools/lib</parameter></term>
         <listitem>
-          <para>This specifies which library path the linker should be
-          configured to use.</para>
+          <para>Указывает в каком каталоге должен находится линковщик.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><envar>--target=$LFS_TGT</envar></term>
         <listitem>
-          <para>Because the machine description in the <envar>LFS_TGT</envar>
-          variable is slightly different than the value returned by the
-          <command>config.guess</command> script, this switch will tell the
-          <command>configure</command> script to adjust Binutil's build system
-          for building a cross linker.  </para>
+          <para>Поскольку название машины в значении переменной <envar>LFS_TGT</envar> может отличаться от значения, которое вернут сценарий <command>config.guess</command>, этот аргумент укажет сценарию <command>configure</command> настроить систему сборки пакета Binutils для создания кросс-линковщика.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-nls</parameter></term>
         <listitem>
-          <para>This disables internationalization as i18n is not needed for the
-          temporary tools.</para>
+          <para>Отключает интернационализацию, поскольку i18n не требуется во
+           временном наборе инструментов.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-werror</parameter></term>
         <listitem>
-          <para>This prevents the build from stopping in the event that there
-          are warnings from the host's compiler.</para>
+          <para>Это предотвращает остановку сборки в том случае, если
+           появляются предупреждения  компилятора хост-системы.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Continue with compiling the package:</para>
+    <para>Чтобы скомпилировать пакет, необходимо выполнить команду:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. Ordinarily we would now run the
+    <para>Компиляция завершена
+	 Compilation is now complete. Ordinarily we would now run the
     test suite, but at this early stage the test suite framework (Tcl,
     Expect, and DejaGNU) is not yet in place. The benefits of running the
     tests at this point are minimal since the programs from this
