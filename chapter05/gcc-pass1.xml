@@ -45,11 +45,8 @@
 
     <para>Пакет GCC требует пакеты GMP, MPFR и MPC. Так как эти пакеты могут не быть установлены вв хост-системе, они будут скомпилированы вместе с GCC. Распакуйте каждый пакет в каталог с исходным кодом пакета GCC и переименуйте их чтобы эти пакеты использовались в процессе сборки GCC и были скомпилированы автоматически.</para>
 
-    <note><para>There are frequent misunderstandings about this chapter.  The
-    procedures are the same as every other chapter as explained earlier (<xref
-    linkend='buildinstr'/>).  First extract the gcc tarball from the sources
-    directory and then change to the directory created.  Only then should you
-    proceed with the instructions below.</para></note>
+    <note><para>В этом разделе часто возникают недоразумения. Процедуры таки же же как и в любом другом разделе, и полностью соответствуют инструкции по сборке пакетов (<xref
+    linkend='buildinstr'/>). Сначала распакуйте пакет GCC из архива, который находится в каталоге с другими архивами пакетов и патчами, затем перейдите в распакованный каталог. Только после этого вы должны следовать приведенным ниже инструкциям.</para></note>
 
 <screen><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
@@ -58,11 +55,8 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para>The following command will change the location of GCC's default
-    dynamic linker to use the one installed in <filename
-    class="directory">/tools</filename>. It also removes <filename
-    class="directory">/usr/include</filename> from GCC's include search path.
-    Issue:</para>
+    <para>Следующая команда изменит место расположения динамического линковщика чтобы использовать тот, который находится в каталоге <filename class="directory">/tools</filename>. Команда также удалит каталог <filename
+    class="directory">/usr/include</filename> из путей поиска GCC. Выполните команду:</para>
 
 <screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
 do
@@ -77,24 +71,11 @@ do
   touch $file.orig
 done</userinput></screen>
 
-    <para>In case the above seems hard to follow, let's break it down a bit.
-    First we copy the files <filename>gcc/config/linux.h</filename>,
-    <filename>gcc/config/i386/linux.h</filename>, and
-    <filename>gcc/config/i368/linux64.h</filename> to a file of
-    the same name but with an added suffix of <quote>.orig</quote>. Then the
-    first sed expression prepends <quote>/tools</quote> to every instance of
-    <quote>/lib/ld</quote>, <quote>/lib64/ld</quote> or
-    <quote>/lib32/ld</quote>, while the second one replaces hard-coded
-    instances of <quote>/usr</quote>. Next, we add our define statements which
-    alter the default startfile prefix to the end of the file. Note that the
-    trailing <quote>/</quote> in <quote>/tools/lib/</quote> is required.
-    Finally, we use <command>touch</command> to update the timestamp on the
-    copied files.  When used in conjunction with <command>cp -u</command>, this
-    prevents unexpected changes to the original files in case the commands are
-    inadvertently run twice.</para>
+    <para>Если команда приведенная выше кажется непонятной, давайте разберем ее содержимое.
+	 Сначала мы копируем файлы <filename>gcc/config/linux.h</filename>, <filename>gcc/config/i386/linux.h</filename>,и <filename>gcc/config/i368/linux64.h</filename> в файлы с таким же наименованием, но с добавлением суффикса <quote>.orig</quote>. Затем первое выражение добавляет <quote>/tools</quote> к каждому экземпляру <quote>/lib/ld</quote>, <quote>/lib64/ld</quote> или <quote>/lib32/ld</quote> в то время как второй заменяет жестко закодированные экземпляры <quote>/usr</quote>. Потом мы добавляем нашу директиву define которая изменяет префикс начальных файлов на префикс конечных файлов. Обратите внимание что начальный символ <quote>/</quote> в <quote>/tools/lib/</quote> является обязательным. Потом мы используем команду <command>touch</command> для обновления даты и времени модификации скопированных файлов. При использовании в сочетании с <command>cp -u</command> предотвращает непредвиденные изменения исходных файлов, если команды случайно выполнили дважды.</para>
 
-    <para>Finally, on x86_64 hosts, set the default directory name for
-    64-bit libraries to <quote>lib</quote>:</para>
+    <para>Наконец, для хост-системы x86_64 устанавливаем каталогом по умолчанию наименование 64-битных библиотек
+	 в <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
   x86_64)
@@ -116,13 +97,12 @@ esac</userinput></screen>
 
 <screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
 -->
-    <para>The GCC documentation recommends building GCC
-    in a dedicated build directory:</para>
+    <para>В документации пакета GCC рекомендуется выполнять сборку в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare GCC for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет GCC к компиляции:</para>
 
 <screen><userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
@@ -152,52 +132,36 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--with-newlib</parameter></term>
         <listitem>
-          <para>Since a working C library is not yet available, this ensures
-          that the inhibit_libc constant is defined when building libgcc. This prevents
-          the compiling of any code that requires libc support.</para>
+          <para>Так как рабочая библиотека C пока недоступна, необходимо убедиться в том, что константа inhibit_libc определена, когда выполняется сборка libgcc. Также это предотвратит компиляцию любого кода, которому необходима поддержка библиотеки libc.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--without-headers</parameter></term>
         <listitem>
-          <para>When creating a complete cross-compiler, GCC requires
-          standard headers compatible with the target system. For our
-          purposes these headers will not be needed. This switch prevents
-          GCC from looking for them.</para>
+          <para>Когда создается кросс-компилятор, пакету GCC необходимы стандартные заголовки, совместимые с целевой системой. Для требуемой задачи эти заголовочные файлы не нужны. Этот аргумент предотвращает поиск этих файлов пакетом GCC.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-local-prefix=/tools</parameter></term>
         <listitem>
-          <para>The local prefix is the location in the system that GCC will search
-          for locally installed include files. The default is <filename>/usr/local</filename>.
-          Setting this to <filename>/tools</filename> helps keep the host location of
-          <filename>/usr/local</filename> out of this GCC's search path.</para>
+          <para>Этот аргумент (локальный префикс) является местом в системе, где GCC будет искать локально установленные include файлы. По умолчанию этот путь <filename>/usr/local</filename>.
+			 Указание на каталог <filename>/tools</filename> поможет оставить каталог <filename>/usr/local</filename> хост-системы за пределами поиска файлов устанавливаемого пакета GCC.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-native-system-header-dir=/tools/include</parameter></term>
         <listitem>
-          <para>By default GCC searches <filename>/usr/include</filename> for
-          system headers. In conjunction with the sysroot switch, this would
-          normally translate to <filename>$LFS/usr/include</filename>. However
-          the headers that will be installed in the next two sections will go
-          to <filename>$LFS/tools/include</filename>. This switch ensures that
-          gcc will find them correctly. In the second pass of GCC, this same
-          switch will ensure that no headers from the host system are
-          found.</para>
+          <para>По умолчанию, GCC выполняет поиск системных заголовочных файлов в каталоге <filename>/usr/include</filename>. В сочетании с аргументом sysroot, поиск системных заголовочных файлов будет производится в каталоге <filename>$LFS/tools/include</filename>.Однако заголовочные файлы , которые будут установлены в следующих двух разделах, будут располагаться в каталоге <filename>$LFS/tools/include</filename>. Этот аргумент позволит искать их по указанному в значении пути. Вторым проходом сборки GCC, этот же аргумент обеспечит отсутствие заголовочных файлов из хост-системы.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-shared</parameter></term>
         <listitem>
-          <para>This switch forces GCC to link its internal libraries
-          statically. We do this to avoid possible issues with the host
-          system.</para>
+          <para>Аргумент указывает GCC, что необходимо произвести статическую линковку внутренних библиотек. Ето необходимо сделать, чтобы избежать возможных проблем с хост-системой.</para>
         </listitem>
       </varlistentry>
 
@@ -207,41 +171,33 @@ cd       build</userinput></screen>
         --disable-libquadmath, --disable-libssp, --disable-libvtv,
         --disable-libstdcxx</parameter></term>
         <listitem>
-          <para>These switches disable support for the decimal floating point
-          extension, threading, libatomic, libgomp, libmpx, libquadmath, libssp,
-          libvtv, and the C++ standard library respectively. These features
-          will fail to compile when building a cross-compiler and are not
-          necessary for the task of cross-compiling the temporary libc.</para>
+          <para>
+			 Этот аргумент отключает поддержку расширений для работы с десятичными числами и числами с плавающей запятой, потоками, библиотеками libatomic, libgomp, libmpx, libquadmath, libssp,
+          libvtv и стандартной библиотеки C++ соответственно. При компиляции этих функций, возникнет ошибка и для кросс-компилятора, эти функции не нужны, для того чтобы выполнить кросс-компиляцию временной библиотеки C (libc).</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
-          <para>On x86_64, LFS does not yet support a multilib configuration.
-          This switch is harmless for x86.</para>
+          <para>Для платформы x86_64, LFS пока не поддерживает конфигурацию multilib. Этот аргумент ни как не повлияет, если установка выполняется на платформе x86.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-languages=c,c++</parameter></term>
         <listitem>
-          <para>This option ensures that only the C and C++ compilers are built.
-          These are the only languages needed now.</para>
+          <para>Этот параметр гарантирует, что будут созданы только компиляторы C и C ++. Это единственные языки, которые нужны сейчас.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Compile GCC by running:</para>
+    <para>Чтобы скомпилировать пакет, необходимо выполнить команду:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. At this point, the test suite would
-    normally be run, but, as mentioned before, the test suite framework is
-    not in place yet. The benefits of running the tests at this point
-    are minimal since the programs from this first pass will soon be
-    replaced.</para>
+    <para>Компиляция завершена. Как правило, на данном этапе необходимо выполнить наборы тестов для пакета, но сейчас пока рано, потому что инструменты для выполнения тестирования (Tcl, Expect, and DejaGNU) пока не на своём месте. Преимущества использования тестов на данный момент минимальны, поскольку программы из сборки первого прохода будут заменены на программы из сборки второго прохода.</para>
 
     <para>Установите пакет:</para>
 
