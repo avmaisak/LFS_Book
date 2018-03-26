@@ -14,7 +14,7 @@
     <address>&linux-url;</address>
   </sect1info>
 
-  <title>Linux-&linux-version; API Headers</title>
+  <title>Заголовочные файлы Linux-&linux-version;</title>
 
   <indexterm zone="ch-tools-linux-headers">
     <primary sortas="a-Linux">Linux</primary>
@@ -41,21 +41,15 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Linux API Headers</title>
+    <title>Установка заголовочных файлов</title>
 
-    <para>The Linux kernel needs to expose an Application Programming Interface
-    (API) for the system's C library (Glibc in LFS) to use.  This is done
-    by way of sanitizing various C header files that are shipped in the Linux
-    kernel source tarball.</para>
+   <para>Ядро Linux должно предоставлять интерфейс (API) для его использования системной библиотекой C (Glibc в LFS).Это можно сделать, выделив различные заголовочные файлы C которые расположены в архиве исходных кодов пакета ядра.</para>
 
-    <para>Make sure there are no stale files embedded in the package:</para>
+    <para>Необходимо убедиться, что в пакете нет устаревших файлов:</para>
 
 <screen><userinput remap="pre">make mrproper</userinput></screen>
 
-    <para>Now extract the user-visible kernel headers from the source.
-    They are placed in an intermediate local directory and copied to the needed
-    location because the extraction process removes any existing files in
-    the target directory.</para>
+    <para>Теперь установите видимые пользователям заголовочные файлы из каталога исходных кодов пакета ядра. Они будут расположены в промежуточном каталоге и будут скопированы в указанное местоположение , потому что процесс извлечения удаляет все существующие файлы в целевом каталоге.</para>
 
 <screen><userinput remap="make">make INSTALL_HDR_PATH=dest headers_install
 </userinput><userinput remap="install">cp -rv dest/include/* /tools/include</userinput></screen>
