@@ -122,15 +122,10 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Компиляция завершена
-	 Compilation is now complete. Ordinarily we would now run the
-    test suite, but at this early stage the test suite framework (Tcl,
-    Expect, and DejaGNU) is not yet in place. The benefits of running the
-    tests at this point are minimal since the programs from this
-    first pass will soon be replaced by those from the second.</para>
+    <para>Компиляция завершена. Как правило, на данном этапе необходимо выполнить наборы тестов для пакета, но сейчас пока рано, потому что инструменты для выполнения тестирования  (Tcl, Expect, and DejaGNU)  пока не на своём месте. Преимущества использования
+     тестов на данный момент минимальны, поскольку программы из сбоки первого прохода будут заменены на программы из сборки второго прохода.</para>
 
-    <para>If building on x86_64, create a symlink to ensure the sanity of
-    the toolchain:</para>
+    <para>Если сборка происходит на 64-разрядной машине, необходимо создать символическую ссылку для нормальной работы временного набора инструментов.</para>
 
 <screen><userinput remap="install">case $(uname -m) in
   x86_64) mkdir -v /tools/lib &amp;&amp; ln -sv lib /tools/lib64 ;;
