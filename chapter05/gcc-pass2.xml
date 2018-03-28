@@ -165,7 +165,7 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
 <screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux.so.2]</computeroutput></screen>
 
-    <para>Обратите внимание, что каталог filename class="directory">/tools/lib</filename> будет служить префиксом для 32-битной машины.</para>
+    <para>Обратите внимание, что каталог <filename class="directory">/tools/lib</filename> будет служить префиксом для 32-битной машины.</para>
 
     <para>Если вывод не соответствует тому, как показано выше, или вообще вывода нет, значит,что-то не так. Изучите и повторите шаги выше, чтобы выяснить где проблема и устраните её. Важно, устранить проблему до того, как вы продолжите следующие шаги. Во-первых, повторите проверку работоспособности <command>gcc</command> вместо <command>cc</command>. Если все работает, тогда символическая ссылка <filename class="symlink">/tools/bin/cc</filename> отсутствует. Далее, убедитесь что переменная окружения <envar>PATH</envar> указана корректно. Это можно проверить, запустив команду <command>echo $PATH</command> и проверить что каталог <filename class="directory">/tools/bin</filename> находиться в начале списка. Если переменная окружения некорректная, это может означать, что вы авторизованы не как пользователь <systemitem class="username">lfs</systemitem> или что то пошло не так на более ранних этапах. Прочитайте внимательно главу <xref linkend="ch-tools-settingenviron"
     role="."/> ещё раз.</para>
