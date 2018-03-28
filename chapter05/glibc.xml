@@ -65,7 +65,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>
         <listitem>
-          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять кросс-компиляцию пакета, используя кросс-линковщик и кросс-комилятор из каталога <filename class="directory">/tools</filename>.</para>
+          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять кросс-компиляцию пакета, используя кросс-линковщик и кросс-компилятор из каталога <filename class="directory">/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
@@ -135,7 +135,7 @@ cd       build</userinput></screen>
 $LFS_TGT-gcc dummy.c
 readelf -l a.out | grep ': /tools'</userinput></screen>
 
-    <para>Если все работает правильно, не болжно быть ошибок, и вывод последней команды будет иметь вид:</para>
+    <para>Если все работает правильно, не должно быть ошибок, и вывод последней команды будет иметь вид:</para>
 
 <screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
 
@@ -150,7 +150,7 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
   </caution>
 
-  <note><para>При сборке пакета Binutils в следующем разделе, будут производиться дополнительные проверки, что временный набор инструментов был собран правильно. Если пакет Binutils не получится скомпилировать, или сконфигурировать, это будет явный признак того, что что-то пошло не так с предыдущими установкми пакетов Binutils, GCC, или Glibc.</para></note>
+  <note><para>При сборке пакета Binutils в следующем разделе, будут производиться дополнительные проверки, что временный набор инструментов был собран правильно. Если пакет Binutils не получится скомпилировать, или сконфигурировать, это будет явный признак того, что что-то пошло не так с предыдущими установками пакетов Binutils, GCC, или Glibc.</para></note>
 
   </sect2>
 

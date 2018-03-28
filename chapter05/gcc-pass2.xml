@@ -14,7 +14,7 @@
     <address>&gcc-url;</address>
   </sect1info>
 
-  <title>GCC-&gcc-version; - Pass 2</title>
+  <title>GCC-&gcc-version; - Проход 2</title>
 
   <indexterm zone="ch-tools-gcc-pass2">
     <primary sortas="a-GCC">GCC</primary>
@@ -41,19 +41,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GCC</title>
+    <title>Установка пакета GCC</title>
 
-    <para>Our first build of GCC has installed a couple of internal system
-    headers.  Normally one of them, <filename>limits.h</filename>, will in turn
-    include the corresponding system <filename>limits.h</filename> header, in
-    this case, <filename>/tools/include/limits.h</filename>. However, at the
-    time of the first build of gcc <filename>/tools/include/limits.h</filename>
-    did not exist, so the internal header that GCC installed is a partial,
-    self-contained file and does not include the extended features of the
-    system header. This was adequate for building the temporary libc, but this
-    build of GCC now requires the full internal header.  Create a full version
-    of the internal header using a command that is identical to what the GCC
-    build system does in normal circumstances:</para>
+    <para>В первом проходе сборки GCC были установлены некоторые внутренние заголовочные файлы. Обычно некоторые из них, например -  <filename>limits.h</filename>, будет включен в систему как заголовочный файл <filename>limits.h</filename>, в нашем случае в каталог <filename>/tools/include/limits.h</filename>. Однако в первом проходе сборки файл <filename>/tools/include/limits.h</filename> не существует, таким образом внутренний заголовочный файл установленный GCC является частичным, автономный файл и не включает в себя функции системного заголовочного файла. Этого  достаточно, для выполнения сборки временной библиотеки libc, но теперь, пакету GCC необходимы все внутренние заголовочные файлы. Создание полной версии внутренних заголовочных файлов используя идентичную команду, при которой система сборки GCC работает при обычных обстоятельствах:</para>
 
 <screen><userinput remap="pre">cat gcc/limitx.h gcc/glimits.h gcc/limity.h &gt; \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h</userinput></screen>
@@ -66,8 +56,7 @@
   i?86) sed -i 's/^T_CFLAGS =$/&amp; -fomit-frame-pointer/' gcc/Makefile.in ;;
 esac</userinput></screen>
 -->
-    <para>Once again, change the location of GCC's default dynamic linker to
-    use the one installed in <filename
+    <para>Снова, изменим местоположение динамического линковщика пакета GCC  по умолчанию используя тот, который установлен в каталоге<filename
     class="directory">/tools</filename>.</para>
 
 <screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
@@ -82,9 +71,7 @@ do
 #define STANDARD_STARTFILE_PREFIX_2 ""' &gt;&gt; $file
   touch $file.orig
 done</userinput></screen>
-
-    <para>If building on x86_64, change the default directory name for 64-bit
-    libraries to <quote>lib</quote>:</para>
+		<para>Для хост-системы x86_64 устанавливаем каталогом по умолчанию наименование 64-битных библиотек в <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
   x86_64)
@@ -93,9 +80,7 @@ done</userinput></screen>
   ;;
 esac</userinput></screen>
 
-    <para>As in the first build of GCC it requires the GMP, MPFR and MPC
-    packages. Unpack the tarballs and move them into the required directory
-    names:</para>
+    <para>Также, как и в первом проходе сборки GCC необходимы пакеты GMP, MPFR и MPC. распакуйте архивы с исходными кодами этих пакетов и переместите их требуемые каталоги:</para>
 
 <screen><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
@@ -108,15 +93,14 @@ mv -v mpc-&mpc-version; mpc</userinput></screen>
 
 <screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
 -->
-    <para>Create a separate build directory again:</para>
+    <para>Создайте снова отдельный каталог для сборки:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Before starting to build GCC, remember to unset any environment
-    variables that override the default optimization flags.</para>
+    <para>Перед началом сборки GCC, не забудьте очистить все переменные окружения, которые переопределяют аргументы и флаги для оптимизации.</para>
 
-    <para>Now prepare GCC for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет GCC к компиляции:</para>
 
 <screen><userinput remap="configure">CC=$LFS_TGT-gcc                                    \
 CXX=$LFS_TGT-g++                                   \
@@ -138,31 +122,22 @@ RANLIB=$LFS_TGT-ranlib                             \
       <varlistentry>
         <term><parameter>--enable-languages=c,c++</parameter></term>
         <listitem>
-          <para>This option ensures that both the C and C++ compilers are
-          built.</para>
+          <para>Этот аргумент гарантирует, что будут собраны оба компилятора C и C ++. </para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-libstdcxx-pch</parameter></term>
         <listitem>
-          <para>Do not build the pre-compiled header (PCH) for
-          <filename class="libraryfile">libstdc++</filename>. It takes up a
-          lot of space, and we have no use for it.</para>
+          <para>Не выполнят сборку предварительно скомпилированных заголовочных файлов (PCH) для <filename class="libraryfile">libstdc++</filename>. Они занимают много места, и их использование не предусмотрено.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-bootstrap</parameter></term>
         <listitem>
-          <para>For native builds of GCC, the default is to do a "bootstrap"
-          build. This does not just compile GCC, but compiles it several times.
-          It uses the programs compiled in a first round to compile itself a
-          second time, and then again a third time.  The second and third
-          iterations are compared to make sure it can reproduce itself
-          flawlessly. This also implies that it was compiled correctly.
-          However, the LFS build method should provide a solid compiler
-          without the need to bootstrap each time.</para>
+          <para>Для нативной сборки пакета GCC по умолчанию используется механизм сборки bootstrap. Он не просто компилирует GCC, а выполняет компиляцию в несколько проходов. Он использует программы, скомпилированные в первом проходе, чтобы выполнить повторную компиляцию на втором проходе, и затем снова в третий раз. Результат компиляции второго и третьего прохода сравниваются чтобы убедиться в безотказности. Также выполняется проверка на предмет корректности компиляции. Однако метод сборки LFS должен обеспечивать надежный компилятор
+           без использования механизма сборки bootstrap каждый раз.</para>
         </listitem>
       </varlistentry>
 
@@ -176,48 +151,26 @@ RANLIB=$LFS_TGT-ranlib                             \
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>As a finishing touch, create a symlink. Many programs and scripts
-    run <command>cc</command> instead of <command>gcc</command>, which is
-    used to keep programs generic and therefore usable on all kinds of UNIX
-    systems where the GNU C compiler is not always installed. Running
-    <command>cc</command> leaves the system administrator free to decide
-    which C compiler to install:</para>
-
+    <para>После установки, необходимо создать символические ссылки. Многие программы и файлы сценариев запускают <command>cc</command> вместо <command>gcc</command>, для обеспечения переносимости на все UNIX системы.Не у всех установлен именно компилятор GNU C. Запуск cc позволяет администратору выбирать, какой компилятор C устанавливать в систему, и мы создаем ссылку на него:</para>
 <screen><userinput remap="install">ln -sv gcc /tools/bin/cc</userinput></screen>
 
   <caution>
-    <para>At this point, it is imperative to stop and ensure that the basic
-    functions (compiling and linking) of the new toolchain are working as
-    expected. To perform a sanity check, run the following commands:</para>
+    <para>На этом этапе, необходимо остановиться, и проверить что базовый функционал (компиляция и линовка) созданных инструментов работает так, как необходимо. Чтобы выполнить проверку работоспособности, выполните следующие команды:</para>
 
 <screen><userinput>echo 'int main(){}' &gt; dummy.c
 cc dummy.c
 readelf -l a.out | grep ': /tools'</userinput></screen>
 
-    <para>If everything is working correctly, there should be no errors,
-    and the output of the last command will be of the form:</para>
+    <para>Если все работает правильно, не должно быть ошибок, и вывод последней команды будет иметь вид:</para>
 
 <screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux.so.2]</computeroutput></screen>
 
-    <para>Note that <filename class="directory">/tools/lib</filename> wiil
-    be the prefix of the dynamic linker for 32-bit machines.</para>
+    <para>Обратите внимание, что каталог filename class="directory">/tools/lib</filename> будет служить префиксом для 32-битной машины.</para>
 
-    <para>If the output is not shown as above or there was no output at all,
-    then something is wrong. Investigate and retrace the steps to find out
-    where the problem is and correct it. This issue must be resolved before
-    continuing on. First, perform the sanity check again, using
-    <command>gcc</command> instead of <command>cc</command>. If this works,
-    then the <filename class="symlink">/tools/bin/cc</filename> symlink is
-    missing. Install the symlink as per above.
-    Next, ensure that the <envar>PATH</envar> is correct. This
-    can be checked by running <command>echo $PATH</command> and verifying that
-    <filename class="directory">/tools/bin</filename> is at the head of the
-    list. If the <envar>PATH</envar> is wrong it could mean that you are not
-    logged in as user <systemitem class="username">lfs</systemitem> or that
-    something went wrong back in <xref linkend="ch-tools-settingenviron"
-    role="."/></para>
+    <para>Если вывод не соответствует тому, как показано выше, или вообще вывода нет, значит,что-то не так. Изучите и повторите шаги выше, чтобы выяснить где проблема и устраните её. Важно, устранить проблему до того, как вы продолжите следующие шаги. Во-первых, повторите проверку работоспособности <command>gcc</command> вместо <command>cc</command>. Если все работает, тогда символическая ссылка <filename class="symlink">/tools/bin/cc</filename> отсутствует. Далее, убедитесь что переменная окружения <envar>PATH</envar> указана корректно. Это можно проверить, запустив команду <command>echo $PATH</command> и проверить что каталог <filename class="directory">/tools/bin</filename> находиться в начале списка. Если переменная окружения некорректная, это может означать, что вы авторизованы не как пользователь <systemitem class="username">lfs</systemitem> или что то пошло не так на более ранних этапах. Прочитайте внимательно главу <xref linkend="ch-tools-settingenviron"
+    role="."/> ещё раз.</para>
 
-    <para>Once all is well, clean up the test files:</para>
+    <para>Если всё в порядке, удалите тестовые файлы:</para>
 
 <screen><userinput>rm -v dummy.c a.out</userinput></screen>
 
