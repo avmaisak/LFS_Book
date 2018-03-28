@@ -65,7 +65,7 @@
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>file</seg>

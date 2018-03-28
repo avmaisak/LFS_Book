@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Expect пакет включает в себя  a program for carrying out scripted
-    dialogues with other interactive programs.</para>
+    <para>Этот пакет включает в себя инструменты для автоматизации и тестирования, и является расширением к скрипт-языку Tcl, для многих интерактивных приложений. Он будет установлен только во временный инструментарий.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,15 +40,12 @@
   <sect2 role="installation">
     <title>Установка пакета Expect</title>
 
-    <para>First, force Expect's configure script to use <filename>/bin/stty</filename>
-    instead of a <filename>/usr/local/bin/stty</filename> it may find on the host system.
-    This will ensure that our test suite tools remain sane for the final builds of our
-    toolchain:</para>
+    <para>Для начала, необходимо указать сценарию конфигурирования пакета использовать <filename>/bin/stty</filename> вместо <filename>/usr/local/bin/stty</filename> который он может искать в хост-системе. Это гарантирует что наши инструменты тестирования останутся в нормальном состоянии до окончания сборки всго временного набора инструментов:</para>
 
 <screen><userinput remap="pre">cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
 
-    <para>Now prepare Expect for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Expect к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools       \
             --with-tcl=/tools/lib \
@@ -61,19 +57,14 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
       <varlistentry>
         <term><parameter>--with-tcl=/tools/lib</parameter></term>
         <listitem>
-          <para>This ensures that the configure script finds the Tcl
-          installation in the temporary tools location instead of possibly
-          locating an existing one on the host system.</para>
+          <para>Аргумент обеспечивает то что сценарий конфигурирования будет выполнять поиск установленного пакета Tcl во каталогах временного инструментария, вместо поиска в каталогах хост-системы.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-tclinclude=/tools/include</parameter></term>
         <listitem>
-          <para>This explicitly tells Expect where to find Tcl's internal
-          headers. Using this option avoids conditions where
-          <command>configure</command> fails because it cannot automatically
-          discover the location of Tcl's headers.</para>
+          <para>Значение аргумента явно указывает, где выполнять поиск внутренних заголовочных файлов пакета Tcl. Использование этой опции позволяет избежать условий, при которых сценарий <command>configure</command> может не выполнится, потому что не сможет автоматически найти заголовочные файлы Tcl.</para>
         </listitem>
       </varlistentry>
 
@@ -83,29 +74,23 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
-    suite is not mandatory for the temporary tools here in this chapter. To run
-    the Expect test suite anyway, issue the следующую команду:</para>
+    <para>Компиляция завершена. Как обсуждалось ранее выполнение тестов не является обязательным для набора временных инструментов в этой главе. Чтобы запустить выполнение тестов, в любом случае, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make test</userinput></screen>
 
-    <para>Note that the Expect test suite is known to experience failures under
-    certain host conditions that are not within our control. Therefore,
-    test suite failures here are not surprising and are not considered
-    critical.</para>
+    <para>Наборы тестов Tcl могут завершаться с ошибками, которые не возможно контролировать. Следовательно, сбои при выполнении тестов набора вполне ожидаемы, и они не считаются критичными.</para>
 
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make SCRIPTS="" install</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make parameter:</title>
+      <title>Значение параметров make:</title>
 
       <varlistentry>
         <term><parameter>SCRIPTS=""</parameter></term>
         <listitem>
-          <para>This prevents installation of the supplementary Expect
-          scripts, which are not needed.</para>
+          <para>Это предотвращает установку дополнительных сценариев Expect, которые не нужны.</para>
         </listitem>
       </varlistentry>
 
@@ -117,8 +102,8 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
     <title>Содержимое пакета Expect</title>
 
     <segmentedlist>
-      <segtitle>Installed program</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная программа</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>expect</seg>
@@ -134,8 +119,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
       <varlistentry id="expect">
         <term><command>expect</command></term>
         <listitem>
-          <para>Communicates with other interactive programs according
-          to a script</para>
+          <para>Общается с другими интерактивными программами в соответствии со сценарием</para>
           <indexterm zone="ch-tools-expect expect">
             <primary sortas="b-expect">expect</primary>
           </indexterm>
@@ -145,8 +129,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
       <varlistentry id="libexpect">
         <term><filename class="libraryfile">libexpect-&expect-lib-version;.so</filename></term>
         <listitem>
-          <para>Contains functions that allow Expect to be used as a Tcl
-          extension or to be used directly from C or C++ (without Tcl)</para>
+          <para>Содержит функции, которые позволяют пакету Expect быть использованным как расширение к Tcl или использоваться напрямую, из Си или Си++ (без Tcl)</para>
           <indexterm zone="ch-tools-expect libexpect">
             <primary sortas="c-libexpect-&expect-lib-version;">libexpect-&expect-lib-version;</primary>
           </indexterm>

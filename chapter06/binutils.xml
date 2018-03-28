@@ -123,7 +123,7 @@ cd       build</userinput></screen>
 <screen><userinput remap="make">make tooldir=/usr</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make parameter:</title>
+      <title>Значение параметров make:</title>
 
       <varlistentry>
         <term><parameter>tooldir=/usr</parameter></term>

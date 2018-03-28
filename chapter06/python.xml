@@ -137,7 +137,7 @@ tar --strip-components=1  \
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed Library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
       <segtitle>Installed Directories</segtitle>
 
       <seglistitem>

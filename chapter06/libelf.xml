@@ -65,7 +65,7 @@ install -vm644 config/libelf.pc /usr/lib/pkgconfig</userinput></screen>
     <title>Содержимое пакета Libelf</title>
 
     <segmentedlist>
-      <segtitle>Installed Library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>

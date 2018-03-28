@@ -61,7 +61,7 @@
 make clean</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make parameter:</title>
+      <title>Значение параметров make:</title>
 
       <varlistentry>
         <term><parameter>-f Makefile-libbz2_so</parameter></term>

@@ -103,7 +103,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>

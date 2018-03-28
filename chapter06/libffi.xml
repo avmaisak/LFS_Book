@@ -75,7 +75,7 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
     <title>Содержимое пакета Libffi</title>
 
     <segmentedlist>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>libffi.so</seg>

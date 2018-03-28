@@ -72,7 +72,7 @@ install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-&expat-version;</user
     <title>Содержимое пакета Expat</title>
 
     <segmentedlist>
-      <segtitle>Installed program</segtitle>
+      <segtitle>Установленная программа</segtitle>
       <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Каталог установки</segtitle>
 

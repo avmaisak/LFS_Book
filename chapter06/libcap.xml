@@ -97,7 +97,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>capsh, getcap, getpcaps, and setcap</seg>

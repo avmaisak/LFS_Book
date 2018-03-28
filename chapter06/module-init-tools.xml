@@ -73,7 +73,7 @@ make clean</userinput></screen>
 <screen><userinput remap="install">make INSTALL=install install</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make parameter:</title>
+      <title>Значение параметров make:</title>
       <varlistentry>
         <term><parameter>INSTALL=install</parameter></term>
         <listitem>

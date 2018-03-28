@@ -60,7 +60,7 @@
     <title>Содержимое пакета DejaGNU</title>
 
     <segmentedlist>
-      <segtitle>Installed program</segtitle>
+      <segtitle>Установленная программа</segtitle>
 
       <seglistitem>
         <seg>runtest</seg>

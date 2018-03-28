@@ -102,7 +102,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>depmod (link to kmod), insmod (link to kmod), kmod, 

@@ -79,7 +79,7 @@
     <title>Содержимое пакета Libpipeline</title>
 
     <segmentedlist>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>libpipeline.so</seg>

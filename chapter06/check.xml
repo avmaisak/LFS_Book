@@ -66,8 +66,8 @@
     <title>Содержимое пакета Check</title>
 
     <segmentedlist>
-      <segtitle>Installed program</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная программа</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
         <seg>checkmk</seg>

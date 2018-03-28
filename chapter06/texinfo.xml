@@ -80,7 +80,7 @@
 <screen><userinput remap="install">make TEXMF=/usr/share/texmf install-tex</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make parameter:</title>
+      <title>Значение параметров make:</title>
 
       <varlistentry>
         <term><parameter>TEXMF=/usr/share/texmf</parameter></term>
@@ -114,7 +114,7 @@ popd</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed library</segtitle>
+      <segtitle>Установленная библиотека</segtitle>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>
