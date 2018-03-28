@@ -133,7 +133,7 @@ RANLIB=$LFS_TGT-ranlib                             \
     --disable-libgomp</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the new configure options:</title>
+      <title>Значения новых параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--enable-languages=c,c++</parameter></term>

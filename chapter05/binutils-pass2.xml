@@ -14,7 +14,7 @@
     <address>&binutils-url;</address>
   </sect1info>
 
-  <title>Binutils-&binutils-version; - Pass 2</title>
+  <title>Binutils-&binutils-version; - Проход  2</title>
 
   <indexterm zone="ch-tools-binutils-pass2">
     <primary sortas="a-Binutils">Binutils</primary>
@@ -41,14 +41,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Binutils</title>
+    <title>Установка пакета Binutils</title>
 
-    <para>Create a separate build directory again:</para>
+    <para>Необходимо снова создать отдельный каталог:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Binutils for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Binutils к компиляции:</para>
 
 <screen><userinput remap="configure">CC=$LFS_TGT-gcc                \
 AR=$LFS_TGT-ar                 \
@@ -61,35 +61,29 @@ RANLIB=$LFS_TGT-ranlib         \
     --with-sysroot</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the new configure options:</title>
+      <title>Значения новых параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>CC=$LFS_TGT-gcc AR=$LFS_TGT-ar RANLIB=$LFS_TGT-ranlib</parameter></term>
         <listitem>
-          <para>Because this is really a native build of Binutils, setting these
-          variables ensures that the build system uses the cross-compiler and
-          associated tools instead of the ones on the host system.</para>
+          <para>Поскольку это нативная сборка пакета Binutils, указание этих переменных гарантирует что система сборки пакета будет использовать кросс-компилятор и связанные с ним инструменты, вместо инструментов хост-системы.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-lib-path=/tools/lib</parameter></term>
         <listitem>
-          <para>This tells the configure script to specify the library
-          search path during the compilation of Binutils, resulting in
-          <filename class="directory">/tools/lib</filename> being passed
-          to the linker. This prevents the linker from searching through
-          library directories on the host.</para>
+          <para>Указание аргумента сообщает сценарию configure использовать каталог для поиска библиотек, указанный в значении аргумента во время процесса компиляции пакета Binutils, в результате чего каталог <filename class="directory">/tools/lib</filename> будет передан линковщику.
+			 Это предотвратит использование линковщика хост-системы.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-sysroot</parameter></term>
         <listitem>
-          <para>The sysroot feature enables the linker to find shared objects
-          which are required by other shared objects explicitly included on the
-          linker's command line. Without this, some packages may not build
-          successfully on some hosts.</para>
+          <para>Функция sysroot позволяет линковщику находить общие объекты
+           которые требуются для других общих объектов, явно включенных в
+           команду линковщика. Без указания этого аргумента, на некоторых хост-системах, компиляция пакетов может не выполнится.</para>
         </listitem>
       </varlistentry>
 
@@ -103,15 +97,14 @@ RANLIB=$LFS_TGT-ranlib         \
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Now prepare the linker for the <quote>Re-adjusting</quote> phase in
-    the next chapter:</para>
+    <para>Теперь, подготовьте линковщик, для <quote>перенастройки</quote> в следующей главе:</para>
 
 <screen><userinput remap="adjust">make -C ld clean
 make -C ld LIB_PATH=/usr/lib:/lib
 cp -v ld/ld-new /tools/bin</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make parameters:</title>
+      <title>Значение параметров команды make:</title>
 
       <varlistentry>
         <term><parameter>-C ld clean</parameter></term>
