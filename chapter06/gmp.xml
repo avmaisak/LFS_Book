@@ -121,7 +121,7 @@ make install-html</userinput></screen>
   </sect2>
 
   <sect2 id="contents-gmp" role="content">
-    <title>Contents of GMP</title>
+    <title>Содержимое пакета GMP</title>
 
     <segmentedlist>
       <segtitle>Установленные библиотеки</segtitle>

@@ -85,7 +85,7 @@
   </sect2>
 
   <sect2 id="contents-pkgconfig" role="content">
-    <title>Contents of Pkg-config</title>
+    <title>Содержимое пакета Pkg-config</title>
 
     <segmentedlist>
       <segtitle>Installed program</segtitle>

@@ -97,7 +97,7 @@ ln -v -sf ../../lib/libpcre.so.0 /usr/lib/libpcre.so</userinput></screen>
   </sect2>
 
   <sect2 id="contents-pcre" role="content">
-    <title>Contents of PCRE</title>
+    <title>Содержимое пакета PCRE</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

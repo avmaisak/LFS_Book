@@ -162,7 +162,7 @@ cd       build</userinput></screen>
   </sect2>
 
   <sect2 id="contents-binutils" role="content">
-    <title>Contents of Binutils</title>
+    <title>Содержимое пакета Binutils</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

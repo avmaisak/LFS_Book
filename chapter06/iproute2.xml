@@ -80,7 +80,7 @@ rm -fv man/man8/arpd.8</userinput></screen>
   </sect2>
 
   <sect2 id="contents-iproute2" role="content">
-    <title>Contents of IPRoute2</title>
+    <title>Содержимое пакета IPRoute2</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

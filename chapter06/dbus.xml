@@ -99,7 +99,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
   </sect2>
 
   <sect2 id="contents-dbus" role="content">
-    <title>Contents of D-Bus</title>
+    <title>Содержимое пакета D-Bus</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

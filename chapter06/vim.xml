@@ -187,7 +187,7 @@ set spell</literal></screen>
   </sect2>
 
   <sect2 id="contents-vim" role="content">
-    <title>Contents of Vim</title>
+    <title>Содержимое пакета Vim</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

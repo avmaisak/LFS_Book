@@ -91,7 +91,7 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 id="contents-sysklogd" role="content">
-    <title>Contents of Sysklogd</title>
+    <title>Содержимое пакета Sysklogd</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

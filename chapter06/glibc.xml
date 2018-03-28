@@ -450,7 +450,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
   </sect2>
 
   <sect2 id="contents-glibc" role="content">
-    <title>Contents of Glibc</title>
+    <title>Содержимое пакета Glibc</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

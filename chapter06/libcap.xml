@@ -93,7 +93,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
   </sect2>
 
   <sect2 id="contents-libcap" role="content">
-    <title>Contents of Libcap</title>
+    <title>Содержимое пакета Libcap</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

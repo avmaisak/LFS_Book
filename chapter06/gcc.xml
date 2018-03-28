@@ -311,7 +311,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
   </sect2>
 
   <sect2 id="contents-gcc" role="content">
-    <title>Contents of GCC</title>
+    <title>Содержимое пакета GCC</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

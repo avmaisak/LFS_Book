@@ -1807,7 +1807,7 @@ particular customization of the DocBook XSL stylesheets.</para>
 
 <refsection xml:id="map">
   <info>
-    <title>Contents of the substitution map</title>
+    <title>Содержимое пакета the substitution map</title>
   </info>
   <para>The string-substitution map contains one or more
   <tag>ss:substitution</tag> elements, each of which has two

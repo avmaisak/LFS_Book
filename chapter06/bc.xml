@@ -110,7 +110,7 @@ ln -sfv libncurses.so.6 /usr/lib/libncurses.so</userinput></screen>
   </sect2>
 
   <sect2 id="contents-bc" role="content">
-    <title>Contents of Bc</title>
+    <title>Содержимое пакета Bc</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

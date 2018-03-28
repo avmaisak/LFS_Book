@@ -62,7 +62,7 @@ install -vm644 config/libelf.pc /usr/lib/pkgconfig</userinput></screen>
   </sect2>
 
   <sect2 id="contents-elfutils" role="content">
-    <title>Contents of Libelf</title>
+    <title>Содержимое пакета Libelf</title>
 
     <segmentedlist>
       <segtitle>Installed Library</segtitle>

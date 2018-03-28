@@ -50,7 +50,7 @@
   </sect2>
 
   <sect2 id="contents-bootscripts" role="content">
-    <title>Contents of LFS-Bootscripts</title>
+    <title>Содержимое пакета LFS-Bootscripts</title>
     <segmentedlist>
       <segtitle>Installed scripts</segtitle>
       <segtitle>Installed directories</segtitle>

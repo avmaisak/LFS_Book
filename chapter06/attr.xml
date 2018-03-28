@@ -91,7 +91,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
   </sect2>
 
   <sect2 id="contents-attr" role="content">
-    <title>Contents of Attr</title>
+    <title>Содержимое пакета Attr</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

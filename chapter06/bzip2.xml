@@ -98,7 +98,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
   </sect2>
 
   <sect2 id="contents-bzip2" role="content">
-    <title>Contents of Bzip2</title>
+    <title>Содержимое пакета Bzip2</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

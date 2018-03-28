@@ -64,7 +64,7 @@ mv -v /usr/bin/killall /bin</userinput></screen>
   </sect2>
 
   <sect2 id="contents-psmisc" role="content">
-    <title>Contents of Psmisc</title>
+    <title>Содержимое пакета Psmisc</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

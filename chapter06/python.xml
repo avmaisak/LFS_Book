@@ -133,7 +133,7 @@ tar --strip-components=1  \
   </sect2>
 
   <sect2 id="contents-python" role="content">
-    <title>Contents of Python 3</title>
+    <title>Содержимое пакета Python 3</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

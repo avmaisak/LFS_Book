@@ -69,7 +69,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
   </sect2>
 
   <sect2 id="contents-xz" role="content">
-    <title>Contents of Xz</title>
+    <title>Содержимое пакета Xz</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

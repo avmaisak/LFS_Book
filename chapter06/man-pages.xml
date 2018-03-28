@@ -47,7 +47,7 @@
   </sect2>
 
   <sect2 id="contents-manpages" role="content">
-    <title>Contents of Man-pages</title>
+    <title>Содержимое пакета Man-pages</title>
 
     <segmentedlist>
       <segtitle>Installed files</segtitle>

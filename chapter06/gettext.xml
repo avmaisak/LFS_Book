@@ -75,7 +75,7 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
   </sect2>
 
   <sect2 id="contents-gettext" role="content">
-    <title>Contents of Gettext</title>
+    <title>Содержимое пакета Gettext</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

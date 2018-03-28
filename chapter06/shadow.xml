@@ -206,7 +206,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
   </sect2>
 
   <sect2 id="contents-shadow" role="content">
-    <title>Contents of Shadow</title>
+    <title>Содержимое пакета Shadow</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

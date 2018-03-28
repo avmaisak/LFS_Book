@@ -78,7 +78,7 @@
   </sect2>
 
   <sect2 id="contents-gdbm" role="content">
-    <title>Contents of GDBM</title>
+    <title>Содержимое пакета GDBM</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

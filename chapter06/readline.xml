@@ -92,7 +92,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
   </sect2>
 
   <sect2 id="contents-readline" role="content">
-    <title>Contents of Readline</title>
+    <title>Содержимое пакета Readline</title>
 
     <segmentedlist>
       <segtitle>Установленные библиотеки</segtitle>

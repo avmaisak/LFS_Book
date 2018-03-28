@@ -75,7 +75,7 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
   </sect2>
 
   <sect2 id="contents-openssl" role="content">
-    <title>Contents of OpenSSL</title>
+    <title>Содержимое пакета OpenSSL</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

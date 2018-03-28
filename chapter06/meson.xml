@@ -54,7 +54,7 @@
 
 
   <sect2 id="contents-meson" role="content">
-    <title>Contents of Meson</title>
+    <title>Содержимое пакета Meson</title>
 
     <segmentedlist>
       <segtitle>Установленные библиотеки</segtitle>

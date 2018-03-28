@@ -338,7 +338,7 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 id="contents-kernel" role="content">
-    <title>Contents of Linux</title>
+    <title>Содержимое пакета Linux</title>
 
     <segmentedlist>
       <segtitle>Installed files</segtitle>

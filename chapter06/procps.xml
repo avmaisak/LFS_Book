@@ -99,7 +99,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
   </sect2>
 
   <sect2 id="contents-procps" role="content">
-    <title>Contents of Procps-ng</title>
+    <title>Содержимое пакета Procps-ng</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

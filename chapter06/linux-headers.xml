@@ -65,7 +65,7 @@ find dest/include \( -name .install -o -name ..install.cmd \) -delete
   </sect2>
 
   <sect2 id="contents-linux-headers" role="content">
-    <title>Contents of Linux API Headers</title>
+    <title>Содержимое пакета Linux API Headers</title>
 
     <segmentedlist>
       <segtitle>Installed headers</segtitle>

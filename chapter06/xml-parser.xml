@@ -60,7 +60,7 @@
   </sect2>
 
   <sect2 id="contents-xml-parser" role="content">
-    <title>Contents of XML::Parser</title>
+    <title>Содержимое пакета XML::Parser</title>
 
     <segmentedlist>
       <segtitle>Installed module</segtitle>

@@ -76,7 +76,7 @@
   </sect2>
 
   <sect2 id="contents-libpipeline" role="content">
-    <title>Contents of Libpipeline</title>
+    <title>Содержимое пакета Libpipeline</title>
 
     <segmentedlist>
       <segtitle>Installed library</segtitle>

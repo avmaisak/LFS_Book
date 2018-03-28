@@ -78,7 +78,7 @@ install -m644 doc/sed.html /usr/share/doc/sed-&sed-version;</userinput></screen>
   </sect2>
 
   <sect2 id="contents-sed" role="content">
-    <title>Contents of Sed</title>
+    <title>Содержимое пакета Sed</title>
 
     <segmentedlist>
       <segtitle>Installed program</segtitle>

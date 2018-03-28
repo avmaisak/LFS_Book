@@ -65,7 +65,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
   </sect2>
 
   <sect2 id="contents-intltool" role="content">
-    <title>Contents of Intltool</title>
+    <title>Содержимое пакета Intltool</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

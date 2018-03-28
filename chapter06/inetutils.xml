@@ -122,7 +122,7 @@ mv -v /usr/bin/ifconfig /sbin</userinput></screen>
   </sect2>
 
   <sect2 id="contents-inetutils" role="content">
-    <title>Contents of Inetutils</title>
+    <title>Содержимое пакета Inetutils</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

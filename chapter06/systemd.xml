@@ -209,7 +209,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
   </sect2>
 
   <sect2 id="contents-systemd" role="content">
-    <title>Contents of systemd</title>
+    <title>Содержимое пакета systemd</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

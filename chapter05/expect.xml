@@ -114,7 +114,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
   </sect2>
 
   <sect2 id="contents-expect" role="content">
-    <title>Contents of Expect</title>
+    <title>Содержимое пакета Expect</title>
 
     <segmentedlist>
       <segtitle>Installed program</segtitle>

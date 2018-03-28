@@ -98,7 +98,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so</userinput><
   </sect2>
 
   <sect2 id="contents-acl" role="content">
-    <title>Contents of Acl</title>
+    <title>Содержимое пакета Acl</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

@@ -88,7 +88,7 @@ make clean</userinput></screen>
   </sect2>
 
   <sect2 id="contents-module-init-tools" role="content">
-    <title>Contents of Module-Init-Tools</title>
+    <title>Содержимое пакета Module-Init-Tools</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

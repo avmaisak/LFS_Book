@@ -69,7 +69,7 @@ make -j4 check</userinput></screen>
 
 
   <sect2 id="contents-automake" role="content">
-    <title>Contents of Automake</title>
+    <title>Содержимое пакета Automake</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

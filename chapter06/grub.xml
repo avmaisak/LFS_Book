@@ -85,7 +85,7 @@
   </sect2>
 
   <sect2 id="contents-gRUB" role="content">
-    <title>Contents of GRUB</title>
+    <title>Содержимое пакета GRUB</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

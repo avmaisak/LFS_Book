@@ -56,7 +56,7 @@
   </sect2>
 
   <sect2 id="contents-iana-etc" role="content">
-    <title>Contents of Iana-Etc</title>
+    <title>Содержимое пакета Iana-Etc</title>
 
     <segmentedlist>
       <segtitle>Installed files</segtitle>

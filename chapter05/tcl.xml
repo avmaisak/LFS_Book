@@ -41,20 +41,11 @@
     <title>Установка пакета Tcl-core</title>
 
     <para>Этот пакет, и следующие два (Expect и DejaGNU) будут установлены для возможности запуска набора тестов для пакетов GCC и Binutils
-	 
-	 This package and the next two (Expect and DejaGNU) are
-    installed to support running the test suites for GCC and Binutils and other
-    packages.  Installing three packages for testing purposes may seem
-    excessive, but it is very reassuring, if not essential, to know that the
-    most important tools are working properly. Even if the test suites are not
-    run in this chapter (they are not mandatory), these packages are required
-    to run the test suites in <xref linkend="chapter-building-system"/>.</para>
+	 и других. Установка трех пакетов для тестирования может показаться чрезмерным, но очень обнадеживает, если важно знать что скомпилированные инструменты работают правильно. Выполнение тестов в этой главе не является обязательным, эти пакеты необходимы для выполнения набора тестов в главе <xref linkend="chapter-building-system"/>.</para>
 
-    <para>Note that the Tcl package used here is a minimal version needed
-    to run the LFS tests.  For the full package, see the  
-    <ulink url='&blfs-book;general/tcl.html'>BLFS Tcl procedures</ulink>.</para>
+    <para>Обратите внимание, что используется минимальная версия пакета Tcl для запуска тестов LFS. Полный пакет доступ в <ulink url='&blfs-book;general/tcl.html'>BLFS </ulink>.</para>
 
-    <para>Prepare Tcl for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Tcl к компиляции:</para>
 
 <screen><userinput remap="configure">cd unix
 ./configure --prefix=/tools</userinput></screen>
@@ -63,43 +54,32 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
-    suite is not mandatory for the temporary tools here in this chapter. To run
-    the Tcl test suite anyway, issue the следующую команду:</para>
+    <para>Компиляция завершена. Как обсуждалось ранее выполнение тестов не является обязательным  для набора временных инструментов в этой главе. Чтобы запустить выполнение тестов, в любом случае, выполните следующую команду:</para>
 
 <screen><userinput remap="test">TZ=UTC make test</userinput></screen>
 
-    <para>The Tcl test suite may experience failures under certain host
-    conditions that are not fully understood. Therefore, test suite failures
-    here are not surprising, and are not considered critical. The
-    <parameter>TZ=UTC</parameter> parameter sets the time zone to Coordinated
-    Universal Time (UTC), but only
-    for the duration of the test suite run. This ensures that the clock tests
-    are exercised correctly. Details on the <envar>TZ</envar> environment
-    variable are provided in <xref linkend="chapter-bootscripts"/>.</para>
+    <para>Наборы тестов Tcl могут завершаться с ошибками при определённых условиях в хост-системе, которые до конца не понятны. Следовательно, сбои при выполнении тестов набора вполне ожидаемы, и они не считаются критическими. Установка аргумента <parameter>TZ=UTC</parameter> устанавливает часовой пояс для Всемирного координированного времени (UTC) только на время выполнения тестового набора. Это гарантирует, что тесты времени осуществляются правильно. Информацию о переменной окружения <envar>TZ</envar> можно посмотреть в главе <xref linkend="chapter-bootscripts"/>.</para>
 
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Make the installed library writable so debugging symbols can
-    be removed later:</para>
+    <para>Сделайте установленную библиотеку доступной для записи, чтобы отладочные символы могли быть удалены позднее:</para>
 
 <screen><userinput remap="install">chmod -v u+w /tools/lib/libtcl&tcl-major-version;.so</userinput></screen>
 
-    <para>Install Tcl's headers. The next package, Expect, requires them
-    to build.</para>
+    <para>Установите заголовочные файлы Tcl. Следующему пакету, Expect, они необходимы чтобы выполнить сборку.</para>
 
 <screen><userinput remap="install">make install-private-headers</userinput></screen>
 
-    <para>Now make a necessary symbolic link:</para>
+    <para>Создайте необходимую символическую ссылку:</para>
 
 <screen><userinput remap="install">ln -sv tclsh&tcl-major-version; /tools/bin/tclsh</userinput></screen>
 
   </sect2>
 
   <sect2 id="contents-tcl" role="content">
-    <title>Contents of Tcl-core</title>
+    <title>Содержимое пакета Tcl-core</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
@@ -119,7 +99,7 @@
       <varlistentry id="tclsh&tcl-major-version;">
         <term><command>tclsh&tcl-major-version;</command></term>
         <listitem>
-          <para>The Tcl command shell</para>
+          <para>Командная оболочка Tcl</para>
           <indexterm zone="ch-tools-tcl tclsh&tcl-major-version;">
             <primary sortas="b-tclsh&tcl-major-version;">tclsh&tcl-major-version;</primary>
           </indexterm>
@@ -129,7 +109,7 @@
       <varlistentry id="tclsh">
         <term><command>tclsh</command></term>
         <listitem>
-          <para>A link to tclsh&tcl-major-version;</para>
+          <para>Ссылка на tclsh&tcl-major-version;</para>
           <indexterm zone="ch-tools-tcl tclsh">
             <primary sortas="b-tclsh">tclsh</primary>
           </indexterm>
@@ -139,7 +119,7 @@
       <varlistentry id="libtcl&tcl-major-version;.so">
         <term><filename class="libraryfile">libtcl&tcl-major-version;.so</filename></term>
         <listitem>
-          <para>The Tcl library</para>
+          <para>Библиотека Tcl</para>
           <indexterm zone="ch-tools-tcl libtcl&tcl-major-version;.so">
             <primary sortas="c-libtcl&tcl-major-version;.so">libtcl&tcl-major-version;.so</primary>
           </indexterm>
@@ -149,7 +129,7 @@
       <varlistentry id="libtclstub&tcl-major-version;.a">
         <term><filename class="libraryfile">libtclstub&tcl-major-version;.a</filename></term>
         <listitem>
-          <para>The Tcl Stub library</para>
+          <para>Библиотека Tcl Stub</para>
           <indexterm zone="ch-tools-tcl libtclstub&tcl-major-version;.a">
             <primary sortas="c-libtclstub&tcl-major-version;.a">libtclstub&tcl-major-version;.a</primary>
           </indexterm>

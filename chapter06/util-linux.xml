@@ -126,7 +126,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
   </sect2>
 
   <sect2 id="contents-utillinux" role="content">
-    <title>Contents of Util-linux</title>
+    <title>Содержимое пакета Util-linux</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

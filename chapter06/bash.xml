@@ -102,7 +102,7 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
   </sect2>
 
   <sect2 id="contents-bash" role="content">
-    <title>Contents of Bash</title>
+    <title>Содержимое пакета Bash</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

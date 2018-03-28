@@ -72,7 +72,7 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
   </sect2>
 
   <sect2 id="contents-libffi" role="content">
-    <title>Contents of Libffi</title>
+    <title>Содержимое пакета Libffi</title>
 
     <segmentedlist>
       <segtitle>Installed library</segtitle>

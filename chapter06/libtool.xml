@@ -72,7 +72,7 @@
 
 
   <sect2 id="contents-libtool" role="content">
-    <title>Contents of Libtool</title>
+    <title>Содержимое пакета Libtool</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

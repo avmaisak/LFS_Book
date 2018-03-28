@@ -162,7 +162,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
   </sect2>
 
   <sect2 id="contents-ncurses" role="content">
-    <title>Contents of Ncurses</title>
+    <title>Содержимое пакета Ncurses</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

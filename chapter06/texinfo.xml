@@ -110,7 +110,7 @@ popd</userinput></screen>
   </sect2>
 
   <sect2 id="contents-texinfo" role="content">
-    <title>Contents of Texinfo</title>
+    <title>Содержимое пакета Texinfo</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

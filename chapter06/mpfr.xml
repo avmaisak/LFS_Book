@@ -71,7 +71,7 @@ make install-html</userinput></screen>
 
 
   <sect2 id="contents-mpfr" role="content">
-    <title>Contents of MPFR</title>
+    <title>Содержимое пакета MPFR</title>
 
     <segmentedlist>
       <segtitle>Установленные библиотеки</segtitle>

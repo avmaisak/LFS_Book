@@ -138,7 +138,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
   </sect2>
 
   <sect2 id="contents-perl" role="content">
-    <title>Contents of Perl</title>
+    <title>Содержимое пакета Perl</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

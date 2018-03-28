@@ -125,7 +125,7 @@
   </sect2>
 
   <sect2 id="contents-db" role="content">
-    <title>Contents of Berkeley DB</title>
+    <title>Содержимое пакета Berkeley DB</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

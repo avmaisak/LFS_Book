@@ -85,7 +85,7 @@
   </sect2>
 
   <sect2 id="contents-sysvinit" role="content">
-    <title>Contents of Sysvinit</title>
+    <title>Содержимое пакета Sysvinit</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

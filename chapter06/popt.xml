@@ -61,7 +61,7 @@
 
 
   <sect2 id="contents-popt" role="content">
-    <title>Contents of Popt</title>
+    <title>Содержимое пакета Popt</title>
 
     <segmentedlist>
       <segtitle>Installed libraries:</segtitle>

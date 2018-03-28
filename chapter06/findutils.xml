@@ -97,7 +97,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
   </sect2>
 
   <sect2 id="contents-findutils" role="content">
-    <title>Contents of Findutils</title>
+    <title>Содержимое пакета Findutils</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

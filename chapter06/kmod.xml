@@ -98,7 +98,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
   </sect2>
 
   <sect2 id="contents-kmod" role="content">
-    <title>Contents of Kmod</title>
+    <title>Содержимое пакета Kmod</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
