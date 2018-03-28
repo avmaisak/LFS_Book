@@ -24,8 +24,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Libstdc++ is the standard C++ library. It is needed for the correct
-    operation of the g++ compiler.</para>
+    <para>Libstdc++ является стандартной библиотекой языка Cи++. Он необходим для правильной работы компилятора g++</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -40,20 +39,18 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Target Libstdc++</title>
+    <title>Установка целевой библиотеки Libstdc++</title>
 
     <note>
-      <para><application>Libstdc++</application> is part of the GCC sources.
-      You should first unpack the GCC tarball and change to the
-      <filename>gcc-&gcc-version;</filename> directory.</para>
+      <para><application>Libstdc++</application> является частью исходных кодов пакета GCC. Сначала необходимо распаковать архив с исходным кодом пакета GCC и перейти в каталог <filename>gcc-&gcc-version;</filename>.</para>
     </note>
 
-    <para>Create a separate build directory for Libstdc++ and enter it:</para>
+    <para>Создайте отдельный каталог для сборки Libstdc++:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Libstdc++ for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Libstdc++ к компиляции:</para>
 
 <screen><userinput remap="configure">../libstdc++-v3/configure           \
     --host=$LFS_TGT                 \
@@ -70,45 +67,38 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--host=...</parameter></term>
         <listitem>
-          <para>Indicates to use the cross compiler we have just built
-          instead of the one in <filename>/usr/bin</filename>.</para>
+          <para>Указывает на использование кросс-компилятора который был установлен вместо компилятора в каталоге <filename>/usr/bin</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-libstdcxx-threads</parameter></term>
         <listitem>
-          <para>Since we have not yet built the C threads library, the C++
-          one cannot be built either.</para>
+          <para>Поскольку сборка библиотеки Си для работы с потоками еще не создана, соответствующую библиотеку Си++ скомпилировать тоже не получится.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-libstdcxx-pch</parameter></term>
         <listitem>
-          <para>This switch prevents the installation of precompiled
-          include files, which are not needed at this stage.</para>
+          <para>Этот аргумент указывает на то, что не требуется установка предварительно скомпилированных заголовочных файлов, которые на данном этапе не требуются.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</parameter></term>
         <listitem>
-          <para>This is the location where the standard include files are
-          searched by the C++ compiler. In a normal build, this information
-          is automatically passed to the Libstdc++ <command>configure</command>
-          options from the top level directory. In our case, this information
-          must be explicitly given.</para>
+          <para>Это каталог, где будет выполнятся поиск стандартных заголовочных файлов компилятором Си++. При обычной сборке, эта информация автоматически передается сценарию <command>configure</command> пакета Libstdc++ из каталога верхнего уровня. В нашем случае, эта информация должны быть указана явно.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Compile libstdc++ by running:</para>
+    <para>Чтобы скомпилировать пакет Libstdc++, необходимо выполнить команду:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install the library:</para>
+    <para>Установите бибоиотеку:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
