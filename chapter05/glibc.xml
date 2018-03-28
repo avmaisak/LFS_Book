@@ -41,15 +41,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glibc</title>
+    <title>Установка пакета Glibc</title>
 
-    <para>The Glibc documentation recommends building Glibc 
-    in a dedicated build directory:</para>
+    <para>В документации пакета Glibc рекомендуется выполнять сборку в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Next, prepare Glibc for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Glibc к компиляции:</para>
 
 <screen><userinput remap="configure">../configure                             \
       --prefix=/tools                    \
@@ -66,48 +65,34 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>
         <listitem>
-          <para>The combined effect of these switches is that Glibc's build system
-          configures itself to cross-compile, using the cross-linker and
-          cross-compiler in <filename class="directory">/tools</filename>.</para>
+          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять кросс-компиляцию пакета, используя кросс-линковщик и кросс-комилятор из каталога <filename class="directory">/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-kernel=&min-kernel;</parameter></term>
         <listitem>
-          <para>This tells Glibc to compile the library with support
-          for &min-kernel; and later Linux kernels.  Workarounds for older
-          kernels are not enabled.</para>
+          <para>Аргумент позволяет выполнять компиляцию с поддержкой ядер начиная с версии &min-kernel; и более поздних. Поддержка более старых ядер не будет включена.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-headers=/tools/include</parameter></term>
         <listitem>
-          <para>This tells Glibc to compile itself against the headers recently
-          installed to the tools directory, so that it knows exactly what
-          features the kernel has and can optimize itself accordingly.</para>
+          <para>Аргумент позволяет выполнять компиляцию с указанием заголовочных файлов, установленных в каталог с временным набором инструментов, таким образом пакету будет известно, какие функции ядра используются, и будет выполнена оптимизация.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>libc_cv_forced_unwind=yes</parameter></term>
         <listitem>
-          <para>The linker installed during
-          <xref linkend="ch-tools-binutils-pass1"/> was cross-compiled and as
-          such cannot be used until Glibc has been installed.  This means that
-          the configure test for force-unwind support will fail, as it relies on
-          a working linker.  The libc_cv_forced_unwind=yes variable is passed in
-          order to inform <command>configure</command> that force-unwind
-          support is available without it having to run the test.</para>
+          <para>Линковщик, установленный в главе <xref linkend="ch-tools-binutils-pass1"/> был кросс-компилирован и не может использоваться, пока не будет установлен пакет Glibc. Это означает, что тест конфигурирования для функции force-unwind будет провален,поскольку он полагается на рабочий линковщик. Значение аргумента libc_cv_forced_unwind=yes передается, чтобы сообщить, сценарию <command>configure</command> что поддержка функция force-unwind доступна без необходимости проведения тестирования.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><parameter>libc_cv_c_cleanup=yes</parameter></term>
         <listitem>
-          <para>Similarly, we pass libc_cv_c_cleanup=yes through to the
-          <command>configure</command> script so that the test is skipped and C
-          cleanup handling support is configured.</para>
+          <para>Аналогично, передается значение аргумента libc_cv_c_cleanup=yes сценарию <command>configure</command> для того, чтобы тестирование не выполнялось и поддержка обработки очистки была сконфигурирована.</para>
         </listitem>
       </varlistentry>
 <!--  <varlistentry>
@@ -121,7 +106,7 @@ cd       build</userinput></screen>
 
     </variablelist>
 
-    <para>During this stage the following warning might appear:</para>
+    <para>На этапе конфигурирования могут появиться следующие предупреждения:</para>
 
     <blockquote>
 <screen><computeroutput>configure: WARNING:
@@ -131,13 +116,9 @@ cd       build</userinput></screen>
 *** Check the INSTALL file for required versions.</computeroutput></screen>
     </blockquote>
 
-    <para>The missing or incompatible <command>msgfmt</command> program is
-    generally harmless. This <command>msgfmt</command> program is part of the
-    Gettext package which the host distribution should provide.</para>
+    <para>Отсутствие или несовместимость программы <command>msgfmt</command> безвредно. Это программа является частью пакета Gettext, который должен быть предоставлен хост-системой.</para>
 
-    <note><para>There have been reports that this package may fail when 
-    building as a "parallel make".  If this occurs, rerun the make command
-    with a "-j1" option.</para></note>
+    <note><para>Сообщалось, что этот пакет может не компилироваться при выполнении процедуры "параллельной сборки". Если это произойдет, повторите команду make с аргументом "-j1".</para></note>
 
     <para>Скомпилируйте пакет:</para>
 
@@ -148,37 +129,28 @@ cd       build</userinput></screen>
 <screen><userinput remap="install">make install</userinput></screen>
 
   <caution>
-    <para>At this point, it is imperative to stop and ensure that the basic
-    functions (compiling and linking) of the new toolchain are working as
-    expected. To perform a sanity check, run the following commands:</para>
+    <para>На этом этапе, необходимо остановиться, и проверить что базовый функционал (компиляция и линовка) созданных инструментов работает так, как необходимо. Чтобы выполнить проверку работоспособности, выполните следующие команды:</para>
 
 <screen><userinput>echo 'int main(){}' &gt; dummy.c
 $LFS_TGT-gcc dummy.c
 readelf -l a.out | grep ': /tools'</userinput></screen>
 
-    <para>If everything is working correctly, there should be no errors,
-    and the output of the last command will be of the form:</para>
+    <para>Если все работает правильно, не болжно быть ошибок, и вывод последней команды будет иметь вид:</para>
 
 <screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
 
-    <para>Note that for 32-bit machines, the interpreter name will be
-    <filename>/tools/lib/ld-linux.so.2</filename>.</para>
+    <para>Обратите внимание, что на 32-битной машине наименование интерпретатора будет:<filename>/tools/lib/ld-linux.so.2</filename>.</para>
 
-    <para>If the output is not shown as above or there was no output at all,
-    then something is wrong. Investigate and retrace the steps to find out
-    where the problem is and correct it. This issue must be resolved before
-    continuing on.</para>
+    <para>Если вывод не соответствует тому, как показано выше, или вообще вывода нет, значит,что-то не так. Изучите и повторите шаги выше, чтобы выяснить
+     где проблема и устраните её. Важно, устранить проблему до того, как вы продолжите следующие шаги.</para>
 
-    <para>Once all is well, clean up the test files:</para>
+    <para>Когда все будет хорошо, очистите тестовые файлы:</para>
 
 <screen><userinput>rm -v dummy.c a.out</userinput></screen>
 
   </caution>
 
-  <note><para>Building Binutils in the section after next will serve as an
-  additional check that the toolchain has been built properly. If Binutils
-  fails to build, it is an indication that something has gone wrong with the
-  previous Binutils, GCC, or Glibc installations.</para></note>
+  <note><para>При сборке пакета Binutils в следующем разделе, будут производиться дополнительные проверки, что временный набор инструментов был собран правильно. Если пакет Binutils не получится скомпилировать, или сконфигурировать, это будет явный признак того, что что-то пошло не так с предыдущими установкми пакетов Binutils, GCC, или Glibc.</para></note>
 
   </sect2>
 

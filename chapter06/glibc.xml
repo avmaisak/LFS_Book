@@ -23,10 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Glibc пакет включает в себя  the main C library. This library provides
-    the basic routines for allocating memory, searching directories, opening and
-    closing files, reading and writing files, string handling, pattern matching,
-    arithmetic, and so on.</para>
+    <para>Этот пакет включает в себя стандартную библиотеку языка Си (GNU C Library). Эта библиотека предоставляет функции для выделения памяти, поиска каталогов, открытия и закрытия файлов, чтения и записии файлов, обработку строк, соответствия шаблонов (pattern matching), арифметические операции, и так далее.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -85,7 +82,7 @@ esac</userinput></screen>
 
 <screen><userinput remap="pre">rm -f /usr/include/limits.h</userinput></screen>
 
-    <para>The Glibc documentation recommends building Glibc 
+    <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -115,7 +112,7 @@ unset GCC_INCDIR</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-werror</parameter></term>
         <listitem>
-          <para>This option disables the -Werror option passed to 
+          <para>This option disables the -Werror option passed to
           GCC.  This is necessary for running the test suite.</para>
         </listitem>
       </varlistentry>
@@ -123,7 +120,7 @@ unset GCC_INCDIR</userinput></screen>
       <varlistentry>
         <term><parameter>--enable-stack-protector=strong</parameter></term>
         <listitem>
-          <para>This option increases system security by adding 
+          <para>This option increases system security by adding
           extra code to check for buffer overflows, such as stack
           smashing attacks.</para>
         </listitem>
@@ -160,7 +157,7 @@ unset GCC_INCDIR</userinput></screen>
     <itemizedlist>
 
       <listitem>
-        <para><emphasis>misc/tst-ttyname</emphasis> 
+        <para><emphasis>misc/tst-ttyname</emphasis>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
@@ -171,7 +168,7 @@ unset GCC_INCDIR</userinput></screen>
       </listitem>
 <!--
       <listitem>
-        <para>The <emphasis>rt/tst-cputimer1</emphasis> and 
+        <para>The <emphasis>rt/tst-cputimer1</emphasis> and
         <emphasis>rt/tst-cpuclock2</emphasis> tests have been known to
         fail.  The reason is not completely understood, but indications are
         that minor timing issues can trigger these failures.</para>
@@ -218,7 +215,7 @@ unset GCC_INCDIR</userinput></screen>
 <screen><userinput remap="install">cp -v ../nscd/nscd.conf /etc/nscd.conf
 mkdir -pv /var/cache/nscd</userinput></screen>
 
-    <para revision="systemd">Install the systemd support files for 
+    <para revision="systemd">Install the systemd support files for
     <command>nscd</command>:</para>
 
     <screen revision="systemd"><userinput remap="install">install -v -Dm644 ../nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
@@ -462,7 +459,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
 
       <seglistitem>
         <seg>catchsegv, gencat, getconf, getent, iconv, iconvconfig, ldconfig,
-        ldd, lddlibc4, locale, localedef, makedb, mtrace, nscd, 
+        ldd, lddlibc4, locale, localedef, makedb, mtrace, nscd,
         pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
         <seg>ld-&glibc-version;.so, libBrokenLocale.{a,so}, libSegFault.so, libanl.{a,so},
