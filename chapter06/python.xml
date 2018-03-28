@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Python 3</title>
+    <title>Установка пакета Python 3</title>
 
     <para>Prepare Python for compilation:</para>
 

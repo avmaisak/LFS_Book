@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Intltool</title>
+    <title>Установка пакета Intltool</title>
 
     <para>First fix a warning that is caused by perl-5.22 and later:</para>
 

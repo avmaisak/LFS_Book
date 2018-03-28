@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Texinfo</title>
+    <title>Установка пакета Texinfo</title>
 
     <para>Prepare Texinfo for compilation:</para>
 

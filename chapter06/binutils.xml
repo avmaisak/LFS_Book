@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Binutils</title>
+    <title>Установка пакета Binutils</title>
 
     <para>Verify that the PTYs are working properly inside the chroot
     environment by performing a simple test:</para>

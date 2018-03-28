@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of OpenSSL</title>
+    <title>Установка пакета OpenSSL</title>
 
     <para>Prepare OpenSSL for compilation:</para>
 

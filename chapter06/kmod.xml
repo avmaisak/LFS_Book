@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Kmod</title>
+    <title>Установка пакета Kmod</title>
 
     <para>Prepare Kmod for compilation:</para>
 

@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Make</title>
+    <title>Установка пакета Make</title>
 
     <para>First, work around an error caused by glibc-2.27:</para>
 

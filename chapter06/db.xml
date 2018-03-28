@@ -59,7 +59,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Berkeley DB</title>
+    <title>Установка пакета Berkeley DB</title>
 
     <para>Apply an upstream patch so that replication clients can open a
     sequence:</para>

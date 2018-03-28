@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Zlib</title>
+    <title>Установка пакета Zlib</title>
 
     <para>Prepare Zlib for compilation:</para>
 

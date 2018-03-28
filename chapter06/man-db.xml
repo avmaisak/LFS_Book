@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Man-DB</title>
+    <title>Установка пакета Man-DB</title>
 
     <para>Prepare Man-DB for compilation:</para>
 

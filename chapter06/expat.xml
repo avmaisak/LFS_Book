@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Expat</title>
+    <title>Установка пакета Expat</title>
 
     <para>First fix a problem with the regession tests in the LFS environment:</para>
 

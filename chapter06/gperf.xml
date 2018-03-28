@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Gperf</title>
+    <title>Установка пакета Gperf</title>
 
     <para>Prepare Gperf for compilation:</para>
 

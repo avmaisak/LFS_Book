@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GRUB</title>
+    <title>Установка пакета GRUB</title>
 
     <para>Prepare GRUB for compilation:</para>
 

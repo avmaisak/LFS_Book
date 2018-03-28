@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Findutils</title>
+    <title>Установка пакета Findutils</title>
 
     <para>Prepare Findutils for compilation:</para>
 

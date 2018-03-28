@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Libpipeline</title>
+    <title>Установка пакета Libpipeline</title>
 
     <para>Prepare Libpipeline for compilation:</para>
 

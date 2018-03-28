@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Diffutils</title>
+    <title>Установка пакета Diffutils</title>
 
     <para>Prepare Diffutils for compilation:</para>
 

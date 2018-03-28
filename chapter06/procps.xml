@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Procps-ng</title>
+    <title>Установка пакета Procps-ng</title>
 
     <para>Prepare procps-ng for compilation:</para>
 

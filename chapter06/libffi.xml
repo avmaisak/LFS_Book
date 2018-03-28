@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Libffi</title>
+    <title>Установка пакета Libffi</title>
 
     <para>Modify the Makefile to install headers into the standard
     <filename class="directory">/usr/include</filename> directory instead of

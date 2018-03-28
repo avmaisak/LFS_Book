@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Grep</title>
+    <title>Установка пакета Grep</title>
 
     <para>Prepare Grep for compilation:</para>
 

@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Coreutils</title>
+    <title>Установка пакета Coreutils</title>
 
     <para>Prepare Coreutils for compilation:</para>
 

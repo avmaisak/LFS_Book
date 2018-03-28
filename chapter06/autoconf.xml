@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Autoconf</title>
+    <title>Установка пакета Autoconf</title>
 
     <para>Prepare Autoconf for compilation:</para>
 

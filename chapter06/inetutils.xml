@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Inetutils</title>
+    <title>Установка пакета Inetutils</title>
 
     <para>Prepare Inetutils for compilation:</para>
 

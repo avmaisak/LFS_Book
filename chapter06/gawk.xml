@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Gawk</title>
+    <title>Установка пакета Gawk</title>
 
     <para>First, ensure some unneeded files are not installed:</para>
 

@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Gzip</title>
+    <title>Установка пакета Gzip</title>
 
     <para>Prepare Gzip for compilation:</para>
 

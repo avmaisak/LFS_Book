@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Bison</title>
+    <title>Установка пакета Bison</title>
 
     <para>Prepare Bison for compilation:</para>
 

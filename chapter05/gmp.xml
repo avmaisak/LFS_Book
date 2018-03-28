@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GMP</title>
+    <title>Установка пакета GMP</title>
 
     <para>Prepare GMP for compilation:</para>
 

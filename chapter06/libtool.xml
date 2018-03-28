@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Libtool</title>
+    <title>Установка пакета Libtool</title>
 
     <para>Prepare Libtool for compilation:</para>
 

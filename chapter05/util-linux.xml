@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Util-linux</title>
+    <title>Установка пакета Util-linux</title>
 
     <para>Prepare Util-linux for compilation:</para>
 

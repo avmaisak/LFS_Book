@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Module-Init-Tools</title>
+    <title>Установка пакета Module-Init-Tools</title>
 
     <para>Apply a patch that contains the generated man pages that were missing
     from the released source tarball:</para>

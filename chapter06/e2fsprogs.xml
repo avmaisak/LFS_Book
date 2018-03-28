@@ -42,7 +42,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of E2fsprogs</title>
+    <title>Установка пакета E2fsprogs</title>
 <!--
     <para>First, fix a script that adjusts testing output:</para>
 

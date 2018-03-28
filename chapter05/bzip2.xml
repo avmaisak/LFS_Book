@@ -41,7 +41,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Bzip2</title>
+    <title>Установка пакета Bzip2</title>
 
     <para>The Bzip2 package does not contain a <command>configure</command>
     script. Compile and test it with:</para>

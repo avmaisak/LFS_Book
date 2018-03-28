@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of PCRE</title>
+    <title>Установка пакета PCRE</title>
 
     <para>Prepare PCRE for compilation:</para>
 

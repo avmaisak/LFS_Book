@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Psmisc</title>
+    <title>Установка пакета Psmisc</title>
 
     <para>Prepare Psmisc for compilation:</para>
 

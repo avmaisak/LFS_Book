@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glibc</title>
+    <title>Установка пакета Glibc</title>
 
     <note><para>The Glibc build system is self-contained and will install
     perfectly, even though the compiler specs file and linker are still

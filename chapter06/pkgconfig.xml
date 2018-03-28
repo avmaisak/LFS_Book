@@ -40,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Pkg-config</title>
+    <title>Установка пакета Pkg-config</title>
 
     <para>Prepare Pkg-config for compilation:</para>
 

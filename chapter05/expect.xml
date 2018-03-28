@@ -39,7 +39,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Expect</title>
+    <title>Установка пакета Expect</title>
 
     <para>First, force Expect's configure script to use <filename>/bin/stty</filename>
     instead of a <filename>/usr/local/bin/stty</filename> it may find on the host system.

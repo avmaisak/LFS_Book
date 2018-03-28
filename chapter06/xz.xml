@@ -42,7 +42,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Xz</title>
+    <title>Установка пакета Xz</title>
 
     <para>Prepare Xz for compilation with:</para>
 

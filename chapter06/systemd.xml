@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of systemd</title>
+    <title>Установка пакета systemd</title>
 
     <para>Create a symlink to work around missing xsltproc:</para>
 
