@@ -44,7 +44,7 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
-    <para>Build the package:</para>
+    <para>Выполните сборку пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

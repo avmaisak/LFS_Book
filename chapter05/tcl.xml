@@ -59,7 +59,7 @@
 <screen><userinput remap="configure">cd unix
 ./configure --prefix=/tools</userinput></screen>
 
-    <para>Build the package:</para>
+    <para>Выполните сборку пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 

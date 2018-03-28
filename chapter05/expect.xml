@@ -79,7 +79,7 @@ sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
 
     </variablelist>
 
-    <para>Build the package:</para>
+    <para>Выполните сборку пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
