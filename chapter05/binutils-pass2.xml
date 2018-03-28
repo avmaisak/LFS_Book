@@ -109,22 +109,14 @@ cp -v ld/ld-new /tools/bin</userinput></screen>
       <varlistentry>
         <term><parameter>-C ld clean</parameter></term>
         <listitem>
-          <para>This tells the make program to remove all compiled
-          files in the <filename class="directory">ld</filename>
-          subdirectory.</para>
+          <para>Аргумент сообщает программе make удалить все скомпилированные файлы в подкаталоге <filename class="directory">ld</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>-C ld LIB_PATH=/usr/lib:/lib</parameter></term>
         <listitem>
-          <para>This option rebuilds everything in the <filename
-          class="directory">ld</filename> subdirectory. Specifying the
-          <envar>LIB_PATH</envar> Makefile variable on the command line
-          allows us to override the default value of the temporary tools
-          and point it to the proper final path. The value of this variable
-          specifies the linker's default library search path. This
-          preparation is used in the next chapter.</para>
+          <para>Этот аргумент сообщает выполнить пересборку всего содержимого в подкаталоге <filename class="directory">ld</filename>. Указание переменной <envar>LIB_PATH</envar> Makefile в командной строке позволяет переопределить значения по умолчанию для набора временных инструментов указанием правильного конечного пути. Значение этой переменной указывает линковщику  каталог для поиска библиотек. Эта подготовка требуется для выполнения процедур в следующем разделе.</para>
         </listitem>
       </varlistentry>
 
