@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The systemd пакет включает в себя  программы для  controlling the startup,
-    running, and shutdown of the system.</para>
+    <para>Системный менеджер, демон инициализации других демонов в Linux, пришедший на замену используемого ранее SysV. Его особенностью является интенсивное распараллеливание запуска служб в процессе загрузки системы, что позволяло существенно ускорить запуск операционной системы. Он используется многими коммерческими дистрибутивами.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -51,6 +50,14 @@
     <para>Remove tests that cannot be built in chroot:</para>
 
 <screen><userinput remap="pre">sed '171,$ d' -i src/resolve/meson.build</userinput></screen>
+
+<!-- These are from upstream.  There will probably be a new release shortly,
+     so don't bother with a patch. -->
+    <para>Make some fixes from upstream:</para>
+
+<screen><userinput remap="pre">sed -i '527,565 d'                  src/basic/missing.h
+sed -i '24 d'                       src/core/load-fragment.c
+sed -i '53 a#include &lt;sys/mount.h&gt;' src/shared/bus-unit-util.c</userinput></screen>
 
     <para>Remove an unneeded group,
     <systemitem class="groupname">render</systemitem>, from the default udev
@@ -167,7 +174,7 @@ meson --prefix=/usr                \
 
 <screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
 <!--
-    <para>To test the package, execute the следующую команду:</para>
+    <para>To test the package, execute the following command:</para>
 
 <screen><userinput remap="test">LANG=en_US.UTF-8 ninja test</userinput></screen>
 -->

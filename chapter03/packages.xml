@@ -262,9 +262,6 @@
         <para>Домашняя страница:  <ulink url="&glibc-home;"/></para>
         <para>Ссылка на загрузку: <ulink url="&glibc-url;"/></para>
         <para>Контрольная сумма MD5: <literal>&glibc-md5;</literal></para>
-        <note>
-          <para>Эта версия glibc устраняет проблему безопасности которая еще не была устранена в последнем релизе.</para>
-        </note>
       </listitem>
     </varlistentry>
 

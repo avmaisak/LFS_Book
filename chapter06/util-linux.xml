@@ -93,7 +93,7 @@
             --without-python</userinput></screen>
 
     <para>The --disable and --without options prevent warnings about
-    building components that require packages not in LFS or are 
+    building components that require packages not in LFS or are
     inconsistent with programs installed by other packages.</para>
 
     <para>Скомпилируйте пакет:</para>
@@ -109,15 +109,12 @@
     coverage, other BLFS packages must be installed.  If desired, this test can
     be run after rebooting into the completed LFS system и выполните командуning:</para>
 
-    <screen role="nodump"><userinput>bash tests/run.sh --srcdir=$PWD --builddir=$PWD</userinput></screen> 
+    <screen role="nodump"><userinput>bash tests/run.sh --srcdir=$PWD --builddir=$PWD</userinput></screen>
     </warning>
 
     <screen><userinput remap="test">chown -Rv nobody .
 su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
 
-    <note><para>One test, fincore/count, may fail in the initial chroot
-    environment but will pass if the test is rerun after the LFS system
-    is complete.</para></note>
 
     <para>Установите пакет:</para>
 
@@ -147,14 +144,14 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
         swapoff (link to swapon), swapon, switch_root, tailf, taskset, ul,
         umount, uname26, unshare, utmpdump, uuidd, uuidgen, wall, wdctl, whereis,
         wipefs, x86_64, and zramctl</seg>
-        <seg>libblkid.so, libfdisk.so, libmount.so, 
+        <seg>libblkid.so, libfdisk.so, libmount.so,
         libsmartcols.so, and libuuid.so</seg>
-        <seg>/usr/include/blkid, 
-             /usr/include/libfdisk, 
-             /usr/include/libmount, 
-             /usr/include/libsmartcols, 
-             /usr/include/uuid, 
-             /usr/share/doc/util-linux-&util-linux-version;, 
+        <seg>/usr/include/blkid,
+             /usr/include/libfdisk,
+             /usr/include/libmount,
+             /usr/include/libsmartcols,
+             /usr/include/uuid,
+             /usr/share/doc/util-linux-&util-linux-version;,
          and /var/lib/hwclock</seg>
       </seglistitem>
     </segmentedlist>
@@ -561,8 +558,8 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="last">
         <term><command>last</command></term>
         <listitem>
-          <para>Shows which users last logged in (and out), searching back 
-          through the <filename>/var/log/wtmp</filename> file; it also shows 
+          <para>Shows which users last logged in (and out), searching back
+          through the <filename>/var/log/wtmp</filename> file; it also shows
           system boots, shutdowns, и выполните команду-level changes</para>
           <indexterm zone="ch-system-util-linux last">
             <primary sortas="b-last">last</primary>
@@ -573,7 +570,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="lastb">
         <term><command>lastb</command></term>
         <listitem>
-          <para>Shows the failed login attempts, as logged in 
+          <para>Shows the failed login attempts, as logged in
           <filename>/var/log/btmp</filename></para>
           <indexterm zone="ch-system-util-linux lastb">
             <primary sortas="b-lastb">lastb</primary>
@@ -707,7 +704,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="mesg">
         <term><command>mesg</command></term>
         <listitem>
-          <para>Controls whether other users can send messages to the current 
+          <para>Controls whether other users can send messages to the current
           user's terminal</para>
           <indexterm zone="ch-system-util-linux mesg">
             <primary sortas="b-mesg">mesg</primary>
@@ -1198,7 +1195,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="zramctl">
         <term><command>zramctl</command></term>
         <listitem>
-          <para>A program to set up and control zram (compressed ram disk) 
+          <para>A program to set up and control zram (compressed ram disk)
           devices</para>
           <indexterm zone="ch-system-util-linux zramctl">
             <primary sortas="b-zramctl">zramctl</primary>
