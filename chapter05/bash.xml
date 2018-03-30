@@ -57,7 +57,7 @@
 
       <varlistentry>
         <term><parameter>--without-bash-malloc</parameter></term>
-        <listitem>Эта опция отключает использование функций выделения памяти Bash  (<function>malloc</function>) которые, как известно, вызывают  ошибки сегментации. При использовании этого аргумента, Bash будет использовать более надежные функции <function>malloc</function> из библиотеки Glibc.</para>
+        <listitem><para>Эта опция отключает использование функций выделения памяти Bash  (<function>malloc</function>) которые, как известно, вызывают  ошибки сегментации. При использовании этого аргумента, Bash будет использовать более надежные функции <function>malloc</function> из библиотеки Glibc.</para>
         </listitem>
       </varlistentry>
 
