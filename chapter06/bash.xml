@@ -23,7 +23,9 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Bash пакет включает в себя  the Bourne-Again SHell.</para>
+    <para>Усовершенствованная и модернизированная вариация командной оболочки Bourne shell. Этот пакет выполняет требования стандарта LFS Core для обеспечения интерфейса Bourne Shell в системе. Он был выбран из числа других оболочек из-за
+        широкого распространения, возможностей которые выходят далеко за пределы базовых функций
+        программ-оболочек.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -44,7 +46,7 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
 -->
-    <para>Prepare Bash for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Bash к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                       \
             --docdir=/usr/share/doc/bash-&bash-version; \
@@ -52,15 +54,12 @@
             --with-installed-readline</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the new configure option:</title>
+      <title>Значение новых параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--with-installed-readline</parameter></term>
         <listitem>
-          <para>This option tells Bash to use the <filename
-          class="libraryfile">readline</filename> library that is already
-          installed on the system rather than using its own readline
-          version.</para>
+          <para>Аргумент сообщает Bash использовать библиотеку <filename class="libraryfile">readline</filename>, которая используется в хост-системе, вместо того, чтобы использовать собственную версию.</para>
         </listitem>
       </varlistentry>
 
@@ -70,8 +69,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Skip down to <quote>Install the
-    package</quote> if not running the test suite.</para>
+    <para>Пропустите этот параграф и перейдите к параграфу <quote>Установка пакета</quote> если нет необходимости запускать наборы тестов.</para>
 
     <para>To prepare the tests, ensure that the <systemitem class="username">nobody</systemitem> user can write to the sources tree:</para>
 

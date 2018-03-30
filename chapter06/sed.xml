@@ -50,7 +50,7 @@ sed -i 's/testsuite.panic-tests.sh//' Makefile.in</userinput></screen>
 <screen><userinput remap="configure">./configure --prefix=/usr --bindir=/bin</userinput></screen>
 <!--
     <variablelist>
-      <title>The meaning of the new configure option:</title>
+      <title>Значение новых параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>-i -htmldir</parameter></term>

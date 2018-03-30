@@ -53,7 +53,7 @@ cd build</userinput></screen>
 <screen><userinput remap="configure">../configure --prefix=/tools --disable-libblkid --disable-libuuid</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the new configure option:</title>
+      <title>Значение новых параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--disable-libblkid</parameter></term>
