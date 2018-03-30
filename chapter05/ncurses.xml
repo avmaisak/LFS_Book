@@ -43,11 +43,11 @@
   <sect2 role="installation">
     <title>Установка пакета Ncurses</title>
 
-    <para>First, ensure that <command>gawk</command> is found first during configuration:</para>
+    <para>Для начала, необходимо убедиться в том, что программа <command>gawk</command> обнаружится первой, в процессе конфигурирования:</para>
 
 <screen><userinput remap="pre">sed -i s/mawk// configure</userinput></screen>
 
-    <para>Prepare Ncurses for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Ncurses к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools \
             --with-shared   \
@@ -62,34 +62,24 @@
       <varlistentry>
         <term><parameter>--without-ada</parameter></term>
         <listitem>
-          <para>This ensures that Ncurses does not build support for the Ada
-          compiler which may be present on the host but will not be available
-          once we enter the <command>chroot</command> environment.</para>
+          <para>Указание этого аргумента гарантирует что поддержка компилятора Ada не будет включена в сборку, который может присутствовать на хост-системе, но не будет доступен в  <command>chroot</command> окружении.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-overwrite</parameter></term>
         <listitem>
-          <para>This tells Ncurses to install its header files into
-          <filename class="directory">/tools/include</filename>, instead of
-          <filename class="directory">/tools/include/ncurses</filename>, to
-          ensure that other packages can find the Ncurses headers
-          successfully.</para>
+          <para>Указание этого аргумента сообщает что необходимо установить заголовочные файлы в каталог
+			 <filename class="directory">/tools/include</filename>, вместо <filename class="directory">/tools/include/ncurses</filename>, чтобы быть уверенным в том, что остальные пакеты смогут легко найти заголовочные файлы пакета Ncurses.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-widec</parameter></term>
         <listitem>
-          <para>This switch causes wide-character libraries (e.g., <filename
-          class="libraryfile">libncursesw.so.&ncurses-version;</filename>)
-          to be built instead of normal ones (e.g., <filename
-          class="libraryfile">libncurses.so.&ncurses-version;</filename>).
-          These wide-character libraries are usable in both multibyte and
-          traditional 8-bit locales, while normal libraries work properly
-          only in 8-bit locales. Wide-character and normal libraries are
-          source-compatible, but not binary-compatible.</para>
+          <para>Аргумент сообщает, что необходимо подключить wide-character библиотеки (например, <filename
+          class="libraryfile">libncursesw.so.&ncurses-version;</filename>) вместо обычных библиотек (например, <filename
+          class="libraryfile">libncurses.so.&ncurses-version;</filename>). Библиотеки wide-character могут использоваться как для многобайтовых, так и для традиционных 8-битных локалях, в то время как обычные библиотеки работают правильно только с 8-битными локалями. Библиотеки wide-character и обычные совместимы на уровне исходного кода, но не совместимы на бинарном уровне.</para>
         </listitem>
       </varlistentry>
 
@@ -99,11 +89,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package has a test suite, but it can only be run after the
-    package has been installed.  The tests reside in the
-    <filename class="directory">test/</filename> directory.  See the
-    <filename>README</filename> file in that directory for further details.
-    </para>
+    <para>В пакет включен набор тестов, но они могут быть запущены только после того, как пакет будет установлен. Тесты находятся в каталоге filename class="directory">test/</filename>. Прочитайте файл <filename>README</filename> в этом каталоге для получения дополнительной информации.</para>
 
     <para>Установите пакет:</para>
 
