@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Expect</title>
 
-    <para>Для начала, необходимо указать сценарию конфигурирования пакета использовать <filename>/bin/stty</filename> вместо <filename>/usr/local/bin/stty</filename> который он может искать в хост-системе. Это гарантирует что наши инструменты тестирования останутся в нормальном состоянии до окончания сборки всго временного набора инструментов:</para>
+    <para>Для начала, необходимо указать сценарию конфигурирования пакета использовать <filename>/bin/stty</filename> вместо <filename>/usr/local/bin/stty</filename> который он может искать в хост-системе. Это гарантирует что наши инструменты тестирования останутся в нормальном состоянии до окончания сборки всего временного набора инструментов:</para>
 
 <screen><userinput remap="pre">cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</userinput></screen>
