@@ -41,11 +41,11 @@
   <sect2 role="installation">
     <title>Установка пакета DejaGNU</title>
 
-    <para>Prepare DejaGNU for compilation:</para>
+    <para>Выполните подготовку пакета DejaGNU к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 
-    <para>Build and install the package:</para>
+    <para>Выполните сборку и установку пакета:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
@@ -75,8 +75,7 @@
       <varlistentry id="runtest">
         <term><command>runtest</command></term>
         <listitem>
-          <para>A wrapper script that locates the proper
-          <command>expect</command> shell and then runs DejaGNU</para>
+         <para>Сценарий-обёртка, который находит правильную оболочку <command>expect</command> и затем, выполняет запуск DejaGNU</para>
           <indexterm zone="ch-tools-dejagnu runtest">
             <primary sortas="b-runtest">runtest</primary>
           </indexterm>
