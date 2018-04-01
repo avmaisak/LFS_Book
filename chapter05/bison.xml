@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Bison</title>
 
-    <para>Prepare Bison for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Bison к компиляции: </para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

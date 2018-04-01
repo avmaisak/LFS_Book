@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Bison пакет включает в себя  a parser generator.</para>
+    <para>Этот пакет включает в себя GNU версию yacc (Ещё один компилятор компиляторов) необходимый для сборки некоторых пакетов для системы LFS. </para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -42,7 +42,7 @@
 <!-- bison only installs a static library
     <para>Inhibit static library installation:</para>
 
-<screen><userinput remap="pre">sed -i '/lib_LIBRARIES =/d' Makefile.in</userinput></screen>    
+<screen><userinput remap="pre">sed -i '/lib_LIBRARIES =/d' Makefile.in</userinput></screen>
 -->
     <para>Prepare Bison for compilation:</para>
 
