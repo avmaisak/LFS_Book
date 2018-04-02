@@ -9,15 +9,15 @@
   <?dbhtml filename="tcl.html"?>
 
   <sect1info condition="script">
-    <productname>tcl-core</productname>
+    <productname>tcl</productname>
     <productnumber>&tcl-version;</productnumber>
     <address>&tcl-url;</address>
   </sect1info>
 
-  <title>Tcl-core-&tcl-version;</title>
+  <title>Tcl-&tcl-version;</title>
 
   <indexterm zone="ch-tools-tcl">
-    <primary sortas="a-Tcl">Tcl-core</primary>
+    <primary sortas="a-Tcl">Tcl</primary>
   </indexterm>
 
   <sect2 role="package">
@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Tcl-core</title>
+    <title>Установка пакета Tcl</title>
 
     <para>Этот пакет, и следующие два (Expect и DejaGNU) будут установлены для возможности запуска набора тестов для пакетов GCC и Binutils
 	 и других. Установка трех пакетов для тестирования может показаться чрезмерным, но очень обнадеживает, если важно знать что скомпилированные инструменты работают правильно. Выполнение тестов в этой главе не является обязательным, эти пакеты необходимы для выполнения набора тестов в главе <xref linkend="chapter-building-system"/>.</para>
@@ -79,7 +79,7 @@
   </sect2>
 
   <sect2 id="contents-tcl" role="content">
-    <title>Содержимое пакета Tcl-core</title>
+    <title>Содержимое пакета Tcl</title>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>

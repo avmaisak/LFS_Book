@@ -43,6 +43,41 @@
 <listitem>
       <para>2018-03-23</para>
       <itemizedlist>
+			<listitem>
+           <para>[bdubbs] - Update to several urls to use https.
+           Thanks to avmaisak for the patch. Исправления
+           <ulink url="&lfs-ticket-root;4247">#4247</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Update to Python3-3.6.5.  Исправления
+           <ulink url="&lfs-ticket-root;4248">#4248</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Update to openssl-1.1.0h.  Исправления
+           <ulink url="&lfs-ticket-root;4244">#4244</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Update to e2fsprogs-1.44.1.  Исправления
+           <ulink url="&lfs-ticket-root;4244">#4244</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Update to tzdata-2018d.  Исправления
+           <ulink url="&lfs-ticket-root;4243">#4243</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Update to meson-0.45.1.  Исправления
+           <ulink url="&lfs-ticket-root;4242">#4242</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Update to linux-4.15.14.  Исправления
+           <ulink url="&lfs-ticket-root;4241">#4241</ulink>.</para>
+        </listitem>
+        <listitem revision="sysv">
+           <para>[bdubbs] - Update to sysvinit-2.89.  Исправления
+           <ulink url="&lfs-ticket-root;4249">#4249</ulink>.</para>
+        </listitem>
+
+
         <listitem>
            <para>[bdubbs] - Удалена ссылка на openssl in BLFS в Главе 9.  Исправления
            <ulink url="&lfs-ticket-root;4240">#4240</ulink>.</para>

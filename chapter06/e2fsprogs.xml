@@ -74,7 +74,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
       <varlistentry>
         <term><parameter>PKG_CONFIG_PATH, LIBS, CFLAGS</parameter></term>
         <listitem>
-          <para>These variables enable e2fsprogs to be built using the 
+          <para>These variables enable e2fsprogs to be built using the
           <xref linkend="ch-tools-util-linux"/> package built earlier.</para>
         </listitem>
       </varlistentry>
@@ -120,7 +120,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To set up и выполните команду the test suite we need to first link some 
+    <para>To set up и выполните команду the test suite we need to first link some
     libraries from /tools/lib to a location where the test programs look.
     To run the tests, issue:</para>
 
@@ -131,7 +131,8 @@ make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>
     If you do not have significantly more RAM than this, be sure to enable
     sufficient swap space for the test. See <xref
     linkend="space-creatingfilesystem"/> and <xref linkend="space-mounting"/>
-    for details on creating and enabling swap space.</para>
+    for details on creating and enabling swap space.  Two tests, f_bigalloc_badinode
+    and f_bigalloc_orphan_list, are known ot fail.</para>
 
     <para>Install the binaries, documentation, and shared libraries:</para>
 
