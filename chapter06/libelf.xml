@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Libelf is a library for handling ELF (Executable and Linkable Format)
-    files.</para>
+    <para>Libelf - библиотека для обработки файлов формата ELF ( Executable and Linkable Format — формат исполнимых и компонуемых файлов).  формат двоичных файлов, используемый во многих современных UNIX-подобных операционных системах, таких как FreeBSD, Linux, Solaris и др. Также этот формат используется и во многих других системах.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

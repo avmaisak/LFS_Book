@@ -302,6 +302,16 @@
          возможности POSIX 1003.1e, доступные в ядрах Linux.</para>
       </listitem>
 
+
+      <listitem>
+        <para>Libelf</para>
+
+        <para>Libelf - библиотека для обработки файлов формата ELF ( Executable and Linkable Format — формат исполнимых и компонуемых файлов).  формат двоичных файлов, используемый во многих современных UNIX-подобных операционных системах, таких как FreeBSD, Linux, Solaris и др. Также этот формат используется и во многих других системах.</para>
+      </listitem>
+
+
+
+
       <listitem>
         <para>Libffi</para>
 
