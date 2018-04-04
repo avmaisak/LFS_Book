@@ -23,10 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Gettext пакет включает в себя  utilities for internationalization and
-    localization. These allow programs to be compiled with NLS (Native Language
-    Support), enabling them to output messages in the user's native
-    language.</para>
+	 <para>Этот пакет включает в себя утилиты и библиотеки для работы с локализацией и интернационализацией
+        необходимые для некоторых пакетов. Что позволяет программам, которые скомпилированы с поддержкой NLS (Поддержка нативных языков), показывать сообщения в пользовательском нативном языке.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
