@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Coreutils</title>
 
-    <para>Prepare Coreutils for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Coreutils к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-install-program=hostname</userinput></screen>
 
@@ -53,9 +53,7 @@
       <varlistentry>
         <term><envar>--enable-install-program=hostname</envar></term>
         <listitem>
-          <para>This enables the <command>hostname</command> binary to be built
-          and installed &ndash; it is disabled by default but is required by the
-          Perl test suite.</para>
+          <para>Аргумент включает в установку программу <command>hostname</command>. Эта программа по умолчанию выключена, но она необходима для выполнения набора тестов пакета Perl.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -64,16 +62,11 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
-    suite is not mandatory for the temporary tools here in this chapter. To run
-    the Coreutils test suite anyway, issue the следующую команду:</para>
+    <para>Компиляция завершена. Как обсуждалось ранее выполнение тестов не является обязательным для набора временных инструментов в этой главе. Чтобы запустить выполнение тестов, в любом случае, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make RUN_EXPENSIVE_TESTS=yes check</userinput></screen>
 
-    <para>The <parameter>RUN_EXPENSIVE_TESTS=yes</parameter> parameter tells the
-    test suite to run several additional tests that are considered
-    relatively expensive (in terms of CPU power and memory usage) on some
-    platforms, but generally are not a problem on Linux.</para>
+    <para>The <parameter>RUN_EXPENSIVE_TESTS=yes</parameter> аргумент сообщает включить в набор  ресурсозатратные (с точки зрения мощности процессора и использования памяти) тесты для некоторых платформ. Как правило, такие тесты не вызывают проблем в Linux.</para>
 
     <para>Установите пакет:</para>
 

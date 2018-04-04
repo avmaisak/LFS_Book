@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Coreutils пакет включает в себя  utilities for showing and setting the
-    basic system characteristics.</para>
+	 <para>Coreutils - пакет программного обеспечения GNU, содержащий большое количество основных утилит, таких как cat, ls и rm, необходимых для UNIX-подобных операционных систем. Пакет включает несколько более ранних пакетов — textutils, shellutils и fileutils — и другие разнообразные утилиты.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -72,7 +71,7 @@
       <varlistentry>
         <term><envar>FORCE_UNSAFE_CONFIGURE=1</envar></term>
         <listitem>
-          <para>This environment variable allows the package to be 
+          <para>This environment variable allows the package to be
           built as the root user.
           </para>
         </listitem>
