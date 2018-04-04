@@ -51,7 +51,7 @@
             --enable-libgdbm-compat</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure option:</title>
+      <title>Значения параметров конфигурации:</title>
 
       <varlistentry>
         <term><envar>--enable-libgdbm-compat</envar></term>

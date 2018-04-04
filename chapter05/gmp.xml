@@ -48,7 +48,7 @@
 <screen><userinput remap="configure">./configure --prefix=/tools --enable-mpbsd</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure option:</title>
+      <title>Значения параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>--enable-mpbsd</parameter></term>

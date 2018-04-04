@@ -51,7 +51,7 @@
 EMACS="no" ./configure --prefix=/tools --disable-shared</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure option:</title>
+      <title>Значения параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>EMACS="no"</parameter></term>
