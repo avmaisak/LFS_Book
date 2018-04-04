@@ -23,9 +23,12 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Patch пакет включает в себя  a program for modifying or creating files
-    by applying a <quote>patch</quote> file typically created by the
-    <command>diff</command> program.</para>
+    <para>Этот пакет включает в себя программу предназначенную для переноса правок (изменений) между разными версиями текстовых файлов.
+        Информация о правке обычно содержится в отдельном файле, называемом &quot;заплаткой&quot; (<emphasis>patch</emphasis>), &quot;правкой&quot;
+        или &quot;файлом правки&quot; (англ. patch file).
+        Подобный файл, как правило, создается с помощью другой утилиты Unix — <application>diff</application>,
+        позволяющей автоматически извлечь информацию о различиях в тексте файлов.
+        Он необходим для выполнения сборки некоторых пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
