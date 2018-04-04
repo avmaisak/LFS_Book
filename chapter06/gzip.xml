@@ -23,8 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Gzip пакет включает в себя  программы для  compressing and decompressing
-    files.</para>
+    <para>Этот пакет включает в себя программы для сжатия и распаковки файлов. Он необходим, чтобы
+        выполнять распаковку многих пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -73,7 +73,7 @@
       <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
-        <seg>gunzip, gzexe, gzip, uncompress (hard link with gunzip), zcat, zcmp, 
+        <seg>gunzip, gzexe, gzip, uncompress (hard link with gunzip), zcat, zcmp,
         zdiff, zegrep, zfgrep, zforce, zgrep, zless, zmore, and znew</seg>
       </seglistitem>
     </segmentedlist>
