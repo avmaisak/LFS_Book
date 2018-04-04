@@ -9,7 +9,7 @@
   <?dbhtml dir="chapter06"?>
   <?dbhtml filename="chapter06.html"?>
 
-  <title>Installing Basic System Software</title>
+  <title>Установка основного системного программного обеспечения</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kernfs.xml"/>
@@ -71,7 +71,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="procps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="e2fsprogs.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="coreutils.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="check.xml"/> 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="check.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="diffutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gawk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="findutils.xml"/>
