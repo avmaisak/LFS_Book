@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Perl</title>
 
-    <para>Prepare Perl for compilation:</para>
+    <para>Необходимо подготовить пакет Perl к компиляции::</para>
 
 <screen><userinput remap="configure">sh Configure -des -Dprefix=/tools -Dlibs=-lm</userinput></screen>
 
@@ -51,11 +51,10 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Although Perl comes with a test suite, it would be better to wait
-    until it is installed in the next chapter.</para>
+    <para>Хотя Perl поставляется с набором тестов, было бы лучше подождать
+     пока он не будет установлен в следующей главе.</para>
 
-    <para>Only a few of the utilities and libraries need to be installed at this
-    time:</para>
+    <para>На данный момент, только некоторые из утилит и библиотек должны быть установлены:</para>
 
 <screen><userinput remap="install">cp -v perl cpan/podlators/scripts/pod2man /tools/bin
 mkdir -pv /tools/lib/perl5/&perl-version;

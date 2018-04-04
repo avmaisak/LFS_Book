@@ -23,8 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Perl пакет включает в себя  the Practical Extraction and Report
-    Language.</para>
+     <para>Высокоуровневый интерпретируемый динамический язык программирования общего назначения,
+        он необходим для установки и выполнения тестов некоторых пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -47,7 +47,7 @@
 
 <screen><userinput remap="pre">echo "127.0.0.1 localhost $(hostname)" &gt; /etc/hosts</userinput></screen>
 
-    <para>This version of Perl now builds the Compress::Raw::Zlib and 
+    <para>This version of Perl now builds the Compress::Raw::Zlib and
     Compress::Raw::BZip2 modules. By
     default Perl will use an internal copy of the sources for the build.
     Issue the following command so that Perl will use the libraries
@@ -88,7 +88,7 @@ export BUILD_BZIP2=0</userinput></screen>
       <varlistentry>
         <term><parameter>-Dpager="/usr/bin/less -isR"</parameter></term>
         <listitem>
-          <para>This ensures that <userinput>less</userinput> is used instead 
+          <para>This ensures that <userinput>less</userinput> is used instead
           of <userinput>more</userinput>.</para>
         </listitem>
       </varlistentry>
