@@ -23,10 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Findutils пакет включает в себя  programs to find files. These programs
-    are provided to recursively search through a directory tree and to
-    create, maintain, and search a database (often faster than the recursive
-    find, but unreliable if the database has not been recently updated).</para>
+    <para>The Findutils пакет включает в себя программы для поиска файлов. Программы предоставляют способы для рекурсивного поиска файлов по дереву каталогов, создания, обслуживания и поиска в базе данных (как правильно поиск выполняется быстрее, чем рекурсивный поиск, но менее надёжен, если база данных не в актуальном состоянии).</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
