@@ -23,8 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Diffutils пакет включает в себя  programs that show the differences
-    between files or directories.</para>
+     <para>Этот пакет включает в себя программы, которые отображают разницу в содержимом между файлами и каталогами.
+				Эти программы могут быть использованы, для создания патчей, а также они используются в процедурах сборки для большинства пакетов.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

@@ -23,8 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The File пакет включает в себя  a utility for determining the type of a given
-    file or files.</para>
+    <para>Этот пакет включает в себя утилиты для определения типов файлов. Некоторым пакетам требуется,
+				чтобы этот пакет был установлен.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
