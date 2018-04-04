@@ -8,7 +8,7 @@
 <sect1 id="ch-tools-changingowner">
   <?dbhtml filename="changingowner.html"?>
 
-  <title>Changing Ownership</title>
+  <title>Изменение прав</title>
 
   <note>
     <para>The commands in the remainder of this book must be performed while
