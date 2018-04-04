@@ -23,9 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Util-linux пакет включает в себя  miscellaneous utility programs.
-    Among them are utilities for handling file systems, consoles, partitions,
-    and messages.</para>
+     <para>Этот пакет включает в себя  стандартный набор служебных утилит командной строки,
+        такие как - утилиты для работы с файловой системой, консолью, разделами, и сообщениями.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

@@ -23,8 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Texinfo пакет включает в себя  программы для  reading, writing, and
-    converting info pages.</para>
+     <para>Этот пакет - система документирования и язык разметки, позволяющие создавать документы
+        в разных форматах из одного исходного текста. Он используется в процедурах установки многих пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

@@ -24,7 +24,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Util-linux пакет включает в себя  miscellaneous utility programs.</para>
+     <para>Этот пакет включает в себя  стандартный набор служебных утилит командной строки,
+        такие как - утилиты для работы с файловой системой, консолью, разделами, и сообщениями.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -39,7 +40,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Util-linux</title>
+    <title>Необходимо подготовить пакет Util-linux к компиляции:</title>
 
     <para>Prepare Util-linux for compilation:</para>
 

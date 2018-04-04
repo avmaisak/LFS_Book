@@ -43,23 +43,19 @@
   <sect2 role="installation">
     <title>Установка пакета Texinfo</title>
 
-    <para>Prepare Texinfo for compilation:</para>
+    <para>Необходимо подготовить пакет к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 
     <note>
-      <para>As part of the configure process, a test is made that indicates an
-      error for TestXS_la-TestXS.lo.  This is not relevant for LFS and should be
-      ignored.</para>
+      <para>В процессе конфигурирования, могут быть отображены ошибки для TestXS_la-TestXS.lo..Эти ошибки не имеют никакого отношения к LFS, и их можно игнорировать.</para>
     </note>
 
     <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
-    suite is not mandatory for the temporary tools here in this chapter. To run
-    the Texinfo test suite anyway, issue the следующую команду:</para>
+    <para>Компиляция завершена. Как обсуждалось ранее выполнение тестов не является обязательным для набора временных инструментов в этой главе. Чтобы запустить выполнение тестов, в любом случае, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
