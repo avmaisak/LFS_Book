@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Gawk</title>
 
-    <para>Prepare Gawk for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Gawk к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 
@@ -51,9 +51,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
-    suite is not mandatory for the temporary tools here in this chapter. To run
-    the Gawk test suite anyway, issue the следующую команду:</para>
+    <para>Компиляция завершена. Как обсуждалось ранее выполнение тестов не является обязательным для набора временных инструментов в этой главе. Чтобы запустить выполнение тестов, в любом случае, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 

@@ -23,7 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Gawk пакет включает в себя  программы для  manipulating text files.</para>
+    <para>Этот пакет включает в себя программы манипуляции с текстовыми файлами.
+				 Это GNU версия awk (Aho-Weinberg-Kernighan). Он используется в процедурах сборки для большинства пакетов.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
