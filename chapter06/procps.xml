@@ -63,7 +63,7 @@
       <varlistentry>
         <term><parameter>--disable-kill</parameter></term>
         <listitem>
-          <para>This switch disables building the <command>kill</command>
+          <para>Этот аргумент отключает  building the <command>kill</command>
           command that will be installed by the Util-linux package.</para>
         </listitem>
       </varlistentry>

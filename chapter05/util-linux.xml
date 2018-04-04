@@ -57,49 +57,36 @@
       <varlistentry>
         <term><parameter>--without-python</parameter></term>
         <listitem>
-          <para>This switch disables using <application>Python</application>
-          if it is installed on the host system.  It avoids trying to build
-          unneeded bindings.</para>
+          <para>Этот аргумент отключает использование <application>Python</application>, если он установлен на хост-системе. Это позволяет избежать попыток построить выполнить сборку ненужных привязок.
+			 </para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-makeinstall-chown</parameter></term>
         <listitem>
-          <para>This switch disables using the <command>chown</command> command
-          during installation.  This is not needed when installing into the
-          /tools directory and avoids the necessity of installing as
-          root.</para>
+          <para>Этот аргумент отключает использование команды <command>chown</command> в процессе установки. В этом нет необходимости, когда установка будет производится в каталог /tools. Также, это позволит избежать установки от пользователя root.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--without-ncurses</parameter></term>
         <listitem>
-          <para>This switch disables using the ncurses library for
-          the build process. This is not needed when installing into the
-          /tools directory and avoids problems on some host distros.</para>
+          <para>Этот аргумент отключает использование библиотеки ncurses в процессе сборки.В этом нет необходимости, когда установка будет производится в каталог /tools. Также, это позволит избежать проблем при установке на некоторых дистрибутивах.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--without-systemdsystemunitdir</parameter></term>
         <listitem>
-          <para>On systems that use systemd, the package tries to install 
-          a systemd specific file to a non-existent directory in /tools.
-          This switch disables the unnecessary action.</para>
+          <para>На системах, где используется systemd, пакет будет устанавливать специфичные	для systemd файлы в несуществующие места  в каталоге /tools. Этот аргумент отключает действия, которые не требуются.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><envar>PKG_CONFIG=""</envar></term>
         <listitem>
-          <para>Setting this environment variable prevents adding unneeded
-          features that may be available on the host. Note that the location
-          shown for setting this environment variable is different from other
-          LFS sections where variables are set preceding the command.  This
-          location is shown to demonstrate an alternative way of setting an
-          environment variable when using configure.</para>
+          <para>Установка этой переменной окружения отключает добавления функций, которые не требуются и могут быть доступны в хост-системе. Обратите внимание что место, где устанавливается значение  этой переменной различается от инструкций в других главах книги LFS. Здесь показан ещё один способ, каким образом можно устанавливать значения переменным окружения  при использовании сценария configure.</para>
         </listitem>
       </varlistentry>
      </variablelist>

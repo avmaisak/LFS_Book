@@ -82,7 +82,7 @@
       <varlistentry>
         <term><parameter>--without-normal</parameter></term>
         <listitem>
-          <para>This switch disables building and installing most static libraries.
+          <para>Этот аргумент отключает  building and installing most static libraries.
           </para>
         </listitem>
       </varlistentry>
