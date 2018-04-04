@@ -23,7 +23,9 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Make пакет включает в себя  a program for compiling packages.</para>
+    <para>Этот пакет включает в себя программы которые автоматизируют процесс преобразования файлов из одной формы в другую.
+        Чаще всего это компиляция исходного кода в объектные файлы и последующая компоновка в исполняемые файлы или библиотеки.
+        Он необходим для сборки пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -52,7 +54,7 @@
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>The test suite needs to know where supporting perl files are located.
-    We use an envronment variable to accomplish this.  To test the 
+    We use an envronment variable to accomplish this.  To test the
     results, issue:</para>
 
 <screen><userinput remap="test">make PERL5LIB=$PWD/tests/ check</userinput></screen>

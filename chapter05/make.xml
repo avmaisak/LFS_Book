@@ -42,11 +42,11 @@
   <sect2 role="installation">
     <title>Установка пакета Make</title>
 
-    <para>First, work around an error caused by glibc-2.27:</para>
+    <para>Для начала, необходимо обойти ошибку, вызванную glibc-2.27:</para>
 
 <screen><userinput remap="pre">sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c</userinput></screen>
 
-    <para>Prepare Make for compilation:</para>
+    <para>Теперь, необходимо подготовить пакет Make к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools --without-guile</userinput></screen>
 
@@ -56,9 +56,7 @@
       <varlistentry>
         <term><parameter>--without-guile</parameter></term>
         <listitem>
-          <para>This ensures that Make-&make-version; won't link against Guile libraries, which
-          may be present on the host system, but won't be available within the
-          <command>chroot</command> environment in the next chapter.</para>
+          <para>Аргумент указывает программе Make-&make-version; не линковаться с библиотеками Guile, которые могут быть на хост-системе, но отсутствовать в среде <command>chroot</command> в следующей главе.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -67,9 +65,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. As discussed earlier, running the test
-    suite is not mandatory for the temporary tools here in this chapter. To run
-    the Make test suite anyway, issue the следующую команду:</para>
+    <para>Компиляция завершена. Как обсуждалось ранее выполнение тестов не является обязательным для набора временных инструментов в этой главе. Чтобы запустить выполнение тестов, в любом случае, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
