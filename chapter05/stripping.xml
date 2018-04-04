@@ -8,36 +8,25 @@
 <sect1 id="ch-tools-stripping">
   <?dbhtml filename="stripping.html"?>
 
-  <title>Stripping</title>
+  <title>Удаление ненужных файлов</title>
 
-  <para>The steps in this section are optional, but if the LFS partition is
-  rather small, it is beneficial to learn that unnecessary items can be removed.
-  The executables and libraries built so far contain about 70 MB of unneeded
-  debugging symbols. Remove those symbols with:</para>
+  <para>Инструкции в этом разделе являются необязательными для выполнения. Однако, если дисковый раздел небольшой, полезно знать какие элементы могут быть удалены. Исполняемые файлы и библиотеки, которые были скомпилированы, имеют файлы отладочных символов, общим размером около 70 Мегабайт. Их можно удалить, выполнив команду:</para>
 
 <screen><userinput>strip --strip-debug /tools/lib/*
 /usr/bin/strip --strip-unneeded /tools/{,s}bin/*</userinput></screen>
 
-  <para>These commands will skip a number of files, reporting that it does not
-  recognize their file format. Most of these are scripts instead of binaries.
-  Also use the system strip command to include the strip binary in /tools.</para>
+  <para>Этот набор команд пропустит некоторые файлы, сообщив что не удается распознать формат. Большинство из них являются файлами сценариев а не библиотеками. Также, используется системная команда очистки бинарных файлов в каталоге /tools.</para>
 
-  <para>Take care <emphasis>not</emphasis> to use
-  <parameter>--strip-unneeded</parameter> on the libraries. The static
-  ones would be destroyed and the toolchain packages would need to be
-  built all over again.</para>
+  <para>Будьте осторожны, и <emphasis>не</emphasis> применяйте аргумент <parameter>--strip-unneeded</parameter> к библиотекам. Статические библиотеки будут уничтожены и пакеты временного набора инструментов придется компилировать заново.</para>
 
-  <para>To save more, remove the documentation:</para>
+  <para>Чтобы сохранить ещё больше места, можно удалить документацию:</para>
 
 <screen><userinput>rm -rf /tools/{,share}/{info,man,doc}</userinput></screen>
 
-  <para>Remove unneeded files:</para>
+  <para>Удаление ненужных файлов:</para>
 
 <screen><userinput>find /tools/{lib,libexec} -name \*.la -delete</userinput></screen>
 
-  <para>At this point, you should have at least 3 GB of free space in
-  <envar>$LFS</envar> that can be used to build and install Glibc and Gcc in
-  the next phase. If you can build and install Glibc, you can build and install
-  the rest too.</para>
+  <para>На этом этапе у вас должно быть не менее 3 ГБ свободного места в каталоге <envar>$LFS</envar>, которое будет занято при сборке пакетов Glibc и Gcc на следующем этапе. Если можно выполнить сборку пакета Glibc, то можно создавать и устанавливать остальные пакеты также.</para>
 
 </sect1>
