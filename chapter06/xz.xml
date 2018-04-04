@@ -22,12 +22,7 @@
 
   <sect2 role="package">
     <title/>
-
-    <para>The Xz пакет включает в себя  программы для  compressing and decompressing
-    files. It provides capabilities for the lzma and the newer xz compression
-    formats.  Compressing text files with <command>xz</command> yields a better
-    compression percentage than with the traditional <command>gzip</command> or
-    <command>bzip2</command> commands.</para>
+	 <para>Этот пакет включает в себя программы для сжатия и распаковки файлов. Он обеспечивает высокое сжатие и используется для распаковки пакетов форматов XZ и LZMA. Сжатие текстовых файлов при помощи программы <command>xz</command>даёт больший процент сжатия чем <command>gzip</command> или <command>bzip2</command>.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -78,34 +73,34 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
 
       <seglistitem>
         <seg>
-          lzcat (link to xz), 
-          lzcmp (link to xzdiff), 
-          lzdiff (link to xzdiff), 
-          lzegrep (link to xzgrep), 
+          lzcat (link to xz),
+          lzcmp (link to xzdiff),
+          lzdiff (link to xzdiff),
+          lzegrep (link to xzgrep),
           lzfgrep (link to xzgrep),
-          lzgrep (link to xzgrep), 
-          lzless (link to xzless), 
+          lzgrep (link to xzgrep),
+          lzless (link to xzless),
           lzma (link to xz),
-          lzmadec, 
-          lzmainfo, 
+          lzmadec,
+          lzmainfo,
           lzmore (link to xzmore),
-          unlzma (link to xz), 
-          unxz (link to xz), 
-          xz, 
+          unlzma (link to xz),
+          unxz (link to xz),
+          xz,
           xzcat (link to xz),
-          xzcmp (link to xzdiff), 
-          xzdec, 
-          xzdiff, 
+          xzcmp (link to xzdiff),
+          xzdec,
+          xzdiff,
           xzegrep (link to xzgrep),
-          xzfgrep (link to xzgrep), 
-          xzgrep, 
-          xzless, and 
+          xzfgrep (link to xzgrep),
+          xzgrep,
+          xzless, and
           xzmore</seg>
         <seg>
           liblzma.so
         </seg>
         <seg>
-          /usr/include/lzma and 
+          /usr/include/lzma and
           /usr/share/doc/xz-&xz-version;
          </seg>
       </seglistitem>
