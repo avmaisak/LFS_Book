@@ -46,7 +46,7 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
 -->
-    <para>Теперь, необходимо подготовить пакет Bash к компиляции:</para>
+    <para>Необходимо подготовить пакет Bash к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                       \
             --docdir=/usr/share/doc/bash-&bash-version; \

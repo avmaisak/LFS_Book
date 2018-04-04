@@ -48,7 +48,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Теперь, необходимо подготовить пакет Binutils к компиляции:</para>
+    <para>Необходимо подготовить пакет Binutils к компиляции:</para>
 
 <screen><userinput remap="configure">CC=$LFS_TGT-gcc                \
 AR=$LFS_TGT-ar                 \

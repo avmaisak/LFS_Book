@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Findutils</title>
 
-    <para>Теперь, необходимо подготовить пакет Findutils к компиляции:</para>
+    <para>Необходимо подготовить пакет Findutils к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

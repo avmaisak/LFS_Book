@@ -45,7 +45,7 @@
 
     <para>Обратите внимание, что используется минимальная версия пакета Tcl для запуска тестов LFS. Полный пакет доступ в <ulink url='&blfs-book;general/tcl.html'>BLFS </ulink>.</para>
 
-    <para>Теперь, необходимо подготовить пакет Tcl к компиляции:</para>
+    <para>Необходимо подготовить пакет Tcl к компиляции:</para>
 
 <screen><userinput remap="configure">cd unix
 ./configure --prefix=/tools</userinput></screen>

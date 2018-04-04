@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Tar пакет включает в себя  an archiving program.</para>
+    <para>Этот пакет обеспечивает возможности архивирования и извлечения почти всех пакетов, используемых в LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,7 +41,7 @@
     <title>Установка пакета Tar</title>
 <!--
     <para>Add a program that generates a man page for tar from the source code:</para>
- 
+
  <screen><userinput remap="pre">patch -Np1 -i ../&tar-manpage-patch;</userinput></screen>
 -->
     <para>Prepare Tar for compilation:</para>

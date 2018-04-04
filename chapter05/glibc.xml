@@ -48,7 +48,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Теперь, необходимо подготовить пакет Glibc к компиляции:</para>
+    <para>Необходимо подготовить пакет Glibc к компиляции:</para>
 
 <screen><userinput remap="configure">../configure                             \
       --prefix=/tools                    \

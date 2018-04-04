@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Grep</title>
 
-    <para>Теперь, необходимо подготовить пакет Grep к компиляции:</para>
+    <para>Необходимо подготовить пакет Grep к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

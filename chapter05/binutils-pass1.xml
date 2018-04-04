@@ -60,7 +60,7 @@ cd       build</userinput></screen>
 
     <note><para>Приблизительное время сборки, значение SBU и требуемое дисковое пространство в главе &nbsp;5 не включает информацию по выполнению наборов тестов пакетов.</para></note>
 
-<para>Теперь, необходимо подготовить пакет Binutils к компиляции:</para>
+<para>Необходимо подготовить пакет Binutils к компиляции:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/tools            \
              --with-sysroot=$LFS        \
