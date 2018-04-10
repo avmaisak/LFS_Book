@@ -10,33 +10,15 @@
 
   <title>Введение</title>
 
-  <para>In this chapter, we enter the building site and start constructing the
-  LFS system in earnest. That is, we chroot into the temporary mini Linux system,
-  make a few final preparations, and then begin installing the packages.</para>
+  <para>В этой главе будет описан процесс сборки конечной системы LFS с помощью ранее установленного временного набора инструментов. С помощью команды chroot будет выполнен вход во временную мини Linux систему (временный набор инструментов), далее будут выполнены окончательные подготовительные работы, а затем будут выполнены установки необходимых пакетов.</para>
 
-  <para>The installation of this software is straightforward. Although in many
-  cases the installation instructions could be made shorter and more generic,
-  we have opted to provide the full instructions for every package to minimize
-  the possibilities for mistakes.  The key to learning what makes a Linux system
-  work is to know what each package is used for and why you (or the system)
-  may need it.</para>
+  <para>Установка программного обеспечения проста. Несмотря на то, что инструкции по установке  могли быть более компактны и универсальны, в книги предоставляются расширенные инструкции для каждого пакета, чтобы минимизировать возможные ошибки на этапе конфигурирования, сборки и тестирования. Ключом к пониманию что делает Linux систему рабочей, являются знания для чего используется каждый пакет и зачем он может понадобиться вам или системе.</para>
 
-  <para>We do not recommend using optimizations.  They can make
-  a program run slightly faster, but they may also cause compilation
-  difficulties and problems when running the program.  If a package refuses to
-  compile when using optimization, try to compile it without optimization and
-  see if that fixes the problem. Even if the package does compile when using
-  optimization, there is the risk it may have been compiled incorrectly because
-  of the complex interactions between the code and build tools.  Also note that
-  the <option>-march</option> and <option>-mtune</option> options using values
-  not specified in the book have not been tested. This may cause problems with
-  the toolchain packages (Binutils, GCC and Glibc).  The small potential gains
-  achieved in using compiler optimizations are often outweighed by the risks.
-  First-time builders of LFS are encouraged to build without custom
-  optimizations. The subsequent system will still run very fast and be stable
-  at the same time.</para>
+  <para>Мы не рекомендуем использовать оптимизацию. Она может ускорить работу программы, но при этом могут возникнуть проблемы при компиляции и запуске. Если пакет не удается скомпилировать с включенной оптимизацией, необходимо её отключить, и выполнить повторную компиляцию. Даже если компиляция пакеты была успешной, с включенной оптимизацией, существует риск что компиляция была выполнена неправильно, потому что могут быть сложные взаимодействия между кодом и инструментами сборки. Обратите внимание, что аргументы <option>-march</option> и <option>-mtune</option> не указаны в книге и не были протестированы. Они могут вызвать проблемы с программами набора временных инструментов, таких как Binutils, GCC и Glibc. Потенциальные преимущества при использовании оптимизации компилятора не так высоки по сравнению с рисками. Если сборка системы LFS выполняется Вами первый раз, рекомендуется не использовать оптимизацию. Система будет работать очень быстро и в тоже время будет стабильна.</para>
 
-  <para>The order that packages are installed in this chapter needs to be
+  <para>Порядок установки пакетов в этой главе очень важен. Необходимо строго соблюдать последовательность сборки и установки пакетов, для гарантии того, что устанавливаемый пакет не ссылался на каталог <filename class="directory">/tools</filename> в случае
+
+  The order that packages are installed in this chapter needs to be
   strictly followed to ensure that no program accidentally acquires a path
   referring to <filename class="directory">/tools</filename> hard-wired into
   it.  For the same reason, do not compile separate packages in parallel.
