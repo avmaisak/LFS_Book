@@ -8,33 +8,24 @@
 <sect1 id="ch-system-kernfs">
   <?dbhtml filename="kernfs.html"?>
 
-  <title>Preparing Virtual Kernel File Systems</title>
+  <title>Подготовка виртуальных файловых систем ядра</title>
 
   <indexterm zone="ch-system-kernfs">
     <primary sortas="e-/dev/">/dev/*</primary>
   </indexterm>
 
-    <para>Various file systems exported by the kernel are used to communicate to
-    and from the kernel itself. These file systems are virtual in that no disk
-    space is used for them. The content of the file systems resides in
-    memory.</para>
+    <para>Различные файловые системы, экспортируемые ядром, используются для связи с ядром. Они являются виртуальными, поскольку нет диска, на котором они бы использовались. Содержимое такие файловых систем располагается в памяти.</para>
 
-    <para>Begin by creating directories onto which the file systems will be
-    mounted:</para>
+    <para>Выполните команду, чтобы создать структуру каталогов, куда будет выполнено монтирование виртуальных файловых систем.</para>
 
 <screen><userinput>mkdir -pv $LFS/{dev,proc,sys,run}</userinput></screen>
 
   <sect2>
-    <title>Creating Initial Device Nodes</title>
+    <title>Создание начальных узлов устройств</title>
 
-    <para>When the kernel boots the system, it requires the presence of a few
-    device nodes, in particular the <filename
-    class="devicefile">console</filename> and <filename
-    class="devicefile">null</filename> devices. The device nodes must be created
-    on the hard disk so that they are available before <command>udevd</command>
-    has been started, and additionally when Linux is started with
-    <parameter>init=/bin/bash</parameter>. Create the devices by running the
-    following commands:</para>
+    <para>Когда ядро выполняет загрузку системы, ему требуется наличие нескольких устройств, таких как <filename
+    class="devicefile">console</filename> и <filename
+    class="devicefile">null</filename>. Эти узлы должны быть созданы на диске, для того, чтобы они были доступны после того, как запустится <command>udevd</command> и дополнительно, когда Linux запустится с <parameter>init=/bin/bash</parameter>. Для того, чтобы создать такие устройства, выполните команду:</para>
 
 <screen><userinput>mknod -m 600 $LFS/dev/console c 5 1
 mknod -m 666 $LFS/dev/null c 1 3</userinput></screen>
@@ -42,7 +33,7 @@ mknod -m 666 $LFS/dev/null c 1 3</userinput></screen>
   </sect2>
 
   <sect2 id="ch-system-bindmount">
-    <title>Mounting and Populating /dev</title>
+    <title>Монтирование и заполнение каталоге /dev</title>
 
       <para>The recommended method of populating the <filename
       class="directory">/dev</filename> directory with devices is to mount a
@@ -103,7 +94,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
 
       <para>In some host systems, <filename>/dev/shm</filename> is a
       symbolic link to <filename class="directory">/run/shm</filename>.
-      The /run tmpfs was mounted above so in this case only a 
+      The /run tmpfs was mounted above so in this case only a
       directory needs to be created.</para>
 
 <screen><userinput>if [ -h $LFS/dev/shm ]; then
