@@ -14,51 +14,24 @@
 
   <para>Установка программного обеспечения проста. Несмотря на то, что инструкции по установке  могли быть более компактны и универсальны, в книги предоставляются расширенные инструкции для каждого пакета, чтобы минимизировать возможные ошибки на этапе конфигурирования, сборки и тестирования. Ключом к пониманию что делает Linux систему рабочей, являются знания для чего используется каждый пакет и зачем он может понадобиться вам или системе.</para>
 
-  <para>Мы не рекомендуем использовать оптимизацию. Она может ускорить работу программы, но при этом могут возникнуть проблемы при компиляции и запуске. Если пакет не удается скомпилировать с включенной оптимизацией, необходимо её отключить, и выполнить повторную компиляцию. Даже если компиляция пакеты была успешной, с включенной оптимизацией, существует риск что компиляция была выполнена неправильно, потому что могут быть сложные взаимодействия между кодом и инструментами сборки. Обратите внимание, что аргументы <option>-march</option> и <option>-mtune</option> не указаны в книге и не были протестированы. Они могут вызвать проблемы с программами набора временных инструментов, таких как Binutils, GCC и Glibc. Потенциальные преимущества при использовании оптимизации компилятора не так высоки по сравнению с рисками. Если сборка системы LFS выполняется Вами первый раз, рекомендуется не использовать оптимизацию. Система будет работать очень быстро и в тоже время будет стабильна.</para>
+  <para>Мы не рекомендуем использовать оптимизацию. Она может ускорить работу программы, но при этом могут возникнуть проблемы при компиляции и запуске. Если пакет не удается скомпилировать с включенной оптимизацией, необходимо её отключить, и выполнить повторную компиляцию. Даже если компиляция пакета была успешной, с включенной оптимизацией, существует риск что компиляция была выполнена неправильно, потому что могут быть сложные взаимодействия между кодом и инструментами сборки. Обратите внимание, что аргументы <option>-march</option> и <option>-mtune</option> не указаны в книге и не были протестированы. Они могут вызвать проблемы с программами набора временных инструментов, таких как Binutils, GCC и Glibc. Потенциальные преимущества при использовании оптимизации компилятора не так высоки по сравнению с рисками. Если сборка системы LFS выполняется Вами первый раз, рекомендуется не использовать оптимизацию. Система будет работать очень быстро и в тоже время будет стабильна.</para>
 
-  <para>Порядок установки пакетов в этой главе очень важен. Необходимо строго соблюдать последовательность сборки и установки пакетов, для гарантии того, что устанавливаемый пакет не ссылался на каталог <filename class="directory">/tools</filename> в случае
+  <para>Порядок установки пакетов в этой главе очень важен. Необходимо строго соблюдать последовательность сборки и установки пакетов, для гарантии того, что устанавливаемый пакет не будет иметь ссылку на каталог <filename class="directory">/tools</filename>. По этой же причине, не следует компилировать пакеты параллельно. Выполняя компиляцию параллельно, можно сэкономить время (особенно на многопроцессорных или многоядерных машинах), но это может привести к тому, что если программа имеет связи с каталогом <filename
+  class="directory">/tools</filename> при выполнении она может перестать работать когда этот каталог будет удалён.</para>
 
-  The order that packages are installed in this chapter needs to be
-  strictly followed to ensure that no program accidentally acquires a path
-  referring to <filename class="directory">/tools</filename> hard-wired into
-  it.  For the same reason, do not compile separate packages in parallel.
-  Compiling in parallel may save time (especially on dual-CPU machines), but it
-  could result in a program containing a hard-wired path to <filename
-  class="directory">/tools</filename>, which will cause the program to stop
-  working when that directory is removed.</para>
+  <para>Перед инструкциями по установке, каждая страница содержит информацию о пакете, включая краткое описание содержимого пакета, приблизительное время сборки, и сколько дискового пространства требуется во время процесса сборки. После инструкций по установке, будет представлен список программ и библиотек (а также их краткое описание), которые включены в пакет.</para>
 
-  <para>Before the installation instructions, each installation page provides
-  information about the package, including a concise description of what it
-  contains, approximately how long it will take to build, and how much disk
-  space is required during this building process. Following the installation
-  instructions, there is a list of programs and libraries (along with brief
-  descriptions of these) that the package installs.</para>
-
-  <note><para>The SBU values and required disk space includes
-  test suite data for all applicable packages in Chapter&nbsp;6.</para></note>
+  <note><para>В Главе&nbsp;6 значение SBU и требуемого дискового пространства включает в себя информацию по выполнению набора тестов для всех пакетов, где есть такая возможность.</para></note>
 
   <sect2>
-    <title>About libraries</title>
+    <title>О библиотеках</title>
 
-    <para>In general, the LFS editors discourage building and installing static
-    libraries.  The original purpose for most static libraries has been made
-    obsolete in a modern Linux system.  In addition linking a static library
-    into a program can be detrimental.  If an update to the library is needed
-    to remove a security problem, all programs that use the static library will
-    need to be relinked to the new library.  Since the use of static libraries
-    is not always obvious, the relevant programs (and the procedures needed to
-    do the linking) may not even be known.</para>
+    <para>Как правило, редакторы LFS препятствуют созданию и установке статических библиотек. Первоначальная цель использования  большинства статических библиотек в современных Linux системах устарела. Кроме того, связывание статической библиотеки
+     в программу может быть не самым лучшим решением. Если требуется обновление библиотеки, для устранения проблем безопасности, то все программы, которые используют статическую библиотеку, должны выполнить перелинковку, чтобы изменить ссылку на новую версию библиотеки. Поскольку использование статических библиотек не всегда бывает очевидным, программы (и процедуры, необходимые для выполнения перелинковки) могут быть неизвестными.</para>
 
-    <para>In the procedures in Chapter&nbsp;6, we remove or disable installation of
-    most static libraries. Usually this is done by passing a
-    <option>--disable-static</option> option to <command>configure</command>.
-    In other cases, alternate means are needed. In a few cases, especially
-    glibc and gcc, the use of static libraries remains essential to the general
-    package building process. </para>
+    <para>В процедурах главы&nbsp;6, будет удалена или закрыта возможность установки большинства статических библиотек. Как правило, такое правило передается  аргументом <option>--disable-static</option> в сценарий <command>configure</command>. В некоторых случаях, необходимы альтернативные пути решения. Особенно это относится к пакетам glibc и gcc, где наличие статических библиотек остается неотъемлемым для общего процесса сборки пакетов.</para>
 
-    <para>For a more complete discussion of libraries, see the discussion
-    <ulink url="&blfs-root;/view/&short-version;/introduction/libraries.html">
-    Libraries: Static or shared?</ulink> in the BLFS book.</para>
+    <para>Более подробное обсуждение вы можете изучить, перейдя по ссылке:<ulink url="&blfs-root;/view/&short-version;/introduction/libraries.html">Библиотеки: Статические или динамические?</ulink> в книге BLFS.</para>
 
   </sect2>
 
