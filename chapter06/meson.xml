@@ -44,7 +44,7 @@
 
 <screen><userinput remap="make">python3 setup.py build</userinput></screen>
 
-    <para>This package does not come with a test suite.</para>
+    <para>У этого пакета отсутствуют наборы тестов.</para>
 
     <para>Установите пакет:</para>
 

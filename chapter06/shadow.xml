@@ -102,7 +102,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package does not come with a test suite.</para>
+    <para>У этого пакета отсутствуют наборы тестов.</para>
 
     <para>Установите пакет:</para>
 
