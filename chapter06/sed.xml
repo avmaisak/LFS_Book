@@ -60,7 +60,7 @@ sed -i 's/testsuite.panic-tests.sh//' Makefile.in</userinput></screen>
       </varlistentry>
     </variablelist>
 -->
-    <para>Compile the package and generate the HTML documentation:</para>
+    <para>Выполните компиляцию пакета, и сгенерируйте HTML документацию:</para>
 
 <screen><userinput remap="make">make
 make html</userinput></screen>
