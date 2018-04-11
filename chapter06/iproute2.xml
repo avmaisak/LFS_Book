@@ -84,7 +84,7 @@ rm -fv man/man8/arpd.8</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>bridge, ctstat (link to lnstat), genl, ifcfg, ifstat, ip, lnstat,

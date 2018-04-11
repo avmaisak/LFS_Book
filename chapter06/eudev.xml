@@ -135,7 +135,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
       <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg><!-- These are in /lib/udev and not to be called by the user:

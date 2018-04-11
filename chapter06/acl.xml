@@ -103,7 +103,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so</userinput><
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
       <segtitle>Установленная библиотека</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>chacl, getfacl, and setfacl</seg>

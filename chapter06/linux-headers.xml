@@ -69,7 +69,7 @@ find dest/include \( -name .install -o -name ..install.cmd \) -delete
 
     <segmentedlist>
       <segtitle>Installed headers</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>/usr/include/asm/*.h, /usr/include/asm-generic/*.h,

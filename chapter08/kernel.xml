@@ -342,7 +342,7 @@ EOF</userinput></screen>
 
     <segmentedlist>
       <segtitle>Installed files</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>config-&linux-version;,

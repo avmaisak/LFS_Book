@@ -221,7 +221,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
       <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>bootctl, busctl, coredumpctl, halt, hostnamectl, init, journalctl,

@@ -53,7 +53,7 @@
     <title>Содержимое пакета LFS-Bootscripts</title>
     <segmentedlist>
       <segtitle>Installed scripts</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>checkfs, cleanfs, console, functions, halt, ifdown,

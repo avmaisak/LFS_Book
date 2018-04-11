@@ -170,7 +170,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
       <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
         <seg>badblocks, chattr, compile_et, debugfs, dumpe2fs,e2freefrag,
