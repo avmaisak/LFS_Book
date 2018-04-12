@@ -8,57 +8,38 @@
 <sect1 id="ch-system-pkgmgt">
   <?dbhtml filename="pkgmgt.html"?>
 
-  <title>Package Management</title>
+  <title>Управление пакетами</title>
 
-  <para>Package Management is an often requested addition to the LFS Book. A
-  Package Manager allows tracking the installation of files making it easy to
-  remove and upgrade packages. As well as the binary and library files, a
-  package manager will handle the installation of configuration files.  Before
-  you begin to wonder, NO&mdash;this section will not talk about nor recommend
-  any particular package manager. What it provides is a roundup of the more
-  popular techniques and how they work. The perfect package manager for you may
-  be among these techniques or may be a combination of two or more of these
-  techniques. This section briefly mentions issues that may arise when upgrading
-  packages.</para>
-
-  <para>Some reasons why no package manager is mentioned in LFS or BLFS
-  include:</para>
+  <para>Часто задаваемый вопрос по книге LFS - управление пакетами. Менеджер пакетов позволяет отслеживать установку файлов, делая процесс удаления и обновления пакетов существенно проще. Кроме файлов и библиотек, пакетный менеджер будет управлять установкой файлов конфигурации. Не удивляйтесь, в этом разделе не будет информации и рекомендаций по поводу пакетного менеджера. В этом разделе, будет представлена информация о наиболее популярных механизмах работы пакетного менеджера. Идеальным пакетным менеджером для вас может стать такая программа, которая способна комбинировать несколько техник. В этом разделе также кратко упоминается о тех проблемах, которые могут возникнуть при обновлении пакетов:</para>
 
   <itemizedlist>
     <listitem>
-      <para>Dealing with package management takes the focus away from the goals
-      of these books&mdash;teaching how a Linux system is built.</para>
+      <para>Работа с системами управления пакетов отвлекает внимание от целей этой книги - обучение тому, как построена Linux система.</para>
     </listitem>
 
     <listitem>
-      <para>There are multiple solutions for package management, each having
-      its strengths and drawbacks.  Including one that satisfies all audiences
-      is difficult.</para>
+      <para>Существует множество решения, для управления пакетами. Каждый из них имеет свои достоинства и недостатки. Угодить всем - трудно.</para>
     </listitem>
   </itemizedlist>
 
-  <para>There are some hints written on the topic of package management. Visit
-  the <ulink url="&hints-index;">Hints Project</ulink> and see if one of them
-  fits your need.</para>
+  <para>Есть несколько советов, которые содержатся в проекте <ulink url="&hints-index;">Советы</ulink>.  Ознакомьтесь с ними, возможно вы найдете решение, которое соответствует вашим потребностям.</para>
 
   <sect2>
-    <title>Upgrade Issues</title>
+    <title>Проблемы с обновлением</title>
 
-    <para>A Package Manager makes it easy to upgrade to newer versions when they
-    are released. Generally the instructions in the LFS and BLFS Book can be
-    used to upgrade to the newer versions. Here are some points that you should
-    be aware of when upgrading packages, especially on a running system.</para>
+    <para>пакетный менеджер действительно упрощает обновление пакетов до новых версий, когда они публикуются. Как правило, инструкции в книгах LFS и BLFS могут быть использованы для обновления до новых версий. Вот некоторые моменты, которые необходимо учесть при обновлении пакетов до новых версий, особенно если обновление происходит на запущенной системе.</para>
 
     <itemizedlist>
       <listitem>
-        <para>If Glibc needs to be upgraded to a newer version, (e.g.  from
-        glibc-2.19 to glibc-2.20, it is safer to rebuild LFS.  Though you
+        <para>Если необходимо обновить пакет Glibc до новой версии (например с 2.19 до 2.20) безопаснее всего выполнить сборку всей системы LFS заново. [[Though you
         <emphasis>may</emphasis> be able to rebuild all the packages in their
-        dependency order, we do not recommend it.  </para>
+        dependency order, we do not recommend it.]] </para>
       </listitem>
 
       <listitem>
-        <para>If a package containing a shared library is updated, and if the
+        <para>Если пакет содержащий разделяемую (shared) библиотеку обновлён, и наименование библиотеки изменилось, тогда все пакеты, которые динамически слинкованы к библиотеке нужно заново компилировать, с указанием на новую версию библиотеки.
+
+		  If a package containing a shared library is updated, and if the
         name of the library changes, then all the packages dynamically linked
         to the library need to be recompiled to link against the newer library.
         (Note that there is no correlation between the package version and the
