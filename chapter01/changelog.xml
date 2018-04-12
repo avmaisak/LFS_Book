@@ -39,7 +39,24 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
-<listitem>
+	<listitem>
+ 		<para>2018-04-11</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Исправлено appdata.loc файл в gettext.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до linux-4.16.1.  Исправления
+           <ulink url="&lfs-ticket-root;4256">#4256</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до procps-ng-3.3.14.  Исправления
+           <ulink url="&lfs-ticket-root;4267">#4257</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2018-04-06</para>
       <itemizedlist>
         <listitem>
@@ -47,23 +64,23 @@
            <ulink url="&lfs-ticket-root;4252">#4252</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до man-db-2.8.3.  Fixes
+           <para>[bdubbs] - Обновлено до man-db-2.8.3.  Исправления
            <ulink url="&lfs-ticket-root;4255">#4255</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до iproute2-4.16.0.  Fixes
+           <para>[bdubbs] - Обновлено до iproute2-4.16.0.  Исправления
            <ulink url="&lfs-ticket-root;4254">#4254</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до linux-4.16.  Fixes
+           <para>[bdubbs] - Обновлено до linux-4.16.  Исправления
            <ulink url="&lfs-ticket-root;4250">#4250</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до procps-ng-3.3.13.  Fixes
+           <para>[bdubbs] - Обновлено до procps-ng-3.3.13.  Исправления
            <ulink url="&lfs-ticket-root;4263">#4253</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до sed-4.5.  Fixes
+           <para>[bdubbs] - Обновлено до sed-4.5.  Исправления
            <ulink url="&lfs-ticket-root;4251">#4251</ulink>.</para>
         </listitem>
       </itemizedlist>
