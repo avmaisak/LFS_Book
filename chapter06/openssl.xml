@@ -67,7 +67,7 @@
 <screen><userinput remap="install">sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
 make MANSUFFIX=ssl install</userinput></screen>
 
-    <para>If desired, install the documentation:</para>
+    <para>При желании, можно установить документацию:</para>
 
 <screen><userinput remap="install">mv -v /usr/share/doc/openssl /usr/share/doc/openssl-&openssl-version;
 cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>

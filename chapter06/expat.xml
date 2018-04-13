@@ -61,7 +61,7 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>If desired, install the documentation:</para>
+    <para>При желании, можно установить документацию:</para>
 
 <screen><userinput remap="install">install -v -dm755 /usr/share/doc/expat-&expat-version;
 install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-&expat-version;</userinput></screen>

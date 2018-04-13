@@ -85,7 +85,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 ln -sfv ../../lib/$(readlink /usr/lib/libreadline.so) /usr/lib/libreadline.so
 ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</userinput></screen>
 
-    <para>If desired, install the documentation:</para>
+    <para>При желании, можно установить документацию:</para>
 
 <screen><userinput remap="install">install -v -m644 doc/*.{ps,pdf,html,dvi} /usr/share/doc/readline-&readline-version;</userinput></screen>
 
