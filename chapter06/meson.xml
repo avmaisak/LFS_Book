@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Meson is an open source build system meant to be both extremely fast,
-    and, even more importantly, as user friendly as possible.</para>
+    <para>Meson - высокопроизводительная и удобная open source система сборки. Пакет содержит инструменты для автоматизации сборки программ. Основная цель Meson - минимизировать затраты времени на конфигурирование системы сборки.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -40,7 +39,7 @@
   <sect2 role="installation">
     <title>Установка пакета Meson</title>
 
-    <para>Compile Meson with the следующую команду:</para>
+    <para>Для компиляции пакета Meson, необходимо выполнить следующую команду:</para>
 
 <screen><userinput remap="make">python3 setup.py build</userinput></screen>
 
@@ -49,7 +48,10 @@
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">python3 setup.py install</userinput></screen>
-
+<para>Теперь, необходимо переместить man pages пакета в правильное местоположение:</para>
+<screen><userinput remap="install">mv -v /usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg/share/man/man1/*.1 \
+      /usr/share/man/man1
+rm -r /usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg/share</userinput></screen>
   </sect2>
 
 
@@ -57,12 +59,12 @@
     <title>Содержимое пакета Meson</title>
 
     <segmentedlist>
-      <segtitle>Установленные библиотеки</segtitle>
+      <segtitle>Установленные программы</segtitle>
       <segtitle>Каталог установки</segtitle>
 
-      <seglistitem>
-        <seg>libmeson.so</seg>
-        <seg>/usr/share/doc/meson-&meson-version;</seg>
+       <seglistitem>
+        	<seg>meson, mesonconf, mesonintrospect, mesontest, and wraptool</seg>
+			<seg>/usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -71,15 +73,57 @@
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="libmeson">
-        <term><filename class="libraryfile">libmeson</filename></term>
+      <varlistentry id="meson">
+		<term><command>meson</command></term>
         <listitem>
-          <para>Contains multiple-precision math functions</para>
-          <indexterm zone="ch-system-meson libmeson">
-            <primary sortas="c-libmeson">libmeson</primary>
+          <para>Высокопроизводительная система сборки</para>
+          <indexterm zone="ch-system-meson meson">
+            <primary sortas="b-meson">meson</primary>
           </indexterm>
         </listitem>
       </varlistentry>
+
+		<varlistentry id="mesonconf">
+		<term><command>mesonconf</command></term>
+        <listitem>
+          <para>Инструмент для конфигурации процесса сборки с помощью meson</para>
+          <indexterm zone="ch-system-meson mesonconf">
+            <primary sortas="b-mesonconf">mesonconf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+
+		<varlistentry id="mesonintrospect">
+		<term><command>mesonintrospect</command></term>
+        <listitem>
+          <para>Инструмент для получения информации о сборке Meson</para>
+          <indexterm zone="ch-system-meson mesonintrospect">
+            <primary sortas="b-mesonintrospect">mesonintrospect</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+		<varlistentry id="mesontest">
+		<term><command>mesontest</command></term>
+        <listitem>
+          <para>Инструмент тестирования для системы сборки Meson</para>
+          <indexterm zone="ch-system-meson mesontest">
+            <primary sortas="b-mesontest">mesontest</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+		<varlistentry id="wraptool">
+		<term><command>wraptool</command></term>
+        <listitem>
+          <para>Загрузчик исходного кода зависимостей</para>
+          <indexterm zone="ch-system-meson wraptool">
+            <primary sortas="b-wraptool">wraptool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
 
     </variablelist>
 

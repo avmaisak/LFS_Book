@@ -39,6 +39,16 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+ <listitem>
+      <para>2018-04-16</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Исправлены описания к пакетам man pages и  meson.
+           Спасибо Xi Ruoyao за патч</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
 	<listitem>
  		<para>2018-04-11</para>
       <itemizedlist>
