@@ -125,8 +125,6 @@ rm -r /usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg/share</us
       </varlistentry>
     </variablelist>
 
-    </variablelist>
-
   </sect2>
 
 </sect1>
