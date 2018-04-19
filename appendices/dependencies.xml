@@ -13,9 +13,9 @@
 
   <para>Каждый пакет в системе LFS может ссылаться на один или несколько других пакетов в определённом порядке, для того чтобы сборка и установка пакета была выполнена правильно. Некоторые могут иметь циклическую зависимость, то есть первый пакет зависит от второго, который в свою очередь, зависит от первого. Именно по этой причине, указанный порядок сборки пакетов в LFS очень важен. Цель этой страницы заключается в описании зависимостей каждого пакета</para>
 
-  <para>Для каждого пакета, который мы будем собирать, будет перечислено три, а иногда даже четыре типа зависимостей.
-  Первый список перечисляет какие пакеты должны быть, для компиляции и установки текущего пакета. 
-  Второй список перечисляет какие пакеты, помимо тех, которые указаны в первом списке, должны присутствовать, чтобы запустить наборы тестов. 
+  <para>Для каждого пакета, будет перечислено три, а иногда даже четыре типа зависимостей.
+  Первый список перечисляет какие пакеты должны быть, для компиляции и установки текущего пакета.
+  Второй список перечисляет какие пакеты, помимо тех, которые указаны в первом списке, должны присутствовать, чтобы запустить наборы тестов.
   Третий список перечисляет какие пакеты требуют, чтобы указанный пакет был собран и установлен до их сборки и установки. В большинстве случаев это происходит потому, что скрипты конфигурации пакетов жестко прописывают ссылки на другие файлы. Если выполнять сборку не в требуемом порядке, это можем привести к тому, что результаты действий будут сохраняться по пути /tools/bin/[binary], что само собой не желательно.</para>
   <para>Последний список зависимостей - это опциональные пакеты, которые могут не упоминаться в книге LFS, но все же, могут быть полезными для пользователя. Эти пакеты могут иметь дополнительные как обязательные,  так и необязательные зависимости. Такие зависимости - рекомендуется разрешать после завершения сборки всей системы LFS. В некоторых случаях, повторная установка некоторых таких пакетов рассматривается в BLFS.</para>
 
@@ -43,7 +43,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Coreutils, Sed, Tar, Vim</seg>
+          <seg>Coreutils, Sed, Tar, and Vim</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -51,7 +51,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -79,7 +79,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Acl, Libcap</seg>
+          <seg>Acl and Libcap</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -87,7 +87,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -143,7 +143,7 @@
 
         <seglistitem>
           <seg>Binutils, Bison, Bzip2, DejaGNU, Diffutils, Expect, Findutils,
-          Flex, GCC, Gettext, Gzip, Libtool, and Tar.</seg>
+          Flex, GCC, Gettext, Gzip, Libtool, and Tar</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -151,7 +151,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -159,7 +159,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -187,7 +187,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -231,7 +231,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -242,8 +242,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, File, Gawk, GCC, Glibc, Grep,
-         Make, Perl, Sed, Texinfo and Zlib</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, File, Gawk, GCC, Glibc,
+         Grep, Make, Perl, Sed, Texinfo and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -259,7 +259,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -267,7 +267,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -323,7 +323,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -331,7 +331,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -339,7 +339,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -358,7 +358,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -366,7 +366,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -374,7 +374,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -402,7 +402,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Bash, Diffutils, Findutils, Man-DB, and Eudev</seg>
+          <seg>Bash, Diffutils, Eudev, Findutils, and Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -431,7 +431,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -439,7 +439,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -466,7 +466,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -474,7 +474,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -482,7 +482,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -502,7 +502,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils, Perl</seg>
+          <seg>Perl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -510,7 +510,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -518,7 +518,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -538,7 +538,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -546,7 +546,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -554,7 +554,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -574,7 +574,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -590,7 +590,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -610,7 +610,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -618,7 +618,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -626,7 +626,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -646,7 +646,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Procps-ng,Psmisc</seg>
+          <seg>Procps-ng and Psmisc</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -654,7 +654,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -662,7 +662,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -682,7 +682,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -690,7 +690,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -698,7 +698,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -726,7 +726,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -734,7 +734,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -770,7 +770,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -782,7 +782,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, GMP, Grep, Make,
-         MPFR, Patch, Readline, Sed and Texinfo</seg>
+         MPFR, Patch, Readline, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -798,7 +798,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -806,7 +806,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -835,7 +835,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -844,7 +844,7 @@
 
         <seglistitem>
           <seg><ulink url="http://gcc.gnu.org/wiki/Graphite">CLooG-PPL</ulink>,
-               <ulink url="http://gcc.gnu.org/wiki/GNAT">GNAT</ulink> and
+               <ulink url="http://gcc.gnu.org/wiki/GNAT">GNAT</ulink>, and
                <ulink url="http://gcc.gnu.org/wiki/Graphite">PPL</ulink></seg>
         </seglistitem>
       </segmentedlist>
@@ -856,7 +856,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Grep, Make, and Sed</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Grep, Make,
+         and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -864,7 +865,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -872,7 +873,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -880,7 +881,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -916,7 +917,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -944,7 +945,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -952,7 +953,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -963,8 +964,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep, M4, Make,
-         Sed and Texinfo</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
+         M4, Make, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -972,7 +973,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -980,7 +981,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>MPFR, GCC</seg>
+          <seg>MPFR and GCC</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -988,7 +989,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -999,7 +1000,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, and Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1007,7 +1008,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils, Expect</seg>
+          <seg>Diffutils and Expect</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1015,7 +1016,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1023,7 +1024,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1115,7 +1116,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1123,7 +1124,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1131,7 +1132,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1151,7 +1152,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils, Less</seg>
+          <seg>Diffutils and Less</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1167,7 +1168,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1202,7 +1203,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1238,7 +1239,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1265,7 +1266,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1273,7 +1274,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1301,7 +1302,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1309,7 +1310,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1337,7 +1338,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1345,7 +1346,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1357,7 +1358,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-         Gzip, Make, Sed, Xz-Utils, Zlib</seg>
+         Gzip, Make, Sed, Xz-Utils, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1381,7 +1382,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1428,7 +1429,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Attr, Bash, Binutils, Coreutils, GCC, Glibc, Perl, Make, and Sed</seg>
+         <seg>Attr, Bash, Binutils, Coreutils, GCC, Glibc, Perl, Make,
+         and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1444,7 +1446,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1487,7 +1489,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1523,7 +1525,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1543,7 +1545,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Autoconf, Automake, Findutils</seg>
+          <seg>Autoconf, Automake, and Findutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1551,7 +1553,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1559,7 +1561,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1570,8 +1572,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Bc, Binutils, Coreutils, Diffutils, Findutils, GCC, Glibc, Grep,
-         Gzip, Kmod, Make, Ncurses, OpenSSL, Perl, and Sed</seg>
+         <seg>Bash, Bc, Binutils, Coreutils, Diffutils, Findutils, GCC, Glibc,
+         Grep, Gzip, Kmod, Make, Ncurses, OpenSSL, Perl, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1587,7 +1589,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1595,7 +1597,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1659,7 +1661,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1667,7 +1669,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1695,7 +1697,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1703,7 +1705,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1730,7 +1732,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1738,7 +1740,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1765,7 +1767,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1773,7 +1775,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1785,7 +1787,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep, GMP,
-         Make, MPFR, Sed and Texinfo</seg>
+         Make, MPFR, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1793,7 +1795,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1809,7 +1811,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1821,7 +1823,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep, GMP,
-         Make, Sed and Texinfo</seg>
+         Make, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1829,7 +1831,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1837,7 +1839,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Gawk, GCC</seg>
+          <seg>Gawk and GCC</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1845,7 +1847,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1873,8 +1875,8 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Bash, GRUB, Inetutils, Less, Procps-ng, Psmisc, Readline, Texinfo,
-          Util-linux, and Vim</seg>
+          <seg>Bash, GRUB, Inetutils, Less, Procps-ng, Psmisc, Readline,
+          Texinfo, Util-linux, and Vim</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1882,7 +1884,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1893,7 +1895,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Binutils, Coreutils, Gcc, Python</seg>
+         <seg>Binutils, Coreutils, Gcc, and Python</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1901,7 +1903,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1928,7 +1930,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Binutils, Coreutils, Gcc, Make, Perl</seg>
+         <seg>Binutils, Coreutils, Gcc, Make, and Perl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1936,7 +1938,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1952,7 +1954,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1979,7 +1981,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2023,7 +2025,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2043,7 +2045,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2059,7 +2061,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2070,7 +2072,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make</seg>
+         <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, and Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2094,7 +2096,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2121,7 +2123,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2129,7 +2131,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2140,8 +2142,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, Make, Ncurses,
-         and Sed</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, Make,
+         Ncurses, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2157,7 +2159,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2165,7 +2167,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2176,7 +2178,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Gdbm, Gettext, Glibc, Grep, 
+         <seg>Bash, Binutils, Coreutils, GCC, Gdbm, Gettext, Glibc, Grep,
          Libffi, Make, Ncurses, and Sed</seg>
         </seglistitem>
       </segmentedlist>
@@ -2229,7 +2231,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Bash, Gawk</seg>
+          <seg>Bash and Gawk</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2237,7 +2239,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2273,7 +2275,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2309,7 +2311,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Acl, Attr, Cracklib, PAM</seg>
+          <seg>Acl, Attr, Cracklib, and PAM</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2336,7 +2338,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2344,7 +2346,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2365,7 +2367,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2373,7 +2375,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2381,7 +2383,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2408,7 +2410,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2416,7 +2418,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2444,7 +2446,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2452,7 +2454,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2472,7 +2474,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2480,7 +2482,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2488,7 +2490,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2508,7 +2510,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2516,7 +2518,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2524,7 +2526,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2535,8 +2537,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-         Gettext, Glibc, Grep, Make, Ncurses, Sed, Eudev, and Zlib</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, Eudev, Findutils, Gawk, GCC,
+         Gettext, Glibc, Grep, Make, Ncurses, Sed, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2544,7 +2546,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2552,7 +2554,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2580,7 +2582,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2588,7 +2590,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2631,7 +2633,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2642,7 +2644,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, and Make.</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, and Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2650,7 +2652,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2658,7 +2660,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>GRUB, Kmod, Man-DB, Eudev</seg>
+          <seg>Eudev, GRUB, Kmod, and Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2666,7 +2668,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2685,7 +2687,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2701,7 +2703,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Нет</seg>
         </seglistitem>
       </segmentedlist>
 
