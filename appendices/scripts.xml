@@ -36,9 +36,9 @@
   <?dbhtml dir="scripts"?>
   <?dbhtml filename="scripts.html"?>
 
-  <title>Скрипты загрузки и системной конфигурациии версия-&lfs-bootscripts-version;</title>
+  <title>Скрипты загрузки и системной конфигурации версия-&lfs-bootscripts-version;</title>
 
-  <para>Скрипты в этом приложении перечислены с указанием места, где как правило, они должны находится. 
+  <para>Скрипты в этом приложении перечислены с указанием места, где как правило, они должны находится.
  <filename
   class='directory'>/etc/rc.d/init.d</filename>, <filename
   class='directory'>/etc/sysconfig</filename>, <filename
