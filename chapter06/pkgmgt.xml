@@ -97,34 +97,17 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
     <sect3>
       <title>Отслеживание сценариев установки</title>
 
-      <para>In this approach, the commands that the installation scripts perform
-      are recorded.  There are two techniques that one can use:</para>
+      <para>Этот метод заключается в записи команд, выполняемых сценарием установки. Есть два подхода, как использовать данный метод:</para>
 
-      <para>The <envar>LD_PRELOAD</envar> environment variable can be set to
-      point to a library to be preloaded before installation.  During
-      installation, this library tracks the packages that are being installed by
-      attaching itself to various executables such as <command>cp</command>,
-      <command>install</command>, <command>mv</command> and tracking the system
-      calls that modify the filesystem. For this approach to work, all the
-      executables need to be dynamically linked without the suid or sgid bit.
-      Preloading the library may cause some unwanted side-effects during
-      installation. Therefore, it is advised that one performs some tests to
-      ensure that the package manager does not break anything and logs all the
-      appropriate files.</para>
+      <para>Переменная окружения <envar>LD_PRELOAD</envar> может быть указана на предварительно загруженную библиотеку перед установкой. В процессе установки эта библиотека отслеживает пакеты, которые будут установлены присоединяя себя к различным исполняемым файлам, таким как <command>cp</command>,<command>install</command>, <command>mv</command> для отслеживания системных вызовов, которые вносят изменения в файловую систему. Для работоспособности этого метода, все исполняемые файлы должны быть динамически связаны без использования битов suid или sgid. Предзагрузка библиотеки может вызвать нежелательные побочные эффекты в процессе установки. Поэтому, рекомендуется выполнить тесты, для того, чтобы гарантировать, что пакетный менеджер не испортил что-либо и отследил все необходимые файлы.</para>
 
-      <para>The second technique is to use <command>strace</command>, which
-      logs all system calls made during the execution of the installation
-      scripts.</para>
+      <para>Второй подход заключается в использовании программы <command>strace</command>, которая регистрирует все системные вызовы, во время выполнения сценариев установки.</para>
     </sect3>
 
     <sect3>
-      <title>Creating Package Archives</title>
+      <title>Создание архивов для пакетов</title>
 
-      <para>In this scheme, the package installation is faked into a separate
-      tree as described in the Symlink style package management. After the
-      installation, a package archive is created using the installed files.
-      This archive is then used to install the package either on the local
-      machine or can even be used to install the package on other machines.</para>
+      <para>В этой схеме, установка пакета будет подменена в отдельное дерево каталогов, как описано в разделе  Управление пакетами с использованием символических ссылок. После установки, архив с пакетом создается используя установленные файлы. Этот архив теперь будет использоваться для установки пакета либо на локальном компьютере, либо может использоваться на других машинах.</para>
 
       <para>This approach is used by most of the package managers found in the
       commercial distributions. Examples of package managers that follow this
