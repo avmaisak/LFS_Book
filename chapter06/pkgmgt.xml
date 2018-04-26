@@ -107,53 +107,33 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
     <sect3>
       <title>Создание архивов для пакетов</title>
 
-      <para>В этой схеме, установка пакета будет подменена в отдельное дерево каталогов, как описано в разделе  Управление пакетами с использованием символических ссылок. После установки, архив с пакетом создается используя установленные файлы. Этот архив теперь будет использоваться для установки пакета либо на локальном компьютере, либо может использоваться на других машинах.</para>
+      <para>При этой схеме, установка будет подменена в отдельное дерево каталогов, как описано в разделе  Управление пакетами с использованием символических ссылок. После установки, архив с пакетом создается используя установленные файлы. Этот архив теперь будет использоваться для установки пакета либо на локальном компьютере, либо может использоваться на других машинах.</para>
 
-      <para>This approach is used by most of the package managers found in the
-      commercial distributions. Examples of package managers that follow this
-      approach are RPM (which, incidentally, is required by the <ulink
-      url="http://refspecs.linuxfoundation.org/lsb.shtml">Linux
-      Standard Base Specification</ulink>), pkg-utils, Debian's apt, and
-      Gentoo's Portage system.  A hint describing how to adopt this style of
-      package management for LFS systems is located at <ulink
+      <para>Этот подход используется большинством пакетных менеджеров в коммерческих дистрибутивах. Примеры пакетных менеджеров которые следуют этому подходу - RPM (который, кстати, требуется в базовой спецификации <ulink
+      url="http://refspecs.linuxfoundation.org/lsb.shtml">Linux Standard Base Specification (LSB) </ulink>),pkg-utils, apt дистрибутива Debian и система портов Gentoo. Подсказка, описывающая, как принять этот стиль управления пакетами для систем LFS, находится по адресу <ulink
       url="&hints-root;fakeroot.txt"/>.</para>
 
-      <para>Creation of package files that include dependency information is
-      complex and is beyond the scope of LFS.</para>
+      <para>Создание файлов пакетов, содержащих информацию о зависимостях, является сложным и выходит за рамки LFS.</para>
 
-      <para>Slackware uses a <command>tar</command> based system for package
-      archives.  This system purposely does not handle package dependencies
-      as more complex package managers do.  For details of Slackware package
-      management, see <ulink
+      <para>Дистрибутив Slackware использует основанную на <command>tar</command> систему для архивации пакетов. Эта система намеренно не обрабатывает зависимости пакетов как это делают более сложные менеджеры пакетов. Подробнее об управлении пакетов в Slackware см.<ulink
       url="http://www.slackbook.org/html/package-management.html"/>.</para>
     </sect3>
 
     <sect3>
-      <title>User Based Management</title>
+      <title>Пользовательское управление пакетами.</title>
 
-      <para>This scheme, unique to LFS, was devised by Matthias Benkmann, and is
-      available from the <ulink url="&hints-index;">Hints Project</ulink>. In
-      this scheme, each package is installed as a separate user into the
-      standard locations. Files belonging to a package are easily identified by
-      checking the user ID. The features and shortcomings of this approach are
-      too complex to describe in this section. For the details please see the
-      hint at <ulink url="&hints-root;more_control_and_pkg_man.txt"/>.</para>
+      <para>Эта схема является уникальной для LFS была разработана Матиасом Бенкманом, и описание доступно по ссылке
+		<ulink url="&hints-index;">Hints Project</ulink>. Суть схемы в том, что каждый пакет, будет установлен как отдельный пользователь в стандартном местоположении. Файлы, принадлежащие пакету легко идентифицируются, путём определения пользовательского идентификатора. Особенности и недостатки этого подхода слишком сложны для описания в этом разделе. Подробнее см. <ulink url="&hints-root;more_control_and_pkg_man.txt"/>.</para>
 
     </sect3>
 
   </sect2>
 
   <sect2>
-    <title>Deploying LFS on Multiple Systems</title>
+    <title>Развертывание LFS и распространение</title>
 
-    <para>One of the advantages of an LFS system is that there are no files that
-    depend on the position of files on a disk system.  Cloning an LFS build to
-    another computer with the same architecture as the base system is as
-    simple as using <command>tar</command> on the LFS partition that contains
-    the root directory (about 250MB uncompressed for a base LFS build), copying
-    that file via network transfer or CD-ROM to the new system and expanding
-    it.  From that point, a few configuration files will have to be changed.
-    Configuration files that may need to be updated include:
+    <para>Одно из преимуществ системы LFS является то, что нет файлов, у которых есть строгая привязка к местоположению на диске. Можно запаковать корневой раздел (около 250MB в несжатом виде для базовой сборки LFS), например программой <command>tar</command>, скопировать по сети или записать на компакт-диск. А затем выполнить распаковку в требуемое место, и выполнить конфигурацию некоторых файлов, для правильного функционирования системы. Файлы, которые потерубется изменить включают в себя:
+
     <filename>/etc/hosts</filename>,
     <filename>/etc/fstab</filename>,
     <filename>/etc/passwd</filename>,
@@ -171,17 +151,15 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
     </phrase>
     </para>
 
-    <para>A custom kernel may need to be built for the new system depending on
-    differences in system hardware and the original kernel
-    configuration.</para>
+    <para>Может потребоваться дополнительная модификация ядра, в зависимости от разницы в аппаратной составляющей.</para>
 
-    <note><para>There have been some reports of issues when copying between
-    similar but not identical architectures. For instance, the instruction set
-    for an Intel system is not identical with an AMD processor and later
-    versions of some processors may have instructions that are unavailable in
-    earlier versions.</para></note>
+    <note><para>Были сообщения о проблемах при копировании между
+     аналогичными, но не идентичными архитектурами. Например, набор  инструкций
+      системы Intel не идентичен  AMD, и
+     версии некоторых процессоров могут иметь инструкции, которые недоступны в
+     более ранних версиях.</para></note>
 
-    <para>Finally the new system has to be made bootable via <xref
+    <para>Наконец, новая система должна быть загрузочной через <xref
     linkend="ch-bootable-grub"/>.</para>
 
   </sect2>
