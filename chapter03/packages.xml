@@ -652,9 +652,7 @@
         <para>Контрольная сумма MD5: <literal>&systemd-man-md5;</literal></para>
 
         <note>
-          <para>The Linux From Scratch team generates its own tarball of the
-          man pages using the systemd source. This is done in order to avoid
-          unnecessary dependencies.</para>
+          <para>Команда Linux From Scratch генерирует свои архивы со страницами руководств используя исходники systemd. Это делается для того, чтобы избежать ненужных зависимостей.</para>
         </note>
       </listitem>
     </varlistentry>
