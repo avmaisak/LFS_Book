@@ -1205,7 +1205,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="libblkid">
         <term><filename class="libraryfile">libblkid</filename></term>
         <listitem>
-          <para>Contains routines for device identification and token
+          <para>Содержит routines for device identification and token
           extraction</para>
           <indexterm zone="ch-system-util-linux libblkid">
             <primary sortas="c-libblkid">libblkid</primary>
@@ -1216,7 +1216,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="libfdisk">
         <term><filename class="libraryfile">libfdisk</filename></term>
         <listitem>
-          <para>Contains routines for manipulating partition tables</para>
+          <para>Содержит routines for manipulating partition tables</para>
           <indexterm zone="ch-system-util-linux libfdisk">
             <primary sortas="c-libfdisk">libfdisk</primary>
           </indexterm>
@@ -1226,7 +1226,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="libmount">
         <term><filename class="libraryfile">libmount</filename></term>
         <listitem>
-          <para>Contains routines for block device mounting and
+          <para>Содержит routines for block device mounting and
           unmounting</para>
           <indexterm zone="ch-system-util-linux libmount">
             <primary sortas="c-libmount">libmount</primary>
@@ -1237,7 +1237,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="libsmartcols">
         <term><filename class="libraryfile">libsmartcols</filename></term>
         <listitem>
-          <para>Contains routines for aiding screen output in tabular form</para>
+          <para>Содержит routines for aiding screen output in tabular form</para>
           <indexterm zone="ch-system-util-linux libsmartcols">
             <primary sortas="c-libsmartcols">libsmartcols</primary>
           </indexterm>
@@ -1247,7 +1247,7 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       <varlistentry id="libuuid">
         <term><filename class="libraryfile">libuuid</filename></term>
         <listitem>
-          <para>Contains routines for generating unique identifiers for objects
+          <para>Содержит routines for generating unique identifiers for objects
           that may be accessible beyond the local system</para>
           <indexterm zone="ch-system-util-linux libuuid">
             <primary sortas="c-libuuid">libuuid</primary>

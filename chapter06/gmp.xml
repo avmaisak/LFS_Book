@@ -141,7 +141,7 @@ make install-html</userinput></screen>
       <varlistentry id="libgmp">
         <term><filename class="libraryfile">libgmp</filename></term>
         <listitem>
-          <para>Contains precision math functions</para>
+          <para>Содержит precision math functions</para>
           <indexterm zone="ch-system-gmp libgmp">
             <primary sortas="c-libgmp">libgmp</primary>
           </indexterm>
@@ -151,7 +151,7 @@ make install-html</userinput></screen>
       <varlistentry id="libgmpxx">
         <term><filename class="libraryfile">libgmpxx</filename></term>
         <listitem>
-          <para>Contains C++ precision math functions</para>
+          <para>Содержит C++ precision math functions</para>
           <indexterm zone="ch-system-gmp libgmpxx">
             <primary sortas="c-libgmpxx">libgmpxx</primary>
           </indexterm>

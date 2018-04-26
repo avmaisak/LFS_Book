@@ -405,7 +405,7 @@
       <varlistentry id="libman">
         <term><filename class="libraryfile">libman</filename></term>
         <listitem>
-          <para>Contains run-time support for <command>man</command></para>
+          <para>Содержит run-time support for <command>man</command></para>
           <indexterm zone="ch-system-man-db libman">
             <primary sortas="c-libman">libman</primary>
           </indexterm>
@@ -415,7 +415,7 @@
       <varlistentry id="libmandb">
         <term><filename class="libraryfile">libmandb</filename></term>
         <listitem>
-          <para>Contains run-time support for <command>man</command></para>
+          <para>Содержит run-time support for <command>man</command></para>
           <indexterm zone="ch-system-man-db libmandb">
             <primary sortas="c-libmandb">libmandb</primary>
           </indexterm>

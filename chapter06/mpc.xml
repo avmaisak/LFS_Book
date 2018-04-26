@@ -86,7 +86,7 @@ make install-html</userinput></screen>
       <varlistentry id="libmpc">
         <term><filename class="libraryfile">libmpc</filename></term>
         <listitem>
-          <para>Contains complex math functions</para>
+          <para>Содержит complex math functions</para>
           <indexterm zone="ch-system-mpc libmpc">
             <primary sortas="c-libmpc">libmpc</primary>
           </indexterm>

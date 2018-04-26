@@ -275,7 +275,7 @@
       <varlistentry id="libdb">
         <term><filename class="libraryfile">libdb.{a,so}</filename></term>
         <listitem>
-          <para>Contains functions to manipulate database files from C
+          <para>Содержит functions to manipulate database files from C
           programs</para>
           <indexterm zone="ch-system-db libdb">
             <primary sortas="c-libdb">libdb</primary>
@@ -286,7 +286,7 @@
       <varlistentry id="libdb_cxx">
         <term><filename class="libraryfile">libdb_cxx.{a,so}</filename></term>
         <listitem>
-          <para>Contains functions to manipulate database files from C++
+          <para>Содержит functions to manipulate database files from C++
           programs</para>
           <indexterm zone="ch-system-db libdb_cxx">
             <primary sortas="c-libdb_cxx">libdb_cxx</primary>

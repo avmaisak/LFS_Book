@@ -93,7 +93,7 @@
       <varlistentry id="libmagic">
         <term><filename class="libraryfile">libmagic</filename></term>
         <listitem>
-          <para>Contains routines for magic number recognition, used by the
+          <para>Содержит routines for magic number recognition, used by the
           <command>file</command> program</para>
           <indexterm zone="ch-system-file libmagic">
             <primary sortas="c-libmagic">libmagic</primary>

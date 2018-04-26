@@ -889,7 +889,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <varlistentry id="libresolv">
         <term><filename class="libraryfile">libresolv</filename></term>
         <listitem>
-          <para>Contains functions for creating, sending, and interpreting
+          <para>Содержит functions for creating, sending, and interpreting
           packets to the Internet domain name servers</para>
           <indexterm zone="ch-system-glibc libresolv">
             <primary sortas="c-libresolv">libresolv</primary>
@@ -900,7 +900,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <varlistentry id="librpcsvc">
         <term><filename class="libraryfile">librpcsvc</filename></term>
         <listitem>
-          <para>Contains functions providing miscellaneous RPC services</para>
+          <para>Содержит functions providing miscellaneous RPC services</para>
           <indexterm zone="ch-system-glibc librpcsvc">
             <primary sortas="c-librpcsvc">librpcsvc</primary>
           </indexterm>
@@ -910,7 +910,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <varlistentry id="librt">
         <term><filename class="libraryfile">librt</filename></term>
         <listitem>
-          <para>Contains functions providing most of the interfaces specified
+          <para>Содержит functions providing most of the interfaces specified
           by the POSIX.1b Realtime Extension</para>
           <indexterm zone="ch-system-glibc librt">
             <primary sortas="c-librt">librt</primary>
@@ -921,7 +921,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <varlistentry id="libthread_db">
         <term><filename class="libraryfile">libthread_db</filename></term>
         <listitem>
-          <para>Contains functions useful for building debuggers for
+          <para>Содержит functions useful for building debuggers for
           multi-threaded programs</para>
           <indexterm zone="ch-system-glibc libthread_db">
             <primary sortas="c-libthread_db">libthread_db</primary>
@@ -932,7 +932,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <varlistentry id="libutil">
         <term><filename class="libraryfile">libutil</filename></term>
         <listitem>
-          <para>Contains code for <quote>standard</quote> functions used in
+          <para>Содержит code for <quote>standard</quote> functions used in
           many different Unix utilities</para>
           <indexterm zone="ch-system-glibc libutil">
             <primary sortas="c-libutil">libutil</primary>

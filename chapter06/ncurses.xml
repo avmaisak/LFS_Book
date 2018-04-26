@@ -332,7 +332,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
       <varlistentry id="libncursesw">
         <term><filename class="libraryfile">libncursesw</filename></term>
         <listitem>
-          <para>Contains functions to display text in many complex ways on a
+          <para>Содержит functions to display text in many complex ways on a
           terminal screen; a good example of the use of these functions is the
           menu displayed during the kernel's <command>make
           menuconfig</command></para>
@@ -345,7 +345,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
       <varlistentry id="libformw">
         <term><filename class="libraryfile">libformw</filename></term>
         <listitem>
-          <para>Contains functions to implement forms</para>
+          <para>Содержит functions to implement forms</para>
           <indexterm zone="ch-system-ncurses libformw">
             <primary sortas="c-libformw">libformw</primary>
           </indexterm>
@@ -355,7 +355,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
       <varlistentry id="libmenuw">
         <term><filename class="libraryfile">libmenuw</filename></term>
         <listitem>
-          <para>Contains functions to implement menus</para>
+          <para>Содержит functions to implement menus</para>
           <indexterm zone="ch-system-ncurses libmenuw">
             <primary sortas="c-libmenuw">libmenuw</primary>
           </indexterm>
@@ -365,7 +365,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
       <varlistentry id="libpanelw">
         <term><filename class="libraryfile">libpanelw</filename></term>
         <listitem>
-          <para>Contains functions to implement panels</para>
+          <para>Содержит functions to implement panels</para>
           <indexterm zone="ch-system-ncurses libpanelw">
             <primary sortas="c-libpanelw">libpanelw</primary>
           </indexterm>

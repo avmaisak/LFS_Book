@@ -128,7 +128,7 @@
       <varlistentry id="libgdbm">
         <term><filename class="libraryfile">libgdbm</filename></term>
         <listitem>
-          <para>Contains functions to manipulate a hashed database</para>
+          <para>Содержит functions to manipulate a hashed database</para>
           <indexterm zone="ch-system-gdbm libgdbm">
             <primary sortas="c-libgdbm">libgdbm</primary>
           </indexterm>

@@ -452,7 +452,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libgcc">
         <term><filename class="libraryfile">libgcc</filename></term>
         <listitem>
-          <para>Contains run-time support for <command>gcc</command></para>
+          <para>Содержит run-time support for <command>gcc</command></para>
           <indexterm zone="ch-system-gcc libgcc">
             <primary sortas="c-libgcc">libgcc</primary>
           </indexterm>
@@ -484,7 +484,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libiberty">
         <term><filename class="libraryfile">libiberty</filename></term>
         <listitem>
-          <para>Contains routines used by various GNU programs, including
+          <para>Содержит routines used by various GNU programs, including
           <command>getopt</command>, <command>obstack</command>,
           <command>strerror</command>, <command>strtol</command>, and
           <command>strtoul</command></para>
@@ -518,7 +518,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libssp">
         <term><filename class="libraryfile">libssp</filename></term>
         <listitem>
-          <para>Contains routines supporting GCC's stack-smashing protection
+          <para>Содержит routines supporting GCC's stack-smashing protection
           functionality</para>
           <indexterm zone="ch-system-gcc libssp">
             <primary sortas="c-libssp">libssp</primary>

@@ -190,7 +190,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
       <varlistentry id="etc-udev">
         <term><filename class="directory">/etc/udev</filename></term>
         <listitem>
-          <para>Contains Udev configuration files,
+          <para>Содержит Udev configuration files,
           device permissions, and rules for device naming</para>
           <indexterm zone="ch-system-eudev etc-udev">
             <primary sortas="e-/etc/udev">/etc/udev</primary>

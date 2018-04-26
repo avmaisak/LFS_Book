@@ -104,7 +104,7 @@ install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-&expat-version;</user
       <varlistentry id="libexpat">
         <term><filename class="libraryfile">libexpat</filename></term>
         <listitem>
-          <para>Contains API functions for parsing XML</para>
+          <para>Содержит API functions for parsing XML</para>
           <indexterm zone="ch-system-expat libexpat">
             <primary sortas="c-libexpat">libexpat</primary>
           </indexterm>

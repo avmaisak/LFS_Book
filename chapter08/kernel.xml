@@ -361,7 +361,7 @@ EOF</userinput></screen>
       <varlistentry id="config">
         <term><filename>config-&linux-version;</filename></term>
         <listitem>
-          <para>Contains all the configuration selections for the kernel</para>
+          <para>Содержит all the configuration selections for the kernel</para>
           <indexterm zone="ch-bootable-kernel config">
             <primary sortas="e-/boot/config">/boot/config-&linux-version;</primary>
           </indexterm>

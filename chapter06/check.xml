@@ -94,7 +94,7 @@
       <varlistentry id="libcheck">
         <term><filename class="libraryfile">libcheck.{a,so}</filename></term>
         <listitem>
-          <para>Contains functions that allow Check to be called from a test
+          <para>Содержит functions that allow Check to be called from a test
           program</para>
           <indexterm zone="ch-tools-check libcheck">
             <primary sortas="c-libcheck">libcheck</primary>

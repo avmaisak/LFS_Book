@@ -277,7 +277,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="libprocps">
         <term><filename class="libraryfile">libprocps</filename></term>
         <listitem>
-          <para>Contains the functions used by most programs in this
+          <para>Содержит the functions used by most programs in this
           package</para>
           <indexterm zone="ch-system-procps libprocps">
             <primary sortas="c-libprocps">libprocps</primary>

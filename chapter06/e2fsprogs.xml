@@ -519,7 +519,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="libext2fs">
         <term><filename class="libraryfile">libext2fs</filename></term>
         <listitem>
-          <para>Contains routines to enable user-level programs to manipulate an
+          <para>Содержит routines to enable user-level programs to manipulate an
           <systemitem class="filesystem">ext2</systemitem> file system</para>
           <indexterm zone="ch-system-e2fsprogs libext2fs">
             <primary sortas="c-libext2fs">libext2fs</primary>

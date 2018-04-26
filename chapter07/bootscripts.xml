@@ -110,7 +110,7 @@
       <varlistentry id="functions-bootscripts">
         <term><command>functions</command></term>
         <listitem>
-          <para>Contains common functions, such as error and status checking,
+          <para>Содержит common functions, such as error and status checking,
           that are used by several bootscripts</para>
           <indexterm zone="ch-scripts-bootscripts functions-bootscripts">
             <primary sortas="d-functions">functions</primary>

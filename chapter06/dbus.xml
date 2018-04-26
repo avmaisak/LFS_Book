@@ -221,7 +221,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <varlistentry id="libdbus-1">
         <term><filename class="libraryfile">libdbus-1</filename></term>
         <listitem>
-          <para>Contains API functions used to communicate with the D-Bus
+          <para>Содержит API functions used to communicate with the D-Bus
           message bus</para>
           <indexterm zone="ch-system-dbus libdbus-1">
             <primary sortas="c-libdbus-1">libdbus-1</primary>
