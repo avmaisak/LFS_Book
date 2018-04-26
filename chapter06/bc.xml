@@ -70,7 +70,7 @@ ln -sfv libncurses.so.6 /usr/lib/libncurses.so</userinput></screen>
 
 <screen><userinput remap="pre">sed -i -e '/flex/s/as_fn_error/: ;; # &amp;/' configure</userinput></screen>
 
-    <para>Prepare Bc for compilation:</para>
+    <para>Prepare Bc к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
             --with-readline         \

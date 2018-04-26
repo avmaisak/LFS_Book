@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Procps-ng</title>
 
-    <para>Prepare procps-ng for compilation:</para>
+    <para>Prepare procps-ng к компиляции:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr                            \
             --exec-prefix=                           \

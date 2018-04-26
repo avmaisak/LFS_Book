@@ -8,12 +8,10 @@
 <sect1 id="ch-system-chroot">
   <?dbhtml filename="chroot.html"?>
 
-  <title>Entering the Chroot Environment</title>
+  <title>Вход в окружение Chroot</title>
 
-  <para>It is time to enter the chroot environment to begin building and
-  installing the final LFS system. As user <systemitem
-  class="username">root</systemitem>, run the following command to enter the
-  realm that is, at the moment, populated with only the temporary tools:</para>
+  <para>Теперь, необходимо войти в окружение Chroot, для начала сборки и установки окончательной системы LFS. Как пользователь <systemitem
+  class="username">root</systemitem> выполните следующую команду, для входа, с использованием созданного ранее набора временных инструментов, находящихся во временном каталоге tools:</para>
 
 <screen role="nodump"><userinput>chroot "$LFS" /tools/bin/env -i \
     HOME=/root                  \

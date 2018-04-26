@@ -45,7 +45,7 @@
 
 <screen><userinput remap="pre">sed -i 's:\\\${:\\\$\\{:' intltool-update.in</userinput></screen>
 
-    <para>Prepare Intltool for compilation:</para>
+    <para>Prepare Intltool к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

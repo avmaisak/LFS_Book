@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета Libpipeline</title>
 
-    <para>Prepare Libpipeline for compilation:</para>
+    <para>Prepare Libpipeline к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

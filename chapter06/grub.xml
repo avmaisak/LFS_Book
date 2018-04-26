@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета GRUB</title>
 
-    <para>Prepare GRUB for compilation:</para>
+    <para>Prepare GRUB к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
             --sbindir=/sbin        \

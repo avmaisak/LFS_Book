@@ -66,7 +66,7 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&db-fixes-patch;</userinput></screen>
 
-    <para>Prepare Berkeley DB for compilation:</para>
+    <para>Prepare Berkeley DB к компиляции:</para>
 
 <screen><userinput remap="configure">cd build_unix
 ../dist/configure --prefix=/usr --enable-compat185 --enable-cxx</userinput></screen>

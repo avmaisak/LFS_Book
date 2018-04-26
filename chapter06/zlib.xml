@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета Zlib</title>
 
-    <para>Prepare Zlib for compilation:</para>
+    <para>Prepare Zlib к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

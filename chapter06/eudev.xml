@@ -57,7 +57,7 @@ BLKID_LIBS="-lblkid"
 BLKID_CFLAGS="-I/tools/include"
 EOF</userinput></screen>
 
-<para>Prepare Eudev for compilation:</para>
+<para>Prepare Eudev к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
             --bindir=/sbin          \

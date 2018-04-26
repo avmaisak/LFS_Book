@@ -64,7 +64,7 @@ Ask your system administrator to create more.</computeroutput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Binutils for compilation:</para>
+    <para>Prepare Binutils к компиляции:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/usr       \
              --enable-gold       \
