@@ -59,7 +59,7 @@ sed -i 's/test-lock..EXEEXT.//' gettext-tools/gnulib-tests/Makefile.in</userinpu
 <!-- As of April 11, 2018 appdata.* is NOT in git master, but appears
    to be in metainfo.{its,loc},  When updating, check BLFS gnome-screenshot. -->
    <para>Исправьте файл конфигурации:</para>
-	<screen><userinput remap="pre">sed -e '/AppData/N;N;p;s/\.appdata\./.metainfo./' \
+	<screen><userinput remap="pre">sed -e '/AppData/{N;N;p;s/\.appdata\./.metainfo./}' \
     -i gettext-tools/its/appdata.loc</userinput></screen>
 
     <para>Подготовьте пакет Gettext к компиляции:</para>
