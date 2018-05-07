@@ -10,7 +10,7 @@
 
   <title>Stripping Again</title>
 
-  <para>This section is optional.  If the intended user is not a 
+  <para>This section is optional.  If the intended user is not a
   programmer and does not plan to do
   any debugging on the system software, the system size can be decreased
   by about 90 MB by removing the debugging symbols from binaries and
@@ -23,10 +23,10 @@
   <command>strip</command> commands, it is a good idea to make a
   backup of the LFS system in its current state.</para>
 
-  <para>First place the debugging symbols for selected libraries 
-  in separate files.  This debugging information is needed if running 
-  regression tests that use <ulink 
-  url='&blfs-book;/general/valgrind.html'>valgrind</ulink> or <ulink 
+  <para>First place the debugging symbols for selected libraries
+  in separate files.  This debugging information is needed if running
+  regression tests that use <ulink
+  url='&blfs-book;/general/valgrind.html'>valgrind</ulink> or <ulink
   url='&blfs-book;/general/gdb.html'>gdb</ulink> later in BLFS.
   </para>
 
@@ -38,14 +38,14 @@
 cd /lib
 
 for LIB in $save_lib; do
-    objcopy --only-keep-debug $LIB $LIB.dbg 
+    objcopy --only-keep-debug $LIB $LIB.dbg
     strip --strip-unneeded $LIB
-    objcopy --add-gnu-debuglink=$LIB.dbg $LIB 
-done    
+    objcopy --add-gnu-debuglink=$LIB.dbg $LIB
+done
 
-save_usrlib="libquadmath.so.&libquadmath-version; libstdc++.so.&libstdcpp-version;
+	save_usrlib="libquadmath.so.&libquadmath-version; libstdc++.so.&libstdcpp-version;
              libmpx.so.&libmpx-version; libmpxwrappers.so.&libmpxwrap-version; libitm.so.&libitm-version;
-             libcilkrts.so.&libcilkrts-version; libatomic.so.&libatomic-version;"
+             libatomic.so.&libatomic-version;" <!-- libcilkrts.so.&libcilkrts-version;-->"
 
 cd /usr/lib
 
