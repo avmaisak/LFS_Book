@@ -43,7 +43,7 @@
  <para>2018-05-11</para>
       <itemizedlist>
         <listitem>
-           <para>[bdubbs] - Обновлено до linux-4.16.8.  Исправления 
+           <para>[bdubbs] - Обновлено до linux-4.16.8.  Исправления
            <ulink url="&lfs-ticket-root;4267">#4267</ulink>.</para>
         </listitem>
       </itemizedlist>
