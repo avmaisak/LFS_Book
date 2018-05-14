@@ -8,10 +8,9 @@
 <sect1 id="ch-system-creatingdirs">
   <?dbhtml filename="creatingdirs.html"?>
 
-  <title>Creating Directories</title>
+  <title>Создание каталогов</title>
 
-  <para>It is time to create some structure in the LFS file system. Create a
-  standard directory tree by issuing the following commands:</para>
+  <para>Самое время согдать структуру каталогов для новой системы LFS. Необходимо выполнить следующие команды, чтобы создать стандартное дерево каталогов:</para>
 
 <screen><userinput>mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
 mkdir -pv /{media/{floppy,cdrom},sbin,srv,var}
@@ -32,32 +31,18 @@ ln -sv /run /var/run
 ln -sv /run/lock /var/lock
 mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}</userinput></screen>
 
-  <para>Directories are, by default, created with permission mode 755, but
-  this is not desirable for all directories. In the commands above, two
-  changes are made&mdash;one to the home directory of user <systemitem
-  class="username">root</systemitem>, and another to the directories for
-  temporary files.</para>
+  <para>По умолчанию, созданные каталоги имеют права 755, но это это нежелательно для всех каталогов. В командах приведенных выше, сделаны два изменения. Первое для каталога пользователя <systemitem
+  class="username">root</systemitem>, и второе для каталогов временных файлов.</para>
 
-  <para>The first mode change ensures that not just anybody can enter
-  the <filename class="directory">/root</filename> directory&mdash;the
-  same as a normal user would do with his or her home directory. The
-  second mode change makes sure that any user can write to the
-  <filename class="directory">/tmp</filename> and <filename
-  class="directory">/var/tmp</filename> directories, but cannot remove
-  another user's files from them. The latter is prohibited by the so-called
-  <quote>sticky bit,</quote> the highest bit (1) in the 1777 bit mask.</para>
+  <para>Первое изменение  гарантирует, что не каждый может войти в каталог <filename class="directory">/root</filename> так же, как обычный пользователь будет работать со своим домашним каталогом. Следующее изменение гарантирует что любой пользователь может записывать в дерево каталогов <filename class="directory">/tmp</filename>, но не может удалять файлы других пользователей. Последнее запрещено так называемым <quote>sticky bit,</quote> - старший бит (1) в бит-маске 1777.</para>
 
   <sect2>
-    <title>FHS Compliance Note</title>
+    <title>Примечания по поводу соответствия FHS</title>
 
-    <para>The directory tree is based on the Filesystem Hierarchy Standard
-    (FHS) (available at <ulink
-    url="https://wiki.linuxfoundation.org/en/FHS"/>).  The FHS also specifies
-    the optional existence of some directories such as <filename
+    <para>Дерево каталогов основано на стандарте иерархий файловой системы (Filesystem Hierarchy Standard,FHS).  (спецификация доступна по ссылке <ulink url="https://wiki.linuxfoundation.org/en/FHS"/>). В FHS также указано
+     необязательное наличие некоторых каталогов, таких как <filename
     class="directory">/usr/local/games</filename> and <filename
-    class="directory">/usr/share/games</filename>.  We create only the
-    directories that are needed. However, feel free to create these
-    directories.  </para>
+    class="directory">/usr/share/games</filename>. В этой книге будут созданы только необходимые каталоги. Однако вы свободны в ваших действиях, и можете создать эти каталоги в том числе.</para>
 
   </sect2>
 
