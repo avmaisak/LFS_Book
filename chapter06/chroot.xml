@@ -20,42 +20,17 @@
     PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
     /tools/bin/bash --login +h</userinput></screen>
 
-  <para>The <parameter>-i</parameter> option given to the <command>env</command>
-  command will clear all variables of the chroot environment. After that, only
-  the <envar>HOME</envar>, <envar>TERM</envar>, <envar>PS1</envar>, and
-  <envar>PATH</envar> variables are set again. The
-  <parameter>TERM=$TERM</parameter> construct will set the <envar>TERM</envar>
-  variable inside chroot to the same value as outside chroot. This variable is
-  needed for programs like <command>vim</command> and <command>less</command>
-  to operate properly.  If other variables are needed, such as
-  <envar>CFLAGS</envar> or <envar>CXXFLAGS</envar>, this is a good place to set
-  them again.</para>
+  <para>Аргумент <parameter>-i</parameter> передаёт команде <command>env</command> значение, которое указывает полностью очистить все переменные окружения в окружении chroot. После чего, только переменные окружения <envar>HOME</envar>, <envar>TERM</envar>, <envar>PS1</envar> и <envar>PATH</envar> будут указаны заново. Параметр
+  <parameter>TERM=$TERM</parameter> устанавливает значение переменной окружения за пределами chroot окружения. Эта переменная необходима таким программам как <command>vim</command> и <command>less</command> для корректной работы. Если необходимы другие переменные окружения, такие как <envar>CFLAGS</envar> или <envar>CXXFLAGS</envar>, это как раз то место, где их можно указать.</para>
 
-  <para>From this point on, there is no need to use the
-  <envar>LFS</envar> variable anymore, because all work will be restricted
-  to the LFS file system.  This is because the Bash shell is told that
-  <filename class="directory">$LFS</filename> is now the root
-  (<filename class="directory">/</filename>) directory.</para>
+  <para>Теперь нет необходимости использовать переменную окружения <envar>LFS</envar>, потому что вся работа будет ограничена файловой системой LFS. Так происходит, потому что оболочке Bash ранее сообщался в значении переменной  <filename class="directory">$LFS путь до корня файловой системы, но на данный момент, она является корневым каталогом  (<filename class="directory">/</filename>).</filename></para>
 
-  <para>Notice that <filename class="directory">/tools/bin</filename> comes last
-  in the <envar>PATH</envar>. This means that a temporary tool will no longer be
-  used once its final version is installed. This occurs when the shell does not
-  <quote>remember</quote> the locations of executed binaries&mdash;for this
-  reason, hashing is switched off by passing the <parameter>+h</parameter> option
-  to <command>bash</command>.</para>
+  <para>Необходимо обратить внимание что  в переменной окружения <envar>PATH</envar> путь <filename class="directory">/tools/bin</filename> записан в последнюю очередь. Это означает, что временный инструмент не будет более использоваться после установки его окончательной версии. Это происходит, когда оболочка не <quote>запоминает</quote> пути к исполняемым бинарным файлам&mdash; по этой причине, хэширование выключено, указанием параметра <parameter>+h</parameter> к программе <command>bash</command>.</para>
 
-  <para>Note that the <command>bash</command> prompt will say
-  <computeroutput>I have no name!</computeroutput> This is normal because the
-  <filename>/etc/passwd</filename> file has not been created yet.</para>
+    <para>Когда оболочка запустится, <command>bash</command> выдаст приглашение командной строки вида <computeroutput>I have no name!</computeroutput>. Это нормально, потому что файл <filename>/etc/passwd</filename> ещё не создан.</para>
 
   <note>
-    <para>It is important that all the commands throughout the remainder of this
-    chapter and the following chapters are run from within the chroot
-    environment. If you leave this environment for any reason (rebooting for
-    example), ensure that the virtual kernel filesystems are mounted as
-    explained in <xref linkend="ch-system-bindmount"/> and <xref
-    linkend="ch-system-kernfsmount"/> and enter chroot again before continuing
-    with the installation.</para>
+    <para>Очень важно чтобы все команды в этой и последующих главах запускались из среды chroot. Если был сделан выход из среды chroot по каким-либо причинам (перезагрузка, например), необходимо убедиться в том, что виртуальные файловые системы были заново примонтированы, как рассказано в главе <xref linkend="ch-system-bindmount"/> и <xref linkend="ch-system-kernfsmount"/>. Далее войдите в окружение chroot снова, чтобы продолжить установку.</para>
   </note>
 
 </sect1>

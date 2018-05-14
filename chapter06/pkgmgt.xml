@@ -159,8 +159,7 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
      версии некоторых процессоров могут иметь инструкции, которые недоступны в
      более ранних версиях.</para></note>
 
-    <para>Наконец, новая система должна быть загрузочной через <xref
-    linkend="ch-bootable-grub"/>.</para>
+    <para>Наконец, в главе <xref linkend="ch-bootable-grub"/> новая система станет загрузочной.</para>
 
   </sect2>
 
