@@ -8,7 +8,7 @@
 <sect1 id="ch-system-createfiles">
   <?dbhtml filename="createfiles.html"?>
 
-  <title>Creating Essential Files and Symlinks</title>
+  <title>Создание основных файлов и символических ссылок</title>
 
   <indexterm zone="ch-system-createfiles">
     <primary sortas="e-/etc/passwd">/etc/passwd</primary>
@@ -34,10 +34,8 @@
     <primary sortas="e-/var/log/wtmp">/var/log/wtmp</primary>
   </indexterm>
 
-  <para>Some programs use hard-wired paths to programs which do not exist yet.
-  In order to satisfy these programs, create a number of symbolic links which
-  will be replaced by real files throughout the course of this chapter after the
-  software has been installed:</para>
+  <para>Некоторые программы используют жестко зашитые пути к некоторым другим программам, которые еще не установлены.  Чтобы скорректировать этот недостаток, требуется создать ряд символических ссылок, которые
+   будут заменены реальными файлами на протяжении установки программ в этой главе.</para>
 
 <screen revision="sysv"><userinput>ln -sv /tools/bin/{bash,cat,dd,echo,ln,pwd,rm,stty} /bin
 ln -sv /tools/bin/{install,perl} /usr/bin
