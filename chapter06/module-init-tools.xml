@@ -119,7 +119,7 @@ make clean</userinput></screen>
       <varlistentry id="insmod">
         <term><command>insmod</command></term>
         <listitem>
-          <para>Installs a loadable module in the running kernel</para>
+          <para>Установитеs a loadable module in the running kernel</para>
           <indexterm zone="ch-system-module-init-tools insmod">
             <primary sortas="b-insmod">insmod</primary>
           </indexterm>

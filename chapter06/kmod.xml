@@ -83,7 +83,7 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 -->
-    <para>Install the package, and create symlinks for
+    <para>Установите пакет, and create symlinks for
     compatibility with Module-Init-Tools (the package that previously handled
     Linux kernel modules):</para>
 
@@ -133,7 +133,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="insmod">
         <term><command>insmod</command></term>
         <listitem>
-          <para>Installs a loadable module in the running kernel</para>
+          <para>Установитеs a loadable module in the running kernel</para>
           <indexterm zone="ch-system-kmod insmod">
             <primary sortas="b-insmod">insmod</primary>
           </indexterm>

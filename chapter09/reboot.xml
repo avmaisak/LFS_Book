@@ -37,7 +37,7 @@
     url='&blfs-book;basicnet/dhcp.html'>dhcp</ulink> may be
     useful.</para></listitem>
 
-    <listitem><para>Installing <ulink
+    <listitem><para>Установитеing <ulink
     url='&blfs-book;postlfs/sudo.html'>sudo</ulink> may be useful for
     building packages as a non-root user and easily installing the resulting
     packages in your new system.  </para></listitem>

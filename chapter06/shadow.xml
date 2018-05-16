@@ -199,7 +199,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
     <title>Setting the root password</title>
 
     <para>Choose a password for user <emphasis>root</emphasis> and set it
-    by running:</para>
+    выполнив команду:</para>
 
 <screen role="nodump"><userinput>passwd root</userinput></screen>
 

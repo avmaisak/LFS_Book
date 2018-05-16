@@ -120,7 +120,7 @@ EOF</userinput></screen>
 
 <screen role="nodump"><userinput>timedatectl set-timezone TIMEZONE</userinput></screen>
 
-    <para>You can get list of available time zones by running:</para>
+    <para>You can get list of available time zones выполнив команду:</para>
 
 <screen role="nodump"><userinput>timedatectl list-timezones</userinput></screen>
 

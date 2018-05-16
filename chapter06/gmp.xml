@@ -113,7 +113,7 @@ make html</userinput></screen>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
 
-    <para>Install the package and its documentation:</para>
+    <para>Установите пакет и его документацию:</para>
 
 <screen><userinput remap="install">make install
 make install-html</userinput></screen>

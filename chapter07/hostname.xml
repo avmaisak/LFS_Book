@@ -20,7 +20,7 @@
   creating <filename>/etc/hostname</filename>.</para>
 
   <para>Create the <filename>/etc/hostname</filename> file and enter a
-  hostname by running:</para>
+  hostname выполнив команду:</para>
 
 <screen><userinput>echo "<replaceable>&lt;lfs&gt;</replaceable>" &gt; /etc/hostname</userinput></screen>
 

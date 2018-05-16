@@ -130,7 +130,7 @@ export BUILD_BZIP2=0</userinput></screen>
     <note><para>Several tests related to zlib will fail due to using
     the system version of zlib instead of the internal version.</para></note>
 
-    <para>Install the package and clean up:</para>
+    <para>Установите пакет and clean up:</para>
 
 <screen><userinput remap="install">make install
 unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>

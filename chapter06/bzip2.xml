@@ -77,11 +77,11 @@ make clean</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install the programs:</para>
+    <para>Установите the programs:</para>
 
 <screen><userinput remap="install">make PREFIX=/usr install</userinput></screen>
 
-    <para>Install the shared <command>bzip2</command> binary into the
+    <para>Установите the shared <command>bzip2</command> binary into the
     <filename class="directory">/bin</filename> directory, make
     some necessary symbolic links, and clean up:</para>
 

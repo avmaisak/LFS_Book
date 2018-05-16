@@ -102,7 +102,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     (or separate boot) partition is <filename
     class="partition">sda2</filename>.</para>
 
-    <para>Install the GRUB files into <filename
+    <para>Установите the GRUB files into <filename
     class="directory">/boot/grub</filename> and set up the boot track:</para>
 
     <warning>

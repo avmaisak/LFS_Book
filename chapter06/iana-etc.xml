@@ -59,7 +59,7 @@
     <title>Содержимое пакета Iana-Etc</title>
 
     <segmentedlist>
-      <segtitle>Installed files</segtitle>
+      <segtitle>Установленные файлы</segtitle>
 
       <seglistitem>
         <seg>/etc/protocols and /etc/services</seg>

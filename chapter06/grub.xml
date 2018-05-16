@@ -166,7 +166,7 @@
       <varlistentry id="grub-install">
         <term><command>grub-install</command></term>
         <listitem>
-          <para>Install GRUB on your drive</para>
+          <para>Установите GRUB on your drive</para>
           <indexterm zone="ch-system-grub grub-install">
             <primary sortas="b-grub-install">grub-install</primary>
           </indexterm>

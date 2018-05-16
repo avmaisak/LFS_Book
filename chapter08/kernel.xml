@@ -212,7 +212,7 @@ Kernel hacking  ---&gt;
     class="directory">linux-&linux-version;/Documentation</filename> directory.
     Also, <filename>modprobe.d(5)</filename> may be of interest.</para>
 
-    <para>Install the modules, if the kernel configuration uses them:</para>
+    <para>Установите the modules, if the kernel configuration uses them:</para>
 
 <screen><userinput remap="install">make modules_install</userinput></screen>
 
@@ -255,7 +255,7 @@ Kernel hacking  ---&gt;
 
 <screen><userinput remap="install">cp -iv .config /boot/config-&linux-version;</userinput></screen>
 
-    <para>Install the documentation for the Linux kernel:</para>
+    <para>Установите the documentation for the Linux kernel:</para>
 
 <screen><userinput remap="install">install -d /usr/share/doc/linux-&linux-version;
 cp -r Documentation/* /usr/share/doc/linux-&linux-version;</userinput></screen>
@@ -341,7 +341,7 @@ EOF</userinput></screen>
     <title>Содержимое пакета Linux</title>
 
     <segmentedlist>
-      <segtitle>Installed files</segtitle>
+      <segtitle>Установленные файлы</segtitle>
       <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>

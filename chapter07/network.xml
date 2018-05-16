@@ -149,7 +149,7 @@ EOF</userinput></screen>
      is used for establishing the system's hostname.</para>
 
      <para>Create the <filename>/etc/hostname</filename> file and enter a
-     hostname by running:</para>
+     hostname выполнив команду:</para>
 
 <screen><userinput>echo "<replaceable>&lt;lfs&gt;</replaceable>" &gt; /etc/hostname</userinput></screen>
 
@@ -202,7 +202,7 @@ EOF</userinput></screen>
      <para>Even if not using a network card, a valid FQDN is still required.
      This is necessary for certain programs to operate correctly.</para>
    
-     <para>Create the  <filename>/etc/hosts</filename> file by running:</para>
+     <para>Create the  <filename>/etc/hosts</filename> file выполнив команду:</para>
 
 <screen><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
 <literal># Begin /etc/hosts
@@ -227,7 +227,7 @@ EOF</userinput></screen>
 <!--  This is not very useful
 
      <para>If a network card is not going to be configured, create the
-     <filename>/etc/hosts</filename> file by running:</para>
+     <filename>/etc/hosts</filename> file выполнив команду:</para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
 <literal># Begin /etc/hosts (no network card version)

@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Man-pages пакет включает в себя  over 2,200 man pages.</para>
+    <para>Пакет Man-pages включает в себя  более чем 2,200 справочных страниц.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Man-pages</title>
 
-    <para>Install Man-pages by running:</para>
+    <para>Установите пакет Man-pages выполнив команду:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
@@ -50,10 +50,10 @@
     <title>Содержимое пакета Man-pages</title>
 
     <segmentedlist>
-      <segtitle>Installed files</segtitle>
+      <segtitle>Установленные файлы</segtitle>
 
       <seglistitem>
-        <seg>various man pages</seg>
+        <seg>различные страницы руководств</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -65,8 +65,7 @@
       <varlistentry id="man-pages">
         <term><filename>man pages</filename></term>
         <listitem>
-          <para>Describe C programming language functions, important
-          device files, and significant configuration files</para>
+          <para>Описание функций языка Си, важные файлы устройств и файлы конфигурации</para>
           <indexterm zone="ch-system-man-pages man-pages">
             <primary sortas="e-man-pages">man pages</primary>
           </indexterm>

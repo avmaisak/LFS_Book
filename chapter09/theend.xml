@@ -48,7 +48,7 @@ EOF</userinput></screen>
   <filename>/etc/lfs-release</filename> is recommended for compatibility with
   the non-systemd branch. By having this file, it is very easy for you (and for
   us if you need to ask for help at some point) to find out which LFS version
-  is installed on the system. Create this file by running:</para>
+  is installed on the system. Create this file выполнив команду:</para>
 
 <screen revision="systemd"><userinput>echo &versiond; &gt; /etc/lfs-release</userinput></screen>
 

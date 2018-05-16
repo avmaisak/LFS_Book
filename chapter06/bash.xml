@@ -80,7 +80,7 @@
 
 <screen><userinput remap="test">su nobody -s /bin/bash -c "PATH=$PATH make tests"</userinput></screen>
 
-    <para>Install the package and move the main executable to
+    <para>Установите пакет and move the main executable to
     <filename class='directory'>/bin</filename>:</para>
 
 <screen><userinput remap="install">make install

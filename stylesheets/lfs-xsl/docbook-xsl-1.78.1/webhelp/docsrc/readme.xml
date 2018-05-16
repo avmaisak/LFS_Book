@@ -237,7 +237,7 @@
     <section>
       <sectioninfo>
         <abstract>
-          <para>Installation instructions</para>
+          <para>Установитеation instructions</para>
         </abstract>
       </sectioninfo>
       <title>Generating webhelp output using the Ant build.xml

@@ -209,7 +209,7 @@ unset GCC_INCDIR</userinput></screen>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Install the configuration file и выполните командуtime directory for
+    <para>Установите the configuration file и выполните командуtime directory for
     <command>nscd</command>:</para>
 
 <screen><userinput remap="install">cp -v ../nscd/nscd.conf /etc/nscd.conf
@@ -321,7 +321,7 @@ EOF</userinput></screen>
     <sect3>
     <title>Adding time zone data</title>
 
-    <para>Install and set up the time zone data with the following:</para>
+    <para>Установите and set up the time zone data with the following:</para>
 <screen><userinput>tar -xf ../../tzdata&tzdata-version;.tar.gz
 
 ZONEINFO=/usr/share/zoneinfo

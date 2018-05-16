@@ -95,7 +95,7 @@ mkdir -pv /etc/udev/rules.d</userinput></screen>
 
 <screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
 
-    <para>Install some custom rules and support files useful in an LFS 
+    <para>Установите some custom rules and support files useful in an LFS 
     environment:</para>
 
 <screen><userinput remap="install">tar -xvf ../&udev-lfs-version;.tar.bz2

@@ -134,11 +134,11 @@ make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>
     for details on creating and enabling swap space.  Two tests, f_bigalloc_badinode
     and f_bigalloc_orphan_list, are known ot fail.</para>
 
-    <para>Install the binaries, documentation, and shared libraries:</para>
+    <para>Установите the binaries, documentation, and shared libraries:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Install the static libraries and headers:</para>
+    <para>Установите the static libraries and headers:</para>
 
 <screen><userinput remap="install">make install-libs</userinput></screen>
 

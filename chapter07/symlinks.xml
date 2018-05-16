@@ -46,7 +46,7 @@
    
       <para>The naming scheme can be customized by creating custom Udev
       rules.  A script has been included that generates the initial rules.
-      Generate these rules by running:</para>
+      Generate these rules выполнив команду:</para>
 
 <screen role="install"><userinput>bash /lib/udev/init-net-rules.sh</userinput></screen>
 
