@@ -47,7 +47,7 @@
 
 <screen><userinput remap="pre">sed -i s/mawk// configure</userinput></screen>
 
-    <para>Необходимо подготовить пакет Ncurses к компиляции:</para>
+    <para>Подготовьте пакет Ncurses к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools \
             --with-shared   \

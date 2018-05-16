@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Xz</title>
 
-    <para>Необходимо подготовить пакет Xz к компиляции:</para>
+    <para>Подготовьте пакет Xz к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

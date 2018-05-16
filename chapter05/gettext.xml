@@ -45,7 +45,7 @@
 
     <para>Для временного набора инструментов, необходимо скомпилировать и установить только три программы из пакета Gettext.</para>
 
-    <para>Необходимо подготовить пакет Gettext к компиляции:</para>
+    <para>Подготовьте пакет Gettext к компиляции:</para>
 
 <screen><userinput remap="configure">cd gettext-tools
 EMACS="no" ./configure --prefix=/tools --disable-shared</userinput></screen>

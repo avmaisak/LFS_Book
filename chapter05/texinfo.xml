@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Texinfo</title>
 
-    <para>Необходимо подготовить пакет к компиляции:</para>
+    <para>Подготовьте пакет к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

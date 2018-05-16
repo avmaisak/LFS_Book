@@ -50,7 +50,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Необходимо подготовить пакет Libstdc++ к компиляции:</para>
+    <para>Подготовьте пакет Libstdc++ к компиляции:</para>
 
 <screen><userinput remap="configure">../libstdc++-v3/configure           \
     --host=$LFS_TGT                 \

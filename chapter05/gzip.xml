@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Gzip</title>
 
-    <para>Необходимо подготовить пакет Gzip к компиляции:</para>
+    <para>Подготовьте пакет Gzip к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 

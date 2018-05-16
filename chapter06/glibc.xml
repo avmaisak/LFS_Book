@@ -40,17 +40,9 @@
   <sect2 role="installation">
     <title>Установка пакета Glibc</title>
 
-    <note><para>The Glibc build system is self-contained and will install
-    perfectly, even though the compiler specs file and linker are still
-    pointing to <filename class="directory">/tools</filename>. The specs
-    and linker cannot be adjusted before the Glibc install because the
-    Glibc autoconf tests would give false results and defeat the goal
-    of achieving a clean build.</para></note>
+    <note><para>Система сборки Glibc самодостаточная и выполнит установку хорошо, даже несмотря на то, что служебные файлы и линковщик по прежнему указывают на каталог <filename class="directory">/tools</filename>. Перенастроить эти файлы нельзя до установки окончательного варианта пакета Glibc, потому что тесты программы autoconf завершатся с ошибкой и победят цель достижения чистой сборки.</para></note>
 
-    <para>Some of the Glibc programs use the non-FHS compilant
-    <filename class="directory">/var/db</filename> directory to store
-    their runtime data. Apply the following patch to make such programs
-    store their runtime data in the FHS-compliant locations:</para>
+    <para>Некоторые их программ пакета Glibc используют не совместимые со стандартом FHS каталоги и файлы, например каталог <filename class="directory">/var/db</filename>, предназначенный для хранения данных во время выполнения. Примените следующий патч (заплатку) чтобы исправить несовместимость со стандартом LSB:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
 <!--
@@ -58,14 +50,12 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-glob-patch;</userinput></screen>
 -->
-    <para>First create a compatibility symlink to avoid references to /tools in
-    our final glibc:</para>
+    <para>Для начала создайте символическую ссылку для обеспечения совместимости и избежать ссылок на каталог /tools в конечной установке пакета glibc:</para>
 
 <screen><userinput remap="pre">ln -sfv /tools/lib/gcc /usr/lib</userinput></screen>
 
-    <para>Determine the GCC include directory and create a symlink for LSB
-    compliance. Additionally, for x86_64, create a compatibility symlink
-    required for the dynamic loader to function correctly:</para>
+    <para>Определите каталог GCC include и создайте символическую ссылку для соблюдения стандартов LSB. Кроме того, для x86_64 создайте символическую ссылку совместимости
+     для правильной работы динамического загрузчика:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
     i?86)    GCC_INCDIR=/usr/lib/gcc/$(uname -m)-pc-linux-gnu/&gcc-version;/include
@@ -77,18 +67,16 @@
     ;;
 esac</userinput></screen>
 
-    <para>Remove a file that may be left over from a previous build attempt:
-    </para>
+    <para>Удалите файл, который может быть оставлен после предыдущей попытки сборки:</para>
 
 <screen><userinput remap="pre">rm -f /usr/include/limits.h</userinput></screen>
 
-    <para>The Glibc documentation recommends building Glibc
-    in a dedicated build directory:</para>
+    <para>В документаци к пакету Glibc рекомендуется выполнять компиляцию в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Prepare Glibc к компиляции:</para>
+    <para>Подготовьте Glibc к компиляции:</para>
 
 <screen><userinput remap="configure">CC="gcc -isystem $GCC_INCDIR -isystem /usr/include" \
 ../configure --prefix=/usr                          \
@@ -99,38 +87,33 @@ cd       build</userinput></screen>
 unset GCC_INCDIR</userinput></screen>
 
    <variablelist>
-      <title>The meaning of the options and new configure parameters:</title>
+      <title>Значение опций, аргументов и параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>CC="gcc -isystem $GCC_INCDIR -isystem /usr/include"</parameter></term>
         <listitem>
-          <para>Setting the location of both gcc and system include directories
-          avoids introduction of invalid paths in debugging symbols.</para>
+          <para>Установка пути к gcc и каталога с системными заголовочными файлами избегает проблем создания недопустимых путей в отладочных символах.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-werror</parameter></term>
         <listitem>
-          <para>This option disables the -Werror option passed to
-          GCC.  This is necessary for running the test suite.</para>
+          <para>Аргумент отключает опцию -Werror передаваемую в GCC. Это необходимо сделать для корректного выполнения набора тестов.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-stack-protector=strong</parameter></term>
         <listitem>
-          <para>This option increases system security by adding
-          extra code to check for buffer overflows, such as stack
-          smashing attacks.</para>
+          <para>Аргумент усиливает безопасность системы, добавляя дополнительный код для проверки на переполнение буфера, например при smashing атаке на стек.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>libc_cv_slibdir=/lib</parameter></term>
         <listitem>
-          <para>This variable sets the correct library for all
-          systems.  We do not want lib64 to be used.</para>
+          <para>Аргумент указывает корректную библиотеку для всех архитектур. Нет необходимости использовать lib64.</para>
         </listitem>
       </varlistentry>
 
@@ -141,30 +124,26 @@ unset GCC_INCDIR</userinput></screen>
 <screen><userinput remap="make">make</userinput></screen>
 
     <important>
-      <para>In this section, the test suite for Glibc is considered critical.
-      Не пропускайте их выполнение ни при каких обстоятельствах.</para>
+      <para>В этом разделе выполнение наборов тестов пакета Glibc особенно важно. Не пропускайте их выполнение ни при каких обстоятельствах.</para>
     </important>
 
-    <para>Generally a few tests do not pass. The test failures listed below
-    are usually safe to ignore.</para>
+    <para>Как правило, некоторые тесты завершатся с ошибкой. Тесты, завершенные с ошибкой и перечисленные ниже, можно  игнорировать.</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>You may see some test failures.  The Glibc test suite is
-    somewhat dependent on the host system.  This is a list of the most common
-    issues seen for some versions of LFS:</para>
+    <para>Можно наблюдать некоторые ошибки при тестировании. Выполнение набора тестов Glibc сильно зависит от хост-системы. Ниже приведен список наиболее распространённых проблем, наблюдаемых в некоторых версиях LFS:</para>
 
     <itemizedlist>
 
       <listitem>
         <para><emphasis>misc/tst-ttyname</emphasis>
-        is known to fail in the LFS chroot environment.</para>
+		  завершается с ошибкой в среде chroot LFS.</para>
       </listitem>
 
       <listitem>
         <para><emphasis>posix/tst-getaddrinfo4</emphasis> and
         <emphasis>posix/tst-getaddrinfo5</emphasis>
-        may fail on some architectures.</para>
+		  на некоторых архитектурах может завершиться с ошибкой.</para>
       </listitem>
 <!--
       <listitem>
@@ -193,9 +172,9 @@ unset GCC_INCDIR</userinput></screen>
 -->
     </itemizedlist>
 
-    <para>Though it is a harmless message, the install stage of Glibc will
-    complain about the absence of <filename>/etc/ld.so.conf</filename>.
-    Prevent this warning with:</para>
+    <para>Хотя это безобидное сообщение, на этапе установки Glibc будет
+     выдавать предупреждение об отсутствии файла <filename> /etc/ld.so.conf </filename>.
+     Предотвратите это предупреждение, выполнив команду:</para>
 
 <screen><userinput remap="install">touch /etc/ld.so.conf</userinput></screen>
 

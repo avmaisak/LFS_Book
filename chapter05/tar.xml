@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета Tar</title>
 
-    <para>Необходимо подготовить пакет Tar к компиляции:</para>
+    <para>Подготовьте пакет Tar к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools</userinput></screen>
 
