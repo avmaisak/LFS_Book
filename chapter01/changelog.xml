@@ -162,7 +162,7 @@
       <itemizedlist>
 			<listitem>
            <para>[bdubbs] - Обновлено до several urls to use https.
-           Thanks to avmaisak for the patch. Исправления
+           Спасибо avmaisak за предоставление патча. Исправления
            <ulink url="&lfs-ticket-root;4247">#4247</ulink>.</para>
         </listitem>
         <listitem>

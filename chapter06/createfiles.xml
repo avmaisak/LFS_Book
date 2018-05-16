@@ -34,7 +34,7 @@
     <primary sortas="e-/var/log/wtmp">/var/log/wtmp</primary>
   </indexterm>
 
-  <para>Некоторые программы используют жестко зашитые пути к некоторым другим программам, которые еще не установлены.  Чтобы скорректировать этот недостаток, требуется создать ряд символических ссылок, которые
+  <para>Некоторые программы используют жестко зашитые пути к некоторым другим программам, которые еще не установлены. Чтобы скорректировать этот недостаток, требуется создать ряд символических ссылок, которые
    будут заменены реальными файлами на протяжении установки программ в этой главе.</para>
 
 <screen revision="sysv"><userinput>ln -sv /tools/bin/{bash,cat,dd,echo,ln,pwd,rm,stty} /bin
@@ -67,12 +67,12 @@ ln -sv bash /bin/sh</userinput></screen>
 <!--sed 's/tools/usr/' /tools/lib/libstdc++.la > /usr/lib/libstdc++.la
    sed 's/tools/usr/' /tools/lib/lib${lib}.la > /usr/lib/lib${lib}.la-->
   <variablelist>
-    <title>The purpose of each link:</title>
+    <title>Описание ссылок</title>
 
     <varlistentry>
       <term><parameter><filename>/bin/bash</filename></parameter></term>
       <listitem>
-        <para>Many <command>bash</command> scripts specify
+        <para>Большинство <command>bash</command> сценариев указывают на
         <filename>/bin/bash</filename>.</para>
       </listitem>
     </varlistentry>
@@ -80,55 +80,54 @@ ln -sv bash /bin/sh</userinput></screen>
     <varlistentry>
       <term><parameter><filename>/bin/cat</filename></parameter></term>
       <listitem>
-        <para>This pathname is hard-coded into Glibc's configure script.</para>
+        <para>Этот путь жестко закодирован в сценарии конфигурирования Glibc.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/bin/dd</filename></parameter></term>
       <listitem>
-        <para>The path to <filename>dd</filename> will be hard-coded into the
-        <filename>/usr/bin/libtool</filename> utility.</para>
+        <para>Путь к <filename>dd</filename> будет жестко закодирован в утилите
+        <filename>/usr/bin/libtool</filename></para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/bin/echo</filename></parameter></term>
       <listitem>
-        <para>This is to satisfy one of the tests in Glibc's test suite, which
-        expects <filename>/bin/echo</filename>.</para>
+        <para>Используется для тестирования Glibc. Наборам тестов требуется
+        <filename>/bin/echo</filename>.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/usr/bin/install</filename></parameter></term>
       <listitem>
-        <para>The path to <filename>install</filename> will be hard-coded into
-        the <filename>/usr/lib/bash/Makefile.inc</filename> file.</para>
+        <para>Путь к <filename>install</filename> будет жестко закодирован в файле
+        <filename>/usr/lib/bash/Makefile.inc</filename></para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/bin/ln</filename></parameter></term>
       <listitem>
-        <para>The path to <filename>ln</filename> will be hard-coded into the
+        <para>Путь к <filename>ln</filename> будет жестко закодирован в файле
         <filename>/usr/lib/perl5/&perl-version;/&lt;target-triplet&gt;/Config_heavy.pl</filename>
-         file.</para>
+         </para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/bin/pwd</filename></parameter></term>
       <listitem>
-        <para>Some <command>configure</command> scripts, particularly Glibc's,
-        have this pathname hard-coded.</para>
+        <para>Некоторые <command>configure</command> сценарии, в частности Glibc's, имеют жестко закодированный путь</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/bin/rm</filename></parameter></term>
       <listitem>
-        <para>The path to <filename>rm</filename> will be hard-coded into the
+        <para>Путь к <filename>rm</filename> будет жестко закодирован в файле
         <filename>/usr/lib/perl5/&perl-version;/&lt;target-triplet&gt;/Config_heavy.pl</filename>
          file.</para>
       </listitem>
@@ -137,31 +136,30 @@ ln -sv bash /bin/sh</userinput></screen>
     <varlistentry>
       <term><parameter><filename>/bin/stty</filename></parameter></term>
       <listitem>
-        <para>This pathname is hard-coded into Expect, therefore it is needed
-        for Binutils and GCC test suites to pass.</para>
+        <para>Этот путь жестко закодирован в программе Expect, кроме того он необходим для выполнения набора тестов такими пакетами как Binutils и GCC.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/usr/bin/perl</filename></parameter></term>
       <listitem>
-        <para>Many Perl scripts hard-code this path to the
-        <command>perl</command> program.</para>
+        <para>Большинство Perl сценариев имеют жестко закодированный путь к программе
+        <command>perl</command></para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/usr/lib/libgcc_s.so{,.1}</filename></parameter></term>
       <listitem>
-        <para>Glibc needs this for the pthreads library to work.</para>
+        <para>Glibc требует эти ссылки для правильной работы библиотеки pthreads.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/usr/lib/libstdc++{,.6}</filename></parameter></term>
       <listitem>
-        <para>This is needed by several tests in Glibc's test suite, as well as
-        for C++ support in GMP.</para>
+        <para>Эти ссылки необходимы для некоторых тестов в Glibc, а также
+         для поддержки C ++ в GMP.</para>
       </listitem>
     </varlistentry>
 <!--
@@ -177,37 +175,29 @@ ln -sv bash /bin/sh</userinput></screen>
     <varlistentry revision="systemd">
       <term><parameter><filename>/usr/lib/lib{blkid,lzma,mount,uuid}.{a,la,so*}</filename></parameter></term>
       <listitem>
-        <para>These links prevent systemd utilities from acquiring an
-        unnecessary reference to the
-        <filename class="directory">/tools</filename> directory.</para>
+        <para>Эти ссылки не позволяют утилитам systemd иметь ссылки на каталог
+        <filename class="directory">/tools</filename>.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter><filename>/bin/sh</filename></parameter></term>
       <listitem>
-        <para>Many shell scripts hard-code <filename>/bin/sh</filename>.</para>
+        <para>Многие сценарии оболочки имеют жестко закодированный путь к
+		  <filename>/bin/sh</filename>.</para>
       </listitem>
     </varlistentry>
 
   </variablelist>
 
-  <para>Historically, Linux maintains a list of the mounted file systems in the
-  file <filename>/etc/mtab</filename>. Modern kernels maintain this list
-  internally and exposes it to the user via the <filename
-  class="directory">/proc</filename> filesystem. To satisfy utilities that
-  expect the presence of <filename>/etc/mtab</filename>, create the following
-  symbolic link:</para>
+  <para>Исторически, Linux поддерживает список примонтированных файловых систем в файле <filename>/etc/mtab</filename>. Современные ядра Linux имеют поддержку такого списка внутри себя, и предоставляют его через виртуальный каталог <filename
+  class="directory">/proc</filename>. Для осуществления поддержки тех утилит и программ, которым нужны ссылка на <filename>/etc/mtab</filename> необходимо создать следующую символическую ссылку:</para>
 
 <screen><userinput>ln -sv /proc/self/mounts /etc/mtab</userinput></screen>
 
-  <para>In order for user <systemitem class="username">root</systemitem> to be
-  able to login and for the name <quote>root</quote> to be recognized, there
-  must be relevant entries in the <filename>/etc/passwd</filename> and
-  <filename>/etc/group</filename> files.</para>
+  <para>Для осуществления возможности авторизации пользователем <systemitem class="username">root</systemitem> от имени <quote>root</quote>, должны быть соответствующие записи в в файлах <filename>/etc/passwd</filename> и <filename>/etc/group</filename>.</para>
 
-  <para>Create the <filename>/etc/passwd</filename> file by running the following
-  command:</para>
+  <para>Необходимо создать файл <filename>/etc/passwd</filename>:</para>
 
 <screen revision="sysv"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
 <literal>root:x:0:0:root:/root:/bin/bash
@@ -233,11 +223,10 @@ systemd-coredump:x:79:79:systemd Core Dumper:/:/bin/false
 nobody:x:99:99:Unprivileged User:/dev/null:/bin/false</literal>
 EOF</userinput></screen>
 
-  <para>The actual password for <systemitem class="username">root</systemitem>
-  (the <quote>x</quote> used here is just a placeholder) will be set later.</para>
+  <para>Фактический пароль для <systemitem class="username">root</systemitem>
+  (символ <quote>x</quote> здесь используется только для заполнения) будет указан позднее.</para>
 
-  <para>Create the <filename>/etc/group</filename> file by running the following
-  command:</para>
+  <para>Необходимо создать файл<filename>/etc/group</filename>:</para>
 
 <screen revision="sysv"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
 <literal>root:x:0:
@@ -300,24 +289,11 @@ nogroup:x:99:
 users:x:999:</literal>
 EOF</userinput></screen>
 
-  <para>The created groups are not part of any standard&mdash;they are groups
-  decided on in part by the requirements of the Udev configuration in this
-  chapter, and in part by common convention employed by a number of existing
-  Linux distributions. In addition, some test suites rely on specific users
-  or groups.  The Linux Standard Base (LSB, available at <ulink
-  url="http://www.linuxbase.org"/>) recommends only that, besides the group
-  <systemitem class="groupname">root</systemitem> with a Group ID (GID) of 0,
-  a group <systemitem class="groupname">bin</systemitem> with a GID of 1 be
-  present. All other group names and GIDs can be chosen freely by the system
-  administrator since well-written programs do not depend on GID numbers, but
-  rather use the group's name.</para>
+  <para>Созданные группы не являются частью какого-либо стандарта. Эти группы необходимы для конфигурации Udev в этой главе, и частично общей конвенцией используемой рядом существующих дистрибутивов Linux. Кроме того, некоторые наборы тестов зависят от конкретных пользователей и групп. Специфкация LSB (The Linux Standard Base, доступная по ссылке <ulink
+  url="https://wiki.linuxfoundation.org/lsb/start"/>) рекомендует, чтобы кроме группы root с идентификатором группы (GID), равным 0, присутствовала группа bin с GID, равным 1. Все другие имена групп и идентификаторы GID могут свободно выбираться системным администратором, поскольку хорошо написанные программы не зависят от номеров GID, а используют только имя группы.</para>
 
-  <para>To remove the <quote>I have no name!</quote> prompt, start a new
-  shell. Since a full Glibc was installed in <xref
-  linkend="chapter-temporary-tools"/> and the
-  <filename>/etc/passwd</filename> and <filename>/etc/group</filename>
-  files have been created, user name and group name resolution will now
-  work:</para>
+  <para>Для того, чтобы убрать приглашение коммандной строки <quote>I have no name!</quote>, необходимо запустить новую команжную оболочку. Когда был установлен пакет Glibc в главе <xref
+  linkend="chapter-temporary-tools"/> и файл <filename>/etc/group</filename> был создан, имя пользователя и группы, теперь будут работать:</para>
 
 <screen role="nodump"><userinput>exec /tools/bin/bash --login +h</userinput></screen>
 
