@@ -48,6 +48,7 @@
 <!ENTITY kernel          "https://www.kernel.org/pub/">
 <!ENTITY sourceforge     "https://prdownloads.sourceforge.net/">
 <!ENTITY savannah        "https://download.savannah.gnu.org">
+<!ENTITY github          "https://github.com/">
 
 <!ENTITY % packages-entities SYSTEM "packages.ent">
 %packages-entities;
