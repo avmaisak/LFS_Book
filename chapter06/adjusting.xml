@@ -8,16 +8,11 @@
 <sect1 id="ch-system-adjusting">
   <?dbhtml filename="adjusting.html"?>
 
-  <title>Adjusting the Toolchain</title>
+  <title>Перенастройка временного набора инструментов</title>
 
-  <para>Now that the final C libraries have been installed, it is time to adjust
-  the toolchain so that it will link any
-  newly compiled program against these new libraries.</para>
+  <para>Теперь, когда все библиотеки Си были установлены, необходимо перенастроить используемый сейчас временный набор инструментов, чтобы он выполнял линковку новых скомпилированных программ с установленными библиотеками.</para>
 
-  <para>First, backup the <filename class="directory">/tools</filename> linker,
-  and replace it with the adjusted linker we made in chapter 5. We'll also create
-  a link to its counterpart in
-  <filename class="directory">/tools/$(uname -m)-pc-linux-gnu/bin</filename>:</para>
+  <para>Сначала,выполните резервное копирование линковщика <filename class="directory">/tools</filename>, и замените его настроенным линковщиком в главе 5. Также будут созданы ссылки на их копии в каталоге <filename class="directory">/tools/$(uname -m)-pc-linux-gnu/bin</filename>:</para>
 
 <screen><userinput>mv -v /tools/bin/{ld,ld-old}
 mv -v /tools/$(uname -m)-pc-linux-gnu/bin/{ld,ld-old}
