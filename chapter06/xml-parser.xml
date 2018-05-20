@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета XML::Parser</title>
 
-    <para>Prepare XML::Parser к компиляции:</para>
+    <para>Подготовьте пакет XML::Parser к компиляции:</para>
 
 <screen><userinput remap="configure">perl Makefile.PL</userinput></screen>
 

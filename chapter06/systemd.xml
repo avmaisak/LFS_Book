@@ -65,7 +65,7 @@ sed -i '53 a#include &lt;sys/mount.h&gt;' src/shared/bus-unit-util.c</userinput>
 
 <screen><userinput remap="pre">sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in</userinput></screen>
 
-    <para>Prepare systemd к компиляции:</para>
+    <para>Подготовьте пакет systemd к компиляции:</para>
 
     <screen><userinput remap="configure">mkdir -p build
 cd       build

@@ -63,7 +63,7 @@
 
 <screen revision="systemd"><userinput remap="pre">rm -vf /usr/include/{blkid,libmount,uuid}</userinput></screen>
 
-    <para>Prepare Util-linux к компиляции:</para>
+    <para>Подготовьте пакет Util-linux к компиляции:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \

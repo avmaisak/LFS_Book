@@ -44,7 +44,7 @@
 
 <screen><userinput remap="pre">sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in</userinput></screen>
 
-    <para>Prepare Ncurses к компиляции:</para>
+    <para>Подготовьте пакет Ncurses к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
             --mandir=/usr/share/man \

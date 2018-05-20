@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета Popt</title>
 
-    <para>Prepare Popt4 к компиляции:</para>
+    <para>Подготовьте пакет Popt4 к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 

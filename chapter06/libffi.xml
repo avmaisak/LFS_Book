@@ -53,7 +53,7 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
     -e 's/^Cflags: -I${includedir}/Cflags:/' \
     -i libffi.pc.in</userinput></screen>
 
-    <para>Prepare libffi к компиляции:</para>
+    <para>Подготовьте пакет libffi к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
 

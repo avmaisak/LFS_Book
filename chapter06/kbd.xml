@@ -58,7 +58,7 @@
 <screen><userinput remap="pre">sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
 sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in</userinput></screen>
 
-    <para>Prepare Kbd к компиляции:</para>
+    <para>Подготовьте пакет Kbd к компиляции:</para>
 
 <screen><userinput remap="configure">PKG_CONFIG_PATH=/tools/lib/pkgconfig ./configure --prefix=/usr --disable-vlock</userinput></screen>
 

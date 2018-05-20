@@ -45,7 +45,7 @@
 
 <screen><userinput remap="pre">sed -i 's:\\\${:\\\$\\{:' intltool-update.in</userinput></screen>
 
-    <para>Prepare Intltool к компиляции:</para>
+    <para>Подготовьте пакет Intltool к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
@@ -87,7 +87,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
       <varlistentry id="intltoolize">
         <term><command>intltoolize</command></term>
         <listitem>
-          <para>Prepares a package to use intltool</para>
+          <para>Подготовьте пакетs a package to use intltool</para>
           <indexterm zone="ch-system-intltool intltoolize">
             <primary sortas="b-intltoolize">intltoolize</primary>
           </indexterm>

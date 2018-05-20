@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Установка пакета OpenSSL</title>
 
-    <para>Prepare OpenSSL к компиляции:</para>
+    <para>Подготовьте пакет OpenSSL к компиляции:</para>
 
 <screen><userinput remap="configure">./config --prefix=/usr         \
          --openssldir=/etc/ssl \

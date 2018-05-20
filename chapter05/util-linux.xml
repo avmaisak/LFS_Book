@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Необходимо подготовить пакет Util-linux к компиляции:</title>
 
-    <para>Prepare Util-linux к компиляции:</para>
+    <para>Подготовьте пакет Util-linux к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/tools                \
             --without-python               \

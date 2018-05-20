@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Установка пакета PCRE</title>
 
-    <para>Prepare PCRE к компиляции:</para>
+    <para>Подготовьте пакет PCRE к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr \
             --docdir=/usr/share/doc/pcre-&pcre-version; \

@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета GRUB</title>
 
-    <para>Prepare GRUB к компиляции:</para>
+    <para>Подготовьте пакет GRUB к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
             --sbindir=/sbin        \
@@ -238,7 +238,7 @@
       <varlistentry id="grub-mknetdir">
         <term><command>grub-mknetdir</command></term>
         <listitem>
-          <para>Prepares a GRUB netboot directory</para>
+          <para>Подготовьте пакетs a GRUB netboot directory</para>
           <indexterm zone="ch-system-grub grub-mknetdir">
             <primary sortas="b-grub-mknetdir">grub-mknetdir</primary>
           </indexterm>

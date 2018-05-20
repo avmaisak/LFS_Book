@@ -44,7 +44,7 @@
 
 <screen><userinput remap="pre">sed -i '/lib_LIBRARIES =/d' Makefile.in</userinput></screen>
 -->
-    <para>Prepare Bison к компиляции:</para>
+    <para>Подготовьте пакет Bison к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/bison-&bison-version;</userinput></screen>
 

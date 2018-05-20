@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Zlib пакет включает в себя  compression and decompression routines used by
-    some programs.</para>
+    <para>Пакет Zlib включает в себя библиотеку для сжатия и распаковки, которую используют некоторые программы.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Zlib</title>
 
-    <para>Prepare Zlib к компиляции:</para>
+    <para>Подготовьте пакет Zlib к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
@@ -57,10 +56,10 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>The shared library needs to be moved to
-    <filename class="directory">/lib</filename>, and as a result the
-    <filename class="extension">.so</filename> file in
-    <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
+    <para>Разделяемые библиотеки нужно переместить в
+    <filename class="directory">/lib</filename>, и в результате
+    <filename class="extension">.so</filename> файл в
+    <filename class="directory">/usr/lib</filename>нужно будет пересоздать:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libz.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libz.so) /usr/lib/libz.so</userinput></screen>
@@ -86,8 +85,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libz.so) /usr/lib/libz.so</userinput></scr
       <varlistentry id="libz">
         <term><filename class="libraryfile">libz</filename></term>
         <listitem>
-          <para>Содержит compression and decompression functions used by
-          some programs</para>
+          <para>Содержит функции дляя сжатия и распаковки, которые используют некоторые программы</para>
           <indexterm zone="ch-system-zlib libz">
             <primary sortas="c-libz">libz</primary>
           </indexterm>

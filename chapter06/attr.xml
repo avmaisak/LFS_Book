@@ -55,7 +55,7 @@
 
 <screen><userinput remap="pre">sed -i 's:{(:\\{(:' test/run</userinput></screen>
 
-    <para>Prepare Attr к компиляции:</para>
+    <para>Подготовьте пакет Attr к компиляции:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr \
             --bindir=/bin \

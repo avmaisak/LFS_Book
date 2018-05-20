@@ -44,7 +44,7 @@
 
  <screen><userinput remap="pre">patch -Np1 -i ../&tar-manpage-patch;</userinput></screen>
 -->
-    <para>Prepare Tar к компиляции:</para>
+    <para>Подготовьте пакет Tar к компиляции:</para>
 
 <screen><userinput remap="configure">FORCE_UNSAFE_CONFIGURE=1  \
 ./configure --prefix=/usr \

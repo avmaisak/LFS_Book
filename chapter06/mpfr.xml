@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета MPFR</title>
 
-    <para>Prepare MPFR к компиляции:</para>
+    <para>Подготовьте пакет MPFR к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr        \
             --disable-static     \

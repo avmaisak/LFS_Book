@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета Texinfo</title>
 
-    <para>Prepare Texinfo к компиляции:</para>
+    <para>Подготовьте пакет Texinfo к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
 

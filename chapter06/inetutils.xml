@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Inetutils</title>
 
-    <para>Prepare Inetutils к компиляции:</para>
+    <para>Подготовьте пакет Inetutils к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr        \
             --localstatedir=/var \

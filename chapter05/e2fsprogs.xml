@@ -48,7 +48,7 @@
 <screen><userinput remap="pre">mkdir -v build
 cd build</userinput></screen>
 
-    <para>Prepare E2fsprogs к компиляции:</para>
+    <para>Подготовьте пакет E2fsprogs к компиляции:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/tools --disable-libblkid --disable-libuuid</userinput></screen>
 
