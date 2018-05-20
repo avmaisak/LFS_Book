@@ -109,7 +109,7 @@ cp -v ld/ld-new /tools/bin</userinput></screen>
       <varlistentry>
         <term><parameter>-C ld clean</parameter></term>
         <listitem>
-          <para>Аргумент сообщает программе make удалить все скомпилированные файлы в подкаталоге <filename class="directory">ld</filename>.</para>
+          <para>Аргумент сообщает программе make удалить все скомпилированые файлы в подкаталоге <filename class="directory">ld</filename>.</para>
         </listitem>
       </varlistentry>
 
