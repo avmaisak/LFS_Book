@@ -81,9 +81,7 @@
       <varlistentry id="file">
         <term><command>file</command></term>
         <listitem>
-          <para>Tries to classify each given file; it does this by performing
-          several tests&mdash;file system tests, magic number tests, and language
-          tests</para>
+          <para>Пытается классифицировать каждый переданный файл; он делает это, выполняя несколько тестов: тесты файловой системы, тесты магических чисел и языковые тесты</para>
           <indexterm zone="ch-system-file file">
             <primary sortas="b-file">file</primary>
           </indexterm>
@@ -93,8 +91,7 @@
       <varlistentry id="libmagic">
         <term><filename class="libraryfile">libmagic</filename></term>
         <listitem>
-          <para>Содержит routines for magic number recognition, used by the
-          <command>file</command> program</para>
+          <para>Подпрограммы для распознавания магических чисел, используемые программой <command>file</command></para>
           <indexterm zone="ch-system-file libmagic">
             <primary sortas="c-libmagic">libmagic</primary>
           </indexterm>
