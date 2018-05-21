@@ -59,7 +59,7 @@
     <para>Разделяемые библиотеки нужно переместить в
     <filename class="directory">/lib</filename>, и в результате
     <filename class="extension">.so</filename> файл в
-    <filename class="directory">/usr/lib</filename>нужно будет пересоздать:</para>
+    <filename class="directory">/usr/lib</filename> нужно будет создать заново:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libz.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libz.so) /usr/lib/libz.so</userinput></screen>
@@ -85,7 +85,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libz.so) /usr/lib/libz.so</userinput></scr
       <varlistentry id="libz">
         <term><filename class="libraryfile">libz</filename></term>
         <listitem>
-          <para>Содержит функции дляя сжатия и распаковки, которые используют некоторые программы</para>
+          <para>Содержит функции для сжатия и распаковки, которые используют некоторые программы</para>
           <indexterm zone="ch-system-zlib libz">
             <primary sortas="c-libz">libz</primary>
           </indexterm>
