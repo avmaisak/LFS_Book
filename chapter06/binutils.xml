@@ -146,7 +146,7 @@ cd       build</userinput></screen>
 
     <important>
       <para>The test suite for Binutils in this section is considered critical.
-      Do not skip it under any circumstances.</para>
+       Не пропускайте их выполнение ни при каких обстоятельствах.</para>
     </important>
 
     <para>Для выполнения тестов, выполните команду:</para>

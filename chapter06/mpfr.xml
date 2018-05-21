@@ -55,7 +55,7 @@ make html</userinput></screen>
 
     <important>
       <para>The test suite for MPFR in this section is considered critical.
-      Do not skip it under any circumstances.</para>
+       Не пропускайте их выполнение ни при каких обстоятельствах.</para>
     </important>
 
     <para>Test the results and ensure that all tests passed:</para>
