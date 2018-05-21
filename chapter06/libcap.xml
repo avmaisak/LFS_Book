@@ -59,7 +59,7 @@
 chmod -v 755 /usr/lib/libcap.so</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make option:</title>
+      <title>Значение аргументов команды make:</title>
 
       <varlistentry>
         <term><parameter>RAISE_SETFCAP=no</parameter></term>

@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Readline package is a set of libraries that offers command-line
-    editing and history capabilities.</para>
+    <para>Пакет Readline - набор библиотек, который предлагает редактирование командной строки и возможности просмотра истории.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,10 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Readline</title>
 
-    <para>Reinstalling Readline will cause the old libraries to be moved to
-    &lt;libraryname&gt;.old. While this is normally not a problem, in some cases
-    it can trigger a linking bug in <command>ldconfig</command>. This can be
-    avoided by issuing the following two seds:</para>
+    <para>Для установки рабочего пакета Readline, необходимо переместить старые библиотеки в &lt;libraryname&gt;.old. Как правило проблем не будет, однако иногда могут возникать ошибки привязки с <command>ldconfig</command>. Это можно обойти, выполнив следующие команды sed:</para>
 
 <screen><userinput remap="pre">sed -i '/MV.*old/d' Makefile.in
 sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
@@ -60,13 +56,13 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 <screen><userinput remap="make">make SHLIB_LIBS="-L/tools/lib -lncursesw"</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the make option:</title>
+      <title>Значение аргументов команды make:</title>
 
       <varlistentry>
         <term><parameter>SHLIB_LIBS="-L/tools/lib -lncursesw"</parameter></term>
         <listitem>
-          <para>This option forces Readline to link against the
-          <filename class="libraryfile">libncursesw</filename> library.</para>
+          <para>Аргумент сообщает выполнить принудительную линковку с библиотекой
+          <filename class="libraryfile">libncursesw</filename>.</para>
         </listitem>
       </varlistentry>
 
@@ -78,8 +74,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
 <screen><userinput remap="install">make SHLIB_LIBS="-L/tools/lib -lncurses" install</userinput></screen>
 
-    <para>Now move the dynamic libraries to a more appropriate location
-    and fix up some symbolic links:</para>
+    <para>Теперь переместите динамические библиотеки в подходящее место и исправьте символические ссылки:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/lib{readline,history}.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libreadline.so) /usr/lib/libreadline.so
@@ -113,8 +108,8 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
       <varlistentry id="libhistory">
         <term><filename class="libraryfile">libhistory</filename></term>
         <listitem>
-          <para>Provides a consistent user interface for recalling lines
-          of history</para>
+          <para>Обеспечивает согласованный пользовательский интерфейс для вызова строк
+           истории</para>
           <indexterm zone="ch-system-readline libhistory">
             <primary sortas="c-libhistory">libhistory</primary>
           </indexterm>
@@ -124,8 +119,8 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
       <varlistentry id="libreadline">
         <term><filename class="libraryfile">libreadline</filename></term>
         <listitem>
-          <para>Provides a set of commands for manipulating text entered in an
-          interactive session of a program.</para>
+          <para>Предоставляет набор команд для манипулирования текстом, введенным в
+           интерактивной сессии программы.</para>
           <indexterm zone="ch-system-readline libreadline">
             <primary sortas="c-libreadline">libreadline</primary>
           </indexterm>
