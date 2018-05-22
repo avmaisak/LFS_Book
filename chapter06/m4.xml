@@ -78,14 +78,7 @@
          <!-- Don't remove the extra space, it prevet a FOP warning. -->
         <term><command>m4 </command></term>
         <listitem>
-          <para>Copies the given files while expanding the macros that they
-          contain [These macros are either built-in or user-defined and can
-          take any number of arguments. Besides performing macro expansion,
-          <command>m4</command> has built-in functions for including named
-          files, running Unix commands, performing integer arithmetic,
-          manipulating text, recursion, etc. The <command>m4</command> program
-          can be used either as a front-end to a compiler or as a macro processor
-          in its own right.]</para>
+          <para>Копирует данные файлы при расширении макросов, которые они содержат. Эти макросы являются встроенными или определяемыми пользователем и могут принимать любое количество аргументов. Помимо выполнения макрорасширения, m4 имеет встроенные функции для включения именованных файлов, выполнения команд Unix, выполнения целочисленной арифметики, обработки текста, рекурсии и т. Д. Программа m4 может использоваться либо как фронт-енд для компилятора, или как самостоятельный макропроцессор.]</para>
           <indexterm zone="ch-system-m4 m4">
             <primary sortas="b-m4">m4</primary>
           </indexterm>
