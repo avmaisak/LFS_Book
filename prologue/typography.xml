@@ -10,7 +10,7 @@
 
   <title>Оформление</title>
 
-  <para>Чтобы упростить работу, в книге используются некоторые соглашения по формлению. Этот раздел 
+  <para>Чтобы упростить работу, в книге используются некоторые соглашения по оформлению. Этот раздел
   содержит все необходимые примеры.</para>
 
 <screen role="nodump"><userinput>./configure --prefix=/usr</userinput></screen>
@@ -35,7 +35,7 @@
 
 <screen><computeroutput>install-info: unknown option '--dir-file=/mnt/lfs/usr/info/dir'</computeroutput></screen>
 
-  <para>Вышеуказанная форма с текстом фиксированной ширины показывает вывод результатов на экран, 
+  <para>Вышеуказанная форма с текстом фиксированной ширины показывает вывод результатов на экран,
   а также  показывает имена файлов, таких как <filename>/etc/ld.so.conf</filename>.</para>
 
   <para><emphasis>акцент</emphasis></para>
@@ -54,7 +54,7 @@ bin:x:1:
 ......</literal>
 EOF</userinput></screen>
 
-  <para>Этот формат используется при создании файлов конфигурации. Первая команда 
+  <para>Этот формат используется при создании файлов конфигурации. Первая команда
   создает файл<filename>$LFS/etc/group</filename> из всего содержимого текста, пока не встретит
   флаг конца файла (EOF). Обычно информация в таком блоке вводится так, как показано.</para>
 
@@ -70,14 +70,14 @@ EOF</userinput></screen>
   <para><filename>passwd(5)</filename></para>
 
   <para>Этот формат используется для ссылки на страницы руководств to refer to a specific manual (man) page.
-  Число, которое указанно внутри скобок, указывает на конкретный раздел руковдоства. 
+  Число, которое указанно внутри скобок, указывает на конкретный раздел руковдоства.
   Например,<command>passwd</command> имеет две страницы. В книге LFS Per,
   эти две страницы будут расположены по адресу
   <filename>/usr/share/man/man1/passwd.1</filename> и
-  <filename>/usr/share/man/man5/passwd.5</filename>. Когда в книгу указанно <filename>passwd(5)</filename> то 
+  <filename>/usr/share/man/man5/passwd.5</filename>. Когда в книгу указанно <filename>passwd(5)</filename> то
   необходимо ссылаться на файл <filename>/usr/share/man/man5/passwd.5</filename>.
-  Команда <command>man passwd</command> отобразит первую страницу руководства по фразе <quote>passwd</quote>, 
-  которая будет ссылаться по пути <filename>/usr/share/man/man1/passwd.1</filename>. 
+  Команда <command>man passwd</command> отобразит первую страницу руководства по фразе <quote>passwd</quote>,
+  которая будет ссылаться по пути <filename>/usr/share/man/man1/passwd.1</filename>.
   Например вам необходимо запустить команду <command>man 5 passwd</command> для прочтения указанной страницы.
   Следует отметить, что большинство страниц руководства не имеют дубликатов названий страниц в разных разделах.
   А значит, указание команды <command>man <replaceable>&lt;название программы&gt;</replaceable></command> вполне достаточно.</para>
