@@ -18,7 +18,7 @@
 <!ENTITY attr-size "336 KB">
 <!ENTITY attr-url "&savannah;/releases/attr/attr-&attr-version;.src.tar.gz">
 <!ENTITY attr-md5 "84f58dec00b60f2dc8fd1c9709291cc7">
-<!ENTITY attr-home "https://savannah.nongnu.org/projects/attr">
+<!ENTITY attr-home "&savannah-nongnu;/projects/attr">
 <!ENTITY attr-ch6-du "3.3 MB">
 <!ENTITY attr-ch6-sbu "меньше чем 0.1 SBU">
 
@@ -137,10 +137,10 @@
 <!-- NOTE: When updating e2fsprogs, remember to check the list
      of acceptable features that can be shown by debugfs in
      chapter02/creatingfilesystem.xml -->
-<!ENTITY e2fsprogs-version "1.44.1">
-<!ENTITY e2fsprogs-size "7,369 KB">
+<!ENTITY e2fsprogs-version "1.44.2">
+<!ENTITY e2fsprogs-size "7,386 KB">
 <!ENTITY e2fsprogs-url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v&e2fsprogs-version;/e2fsprogs-&e2fsprogs-version;.tar.gz">
-<!ENTITY e2fsprogs-md5 "d6079b031682fa947ea0f96013379155">
+<!ENTITY e2fsprogs-md5 "97b1c3603e5465667317775cf020e1a9">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net/">
 <!ENTITY e2fsprogs-ch6-du "58 MB">
 <!ENTITY e2fsprogs-ch6-sbu "5.1 SBU">
@@ -173,7 +173,7 @@
 <!ENTITY expect-size "618 KB">
 <!ENTITY expect-url "&sourceforge;expect/expect&expect-version;.tar.gz">
 <!ENTITY expect-md5 "00fce8de158422f5ccd2666512329bd2">
-<!ENTITY expect-home "https://core.tcl.tk/expect/index">
+<!ENTITY expect-home "https://core.tcl.tk/expect/">
 <!ENTITY expect-ch5-du "3.9 MB">
 <!ENTITY expect-ch5-sbu "0.1 SBU">
 
@@ -416,12 +416,12 @@
 
 <!ENTITY linux-major-version "4">
 <!ENTITY linux-minor-version "16">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-patch-version "10">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "100,617 KB">
+<!ENTITY linux-size "100,618 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "79c176de5ee34417a3921430d56b0e01">
+<!ENTITY linux-md5 "10fb5e17709a7cc345bf0ab673b99d7c">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 4.8.3 / gcc-6.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -470,10 +470,10 @@
 <!ENTITY man-pages-ch6-du "27 MB">
 <!ENTITY man-pages-ch6-sbu "меньше чем 0.1 SBU">
 
-<!ENTITY meson-version "0.46.0">
-<!ENTITY meson-size "1,171 KB">
+<!ENTITY meson-version "0.46.1">
+<!ENTITY meson-size "1,176 KB">
 <!ENTITY meson-url "&github;mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "e3301606017e364a0d7e1c3b755e7a28">
+<!ENTITY meson-md5 "1698f6526574839de5dcdc45e3f7d582">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-ch6-du "16 MB">
 <!ENTITY meson-ch6-sbu "0.1 SBU">
@@ -548,10 +548,10 @@
 <!ENTITY pkgconfig-ch6-du "28 MB">
 <!ENTITY pkgconfig-ch6-sbu "0.3 SBU">
 
-<!ENTITY procps-ng-version "3.3.14">
-<!ENTITY procps-ng-size "906 KB">
+<!ENTITY procps-ng-version "3.3.15">
+<!ENTITY procps-ng-size "884 KB">
 <!ENTITY procps-ng-url "https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-&procps-ng-version;.tar.xz">
-<!ENTITY procps-ng-md5 "fce371ccc1c15a67af9d85e4057e559d">
+<!ENTITY procps-ng-md5 "2b0717a7cb474b3d6dfdeedfbad2eccc">
 <!ENTITY procps-ng-home "https://sourceforge.net/projects/procps-ng">
 <!ENTITY procps-ng-ch6-du "15 MB">
 <!ENTITY procps-ng-ch6-sbu "0.1 SBU">
@@ -626,7 +626,7 @@
 <!ENTITY sysvinit-size "111 KB">
 <!ENTITY sysvinit-url "&savannah;/releases/sysvinit/sysvinit-&sysvinit-version;.tar.bz2">
 <!ENTITY sysvinit-md5 "6a2e0776a9a3e29264ddec738ef0031c">
-<!ENTITY sysvinit-home "https://savannah.nongnu.org/projects/sysvinit">
+<!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
 <!ENTITY sysvinit-ch6-du "1.1 MB">
 <!ENTITY sysvinit-ch6-sbu "меньше чем 0.1 SBU">
 
@@ -682,12 +682,12 @@
 <!ENTITY util-linux-ch6-du "189 MB">
 <!ENTITY util-linux-ch6-sbu "1.1 SBU">
 
-<!ENTITY vim-version "8.0.586">
-<!ENTITY vim-majmin "80">
-<!ENTITY vim-docdir "vim/vim80">
-<!ENTITY vim-size "10,613 KB">
+<!ENTITY vim-version "8.1">
+<!ENTITY vim-majmin "81">
+<!ENTITY vim-docdir "vim/vim81">
+<!ENTITY vim-size "10,995 KB">
 <!ENTITY vim-url "ftp://ftp.vim.org/pub/vim/unix/vim-&vim-version;.tar.bz2">
-<!ENTITY vim-md5 "b35e794140c196ff59b492b56c1e73db">
+<!ENTITY vim-md5 "1739a1df312305155285f0cfa6118294">
 <!ENTITY vim-home "https://www.vim.org/">
 <!ENTITY vim-ch6-du "128 MB">
 <!ENTITY vim-ch6-sbu "1.5 SBU">

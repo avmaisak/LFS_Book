@@ -1,13 +1,13 @@
-<!ENTITY version         "20180517">
+<!ENTITY version         "20180523">
 <!ENTITY short-version   "8.2">  <!-- Used below in &blfs-book;
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20180517-systemd">
+<!ENTITY versiond        "20180523-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd">
 
-<!ENTITY releasedate     "17 Мая, 2018">
+<!ENTITY releasedate     "23 Мая, 2018">
 
 <!ENTITY copyrightdate   "1999-2018"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "8.2">
@@ -47,8 +47,9 @@
 <!ENTITY alpha-gnu       "https://alpha.gnu.org/gnu/">
 <!ENTITY kernel          "https://www.kernel.org/pub/">
 <!ENTITY sourceforge     "https://prdownloads.sourceforge.net/">
-<!ENTITY savannah        "https://download.savannah.gnu.org">
-<!ENTITY github          "https://github.com/">
+<!ENTITY savannah        "https://download.savannah.gnu.org/">
+<!ENTITY savannah-nongnu "https://savannah.nongnu.org">
+<!ENTITY github          "https://github.com">
 
 <!ENTITY % packages-entities SYSTEM "packages.ent">
 %packages-entities;
