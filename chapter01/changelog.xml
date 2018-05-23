@@ -39,8 +39,10 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
-  <para>2018-05-22</para>
-      <itemizedlist>
+
+	<listitem>
+		<para>2018-05-22</para>
+			   <itemizedlist>
         <listitem>
            <para>[bdubbs] - Обновлены некоторые urls для https. Исправления
            <ulink url="&lfs-ticket-root;4274">#4274</ulink>.</para>
@@ -66,7 +68,7 @@
            <ulink url="&lfs-ticket-root;4276">#4276</ulink>.</para>
         </listitem>
       </itemizedlist>
-    </listitem>
+	</listitem>
 
     <listitem>
  <para>2018-05-11</para>
