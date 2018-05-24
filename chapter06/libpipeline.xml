@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Libpipeline пакет включает в себя  a library for manipulating pipelines
+    <para>The Libpipeline пакет содержит  a library for manipulating pipelines
     of subprocesses in a flexible and convenient way.</para>
 
     <segmentedlist>

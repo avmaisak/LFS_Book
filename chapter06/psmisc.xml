@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Psmisc пакет включает в себя  программы для  displaying information about
+    <para>The Psmisc пакет содержит  программы для  displaying information about
     running processes.</para>
 
     <segmentedlist>

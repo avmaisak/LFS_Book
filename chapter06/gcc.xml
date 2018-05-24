@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Этот пакет содержит в себе набор компиляторов GNU, для таких языков, как C и С++.</para>
+    <para>Пакет содержит в себе набор компиляторов GNU, для таких языков, как C и С++.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

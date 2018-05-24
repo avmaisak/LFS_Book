@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Groff пакет включает в себя  программы для  processing and formatting
+    <para>The Groff пакет содержит  программы для  processing and formatting
     text.</para>
 
     <segmentedlist>

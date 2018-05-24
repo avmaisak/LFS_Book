@@ -23,9 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The MPC пакет включает в себя  a library for the arithmetic of complex
-    numbers with arbitrarily high precision and correct rounding of the
-    result.</para>
+    <para>Пакет MPC содержит функции предназначенные для вычислений с плавающей запятой, целыми и рациональными числами с произвольной точностью. Он необходим пакету GCC.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

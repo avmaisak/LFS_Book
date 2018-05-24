@@ -45,7 +45,7 @@
         <para>Automake</para>
 
         <para>Программы для генерации Make файлов из шаблона.
-        Этот пакет включает в себя программы для  generating Make files from
+        Пакет содержит программы для  generating Make files from
         a template. Он также необходим для повторной компиляции пакета после обновления процедур сборки.</para>
       </listitem>
 

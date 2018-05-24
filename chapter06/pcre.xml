@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The PCRE пакет включает в себя  Perl Compatible Regular Expression
+    <para>The PCRE пакет содержит  Perl Compatible Regular Expression
     libraries. These are useful for implementing regular expression pattern
     matching using the same syntax and semantics as Perl 5.</para>
 

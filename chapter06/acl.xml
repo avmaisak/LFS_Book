@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Acl пакет включает в себя  utilities to administer Access Control Lists,
+    <para>The Acl пакет содержит  utilities to administer Access Control Lists,
     which are used to define more fine-grained discretionary access rights for
     files and directories.</para>
 

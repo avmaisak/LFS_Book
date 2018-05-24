@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The E2fsprogs пакет включает в себя  the utilities for handling the
+    <para>The E2fsprogs пакет содержит  the utilities for handling the
     <systemitem class="filesystem">ext2</systemitem> file system. It also
     supports the <systemitem class="filesystem">ext3</systemitem> and
     <systemitem class="filesystem">ext4</systemitem> journaling

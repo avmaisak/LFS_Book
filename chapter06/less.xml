@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Less пакет включает в себя  a text file viewer.</para>
+    <para>The Less пакет содержит  a text file viewer.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

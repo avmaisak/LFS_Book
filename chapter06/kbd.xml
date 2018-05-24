@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Kbd пакет включает в себя  key-table files, console fonts, and keyboard
+    <para>The Kbd пакет содержит  key-table files, console fonts, and keyboard
     utilities.</para>
 
     <segmentedlist>

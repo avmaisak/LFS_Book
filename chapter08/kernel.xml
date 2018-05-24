@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Linux пакет включает в себя  the Linux kernel.</para>
+    <para>The Linux пакет содержит  the Linux kernel.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

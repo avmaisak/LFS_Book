@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Shadow пакет включает в себя  программы для  handling passwords in a secure
+    <para>The Shadow пакет содержит  программы для  handling passwords in a secure
     way.</para>
 
     <segmentedlist>
@@ -128,7 +128,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
       <secondary>configuring</secondary>
     </indexterm>
 
-    <para>This пакет включает в себя  utilities to add, modify, and delete users and
+    <para>This пакет содержит  utilities to add, modify, and delete users and
     groups; set and change their passwords; and perform other administrative
     tasks. For a full explanation of what <emphasis>password shadowing</emphasis>
     means, see the <filename>doc/HOWTO</filename> file within the unpacked

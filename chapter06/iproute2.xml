@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The IPRoute2 пакет включает в себя  программы для  basic and advanced IPV4-based
+    <para>The IPRoute2 пакет содержит  программы для  basic and advanced IPV4-based
     networking.</para>
 
     <segmentedlist>

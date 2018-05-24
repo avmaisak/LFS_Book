@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The attr пакет включает в себя  utilities to administer the extended
+    <para>The attr пакет содержит  utilities to administer the extended
     attributes on filesystem objects.</para>
 
     <segmentedlist>

@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Man-DB пакет включает в себя  программы для  finding and viewing man
+    <para>The Man-DB пакет содержит  программы для  finding and viewing man
     pages.</para>
 
     <segmentedlist>

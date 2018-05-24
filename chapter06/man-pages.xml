@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Пакет Man-pages включает в себя  более чем 2,200 справочных страниц.</para>
+    <para>Пакет Man-pages содержит  более чем 2,200 справочных страниц.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
