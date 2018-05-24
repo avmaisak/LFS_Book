@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит в себе набор компиляторов GNU, для таких языков, как C и С++.</para>
+    <para>Пакет содержит набор компиляторов GNU, для таких языков, как C и С++.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -40,8 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета GCC</title>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
-    libraries to <quote>lib</quote>:</para>
+    <para>Если сборка пакета будет происходить на 64-битной машине, то необходимо сменить каталог по умолчанию для 64-битных библиотек на каталог <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
   x86_64)
@@ -50,12 +49,11 @@
   ;;
 esac</userinput></screen>
 
-    <para>Remove the symlink created earlier as the final gcc includes will be
-    installed here:</para>
+    <para>Удалите символическую ссылку, созданную ранее, так как окончательная версия gcc после сборки будет содержать необходимые файлы:</para>
 
 <screen><userinput remap="pre">rm -f /usr/lib/gcc</userinput></screen>
 
-    <para>The GCC documentation recommends building GCC in a dedicated build directory:</para>
+    <para>В документации к пакету рекомендуется выполнять процедуру сборки из отдельного каталога:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
@@ -64,32 +62,30 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="configure">SED=sed                               \
 ../configure --prefix=/usr            \
-             --enable-languages=c,Си++ \
+             --enable-languages=c,c++ \
              --disable-multilib       \
              --disable-bootstrap      \
              --with-system-zlib</userinput></screen>
 
-    <para>Note that for other languages, there are some prerequisites that
-    are not yet available. See the
-    <ulink url="&blfs-book;general/gcc.html">BLFS Book</ulink>
-    for instructions on how to build all of GCC's supported languages.</para>
+    <para>Обратите внимание, что другие языки имеют некоторые дополнительные зависимости, которые на данный момент еще не доступны. Обратитесь к документации
+    <ulink url="&blfs-book;general/gcc.html">книги BLFS</ulink>
+	 чтобы узнать как выполнить сборку GCC со всеми поддерживаемыми языками программирования.</para>
 
     <variablelist>
-      <title>The meaning of the new configure parameters:</title>
+      <title>Значения новых параметров конфигурации:</title>
 
       <varlistentry>
         <term><envar>SED=sed</envar></term>
         <listitem>
-          <para>Setting this environment variable prevents a hard-coded
-          path to /tools/bin/sed.</para>
+          <para>Установка этой переменной среды предотвращает использование жестко закодированного
+           пути к каталогу /tools/bin/sed.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-system-zlib</parameter></term>
         <listitem>
-          <para>This switch tells GCC to link to the system installed copy of
-          the Zlib library, rather than its own internal copy.</para>
+          <para>Аргумент сообщает, чтобы GCC использовал ссылку на установленную ранее в системе библиотеку Zlib, вместо использования встроенной версии.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -99,31 +95,32 @@ cd       build</userinput></screen>
 <screen><userinput remap="make">make</userinput></screen>
 
     <important>
-      <para>In this section, the test suite for GCC is considered
-      critical. Не пропускайте их выполнение ни при каких обстоятельствах.</para>
+      <para>Выполнение тестов пакета GCC считается критичным. Не пропускайте их выполнение ни при каких обстоятельствах.</para>
     </important>
 
-   <para>One set of tests in the GCC test suite is known to exhaust the stack,
-   so increase the stack size prior to running the tests:</para>
+   <para>Известно, что один набор тестов GCC исчерпывает стек,
+    поэтому увеличьте его размер до запуска тестов:</para>
 
 <screen><userinput remap="test">ulimit -s 32768</userinput></screen>
 
-    <para>Test the results, but do not stop at errors:</para>
+    <para>Проверьте результаты, но не останавливайтесь на ошибках:</para>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
 
-    <para>To receive a summary of the test suite results, run:</para>
+    <para>Чтобы получить сводку результатов о выполнении тестов, запустите:</para>
 
 <screen><userinput remap="test">../contrib/test_summary</userinput></screen>
 
-    <para>For only the summaries, pipe the output through
+    <para>Чтобы увидеть только сводку
     <userinput>grep -A7 Summ</userinput>.</para>
 
-    <para>Results can be compared with those located at <ulink
-    url="&test-results;"/> and
+    <para>Ваши результаты можно сравнить с результатами, расположенными по ссылке <ulink
+    url="&test-results;"/> и
     <ulink url="http://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <para>A few unexpected failures cannot always be avoided. The GCC developers
+    <para>Несколько неожиданных сбоев не всегда удается избежать. Разработчики GCC
+    обычно знают об этих проблемах
+	 A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     In particular, six tests in the libstdc++ test suite are known to fail
     when running as the root user as we do here.
