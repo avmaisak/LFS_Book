@@ -42,7 +42,7 @@
 
     <para>Don't install a static library that is not handled by configure:</para>
 
-<screen><userinput remap="pre">sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in</userinput></screen>
+<screen><userinput remap="pre">sed -i '/LIBTOOL_INSTALL/d' Си++/Makefile.in</userinput></screen>
 
     <para>Подготовьте пакет Ncurses к компиляции:</para>
 

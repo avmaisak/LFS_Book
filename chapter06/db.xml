@@ -85,7 +85,7 @@
       <varlistentry>
         <term><parameter>--enable-cxx</parameter></term>
         <listitem>
-          <para>This option enables building C++ API libraries.</para>
+          <para>This option enables building Си++ API libraries.</para>
         </listitem>
       </varlistentry>
 
@@ -286,7 +286,7 @@
       <varlistentry id="libdb_cxx">
         <term><filename class="libraryfile">libdb_cxx.{a,so}</filename></term>
         <listitem>
-          <para>Содержит functions to manipulate database files from C++
+          <para>Содержит functions to manipulate database files from Си++
           programs</para>
           <indexterm zone="ch-system-db libdb_cxx">
             <primary sortas="c-libdb_cxx">libdb_cxx</primary>

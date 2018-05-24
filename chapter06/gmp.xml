@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The GMP пакет включает в себя  math libraries. These have useful functions
-    for arbitrary precision arithmetic.</para>
+    <para>Библиотека GMP (GNU Multi-Precision Library ), предназначенная для вычислений с плавающей запятой, целыми и рациональными числами с произвольной точностью. Библиотека широко используется в криптографических целях и для компьютерных вычислений. Данная библиотека необходима для сборки gcc.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -42,19 +41,12 @@
     <title>Установка пакета GMP</title>
 
     <note>
-      <para>If you are building for 32-bit x86, but you have a CPU which is
-      capable of running 64-bit code <emphasis>and</emphasis> you have specified
-      <envar>CFLAGS</envar> in the environment, the configure script will
-      attempt to configure for 64-bits and fail.
-      Avoid this by invoking the configure command below with
+      <para>Если вы выполняете сборку для 32-битной машины x86,но у вас процессор, который совместим и может выполнять 64-битные инструкции и указана переменная окружения <envar>CFLAGS</envar>, сценарий конфигурирования будет запускаться для 64-битной системы и в результате процесс завершиться с ошибкой. Такого поведения можно избежать, если запустить команду configure, как указано ниже:
 <screen role="nodump"><userinput><parameter>ABI=32</parameter> ./configure ...</userinput></screen></para>
     </note>
 
     <note>
-      <para>The default settings of GMP produce libraries optimized for
-      the host processor.  If libraries suitable for processors less
-      capable than the host's CPU are desired, generic libraries can be
-      created by running the following:
+      <para>Значения по умолчанию GMP создают библиотеки оптимизированные для процессора хост-системы. Если библиотеки, подходящие для процессоров, не  желательны, чем  процессор хост-системы, то общие библиотеки могут быть созданы следующим образом:
 
 <screen role="nodump"><userinput>cp -v configfsf.guess config.guess
 cp -v configfsf.sub   config.sub</userinput></screen></para>
@@ -73,15 +65,14 @@ cp -v configfsf.sub   config.sub</userinput></screen></para>
       <varlistentry>
         <term><parameter>--enable-cxx</parameter></term>
         <listitem>
-          <para>This parameter enables C++ support</para>
+          <para>Аргумент включает поддержку языка Си++ </para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--docdir=/usr/share/doc/gmp-&gmp-version;</parameter></term>
         <listitem>
-          <para>This variable specifies the correct place for the
-          documentation.</para>
+          <para>Значение этого аргумента указывает на правильное  местоположение документации</para>
         </listitem>
       </varlistentry>
 
@@ -93,7 +84,7 @@ cp -v configfsf.sub   config.sub</userinput></screen></para>
 make html</userinput></screen>
 
     <important>
-      <para>The test suite for GMP in this section is considered critical.
+      <para>Выполнение тестов пакета GMP считается критичным.
        Не пропускайте их выполнение ни при каких обстоятельствах.</para>
     </important>
 
@@ -101,15 +92,9 @@ make html</userinput></screen>
 
 <screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
 
-    <caution><para>The code in gmp is highly optimized for the processor where
-    it is built. Occasionally, the code that detects the processor misidentifies
-    the system capabilities and there will be errors in the tests or other
-    applications using the gmp libraries with the message "Illegal
-    instruction".  In this case, gmp should be reconfigured with the option
-    --build=x86_64-unknown-linux-gnu and rebuilt.</para></caution>
+    <caution><para>Код, скомпилированный пакетом очень сильно оптимизирован для того процессора, на котором он был скомпилирован. Иногда код, который считывает процессор, неверно идентифицирует возможности системы и будут возникать ошибки в тестах или других программах, использующих библиотеки gmp, с сообщением "Illegal instruction". В таком случае, необходимо выполнить повторную конфигурацию пакета с аргументом --build=x86_64-unknown-linux-gnu и выполнить сборку повторно.</para></caution>
 
-    <para>Ensure that all 190 tests in the test suite passed.
-    Check the results by issuing the следующую команду:</para>
+    <para>убедитесь, что все 190 тестов в наборе прошли успешно. Проверьте результаты тестирования, выполнив следующую команду:</para>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
 
@@ -141,7 +126,7 @@ make install-html</userinput></screen>
       <varlistentry id="libgmp">
         <term><filename class="libraryfile">libgmp</filename></term>
         <listitem>
-          <para>Содержит precision math functions</para>
+          <para>Содержит функции предназначенные для вычислений с плавающей запятой, целыми и рациональными числами с произвольной точностью.</para>
           <indexterm zone="ch-system-gmp libgmp">
             <primary sortas="c-libgmp">libgmp</primary>
           </indexterm>
@@ -151,7 +136,7 @@ make install-html</userinput></screen>
       <varlistentry id="libgmpxx">
         <term><filename class="libraryfile">libgmpxx</filename></term>
         <listitem>
-          <para>Содержит C++ precision math functions</para>
+          <para>Содержит функции для языка Си++ предназначенные для вычислений с плавающей запятой, целыми и рациональными числами с произвольной точностью.</para>
           <indexterm zone="ch-system-gmp libgmpxx">
             <primary sortas="c-libgmpxx">libgmpxx</primary>
           </indexterm>

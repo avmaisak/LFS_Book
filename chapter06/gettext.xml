@@ -350,7 +350,7 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
         <term><filename class="libraryfile">libasprintf</filename></term>
         <listitem>
           <para>defines the <emphasis>autosprintf</emphasis> class, which makes
-          C formatted output routines usable in C++ programs, for use with the
+          C formatted output routines usable in Си++ programs, for use with the
           <emphasis>&lt;string&gt;</emphasis> strings and the
           <emphasis>&lt;iostream&gt;</emphasis> streams</para>
           <indexterm zone="ch-system-gettext libasprintf">

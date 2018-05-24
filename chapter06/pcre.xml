@@ -162,7 +162,7 @@ ln -v -sf ../../lib/libpcre.so.0 /usr/lib/libpcre.so</userinput></screen>
       <varlistentry id="libpcrecpp">
         <term><filename class="libraryfile">libpcrecpp</filename></term>
         <listitem>
-          <para>Provides C++ wrapper functions for the libpcre library</para>
+          <para>Provides Си++ wrapper functions for the libpcre library</para>
           <indexterm zone="ch-system-pcre libpcrecpp">
             <primary sortas="c-libpcrecpp">libpcrecpp</primary>
           </indexterm>

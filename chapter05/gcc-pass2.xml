@@ -110,7 +110,7 @@ RANLIB=$LFS_TGT-ranlib                             \
     --prefix=/tools                                \
     --with-local-prefix=/tools                     \
     --with-native-system-header-dir=/tools/include \
-    --enable-languages=c,c++                       \
+    --enable-languages=c,Си++                       \
     --disable-libstdcxx-pch                        \
     --disable-multilib                             \
     --disable-bootstrap                            \
@@ -120,7 +120,7 @@ RANLIB=$LFS_TGT-ranlib                             \
       <title>Значения новых параметров конфигурации:</title>
 
       <varlistentry>
-        <term><parameter>--enable-languages=c,c++</parameter></term>
+        <term><parameter>--enable-languages=c,Си++</parameter></term>
         <listitem>
           <para>Этот аргумент гарантирует, что будут собраны оба компилятора C и C ++. </para>
         </listitem>

@@ -64,7 +64,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="configure">SED=sed                               \
 ../configure --prefix=/usr            \
-             --enable-languages=c,c++ \
+             --enable-languages=c,Си++ \
              --disable-multilib       \
              --disable-bootstrap      \
              --with-system-zlib</userinput></screen>
@@ -319,7 +319,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
-        <seg>c++, cc (link to gcc), cpp, g++, gcc,
+        <seg>Си++, cc (link to gcc), cpp, g++, gcc,
         gcc-ar, gcc-nm, gcc-ranlib, and gcov</seg>
 
         <seg>libasan.{a,so}, libatomic.{a,so}, libgcc.a, libgcc_eh.a,
@@ -328,7 +328,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         libquadmath.{a,so}, libssp.{a,so},
         libssp_nonshared.a, libstdc++.{a,so}, libsupc++.a, and libtsan.{a,so}</seg>
 
-        <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
+        <seg>/usr/include/Си++, /usr/lib/gcc, /usr/libexec/gcc, and
         /usr/share/gcc-&gcc-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -339,11 +339,11 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="c">
-        <term><command>c++</command></term>
+        <term><command>Си++</command></term>
         <listitem>
-          <para>The C++ compiler</para>
+          <para>The Си++ compiler</para>
           <indexterm zone="ch-system-gcc c">
-            <primary sortas="b-c++">c++</primary>
+            <primary sortas="b-Си++">Си++</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -372,7 +372,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="g">
         <term><command>g++</command></term>
         <listitem>
-          <para>The C++ compiler</para>
+          <para>The Си++ compiler</para>
           <indexterm zone="ch-system-gcc g">
             <primary sortas="b-g++">g++</primary>
           </indexterm>
@@ -474,7 +474,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <term><filename class="libraryfile">libgomp</filename></term>
         <listitem>
           <para>GNU implementation of the OpenMP API for multi-platform
-          shared-memory parallel programming in C/C++ and Fortran</para>
+          shared-memory parallel programming in C/Си++ and Fortran</para>
           <indexterm zone="ch-system-gcc libgomp">
             <primary sortas="c-libgomp">libgomp</primary>
           </indexterm>
@@ -529,7 +529,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libstdc">
         <term><filename class="libraryfile">libstdc++</filename></term>
         <listitem>
-          <para>The standard C++ library</para>
+          <para>The standard Си++ library</para>
           <indexterm zone="ch-system-gcc libstdc">
             <primary sortas="c-libstdc++">libstdc++</primary>
           </indexterm>
@@ -539,7 +539,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libsupc">
         <term><filename class="libraryfile">libsupc++</filename></term>
         <listitem>
-          <para>Provides supporting routines for the C++ programming
+          <para>Provides supporting routines for the Си++ programming
           language</para>
           <indexterm zone="ch-system-gcc libsupc">
             <primary sortas="c-libsupc++">libsupc++</primary>

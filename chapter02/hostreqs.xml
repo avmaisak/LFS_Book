@@ -61,7 +61,7 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">GCC-4.9</emphasis> включая компилятор C++
+      <para><emphasis role="strong">GCC-4.9</emphasis> включая компилятор Си++
       , <command>g++</command> (Версия старше чем  &gcc-version; не рекомендуется,
       потому что тестирование таковой не проводилось.)</para>
     </listitem>
