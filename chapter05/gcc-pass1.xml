@@ -55,7 +55,7 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para>Следующая команда изменит место расположения динамического линковщика чтобы использовать тот, который находится в каталоге <filename class="directory">/tools</filename>. Команда также удалит каталог <filename
+    <para>Следующая команда изменит место расположения динамического компоновщика чтобы использовать тот, который находится в каталоге <filename class="directory">/tools</filename>. Команда также удалит каталог <filename
     class="directory">/usr/include</filename> из путей поиска GCC. Выполните команду:</para>
 
 <screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h

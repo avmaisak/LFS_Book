@@ -89,7 +89,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--with-lib-path=/tools/lib</parameter></term>
         <listitem>
-          <para>Указывает в каком каталоге должен находится линковщик.</para>
+          <para>Указывает в каком каталоге должен находится компоновщик.</para>
         </listitem>
       </varlistentry>
 

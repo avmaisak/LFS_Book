@@ -108,8 +108,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
       <varlistentry id="libhistory">
         <term><filename class="libraryfile">libhistory</filename></term>
         <listitem>
-          <para>Обеспечивает согласованный пользовательский интерфейс для вызова строк
-           истории</para>
+          <para>Обеспечивает согласованный пользовательский интерфейс для вызова строк истории</para>
           <indexterm zone="ch-system-readline libhistory">
             <primary sortas="c-libhistory">libhistory</primary>
           </indexterm>
@@ -119,8 +118,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
       <varlistentry id="libreadline">
         <term><filename class="libraryfile">libreadline</filename></term>
         <listitem>
-          <para>Предоставляет набор команд для манипулирования текстом, введенным в
-           интерактивной сессии программы.</para>
+          <para>Предоставляет набор команд для манипулирования текстом, введенным в интерактивной сессии программы.</para>
           <indexterm zone="ch-system-readline libreadline">
             <primary sortas="c-libreadline">libreadline</primary>
           </indexterm>

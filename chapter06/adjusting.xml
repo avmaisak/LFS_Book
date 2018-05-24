@@ -12,14 +12,14 @@
 
   <para>Теперь, когда все библиотеки Си были установлены, необходимо перенастроить используемый сейчас временный набор инструментов, чтобы он выполнял линковку новых скомпилированых программ с установленными библиотеками.</para>
 
-  <para>Сначала,выполните резервное копирование линковщика <filename class="directory">/tools</filename>, и замените его настроенным линковщиком в главе 5. Также будут созданы ссылки на их копии в каталоге <filename class="directory">/tools/$(uname -m)-pc-linux-gnu/bin</filename>:</para>
+  <para>Сначала,выполните резервное копирование компоновщика <filename class="directory">/tools</filename>, и замените его настроенным компоновщиком в главе 5. Также будут созданы ссылки на их копии в каталоге <filename class="directory">/tools/$(uname -m)-pc-linux-gnu/bin</filename>:</para>
 
 <screen><userinput>mv -v /tools/bin/{ld,ld-old}
 mv -v /tools/$(uname -m)-pc-linux-gnu/bin/{ld,ld-old}
 mv -v /tools/bin/{ld-new,ld}
 ln -sv /tools/bin/ld /tools/$(uname -m)-pc-linux-gnu/bin/ld</userinput></screen>
 
-  <para>Далее, необходимо изменить специальные файлы GCC так, чтобы они указывали на новый динамический линковщик. После удаления всех экземпляров в каталоге <quote>/tools</quote> останутся только правильные пути к динамическому линковщику. Также необходимо настроить некоторые файлы GCC для правильного поиска заголовочных файлов и файлов запуска Glibc. С помощью команды <command>sed</command> можно выполнить следующую команду:</para>
+  <para>Далее, необходимо изменить специальные файлы GCC так, чтобы они указывали на новый динамический компоновщик. После удаления всех экземпляров в каталоге <quote>/tools</quote> останутся только правильные пути к динамическому компоновщику. Также необходимо настроить некоторые файлы GCC для правильного поиска заголовочных файлов и файлов запуска Glibc. С помощью команды <command>sed</command> можно выполнить следующую команду:</para>
 
 <screen><userinput>gcc -dumpspecs | sed -e 's@/tools@@g'                   \
     -e '/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}' \
@@ -37,7 +37,7 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
 
 <screen os="c"><computeroutput>[Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
 
-  <para>Обратите внимание, что для 64-битной системы каталог <filename class="directory">/lib</filename> это место, где располагается динамический линковщик, но доступ к нему обеспечен через символическую ссылку /lib64.</para>
+  <para>Обратите внимание, что для 64-битной системы каталог <filename class="directory">/lib</filename> это место, где располагается динамический компоновщик, но доступ к нему обеспечен через символическую ссылку /lib64.</para>
 
   <note><para>Для 32-битных систем интерпретатор должен быть /lib/ld-linux.so.2.</para></note>
 
@@ -60,7 +60,7 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
 <screen><computeroutput>#include &lt;...&gt; search starts here:
  /usr/include</computeroutput></screen>
 
-  <para os="i">Далее проверим, что линковщик использует правильные пути поиска:</para>
+  <para os="i">Далее проверим, что компоновщик использует правильные пути поиска:</para>
 
 <screen os="j"><userinput>grep 'SEARCH.*/usr/lib' dummy.log |sed 's|; |\n|g'</userinput></screen>
 
@@ -77,11 +77,11 @@ SEARCH_DIR("/lib")</computeroutput></screen>
 
 <screen os="o"><computeroutput>attempt to open /lib/libc.so.6 succeeded</computeroutput></screen>
 
-  <para os="p">Наконец, проверим что GCC использует правильный динамический линковщик:</para>
+  <para os="p">Наконец, проверим что GCC использует правильный динамический компоновщик:</para>
 
 <screen os="q"><userinput>grep found dummy.log</userinput></screen>
 
-  <para os="r">Вывод (в зависимости от платформы в наименовании динамического линковщика) должен соответствовать следующей строке:</para>
+  <para os="r">Вывод (в зависимости от платформы в наименовании динамического компоновщика) должен соответствовать следующей строке:</para>
 
 <screen os="s"><computeroutput>found ld-linux-x86-64.so.2 at /lib/ld-linux-x86-64.so.2</computeroutput></screen>
 

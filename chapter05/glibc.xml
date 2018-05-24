@@ -65,7 +65,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>
         <listitem>
-          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять кросс-компиляцию пакета, используя кросс-линковщик и кросс-компилятор из каталога <filename class="directory">/tools</filename>.</para>
+          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять кросс-компиляцию пакета, используя кросс-компоновщик и кросс-компилятор из каталога <filename class="directory">/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
@@ -86,7 +86,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>libc_cv_forced_unwind=yes</parameter></term>
         <listitem>
-          <para>Линковщик, установленный в главе <xref linkend="ch-tools-binutils-pass1"/> был кросс-компилирован и не может использоваться, пока не будет установлен пакет Glibc. Это означает, что тест конфигурирования для функции force-unwind будет провален,поскольку он полагается на рабочий линковщик. Значение аргумента libc_cv_forced_unwind=yes передается, чтобы сообщить, сценарию <command>configure</command> что поддержка функция force-unwind доступна без необходимости проведения тестирования.</para>
+          <para>компоновщик, установленный в главе <xref linkend="ch-tools-binutils-pass1"/> был кросс-компилирован и не может использоваться, пока не будет установлен пакет Glibc. Это означает, что тест конфигурирования для функции force-unwind будет провален,поскольку он полагается на рабочий компоновщик. Значение аргумента libc_cv_forced_unwind=yes передается, чтобы сообщить, сценарию <command>configure</command> что поддержка функция force-unwind доступна без необходимости проведения тестирования.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
