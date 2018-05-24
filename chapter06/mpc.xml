@@ -84,7 +84,7 @@ make install-html</userinput></screen>
       <varlistentry id="libmpc">
         <term><filename class="libraryfile">libmpc</filename></term>
         <listitem>
-          <para>Содержит complex math functions</para>
+          <para>содержит функции предназначенные для вычислений с плавающей запятой, целыми и рациональными числами с произвольной точностью</para>
           <indexterm zone="ch-system-mpc libmpc">
             <primary sortas="c-libmpc">libmpc</primary>
           </indexterm>
