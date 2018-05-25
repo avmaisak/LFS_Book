@@ -124,7 +124,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzcmp">
         <term><command>lzcmp</command></term>
         <listitem>
-          <para>Runs <command>cmp</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>cmp</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzcmp">
             <primary sortas="b-lzcmp">lzcmp</primary>
           </indexterm>
@@ -134,7 +134,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzdiff">
         <term><command>lzdiff</command></term>
         <listitem>
-          <para>Runs <command>diff</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>diff</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzdiff">
             <primary sortas="b-lzdiff">lzdiff</primary>
           </indexterm>
@@ -144,7 +144,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzegrep">
         <term><command>lzegrep</command></term>
         <listitem>
-          <para>Runs <command>egrep</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>egrep</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzegrep">
             <primary sortas="b-lzegrep">lzegrep</primary>
           </indexterm>
@@ -154,7 +154,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzfgrep">
         <term><command>lzfgrep</command></term>
         <listitem>
-          <para>Runs <command>fgrep</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>fgrep</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzfgrep">
             <primary sortas="b-lzfgrep">lzfgrep</primary>
           </indexterm>
@@ -164,7 +164,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzgrep">
         <term><command>lzgrep</command></term>
         <listitem>
-          <para>Runs <command>grep</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>grep</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzgrep">
             <primary sortas="b-lzgrep">lzgrep</primary>
           </indexterm>
@@ -174,7 +174,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzless">
         <term><command>lzless</command></term>
         <listitem>
-          <para>Runs <command>less</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>less</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzless">
             <primary sortas="b-lzless">lzless</primary>
           </indexterm>
@@ -214,7 +214,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzmore">
         <term><command>lzmore</command></term>
         <listitem>
-          <para>Runs <command>more</command> on LZMA compressed files</para>
+          <para>Запускает программу <command>more</command> для запакованных файлов при помощи алгоритма LZMA</para>
           <indexterm zone="ch-system-xz lzmore">
             <primary sortas="b-lzmamore">lzmore</primary>
           </indexterm>
@@ -264,7 +264,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzcmp">
         <term><command>xzcmp</command></term>
         <listitem>
-          <para>Runs <command>cmp</command> on XZ compressed files</para>
+          <para>Запускает программу <command>cmp</command> on XZ compressed files</para>
           <indexterm zone="ch-system-xz xzcmp">
             <primary sortas="b-xzcmp">xzcmp</primary>
           </indexterm>
@@ -284,7 +284,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzdiff">
         <term><command>xzdiff</command></term>
         <listitem>
-          <para>Runs <command>diff</command> on XZ compressed files</para>
+          <para>Запускает программу <command>diff</command> on XZ compressed files</para>
           <indexterm zone="ch-system-xz xzdiff">
             <primary sortas="b-xzdiff">xzdiff</primary>
           </indexterm>
@@ -294,7 +294,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzegrep">
         <term><command>xzegrep</command></term>
         <listitem>
-          <para>Runs <command>egrep</command> on XZ compressed files files</para>
+          <para>Запускает программу <command>egrep</command> on XZ compressed files files</para>
           <indexterm zone="ch-system-xz xzegrep">
             <primary sortas="b-xzegrep">xzegrep</primary>
           </indexterm>
@@ -304,7 +304,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzfgrep">
         <term><command>xzfgrep</command></term>
         <listitem>
-          <para>Runs <command>fgrep</command> on XZ compressed files</para>
+          <para>Запускает программу <command>fgrep</command> on XZ compressed files</para>
           <indexterm zone="ch-system-xz xzfgrep">
             <primary sortas="b-xzfgrep">xzfgrep</primary>
           </indexterm>
@@ -314,7 +314,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzgrep">
         <term><command>xzgrep</command></term>
         <listitem>
-          <para>Runs <command>grep</command> on XZ compressed files</para>
+          <para>Запускает программу <command>grep</command> on XZ compressed files</para>
           <indexterm zone="ch-system-xz xzgrep">
             <primary sortas="b-xzgrep">xzgrep</primary>
           </indexterm>
@@ -324,7 +324,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzless">
         <term><command>xzless</command></term>
         <listitem>
-          <para>Runs <command>less</command> on XZ compressed files</para>
+          <para>Запускает программу <command>less</command> on XZ compressed files</para>
           <indexterm zone="ch-system-xz xzless">
             <primary sortas="b-xzless">xzless</primary>
           </indexterm>
@@ -334,7 +334,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzmore">
         <term><command>xzmore</command></term>
         <listitem>
-          <para>Runs <command>more</command> on XZ compressed files</para>
+          <para>Запускает программу <command>more</command> on XZ compressed files</para>
           <indexterm zone="ch-system-xz xzmore">
             <primary sortas="b-xzmore">xzmore</primary>
           </indexterm>

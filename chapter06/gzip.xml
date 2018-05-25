@@ -136,7 +136,7 @@
       <varlistentry id="zcmp">
         <term><command>zcmp</command></term>
         <listitem>
-          <para>Runs <command>cmp</command> on gzipped files</para>
+          <para>Запускает программу <command>cmp</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zcmp">
             <primary sortas="b-zcmp">zcmp</primary>
           </indexterm>
@@ -146,7 +146,7 @@
       <varlistentry id="zdiff">
         <term><command>zdiff</command></term>
         <listitem>
-          <para>Runs <command>diff</command> on gzipped files</para>
+          <para>Запускает программу <command>diff</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zdiff">
             <primary sortas="b-zdiff">zdiff</primary>
           </indexterm>
@@ -156,7 +156,7 @@
       <varlistentry id="zegrep">
         <term><command>zegrep</command></term>
         <listitem>
-          <para>Runs <command>egrep</command> on gzipped files</para>
+          <para>Запускает программу <command>egrep</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zegrep">
             <primary sortas="b-zegrep">zegrep</primary>
           </indexterm>
@@ -166,7 +166,7 @@
       <varlistentry id="zfgrep">
         <term><command>zfgrep</command></term>
         <listitem>
-          <para>Runs <command>fgrep</command> on gzipped files</para>
+          <para>Запускает программу <command>fgrep</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zfgrep">
             <primary sortas="b-zfgrep">zfgrep</primary>
           </indexterm>
@@ -189,7 +189,7 @@
       <varlistentry id="zgrep">
         <term><command>zgrep</command></term>
         <listitem>
-          <para>Runs <command>grep</command> on gzipped files</para>
+          <para>Запускает программу <command>grep</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zgrep">
             <primary sortas="b-zgrep">zgrep</primary>
           </indexterm>
@@ -199,7 +199,7 @@
       <varlistentry id="zless">
         <term><command>zless</command></term>
         <listitem>
-          <para>Runs <command>less</command> on gzipped files</para>
+          <para>Запускает программу <command>less</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zless">
             <primary sortas="b-zless">zless</primary>
           </indexterm>
@@ -209,7 +209,7 @@
       <varlistentry id="zmore">
         <term><command>zmore</command></term>
         <listitem>
-          <para>Runs <command>more</command> on gzipped files</para>
+          <para>Запускает программу <command>more</command> on gzipped files</para>
           <indexterm zone="ch-system-gzip zmore">
             <primary sortas="b-zmore">zmore</primary>
           </indexterm>

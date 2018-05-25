@@ -40,19 +40,19 @@
   <sect2 role="installation">
     <title>Установка пакета Bzip2</title>
 
-    <para>Apply a patch that will install the documentation for this package:</para>
+    <para>Примените патч (исправление) который позволит установить документацию к пакету:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&bzip2-docs-patch;</userinput></screen>
 
-   <para>The following command ensures installation of symbolic links are relative:</para>
+   <para>Следующая команда гарантирует  установку символических ссылок по относительному пути:</para>
 
 <screen><userinput remap="pre">sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile</userinput></screen>
 
-    <para>Ensure the man pages are installed into the correct location:</para>
+    <para>Убедиться что страницы руководств будут установлены в правильное место:</para>
 
 <screen><userinput remap="pre">sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile</userinput></screen>
 
-    <para>Подготовьте пакет Bzip2 for compilation with:</para>
+    <para>Подготовьте пакет Bzip2 для компиляции:</para>
 
 <screen><userinput remap="make">make -f Makefile-libbz2_so
 make clean</userinput></screen>
@@ -63,27 +63,22 @@ make clean</userinput></screen>
       <varlistentry>
         <term><parameter>-f Makefile-libbz2_so</parameter></term>
         <listitem>
-          <para>This will cause Bzip2 to be built using a different
-          <filename>Makefile</filename> file, in this case the
-          <filename>Makefile-libbz2_so</filename> file, which creates a dynamic
-          <filename class="libraryfile">libbz2.so</filename> library and links
-          the Bzip2 utilities against it.</para>
+          <para>Аргумент сообщает Bzip2 выполнить сборку используя другой <filename>Makefile</filename>, при указании значения аргумента <filename>Makefile-libbz2_so</filename> позволит создать динамическую библиотеку <filename class="libraryfile">libbz2.so</filename>и ссылки с Bzip2.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Compile and test the package:</para>
+    <para>Скомпилируйте и выполните тестирование пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Установите the programs:</para>
+    <para>Установите программы:</para>
 
 <screen><userinput remap="install">make PREFIX=/usr install</userinput></screen>
 
-    <para>Установите the shared <command>bzip2</command> binary into the
-    <filename class="directory">/bin</filename> directory, make
-    some necessary symbolic links, and clean up:</para>
+    <para>Установите общие <command>bzip2</command> бинарные файлы в каталог
+    <filename class="directory">/bin</filename>, сделайте несколько необходимых символических ссылок и затем, выполните очистку:</para>
 
 <screen><userinput remap="install">cp -v bzip2-shared /bin/bzip2
 cp -av libbz2.so* /lib
@@ -119,7 +114,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bunzip2">
         <term><command>bunzip2</command></term>
         <listitem>
-          <para>Decompresses bzipped files</para>
+          <para>Распаковывает файлы bzip</para>
           <indexterm zone="ch-system-bzip2 bunzip2">
             <primary sortas="b-bunzip2">bunzip2</primary>
           </indexterm>
@@ -129,7 +124,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzcat">
         <term><command>bzcat</command></term>
         <listitem>
-          <para>Decompresses to standard output</para>
+          <para>Распаковка в стандартный вывод</para>
           <indexterm zone="ch-system-bzip2 bzcat">
             <primary sortas="b-bzcat">bzcat</primary>
           </indexterm>
@@ -139,7 +134,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzcmp">
         <term><command>bzcmp</command></term>
         <listitem>
-          <para>Runs <command>cmp</command> on bzipped files</para>
+          <para>Запускает программу <command>cmp</command> для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzcmp">
             <primary sortas="b-bzcmp">bzcmp</primary>
           </indexterm>
@@ -149,7 +144,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzdiff">
         <term><command>bzdiff</command></term>
         <listitem>
-          <para>Runs <command>diff</command> on bzipped files</para>
+          <para>Запускает программу <command>diff</command> для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzdiff">
             <primary sortas="b-bzdiff">bzdiff</primary>
           </indexterm>
@@ -159,7 +154,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzegrep">
         <term><command>bzegrep</command></term>
         <listitem>
-          <para>Runs <command>egrep</command> on bzipped files</para>
+          <para>Запускает программу <command>egrep</command> для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzegrep">
             <primary sortas="b-bzegrep">bzegrep</primary>
           </indexterm>
@@ -169,7 +164,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzfgrep">
         <term><command>bzfgrep</command></term>
         <listitem>
-          <para>Runs <command>fgrep</command> on bzipped files</para>
+          <para>Запускает программу <command>fgrep</command> для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzfgrep">
             <primary sortas="b-bzfgrep">bzfgrep</primary>
           </indexterm>
@@ -179,7 +174,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzgrep">
         <term><command>bzgrep</command></term>
         <listitem>
-          <para>Runs <command>grep</command> on bzipped files</para>
+          <para>Запускает программу <command>grep</command> для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzgrep">
             <primary sortas="b-bzgrep">bzgrep</primary>
           </indexterm>
@@ -189,10 +184,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzip2">
         <term><command>bzip2</command></term>
         <listitem>
-          <para>Compresses files using the Burrows-Wheeler block sorting text
-          compression algorithm with Huffman coding; the compression rate is
-          better than that achieved by more conventional compressors using
-          <quote>Lempel-Ziv</quote> algorithms, like <command>gzip</command></para>
+          <para>Утилита командной строки  для сжатия данных, реализация алгоритма Барроуза — Уилера. Программа bzip2 была написана для замены программы <command>gzip</command>. Она действительно показывает лучшие характеристики по степени сжатия данных, но, с другой стороны она потребляет значительно больше памяти при работе</para>
           <indexterm zone="ch-system-bzip2 bzip2">
             <primary sortas="b-bzip2">bzip2</primary>
           </indexterm>
@@ -202,7 +194,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzip2recover">
         <term><command>bzip2recover</command></term>
         <listitem>
-          <para>Tries to recover data from damaged bzipped files</para>
+          <para>Выполняет попытку восстановить данные из поврежденного файла архива</para>
           <indexterm zone="ch-system-bzip2 bzip2recover">
             <primary sortas="b-bzip2recover">bzip2recover</primary>
           </indexterm>
@@ -212,7 +204,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzless">
         <term><command>bzless</command></term>
         <listitem>
-          <para>Runs <command>less</command> on bzipped files</para>
+          <para>Запускает программу <command>less</command> для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzless">
             <primary sortas="b-bzless">bzless</primary>
           </indexterm>
@@ -222,7 +214,7 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="bzmore">
         <term><command>bzmore</command></term>
         <listitem>
-          <para>Runs <command>more</command> on bzipped files</para>
+          <para>Запускает программу <command>more</command>для запакованных файлов</para>
           <indexterm zone="ch-system-bzip2 bzmore">
             <primary sortas="b-bzmore">bzmore</primary>
           </indexterm>
@@ -232,8 +224,8 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
       <varlistentry id="libbz2">
         <term><filename class="libraryfile">libbz2</filename></term>
         <listitem>
-          <para>The library implementing lossless, block-sorting data
-          compression, using the Burrows-Wheeler algorithm</para>
+          <para>Библиотека, реализующая блочную сортировку данных без потерь
+          сжатие с использованием алгоритма Барроуза — Уилера</para>
           <indexterm zone="ch-system-bzip2 libbz2">
             <primary sortas="c-libbz2">libbz2</primary>
           </indexterm>
