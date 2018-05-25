@@ -116,32 +116,27 @@ cd       build</userinput></screen>
 
     <para>Ваши результаты можно сравнить с результатами, расположенными по ссылке <ulink
     url="&test-results;"/> и
-    <ulink url="http://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
+    <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
     <para>Несколько неожиданных сбоев не всегда удается избежать. Разработчики GCC
-    обычно знают об этих проблемах
-	 A few unexpected failures cannot always be avoided. The GCC developers
-    are usually aware of these issues, but have not resolved them yet.
-    In particular, six tests in the libstdc++ test suite are known to fail
-    when running as the root user as we do here.
-    Unless the test results are vastly different from those at the above URL,
-    it is safe to continue.</para>
+    как правило знают о таких проблемах, но некоторые из них могут быть ещё не решены. В частности известно, что шесть тестов
+	 в библиотеке libstdc++ не пройдут, если выполнять тестирование от имени пользователя root, как мы и выполняем. Если результаты
+	 выполнения тестов не особо отличаются от результатов, опубликованных по ссылку выше, то можно продолжать далее.</para>
+
 
     <note><para>
-      On some combinations of kernel configuration and AMD processors
-      there may be more than 1100 failures in the gcc.target/i386/mpx
-      tests (which are designed to test the MPX option on recent
-      Intel processors). These can safely be ignored on AMD
-      processors.
+	 	При некоторых конфигурациях ядра хост-системы и наличие процессора AMD, могут возникать ошибки при тестировании.
+		Их может быть более 1100 в тестах gcc.target/i386/mpx (которые спроектированы для тестирования опции MPX на последних процессорах
+		Intel). Такие ошибки можно игнорировать, если у вас процессор AMD.
     </para></note>
 
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Create a symlink required by the <ulink
-    url="http://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
-    for "historical" reasons.</para>
+    <para>По историческим причинам, создайте символическую ссылку <ulink
+    url="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
+    </para>
 
 <screen><userinput remap="install">ln -sv ../usr/bin/cpp /lib</userinput></screen>
 
