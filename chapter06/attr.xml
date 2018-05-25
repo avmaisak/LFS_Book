@@ -74,10 +74,10 @@
 <screen><userinput remap="install">make install install-dev install-lib
 chmod -v 755 /usr/lib/libattr.so</userinput></screen>
 
-    <para>Разделяемые библиотеки необходимо переместить в каталоги
+    <para>Разделяемые библиотеки необходимо перенести в каталог
     <filename class="directory">/lib</filename>, и в результате файлы
     <filename class="extension">.so</filename> в каталоге
-    <filename class="directory">/usr/lib</filename> необходим создать заново:</para>
+    <filename class="directory">/usr/lib</filename> необходимо создать заново:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libattr.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput></screen>

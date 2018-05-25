@@ -83,10 +83,10 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>The shared library needs to be moved to
-    <filename class="directory">/lib</filename>, and as a result the
+    <para>Разделяемые библиотеки необходимо перенести в каталог
+    <filename class="directory">/lib</filename>, и в результате файлы
     <filename class="extension">.so</filename> file in
-    <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
+    <filename class="directory">/usr/lib</filename>необходимо создать заново:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libdbus-1.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</userinput></screen>
@@ -108,7 +108,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
 
       <seglistitem>
         <seg>dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
-        dbus-run-session, dbus-send, dbus-test-tool, 
+        dbus-run-session, dbus-send, dbus-test-tool,
         dbus-update-activation-environment, and dbus-uuidgen</seg>
         <seg>libdbus-1.{a,so}</seg>
         <seg>/etc/dbus-1, /usr/include/dbus-1.0, /usr/lib/dbus-1.0,
