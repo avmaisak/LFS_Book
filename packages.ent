@@ -8,7 +8,7 @@
 
 <!ENTITY acl-version "2.2.52">
 <!ENTITY acl-size "380 KB">
-<!ENTITY acl-url "&savannah;/releases/acl/acl-&acl-version;.src.tar.gz">
+<!ENTITY acl-url "&savannah;releases/acl/acl-&acl-version;.src.tar.gz">
 <!ENTITY acl-md5 "a61415312426e9c2212bd7dc7929abda">
 <!ENTITY acl-home " ">
 <!ENTITY acl-ch6-du "4.9 MB">
@@ -16,7 +16,7 @@
 
 <!ENTITY attr-version "2.4.47">
 <!ENTITY attr-size "336 KB">
-<!ENTITY attr-url "&savannah;/releases/attr/attr-&attr-version;.src.tar.gz">
+<!ENTITY attr-url "&savannah;releases/attr/attr-&attr-version;.src.tar.gz">
 <!ENTITY attr-md5 "84f58dec00b60f2dc8fd1c9709291cc7">
 <!ENTITY attr-home "&savannah-nongnu;/projects/attr">
 <!ENTITY attr-ch6-du "3.3 MB">
@@ -92,7 +92,7 @@
 
 <!ENTITY check-version "0.12.0">
 <!ENTITY check-size "747 KB">
-<!ENTITY check-url "&github;libcheck/check/releases/download/&check-version;/check-&check-version;.tar.gz">
+<!ENTITY check-url "&github;/libcheck/check/releases/download/&check-version;/check-&check-version;.tar.gz">
 <!ENTITY check-md5 "31b17c6075820a434119592941186f70">
 <!ENTITY check-home "https://libcheck.github.io/check">
 <!ENTITY check-ch5-du "12 MB">
@@ -199,9 +199,9 @@
 
 <!ENTITY flex-version "2.6.4">
 <!ENTITY flex-size "1,386 KB">
-<!ENTITY flex-url "&github;westes/flex/releases/download/v&flex-version;/flex-&flex-version;.tar.gz">
+<!ENTITY flex-url "&github;/westes/flex/releases/download/v&flex-version;/flex-&flex-version;.tar.gz">
 <!ENTITY flex-md5 "2882e3179748cc9f9c23ec593d6adc8d">
-<!ENTITY flex-home "&github;westes/flex">
+<!ENTITY flex-home "&github;/westes/flex">
 <!ENTITY flex-ch6-du "33 MB">
 <!ENTITY flex-ch6-sbu "0.4 SBU">
 
@@ -472,7 +472,7 @@
 
 <!ENTITY meson-version "0.46.1">
 <!ENTITY meson-size "1,176 KB">
-<!ENTITY meson-url "&github;mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
+<!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
 <!ENTITY meson-md5 "1698f6526574839de5dcdc45e3f7d582">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-ch6-du "16 MB">
@@ -506,7 +506,7 @@
 
 <!ENTITY ninja-version "1.8.2">
 <!ENTITY ninja-size "181 KB">
-<!ENTITY ninja-url "&github;ninja-build/ninja/archive/v&ninja-version;/ninja-&ninja-version;.tar.gz">
+<!ENTITY ninja-url "&github;/ninja-build/ninja/archive/v&ninja-version;/ninja-&ninja-version;.tar.gz">
 <!ENTITY ninja-md5 "5fdb04461cc7f5d02536b3bfc0300166">
 <!ENTITY ninja-home "https://ninja-build.org/">
 <!ENTITY ninja-ch6-du "40 MB">
@@ -597,7 +597,7 @@
 
 <!ENTITY shadow-version "4.6">
 <!ENTITY shadow-size "1,639 KB">
-<!ENTITY shadow-url "&github;shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
+<!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
 <!ENTITY shadow-md5 "b491fecbf1232632c32ff8f1437fd60e">
 <!ENTITY shadow-home "https://pkg-shadow.alioth.debian.org/">
 <!ENTITY shadow-ch6-du "43 MB">
@@ -696,7 +696,7 @@
 <!ENTITY xml-parser-size "232 KB">
 <!ENTITY xml-parser-url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
 <!ENTITY xml-parser-md5 "af4813fe3952362451201ced6fbce379">
-<!ENTITY xml-parser-home "&github;chorny/XML-Parser">
+<!ENTITY xml-parser-home "&github;/chorny/XML-Parser">
 <!ENTITY xml-parser-ch6-du "2.1 MB">
 <!ENTITY xml-parser-ch6-sbu "меньше чем 0.1 SBU">
 
