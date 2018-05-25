@@ -23,9 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para> The pkg-config пакет содержит  a tool for passing the include path
-    and/or library paths to build tools during the configure and make file
-    execution.</para>
+    <para>Утилита, предоставляющая интерфейс для получения информации об установленных программных библиотеках, включающую в себя параметры для Си или Си++ компилятора, параметры для компоновщика, а также версию пакета. Инструмент позволяет передавать для включения пути или пути к библиотекам инструментам для сборки во время процесса конфигурирования (configure) и выполнения команд программы make.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -55,16 +53,15 @@
       <varlistentry>
         <term><parameter>--with-internal-glib</parameter></term>
         <listitem>
-          <para>This will allow pkg-config to use its internal version of
-          Glib because an external version is not available in LFS.</para>
+          <para>Аргумент позволяет использовать внутреннюю версию пакета Glib, потому, как внешняя версия не доступна в книге LFS.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-host-tool</parameter></term>
         <listitem>
-          <para>This option disables the creation of an undesired hard link
-          to the pkg-config program.</para>
+          <para>Этот параметр отключает создание нежелательной жесткой ссылки
+          на программу pkg-config.</para>
         </listitem>
       </varlistentry>
 
@@ -106,8 +103,7 @@
          <!-- Don't remove the extra space, it prevents a FOP warning. -->
         <term><command>pkg-config </command></term>
         <listitem>
-          <para>Returns meta information for the specified library or package
-          </para>
+          <para>Возвращает метаданные для указанной библиотеки или пакета</para>
           <indexterm zone="ch-system-pkgconfig pkgconfig">
             <primary sortas="b-pkgconfig">pkg-config</primary>
           </indexterm>
