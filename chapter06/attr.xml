@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The attr пакет содержит  utilities to administer the extended
-    attributes on filesystem objects.</para>
+    <para>Пакет содержит утилиты для администрирования расширенных атрибутов объектов файловой системы.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,17 +40,15 @@
   <sect2 role="installation">
     <title>Установка пакета Attr</title>
 
-    <para>Modify the documentation directory so that it is a versioned
-    directory:</para>
+    <para>Измените каталог документации так, чтобы он включал в себя номер версии в наименовании каталога:</para>
 
 <screen><userinput remap="pre">sed -i -e 's|/@pkg_name@|&amp;-@pkg_version@|' include/builddefs.in</userinput></screen>
 
-    <para>Prevent installation of manual pages that were already installed by
-    the <xref linkend="man-pages"/> package:</para>
+    <para>Запретить установку уже установленных справочных страниц, пакетом <xref linkend="man-pages"/></para>
 
 <screen><userinput remap="pre">sed -i -e "/SUBDIRS/s|man[25]||g" man/Makefile</userinput></screen>
 
-    <para>Fix a problem in the test procedures caused by changes in perl-5.26:</para>
+    <para>Устранить проблему в процедурах тестирования, вызванную изменениями в perl-5.26:</para>
 
 <screen><userinput remap="pre">sed -i 's:{(:\\{(:' test/run</userinput></screen>
 
@@ -68,10 +65,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>The tests need to be run on a filesystem that supports extended
-    attributes such as the ext2, ext3, or ext4 filesystems. The tests are also
-    known to fail if running multiple simultaneous tests (-j option greater than
-    1).  Для выполнения тестов, выполните команду:</para>
+    <para>Тесты необходимо запускать на тех файловых системах, в которых есть поддержка расширенных файловых атрибутов. Например, такая поддержка присутствует в файловых системах ext2, ext3, и ext4. Как известно, не пройдут тесты при парралельной сборке (если значение аргумента -j больше чем 1). Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make -j1 tests root-tests</userinput></screen>
 
@@ -80,10 +74,10 @@
 <screen><userinput remap="install">make install install-dev install-lib
 chmod -v 755 /usr/lib/libattr.so</userinput></screen>
 
-    <para>The shared library needs to be moved to
-    <filename class="directory">/lib</filename>, and as a result the
-    <filename class="extension">.so</filename> file in
-    <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
+    <para>Разделяемые библиотеки необходимо переместить в каталоги
+    <filename class="directory">/lib</filename>, и в результате файлы
+    <filename class="extension">.so</filename> в каталоге
+    <filename class="directory">/usr/lib</filename> необходим создать заново:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libattr.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput></screen>
@@ -113,7 +107,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
       <varlistentry id="attr">
         <term><command>attr</command></term>
         <listitem>
-          <para>Extends attributes on filesystem objects</para>
+          <para>Расширяет атрибуты объектов файловой системы</para>
           <indexterm zone="ch-system-attr attr">
             <primary sortas="b-attr">attr</primary>
           </indexterm>
@@ -123,7 +117,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
       <varlistentry id="getfattr">
         <term><command>getfattr</command></term>
         <listitem>
-          <para>Gets the extended attributes of filesystem objects</para>
+          <para>Получает расширенные атрибуты объектов файловой системы</para>
           <indexterm zone="ch-system-attr getfattr">
             <primary sortas="b-getfattr">getfattr</primary>
           </indexterm>
@@ -133,7 +127,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
       <varlistentry id="setattr">
         <term><command>setattr</command></term>
         <listitem>
-          <para>Sets the extended attributes of filesystem objects</para>
+          <para>Задает дополнительные атрибуты объектов файловой системы </para>
           <indexterm zone="ch-system-attr setattr">
             <primary sortas="b-setattr">setattr</primary>
           </indexterm>
@@ -143,7 +137,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
       <varlistentry id="libattr">
         <term><filename class="libraryfile">libattr</filename></term>
         <listitem>
-          <para>Содержит the library functions for manipulating extended attributes</para>
+          <para>Библиотека содержит функции для работы с расширенными атрибутами</para>
           <indexterm zone="ch-system-attr libattr">
             <primary sortas="c-libattr">libattr</primary>
           </indexterm>
