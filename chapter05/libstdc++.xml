@@ -59,7 +59,7 @@ cd       build</userinput></screen>
     --disable-nls                   \
     --disable-libstdcxx-threads     \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/Си++/&gcc-version;</userinput></screen>
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</userinput></screen>
 
     <variablelist>
       <title>Значение параметров конфигурации:</title>
@@ -86,7 +86,7 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-gxx-include-dir=/tools/$LFS_TGT/include/Си++/&gcc-version;</parameter></term>
+        <term><parameter>--with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</parameter></term>
         <listitem>
           <para>Это каталог, где будет выполнятся поиск стандартных заголовочных файлов компилятором Си++. При обычной сборке, эта информация автоматически передается сценарию <command>configure</command> пакета Libstdc++ из каталога верхнего уровня. В нашем случае, эта информация должны быть указана явно.</para>
         </listitem>

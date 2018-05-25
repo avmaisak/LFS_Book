@@ -125,7 +125,7 @@ cd       build</userinput></screen>
     --disable-libssp                               \
     --disable-libvtv                               \
     --disable-libstdcxx                            \
-    --enable-languages=c,Си++</userinput></screen>
+    --enable-languages=c,c++</userinput></screen>
     <variablelist>
       <title>Значение параметров конфигурации:</title>
 
@@ -173,7 +173,7 @@ cd       build</userinput></screen>
         <listitem>
           <para>
 			 Этот аргумент отключает поддержку расширений для работы с десятичными числами и числами с плавающей запятой, потоками, библиотеками libatomic, libgomp, libmpx, libquadmath, libssp,
-          libvtv и стандартной библиотеки Си++ соответственно. При компиляции этих функций, возникнет ошибка и для кросс-компилятора, эти функции не нужны, для того чтобы выполнить кросс-компиляцию временной библиотеки C (libc).</para>
+          libvtv и стандартной библиотеки C++ соответственно. При компиляции этих функций, возникнет ошибка и для кросс-компилятора, эти функции не нужны, для того чтобы выполнить кросс-компиляцию временной библиотеки C (libc).</para>
         </listitem>
       </varlistentry>
 
@@ -185,7 +185,7 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--enable-languages=c,Си++</parameter></term>
+        <term><parameter>--enable-languages=c,c++</parameter></term>
         <listitem>
           <para>Этот параметр гарантирует, что будут созданы только компиляторы C и C ++. Это единственные языки, которые нужны сейчас.</para>
         </listitem>
