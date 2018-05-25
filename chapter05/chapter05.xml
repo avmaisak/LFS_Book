@@ -9,7 +9,7 @@
   <?dbhtml dir="chapter05"?>
   <?dbhtml filename="chapter05.html"?>
 
-  <title>Построение временной системы</title>
+  <title>Сборка временной системы</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="toolchaintechnotes.xml"/>
