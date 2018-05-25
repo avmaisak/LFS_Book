@@ -76,7 +76,7 @@
 
 <screen><userinput remap="make">make -C src</userinput></screen>
 
-    <para>У этого пакета отсутствуют наборы тестов.</para>
+    <para>У этого пакета нет тестов.</para>
 
     <para>Установите пакет:</para>
 

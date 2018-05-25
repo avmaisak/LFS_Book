@@ -73,7 +73,7 @@
       <varlistentry>
         <term><parameter>--bootstrap</parameter></term>
         <listitem>
-          <para>This parameter forces ninja to rebuild itself for the current
+          <para>Аргумент forces ninja to rebuild itself for the current
           system.</para>
         </listitem>
       </varlistentry>

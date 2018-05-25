@@ -51,7 +51,7 @@ sed -i 's/union wait/int/' syslogd.c</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>У этого пакета отсутствуют наборы тестов.</para>
+    <para>У этого пакета нет тестов.</para>
 
     <para>Установите пакет:</para>
 

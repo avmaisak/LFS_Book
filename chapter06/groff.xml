@@ -57,7 +57,7 @@
 
 <screen><userinput remap="make">make -j1</userinput></screen>
 
-    <para>У этого пакета отсутствуют наборы тестов.</para>
+    <para>У этого пакета нет тестов.</para>
 
     <para>Установите пакет:</para>
 

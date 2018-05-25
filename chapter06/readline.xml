@@ -68,7 +68,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
     </variablelist>
 
-    <para>У этого пакета отсутствуют наборы тестов.</para>
+    <para>У этого пакета нет тестов.</para>
 
     <para>Установите пакет:</para>
 

@@ -23,10 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Libcap package implements the user-space interfaces to the POSIX
-    1003.1e capabilities available in Linux kernels. These capabilities are a
-    partitioning of the all powerful root privilege into a set of distinct
-    privileges.</para>
+    <para>Пакет Libcap реализует интерфейсы пользовательского пространства для возможностей POSIX 1003.1 e, доступных в ядрах Linux. Эти возможности представляют собой разделение привилегий All powerful root на набор различных привилегий.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -43,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Libcap</title>
 
-    <para>Prevent a static library from being installed:</para>
+    <para>Запретить установку статической библиотеки</para>
 
 <screen><userinput remap="pre">sed -i '/install.*STALIBNAME/d' libcap/Makefile</userinput></screen>
 
@@ -51,7 +48,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>У этого пакета отсутствуют наборы тестов.</para>
+    <para>У этого пакета нет тестов.</para>
 
     <para>Установите пакет:</para>
 
@@ -64,19 +61,16 @@ chmod -v 755 /usr/lib/libcap.so</userinput></screen>
       <varlistentry>
         <term><parameter>RAISE_SETFCAP=no</parameter></term>
         <listitem>
-          <para>This parameter skips trying to use <command>setcap</command>
-          on itself. This avoids an installation error if the kernel or file
-          system does not support extended capabilities.</para>
+          <para>Этот параметр пропускает попытки использовать <command>setcap</command> для себя. Это позволяет избежать ошибки установки, если ядро или файловая система не поддерживает расширенные возможности.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>lib=lib</parameter></term>
         <listitem>
-          <para>This parameter installs the library in
-          <filename>$prefix/lib</filename> rather than
-          <filename>$prefix/lib64</filename> on x86_64. It has no effect on
-          x86.</para>
+          <para>Аргумент указывает, что установка библиотеки должна происходить в каталог
+          <filename>$prefix/lib</filename> вместо
+          <filename>$prefix/lib64</filename> на архитектурах x86_64. Это не влияет на машины с архитектурой x86.</para>
         </listitem>
       </varlistentry>
 
@@ -113,7 +107,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
       <varlistentry id="capsh">
         <term><command>capsh</command></term>
         <listitem>
-          <para>A shell wrapper to explore and constrain capability support</para>
+          <para>Обёртка к оболочке для изучения и ограничения поддержки возможностей</para>
           <indexterm zone="ch-system-libcap capsh">
             <primary sortas="b-capsh">capsh</primary>
           </indexterm>
@@ -123,7 +117,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
       <varlistentry id="getcap">
         <term><command>getcap</command></term>
         <listitem>
-          <para>Examines file capabilities</para>
+          <para>Проверяет возможности файлов</para>
           <indexterm zone="ch-system-libcap getcap">
             <primary sortas="b-getcap">getcap</primary>
           </indexterm>
@@ -133,7 +127,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
       <varlistentry id="getpcaps">
         <term><command>getpcaps</command></term>
         <listitem>
-          <para>Displays the capabilities on the queried process(es)</para>
+          <para>Отображает возможности запрашиваемого процесса или процессов</para>
           <indexterm zone="ch-system-libcap getpcaps">
             <primary sortas="b-getpcaps">getpcaps</primary>
           </indexterm>
@@ -143,7 +137,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
       <varlistentry id="setcap">
         <term><command>setcap</command></term>
         <listitem>
-          <para>Sets file capabilities</para>
+          <para>Устанавливает возможности файлов</para>
           <indexterm zone="ch-system-libcap setcap">
             <primary sortas="b-setcap">setcap</primary>
           </indexterm>
@@ -153,8 +147,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
       <varlistentry id="libcap">
         <term><filename class="libraryfile">libcap</filename></term>
         <listitem>
-          <para>Содержит the library functions for manipulating POSIX 1003.1e
-          capabilities</para>
+          <para>Библиотека содержит функции для управления возможностями POSIX 1003.1e</para>
           <indexterm zone="ch-system-libcap libcap">
             <primary sortas="c-libcap">libcap</primary>
           </indexterm>
