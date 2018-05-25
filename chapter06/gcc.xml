@@ -376,10 +376,9 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="gcc-ar">
         <term><command>gcc-ar</command></term>
         <listitem>
-          <para>A wrapper around <command>ar</command> that adds a
-          plugin to the command line. This program is only used
-          to add "link time optimization" and is not useful with the
-          default build options</para>
+          <para>Обёртка для команды <command>ar</command> добавляющая плагин к командной строке. Эта программа
+			 используется только чтобы добавлять опцию "Оптимизация времени линковки" и не особо полезна для выполнения сборки
+			 с аргументами по умолчанию.</para>
           <indexterm zone="ch-system-gcc gcc-ar">
             <primary sortas="b-gcc-ar">gc-ar</primary>
           </indexterm>
@@ -389,10 +388,9 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="gcc-nm">
         <term><command>gcc-nm</command></term>
         <listitem>
-          <para>A wrapper around <command>nm</command> that adds a
-          plugin to the command line. This program is only used
-          to add "link time optimization" and is not useful with the
-          default build options</para>
+			 <para>Обёртка для команды <command>nm</command> добавляющая плагин к командной строке. Эта программа
+			 используется только чтобы добавлять опцию "Оптимизация времени линковки" и не особо полезна для выполнения сборки
+			 с аргументами по умолчанию.</para>
           <indexterm zone="ch-system-gcc gcc-nm">
             <primary sortas="b-gcc-nm">gc-nm</primary>
           </indexterm>
@@ -402,10 +400,9 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="gcc-ranlib">
         <term><command>gcc-ranlib</command></term>
         <listitem>
-          <para>A wrapper around <command>ranlib</command> that adds a
-          plugin to the command line. This program is only used
-          to add "link time optimization" and is not useful with the
-          default build options</para>
+			  <para>Обёртка для команды <command>ranlib</command> добавляющая плагин к командной строке. Эта программа
+			 используется только чтобы добавлять опцию "Оптимизация времени линковки" и не особо полезна для выполнения сборки
+			 с аргументами по умолчанию.</para>
           <indexterm zone="ch-system-gcc gcc-ranlib">
             <primary sortas="b-gcc-ranlib">gc-ranlib</primary>
           </indexterm>
@@ -415,8 +412,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="gcov">
         <term><command>gcov</command></term>
         <listitem>
-          <para>A coverage testing tool; it is used to analyze programs to
-          determine where optimizations will have the most effect</para>
+          <para>Инструмент покрытия тестами; он используется для анализа программ и определяет, будет-ли оптимизация наиболее эффективной</para>
           <indexterm zone="ch-system-gcc gcov">
             <primary sortas="b-gcov">gcov</primary>
           </indexterm>
@@ -426,7 +422,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libasan">
         <term><command>libasan</command></term>
         <listitem>
-          <para>The Address Sanitizer runtime library</para>
+          <para>Библиотека времени выполнения очистки адресного пространства</para>
           <indexterm zone="ch-system-gcc libasan">
             <primary sortas="b-libasan">libasan</primary>
           </indexterm>
@@ -436,7 +432,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libgcc">
         <term><filename class="libraryfile">libgcc</filename></term>
         <listitem>
-          <para>Содержит run-time support for <command>gcc</command></para>
+          <para>Содержит поддержка времени выполнения для <command>gcc</command></para>
           <indexterm zone="ch-system-gcc libgcc">
             <primary sortas="c-libgcc">libgcc</primary>
           </indexterm>
@@ -446,8 +442,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libgcov">
         <term><filename class="libraryfile">libgcov</filename></term>
         <listitem>
-          <para>This library is linked in to a program when GCC is instructed
-          to enable profiling</para>
+          <para>Библиотека связывается с указанной программой. когда GCC необходимо выполнить профилирование</para>
           <indexterm zone="ch-system-gcc libgcov">
             <primary sortas="c-libgcov">libgcov</primary>
           </indexterm>
@@ -457,8 +452,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libgomp">
         <term><filename class="libraryfile">libgomp</filename></term>
         <listitem>
-          <para>GNU implementation of the OpenMP API for multi-platform
-          shared-memory parallel programming in C/Си++ and Fortran</para>
+          <para>Реализация проекта GNU API библиотеки OpenMP для кроссплатформенного программирования в разделяемой памяти парралельного программирования на языках Си,Си ++ и Фортран</para>
           <indexterm zone="ch-system-gcc libgomp">
             <primary sortas="c-libgomp">libgomp</primary>
           </indexterm>
@@ -468,9 +462,9 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libiberty">
         <term><filename class="libraryfile">libiberty</filename></term>
         <listitem>
-          <para>Содержит routines used by various GNU programs, including
+          <para>Содержит программы и утилиты, которые используются различными программами GNU, такие как
           <command>getopt</command>, <command>obstack</command>,
-          <command>strerror</command>, <command>strtol</command>, and
+          <command>strerror</command>, <command>strtol</command>, и
           <command>strtoul</command></para>
           <indexterm zone="ch-system-gcc libiberty">
             <primary sortas="c-libiberty">libiberty</primary>
@@ -481,8 +475,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="liblto_plugin">
         <term><filename class="libraryfile">liblto_plugin</filename></term>
         <listitem>
-          <para>GCC's Link Time Optimization (LTO) plugin allows GCC to perform
-          optimizations across compilation units</para>
+          <para>GCC's расширение оптимизации времени линковки (LTO), GCC позволяющее выполнять оптимизацию при компиляции модулей</para>
           <indexterm zone="ch-system-gcc liblto_plugin">
             <primary sortas="c-liblto_plugin">liblto_plugin</primary>
           </indexterm>
@@ -492,7 +485,8 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libquadmath">
         <term><filename class="libraryfile">libquadmath</filename></term>
         <listitem>
-          <para>GCC Quad Precision Math Library API</para>
+          <para>Библиотека API для выполнения математических вычислений четырехмерной точности</para>
+
           <indexterm zone="ch-system-gcc libquadmath">
             <primary sortas="c-libquadmath">libquadmath</primary>
           </indexterm>
@@ -502,8 +496,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libssp">
         <term><filename class="libraryfile">libssp</filename></term>
         <listitem>
-          <para>Содержит routines supporting GCC's stack-smashing protection
-          functionality</para>
+          <para>Содержит программы для обеспечения защиты стека от атак переполнения буфера в стеке (stack-smashing).</para>
           <indexterm zone="ch-system-gcc libssp">
             <primary sortas="c-libssp">libssp</primary>
           </indexterm>
@@ -513,7 +506,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libstdc">
         <term><filename class="libraryfile">libstdc++</filename></term>
         <listitem>
-          <para>The standard Си++ library</para>
+          <para>Стандартная библиотека Си++</para>
           <indexterm zone="ch-system-gcc libstdc">
             <primary sortas="c-libstdc++">libstdc++</primary>
           </indexterm>
@@ -523,8 +516,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libsupc">
         <term><filename class="libraryfile">libsupc++</filename></term>
         <listitem>
-          <para>Provides supporting routines for the Си++ programming
-          language</para>
+          <para>Предоставляет вспомогательные процедуры для языка программирования Си++</para>
           <indexterm zone="ch-system-gcc libsupc">
             <primary sortas="c-libsupc++">libsupc++</primary>
           </indexterm>
@@ -534,7 +526,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libtsan">
         <term><filename class="libraryfile">libtsan</filename></term>
         <listitem>
-          <para>The Thread Sanitizer runtime library</para>
+          <para>Библиотека времени выполнения очистки потоков</para>
           <indexterm zone="ch-system-gcc libtsan">
             <primary sortas="c-libtsan">libtsan</primary>
           </indexterm>

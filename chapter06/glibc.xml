@@ -106,7 +106,7 @@ unset GCC_INCDIR</userinput></screen>
       <varlistentry>
         <term><parameter>--enable-stack-protector=strong</parameter></term>
         <listitem>
-          <para>Аргумент усиливает безопасность системы, добавляя дополнительный код для проверки на переполнение буфера, например при smashing атаках на стек.</para>
+          <para>Аргумент усиливает безопасность системы, добавляя дополнительный код для проверки на переполнение буфера, например при переполнении буфера в стеке (Stack smashing).</para>
         </listitem>
       </varlistentry>
 
