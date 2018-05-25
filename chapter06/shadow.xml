@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Shadow пакет содержит  программы для  handling passwords in a secure
-    way.</para>
+    <para>Пакет Shadow содержит программы для работы с паролями безопасным способом.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -42,42 +41,33 @@
     <title>Установка пакета Shadow</title>
 
     <note>
-      <para>If you would like to enforce the use of strong passwords, refer to
-      <ulink url="&blfs-book;postlfs/cracklib.html"/> for installing
-      CrackLib prior to building Shadow. Then add
-      <parameter>--with-libcrack</parameter> to the <command>configure</command>
-      command below.</para>
+      <para>Если вы хотите принудительно использовать надежные пароли, изучите информацию по ссылке
+      <ulink url="&blfs-book;postlfs/cracklib.html"/> для установки библиотеки CrackLib до того, как будет установлен пакет Shadow. Потом добавьте еще один аргумент <parameter>--with-libcrack</parameter> в сценарий конфигурирования пакета.</para>
     </note>
 
-    <para>Disable the installation of the <command>groups</command> program
-    and its man pages, as Coreutils provides a better version. Also
-    Prevent the installation of manual pages that were already installed by the
-    <xref linkend="man-pages"/> package:</para>
+    <para>Запретим установку программы <command>groups</command> и её руководств, так как пакет Coreutils предоставляет более лучшую версию. Также предотвратите установку страниц руководств которые уже содержатся в пакете <xref linkend="man-pages"/>:</para>
 
 <screen><userinput remap="pre">sed -i 's/groups$(EXEEXT) //' src/Makefile.in
 find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;
 find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;
 find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></screen>
 
-    <para id="shadow-login_defs">Instead of using the default
-    <emphasis>crypt</emphasis> method, use the more secure
-    <emphasis>SHA-512</emphasis> method of password encryption, which also
-    allows passwords longer than 8 characters. It is also necessary to change
-    the obsolete <filename class="directory">/var/spool/mail</filename> location
-    for user mailboxes that Shadow uses by default to the <filename
-    class="directory">/var/mail</filename> location used currently:</para>
+    <para id="shadow-login_defs">Вместо того, чтобы использовать метод по умолчанию
+    <emphasis>crypt</emphasis>, мы будем использовать более стойкий и безопасный метод
+    <emphasis>SHA-512</emphasis> для шифрования паролей, который также позволяет хранить пароли длиннее чем 8 символов.
+	 Следует также изменить устаревший путь к каталогу  <filename class="directory">/var/spool/mail</filename>, местоположением для почтовых ящиков пользователей, которые Shadow использует по умолчанию в каталоге <filename
+    class="directory">/var/mail</filename>:</para>
 
 <screen><userinput remap="pre">sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
        -e 's@/var/spool/mail@/var/mail@' etc/login.defs</userinput></screen>
 
     <note>
-      <para>If you chose to build Shadow with Cracklib support, run the following:</para>
+      <para>Если вы приняли решение выполнять сборку Shadow с поддержкой Cracklib, выполните следующую команду:</para>
 
 <screen role="nodump"><userinput>sed -i 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' etc/login.defs</userinput></screen>
     </note>
 
-    <para>Make a minor change to make the first group number generated
-    by useradd 1000:</para>
+    <para>Внесите незначительные изменения, чтобы создать первый номер группы, сгенерированный программой useradd равным 1000:</para>
 
 <screen><userinput remap="pre">sed -i 's/1000/999/' etc/useradd</userinput></screen>
 
@@ -91,8 +81,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
       <varlistentry>
         <term><parameter>--with-group-name-max-length=32</parameter></term>
         <listitem>
-          <para>The maximum user name is 32 characters.  Make the maximum
-          group name the same.</para>
+          <para>Максимальная длина имени пользователя-32 символа. Сделаем такое же значение для групп.</para>
         </listitem>
       </varlistentry>
 
@@ -108,7 +97,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Move a misplaced program to its proper location:</para>
+    <para>Переместим программу в нужное место:</para>
 
 <screen><userinput remap="install">mv -v /usr/bin/passwd /bin</userinput></screen>
 
@@ -121,7 +110,7 @@ ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</userinput></screen> -->
   </sect2>
 
   <sect2 id="conf-shadow" role="configuration">
-    <title>Configuring Shadow</title>
+    <title>Конфигурация Shadow</title>
 
     <indexterm zone="conf-shadow">
       <primary sortas="a-Shadow">Shadow</primary>
