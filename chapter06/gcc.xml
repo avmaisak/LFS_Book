@@ -125,8 +125,8 @@ cd       build</userinput></screen>
 
 
     <note><para>
-	 	При некоторых конфигурациях ядра хост-системы и наличие процессора AMD, могут возникать ошибки при тестировании.
-		Их может быть более 1100 в тестах gcc.target/i386/mpx (которые спроектированы для тестирования опции MPX на последних процессорах
+	 	При некоторых конфигурациях ядра хост-системы и при наличии процессора AMD, могут возникать ошибки при тестировании.
+		Ошибок может быть более 1100 в тестах gcc.target/i386/mpx (которые спроектированы для тестирования опции MPX для современных процессоров
 		Intel). Такие ошибки можно игнорировать, если у вас процессор AMD.
     </para></note>
 
@@ -140,21 +140,19 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="install">ln -sv ../usr/bin/cpp /lib</userinput></screen>
 
-    <para>Many packages use the name <command>cc</command> to call the C
-    compiler. To satisfy those packages, create a symlink:</para>
+    <para>Многие пакеты используют команду <command>cc</command> для вызова компилятора языка Си. Для соблюдения совместимости,
+	 добавим следующую символическую ссылку:</para>
 
 <screen><userinput remap="install">ln -sv gcc /usr/bin/cc</userinput></screen>
 
-    <para>Add a compatibility symlink to enable building programs with
-    Link Time Optimization (LTO):</para>
+    <para>Добавим ещё одну символическую ссылку, для соблюдения совместимости и возможности сборки программ с поддержкой LTO (Оптимизация времени линковки):</para>
 
 <screen><userinput remap="install">install -v -dm755 /usr/lib/bfd-plugins
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
         /usr/lib/bfd-plugins/</userinput></screen>
 
-    <para>Now that our final toolchain is in place, it is important to again ensure
-    that compiling and linking will work as expected. We do this by performing
-    the same sanity checks as we did earlier in the chapter:</para>
+    <para>Теперь, когда все инструменты на своем месте, важно снова убедиться в том, что всё компиляция и линковка работают правильно.
+	 Выполним проверки, аналогичную тем, что выполняли на предыдущих этапах:</para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
     href="adjusting.xml"
@@ -184,12 +182,8 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
 /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
 
-  <para>Depending on your machine architecture, the above may differ slightly,
-  the difference usually being the name of the directory
-  after <filename class="directory">/usr/lib/gcc</filename>. The important
-  thing to look for here is that <command>gcc</command> has found all three
-  <filename>crt*.o</filename> files under the
-  <filename class="directory">/usr/lib</filename> directory.</para>
+  <para>В зависимости от архитектуры машины, вывод, указанный выше, может немного отличаться. Разница может быть в наименовании каталогов после <filename class="directory">/usr/lib/gcc</filename>. Важным моментом на который стоит обратить внимание, это наличие трёх файлов
+  <filename>crt*.o</filename> которые ищет <command>gcc</command> в каталоге <filename class="directory">/usr/lib</filename>.</para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
     href="adjusting.xml"
@@ -207,8 +201,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
  /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include-fixed
  /usr/include</computeroutput></screen>
 
-   <para>Again, note that the directory named after your target triplet may be
-   different than the above, depending on your architecture.</para>
+   <para>Снова обратите внимание, что наименование каталога. после целевого триплета может отличаться, в зависимости от архитектуры машины.</para>
 
 <!--  This appears to be obsolete
 
@@ -239,8 +232,8 @@ SEARCH_DIR("/usr/local/lib")
 SEARCH_DIR("/lib")
 SEARCH_DIR("/usr/lib");</computeroutput></screen>
 
-   <para>A 32-bit system may see a few different directories. For example, here
-   is the output from an i686 machine:</para>
+   <para>На 32-битных машинах можно заместить что появились некоторые другие каталоги. Например, вывод на архитектуре i686 может быть
+	такой:</para>
 
 <screen><computeroutput>SEARCH_DIR("/usr/i686-pc-linux-gnu/lib32")
 SEARCH_DIR("/usr/local/lib32")
@@ -295,7 +288,7 @@ SEARCH_DIR("/usr/lib");</computeroutput></screen>
     href="adjusting.xml"
     xpointer="xpointer(//*[@os='v'])"/>
 
-    <para>Finally, move a misplaced file:</para>
+    <para>Наконец переместим файлы в правильное местоположение:</para>
 
 <screen><userinput remap="install">mkdir -pv /usr/share/gdb/auto-load/usr/lib
 mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
@@ -333,9 +326,9 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="c">
         <term><command>Си++</command></term>
         <listitem>
-          <para>The Си++ compiler</para>
+          <para>Компилятор Си++</para>
           <indexterm zone="ch-system-gcc c">
-            <primary sortas="b-Си++">Си++</primary>
+            <primary sortas="b-с">с</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -343,7 +336,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="cc">
         <term><command>cc</command></term>
         <listitem>
-          <para>The C compiler</para>
+          <para>Компилятор Си</para>
           <indexterm zone="ch-system-gcc cc">
             <primary sortas="b-cc">cc</primary>
           </indexterm>
@@ -353,8 +346,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="cpp">
         <term><command>cpp</command></term>
         <listitem>
-          <para>The C preprocessor; it is used by the compiler to expand the
-          #include, #define, and similar statements in the source files</para>
+          <para>Препроцессор Си; используется компилятором для замены в исходном коде инструкций #include, #define и аналогичных</para>
           <indexterm zone="ch-system-gcc cpp">
             <primary sortas="b-cpp">cpp</primary>
           </indexterm>
@@ -364,7 +356,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="g">
         <term><command>g++</command></term>
         <listitem>
-          <para>The Си++ compiler</para>
+          <para>Компилятор Си++</para>
           <indexterm zone="ch-system-gcc g">
             <primary sortas="b-g++">g++</primary>
           </indexterm>
@@ -374,7 +366,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="gcc">
         <term><command>gcc</command></term>
         <listitem>
-          <para>The C compiler</para>
+          <para>Компилятор Си</para>
           <indexterm zone="ch-system-gcc gcc">
             <primary sortas="b-gcc">gcc</primary>
           </indexterm>
