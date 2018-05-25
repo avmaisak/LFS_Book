@@ -105,9 +105,9 @@ chmod -v 755 /usr/lib/libpython3.so</userinput></screen>
 
     </variablelist>
 
-    <para>If desired, install the preformatted documentation:</para>
+    <para>При желании установите the preformatted documentation:</para>
 
-<screen><userinput remap="install">install -v -dm755 /usr/share/doc/python-&python-version;/html 
+<screen><userinput remap="install">install -v -dm755 /usr/share/doc/python-&python-version;/html
 
 tar --strip-components=1  \
     --no-same-owner       \
@@ -121,9 +121,9 @@ tar --strip-components=1  \
     <varlistentry>
       <term><option>--no-same-owner</option> and --no-same-permissions</term>
       <listitem>
-        <para>Ensure the installed files have the correct ownership and 
+        <para>Ensure the installed files have the correct ownership and
         permissions.  Without these options, using <application>tar</application>
-        will install the package files with the upstream creator's values. 
+        will install the package files with the upstream creator's values.
         </para>
       </listitem>
     </varlistentry>

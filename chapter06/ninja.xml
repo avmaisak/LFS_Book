@@ -59,7 +59,7 @@
 
     will limit ninja to four parallel processes.</para>
 
-    <para>If desired, install the patch выполнив команду:</para>
+    <para>При желании установите the patch выполнив команду:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../ninja-1.8.2-add_NINJAJOBS_var-1.patch</userinput></screen>
 
