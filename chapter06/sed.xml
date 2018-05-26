@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Sed</title>
 
-    <para>First fix an issue in the LFS environment and remove a failing test:</para>
+    <para>Сначала устраните проблему в среде LFS и удалите ошибочный тест:</para>
 
 <screen><userinput remap="pre">sed -i 's/usr/tools/'                 build-aux/help2man
 sed -i 's/testsuite.panic-tests.sh//' Makefile.in</userinput></screen>
@@ -98,7 +98,7 @@ install -m644 doc/sed.html /usr/share/doc/sed-&sed-version;</userinput></screen>
       <varlistentry id="sed">
         <term><command>sed</command></term>
         <listitem>
-          <para>Filters and transforms text files in a single pass</para>
+          <para>Фильтрация и преобразование текстовых файлов за один проход</para>
           <indexterm zone="ch-system-sed sed">
             <primary sortas="b-sed">sed</primary>
           </indexterm>
