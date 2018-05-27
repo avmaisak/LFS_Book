@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Iana-Etc package provides data for network services and
-    protocols.</para>
+    <para>Пакет Iana-Etc содержит данные для сетевых служб и протоколов.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,9 +40,8 @@
   <sect2 role="installation">
     <title>Установка пакета Iana-Etc</title>
 
-    <para>The following command converts the raw data provided by IANA into the
-    correct formats for the <filename>/etc/protocols</filename> and
-    <filename>/etc/services</filename> data files:</para>
+    <para>Следующая команда преобразует необработанные данные, предоставленные IANA, в требуемые форматы для файлов с данными <filename>/etc/protocols</filename> и
+    <filename>/etc/services</filename></para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
@@ -74,8 +72,8 @@
       <varlistentry id="protocols">
         <term><filename>/etc/protocols</filename></term>
         <listitem>
-          <para>Describes the various DARPA Internet protocols that are
-          available from the TCP/IP subsystem</para>
+          <para>Описывает различные интернет-протоколы DARPA, которые
+          доступно из подсистемы TCP/IP</para>
           <indexterm zone="ch-system-iana-etc">
             <primary sortas="e-/etc/protocols">/etc/protocols</primary>
           </indexterm>
@@ -85,9 +83,8 @@
       <varlistentry id="services">
         <term><filename>/etc/services</filename></term>
         <listitem>
-          <para>Provides a mapping between friendly textual names for internet
-          services, and their underlying assigned port numbers and protocol
-          types</para>
+          <para>Обеспечивает соответствие между текстовыми именами для интернет
+          служб  и назначенными номерами портов и протоколов</para>
           <indexterm zone="ch-system-iana-etc">
             <primary sortas="e-/etc/services">/etc/services</primary>
           </indexterm>
