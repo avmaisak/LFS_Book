@@ -73,7 +73,7 @@
         <term><filename>/etc/protocols</filename></term>
         <listitem>
           <para>Описывает различные интернет-протоколы DARPA, которые
-          доступно из подсистемы TCP/IP</para>
+          доступны из подсистемы TCP/IP</para>
           <indexterm zone="ch-system-iana-etc">
             <primary sortas="e-/etc/protocols">/etc/protocols</primary>
           </indexterm>
