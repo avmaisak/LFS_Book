@@ -50,7 +50,7 @@
 
     <para>The tests are known to fail if running multiple
     simultaneous tests (-j option greater than 1). To test
-    the results, issue:</para>
+    the results, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make -j1 check</userinput></screen>
 

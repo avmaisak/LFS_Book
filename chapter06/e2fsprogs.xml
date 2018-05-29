@@ -122,7 +122,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
     <para>To set up и выполните команду the test suite we need to first link some
     libraries from /tools/lib to a location where the test programs look.
-    To run the tests, issue:</para>
+    To run the tests, выполните следующую команду:</para>
 
 <screen><userinput remap="test">ln -sfv /tools/lib/lib{blk,uu}id.so.1 lib
 make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>

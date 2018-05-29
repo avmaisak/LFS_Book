@@ -22,11 +22,11 @@
 
   <itemizedlist>
     <listitem>
-      <para>A <command>bash</command> двоичный файл с отладочными символами:
+      <para><command>bash</command> двоичный файл с отладочными символами:
       1200 KB</para>
     </listitem>
     <listitem>
-      <para>A <command>bash</command> двоичный файл без отладочных символов:
+      <para><command>bash</command> двоичный файл без отладочных символов:
       480 KB</para>
     </listitem>
     <listitem>
