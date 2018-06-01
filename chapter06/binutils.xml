@@ -193,7 +193,7 @@ cd       build</userinput></screen>
       <varlistentry id="as">
         <term><command>as</command></term>
         <listitem>
-          <para>Ассемблер, известный как GAS (Gnu ASsembler). Выполняет создание объектного файла из вывода команды <command>gcc</command></para>
+          <para>Ассемблер, известный как GAS (Gnu Assembler). Выполняет создание объектного файла из вывода команды <command>gcc</command></para>
           <indexterm zone="ch-system-binutils as">
             <primary sortas="b-as">as</primary>
           </indexterm>
