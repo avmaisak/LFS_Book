@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит программу, которая находит на вводе строки, отвечающие заданному регулярному выражению, и выводит их, если вывод не отменён специальным ключом.
-        Пакет используется в процедурах сборки для большинства пакетов.</para>
+    <para>Пакет содержит программу, которая находит на вводе строки, отвечающие заданному регулярному выражению, и выводит их, если вывод не отменён специальным ключом. Пакет используется в процедурах сборки для большинства пакетов.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -78,7 +77,7 @@
       <varlistentry id="egrep">
         <term><command>egrep</command></term>
         <listitem>
-          <para>Prints lines matching an extended regular expression</para>
+          <para>Печать строк, соответствующих расширенному регулярному выражению</para>
           <indexterm zone="ch-system-grep egrep">
             <primary sortas="b-egrep">egrep</primary>
           </indexterm>
@@ -88,7 +87,7 @@
       <varlistentry id="fgrep">
         <term><command>fgrep</command></term>
         <listitem>
-          <para>Prints lines matching a list of fixed strings</para>
+          <para>Печать строк, соответствующих списку фиксированных строк</para>
           <indexterm zone="ch-system-grep fgrep">
             <primary sortas="b-fgrep">fgrep</primary>
           </indexterm>
@@ -98,7 +97,7 @@
       <varlistentry id="grep">
         <term><command>grep</command></term>
         <listitem>
-          <para>Prints lines matching a basic regular expression</para>
+          <para>Печать строк, соответствующих базовому регулярному выражению</para>
           <indexterm zone="ch-system-grep grep">
             <primary sortas="b-grep">grep</primary>
           </indexterm>
