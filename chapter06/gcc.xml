@@ -304,7 +304,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
-        <seg>Си++, cc (link to gcc), cpp, g++, gcc,
+        <seg>c++, cc (link to gcc), cpp, g++, gcc,
         gcc-ar, gcc-nm, gcc-ranlib, and gcov</seg>
 
         <seg>libasan.{a,so}, libatomic.{a,so}, libgcc.a, libgcc_eh.a,
@@ -313,7 +313,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         libquadmath.{a,so}, libssp.{a,so},
         libssp_nonshared.a, libstdc++.{a,so}, libsupc++.a, and libtsan.{a,so}</seg>
 
-        <seg>/usr/include/Си++, /usr/lib/gcc, /usr/libexec/gcc, and
+        <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
         /usr/share/gcc-&gcc-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -324,7 +324,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="c">
-        <term><command>Си++</command></term>
+        <term><command>c++</command></term>
         <listitem>
           <para>Компилятор Си++</para>
           <indexterm zone="ch-system-gcc c">
