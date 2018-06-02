@@ -73,7 +73,7 @@ sed -i 's/test-lock..EXEEXT.//' gettext-tools/gnulib-tests/Makefile.in</userinpu
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>To test the results (this takes a long time, around 3 SBUs),
-    issue:</para>
+    выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 

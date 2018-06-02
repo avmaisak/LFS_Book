@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Sysvinit пакет содержит  программы для  controlling the startup,
-    running, and shutdown of the system.</para>
+    <para>Пакет Sysvinit содержит программы для управления загрузкой, выполнением, и выключением системы.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -91,7 +90,7 @@
       <segtitle>Установленные программы</segtitle>
 
       <seglistitem>
-        <seg>bootlogd, fstab-decode, halt, init, killall5, 
+        <seg>bootlogd, fstab-decode, halt, init, killall5,
         poweroff (link to halt), reboot (link to halt), runlevel,
         shutdown, and telinit (link to init)</seg>
       </seglistitem>

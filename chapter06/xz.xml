@@ -114,7 +114,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzcat">
         <term><command>lzcat</command></term>
         <listitem>
-          <para>Decompresses to standard output</para>
+          <para>Выполняется распаковка в стандартный вывод</para>
           <indexterm zone="ch-system-xz lzcat">
             <primary sortas="b-lzcat">lzcat</primary>
           </indexterm>
@@ -184,7 +184,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzma">
         <term><command>lzma</command></term>
         <listitem>
-          <para>Compresses or decompresses files using the LZMA format</para>
+          <para>Запаковывает и распаковывает файлы используя формат LZMA</para>
           <indexterm zone="ch-system-xz lzma">
             <primary sortas="b-lzma">lzma</primary>
           </indexterm>
@@ -194,7 +194,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzmadec">
         <term><command>lzmadec</command></term>
         <listitem>
-          <para>A small and fast decoder for LZMA compressed files</para>
+          <para>Небольшой и быстрый декодер для запакованных файлов в формате LZMA</para>
           <indexterm zone="ch-system-xz lzmadec">
             <primary sortas="b-lzmadec">lzmadec</primary>
           </indexterm>
@@ -204,7 +204,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="lzmainfo">
         <term><command>lzmainfo</command></term>
         <listitem>
-          <para>Shows information stored in the LZMA compressed file header</para>
+          <para>Показывает информацию, хранящуюся в заголовке сжатого файла LZMA</para>
           <indexterm zone="ch-system-xz lzmainfo">
             <primary sortas="b-lzmainfo">lzmainfo</primary>
           </indexterm>
@@ -224,7 +224,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="unlzma">
         <term><command>unlzma</command></term>
         <listitem>
-          <para>Decompresses files using the LZMA format</para>
+          <para>Распаковывает файлы используя формат LZMA</para>
           <indexterm zone="ch-system-xz unlzma">
             <primary sortas="b-unlzma">unlzma</primary>
           </indexterm>
@@ -234,7 +234,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="unxz">
         <term><command>unxz</command></term>
         <listitem>
-          <para>Decompresses files using the XZ format</para>
+          <para>Распаковывает файлы используя формат XZ</para>
           <indexterm zone="ch-system-xz unxz">
             <primary sortas="b-unxz">unxz</primary>
           </indexterm>
@@ -244,7 +244,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xz">
         <term><command>xz</command></term>
         <listitem>
-          <para>Compresses or decompresses files using the XZ format</para>
+          <para>Запаковывает и распаковывает файлы используя формат XZ</para>
           <indexterm zone="ch-system-xz xz">
             <primary sortas="b-xz">xz</primary>
           </indexterm>
@@ -254,7 +254,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzcat">
         <term><command>xzcat</command></term>
         <listitem>
-          <para>Decompresses to standard output</para>
+          <para>Выполняется распаковка в стандартный вывод</para>
           <indexterm zone="ch-system-xz xzcat">
             <primary sortas="b-xzcat">xzcat</primary>
           </indexterm>
@@ -264,7 +264,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzcmp">
         <term><command>xzcmp</command></term>
         <listitem>
-          <para>Запускает программу <command>cmp</command> on XZ compressed files</para>
+          <para>Запускает программу <command>cmp</command> для сжатых файлов в формте XZ</para>
           <indexterm zone="ch-system-xz xzcmp">
             <primary sortas="b-xzcmp">xzcmp</primary>
           </indexterm>
@@ -274,7 +274,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzdec">
         <term><command>xzdec</command></term>
         <listitem>
-          <para>A small and fast decoder for XZ compressed files</para>
+          <para>Небольшой и быстрый декодер для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzdec">
             <primary sortas="b-xzdec">xzdec</primary>
           </indexterm>
@@ -284,7 +284,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzdiff">
         <term><command>xzdiff</command></term>
         <listitem>
-          <para>Запускает программу <command>diff</command> on XZ compressed files</para>
+          <para>Запускает программу <command>diff</command> для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzdiff">
             <primary sortas="b-xzdiff">xzdiff</primary>
           </indexterm>
@@ -294,7 +294,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzegrep">
         <term><command>xzegrep</command></term>
         <listitem>
-          <para>Запускает программу <command>egrep</command> on XZ compressed files files</para>
+          <para>Запускает программу <command>egrep</command> для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzegrep">
             <primary sortas="b-xzegrep">xzegrep</primary>
           </indexterm>
@@ -304,7 +304,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzfgrep">
         <term><command>xzfgrep</command></term>
         <listitem>
-          <para>Запускает программу <command>fgrep</command> on XZ compressed files</para>
+          <para>Запускает программу <command>fgrep</command> для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzfgrep">
             <primary sortas="b-xzfgrep">xzfgrep</primary>
           </indexterm>
@@ -314,7 +314,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzgrep">
         <term><command>xzgrep</command></term>
         <listitem>
-          <para>Запускает программу <command>grep</command> on XZ compressed files</para>
+          <para>Запускает программу <command>grep</command> для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzgrep">
             <primary sortas="b-xzgrep">xzgrep</primary>
           </indexterm>
@@ -324,7 +324,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzless">
         <term><command>xzless</command></term>
         <listitem>
-          <para>Запускает программу <command>less</command> on XZ compressed files</para>
+          <para>Запускает программу <command>less</command> для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzless">
             <primary sortas="b-xzless">xzless</primary>
           </indexterm>
@@ -334,7 +334,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="xzmore">
         <term><command>xzmore</command></term>
         <listitem>
-          <para>Запускает программу <command>more</command> on XZ compressed files</para>
+          <para>Запускает программу <command>more</command> для запакованных файлов в формате XZ</para>
           <indexterm zone="ch-system-xz xzmore">
             <primary sortas="b-xzmore">xzmore</primary>
           </indexterm>
@@ -344,8 +344,7 @@ ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so</userinput
       <varlistentry id="liblzma">
         <term><filename class="libraryfile">liblzma</filename></term>
         <listitem>
-          <para>The library implementing lossless, block-sorting data
-          compression, using the Lempel-Ziv-Markov chain algorithm</para>
+          <para>LZMA((англ. Lempel-Ziv-Markov chain-Algorithm) Библиотека, реализующая алгоритм на схеме сжатия данных по словарю  и обеспечивает высокий коэффициент сжатия (обычно превышающий коэффициент, получаемый при сжатии с использованием bzip2), а также позволяет использовать словари различного размера</para>
           <indexterm zone="ch-system-xz liblzma">
             <primary sortas="c-liblzma">liblzma</primary>
           </indexterm>

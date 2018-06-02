@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Libpipeline пакет содержит  a library for manipulating pipelines
-    of subprocesses in a flexible and convenient way.</para>
+    <para>Библиотека для манипулирования работы с подпроцессами гибким и удобным способом.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -94,8 +93,8 @@
       <varlistentry id="libpipeline">
         <term><filename class="libraryfile">libpipeline</filename></term>
         <listitem>
-          <para>This library is used to safely construct pipelines between
-          subprocesses</para>
+          <para>Эта библиотека используется для безопасного построения
+          подпроцессов</para>
           <indexterm zone="ch-system-libpipeline">
             <primary sortas="c-libpipeline">libpipeline</primary>
           </indexterm>

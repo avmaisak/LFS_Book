@@ -76,21 +76,21 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--enable-gold</parameter></term>
         <listitem>
-          <para>Выполнять сборку gold-линковщика и устанавливает его как ld.gold (рядом с линковщиком по умолчанию).</para>
+          <para>Выполнять сборку gold-компоновщика и устанавливает его как ld.gold (рядом с линковщиком по умолчанию).</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-ld=default</parameter></term>
         <listitem>
-          <para>Выполнить сборку обычного bdf линковщика и установить его как ld (компоновщик по умолчанию) и как ld.bfd.</para>
+          <para>Выполнить сборку обычного bdf компоновщика и установить его как ld (компоновщик по умолчанию) и как ld.bfd.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-plugins</parameter></term>
         <listitem>
-          <para>Включить поддержку плагинов для линковщика</para>
+          <para>Включить поддержку плагинов для компоновщика</para>
         </listitem>
       </varlistentry>
 
@@ -193,7 +193,7 @@ cd       build</userinput></screen>
       <varlistentry id="as">
         <term><command>as</command></term>
         <listitem>
-          <para>Ассемблер, известный как GAS (Gnu ASsembler). Выполняет создание объектного файла из вывода команды <command>gcc</command></para>
+          <para>Ассемблер, известный как GAS (Gnu Assembler). Выполняет создание объектного файла из вывода команды <command>gcc</command></para>
           <indexterm zone="ch-system-binutils as">
             <primary sortas="b-as">as</primary>
           </indexterm>

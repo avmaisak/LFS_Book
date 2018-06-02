@@ -192,11 +192,7 @@
         <para>Контрольная сумма MD5: <literal>&file-md5;</literal></para>
 
         <note>
-          <para>File (&file-version;) may no longer be available at the
-          listed location. The site administrators of the master download
-          location occasionally remove older versions when new ones are
-          released. An alternative download location that may have the correct
-          version available can also be found at: <ulink
+          <para>File (&file-version;) может быть недоступен в указанном месте. Администраторы сайта иногда удаляют старые версии при выпуске новых. Альтернативное место загрузки, которое может иметь нужную версию, можно найти по адресу: <ulink
           url="http://www.linuxfromscratch.org/lfs/download.html#ftp"/>.</para>
         </note>
       </listitem>

@@ -10,7 +10,7 @@
 
   <title>Configuring the System Clock</title>
 
-  <para>Procedures for setting the system clock differ between systemd and 
+  <para>Procedures for setting the system clock differ between systemd and
   System V, however the separate procedures do not conflict so both
   procedures should be accomplished to allow switching between systems.</para>
 
@@ -110,13 +110,13 @@ EOF</userinput></screen>
     <para><command>timedatectl</command> can also be used to change system time and
     time zone.</para>
 
-    <para>To change your current system time, issue:</para>
+    <para>To change your current system time, выполните следующую команду:</para>
 
 <screen role="nodump"><userinput>timedatectl set-time YYYY:MM:DD HH:MM:SS</userinput></screen>
 
     <para>Hardware clock will also be updated accordingly.</para>
 
-    <para>To change your current time zone, issue:</para>
+    <para>To change your current time zone, выполните следующую команду:</para>
 
 <screen role="nodump"><userinput>timedatectl set-timezone TIMEZONE</userinput></screen>
 

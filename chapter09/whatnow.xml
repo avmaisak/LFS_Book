@@ -8,20 +8,19 @@
 <sect1 id="ch-finish-whatnow">
   <?dbhtml filename="whatnow.html"?>
 
-  <title>What Now?</title>
+  <title>Что теперь?</title>
 
-  <para>Thank you for reading this LFS book. We hope that you have
-  found this book helpful and have learned more about the system
-  creation process.</para>
+  <para>Благодарим за прочтение книги LFS. Мы надеемся, что эта книга была полезна и вы узнали больше о процессе создания системы с нуля.</para>
 
-  <para>Now that the LFS system is installed, you may be wondering
-  <quote>What next?</quote> To answer that question, we have compiled a
-  list of resources for you.</para>
+  <para>Теперь, когда система LFS была установлена, вам может быть интересно
+
+  <quote>Что дальше?</quote> Чтобы ответить на этот вопрос, мы составили
+  список ресурсов для вас.</para>
 
   <itemizedlist>
 
     <listitem>
-      <para>Maintenance</para>
+      <para>Поддержка</para>
 
       <para>Bugs and security notices are reported regularly for all software.
       Since an LFS system is compiled from source, it is up to you to keep

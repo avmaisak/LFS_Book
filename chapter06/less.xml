@@ -23,7 +23,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Less пакет содержит  a text file viewer.</para>
+    <para>Программа Less используемая для просмотра (но не изменения) содержимого текстовых файлов на экране.
+	 Она также используется пакетом Man-DB для просмотра страниц руководств.	 </para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

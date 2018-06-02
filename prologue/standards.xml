@@ -30,7 +30,7 @@
         <para><ulink url="http://refspecs.linuxfoundation.org/lsb.shtml">Linux
         Standard Base (LSB) Version 5.0 (2015)</ulink></para>
 
-        <para>LSB имеет четрые отдельных стандарта: Core, Desktop, Runtime Languages и Imaging.
+        <para>LSB имеет четыре отдельных стандарта: Core, Desktop, Runtime Languages и Imaging.
 				Кроме того, существуют требования специфичные для архитектуры. Есть также две области
 				для пробного или ознакомительного использования: Gtk3 и Graphics. LFS старается соответствовать
 				 стандартам предусмотренными архитектурами, рассмотренными в предыдущем разделе.</para>

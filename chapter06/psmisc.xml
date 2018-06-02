@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Psmisc пакет содержит  программы для  displaying information about
-    running processes.</para>
+    <para>Пакет Psmisc содержит программы для отображения информации о запущенных процессах.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>

@@ -55,7 +55,7 @@
 
     <para>The test suite needs to know where supporting perl files are located.
     We use an envronment variable to accomplish this.  To test the
-    results, issue:</para>
+    results, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make PERL5LIB=$PWD/tests/ check</userinput></screen>
 
