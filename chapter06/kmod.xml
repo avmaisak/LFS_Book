@@ -73,10 +73,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>В пакете не предусмотрено выполнение тестов в среде LFS.
-	 This package does not come with a test suite that can be run in the
-    LFS chroot environment. Как минимум требуется программа git и
-    несколько тестов не будут выполняться вне репозитория git.</para>
+    <para>В пакете не предусмотрено выполнение тестов в среде LFS. Как минимум требуется программа git и несколько тестов не будут выполняться вне репозитория git.</para>
 
 <!--
     <para>Для выполнения тестов, выполните команду:</para>
