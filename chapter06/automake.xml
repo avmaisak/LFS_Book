@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Automake пакет содержит  программы для  generating Makefiles for use
-    with Autoconf.</para>
+    <para>The Automake пакет содержит  программы для создания файлов Makefile для использования его программой Autoconf.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -49,17 +48,16 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>There are a couple of tests that incorrectly link to the 
-    wrong version of the flex library, so we temporarily work around
-    the problem.  Also, using the -j4 make option speeds up the tests, even on
-    systems with only one processor, due to internal delays in individual
-    tests.  Для выполнения тестов, выполните команду:</para>
+    <para>Есть несколько тестов, которые ссылаются на
+     неправильную версию библиотеки flex, поэтому мы временно работаем над этой
+     проблемой. Кроме того, использование опции -j4 make ускоряет тесты, даже на
+     системах с одним процессором из-за внутренних задержек в отдельных
+     тестах.Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">sed -i "s:./configure:LEXLIB=/usr/lib/libfl.a &amp;:" t/lex-{clean,depend}-cxx.sh
 make -j4 check</userinput></screen>
 
-    <para>Two tests are known to fail in the LFS environment:
-    check12.sh and check12-w.sh.</para>
+    <para>Известно, что два теста не пройдут в среде LFS: check12.sh and check12-w.sh.</para>
 
     <para>Установите пакет:</para>
 
@@ -76,9 +74,9 @@ make -j4 check</userinput></screen>
       <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
-        <seg>aclocal, aclocal-&am-minor-version; (hard linked with aclocal), automake, and
-        automake-&am-minor-version; (hard linked with automake) </seg>
-        <seg>/usr/share/aclocal-&am-minor-version;, /usr/share/automake-&am-minor-version;, and
+        <seg>aclocal, aclocal-&am-minor-version; (жесткая ссылка на aclocal), automake, и
+        automake-&am-minor-version; (жесткая ссылка на automake) </seg>
+        <seg>/usr/share/aclocal-&am-minor-version;, /usr/share/automake-&am-minor-version;, и
         /usr/share/doc/automake-&automake-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -91,8 +89,7 @@ make -j4 check</userinput></screen>
       <varlistentry id="aclocal">
         <term><command>aclocal</command></term>
         <listitem>
-          <para>Generates <filename>aclocal.m4</filename> files based on the
-          contents of <filename>configure.in</filename> files</para>
+          <para>Формирует файлы <filename>aclocal.m4</filename> на основе содержимого файла <filename>configure.in</filename></para>
           <indexterm zone="ch-system-automake aclocal">
             <primary sortas="b-aclocal">aclocal</primary>
           </indexterm>
@@ -102,7 +99,7 @@ make -j4 check</userinput></screen>
       <varlistentry id="aclocalversion">
         <term><command>aclocal-&am-minor-version;</command></term>
         <listitem>
-          <para>A hard link to <command>aclocal</command></para>
+          <para>Жесткая ссылка на <command>aclocal</command></para>
           <indexterm zone="ch-system-automake aclocalversion">
             <primary sortas="b-aclocal-&am-minor-version;">aclocal-&am-minor-version;</primary>
           </indexterm>
@@ -112,14 +109,12 @@ make -j4 check</userinput></screen>
       <varlistentry id="automake">
         <term><command>automake</command></term>
         <listitem>
-          <para>A tool for automatically generating
-          <filename>Makefile.in</filename> files from
-          <filename>Makefile.am</filename> files [To create all the
-          <filename>Makefile.in</filename> files for a package, run this program
-          in the top-level directory. By scanning the
-          <filename>configure.in</filename> file, it automatically finds each
-          appropriate <filename>Makefile.am</filename> file and generates the
-          corresponding <filename>Makefile.in</filename> file.]</para>
+          <para>Инструмент для автоматического создания файлов
+          <filename>Makefile.in</filename> из файлов
+          <filename>Makefile.am</filename> [Чтобы создать файлы
+          <filename>Makefile.in</filename> для пакета, запустите программу в вышестоящем каталоге. Сканируя файл
+          <filename>configure.in</filename>, выполняется автоматический поиск каждого подходящего файла
+           <filename>Makefile.am</filename> и формирование соответствующего файла<filename>Makefile.in</filename>.]</para>
           <indexterm zone="ch-system-automake automake">
             <primary sortas="b-automake">automake</primary>
           </indexterm>
@@ -129,7 +124,7 @@ make -j4 check</userinput></screen>
       <varlistentry id="automake-version">
         <term><command>automake-&am-minor-version;</command></term>
         <listitem>
-          <para>A hard link to <command>automake</command></para>
+          <para>Жесткая ссылка на <command>automake</command></para>
           <indexterm zone="ch-system-automake automake-version">
             <primary sortas="b-automake-&am-minor-version;">automake-&am-minor-version;</primary>
           </indexterm>
