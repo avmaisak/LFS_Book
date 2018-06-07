@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Intltool is an internationalization tool used for extracting
-    translatable strings from source files.</para>
+    <para>Intltool - инструмент интернационализации, используемый для извлечения переводимых строк из исходных файлов.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Intltool</title>
 
-    <para>First fix a warning that is caused by perl-5.22 and later:</para>
+    <para>Сначала исправим предупреждение, вызванное в perl-5.22 и более поздних версиях:</para>
 
 <screen><userinput remap="pre">sed -i 's:\\\${:\\\$\\{:' intltool-update.in</userinput></screen>
 
@@ -87,7 +86,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
       <varlistentry id="intltoolize">
         <term><command>intltoolize</command></term>
         <listitem>
-          <para>Подготовьте пакетs a package to use intltool</para>
+          <para>Подготовьте пакет для использования intltool</para>
           <indexterm zone="ch-system-intltool intltoolize">
             <primary sortas="b-intltoolize">intltoolize</primary>
           </indexterm>
@@ -97,7 +96,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
       <varlistentry id="intltool-extract">
         <term><command>intltool-extract</command></term>
         <listitem>
-          <para>Generates header files that can be read by <command>gettext</command></para>
+          <para>Создает заголовочные файлы, которые могут быть прочитаны программой <command>gettext</command></para>
           <indexterm zone="ch-system-intltool intltool-extract">
             <primary sortas="b-intltool-extract">intltool-extract</primary>
           </indexterm>
@@ -107,7 +106,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
       <varlistentry id="intltool-merge">
         <term><command>intltool-merge</command></term>
         <listitem>
-          <para>Merges translated strings into various file types</para>
+          <para>Объединяет переведенные строки в различные типы файлов</para>
           <indexterm zone="ch-system-intltool intltool-merge">
             <primary sortas="b-intltool-merge">intltool-merge</primary>
           </indexterm>
@@ -117,7 +116,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
       <varlistentry id="intltool-prepare">
         <term><command>intltool-prepare</command></term>
         <listitem>
-          <para>Updates pot files and merges them with translation files</para>
+          <para>Обновляет файлы pot и объединяет их с файлами перевода</para>
           <indexterm zone="ch-system-intltool intltool-prepare">
             <primary sortas="b-intltool-prepare">intltool-prepare</primary>
           </indexterm>
@@ -127,7 +126,7 @@ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N
       <varlistentry id="intltool-update">
         <term><command>intltool-update</command></term>
         <listitem>
-          <para>Updates the po template files and merges them with the translations</para>
+          <para>Обновляет файлы шаблонов po и объединяет их с переводами</para>
           <indexterm zone="ch-system-intltool intltool-update">
             <primary sortas="b-intltool-update">intltool-update</primary>
           </indexterm>
