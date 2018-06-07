@@ -121,7 +121,8 @@
           <command>automake</command>, <command>gettextize</command>, и
           <command>libtoolize</command> в правильном порядке чтобы сохранить время когда были сделаны изменения у файлов-шаблонов
 			 <command>autoconf</command> и
-          <command>automake</command></para>
+          <command>automake</command>
+			 </para>
           <indexterm zone="ch-system-autoconf autoreconf">
             <primary sortas="b-autoreconf">autoreconf</primary>
           </indexterm>
@@ -129,10 +130,11 @@
       </varlistentry>
 
       <varlistentry id="autoscan">
-        <term><command>autoscan</command> </term>
+        <term><command>autoscan</command></term>
         <listitem>
           <para>Помогает создать файл <filename>configure.in</filename> для пакета;
-			 он проверяет исходные файлы в дереве каталогов, выполняет поиск  общих проблем с переносимостью и создаёт файл <filename>configure.scan</filename> который является предварительным файлом <filename>configure.in</filename> пакета</para>
+			 он проверяет исходные файлы в дереве каталогов, выполняет поиск  общих проблем с переносимостью и создаёт файл <filename>configure.scan</filename> который является предварительным файлом <filename>configure.in</filename> пакета
+			 </para>
           <indexterm zone="ch-system-autoconf autoscan">
             <primary sortas="b-autoscan">autoscan</primary>
           </indexterm>
@@ -150,9 +152,10 @@
       </varlistentry>
 
       <varlistentry id="ifnames">
-        <term><command>ifnames</command> </term>
+        <term><command>ifnames</command></term>
         <listitem>
-          <para>Помогает при написании файла filename>configure.in</filename> для пакета; команда отображает идентификаторы препроцессора Си которые использует пакет [Если пакет уже настроен для переносимости, эта программа может помочь определить что сценарий  <command>configure</command> требует для проведения проверки. Он также может заполнить пробелы в файле <filename>configure.in</filename>, сформированным  <command>autoscan</command>.]</para>
+          <para>Помогает при написании файла <filename>configure.in</filename> для пакета; команда отображает идентификаторы препроцессора Си которые использует пакет [ Если пакет уже настроен для переносимости, эта программа может помочь определить что сценарий  <command>configure</command> требует для проведения проверки. Он также может заполнить пробелы в файле <filename>configure.in</filename>, сформированным  <command>autoscan</command>.]
+			 </para>
           <indexterm zone="ch-system-autoconf ifnames">
             <primary sortas="b-ifnames">ifnames</primary>
           </indexterm>
