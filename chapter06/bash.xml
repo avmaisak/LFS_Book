@@ -71,30 +71,28 @@
 
     <para>Пропустите этот параграф и перейдите к параграфу <quote>Установка пакета</quote> если нет необходимости запускать наборы тестов.</para>
 
-    <para>To prepare the tests, ensure that the <systemitem class="username">nobody</systemitem> user can write to the sources tree:</para>
+    <para>Подготовьте тесты к выполнению, и обудитесь, что пользователь <systemitem class="username">nobody</systemitem> может имет права на запись в дерево исходных текстов пакета:</para>
 
 <screen><userinput remap="test">chown -Rv nobody .</userinput></screen>
 
-    <para>Now, run the tests as the <systemitem
-    class="username">nobody</systemitem> user:</para>
+    <para>Запустите тесты от пользователя <systemitem
+    class="username">nobody</systemitem>:</para>
 
 <screen><userinput remap="test">su nobody -s /bin/bash -c "PATH=$PATH make tests"</userinput></screen>
 
-    <para>Установите пакет and move the main executable to
-    <filename class='directory'>/bin</filename>:</para>
+    <para>Установите пакет и переместите основные исполняемые файлы в каталог <filename class='directory'>/bin</filename>:</para>
 
 <screen><userinput remap="install">make install
 mv -vf /usr/bin/bash /bin</userinput></screen>
 
-    <para>Run the newly compiled <command>bash</command> program (replacing the one that is
-    currently being executed):</para>
+    <para>Запустите новый скомпилированный <command>bash</command> (заменив тот, который
+     в настоящее время выполняется):</para>
 
 <screen role="nodump"><userinput>exec /bin/bash --login +h</userinput></screen>
 
     <note>
-      <para>The parameters used make the <command>bash</command>
-      process an interactive login shell and continue to disable hashing so
-      that new programs are found as they become available.</para>
+      <para>Аргументы используемые для <command>bash</command> сообщают обрабатывать интерактивную оболочку входа и отключить хэширование
+       чтобы новые программы были найдены по мере их появления.</para>
     </note>
 
   </sect2>
@@ -107,7 +105,7 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
       <segtitle>Каталог установки</segtitle>
 
       <seglistitem>
-        <seg>bash, bashbug, and sh (link to bash)</seg>
+        <seg>bash, bashbug, and sh (ссылка на bash)</seg>
         <seg>/usr/share/doc/bash-&bash-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -120,9 +118,9 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
       <varlistentry id="bash">
         <term><command>bash</command></term>
         <listitem>
-          <para>A widely-used command interpreter; it performs many types of
-          expansions and substitutions on a given command line before executing
-          it, thus making this interpreter a powerful tool</para>
+          <para>Широко используемый командный интерпретатор; он выполняет множество типов
+           расширений и подстановок в заданной командной строке перед выполнением
+           это, что делает интерпретатор мощным инструментом</para>
           <indexterm zone="ch-system-bash bash">
             <primary sortas="b-bash">bash</primary>
           </indexterm>
@@ -132,8 +130,8 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
       <varlistentry id="bashbug">
         <term><command>bashbug</command></term>
         <listitem>
-          <para>A shell script to help the user compose and mail standard
-          formatted bug reports concerning <command>bash</command></para>
+          <para>Сценарий оболочки, который поможет пользователю составить и отправить по почте стандартное
+           отформатированное сообщение об ошибках, относительно <command>bash</command></para>
           <indexterm zone="ch-system-bash bashbug">
             <primary sortas="b-bashbug">bashbug</primary>
           </indexterm>
@@ -143,11 +141,10 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
       <varlistentry id="sh">
         <term><command>sh</command></term>
         <listitem>
-          <para>A symlink to the <command>bash</command> program; when invoked
-          as <command>sh</command>, <command>bash</command> tries to mimic the
-          startup behavior of historical versions of <command>sh</command> as
-          closely as possible, while conforming to the POSIX standard as
-          well</para>
+          <para>Сивольнач ссылка на программу <command>bash</command>; при вызове команды
+          <command>sh</command>, <command>bash</command> пытается имитировать
+           начальное поведение исторических версий <command>sh</command> как
+          как можно ближе, в соответствии со стандартом POSIX</para>
           <indexterm zone="ch-system-bash sh">
             <primary sortas="b-sh">sh</primary>
           </indexterm>
