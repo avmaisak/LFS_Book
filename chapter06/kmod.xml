@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Kmod пакет содержит  libraries and utilities for loading kernel
-    modules</para>
+    <para>The Kmod пакет содержит библиотеки и утилиты для загрузки модулей ядра</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -56,15 +55,15 @@
       <varlistentry>
         <term><parameter>--with-xz, --with-zlib</parameter></term>
         <listitem>
-          <para>These options enable Kmod to handle compressed kernel modules.</para>
+          <para>Эти аргументы позволяют Kmod обрабатывать сжатые модули ядра.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-rootlibdir=/lib</parameter></term>
         <listitem>
-          <para>This option ensures different library related files are placed 
-          in the correct directories.</para>
+          <para>Этот параметр обеспечивает размещение разных файлов, связанных с библиотекой
+           в правильных каталогах.</para>
         </listitem>
       </varlistentry>
 
@@ -74,18 +73,18 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package does not come with a test suite that can be run in the
-    LFS chroot environment.  At a minimum the git program is required and
-    several tests will not run outside of a git repository. </para>
+    <para>В пакете не предусмотрено выполнение тестов в среде LFS.
+	 This package does not come with a test suite that can be run in the
+    LFS chroot environment. Как минимум требуется программа git и
+    несколько тестов не будут выполняться вне репозитория git.</para>
 
 <!--
     <para>Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 -->
-    <para>Установите пакет, and create symlinks for
-    compatibility with Module-Init-Tools (the package that previously handled
-    Linux kernel modules):</para>
+    <para>Установите пакет, и создайте символические ссылки для обеспечения совместимости с Module-Init-Tools (пакет, который ранее обрабатывал
+    модули ядра Linux):</para>
 
 <screen><userinput remap="install">make install
 
@@ -105,7 +104,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <segtitle>Установленная библиотека</segtitle>
 
       <seglistitem>
-        <seg>depmod (link to kmod), insmod (link to kmod), kmod, 
+        <seg>depmod (link to kmod), insmod (link to kmod), kmod,
         lsmod (link to kmod), modinfo (link to kmod), modprobe (link to kmod),
         and rmmod (link to kmod)</seg>
         <seg>libkmod.so</seg>
@@ -120,10 +119,10 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="depmod">
         <term><command>depmod</command></term>
         <listitem>
-          <para>Creates a dependency file based on the symbols it finds in the
-          existing set of modules; this dependency file is used by
-          <command>modprobe</command> to automatically load the required
-          modules</para>
+          <para>Создает файл зависимостей на основе символов, которые он находит в
+          существующем наборе модулей; этот файл зависимостей используется программой
+          <command>modprobe</command> для автоматической загрузки необходимых
+          модулей</para>
           <indexterm zone="ch-system-kmod depmod">
             <primary sortas="b-depmod">depmod</primary>
           </indexterm>
@@ -133,7 +132,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="insmod">
         <term><command>insmod</command></term>
         <listitem>
-          <para>Установитеs a loadable module in the running kernel</para>
+          <para>программа для вставки модуля в ядро Linux</para>
           <indexterm zone="ch-system-kmod insmod">
             <primary sortas="b-insmod">insmod</primary>
           </indexterm>
@@ -143,7 +142,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="kmod">
         <term><command>kmod</command></term>
         <listitem>
-          <para>Loads and unloads kernel modules</para>
+          <para>Загружает и выгружает модули ядра</para>
           <indexterm zone="ch-system-kmod kmod">
             <primary sortas="b-kmod">kmod</primary>
           </indexterm>
@@ -153,7 +152,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="lsmod">
         <term><command>lsmod</command></term>
         <listitem>
-          <para>Lists currently loaded modules</para>
+          <para>Выводит список загруженных модулей</para>
           <indexterm zone="ch-system-kmod lsmod">
             <primary sortas="b-lsmod">lsmod</primary>
           </indexterm>
@@ -163,8 +162,8 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="modinfo">
         <term><command>modinfo</command></term>
         <listitem>
-          <para>Examines an object file associated with a kernel module and
-          displays any information that it can glean</para>
+          <para>Изучает объектный файл, связанный с модулем ядра и
+           отображает любую информацию, которую он может получить</para>
           <indexterm zone="ch-system-kmod modinfo">
             <primary sortas="b-modinfo">modinfo</primary>
           </indexterm>
@@ -174,8 +173,8 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="modprobe">
         <term><command>modprobe</command></term>
         <listitem>
-          <para>Uses a dependency file, created by
-          <command>depmod</command>, to automatically load relevant modules</para>
+          <para>Использует файл зависимостей, созданный
+          <command>depmod</command>, для автоматической загрузки соответствующих модулей</para>
           <indexterm zone="ch-system-kmod modprobe">
             <primary sortas="b-modprobe">modprobe</primary>
           </indexterm>
@@ -185,7 +184,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="rmmod">
         <term><command>rmmod</command></term>
         <listitem>
-          <para>Unloads modules from the running kernel</para>
+          <para>Выгружает модули из работающего ядра</para>
           <indexterm zone="ch-system-kmod rmmod">
             <primary sortas="b-rmmod">rmmod</primary>
           </indexterm>
@@ -195,8 +194,7 @@ ln -sfv kmod /bin/lsmod</userinput></screen>
       <varlistentry id="libkmod">
         <term><filename class="libraryfile">libkmod</filename></term>
         <listitem>
-          <para>This library is used by other programs to load and unload kernel
-           modules</para>
+          <para>Эта библиотека используется другими программами для загрузки и выгрузки модулей ядра</para>
           <indexterm zone="ch-system-kmod">
             <primary sortas="c-libkmod">libkmod</primary>
           </indexterm>
