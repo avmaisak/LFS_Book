@@ -23,9 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Libtool пакет содержит  the GNU generic library support script.
-    It wraps the complexity of using shared libraries in a consistent, portable
-    interface.</para>
+    <para>GNU libtool является общей библиотекой поддержки скриптов. Libtool скрывает сложность использования распределенных библиотек под последовательным, переносимым интерфейсом. Библиотека необходима для выполнения тестов других пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -50,19 +48,13 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To test the results (about 11.0 SBU), выполните следующую команду:</para>
+    <para>Для выполнения тестов (примерно время выполнения 11.0 SBU), выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <note><para>The test time for libtool can be reduced significantly on a
-    system with multiple cores.  To do this, append
-    <command>TESTSUITEFLAGS=-j&lt;N&gt;</command> to the line above.  For
-    instance, using -j4 can reduce the test time by over 60
-    percent.</para></note>
+    <note><para>Вреся выполнения тестов можно сократить на машине с несколькими ядрами. Чтобы это сделать добавьте к команде аргумент к вышеуказанной команде: <command>TESTSUITEFLAGS=-j&lt;N&gt;</command>. Используя значение -j4 может сократить время выполнения тестов более чем на 60 процентов.</para></note>
 
-    <para>Five tests are known to fail in the LFS build environment due
-    to a circular dependency, but all tests pass if rechecked after 
-    automake is installed.</para>
+    <para>Как известно, пять тестов не пройдут в окружении сборки LFS из-за циклических зависимостей, но все тесты пройдут, если их повторно запустить после установки пакета automake.</para>
 
     <para>Установите пакет:</para>
 
@@ -94,7 +86,7 @@
       <varlistentry id="libtool">
         <term><command>libtool</command></term>
         <listitem>
-          <para>Provides generalized library-building support services</para>
+          <para>Обеспечивает вспомогательные общие службы для сборки</para>
           <indexterm zone="ch-system-libtool libtool">
             <primary sortas="b-libtool">libtool</primary>
           </indexterm>
@@ -104,8 +96,9 @@
       <varlistentry id="libtoolize">
         <term><command>libtoolize</command></term>
         <listitem>
-          <para>Provides a standard way to add <command>libtool</command>
-          support to a package</para>
+          <para>Обеспечивает стандартный путь для добавления поддержки
+			 <command>libtool</command>
+          для пакета</para>
           <indexterm zone="ch-system-libtool libtoolize">
             <primary sortas="b-libtoolize">libtoolize</primary>
           </indexterm>
@@ -115,7 +108,7 @@
       <varlistentry id="libltdl">
         <term><filename class="libraryfile">libltdl</filename></term>
         <listitem>
-          <para>Hides the various difficulties of dlopening libraries</para>
+          <para>Скрывает различные трудности dlopening библиотек</para>
           <indexterm zone="ch-system-libtool libltdl">
             <primary sortas="c-libltdl">libltdl</primary>
           </indexterm>
