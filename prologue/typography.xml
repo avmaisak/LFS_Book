@@ -64,7 +64,7 @@ EOF</userinput></screen>
   <para><filename>passwd(5)</filename></para>
 
   <para>Этот формат используется для ссылки на страницы руководств to refer to a specific manual (man) page.
-  Число, которое указанно внутри скобок, указывает на конкретный раздел руковдоства.
+  Число, которое указанно внутри скобок, указывает на конкретный раздел руководства.
   Например,<command>passwd</command> имеет две страницы. В книге LFS Per,
   эти две страницы будут расположены по адресу
   <filename>/usr/share/man/man1/passwd.1</filename> и
