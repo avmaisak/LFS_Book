@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Flex пакет содержит  a utility for generating programs that
-    recognize patterns in text.</para>
+    <para>Flex (Fast Lexical Analyzer) — генератор лексических анализаторов. Это инструмент для лексического анализа, который может использоваться для выделения из исходного текста определенных строк заранее заданным способом.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,14 +40,14 @@
   <sect2 role="installation">
     <title>Установка пакета Flex</title>
 
-    <para>First, fix a problem introduced with glibc-2.26:</para>
+    <para>Сначала, необходимо исправить проблему, обнаруженную в glibc-2.26:</para>
 
 <screen><userinput remap="pre">sed -i "/math.h/a #include &lt;malloc.h&gt;" src/flexdef.h</userinput></screen>
 
-    <para>The build procedure assumes the <application>help2man</application>
-    program is available to create a man page from the executable --help option.
-    This is not present, so we use an environment variable to skip this process.
-    Now, prepare Flex к компиляции:</para>
+    <para>В процессе процедуры сборки предполагается наличие программы <application>help2man</application> -
+    программа  для создания справочной страницы из исполняемого файла --help.
+    Её нет, поэтому мы используем переменную среды, чтобы пропустить этот процесс:
+    Выполните подготовку пакета к компиляции:</para>
 
 <screen><userinput remap="configure">HELP2MAN=/tools/bin/true \
 ./configure --prefix=/usr --docdir=/usr/share/doc/flex-&flex-version;</userinput></screen>
@@ -57,7 +56,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To test the results (about 0.5 SBU), выполните следующую команду:</para>
+    <para>Для выполнения тестов (около 0.5 SBU), выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
@@ -65,11 +64,7 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>A few programs do not know about <command>flex</command> yet and
-    try to run its predecessor, <command>lex</command>. To support those
-    programs, create a symbolic link named <filename>lex</filename> that
-    runs <filename>flex</filename> in <command>lex</command> emulation
-    mode:</para>
+    <para>Некоторые программы ничего пока не знают о <command>flex</command>, и будут пытаться запустить предшественника <command>lex</command>. Чтобы обуспечить возможность использования flex, создадим символическую ссылку с названием <command>lex</command> которая запустить требуемую программу <filename>flex</filename> в режиме эмуляции <command>lex</command>:</para>
 
 <screen><userinput remap="install">ln -sv flex /usr/bin/lex</userinput></screen>
 
@@ -98,9 +93,9 @@
       <varlistentry id="flex">
         <term><command>flex</command></term>
         <listitem>
-          <para>A tool for generating programs that recognize patterns in text;
-          it allows for the versatility to specify the rules for pattern-finding,
-          eradicating the need to develop a specialized program</para>
+          <para>Инструмент для генерации программ, распознающих шаблоны в тексте;
+           она позволяет универсально определять правила для поиска паттернов,
+           исключая необходимость разработки специализированной программы</para>
           <indexterm zone="ch-system-flex flex">
             <primary sortas="b-flex">flex</primary>
           </indexterm>
@@ -110,8 +105,7 @@
       <varlistentry id="flexpp">
         <term><command>flex++</command></term>
         <listitem>
-          <para>An extension of flex, is used for generating C++ code
-          and classes. It is a symbolic link to <command>flex</command></para>
+          <para>Расширение для flex, используемая для генерации кода Си++ и классов. Является символической ссылкой на <command>flex</command></para>
           <indexterm zone="ch-system-flex flexpp">
             <primary sortas="b-flex++">flex++</primary>
           </indexterm>
@@ -121,8 +115,8 @@
       <varlistentry id="lex">
         <term><command>lex</command></term>
         <listitem>
-          <para>A symbolic link that runs <command>flex</command> i
-          <command>lex</command> emulation mode</para>
+          <para>Символическая ссылка, которая запускает <command>flex</command> в режиме эмуляции
+          <command>lex</command></para>
           <indexterm zone="ch-system-flex lex">
             <primary sortas="b-lex">lex</primary>
           </indexterm>
@@ -132,7 +126,7 @@
       <varlistentry id="libfl">
         <term><filename class="libraryfile">libfl</filename></term>
         <listitem>
-          <para>The <filename class="libraryfile">flex</filename> library</para>
+          <para>Библиотека <filename class="libraryfile">flex</filename></para>
           <indexterm zone="ch-system-flex libfl">
             <primary sortas="c-libfl">libfl</primary>
           </indexterm>
