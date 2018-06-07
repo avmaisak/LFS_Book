@@ -41,17 +41,12 @@
   <sect2 role="installation">
     <title>Установка пакета Perl</title>
 
-    <para>First create a basic <filename>/etc/hosts</filename> file to be
-    referenced in one of Perl's configuration files as well as the optional
-    test suite:</para>
+    <para>Для начала создадим файл <filename>/etc/hosts</filename> для определения ссылки в файлах конфигурации Perl и для прохождения опциональных наборов тестов:</para>
 
 <screen><userinput remap="pre">echo "127.0.0.1 localhost $(hostname)" &gt; /etc/hosts</userinput></screen>
 
-    <para>This version of Perl now builds the Compress::Raw::Zlib and
-    Compress::Raw::BZip2 modules. By
-    default Perl will use an internal copy of the sources for the build.
-    Issue the following command so that Perl will use the libraries
-    installed on the system:</para>
+    <para>Эта версия Perl теперь собирает  Compress::Raw::Zlib и
+    Compress::Raw::BZip2 модули. По умолчанию, Perl будет использовать внутреннюю копию исходных файлов для сборки. Выполните следующую команду, чтобы использовать уже установленные системные библиотеки:</para>
 
 <screen><userinput remap="pre">export BUILD_ZLIB=False
 export BUILD_BZIP2=0</userinput></screen>
@@ -61,10 +56,7 @@ export BUILD_BZIP2=0</userinput></screen>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&perl-gcc5-fixes-patch;</userinput></screen>
 -->
-    <para>To have full control over the way Perl is set up, you can remove the
-    <quote>-des</quote> options from the following command and hand-pick the way
-    this package is built. Alternatively, use the command exactly as below to
-    use the defaults that Perl auto-detects:</para>
+    <para>Чтобы иметь полный контроль над настройкой, можно убрать аргумент <quote>-des</quote> из нижеуказанной команды и вручную укажите местоположения для сборки. В качестве альтернативы используйте команду, как показано ниже и используйте настройки по умолчанию, которые автоматически обнаружит Perl:</para>
 
 <screen><userinput remap="configure">sh Configure -des -Dprefix=/usr                 \
                   -Dvendorprefix=/usr           \
@@ -80,16 +72,15 @@ export BUILD_BZIP2=0</userinput></screen>
       <varlistentry>
         <term><parameter>-Dvendorprefix=/usr</parameter></term>
         <listitem>
-          <para>This ensures <command>perl</command> knows how to
-          tell packages where they should install their perl modules.</para>
+          <para>Гарантирует что <command>perl</command> будет знать место, куда выполнять установку модулей</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>-Dpager="/usr/bin/less -isR"</parameter></term>
         <listitem>
-          <para>This ensures that <userinput>less</userinput> is used instead
-          of <userinput>more</userinput>.</para>
+          <para>Гарантирует что будет использована программа <userinput>less</userinput> вместо
+            <userinput>more</userinput>.</para>
         </listitem>
       </varlistentry>
 
@@ -97,23 +88,21 @@ export BUILD_BZIP2=0</userinput></screen>
         <term><parameter>-Dman1dir=/usr/share/man/man1
         -Dman3dir=/usr/share/man/man3</parameter></term>
         <listitem>
-          <para>Since Groff is not installed yet, <command>Configure</command>
-          thinks that we do not want man pages for Perl.  Issuing these
-          parameters overrides this decision.</para>
+          <para>Поскольку Groff ещё не установлен, сценарий <command>Configure</command> думает что нам не требуется документация. Эти аргументы переопределяют это решение.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>-Duseshrplib</parameter></term>
         <listitem>
-          <para>Build a shared libperl needed by some perl modules.</para>
+          <para>Сборка общей библиотеки libperl необходимая для некоторых модулей Perl</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>-Dusethreads</parameter></term>
         <listitem>
-          <para>Build perl with support for threads.</para>
+          <para>Сборка Perl с поддержкой потоков</para>
         </listitem>
       </varlistentry>
 
@@ -123,12 +112,11 @@ export BUILD_BZIP2=0</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To test the results (approximately 2.5 SBU), выполните следующую команду:</para>
+    <para>Для выполнения тестов (приблизительное время 2.5 SBU), выполните следующую команду:</para>
 
 <screen><userinput remap="test">make -k test</userinput></screen>
 
-    <note><para>Several tests related to zlib will fail due to using
-    the system version of zlib instead of the internal version.</para></note>
+    <note><para>Некоторые тесты относящиеся к библиотеке zlib не пройдут тестирование, из-за использования системной библиотеки zlib вместо внутренней версии.</para></note>
 
     <para>Установите пакет and clean up:</para>
 
@@ -165,7 +153,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="c2ph">
         <term><command>c2ph</command></term>
         <listitem>
-          <para>Dumps C structures as generated from
+          <para>Выполняет дамп  структур Сгенерированных из
           <command>cc -g -S</command></para>
           <indexterm zone="ch-system-perl c2ph">
             <primary sortas="b-c2ph">c2ph</primary>
@@ -176,7 +164,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="corelist">
         <term><command>corelist</command></term>
         <listitem>
-          <para>A commandline frontend to Module::CoreList</para>
+          <para>Интерфейс командной строки для модуля Module::CoreList</para>
           <indexterm zone="ch-system-perl corelist">
             <primary sortas="b-corelist">corelist</primary>
           </indexterm>
@@ -186,8 +174,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="cpan">
         <term><command>cpan</command></term>
         <listitem>
-          <para>Interact with the Comprehensive Perl Archive Network (CPAN)
-          from the command line</para>
+          <para>Взаимодействие с Comprehensive Perl Archive Network (CPAN)
+          из командной строки</para>
           <indexterm zone="ch-system-perl cpan">
             <primary sortas="b-cpan">cpan</primary>
           </indexterm>
@@ -197,8 +185,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="enc2xs">
         <term><command>enc2xs</command></term>
         <listitem>
-          <para>Builds a Perl extension for the Encode module from either
-          Unicode Character Mappings or Tcl Encoding Files</para>
+          <para>Создает расширение Perl для модуля Encode из
+           Unicode Character Mappings или файлы кодировки Tcl</para>
           <indexterm zone="ch-system-perl enc2xs">
             <primary sortas="b-enc2xs">enc2xs</primary>
           </indexterm>
@@ -208,7 +196,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="encguess">
         <term><command>encguess</command></term>
         <listitem>
-          <para>Guess the encoding type of one or several files</para>
+          <para>Предполагает тип кодировки одного или нескольких файлов</para>
           <indexterm zone="ch-system-perl encguess">
             <primary sortas="b-encguess">encguess</primary>
           </indexterm>
@@ -218,9 +206,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="h2ph">
         <term><command>h2ph</command></term>
         <listitem>
-          <para>Converts <filename class="extension">.h</filename> C header
-          files to <filename class="extension">.ph</filename> Perl header
-          files</para>
+          <para>Преобразует <filename class="extension">.h</filename> заголовочные файлы Си
+          в <filename class="extension">.ph</filename> заголовочные файлы Perl</para>
           <indexterm zone="ch-system-perl h2ph">
             <primary sortas="b-h2ph">h2ph</primary>
           </indexterm>
@@ -230,8 +217,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="h2xs">
         <term><command>h2xs</command></term>
         <listitem>
-          <para>Converts <filename class="extension">.h</filename> C header
-          files to Perl extensions</para>
+          <para>Преобразует <filename class="extension">.h</filename> заголовочные файлы Си
+          в расширение Perl</para>
           <indexterm zone="ch-system-perl h2xs">
             <primary sortas="b-h2xs">h2xs</primary>
           </indexterm>
@@ -241,8 +228,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="instmodsh">
         <term><command>instmodsh</command></term>
         <listitem>
-          <para>Shell script for examining installed Perl modules,
-          and can create a tarball from an installed module</para>
+          <para>Сценарий оболочки для проверки установленных модулей Perl,
+           и создание архива из установленного модуля</para>
           <indexterm zone="ch-system-perl instmodsh">
             <primary sortas="b-instmodsh">instmodsh</primary>
           </indexterm>
@@ -252,7 +239,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="json_pp">
         <term><command>json_pp</command></term>
         <listitem>
-          <para>Converts data between certain input and output formats</para>
+          <para>Преобразует данные между определенными форматами ввода и вывода</para>
           <indexterm zone="ch-system-perl json_pp">
             <primary sortas="b-json_pp">json_pp</primary>
           </indexterm>
@@ -262,8 +249,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="libnetcfg">
         <term><command>libnetcfg</command></term>
         <listitem>
-          <para>Can be used to configure the
-          <filename class="libraryfile">libnet</filename> Perl module</para>
+          <para>Может использоваться для настройки модуля
+          <filename class="libraryfile">libnet</filename></para>
           <indexterm zone="ch-system-perl libnetcfg">
             <primary sortas="b-libnetcfg">libnetcfg</primary>
           </indexterm>
@@ -273,9 +260,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="perl">
         <term><command>perl</command></term>
         <listitem>
-          <para>Combines some of the best features of C, <command>sed</command>,
-          <command>awk</command> and <command>sh</command> into a single
-          swiss-army language</para>
+          <para>Объединяет некоторые из лучших возможностей языка Си, <command>sed</command>,
+          <command>awk</command> и <command>sh</command>в один язык</para>
           <indexterm zone="ch-system-perl perl">
             <primary sortas="b-perl">perl</primary>
           </indexterm>
@@ -285,7 +271,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="perl-version">
         <term><command>perl&perl-version;</command></term>
         <listitem>
-          <para>A hard link to <command>perl</command></para>
+          <para>Жесткая ссылка на <command>perl</command></para>
           <indexterm zone="ch-system-perl perl-version">
             <primary sortas="b-perl&perl-version;">perl&perl-version;</primary>
           </indexterm>
@@ -295,8 +281,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="perlbug">
         <term><command>perlbug</command></term>
         <listitem>
-          <para>Used to generate bug reports about Perl, or the modules that come
-          with it, and mail them</para>
+          <para>Используется для создания отчетов об ошибках Perl или входящих в состав модулей, для отправки по электронной почте</para>
           <indexterm zone="ch-system-perl perlbug">
             <primary sortas="b-perlbug">perlbug</primary>
           </indexterm>
@@ -306,8 +291,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="perldoc">
         <term><command>perldoc</command></term>
         <listitem>
-          <para>Displays a piece of documentation in pod format that is embedded
-          in the Perl installation tree or in a Perl script</para>
+          <para>Отображает часть документации в формате pod, которая встроена
+           в дерево установки Perl или в сценарии Perl</para>
           <indexterm zone="ch-system-perl perldoc">
             <primary sortas="b-perldoc">perldoc</primary>
           </indexterm>
@@ -317,9 +302,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="perlivp">
         <term><command>perlivp</command></term>
         <listitem>
-          <para>The Perl Installation Verification Procedure; it can be used to
-          verify that Perl and its libraries have been installed
-          correctly</para>
+          <para>Процедура проверки установки Perl; его можно использовать для
+           того чтобы убедиться в корректности установки и настройки Perl и его библиотек</para>
           <indexterm zone="ch-system-perl perlivp">
             <primary sortas="b-perlivp">perlivp</primary>
           </indexterm>
@@ -329,8 +313,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="perlthanks">
         <term><command>perlthanks</command></term>
         <listitem>
-          <para>Used to generate thank you messages to mail to the Perl
-          developers</para>
+          <para>Используется для создания благодарственных сообщений на электронную почту разработчиков Perl</para>
           <indexterm zone="ch-system-perl perlthanks">
             <primary sortas="b-perlthanks">perlthanks</primary>
           </indexterm>
@@ -340,7 +323,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="piconv">
         <term><command>piconv</command></term>
         <listitem>
-          <para>A Perl version of the character encoding converter
+          <para>Версия Perl конвертера кодировки символов
           <command>iconv</command></para>
           <indexterm zone="ch-system-perl piconv">
             <primary sortas="b-piconv">piconv</primary>
@@ -351,9 +334,9 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="pl2pm">
         <term><command>pl2pm</command></term>
         <listitem>
-          <para>A rough tool for converting Perl4
-          <filename class="extension">.pl</filename> files to Perl5
-          <filename class="extension">.pm</filename> modules</para>
+          <para>Грубый инструмент для преобразования файлов Perl4
+          <filename class="extension">.pl</filename> в модули Perl5
+          <filename class="extension">.pm</filename></para>
           <indexterm zone="ch-system-perl pl2pm">
             <primary sortas="b-pl2pm">pl2pm</primary>
           </indexterm>
@@ -363,7 +346,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="pod2html">
         <term><command>pod2html</command></term>
         <listitem>
-          <para>Converts files from pod format to HTML format</para>
+          <para>Преобразует файлы из формата pod в формат HTML</para>
           <indexterm zone="ch-system-perl pod2html">
             <primary sortas="b-pod2html">pod2html</primary>
           </indexterm>
@@ -373,7 +356,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="pod2man">
         <term><command>pod2man</command></term>
         <listitem>
-          <para>Converts pod data to formatted *roff input</para>
+          <para>Преобразует данные pod в форматированны формат * roff</para>
           <indexterm zone="ch-system-perl pod2man">
             <primary sortas="b-pod2man">pod2man</primary>
           </indexterm>
@@ -383,7 +366,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="pod2text">
         <term><command>pod2text</command></term>
         <listitem>
-          <para>Converts pod data to formatted ASCII text</para>
+          <para>Преобразует данные pod в форматированный текст ASCII</para>
           <indexterm zone="ch-system-perl pod2text">
             <primary sortas="b-pod2text">pod2text</primary>
           </indexterm>
@@ -393,7 +376,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="pod2usage">
         <term><command>pod2usage</command></term>
         <listitem>
-          <para>Prints usage messages from embedded pod docs in files</para>
+          <para>Отображает сообщений об использовании из встроенных документов pod в файлы</para>
           <indexterm zone="ch-system-perl pod2usage">
             <primary sortas="b-pod2usage">pod2usage</primary>
           </indexterm>
@@ -403,7 +386,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="podchecker">
         <term><command>podchecker</command></term>
         <listitem>
-          <para>Checks the syntax of pod format documentation files</para>
+          <para>Проверяет синтаксис файлов документации формата pod</para>
           <indexterm zone="ch-system-perl podchecker">
             <primary sortas="b-podchecker">podchecker</primary>
           </indexterm>
@@ -413,7 +396,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="podselect">
         <term><command>podselect</command></term>
         <listitem>
-          <para>Displays selected sections of pod documentation</para>
+          <para>Отображение выбранных разделов pod документации</para>
           <indexterm zone="ch-system-perl podselect">
             <primary sortas="b-podselect">podselect</primary>
           </indexterm>
@@ -423,8 +406,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="prove">
         <term><command>prove</command></term>
         <listitem>
-          <para>Command line tool for running tests against the Test::Harness
-          module</para>
+          <para>Инструмент командной строки для запуска тестов модуля Test :: Harness</para>
           <indexterm zone="ch-system-perl prove">
             <primary sortas="b-prove">prove</primary>
           </indexterm>
@@ -434,8 +416,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="pstruct">
         <term><command>pstruct</command></term>
         <listitem>
-          <para>Dumps C structures as generated from <command>cc -g -S</command>
-          stabs</para>
+          <para>Дампы структур Си, сгенерированные из <command>cc -g -S</command></para>
           <indexterm zone="ch-system-perl pstruct">
             <primary sortas="b-pstruct">pstruct</primary>
           </indexterm>
@@ -445,7 +426,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="ptar">
         <term><command>ptar</command></term>
         <listitem>
-          <para>A <command>tar</command>-like program written in Perl</para>
+          <para>Похожая на <command>tar</command>программа, написанная на языке Perl</para>
           <indexterm zone="ch-system-perl ptar">
             <primary sortas="b-ptar">ptar</primary>
           </indexterm>
@@ -455,8 +436,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="ptardiff">
         <term><command>ptardiff</command></term>
         <listitem>
-          <para>A Perl program that compares an extracted archive with an
-          unextracted one</para>
+          <para>Программа Perl, которая сравнивает извлеченный архив с
+          нераспакованной областью</para>
           <indexterm zone="ch-system-perl ptardiff">
             <primary sortas="b-ptardiff">ptardiff</primary>
           </indexterm>
@@ -466,8 +447,8 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="ptargrep">
         <term><command>ptargrep</command></term>
         <listitem>
-          <para>A Perl program that applies pattern matching to the contents
-          of files in a tar archive</para>
+          <para>Программа Perl, применяющая сопоставление шаблонов к содержимому
+          файлов в архиве tar</para>
           <indexterm zone="ch-system-perl ptargrep">
             <primary sortas="b-ptargrep">ptargrep</primary>
           </indexterm>
@@ -477,7 +458,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="shasum">
         <term><command>shasum</command></term>
         <listitem>
-          <para>Prints or checks SHA checksums</para>
+          <para>Печать или проверка контрольных сумм SHA</para>
           <indexterm zone="ch-system-perl shasum">
             <primary sortas="b-shasum">shasum</primary>
           </indexterm>
@@ -487,7 +468,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="splain">
         <term><command>splain</command></term>
         <listitem>
-          <para>Is used to force verbose warning diagnostics in Perl</para>
+          <para>Используется для диагностики предупреждений в Perl</para>
           <indexterm zone="ch-system-perl splain">
             <primary sortas="b-splain">splain</primary>
           </indexterm>
@@ -497,7 +478,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="xsubpp">
         <term><command>xsubpp</command></term>
         <listitem>
-          <para>Converts Perl XS code into C code</para>
+          <para>Преобразует Perl XS код в Си код</para>
           <indexterm zone="ch-system-perl xsubpp">
             <primary sortas="b-xsubpp">xsubpp</primary>
           </indexterm>
@@ -507,7 +488,7 @@ unset BUILD_ZLIB BUILD_BZIP2</userinput></screen>
       <varlistentry id="zipdetails">
         <term><command>zipdetails</command></term>
         <listitem>
-          <para>Displays details about the internal structure of a Zip file</para>
+          <para>Отображает сведения о внутренней структуре Zip-файла</para>
           <indexterm zone="ch-system-perl zipdetails">
             <primary sortas="b-zipdetails">zipdetails</primary>
           </indexterm>
