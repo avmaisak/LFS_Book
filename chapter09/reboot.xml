@@ -8,7 +8,7 @@
 <sect1 id="ch-finish-reboot">
   <?dbhtml filename="reboot.html"?>
 
-  <title>Rebooting the System</title>
+  <title>Перезагрузка системы</title>
 
   <para>Now that all of the software has been installed, it is time to reboot
   your computer. However, you should be aware of a few things. The system you

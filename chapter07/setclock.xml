@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-clock">
   <?dbhtml filename="clock.html"?>
 
-  <title>Configuring the System Clock</title>
+  <title>Настройка системных часов</title>
 
   <para>Procedures for setting the system clock differ between systemd and
   System V, however the separate procedures do not conflict so both

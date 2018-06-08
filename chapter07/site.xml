@@ -9,7 +9,7 @@
 <sect1 id="ch-scripts-site">
   <?dbhtml filename="site.html"?>
 
-  <title>The rc.site File</title>
+  <title>Файл rc.site</title>
 
   <indexterm zone="ch-scripts-site">
     <primary sortas="a-rc.site">rc.site</primary>

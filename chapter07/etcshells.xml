@@ -14,7 +14,7 @@
     <date>$Date$</date>
   </sect1info>
 -->
-  <title>Creating the /etc/shells File</title>
+  <title>Создание файла /etc/shells</title>
 
   <indexterm zone="ch-config-shells">
     <primary sortas="e-etc-shells">/etc/shells</primary>

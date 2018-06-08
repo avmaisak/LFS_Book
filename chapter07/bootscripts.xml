@@ -17,14 +17,14 @@
   <title>LFS-Bootscripts-&lfs-bootscripts-version;</title>
 
   <indexterm zone="ch-scripts-bootscripts">
-    <primary sortas="a-Bootscripts">Bootscripts</primary>
+    <primary sortas="a-Bootscripts">Загрузочные файлы сценариев</primary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
     <para>The LFS-Bootscripts пакет содержит  a set of scripts to start/stop
-    the LFS system at bootup/shutdown.  
+    the LFS system at bootup/shutdown.
     The configuration files and procedures needed to
     customize the boot process are described in the following sections.</para>
 

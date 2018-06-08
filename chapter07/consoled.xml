@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-console" revision="systemd">
   <?dbhtml filename="console.html"?>
 
-  <title>Configuring the Linux Console</title>
+  <title>Настройка консоли Linux</title>
 
   <indexterm zone="ch-scripts-console">
     <primary sortas="d-console">console</primary>

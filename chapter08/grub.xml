@@ -14,7 +14,7 @@
     <address>&grub-url;</address>
   </sect1info>
 
-  <title>Using GRUB to Set Up the Boot Process</title>
+  <title>Использование GRUB для настройки процесса загрузки</title>
 
   <sect2>
     <title>Введение</title>
@@ -34,8 +34,8 @@
     url="&blfs-book;multimedia/libisoburn.html">
     libisoburn</ulink> package.</para>
 
-<screen role="nodump"><userinput>cd /tmp 
-grub-mkrescue --output=grub-img.iso 
+<screen role="nodump"><userinput>cd /tmp
+grub-mkrescue --output=grub-img.iso
 xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></screen>
 
     <note>
@@ -127,7 +127,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   </sect2>
 
   <sect2 id="grub-cfg">
-    <title>Creating the GRUB Configuration File</title>
+    <title>Создание файла конфигурации GRUB </title>
 
     <para>Generate <filename>/boot/grub/grub.cfg</filename>:</para>
 

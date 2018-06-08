@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-inputrc">
   <?dbhtml filename="inputrc.html"?>
 
-  <title>Creating the /etc/inputrc File</title>
+  <title>Создание файла /etc/inputrc File</title>
 
   <indexterm zone="ch-scripts-inputrc">
     <primary sortas="e-/etc/inputrc">/etc/inputrc</primary>

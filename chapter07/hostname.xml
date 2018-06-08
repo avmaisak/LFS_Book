@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-hostname">
   <?dbhtml filename="hostname.html"?>
 
-  <title>Configuring the system hostname</title>
+  <title>Настройка имени хоста системы</title>
 
   <indexterm zone="ch-scripts-hostname">
     <primary sortas="d-hostname">hostname</primary>

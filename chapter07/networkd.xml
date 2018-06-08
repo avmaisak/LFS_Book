@@ -38,7 +38,7 @@
     <filename class="extension">.link</filename>,
     <filename class="extension">.netdev</filename> and
     <filename class="extension">.network</filename> files. For detailed
-    descriptions and example contents of these configuration files, consult 
+    descriptions and example contents of these configuration files, consult
     the <filename>systemd-link(5)</filename>,
     <filename>systemd-netdev(5)</filename> and
     <filename>systemd-network(5)</filename> manual pages.</para>
@@ -57,7 +57,7 @@
         For most systems, there is only one network interface for
         each type of connection.  For example, the classic interface
         name for a wired connection is eth0.  A wireless connection
-        will usually have the name wifi0 or wlan0. 
+        will usually have the name wifi0 or wlan0.
       </para>
 
       <para>
@@ -75,10 +75,10 @@
         <listitem>
           <para>
              Create a manual naming scheme, for example by naming the
-             interfaces something like "internet0", "dmz0", or "lan0". 
+             interfaces something like "internet0", "dmz0", or "lan0".
              For that, create .link
              files in /etc/systemd/network/, that choose an explicit name or a
-             better naming scheme for one, some, or all of your interfaces. 
+             better naming scheme for one, some, or all of your interfaces.
              For example:
           </para>
 
@@ -92,13 +92,13 @@ Name=ether0</literal>
 EOF</userinput></screen>
 
           <para>
-             See the man page systemd.link(5) for more information. 
+             See the man page systemd.link(5) for more information.
           </para>
         </listitem>
 
         <listitem>
           <para>
-            In /boot/grub/grub.cfg, pass the option net.ifnames=0 on the 
+            In /boot/grub/grub.cfg, pass the option net.ifnames=0 on the
             kernel command line.
           </para>
         </listitem>
@@ -151,7 +151,7 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 id="resolv.conf">
-    <title>Creating the /etc/resolv.conf File</title>
+    <title>Создание файла /etc/resolv.conf</title>
 
     <indexterm zone="resolv.conf">
       <primary sortas="e-/etc/resolv.conf">/etc/resolv.conf</primary>
@@ -244,17 +244,17 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 id="ch-scripts-hosts">
-     <title>Customizing the /etc/hosts File</title>
+     <title>Настройка файла /etc/hosts</title>
 
      <indexterm zone="ch-scripts-hosts">
        <primary sortas="e-/etc/hosts">/etc/hosts</primary>
      </indexterm>
-   
+
      <indexterm zone="ch-scripts-hosts">
        <primary sortas="d-localnet">localnet</primary>
        <secondary>/etc/hosts</secondary>
      </indexterm>
-   
+
      <indexterm zone="ch-scripts-hosts">
        <primary sortas="d-network">network</primary>
        <secondary>/etc/hosts</secondary>
@@ -328,7 +328,7 @@ EOF</userinput></screen>
      changed for specific uses or requirements (if assigned an IP address by a
      network/system administrator and the machine will be connected to an
      existing network). The optional alias name(s) can be omitted.</para>
-   
+
    </sect2>
 
 </sect1>
