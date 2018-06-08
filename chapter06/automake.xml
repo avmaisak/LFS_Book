@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Automake пакет содержит  программы для создания файлов Makefile для использования его программой Autoconf.</para>
+    <para>Программы для создания файлов Makefile для использования его программой Autoconf. Он также необходим для повторной компиляции пакета после обновления процедур сборки.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
