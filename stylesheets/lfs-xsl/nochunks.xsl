@@ -99,7 +99,7 @@ $Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
       <xsl:text>
 /* Global settings */
 body {
-  font-family: verdana, tahoma, helvetica, arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-align: left;
   background: #fff;
   color: #222;
@@ -176,8 +176,8 @@ div.sect1, div.appendix {
 
 /* Headers */
 h1, h2, h3, h4, h5, h6, b, .strong {
-  color: #000;
-  font-weight: bold;
+  color: #3949ab;
+  font-weight: 500;
   line-height: 1em;
 }
 
