@@ -23,9 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Libffi library provides a portable, high level programming
-    interface to various calling conventions. This allows a programmer to call
-    any function specified by a call interface description at run time.</para>
+    <para>Переносимый, высокоуровневый интерфейс по различным соглашениям о вызовах. Программы во время компиляции могу не знать об аргументах, которые были переданы функции. Например, интерпретатору можно указать во время выполнения количество аргументов и указать их тип, для вызова функции. Libffi может использоваться в программах как "мост" от интерпретатора к скомпилированному коду.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -42,8 +40,8 @@
   <sect2 role="installation">
     <title>Установка пакета Libffi</title>
 
-    <para>Modify the Makefile to install headers into the standard
-    <filename class="directory">/usr/include</filename> directory instead of
+    <para>Модифицируйте Makefile чтобы установить заголовочные файлы в стандартный каталог
+    <filename class="directory">/usr/include</filename> вместо
     <filename class="directory">/usr/lib/libffi-3.2.1/include</filename>.</para>
 
 <screen><userinput remap="pre">sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' \
@@ -90,7 +88,7 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
       <varlistentry id="libffi">
         <term><filename class="libraryfile">libffi</filename></term>
         <listitem>
-          <para>Содержит the libffi API functions.</para>
+          <para>Содержит libffi API функции</para>
           <indexterm zone="ch-system-libffi">
             <primary sortas="c-libffi">libffi</primary>
           </indexterm>
