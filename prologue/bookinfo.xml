@@ -42,8 +42,8 @@
 
   </authorgroup>
 
-  <copyright id="copyright">
-    <!-- <year>&copyrightdate;</year> -->
+    <copyright id="copyright">
+    <year>&copyrightdate;</year>
     <holder>Gerard Beekmans</holder>
   </copyright>
 
