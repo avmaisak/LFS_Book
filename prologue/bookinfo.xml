@@ -43,8 +43,8 @@
   </authorgroup>
 
   <copyright id="copyright">
-    <year>&copyrightdate;</year>
-    <holder>Gerard Beekmans</holder>
+    <!-- <year>&copyrightdate;</year> -->
+    <holder>&copy; 1990-2018 Gerard Beekmans</holder>
   </copyright>
 
   <legalnotice>
