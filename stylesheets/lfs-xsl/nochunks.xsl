@@ -176,7 +176,7 @@ div.sect1, div.appendix {
 
 /* Headers */
 h1, h2, h3, h4, h5, h6, b, .strong {
-  color: #3949ab;
+  color: #283593;
   font-weight: 500;
   line-height: 1em;
 }
