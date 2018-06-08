@@ -105,8 +105,8 @@ body {
   color: #222;
   margin: 1em;
   padding: 0;
-  font-size: 1em;
-  line-height: 1.2em
+  font-size: 1.1rem;
+  line-height: 1.9rem;
 }
 
 
