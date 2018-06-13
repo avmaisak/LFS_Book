@@ -263,8 +263,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="msggrep">
         <term><command>msggrep</command></term>
         <listitem>
-          <para>Extracts all messages of a translation catalog that match a
-          given pattern or belong to some given source files</para>
+          <para>Извлекает все сообщения каталога переводов, которые соответствуют
+          шаблону или принадлежат к некоторым заданным исходным файлам</para>
           <indexterm zone="ch-system-gettext msggrep">
             <primary sortas="b-msggrep">msggrep</primary>
           </indexterm>
@@ -274,9 +274,9 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="msginit">
         <term><command>msginit</command></term>
         <listitem>
-          <para>Creates a new <filename class="extension">.po</filename> file,
-          initializing the meta information with values from the user's
-          environment</para>
+          <para>Создаёт новый <filename class="extension">.po</filename> файл,
+          инициализирующий метаинформацию со значениями из
+           пользовательской среды</para>
           <indexterm zone="ch-system-gettext msginit">
             <primary sortas="b-msginit">msginit</primary>
           </indexterm>
@@ -286,7 +286,7 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="msgmerge">
         <term><command>msgmerge</command></term>
         <listitem>
-          <para>Combines two raw translations into a single file</para>
+          <para>Объединяет два необработанных перевода в один файл</para>
           <indexterm zone="ch-system-gettext msgmerge">
             <primary sortas="b-msgmerge">msgmerge</primary>
           </indexterm>
@@ -296,8 +296,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="msgunfmt">
         <term><command>msgunfmt</command></term>
         <listitem>
-          <para>Decompiles a binary message catalog into raw translation
-          text</para>
+          <para>Декомпилирует каталог бинарных сообщений в исходный
+           текст перевода</para>
           <indexterm zone="ch-system-gettext msgunfmt">
             <primary sortas="b-msgunfmt">msgunfmt</primary>
           </indexterm>
@@ -307,7 +307,7 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="msguniq">
         <term><command>msguniq</command></term>
         <listitem>
-          <para>Unifies duplicate translations in a translation catalog</para>
+          <para>Унифицирует дубликаты переводов в каталоге переводов</para>
           <indexterm zone="ch-system-gettext msguniq">
             <primary sortas="b-msguniq">msguniq</primary>
           </indexterm>
@@ -317,8 +317,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="ngettext">
         <term><command>ngettext</command></term>
         <listitem>
-          <para>Displays native language translations of a textual message whose
-          grammatical form depends on a number</para>
+          <para>Отображает переводы на родном языке текстового сообщения,
+           грамматическая форма зависит от числа</para>
           <indexterm zone="ch-system-gettext ngettext">
             <primary sortas="b-ngettext">ngettext</primary>
           </indexterm>
@@ -328,7 +328,7 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="recode-sr-latin">
         <term><command>recode-sr-latin</command></term>
         <listitem>
-          <para>Recodes Serbian text from Cyrillic to Latin script</para>
+          <para>Редактирует сербский текст с кириллицы на латиницу</para>
           <indexterm zone="ch-system-gettext recode-sr-latin">
             <primary sortas="b-recode-sr-latin">recode-sr-latin</primary>
           </indexterm>
@@ -338,8 +338,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="xgettext">
         <term><command>xgettext</command></term>
         <listitem>
-          <para>Extracts the translatable message lines from the given source
-          files to make the first translation template</para>
+          <para>Извлекает переведенные строки сообщений из данного источника
+           файлов для создания первого шаблона перевода</para>
           <indexterm zone="ch-system-gettext xgettext">
             <primary sortas="b-xgettext">xgettext</primary>
           </indexterm>
@@ -349,10 +349,9 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="libasprintf">
         <term><filename class="libraryfile">libasprintf</filename></term>
         <listitem>
-          <para>defines the <emphasis>autosprintf</emphasis> class, which makes
-          C formatted output routines usable in C++ programs, for use with the
-          <emphasis>&lt;string&gt;</emphasis> strings and the
-          <emphasis>&lt;iostream&gt;</emphasis> streams</para>
+          <para>Определяет класс <emphasis>autosprintf</emphasis>, который создает Си-форматированный вывод полезный для работы в программах на языке Си++, для использования со
+          <emphasis>&lt;string&gt;</emphasis> строками и
+          <emphasis>&lt;iostream&gt;</emphasis> потоками</para>
           <indexterm zone="ch-system-gettext libasprintf">
             <primary sortas="c-libasprintf">libasprintf</primary>
           </indexterm>
@@ -362,8 +361,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="libgettextlib">
         <term><filename class="libraryfile">libgettextlib</filename></term>
         <listitem>
-          <para>a private library containing common routines used by the
-          various Gettext programs; these are not intended for general use</para>
+          <para>частная библиотека, содержаща общие процедуры, используемые
+           различными программами Gettext; они не предназначены для общего использования</para>
           <indexterm zone="ch-system-gettext libgettextlib">
             <primary sortas="c-libgettextlib">libgettextlib</primary>
           </indexterm>
@@ -373,12 +372,11 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="libgettextpo">
         <term><filename class="libraryfile">libgettextpo</filename></term>
         <listitem>
-          <para>Used to write specialized programs that process
-          <filename class="extension">.po</filename> files; this library is
-          used when the standard applications shipped with Gettext (such as
+          <para>Используется для написания специализированных программ, которые обрабатывают файлы
+          <filename class="extension">.po</filename>; эта библиотека
+           используется, когда стандартных приложений, поставляемых с Gettext (таких как
           <command>msgcomm</command>, <command>msgcmp</command>,
-          <command>msgattrib</command>, and <command>msgen</command>) will
-          not suffice</para>
+          <command>msgattrib</command>, и <command>msgen</command>) будет недостаточно</para>
           <indexterm zone="ch-system-gettext libgettextpo">
             <primary sortas="c-libgettextpo">libgettextpo</primary>
           </indexterm>
@@ -388,8 +386,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="libgettextsrc">
         <term><filename class="libraryfile">libgettextsrc</filename></term>
         <listitem>
-          <para>A private library containing common routines used by the
-          various Gettext programs; these are not intended for general use</para>
+          <para>Частная библиотека, содержащая общие подпрограммы, используемые
+          различными программами Gettext; они не предназначены для общего использования</para>
           <indexterm zone="ch-system-gettext libgettextsrc">
             <primary sortas="c-libgettextsrc">libgettextsrc</primary>
           </indexterm>
@@ -399,9 +397,8 @@ chmod -v 0755 /usr/lib/preloadable_libintl.so</userinput></screen>
       <varlistentry id="preloadable_libintl">
         <term><filename class="libraryfile">preloadable_libintl</filename></term>
         <listitem>
-          <para>A library, intended to be used by LD_PRELOAD that assists
-          <filename class="libraryfile">libintl</filename> in logging
-          untranslated messages</para>
+          <para>Библиотека, предназначенная для использования LD_PRELOAD, которая помогает
+          <filename class="libraryfile">libintl</filename> в журналировании непереведённых сообщений</para>
           <indexterm zone="ch-system-gettext preloadable_libintl">
             <primary sortas="c-preloadable_libintl">preloadable_libintl</primary>
           </indexterm>
