@@ -39,11 +39,6 @@
 
   <sect2 role="installation">
     <title>Установка пакета Bison</title>
-<!-- bison only installs a static library
-    <para>Inhibit static library installation:</para>
-
-<screen><userinput remap="pre">sed -i '/lib_LIBRARIES =/d' Makefile.in</userinput></screen>
--->
     <para>Подготовьте пакет Bison к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/bison-&bison-version;</userinput></screen>
@@ -58,7 +53,7 @@
 <screen><userinput remap="test">make check</userinput></screen>
 -->
 
-    <para>Есть циклическая зависимость между bison и flex при проверке. При желании, после установки пакета flex в следующем разделе наборы тестов для bison можно будет запустить командой <command>make check</command>.Три теста, которые относятся к lalr1.cc не проходят по неизвестным причинам.</para>
+    <para>Есть циклическая зависимость между bison и flex при проверке. При желании, после установки пакета flex в следующем разделе наборы тестов для bison можно будет запустить командой <command>make check</command>.</para>
 
     <para>Установите пакет:</para>
 

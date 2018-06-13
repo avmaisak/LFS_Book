@@ -41,6 +41,32 @@
 -->
 
 	<listitem>
+	<para>2018-06-12</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Typo fix in xz page.  Исправления 
+           <ulink url="&lfs-ticket-root;4285">#4285</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлены некоторые urls http ссылки на https in gcc.  Исправления 
+           <ulink url="&lfs-ticket-root;4281">#4281</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до iproute2-4.17.0.  Исправления 
+           <ulink url="&lfs-ticket-root;4288">#4288</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до bison-3.0.5.  Исправления 
+           <ulink url="&lfs-ticket-root;4284">#4284</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до linux-4.17.1.  Исправления 
+           <ulink url="&lfs-ticket-root;4280">#4280</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
 		<para>2018-05-22</para>
 			   <itemizedlist>
         <listitem>
