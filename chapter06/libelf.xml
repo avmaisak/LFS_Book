@@ -57,7 +57,7 @@
 
     <para>Для выполнения набора тестов, необходимо выполнить команду <command>make check</command>.</para>
 
-    <para>Выполнение установки только Libelf:</para>
+    <para>Выполните установку только Libelf:</para>
 
 <screen><userinput remap="install">make -C libelf install
 install -vm644 config/libelf.pc /usr/lib/pkgconfig</userinput></screen>
