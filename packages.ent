@@ -581,7 +581,7 @@
 <!ENTITY readline-size "2,842 KB">
 <!ENTITY readline-url "&gnu;readline/readline-&readline-version;.tar.gz">
 <!ENTITY readline-md5 "205b03a87fc83dab653b628c59b9fc91">
-<!ENTITY readline-home "http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html">
+<!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">
 <!ENTITY readline-ch6-du "15 MB">
 <!ENTITY readline-ch6-sbu "0.1 SBU">
 
