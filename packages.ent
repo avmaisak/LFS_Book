@@ -456,7 +456,7 @@
 
 <!ENTITY man-db-version "2.8.3">
 <!ENTITY man-db-size "1,587 KB">
-<!ENTITY man-db-url "&savannah;/releases/man-db/man-db-&man-db-version;.tar.xz">
+<!ENTITY man-db-url "&savannah;releases/man-db/man-db-&man-db-version;.tar.xz">
 <!ENTITY man-db-md5 "6f3055e18fdd1ce5cbbdb30403991ec7">
 <!ENTITY man-db-home "https://www.nongnu.org/man-db/">
 <!ENTITY man-db-ch6-du "31 MB">
