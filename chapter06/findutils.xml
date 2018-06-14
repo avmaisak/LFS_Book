@@ -43,7 +43,7 @@
    <!-- this has been fixed in upstream gnulib, when a new version of
    findutils is released, please check #4055 to see if the change has been
    picked up in this package -->
-   <para>First, suppress a test which on some machines can loop forever:</para>
+   <para>Уберем тест, который на некоторых машинах может привести к вечному зацикливанию:</para>
 
 <screen><userinput remap="pre">sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in</userinput></screen>
 
@@ -57,9 +57,9 @@
       <varlistentry>
         <term><parameter>--localstatedir</parameter></term>
         <listitem>
-          <para>This option changes the location of the <command>locate</command>
-          database to be in <filename class="directory">/var/lib/locate</filename>,
-          which is FHS-compliant.</para>
+          <para>Этот аргумент изменяет местоположение базы данных
+			 <command>locate</command> на каталог <filename class="directory">/var/lib/locate</filename>,
+          для совместимости с FHS.</para>
         </listitem>
       </varlistentry>
 
@@ -77,16 +77,15 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para revision="sysv">Some of the scripts in the LFS-Bootscripts package
-    depend on <command>find</command>.  As <filename
-    class="directory">/usr</filename> may not be available during the early
-    stages of booting, this program needs to be on the root partition.  The
-    <command>updatedb</command> script also needs to be modified to correct an
-    explicit path:</para>
+    <para revision="sysv">Некоторые сценарии в пакете LFS-Bootscripts
+    зависят от <command>find</command>. Так как каталог <filename
+    class="directory">/usr</filename> может быть не доступен на ранних стадиях загрузки системы,
+	 эти программы должны быть размещены в корневом каталоге раздела. Сценарий <command>updatedb</command>
+	 также должен быть модифицирован для указания правильного пути:</para>
 
-    <para revision="systemd"> Some packages in BLFS and beyond expect the
-    <command>find</command> program in <filename
-    class="directory">/bin</filename>, so make sure it's placed there:</para>
+    <para revision="systemd">Некоторые пакеты из книги BLFS и за её пределами ожидают, что программа
+    <command>find</command> будет размещена в каталоге <filename
+    class="directory">/bin</filename> ,поэтому, необходимо убедиться, что она находится в требуемом месте:</para>
 
 <screen><userinput remap="install">mv -v /usr/bin/find /bin
 sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
@@ -112,8 +111,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <varlistentry id="code">
         <term><command>code</command></term>
         <listitem>
-          <para>Was formerly used to produce <command>locate</command>
-          databases; it is the ancestor of <command>frcode</command></para>
+          <para>Раньше использовался для воспроизведения базы данных <command>locate</command>; является предшественником программы <command>frcode</command></para>
           <indexterm zone="ch-system-findutils code">
             <primary sortas="b-code">code</primary>
           </indexterm>
@@ -123,8 +121,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <varlistentry id="find">
         <term><command>find</command></term>
         <listitem>
-          <para>Searches given directory trees for files matching the specified
-          criteria</para>
+          <para>Ищет файлы в указанном каталоге, по указанным критериям</para>
           <indexterm zone="ch-system-findutils find">
             <primary sortas="b-find">find</primary>
           </indexterm>
@@ -134,8 +131,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <varlistentry id="locate">
         <term><command>locate</command></term>
         <listitem>
-          <para>Searches through a database of file names and reports the names
-          that contain a given string or match a given pattern</para>
+          <para>быстрый поиск файлов в одной или нескольких базах данных имён файлов с использованием заданных пользователем критериев.</para>
           <indexterm zone="ch-system-findutils locate">
             <primary sortas="b-locate">locate</primary>
           </indexterm>
@@ -145,7 +141,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <varlistentry id="oldfind">
         <term><command>oldfind</command></term>
         <listitem>
-          <para>Older version of find, using a different algorithm</para>
+          <para>Старая версия find, использует иной алгоритм</para>
           <indexterm zone="ch-system-findutils oldfind">
             <primary sortas="b-oldfind">oldfind</primary>
           </indexterm>
@@ -155,10 +151,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <varlistentry id="updatedb">
       <term><command>updatedb</command></term>
         <listitem>
-          <para>Updates the <command>locate</command> database; it scans the
-          entire file system (including other file systems that are currently
-          mounted, unless told not to) and puts every file name it finds into
-          the database</para>
+          <para>создание и/или обновление баз данных, используемых программой locate.</para>
           <indexterm zone="ch-system-findutils updatedb">
             <primary sortas="b-updatedb">updatedb</primary>
           </indexterm>
@@ -168,7 +161,7 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <varlistentry id="xargs">
         <term><command>xargs</command></term>
         <listitem>
-          <para>Can be used to apply a given command to a list of files</para>
+          <para>формирование и исполнение команд на основании данных, считанных из стандартного ввода.</para>
           <indexterm zone="ch-system-findutils xargs">
             <primary sortas="b-xargs">xargs</primary>
           </indexterm>

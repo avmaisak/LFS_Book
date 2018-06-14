@@ -112,7 +112,7 @@
 
     <para>Известно, что тест test-getlogin не пройдет в
      частично собранной системе, в среде chroot, но
-     усрешно выполнится в конце этой главы. Тестовая программа tty.sh
+     успешно выполнится в конце этой главы. Тестовая программа tty.sh
      также известно, что он не работает.</para>
 
     <para>Удалим временную группу:</para>
@@ -132,12 +132,12 @@ mv -v /usr/bin/chroot /usr/sbin
 mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8
 sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8</userinput></screen>
 
-    <para revision="sysv">Некоторые из сценариев в пакете LFS-Bootscripts зависят от <command>head</command>, <command>sleep</command>, и
+    <para revision="sysv">Некоторые сценарии в пакете LFS-Bootscripts зависят от <command>head</command>, <command>sleep</command>, и
     <command>nice</command>.  Так как каталог <filename class="directory">/usr</filename>
 	 может быть недоступен на ранних стадиях процесса загрузки, то эти бинарные файлы должны находится в корневом каталоге раздела:</para>
 
-    <para revision="systemd">Некоторые пакеты в книге BLFS и за её пределами ожидать
-     следующие программы в каталоге <filename class="directory">/bin</filename> ,поэтому, необходимо убедиться, что они находятся именно в требуемом месте:</para>
+    <para revision="systemd">Некоторые пакеты из книги BLFS и за её пределами ожидают что
+     следующие программы находятся в каталоге <filename class="directory">/bin</filename> ,поэтому, необходимо убедиться, что они находятся в требуемом месте:</para>
 
 <screen><userinput remap="install">mv -v /usr/bin/{head,sleep,nice} /bin</userinput></screen>
 
