@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Check is a unit testing framework for C.</para>
+    <para>Check - платформа для работы с модульными тестами для языка программирования Си</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -48,13 +48,11 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete.  To run the Check test suite, issue the
-    следующую команду:</para>
+    <para>Когда компиляция будет завершена, можно запустить тесты, выполнив следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>Note that the Check test suite may take a relatively long
-    (up to 4 SBU) time.</para>
+    <para>Обратите внимание, что тесты могут выполняться довольно продолжительное время (до 4 SBU).</para>
 
     <para>Установите пакет:</para>
 
@@ -83,8 +81,7 @@
       <varlistentry id="checkmk">
         <term><command>checkmk</command></term>
         <listitem>
-          <para>Awk script for generating C unit tests for use with the Check
-          unit testing framework</para>
+          <para>Сценарий Awk для создания модульных тестов Си для использования с Check</para>
           <indexterm zone="ch-tools-check checkmk">
             <primary sortas="b-checmk">checkmk</primary>
           </indexterm>
@@ -94,8 +91,7 @@
       <varlistentry id="libcheck">
         <term><filename class="libraryfile">libcheck.{a,so}</filename></term>
         <listitem>
-          <para>Содержит functions that allow Check to be called from a test
-          program</para>
+          <para>Содержит функции, позволяющие вызывать Check из программ для тестирования</para>
           <indexterm zone="ch-tools-check libcheck">
             <primary sortas="c-libcheck">libcheck</primary>
           </indexterm>
