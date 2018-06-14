@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The IPRoute2 пакет содержит  программы для  basic and advanced IPV4-based
-    networking.</para>
+    <para>Iproute2 — это набор программ для управления параметрами сетевых устройств в ядре Linux. Эти утилиты были разработаны в качестве унифицированного интерфейса к ядру Linux, которое непосредственно управляет сетевым трафиком. Iproute2 заменил полный набор классических сетевых утилит UNIX, которые ранее использовались для настройки сетевых интерфейсов, таблиц маршрутизации и управления arp‐таблицами: ifconfig, route, arp, netstat и других, предназначенных для создания IP‐туннелей. iproute2 предлагает унифицированный синтаксис для управления самыми разными аспектами сетевых интерфейсов.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,20 +40,13 @@
   <sect2 role="installation">
     <title>Установка пакета IPRoute2</title>
 
-    <para>The <command>arpd</command> program included in this package will not
-    be built since it is dependent on Berkeley DB, which is not installed in
-    LFS. However, a directory for <command>arpd</command> and a man page will still
-    be installed. Prevent this by running the commands below.
-    If the <command>arpd</command> binary is needed,
-    instructions for compiling Berkeley DB can be found in the BLFS Book at
-    <ulink url="&blfs-book;server/databases.html#db"/>.
+    <para>Программа <command>arpd</command> в этом пакете не будет собрана, так как зависит от Berkeley DB, которая не будет устанавливаться в LFS. Однако, каталог для <command>arpd</command> и страницы руководств будут установлены. Предотвратите это, выполнив приведенные ниже команды. Если бинарный файл <command>arpd</command> необходим, инструкции по установке пакета Berkeley DB  можно найти в книге BLFS по ссылке <ulink url="&blfs-book;server/databases.html#db"/>.
     </para>
 
 <screen><userinput remap="pre">sed -i /ARPD/d Makefile
 rm -fv man/man8/arpd.8</userinput></screen>
 
-    <para>It is also necessary to disable building two modules that
-    requires <ulink url="&blfs-book;postlfs/iptables.html"/>.</para>
+    <para>Также необходимо запретить сборку двух модулей, для которых необходим пакет <ulink url="&blfs-book;postlfs/iptables.html"/>.</para>
 
 <screen><userinput remap="pre">sed -i 's/.m_ipt.o//' tc/Makefile</userinput></screen>
 
@@ -62,7 +54,7 @@ rm -fv man/man8/arpd.8</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package does not have a working test suite.</para>
+    <para>В этом пакете нет рабочих тестов</para>
 <!-- currently not useful, no tests actually run
     <para>This package comes with a test suite, but due to assumptions it makes,
     it is not possible to reliably run these tests from within the chroot
