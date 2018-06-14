@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит программы манипуляции с текстовыми файлами.
+    <para>Пакет содержит программы для манипуляции с текстовыми файлами.
 				 Это GNU версия awk (Aho-Weinberg-Kernighan). Он используется в процедурах сборки для большинства пакетов.</para>
 
     <segmentedlist>
@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета Gawk</title>
 
-    <para>First, ensure some unneeded files are not installed:</para>
+    <para>Во-первых, убедитесь, что некоторые ненужные файлы не будут установлены:</para>
 
 <screen><userinput remap="pre">sed -i 's/extras//' Makefile.in</userinput></screen>
 
@@ -94,7 +94,7 @@ cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-&gawk-version;</
       <varlistentry id="awk">
         <term><command>awk</command></term>
         <listitem>
-          <para>A link to <command>gawk</command></para>
+          <para>Символическая ссылка на <command>gawk</command></para>
           <indexterm zone="ch-system-gawk awk">
             <primary sortas="b-awk">awk</primary>
           </indexterm>
@@ -104,8 +104,8 @@ cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-&gawk-version;</
       <varlistentry id="gawk">
         <term><command>gawk</command></term>
         <listitem>
-          <para>A program for manipulating text files; it is the GNU
-          implementation of <command>awk</command></para>
+          <para>программа для манипуляции с текстовыми файлами; GNU
+          реализация программы <command>awk</command></para>
           <indexterm zone="ch-system-gawk gawk">
             <primary sortas="b-gawk">gawk</primary>
           </indexterm>
@@ -115,7 +115,7 @@ cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-&gawk-version;</
       <varlistentry id="gawk-version">
         <term><command>gawk-&gawk-version;</command></term>
         <listitem>
-          <para>A hard link to <command>gawk</command></para>
+          <para>Жесткая ссылка на <command>gawk</command></para>
           <indexterm zone="ch-system-gawk gawk-version">
             <primary sortas="b-gawk-&gawk-version;">gawk-&gawk-version;</primary>
           </indexterm>
@@ -125,7 +125,7 @@ cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-&gawk-version;</
       <varlistentry id="igawk">
         <term><command>igawk</command></term>
         <listitem>
-          <para>Gives <command>gawk</command> the ability to include files</para>
+          <para>Передаёт программе <command>gawk</command> возможность включать файлы</para>
           <indexterm zone="ch-system-gawk igawk">
             <primary sortas="b-igawk">igawk</primary>
           </indexterm>
