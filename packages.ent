@@ -145,10 +145,10 @@
 <!ENTITY e2fsprogs-ch6-du "58 MB">
 <!ENTITY e2fsprogs-ch6-sbu "5.1 SBU">
 
-<!ENTITY elfutils-version "0.170">
+<!ENTITY elfutils-version "0.172">
 <!ENTITY elfutils-size "8,168 KB">
 <!ENTITY elfutils-url "https://sourceware.org/ftp/elfutils/&elfutils-version;/elfutils-&elfutils-version;.tar.bz2">
-<!ENTITY elfutils-md5 "03599aee98c9b726c7a732a2dd0245d5">
+<!ENTITY elfutils-md5 "01e87ab4c5a6a249c04e22a97a4221d3">
 <!ENTITY elfutils-home "https://sourceware.org/ftp/elfutils/">
 <!ENTITY elfutils-ch6-du "74 MB">
 <!ENTITY elfutils-ch6-sbu "0.6 SBU">
