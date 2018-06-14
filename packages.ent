@@ -496,7 +496,7 @@
 
 <!ENTITY ncurses-version "6.1">
 <!ENTITY ncurses-size "3,288 KB">
-<!ENTITY ncurses-url "&gnu;/ncurses/ncurses-&ncurses-version;.tar.gz">
+<!ENTITY ncurses-url "&gnu;ncurses/ncurses-&ncurses-version;.tar.gz">
 <!ENTITY ncurses-md5 "98c889aaf8d23910d2b92d65be2e737a">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-ch5-du "41 MB">
