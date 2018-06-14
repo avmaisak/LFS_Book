@@ -8,26 +8,16 @@
 <sect1 id="ch-system-strippingagain">
   <?dbhtml filename="strippingagain.html"?>
 
-  <title>Stripping Again</title>
+  <title>Повторная очистка</title>
 
-  <para>This section is optional.  If the intended user is not a
-  programmer and does not plan to do
-  any debugging on the system software, the system size can be decreased
-  by about 90 MB by removing the debugging symbols from binaries and
-  libraries. This causes no inconvenience other than not being able to
-  debug the software fully anymore.</para>
+  <para>Этот раздел является необязательным. Если вы не
+  программист и не планируете выполнять отладку установленного программного обеспечения, то общий размер системы можно сократить примерно на 90 МБ, удалив отладочные символы из двоичных файлов и библиотек. Такая операция не вызовет проблем, за исключением того, что не получится выполнить отладку установленного программного обеспечения.</para>
 
-  <para>Most people who use the commands mentioned below do not
-  experience any difficulties. However, it is easy to make a typo and
-  render the new system unusable, so before running the
-  <command>strip</command> commands, it is a good idea to make a
-  backup of the LFS system in its current state.</para>
+  <para>Большинство пользователей, которые используют приведенные ниже команды, не испытывают никаких трудностей. Тем не менее, легко сделать опечатку и сделать новую систему непригодной для использования, поэтому перед запуском команд рекомендуется создать резервную копию системы LFS в текущем состоянии.</para>
 
-  <para>First place the debugging symbols for selected libraries
-  in separate files.  This debugging information is needed if running
-  regression tests that use <ulink
-  url='&blfs-book;/general/valgrind.html'>valgrind</ulink> or <ulink
-  url='&blfs-book;/general/gdb.html'>gdb</ulink> later in BLFS.
+  <para>Сначала расположим отладочные символы для выбранных библиотек в отдельные файлы. Отладочная информация необходима для запуска регрессионных тестов, которые используют <ulink
+  url='&blfs-book;/general/valgrind.html'>valgrind</ulink> или <ulink
+  url='&blfs-book;/general/gdb.html'>gdb</ulink> позднее в книге BLFS.
   </para>
 
 <!-- also of interest are libgfortan, libgo, libgomp, and libobjc from gcc -->
@@ -57,15 +47,14 @@ done
 
 unset LIB save_lib save_usrlib</userinput></screen>
 
-  <para>Before performing the stripping, take special care to ensure that
-  none of the binaries that are about to be stripped are running. If
-  unsure whether the user entered chroot with the command given in
-  <xref linkend="ch-system-chroot" role=","/> first exit from
-  chroot:</para>
+  <para>Перед выполнением очистки тщательно следите за тем, чтобы
+   ни один из исполняемых файлов, который планируется удалить, не был запущен. Если
+   вы не уверены, что вы находитесь в правильно настроенной среде chroot как было рассказано ранее,
+  <xref linkend="ch-system-chroot" role=","/> сперва выйдем из среды chroot, выполнив команду:</para>
 
 <screen role="nodump"><userinput>logout</userinput></screen>
 
-  <para>Then reenter it with:</para>
+  <para>Выполним вход в среду chroot заново, выполнив команду:</para>
 
 <screen role="nodump"><userinput>chroot $LFS /tools/bin/env -i          \
     HOME=/root TERM=$TERM              \
@@ -73,7 +62,7 @@ unset LIB save_lib save_usrlib</userinput></screen>
     PATH=/bin:/usr/bin:/sbin:/usr/sbin \
     /tools/bin/bash --login</userinput></screen>
 
-  <para>Now the binaries and libraries can be safely stripped:</para>
+  <para>Теперь двоичные файлы и библиотеки можно безопасно очистить:</para>
 
 <screen><userinput>/tools/bin/find /usr/lib -type f -name \*.a \
    -exec /tools/bin/strip --strip-debug {} ';'
@@ -84,9 +73,6 @@ unset LIB save_lib save_usrlib</userinput></screen>
 /tools/bin/find /{bin,sbin} /usr/{bin,sbin,libexec} -type f \
     -exec /tools/bin/strip --strip-all {} ';'</userinput></screen>
 
-  <para>A large number of files will be reported as having their file
-  format not recognized. These warnings can be safely ignored. These
-  warnings indicate that those files are scripts instead of
-  binaries.</para>
+  <para>На экране будет множество сообщений, не удается распознать формат файлов (format not recognized). Такие предупреждения можно игнорировать. Они указывают, что файлы являются сценариями вместо двоичных файлов.</para>
 
 </sect1>
