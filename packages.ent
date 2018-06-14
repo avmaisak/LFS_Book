@@ -400,7 +400,7 @@
 
 <!ENTITY libpipeline-version "1.5.0">
 <!ENTITY libpipeline-size "810 KB">
-<!ENTITY libpipeline-url "&savannah;/releases/libpipeline/libpipeline-&libpipeline-version;.tar.gz">
+<!ENTITY libpipeline-url "&savannah;releases/libpipeline/libpipeline-&libpipeline-version;.tar.gz">
 <!ENTITY libpipeline-md5 "b7437a5020190cfa84f09c412db38902">
 <!ENTITY libpipeline-home "http://libpipeline.nongnu.org/">
 <!ENTITY libpipeline-ch6-du "8.1 MB">
