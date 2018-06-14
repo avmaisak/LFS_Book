@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Установка пакета Make</title>
 
-    <para>Again, work around an error caused by glibc-2.27:</para>
+    <para>Необходимо обойти ошибку, вызванную glibc-2.27:</para>
 
 <screen><userinput remap="pre">sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c</userinput></screen>
     <para>Подготовьте пакет Make к компиляции:</para>
@@ -53,9 +53,8 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>The test suite needs to know where supporting perl files are located.
-    We use an envronment variable to accomplish this.  To test the
-    results, выполните следующую команду:</para>
+    <para>Набор тестов должен знать, где находятся файлы perl.
+     Для этого будем использовать переменную окружения. Для выполнения тестов, выполните следующую команду:</para>
 
 <screen><userinput remap="test">make PERL5LIB=$PWD/tests/ check</userinput></screen>
 
@@ -85,8 +84,8 @@
       <varlistentry id="make">
         <term><command>make</command></term>
         <listitem>
-          <para>Automatically determines which pieces of a package need to
-          be (re)compiled and then issues the relevant commands</para>
+          <para>Автоматически определяет, какие части пакета должны
+           быть (повторно) скомпилированы, и затем выдает соответствующие команды</para>
           <indexterm zone="ch-system-make make">
             <primary sortas="b-make">make</primary>
           </indexterm>
