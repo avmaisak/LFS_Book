@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Kbd пакет содержит  key-table files, console fonts, and keyboard
-    utilities.</para>
+    <para>key-table файлы, утилиты для клавиатуры для не US наборов, а также консольные шрифты.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,19 +40,19 @@
   <sect2 role="installation">
     <title>Установка пакета Kbd</title>
 
-    <para>The behaviour of the Backspace and Delete keys is not consistent
-    across the keymaps in the Kbd package. The following patch fixes this
-    issue for i386 keymaps:</para>
+    <para>Поведение клавиш Backspace и Delete несовместимо
+     в раскладке пакета Kbd. Следующий патч исправляет это
+     для раскладок i386:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&kbd-backspace-patch;</userinput></screen>
 
-    <para>After patching, the Backspace key generates the character with code 127,
-    and the Delete key generates a well-known escape sequence.</para>
+    <para>После исправления ключ Backspace генерирует символ с кодом 127,
+     и клавиша Delete генерирует известную управляющую последовательность.</para>
 
-    <para>Remove the redundant <command>resizecons</command> program (it requires
-    the defunct svgalib to provide the video mode files - for normal use
-    <command>setfont</command> sizes the console appropriately) together with its
-    manpage.</para>
+    <para>Удалить избыточную программу <command>resizecons</command> (требует
+     отсутствующей библиотеки svgalib для предоставления файлов видеорежима - для нормального использования
+     <command> setfont </command> в консоли) вместе с
+     страницами руководства.</para>
 
 <screen><userinput remap="pre">sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
 sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in</userinput></screen>
@@ -77,9 +76,8 @@ sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-vlock</parameter></term>
         <listitem>
-          <para>This option prevents the vlock utility from being built, as it
-          requires the PAM library, which isn't available in the chroot
-          environment.</para>
+          <para>Этот аргумент запрещает создание встроенной утилиты vlock.
+           для которой требуется библиотека PAM, недоступной в среде chroot.</para>
        </listitem>
       </varlistentry>
 
@@ -135,7 +133,7 @@ cp -R -v docs/doc/* /usr/share/doc/kbd-&kbd-version;</userinput></screen>
         psfxtable), psfstriptable (link to psfxtable), psfxtable, <!--resizecons,-->
         setfont, setkeycodes, setleds, setmetamode, setvtrgb,
         showconsolefont, showkey, unicode_start, and unicode_stop</seg>
-        <seg>/usr/share/consolefonts, /usr/share/consoletrans, /usr/share/keymaps, 
+        <seg>/usr/share/consolefonts, /usr/share/consoletrans, /usr/share/keymaps,
         /usr/share/doc/kbd-&kbd-version;,  and /usr/share/unimaps</seg>
       </seglistitem>
     </segmentedlist>
