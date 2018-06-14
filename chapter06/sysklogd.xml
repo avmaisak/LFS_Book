@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Sysklogd пакет содержит  программы для  logging system messages,
-    such as those given by the kernel when unusual things happen.</para>
+    <para>Системные утилиты, которые обеспечивают поддержку журналирования системы и перехват сообщений ядра. Поддержка доменных гнёзд интернет и unix позволяет этому пакету утилит поддерживать и локальное и удалённое журналирование.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,8 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Sysklogd</title>
 
-    <para>First, fix problems that causes a segmentation fault under
-    some conditions in klogd and fix an obsolete program construct:</para>
+    <para>Во-первых, устраните проблемы, которые приводят к ошибке сегментации - Segmentation fault (ошибка программного обеспечения, возникающая при попытке обращения к недоступным для записи участкам памяти либо при попытке изменить память запрещённым способом. ) и исправьте некоторые условия в klogd для устаревших конструкций программ:</para>
 
 <screen><userinput remap="pre">sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
 sed -i 's/union wait/int/' syslogd.c</userinput></screen>
@@ -60,7 +58,7 @@ sed -i 's/union wait/int/' syslogd.c</userinput></screen>
   </sect2>
 
   <sect2 id="conf-sysklogd" role="configuration">
-    <title>Configuring Sysklogd</title>
+    <title>Настройка Sysklogd</title>
 
     <indexterm zone="conf-sysklogd">
       <primary sortas="a-Sysklogd">Sysklogd</primary>
@@ -71,8 +69,7 @@ sed -i 's/union wait/int/' syslogd.c</userinput></screen>
       <primary sortas="e-/etc/syslog.conf">/etc/syslog.conf</primary>
     </indexterm>
 
-    <para>Create a new <filename>/etc/syslog.conf</filename> file by running the
-    following:</para>
+    <para>Создайте новый файл <filename>/etc/syslog.conf</filename> выполнив следующую команду:</para>
 
 <screen><userinput>cat &gt; /etc/syslog.conf &lt;&lt; "EOF"
 <literal># Begin /etc/syslog.conf
@@ -109,7 +106,7 @@ EOF</userinput></screen>
       <varlistentry id="klogd">
         <term><command>klogd</command></term>
         <listitem>
-          <para>A system daemon for intercepting and logging kernel messages</para>
+          <para>Системная служба для перехвата и регистрации сообщений ядра</para>
           <indexterm zone="ch-system-sysklogd klogd">
             <primary sortas="b-klogd">klogd</primary>
           </indexterm>
@@ -119,10 +116,9 @@ EOF</userinput></screen>
       <varlistentry id="syslogd">
         <term><command>syslogd</command></term>
         <listitem>
-          <para>Logs the messages that system programs offer for logging [Every
-          logged message contains at least a date stamp and a hostname, and
-          normally the program's name too, but that depends on how trusting the
-          logging daemon is told to be.]</para>
+          <para>Регистрирует сообщения, предлагаемые системными программами для ведения журнала [Каждое
+           зарегистрированное сообщение содержит как минимум отметку даты и имя хост-системы, и
+           обычно это имя программы, но это зависит от доверия служб регистрации.]</para>
           <indexterm zone="ch-system-sysklogd syslogd">
             <primary sortas="b-syslogd">syslogd</primary>
           </indexterm>
