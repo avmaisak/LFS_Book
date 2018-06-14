@@ -552,7 +552,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
       <varlistentry id="systemd-machine-id-setup">
         <term><command>systemd-machine-id-setup</command></term>
         <listitem>
-          <para>Used by system installer tools to initialize the machine ID
+          <para>Используется system installer tools to initialize the machine ID
           stored in <filename>/etc/machine-id</filename> at install time with a
           randomly generated ID</para>
           <indexterm zone="ch-system-systemd systemd-machine-id-setup">
@@ -574,7 +574,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
       <varlistentry id="systemd-notify">
         <term><command>systemd-notify</command></term>
         <listitem>
-          <para>Used by daemon scripts to notify the init system about status
+          <para>Используется daemon scripts to notify the init system about status
           changes</para>
           <indexterm zone="ch-system-systemd systemd-notify">
             <primary sortas="b-systemd-notify">systemd-notify</primary>

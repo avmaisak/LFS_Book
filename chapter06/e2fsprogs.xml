@@ -23,11 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The E2fsprogs пакет содержит  the utilities for handling the
-    <systemitem class="filesystem">ext2</systemitem> file system. It also
-    supports the <systemitem class="filesystem">ext3</systemitem> and
-    <systemitem class="filesystem">ext4</systemitem> journaling
-    file systems.</para>
+    <para>Утилиты для обработки файловых систем ext2, ext3 и ext4. Это наиболее распространенные и тщательно протестированные файловые системы, поддерживаемые Linux.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -48,8 +44,7 @@
 
 <screen><userinput remap="pre">sed -i -e 's:\[\.-\]::' tests/filter.sed</userinput></screen>
 -->
-    <para>The E2fsprogs documentation recommends that the package be built in
-    a subdirectory of the source tree: </para>
+    <para>В документации к E2fsprogs указанно, что следует выполнять сборку в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd build</userinput></screen>
@@ -69,48 +64,43 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
              --disable-fsck</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the environment variable and configure options:</title>
+      <title>Значения переменных среды и аргументов конфигурации:</title>
 
       <varlistentry>
         <term><parameter>PKG_CONFIG_PATH, LIBS, CFLAGS</parameter></term>
         <listitem>
-          <para>These variables enable e2fsprogs to be built using the
-          <xref linkend="ch-tools-util-linux"/> package built earlier.</para>
+          <para>Переменные указывают e2fsprogs, выполнить сборку исползуя ранее установленный пакет
+          <xref linkend="ch-tools-util-linux"/>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-root-prefix=""</parameter> and
+        <term><parameter>--with-root-prefix=""</parameter> и
               <parameter>--bindir=/bin</parameter></term>
         <listitem>
-          <para>Certain programs (such as the <command>e2fsck</command>
-          program) are considered essential programs.  When, for example,
-          <filename class="directory">/usr</filename> is not mounted, these
-          programs still need to be available. They belong in directories
-          like <filename class="directory">/lib</filename> and <filename
-          class="directory">/sbin</filename>. If this option is not passed
-          to E2fsprogs' configure, the programs are installed into the
-          <filename class="directory">/usr</filename> directory.</para>
+          <para>Некоторые программы (такие как <command>e2fsck</command>
+          ) считаются важными программами.  Когда, например, каталог
+          <filename class="directory">/usr</filename> не примонтирован, необходимо, чтобы эти программы оставались доступны. Они принадлежат каталогам <filename class="directory">/lib</filename> и <filename
+          class="directory">/sbin</filename>. Если эти аргументы не указать, установка будет произведена в каталог
+          <filename class="directory">/usr</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-elf-shlibs</parameter></term>
         <listitem>
-          <para>This creates the shared libraries which some programs
-          in this package use.</para>
+          <para>Это создает общие библиотеки, которые используются некоторыми программами пакета.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-*</parameter></term>
         <listitem>
-          <para>This prevents E2fsprogs from building and installing the
-          <systemitem class="library">libuuid</systemitem> and
-          <systemitem class="library">libblkid</systemitem> libraries, the
-          <systemitem class="daemon">uuidd</systemitem> daemon, and the
-          <command>fsck</command> wrapper, as Util-Linux installs more
-          recent versions.</para>
+          <para>Исключает установку библиотек
+          <systemitem class="library">libuuid</systemitem> и
+          <systemitem class="library">libblkid</systemitem>, службы
+          <systemitem class="daemon">uuidd</systemitem>,и
+          <command>fsck</command> обертки, которые содержатся в пакете Util-Linux и являются более актуальными.</para>
         </listitem>
       </varlistentry>
 
@@ -120,44 +110,37 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To set up и выполните команду the test suite we need to first link some
-    libraries from /tools/lib to a location where the test programs look.
-    To run the tests, выполните следующую команду:</para>
+    <para>Для выполнения тестов, нужно сначала создать некоторые символические ссылки на библиотеки из каталога
+	 /tools/lib куда ссылаются программы тестирования.Для выполнения тестов, выполните следующую команду:</para>
 
 <screen><userinput remap="test">ln -sfv /tools/lib/lib{blk,uu}id.so.1 lib
 make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>
 
-    <para>One of the E2fsprogs tests will attempt to allocate 256 MB of memory.
-    If you do not have significantly more RAM than this, be sure to enable
-    sufficient swap space for the test. See <xref
-    linkend="space-creatingfilesystem"/> and <xref linkend="space-mounting"/>
-    for details on creating and enabling swap space.  Two tests, f_bigalloc_badinode
-    and f_bigalloc_orphan_list, are known ot fail.</para>
+    <para>Один из тестов пакета E2fsprogs попытается выделить 256 MB памяти. Если у вас нет такого объема оперативной памяти, не забудьте включить требуемое пространство в файл подкачки для выполнения теста. Смотрите  <xref
+    linkend="space-creatingfilesystem"/> и <xref linkend="space-mounting"/>
+    чтобы ознакомиться с информацией по поводу создания и включения файла подкчки. Два теста, f_bigalloc_badinode
+    and f_bigalloc_orphan_list, известно что не пройдут.</para>
 
-    <para>Установите the binaries, documentation, and shared libraries:</para>
+    <para>Установите бинарные файлы, документацию, и разделяемые библиотеки:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Установите the static libraries and headers:</para>
+    <para>Установите статические библиотеки и заголовочные файлы:</para>
 
 <screen><userinput remap="install">make install-libs</userinput></screen>
 
-    <para>Make the installed static libraries writable so debugging symbols can
-    be removed later:</para>
+    <para>Установите права на запись статическим библиотекам, для того, чтобы позднее, удалить отладочные символы:</para>
 
 <screen><userinput remap="install">chmod -v u+w /usr/lib/{libcom_err,libe2p,libext2fs,libss}.a</userinput></screen>
 
-    <para>This package installs a gzipped
-    <filename class="extension">.info</filename> file but doesn't update the
-    system-wide <filename>dir</filename> file. Unzip this file and then update
-    the system <filename>dir</filename> file using the following
-    commands.</para>
+    <para>Пакет установит запакованный файл
+    <filename class="extension">.info</filename> и не обновит системный файл <filename>dir</filename>. Распакуйте файл и обновите файл <filename>dir</filename>, выполнив следующую команду:</para>
 
 <screen><userinput remap="install">gunzip -v /usr/share/info/libext2fs.info.gz
 install-info --dir-file=/usr/share/info/dir /usr/share/info/libext2fs.info</userinput></screen>
 
-    <para>If desired, create and install some additional documentation by
-    issuing the following commands:</para>
+    <para>При необходимости создайте и установите дополнительную документацию
+    выполнение следующие команды:</para>
 
 <screen><userinput remap="install">makeinfo -o      doc/com_err.info ../lib/et/com_err.texinfo
 install -v -m644 doc/com_err.info /usr/share/info
@@ -192,8 +175,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="badblocks">
         <term><command>badblocks</command></term>
         <listitem>
-          <para>Searches a device (usually a disk partition) for bad
-          blocks</para>
+          <para>Поиск поврежденных блоков на устройстве (обычно дисковый раздел)</para>
           <indexterm zone="ch-system-e2fsprogs badblocks">
             <primary sortas="b-badblocks">badblocks</primary>
           </indexterm>
@@ -203,11 +185,11 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="chattr">
         <term><command>chattr</command></term>
         <listitem>
-          <para>Changes the attributes of files on an <systemitem
-          class="filesystem">ext2</systemitem> file system; it also
-          changes <systemitem class="filesystem">ext3</systemitem>
-          file systems, the journaling version of <systemitem
-          class="filesystem">ext2</systemitem> file systems</para>
+          <para>Изменение атрибутов файлов на файловой системе <systemitem
+          class="filesystem">ext2</systemitem>; также
+          изменяет файловую систему <systemitem class="filesystem">ext3</systemitem>
+          , журналирование файловой системы <systemitem
+          class="filesystem">ext2</systemitem></para>
           <indexterm zone="ch-system-e2fsprogs chattr">
             <primary sortas="b-chattr">chattr</primary>
           </indexterm>
@@ -217,9 +199,9 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="compile_et">
         <term><command>compile_et</command></term>
         <listitem>
-          <para>An error table compiler; it converts a table of error-code
-          names and messages into a C source file suitable for use with the
-          <filename class="libraryfile">com_err</filename> library</para>
+          <para>Компилятор таблицы ошибок; он преобразует таблицу кода ошибки
+           имена и сообщения в исходный файл C, подходящий для использования с библиотекой
+          <filename class="libraryfile">com_err</filename></para>
           <indexterm zone="ch-system-e2fsprogs compile_et">
             <primary sortas="b-compile_et">compile_et</primary>
           </indexterm>
@@ -229,9 +211,10 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="debugfs">
         <term><command>debugfs</command></term>
         <listitem>
-          <para>A file system debugger; it can be used to examine and change
-          the state of an <systemitem class="filesystem">ext2</systemitem>
-          file system</para>
+          <para>Отладчик файловой системы;
+			 A file system debugger; его можно использовать для изучения и изменения
+           состояния файловой системы <systemitem class="filesystem">ext2</systemitem>
+          </para>
           <indexterm zone="ch-system-e2fsprogs debugfs">
             <primary sortas="b-debugfs">debugfs</primary>
           </indexterm>
@@ -241,8 +224,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="dumpe2fs">
         <term><command>dumpe2fs</command></term>
         <listitem>
-          <para>Prints the super block and blocks group information for the
-          file system present on a given device</para>
+          <para>Распечатывает супер-блок и блокирует информацию о группе для
+           файловой системы, присутствующей на устройстве</para>
           <indexterm zone="ch-system-e2fsprogs dumpe2fs">
             <primary sortas="b-dumpe2fs">dumpe2fs</primary>
           </indexterm>
@@ -252,7 +235,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="e2freefrag">
         <term><command>e2freefrag</command></term>
         <listitem>
-          <para>Reports free space fragmentation information</para>
+          <para>Сообщает информацию о фрагментации свободного пространства</para>
           <indexterm zone="ch-system-e2fsprogs e2freefrag">
             <primary sortas="b-e2freefrag">e2freefrag</primary>
           </indexterm>
@@ -262,9 +245,9 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="e2fsck">
         <term><command>e2fsck</command></term>
         <listitem>
-          <para>Is used to check, and optionally repair <systemitem
-          class="filesystem">ext2</systemitem> file systems and <systemitem
-          class="filesystem">ext3</systemitem> file systems</para>
+          <para>Используется для проверки и, при необходимости, ремонта файловых систем<systemitem
+          class="filesystem">ext2</systemitem> и <systemitem
+          class="filesystem">ext3</systemitem></para>
           <indexterm zone="ch-system-e2fsprogs e2fsck">
             <primary sortas="b-e2fsck">e2fsck</primary>
           </indexterm>
@@ -274,8 +257,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="e2image">
         <term><command>e2image</command></term>
         <listitem>
-          <para>Is used to save critical <systemitem
-          class="filesystem">ext2</systemitem> file system data to a file</para>
+          <para>Используется для сохранения критичных данных файловой системы <systemitem
+          class="filesystem">ext2</systemitem> в файл</para>
           <indexterm zone="ch-system-e2fsprogs e2image">
             <primary sortas="b-e2image">e2image</primary>
           </indexterm>
@@ -285,9 +268,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="e2label">
         <term><command>e2label</command></term>
         <listitem>
-          <para>Displays or changes the file system label on the <systemitem
-          class="filesystem">ext2</systemitem> file system present on a given
-          device</para>
+          <para>Отображает или изменяет метку файловой системы для файловой системы <systemitem
+          class="filesystem">ext2</systemitem>на данном устройстве</para>
           <indexterm zone="ch-system-e2fsprogs e2label">
             <primary sortas="b-e2label">e2label</primary>
           </indexterm>
@@ -297,9 +279,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="e2undo">
         <term><command>e2undo</command></term>
         <listitem>
-          <para>Replays the undo log undo_log for an ext2/ext3/ext4 filesystem
-          found on a device [This can be used to undo a failed operation by an
-          e2fsprogs program.]</para>
+          <para>Заменяет журнал undo_log для файловых систем ext2/ext3/ext4
+          на данном устройстве [можно использовать для отмены неудачной операции при использовании программы e2fsprogs.]</para>
           <indexterm zone="ch-system-e2fsprogs e2undo">
             <primary sortas="b-e2undo">e2undo</primary>
           </indexterm>
@@ -309,7 +290,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="e4defrag">
         <term><command>e4defrag</command></term>
         <listitem>
-          <para>Online defragmenter for ext4 filesystems</para>
+          <para>Онлайн дефрагментатор для файловой системы ext4</para>
           <indexterm zone="ch-system-e2fsprogs e4defrag">
             <primary sortas="b-e4defrag">e4defrag</primary>
           </indexterm>
@@ -319,7 +300,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="filefrag">
         <term><command>filefrag</command></term>
         <listitem>
-          <para>Reports on how badly fragmented a particular file might be</para>
+          <para>Отчет о том, насколько сильно файл может быть фрагментированным</para>
           <indexterm zone="ch-system-e2fsprogs filefrag">
             <primary sortas="b-filefrag">filefrag</primary>
           </indexterm>
@@ -329,8 +310,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="fsck.ext2">
         <term><command>fsck.ext2</command></term>
         <listitem>
-          <para>By default checks <systemitem class="filesystem">ext2</systemitem>
-          file systems and is a hard link to <command>e2fsck</command></para>
+          <para>Проверка файловой системы <systemitem class="filesystem">ext2</systemitem>
+         и жесткая ссылка на <command>e2fsck</command></para>
           <indexterm zone="ch-system-e2fsprogs fsck.ext2">
             <primary sortas="b-fsck.ext2">fsck.ext2</primary>
           </indexterm>
@@ -340,8 +321,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="fsck.ext3">
         <term><command>fsck.ext3</command></term>
         <listitem>
-          <para>By default checks <systemitem class="filesystem">ext3</systemitem>
-          file systems and is a hard link to <command>e2fsck</command></para>
+          <para>Проверка файловой системы<systemitem class="filesystem">ext3</systemitem>
+          и жесткая ссылка на <command>e2fsck</command></para>
           <indexterm zone="ch-system-e2fsprogs fsck.ext3">
             <primary sortas="b-fsck.ext3">fsck.ext3</primary>
           </indexterm>
@@ -351,8 +332,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="fsck.ext4">
         <term><command>fsck.ext4</command></term>
         <listitem>
-          <para>By default checks <systemitem class="filesystem">ext4</systemitem>
-          file systems and is a hard link to <command>e2fsck</command></para>
+          <para>Проверка файловой системы <systemitem class="filesystem">ext4</systemitem>
+          и жесткая ссылка на <command>e2fsck</command></para>
           <indexterm zone="ch-system-e2fsprogs fsck.ext4">
             <primary sortas="b-fsck.ext4">fsck.ext4</primary>
           </indexterm>
@@ -362,8 +343,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="fsck.ext4dev">
         <term><command>fsck.ext4dev</command></term>
         <listitem>
-          <para>By default checks <systemitem class="filesystem">ext4</systemitem>
-          development file systems and  is a hard link to
+          <para>Проверка файловой системы <systemitem class="filesystem">ext4</systemitem>
+          для разработчиков и жесткая ссылка на
           <command>e2fsck</command></para>
           <indexterm zone="ch-system-e2fsprogs fsck.ext4dev">
             <primary sortas="b-fsck.ext4dev">fsck.ext4dev</primary>
@@ -374,7 +355,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="logsave">
         <term><command>logsave</command></term>
         <listitem>
-          <para>Saves the output of a command in a log file</para>
+          <para>Сохраняет вывод команды в файле журнала</para>
           <indexterm zone="ch-system-e2fsprogs logsave">
             <primary sortas="b-logsave">logsave</primary>
           </indexterm>
@@ -384,8 +365,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="lsattr">
         <term><command>lsattr</command></term>
         <listitem>
-          <para>Lists the attributes of files on a second extended file
-          system</para>
+          <para>Перечисляет атрибуты файлов во второй расширенной файловой системе</para>
           <indexterm zone="ch-system-e2fsprogs lsattr">
             <primary sortas="b-lsattr">lsattr</primary>
           </indexterm>
@@ -395,9 +375,9 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mk_cmds">
         <term><command>mk_cmds</command></term>
         <listitem>
-          <para>Converts a table of command names and help messages into a C
-          source file suitable for use with the <filename
-          class="libraryfile">libss</filename> subsystem library</para>
+          <para>Преобразует таблицу имен команд и справочных сообщений в C
+           исходный файл, подходящий для использования с библиотекой подсистемы<filename
+          class="libraryfile">libss</filename></para>
           <indexterm zone="ch-system-e2fsprogs mk_cmds">
             <primary sortas="b-mk_cmds">mk_cmds</primary>
           </indexterm>
@@ -407,9 +387,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mke2fs">
         <term><command>mke2fs</command></term>
         <listitem>
-          <para>Creates an <systemitem class="filesystem">ext2</systemitem>
-          or <systemitem class="filesystem">ext3</systemitem> file system on
-          the given device</para>
+          <para>Создает файловую систему <systemitem class="filesystem">ext2</systemitem>
+          или <systemitem class="filesystem">ext3</systemitem> на устройстве</para>
           <indexterm zone="ch-system-e2fsprogs mke2fs">
             <primary sortas="b-mke2fs">mke2fs</primary>
           </indexterm>
@@ -419,8 +398,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mkfs.ext2">
         <term><command>mkfs.ext2</command></term>
         <listitem>
-          <para>By default creates <systemitem class="filesystem">ext2</systemitem>
-          file systems and is a hard link to <command>mke2fs</command></para>
+          <para>Создает файловую систему <systemitem class="filesystem">ext2</systemitem>
+          и является жесткой ссылкой на <command>mke2fs</command></para>
           <indexterm zone="ch-system-e2fsprogs mkfs.ext2">
             <primary sortas="b-mkfs.ext2">mkfs.ext2</primary>
           </indexterm>
@@ -430,8 +409,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mkfs.ext3">
         <term><command>mkfs.ext3</command></term>
         <listitem>
-          <para>By default creates <systemitem class="filesystem">ext3</systemitem>
-          file systems and is a hard link to <command>mke2fs</command></para>
+          <para>Создает файловую систему <systemitem class="filesystem">ext3</systemitem>
+          и является жесткой ссылкой на <command>mke2fs</command></para>
           <indexterm zone="ch-system-e2fsprogs mkfs.ext3">
             <primary sortas="b-mkfs.ext3">mkfs.ext3</primary>
           </indexterm>
@@ -441,8 +420,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mkfs.ext4">
         <term><command>mkfs.ext4</command></term>
         <listitem>
-          <para>By default creates <systemitem class="filesystem">ext4</systemitem>
-          file systems and is a hard link to <command>mke2fs</command></para>
+          <para>Создает файловую систему <systemitem class="filesystem">ext4</systemitem>
+         и является жесткой ссылкой на <command>mke2fs</command></para>
           <indexterm zone="ch-system-e2fsprogs mkfs.ext4">
             <primary sortas="b-mkfs.ext4">mkfs.ext4</primary>
           </indexterm>
@@ -452,8 +431,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mkfs.ext4dev">
         <term><command>mkfs.ext4dev</command></term>
         <listitem>
-          <para>By default creates <systemitem class="filesystem">ext4</systemitem>
-          development file systems and is a hard link to <command>mke2fs</command></para>
+          <para>Создает файловую систему <systemitem class="filesystem">ext4</systemitem>
+          для разработчиков и является жесткой ссылкой на <command>mke2fs</command></para>
           <indexterm zone="ch-system-e2fsprogs mkfs.ext4dev">
             <primary sortas="b-mkfs.ext4dev">mkfs.ext4dev</primary>
           </indexterm>
@@ -463,10 +442,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="mklost-found">
         <term><command>mklost+found</command></term>
         <listitem>
-          <para>Used to create a <filename class="directory">lost+found</filename>
-          directory on an <systemitem class="filesystem">ext2</systemitem> file
-          system; it pre-allocates disk blocks to this directory to lighten the
-          task of <command>e2fsck</command></para>
+          <para>Создает каталог <filename class="directory">lost+found</filename>
+         на файловой системе <systemitem class="filesystem">ext2</systemitem>; он предварительно выделяет блоки диска для каталога, для выполнения задач <command>e2fsck</command></para>
           <indexterm zone="ch-system-e2fsprogs mklost-found">
             <primary sortas="b-mklost+found">mklost+found</primary>
           </indexterm>
@@ -476,8 +453,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="resize2fs">
         <term><command>resize2fs</command></term>
         <listitem>
-          <para>Can be used to enlarge or shrink an <systemitem
-          class="filesystem">ext2</systemitem> file system</para>
+          <para>Может использоваться для увеличения или сжатия файловой системы<systemitem
+          class="filesystem">ext2</systemitem></para>
           <indexterm zone="ch-system-e2fsprogs resize2fs">
             <primary sortas="b-resize2fs">resize2fs</primary>
           </indexterm>
@@ -487,8 +464,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="tune2fs">
         <term><command>tune2fs</command></term>
         <listitem>
-          <para>Adjusts tunable file system parameters on an <systemitem
-          class="filesystem">ext2</systemitem> file system</para>
+          <para>Используется для модифицирования параметров файловой системы <systemitem
+          class="filesystem">ext2</systemitem></para>
           <indexterm zone="ch-system-e2fsprogs tune2fs">
             <primary sortas="b-tune2fs">tune2fs</primary>
           </indexterm>
@@ -498,7 +475,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="libcom_err">
         <term><filename class="libraryfile">libcom_err</filename></term>
         <listitem>
-          <para>The common error display routine</para>
+          <para>Общая процедура отображения ошибок</para>
           <indexterm zone="ch-system-e2fsprogs libcom_err">
             <primary sortas="c-libcom_err">libcom_err</primary>
           </indexterm>
@@ -508,8 +485,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="libe2p">
         <term><filename class="libraryfile">libe2p</filename></term>
         <listitem>
-          <para>Used by <command>dumpe2fs</command>, <command>chattr</command>,
-          and <command>lsattr</command></para>
+          <para>Используется <command>dumpe2fs</command>, <command>chattr</command>,
+          и <command>lsattr</command></para>
           <indexterm zone="ch-system-e2fsprogs libe2p">
             <primary sortas="c-libe2p">libe2p</primary>
           </indexterm>
@@ -519,8 +496,8 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="libext2fs">
         <term><filename class="libraryfile">libext2fs</filename></term>
         <listitem>
-          <para>Содержит routines to enable user-level programs to manipulate an
-          <systemitem class="filesystem">ext2</systemitem> file system</para>
+          <para>Содержит программы позволяющие программам пользовательского уровня манипулировать файловыми системами
+          <systemitem class="filesystem">ext2</systemitem></para>
           <indexterm zone="ch-system-e2fsprogs libext2fs">
             <primary sortas="c-libext2fs">libext2fs</primary>
           </indexterm>
@@ -530,7 +507,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <varlistentry id="libss">
         <term><filename class="libraryfile">libss</filename></term>
         <listitem>
-          <para>Used by <command>debugfs</command></para>
+          <para>Используется <command>debugfs</command></para>
           <indexterm zone="ch-system-e2fsprogs libss">
             <primary sortas="c-libss">libss</primary>
           </indexterm>
