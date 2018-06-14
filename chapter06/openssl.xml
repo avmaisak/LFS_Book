@@ -23,10 +23,10 @@
   <sect2 role="package">
     <title/>
 
-    <para>The OpenSSL пакет содержит   management tools and libraries relating
-    to cryptography. These are useful for providing cryptographic functions
-    to other packages, such as OpenSSH, email applications and web browsers
-    (for accessing HTTPS sites).  </para>
+    <para>The OpenSSL пакет содержит инструменты управления и библиотеки
+     криптографии. Они полезны для предоставления криптографических функций
+     к другим пакетам, таким как OpenSSH, почтовым приложениям и веб-браузерам
+     (для доступа к сайтам HTTPS).</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -59,8 +59,7 @@
 
 <screen><userinput remap="test">make test</userinput></screen>
 
-    <para>One subtest in the test 40-test_rehash.t fails in the lfs chroot 
-    environment, but passes when run as a regular user.</para>
+    <para>Один тест 40-test_rehash.t не проходит в окружении chroot, но выполнится корректно при его перезапуске в обычном окружении.</para>
 
     <para>Установите пакет:</para>
 
@@ -107,8 +106,7 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
         <term><command>c_rehash</command></term>
         <listitem>
           <para>
-            is a <application>Perl</application> script that scans all files in
-            a directory and adds symbolic links to their hash values.
+            Сценарий <application>Perl</application>, который сканирует все файлы в каталоге и добавляет символические ссылки к их хэш-значениям
           </para>
           <indexterm zone="ch-system-openssl c_rehash">
             <primary sortas="b-c_rehash">c_rehash</primary>
@@ -120,10 +118,8 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
         <term><command>openssl</command></term>
         <listitem>
           <para>
-            is a command-line tool for using the various cryptography functions
-            of <application>OpenSSL</application>'s crypto library from the
-            shell. It can be used for various functions which are documented in
-            <command>man 1 openssl</command>.
+			 	Инструмент командной строки для использования различных криптографических функций
+				библиотеки <application>OpenSSL</application> из оболочки. Его можно использовать для различных функций которые документированы в <command>man 1 openssl</command>.
           </para>
           <indexterm zone="ch-system-openssl openssl-prog">
             <primary sortas="b-openssl">openssl</primary>
@@ -134,14 +130,9 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
       <varlistentry id="libcrypto">
         <term><filename class="libraryfile">libcrypto.so</filename></term>
         <listitem>
-          <para>
-            implements a wide range of cryptographic algorithms used in various
-            Internet standards. The services provided by  this library are used
-            by the <application>OpenSSL</application> implementations of SSL,
-            TLS and S/MIME, and they have also been used to implement
+          <para>реализует широкий спектр криптографических алгоритмов, используемых в различных Internet стандартах. Сервисы, предоставляемые библиотекой используются <application>OpenSSL</application> реализацией SSL, TLS и S/MIME, и также используются в реализации
             <application>OpenSSH</application>,
-            <application>OpenPGP</application>, and other cryptographic
-            standards.
+            <application>OpenPGP</application>, и других криптографических стандартах
           </para>
           <indexterm zone="ch-system-openssl libcrypto">
             <primary sortas="c-libcrypto">libcrypto.so</primary>
@@ -153,9 +144,8 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
         <term><filename class="libraryfile">libssl.so</filename></term>
         <listitem>
           <para>
-            implements the Transport Layer Security (TLS v1) protocol.
-            It provides a rich API, documentation
-            on which can be found by running <command>man 3 ssl</command>.
+			 	Реализация протокола защиты транспортного уровня (TLS v1). Предоставляет функции API, документацию
+				с которой можно ознакомиться, выполнив команду <command>man 3 ssl</command>.
           </para>
           <indexterm zone="ch-system-openssl libssl">
             <primary sortas="c-libssl">libssl.so</primary>
