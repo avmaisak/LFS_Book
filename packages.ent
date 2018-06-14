@@ -205,10 +205,10 @@
 <!ENTITY flex-ch6-du "33 MB">
 <!ENTITY flex-ch6-sbu "0.4 SBU">
 
-<!ENTITY gawk-version "4.2.0">
-<!ENTITY gawk-size "2,880 KB">
+<!ENTITY gawk-version "4.2.1">
+<!ENTITY gawk-size "2,916 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "f26c469addc67d88034b01b62ebab284">
+<!ENTITY gawk-md5 "95cf553f50ec9f386b5dfcd67f30180a">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-ch5-du "41 MB">
 <!ENTITY gawk-ch5-sbu "0.2 SBU">
