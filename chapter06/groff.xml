@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Groff пакет содержит  программы для  processing and formatting
-    text.</para>
+    <para>Пакет Groff содержит программы для обработки и форматирования текста. Одна из самых важных функций - форматирование man страниц.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -41,19 +40,15 @@
   <sect2 role="installation">
     <title>Установка пакета Groff</title>
 
-    <para>Groff expects the environment variable <envar>PAGE</envar> to
-    contain the default paper size. For users in the United States,
-    <parameter>PAGE=letter</parameter> is appropriate. Elsewhere,
-    <parameter>PAGE=A4</parameter> may be more suitable. While the default
-    paper size is configured during compilation, it can be overridden later
-    by echoing either <quote>A4</quote> or <quote>letter</quote> to the
-    <filename>/etc/papersize</filename> file.</para>
+    <para>Groff ожидает переменную окружения <envar>PAGE</envar> значение которой должно содержать размер бумаги по умолчанию. Для пользователей из США уместным будет указать значение переменной <parameter>PAGE=letter</parameter>. В ином месте указание значение переменной <parameter>PAGE=A4</parameter> может быть более подходящим. Хотя значение по умолчанию
+     размер бумаги задается во время компиляции, ее можно переопределить позже
+     путем выполнения команды echo с указанием значения <quote>A4</quote> или <quote>letter</quote> в файле <filename>/etc/papersize</filename>.</para>
 
     <para>Подготовьте пакет Groff к компиляции:</para>
 
 <screen><userinput remap="configure">PAGE=<replaceable>&lt;paper_size&gt;</replaceable> ./configure --prefix=/usr</userinput></screen>
 
-    <para>This package does not support parallel build. Compile the package:</para>
+    <para>Этот пакет не поддерживает параллельную сборку. Выполните компиляцию пакета:</para>
 
 <screen><userinput remap="make">make -j1</userinput></screen>
 
