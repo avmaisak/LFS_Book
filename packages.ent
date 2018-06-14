@@ -177,7 +177,7 @@
 <!ENTITY expect-ch5-du "3.9 MB">
 <!ENTITY expect-ch5-sbu "0.1 SBU">
 
-<!ENTITY file-version "5.32">
+<!ENTITY file-version "5.33">
 <!ENTITY file-size "798 KB">
 <!ENTITY file-url "ftp://ftp.astron.com/pub/file/file-&file-version;.tar.gz">
 <!ENTITY file-md5 "bbe6db96e3a9ca9554dce647390540ef">
