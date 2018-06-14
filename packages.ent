@@ -624,7 +624,7 @@
 
 <!ENTITY sysvinit-version "2.89">
 <!ENTITY sysvinit-size "111 KB">
-<!ENTITY sysvinit-url "&savannah;/releases/sysvinit/sysvinit-&sysvinit-version;.tar.bz2">
+<!ENTITY sysvinit-url "&savannah;releases/sysvinit/sysvinit-&sysvinit-version;.tar.bz2">
 <!ENTITY sysvinit-md5 "6a2e0776a9a3e29264ddec738ef0031c">
 <!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
 <!ENTITY sysvinit-ch6-du "1.1 MB">
