@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Procps-ng пакет содержит  программы для  monitoring processes.</para>
+    <para>Пакет Procps-ng содержит программы для мониторинга за процессами.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -63,8 +63,8 @@
       <varlistentry>
         <term><parameter>--disable-kill</parameter></term>
         <listitem>
-          <para>Этот аргумент отключает  building the <command>kill</command>
-          command that will be installed by the Util-linux package.</para>
+          <para>Этот аргумент отключает сборку программы <command>kill</command>
+          которая будет содержится в пакете Util-linux и будет установлена позднее.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -73,10 +73,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>The test suite needs some custom modifications for LFS.
-    Remove a test that fails when scripting does not use a tty device and
-    fix two others.
-    To run the test suite, run the following commands:</para>
+    <para>Для выполнения набора тестов в среде LFS, требуется внести некоторые модификации. Удалите тесто которые не работает когда используется tty устройство и исправьте два других. Для выполнения тестов, выполните следующую команду:</para>
 
 <screen><userinput remap="test">sed -i -r 's|(pmap_initname)\\\$|\1|' testsuite/pmap.test/pmap.exp
 sed -i '/set tty/d' testsuite/pkill.test/pkill.exp
@@ -87,8 +84,8 @@ make check</userinput></screen>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-<para>Finally, move essential libraries to a location that can be found if
-<filename class="directory">/usr</filename> is not mounted.</para>
+<para>Наконец, переместите необходимые библиотеки в каталог, который может быть найден, если каталог
+<filename class="directory">/usr</filename> не примонтирован.</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libprocps.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</userinput></screen>
@@ -119,8 +116,8 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="free">
         <term><command>free</command></term>
         <listitem>
-          <para>Reports the amount of free and used memory (both physical and
-          swap memory) in the system</para>
+          <para>Сообщает количество свободной и используемой памяти (как физических, так и
+           файла подкачки) в системе</para>
           <indexterm zone="ch-system-procps free">
             <primary sortas="b-free">free</primary>
           </indexterm>
@@ -130,7 +127,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="pgrep">
         <term><command>pgrep</command></term>
         <listitem>
-          <para>Looks up processes based on their name and other attributes</para>
+          <para>Поиск процессов на основе их имени и других атрибутов</para>
           <indexterm zone="ch-system-procps pgrep">
             <primary sortas="b-pgrep">pgrep</primary>
           </indexterm>
@@ -140,7 +137,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="pidof">
         <term><command>pidof</command></term>
         <listitem>
-          <para>Reports the PIDs of the given programs</para>
+          <para>Сообщает PID указанной программы</para>
           <indexterm zone="ch-system-procps pidof">
             <primary sortas="b-pidof">pidof</primary>
           </indexterm>
@@ -150,7 +147,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="pkill">
         <term><command>pkill</command></term>
         <listitem>
-          <para>Signals processes based on their name and other attributes</para>
+          <para>Обработка сигналов на основе их имени и других атрибутов</para>
           <indexterm zone="ch-system-procps pkill">
             <primary sortas="b-pkill">pkill</primary>
           </indexterm>
@@ -160,7 +157,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="pmap">
         <term><command>pmap</command></term>
         <listitem>
-          <para>Reports the memory map of the given process</para>
+          <para>Сообщает карту памяти данного процесса</para>
           <indexterm zone="ch-system-procps pmap">
             <primary sortas="b-pmap">pmap</primary>
           </indexterm>
@@ -170,7 +167,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="ps">
         <term><command>ps</command></term>
         <listitem>
-          <para>Lists the current running processes</para>
+          <para>Перечисляет текущие запущенные процессы</para>
           <indexterm zone="ch-system-procps ps">
             <primary sortas="b-ps">ps</primary>
           </indexterm>
@@ -180,7 +177,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="pwdx">
         <term><command>pwdx</command></term>
         <listitem>
-          <para>Reports the current working directory of a process</para>
+          <para>Сообщает текущий рабочий каталог процесса</para>
           <indexterm zone="ch-system-procps pwdx">
             <primary sortas="b-pwdx">pwdx</primary>
           </indexterm>
@@ -190,7 +187,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="slabtop">
         <term><command>slabtop</command></term>
         <listitem>
-          <para>Displays detailed kernel slab cache information in real time</para>
+          <para>Отображает подробную информацию о slab кеше в реальном времени</para>
           <indexterm zone="ch-system-procps slabtop">
             <primary sortas="b-slabtop">slabtop</primary>
           </indexterm>
@@ -200,7 +197,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="sysctl">
         <term><command>sysctl</command></term>
         <listitem>
-          <para>Modifies kernel parameters at run time</para>
+          <para>Изменяет параметры ядра во время выполнения</para>
           <indexterm zone="ch-system-procps sysctl">
             <primary sortas="b-sysctl">sysctl</primary>
           </indexterm>
@@ -210,7 +207,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="tload">
         <term><command>tload</command></term>
         <listitem>
-          <para>Prints a graph of the current system load average</para>
+          <para>Распечатывает график текущей средней загрузки системы</para>
           <indexterm zone="ch-system-procps tload">
             <primary sortas="b-tload">tload</primary>
           </indexterm>
@@ -220,8 +217,8 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="top">
         <term><command>top</command></term>
         <listitem>
-          <para>Displays a list of the most CPU intensive processes; it
-          provides an ongoing look at processor activity in real time</para>
+          <para>Отображает список наиболее интенсивных процессов; Это
+           обеспечивает постоянный просмотр активности процессора в режиме реального времени</para>
           <indexterm zone="ch-system-procps top">
             <primary sortas="b-top">top</primary>
           </indexterm>
@@ -231,8 +228,8 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="uptime">
         <term><command>uptime</command></term>
         <listitem>
-          <para>Reports how long the system has been running, how many users are
-          logged on, and the system load averages</para>
+          <para>Сообщает, сколько времени работает система, сколько пользователей
+           вошедшие в систему и средние значения загрузки системы</para>
           <indexterm zone="ch-system-procps uptime">
             <primary sortas="b-uptime">uptime</primary>
           </indexterm>
@@ -242,9 +239,9 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="vmstat">
         <term><command>vmstat</command></term>
         <listitem>
-          <para>Reports virtual memory statistics, giving information about
-          processes, memory, paging, block Input/Output (IO), traps, and CPU
-          activity</para>
+          <para>Статистика виртуальной памяти, информация о
+           процессах, памяти, пейджинге, блоке ввода / вывода (IO), ловушки и активность центрального процессора
+           </para>
           <indexterm zone="ch-system-procps vmstat">
             <primary sortas="b-vmstat">vmstat</primary>
           </indexterm>
@@ -254,8 +251,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="w">
         <term><command>w</command></term>
         <listitem>
-          <para>Shows which users are currently logged on, where, and since
-          when</para>
+          <para>Показывает, какие пользователи в настоящее время зарегистрированы, где и с каких пор</para>
           <indexterm zone="ch-system-procps w">
             <primary sortas="b-w">w</primary>
           </indexterm>
@@ -265,9 +261,9 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="watch">
         <term><command>watch</command></term>
         <listitem>
-          <para>Runs a given command repeatedly, displaying the first
-          screen-full of its output; this allows a user to watch the output
-          change over time</para>
+          <para>Повторно запускает заданную команду, отображая первый
+           полный экран его вывода; это позволяет пользователю наблюдать за
+           изменениеми с течением времени</para>
           <indexterm zone="ch-system-procps watch">
             <primary sortas="b-watch">watch</primary>
           </indexterm>
@@ -277,8 +273,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so</useri
       <varlistentry id="libprocps">
         <term><filename class="libraryfile">libprocps</filename></term>
         <listitem>
-          <para>Содержит the functions used by most programs in this
-          package</para>
+          <para>Содержит функции используемые многими проограммами пакета</para>
           <indexterm zone="ch-system-procps libprocps">
             <primary sortas="c-libprocps">libprocps</primary>
           </indexterm>
