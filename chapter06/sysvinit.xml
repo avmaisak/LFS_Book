@@ -66,8 +66,8 @@
         -e '/mesg/d'       \
         -e 's/= sulogin(\.8)?/=/' src/Makefile</userinput></screen>
 -->
-    <para>First, apply a patch that removes several programs installed by other
-    packages, clarifies a message, and fixes a compiler warning:</para>
+    <para>Во-первых, примените патч, который удаляет несколько программ, установленных другими
+     пакетами, очищает сообщение и исправляет предупреждение компилятора:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&sysvinit-consolidated-patch;</userinput></screen>
 
