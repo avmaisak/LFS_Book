@@ -23,9 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Python 3 пакет содержит  the Python development environment. It
-    is useful for object-oriented programming, writing scripts, prototyping
-    large programs or developing entire applications.</para>
+    <para>Python 3 - Высокоуровневый язык программирования общего назначения, ориентированный на повышение производительности разработчика и читаемости кода. Содержит среду разработки для объектно-ориентированного программирования, написания сценариев, прототипирования крупных программ и разработки полноценных приложений.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -56,7 +54,7 @@
     <varlistentry>
       <term><parameter>--with-system-expat</parameter></term>
       <listitem>
-        <para>This switch enables linking against system version of
+        <para>Значение аргумента позволяет установить связь с системной библиотекой
         <application>Expat</application>.</para>
        </listitem>
      </varlistentry>
@@ -64,7 +62,7 @@
     <varlistentry>
       <term><parameter>--with-system-ffi</parameter></term>
       <listitem>
-        <para>This switch enables linking against system version of
+        <para>Значение аргумента позволяет установить связь с системной библиотекой
         <application>libffi</application>.</para>
       </listitem>
     </varlistentry>
@@ -72,8 +70,8 @@
     <varlistentry>
       <term><parameter>--with-ensurepip=yes</parameter></term>
       <listitem>
-        <para>This switch enables building <command>pip</command> and
-        <command>setuptools</command> packaging programs.</para>
+        <para>Значение аргумента включает сборку <command>pip</command> и
+        <command>setuptools</command> программ для работы с пакетами.</para>
       </listitem>
     </varlistentry>
 
@@ -83,8 +81,8 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>The test suite requires TK and and X Windows session and cannot
-    be run until Python 3 is reinstalled in BLFS.</para>
+    <para>Для выполнения тестов необходимы TK и X Windows сессия, и они не могут быть выполнены до тех пор,
+	 пока пакет не будет переустановлен по инструкциям в книге BLFS.</para>
 
     <para>Установите пакет:</para>
 
@@ -93,19 +91,18 @@ chmod -v 755 /usr/lib/libpython3.6m.so
 chmod -v 755 /usr/lib/libpython3.so</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the install commands:</title>
+      <title>Значение команд установки:</title>
 
     <varlistentry>
       <term><command>chmod -v 755 /usr/lib/libpython3.{6m.,}so</command></term>
       <listitem>
-        <para>Fix permissions for libraries to be consistent with other
-        libraries.</para>
+        <para>Исправляет установку разрешений для библиотек для совместимости с другими библиотеками.</para>
       </listitem>
     </varlistentry>
 
     </variablelist>
 
-    <para>При желании установите the preformatted documentation:</para>
+    <para>При желании установите заранее отформатированную документацию:</para>
 
 <screen><userinput remap="install">install -v -dm755 /usr/share/doc/python-&python-version;/html
 
@@ -116,14 +113,12 @@ tar --strip-components=1  \
     -xvf ../python-&python-version;-docs-html.tar.bz2</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the documentation install commands:</title>
+      <title>Значения команд установки документации:</title>
 
     <varlistentry>
       <term><option>--no-same-owner</option> and --no-same-permissions</term>
       <listitem>
-        <para>Ensure the installed files have the correct ownership and
-        permissions.  Without these options, using <application>tar</application>
-        will install the package files with the upstream creator's values.
+        <para>Гарантирует что установленные файлы будут иметь правильные права владения. Без этих опций, при использовании программы <application>tar</application> при распаковке, будут установлены права на распакованные файлы с указанием владельца пакета.
         </para>
       </listitem>
     </varlistentry>
@@ -163,10 +158,7 @@ tar --strip-components=1  \
         <term><command>2to3</command></term>
         <listitem>
           <para>
-            is a <application>Python</application> program that reads
-            <application>Python 2.x</application> source code and applies a
-            series of fixes to transform it into valid
-            <application>Python 3.x</application> code.
+           Программа <application>Python</application> которая читает исходный код <application>Python 2.x</application> и применяет ряд исправлений для преобразования в правильный код <application>Python 3.x</application>.
           </para>
           <indexterm zone="ch-system-Python">
             <primary sortas="b-2to3">2to3</primary>
@@ -178,10 +170,7 @@ tar --strip-components=1  \
         <term><command>idle3</command></term>
         <listitem>
           <para>
-            is a wrapper script that opens a <application>Python</application>
-            aware GUI editor. For this script to run, you must have installed
-            <application>Tk</application> before Python so that the Tkinter
-            Python module is built.
+			 	Обёртка для сценария которая открывает графический редактор <application>Python</application>. Для запуска этого сценария убедитесь в том, что установлена программа <application>Tk</application> до запуска Python и модуль Tkinter также был собран.
           </para>
           <indexterm zone="ch-system-Python">
             <primary sortas="b-idle3">idle3</primary>
@@ -193,7 +182,7 @@ tar --strip-components=1  \
         <term><command>pydoc3</command></term>
         <listitem>
           <para>
-            is the <application>Python</application> documentation tool.
+            Инструмент <application>Python</application> для работы с документацией.
           </para>
           <indexterm zone="ch-system-Python">
             <primary sortas="b-pydoc3">pydoc3</primary>
@@ -205,8 +194,7 @@ tar --strip-components=1  \
         <term><command>python3</command></term>
         <listitem>
           <para>
-            is an interpreted, interactive, object-oriented programming
-            language.
+			 	интерпретируемый, интерактивный, объектно-ориентированный язык программирования.
           </para>
           <indexterm zone="ch-system-Python">
             <primary sortas="b-python3">python3</primary>
@@ -218,8 +206,7 @@ tar --strip-components=1  \
         <term><command>pyvenv</command></term>
         <listitem>
           <para>
-            creates virtual <application>Python</application> environments in
-            one or more target directories.
+			 	создает виртуальные <application>Python</application> среды в целевых каталогах.
           </para>
           <indexterm zone="ch-system-Python">
             <primary sortas="b-pyvenv">pyvenv</primary>
@@ -232,4 +219,3 @@ tar --strip-components=1  \
   </sect2>
 
 </sect1>
-
