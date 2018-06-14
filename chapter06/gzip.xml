@@ -53,14 +53,13 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>Two tests are known to fail in the LFS environment:
-    help-version and zmore.</para>
+    <para>Как известно, два теста не пройдут в среде LFS: help-version и zmore.</para>
 
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Move a program that needs to be on the root filesystem:</para>
+    <para>Переместите программу, которая должна находиться в корневой файловой системе:</para>
 
 <screen><userinput remap="install">mv -v /usr/bin/gzip /bin</userinput></screen>
 
