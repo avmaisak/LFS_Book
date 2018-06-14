@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The GRUB пакет содержит  the GRand Unified Bootloader.</para>
+    <para>GRUB является эталонной реализацией загрузчика, соответствующего спецификации Multiboot и может загрузить любую совместимую с ней операционную систему. Среди них: Linux, FreeBSD, Solaris и многие другие. Кроме того, GRUB умеет по цепочке передавать управление другому загрузчику, что позволяет ему загружать Windows (через загрузчик NTLDR или bootmgr), MS-DOS, OS/2 и другие системы.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -54,16 +54,14 @@
       <varlistentry>
         <term><parameter>--disable-werror</parameter></term>
         <listitem>
-          <para>This allows the build to complete with warnings introduced
-          by more recent Flex versions.</para>
+          <para>Аргумент позволяет завершить сборку с предупреждениями с более поздними версиями Flex.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-efiemu</parameter></term>
         <listitem>
-          <para>This option minimizes what is built by disabling a feature and
-          testing programs not needed for LFS.</para>
+          <para>Аргумент минимизирует что будет собрано, отключив функции и программы тестирования, которые не требуются для системы LFS.</para>
         </listitem>
       </varlistentry>
 
@@ -79,8 +77,7 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-  <para>Using GRUB to make your LFS system bootable will be discussed in
-  <xref linkend="ch-bootable-grub"/>.</para>
+  <para>Информация о том как обеспечить загрузку системы, с использованием GRUB, будет описано в разделе <xref linkend="ch-bootable-grub"/>.</para>
 
   </sect2>
 
@@ -94,11 +91,11 @@
       <seglistitem>
 
        <seg>grub-bios-setup,      grub-editenv,    grub-file,        grub-fstest,
-            grub-glue-efi,        grub-install,    grub-kbdcomp,     grub-macbless,   
+            grub-glue-efi,        grub-install,    grub-kbdcomp,     grub-macbless,
             grub-menulst2cfg,     grub-mkconfig,
                                   grub-mkimage,    grub-mklayout,    grub-mknetdir,
             grub-mkpasswd-pbkdf2, grub-mkrelpath,  grub-mkrescue,    grub-mkstandalone,
-            grub-ofpathname,      grub-probe,      grub-reboot,      grub-render-label, 
+            grub-ofpathname,      grub-probe,      grub-reboot,      grub-render-label,
             grub-script-check,
             grub-set-default,     grub-sparc64-setup, and grub-syslinux2cfg</seg>
 
