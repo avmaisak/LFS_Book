@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Eudev пакет содержит  программы для  dynamic creation of device
-    nodes.</para> 
+    <para>Eudev - диспетчер устройств. Он контролирует записи в каталоге /dev, так как устройства добавляются или удаляются из системы динамически.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -40,7 +39,7 @@
   <sect2 role="installation">
     <title>Установка пакета Eudev</title>
 
-    <para>First, fix a test script:</para>
+    <para>Сперва, исправим сценарий тестирования:</para>
 
 <screen><userinput remap="pre">sed -r -i 's|/usr(/bin/test)|\1|' test/udev-test.pl</userinput></screen>
 <!--
@@ -48,8 +47,8 @@
 
 <screen><userinput remap="pre">sed -i '/keyboard_lookup_key/d' src/udev/udev-builtin-keyboard.c</userinput></screen>
 -->
-    <para>Next, add a workaround to prevent the /tools directory from being 
-    hard coded into Eudev binary files library locations:</para>
+    <para>Затем обойдем проблему при которой   каталог /tools
+    будет жестко закодирован в библиотеки Eudev:</para>
 
 <screen><userinput remap="pre">cat &gt; config.cache &lt;&lt; "EOF"
 HAVE_BLKID=1
@@ -95,7 +94,7 @@ mkdir -pv /etc/udev/rules.d</userinput></screen>
 
 <screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
 
-    <para>Установите some custom rules and support files useful in an LFS 
+    <para>Установите some custom rules and support files useful in an LFS
     environment:</para>
 
 <screen><userinput remap="install">tar -xvf ../&udev-lfs-version;.tar.bz2
