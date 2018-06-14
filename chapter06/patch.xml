@@ -82,10 +82,7 @@
       <varlistentry id="patch">
         <term><command>patch</command></term>
         <listitem>
-          <para>Modifies files according to a patch file [A patch file is
-          normally a difference listing created with the <command>diff</command>
-          program. By applying these differences to the original files,
-          <command>patch</command> creates the patched versions.]</para>
+          <para>Изменяет файлы в соответствии с файлом патча (исправления). [Патч-файл обычно представляет собой список различий, созданный с помощью программы <command>diff</command>. Применяя эти различия к исходным файлам, патч создает исправленные версии.]</para>
           <indexterm zone="ch-system-patch patch">
             <primary sortas="b-patch">patch</primary>
           </indexterm>
