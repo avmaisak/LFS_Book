@@ -488,9 +488,9 @@
 
 <!ENTITY mpfr-version "4.0.1">
 <!ENTITY mpfr-size "1,380 KB">
-<!ENTITY mpfr-url "http://www.mpfr.org/mpfr-&mpfr-version;/mpfr-&mpfr-version;.tar.xz">
+<!ENTITY mpfr-url "https://www.mpfr.org/mpfr-&mpfr-version;/mpfr-&mpfr-version;.tar.xz">
 <!ENTITY mpfr-md5 "b8dd19bd9bb1ec8831a6a582a7308073">
-<!ENTITY mpfr-home "http://www.mpfr.org/">
+<!ENTITY mpfr-home "https://www.mpfr.org/">
 <!ENTITY mpfr-ch6-du "36 MB">
 <!ENTITY mpfr-ch6-sbu "1.0 SBU">
 
