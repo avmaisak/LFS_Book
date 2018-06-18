@@ -74,7 +74,7 @@
       <varlistentry>
         <term><parameter>--enable-cache-owner=bin</parameter></term>
         <listitem>
-          <para>задает права доступа общесистемному кешу пользователю, которыц является владельцем каталога bin.</para>
+          <para>задает права доступа общесистемному кешу пользователю, который является владельцем каталога bin.</para>
         </listitem>
       </varlistentry>
 
