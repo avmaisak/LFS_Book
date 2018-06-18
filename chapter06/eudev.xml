@@ -74,14 +74,9 @@ EOF</userinput></screen>
 
 <screen><userinput remap="make">LIBRARY_PATH=/tools/lib make</userinput></screen>
 
-<note><para>The LIBRARY_PATH variable here and the LD_LIBRARY_PATH variable
-below are needed to allow the use of libraries that were installed in /tools,
-but have not yet been installed in the main system.  LIBRARY_PATH is
-used to find libraries during the linking process.  LD_LIBRARY_PATH is
-used to find libraries during program execution.</para></note>
+<note><para>Переменная окружения LIBRARY_PATH и LD_LIBRARY_PATH, ниже, необходимы для того, чтобы использовать библиотеки, которые были установлены в каталоге /tools, но не были установлены в создаваемой системе. Переменная окружения LIBRARY_PATH используется для поиска библиотек в процессе компоновки. Переменная окружения LD_LIBRARY_PATH используется для поиска библиотек в процессе выполнения.</para></note>
 
-<para>Create some directories now that are needed for tests, but
-will also be used as a part of installation:</para>
+<para>Создайте каталоги, которые необходимы для успешного прохождения тестов, которые также будут использоваться в процессе установки:</para>
 
 <screen><userinput remap="test">mkdir -pv /lib/udev/rules.d
 mkdir -pv /etc/udev/rules.d</userinput></screen>
@@ -94,8 +89,7 @@ mkdir -pv /etc/udev/rules.d</userinput></screen>
 
 <screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
 
-    <para>Установите some custom rules and support files useful in an LFS
-    environment:</para>
+    <para>Установите дополнительные правила и файлы, используемые в окружении LFS:</para>
 
 <screen><userinput remap="install">tar -xvf ../&udev-lfs-version;.tar.bz2
 make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
@@ -103,7 +97,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
   </sect2>
 
   <sect2 id="conf-eudev" role="configuration">
-    <title>Configuring Eudev</title>
+    <title>Настройка Eudev</title>
 
     <indexterm zone="conf-eudev">
       <primary sortas="a-Eudev">Eudev</primary>
@@ -114,17 +108,14 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
       <primary sortas="e-/etc/udev/hwdb.bin">/etc/udev/hwdb.bin</primary>
     </indexterm>
 
-    <para>Information about hardware devices is maintained in the
-    <filename class="directory">/etc/udev/hwdb.d</filename> and
-    <filename class="directory">/lib/udev/hwdb.d</filename> directories.
-    <application>Eudev</application> needs that information to be compiled
-    into a binary database <filename>/etc/udev/hwdb.bin</filename>. Create the
-    initial database:</para>
+    <para>Информация об устройствах располагается в файлах
+    <filename class="directory">/etc/udev/hwdb.d</filename> и каталогах
+    <filename class="directory">/lib/udev/hwdb.d</filename>.
+    <application>Eudev</application> требуется чтобы эта информация была скомпилирована в двоичную базу данных в каталоге <filename>/etc/udev/hwdb.bin</filename>. Создадим пустую базу данных:</para>
 
 <screen><userinput>LD_LIBRARY_PATH=/tools/lib udevadm hwdb --update</userinput></screen>
 
-    <para>This command needs to be run each time the hardware information is
-    updated.</para>
+    <para>Эта команда должна быть запущена каждый раз, когда информация об оборудовании обновится.</para>
 
   </sect2>
 
