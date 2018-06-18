@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The Man-DB пакет содержит  программы для  finding and viewing man
-    pages.</para>
+    <para>Пакет Man-DB содержит программы для поиска и просмотра справочных страниц.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -68,31 +67,24 @@
       <varlistentry>
         <term><parameter>--disable-setuid</parameter></term>
         <listitem>
-          <para>This disables making the <command>man</command> program setuid
-          to user <systemitem class="username">man</systemitem>.</para>
+          <para>запрещает задавать программе <command>man</command> setuid пользователю <systemitem class="username">man</systemitem>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-cache-owner=bin</parameter></term>
         <listitem>
-          <para>This makes the system-wide cache files be owned by user
-          bin.</para>
+          <para>задает права доступа общесистемному кешу пользователю, которыц является владельцем каталога bin.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-...</parameter></term>
         <listitem>
-          <para>These three parameters are used to set some default programs.
-          <command>lynx</command> is a text-based web browser (see
-          BLFS for installation instructions), <command>vgrind</command>
-          converts program sources to Groff input, and <command>grap</command>
-          is useful for typesetting graphs in Groff documents. The
-          <command>vgrind</command> and <command>grap</command> programs are
-          not normally needed for viewing manual pages. They are not part of
-          LFS or BLFS, but you should be able to install them yourself after
-          finishing LFS if you wish to do so.</para>
+          <para>Эти три аргумента используются для настройки программ по умолчанию.
+          <command>lynx</command> текстовые веб-обозреватель (см. инструкции по установке в книге BLFS), <command>vgrind</command> преобразовывает исходные кода программ
+			 в входные данные Groff и ,<command>grap</command> полезен для набора графов в документах Groff. Программы <command>vgrind</command> и <command>grap</command> обычно нужны для просмотра справочных страниц. Они не входят в состав книг LFS или BLFS, но вы можете установить их самостоятельно после
+          сборки LFS если при желании.</para>
         </listitem>
       </varlistentry>
 
