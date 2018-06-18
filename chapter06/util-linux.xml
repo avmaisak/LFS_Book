@@ -39,13 +39,12 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>FHS compliance notes</title>
+    <title>Замечания по поводу совместимости с FHS</title>
 
-    <para>The FHS recommends using the <filename
-    class="directory">/var/lib/hwclock</filename> directory instead of the
-    usual <filename class="directory">/etc</filename> directory as the
-    location for the <filename>adjtime</filename> file.  First create a directory
-    to enable storage for the <command>hwclock</command> program:</para>
+    <para>В стандарте FHS рекомендуется использовать каталог <filename
+    class="directory">/var/lib/hwclock</filename> вместо обычного использования каталога
+	 <filename class="directory">/etc</filename> где располагается файл <filename>adjtime</filename>.
+	 Создадим каталог чтобы включить хранилище программы <command>hwclock</command>:</para>
 
 <screen><userinput remap="pre">mkdir -pv /var/lib/hwclock</userinput></screen>
 
@@ -59,7 +58,7 @@
 <screen><userinput remap="pre">sed -e 's/2^64/(2^64/' -e 's/E &lt;/E) &lt;=/' -e 's/ne /eq /' \
     -i tests/ts/ipcs/limits2</userinput></screen>
 -->
-    <para revision="systemd">Remove the earlier created symlinks:</para>
+    <para revision="systemd">Удалим ранее созданные символические ссылки:</para>
 
 <screen revision="systemd"><userinput remap="pre">rm -vf /usr/include/{blkid,libmount,uuid}</userinput></screen>
 
@@ -91,29 +90,21 @@
             --disable-static     \
             --without-python</userinput></screen>
 
-    <para>The --disable and --without options prevent warnings about
-    building components that require packages not in LFS or are
-    inconsistent with programs installed by other packages.</para>
+    <para>Аргументы --disable и --without предотвратят появление предупреждений, о требуемых пакетах, которые не несовместимы с программами, установленными другими пакетами.</para>
 
     <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>If desired, run the test suite as a non-root user:</para>
+    <para>По желанию, можно запустить тесты, о не корневого пользователя:</para>
 
-    <warning><para>Running the test suite as the root user can be harmful to
-    your system.  To run it, the CONFIG_SCSI_DEBUG option for the kernel must
-    be available in the currently running system, and must be built as a
-    module.  Building it into the kernel will prevent booting.  For complete
-    coverage, other BLFS packages must be installed.  If desired, this test can
-    be run after rebooting into the completed LFS system и выполните командуning:</para>
+    <warning><para>При запуске тестов от корневого пользователя может повредить систему. Чтобы правильно запустить тесты, аргумент CONFIG_SCSI_DEBUG для текущего ядра должен быть доступен и должен быть доступен как модуль ядра. Сборка его в ядро помешает загрузке системы. Для полного покрытия тестами, необходимо установить некоторые пакеты из книги BLFS. По вашему желанию, тесты могут быть запущены после перезагрузки системы, выполнив команды:</para>
 
     <screen role="nodump"><userinput>bash tests/run.sh --srcdir=$PWD --builddir=$PWD</userinput></screen>
     </warning>
 
     <screen><userinput remap="test">chown -Rv nobody .
 su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
-
 
     <para>Установите пакет:</para>
 
