@@ -109,13 +109,11 @@
   </sect2>
 
   <sect2>
-    <title>Non-English Manual Pages in LFS</title>
+    <title>Страницы руководств LFS на других языках</title>
 
-    <para>The following table shows the character set that Man-DB assumes
-    manual pages installed under
-    <filename class="directory">/usr/share/man/&lt;ll&gt;</filename> will be
-    encoded with.  In addition to this, Man-DB correctly determines if manual
-    pages installed in that directory are UTF-8 encoded.</para>
+    <para>В нижеприведенной таблице показывает кодировку, которая допускается при использовании в Man-DB страницах, расположенных в каталоге
+<filename class="directory">/usr/share/man/&lt;ll&gt;</filename>. Также, Man-DB правильно определит, если
+    страницы руководств были установлены вручную в этот каталог в кодировке utf-8.</para>
 
     <!-- Origin: man-db-2.5.9/lib/encodings.c -->
     <table>
@@ -131,10 +129,10 @@
 
         <thead>
           <row>
-            <entry>Language (code)</entry>
-            <entry>Encoding</entry>
-            <entry>Language (code)</entry>
-            <entry>Encoding</entry>
+            <entry>Язык (код)</entry>
+            <entry>Кодировка</entry>
+            <entry>Язык (код)</entry>
+            <entry>Кодировка</entry>
           </row>
         </thead>
 
@@ -279,7 +277,7 @@
     </table>
 
     <note>
-      <para>Manual pages in languages not in the list are not supported.</para>
+      <para>Справочные страницы на языках, отсутствующих в списке выше, не поддерживаются.</para>
     </note>
 
   </sect2>
