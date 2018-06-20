@@ -51,10 +51,9 @@
       <varlistentry>
         <term><parameter>--disable-static</parameter></term>
         <listitem>
-          <para>In this case, the top-level configure script will complain that
-          this is an unrecognized option, but the configure script for
-          XSParagraph recognizes it and uses it to disable installing a static
-          <filename class="libraryfile">XSParagraph.a</filename> to <filename
+          <para>В этом случае сценарий настройки верхнего уровня будет выдавать предупреждение,
+			 что это нераспознанный параметр, но сценарий настройки для XSParagraph распознает его и
+			 использует его для отключения установки статического <filename class="libraryfile">XSParagraph.a</filename> в каталоге <filename
           class="directory">/usr/lib/texinfo</filename>.</para>
         </listitem>
       </varlistentry>
@@ -73,8 +72,7 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Optionally, install the components belonging in a TeX
-    installation:</para>
+    <para>При необходимости установите компоненты, входящие в установку TeX:</para>
     <!-- FIXME: doesn't the TeX installation in BLFS overwrite files there? -->
 
 <screen><userinput remap="install">make TEXMF=/usr/share/texmf install-tex</userinput></screen>
@@ -85,20 +83,14 @@
       <varlistentry>
         <term><parameter>TEXMF=/usr/share/texmf</parameter></term>
         <listitem>
-          <para>The <envar>TEXMF</envar> makefile variable holds the location
-          of the root of the TeX tree if, for example, a TeX package will be
-          installed later.</para>
+          <para>В значении переменной <envar>TEXMF</envar> make-файла хранится корневой путь к дереву TeX, в случае дальнейшей установки этого пакета, позднее.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>The Info documentation system uses a plain text file to hold its list of
-    menu entries. The file is located at <filename>/usr/share/info/dir</filename>.
-    Unfortunately, due to occasional problems in the Makefiles of various packages,
-    it can sometimes get out of sync with the info pages installed on the system.
-    If the <filename>/usr/share/info/dir</filename> file ever needs to be
-    recreated, the following optional commands will accomplish the task:</para>
+    <para>Система документации Info использует простой текстовый файл для хранения списка пунктов меню. Файл находится в каталоге <filename>/usr/share/info/dir</filename>.
+	 К сожалению, из-за случайных проблем в Make-файлах различных пакетов, он иногда может выйти из синхронизации с информационными страницами, установленными в системе. Если каталог <filename>/usr/share/info/dir</filename> когда-либо потребуется создать заново, следующие команды выполнят эту задачу:</para>
 
 <screen role="nodump"><userinput>pushd /usr/share/info
 rm -v dir
@@ -189,7 +181,7 @@ popd</userinput></screen>
       <varlistentry id="texi2any">
         <term><command>texi2any</command></term>
         <listitem>
-          <para>Translate Texinfo source documentation to 
+          <para>Translate Texinfo source documentation to
           various other formats</para>
           <indexterm zone="ch-system-texinfo texi2any">
             <primary sortas="b-texiany">texi2any</primary>
