@@ -103,14 +103,7 @@ done</userinput></screen>
       <primary sortas="e-/etc/vimrc">/etc/vimrc</primary>
     </indexterm>
 
-    <para>By default, <command>vim</command> runs in vi-incompatible mode.
-    This may be new to users who have used other editors in the past. The
-    <quote>nocompatible</quote> setting is included below to highlight the
-    fact that a new behavior is being used. It also reminds those who would
-    change to <quote>compatible</quote> mode that it should be the first
-    setting in the configuration file. This is necessary because it changes
-    other settings, and overrides must come after this setting. Create a default
-    <command>vim</command> configuration file by running the following:</para>
+    <para>По умолчанию, <command>vim</command> выполняется в vi-несовместимом режиме. Это может быть новым для пользователей, которые использовали другие редакторы ранее. Настройка<quote>nocompatible</quote> добавлена ниже, чтобы подчеркнуть тот факт, что будет использоваться новое поведение. Он также напоминает тем, кто хотел бы перейти в <quote>совместимый</quote> режим, что он должен быть первым параметром в файле конфигурации. Это необходимо, поскольку он изменяет другие параметры и переопределения должны быть указаны только после этого параметра. Создайте файл конфигурации vim по умолчанию, выполнив следующие действия:</para>
 
 <screen><userinput>cat &gt; /etc/vimrc &lt;&lt; "EOF"
 <literal>" Begin /etc/vimrc
