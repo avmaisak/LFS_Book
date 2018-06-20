@@ -23,13 +23,10 @@
   <sect2 role="package">
     <title/>
 
-    <para>D-Bus is a message bus system, a simple way for applications to talk
-    to one another. D-Bus supplies both a system daemon (for events such as
-    "new hardware device added" or "printer queue changed") and a
-    per-user-login-session daemon (for general IPC needs among user
-    applications). Also, the message bus is built on top of a general one-to-one
-    message passing framework, which can be used by any two applications to
-    communicate directly (without going through the message bus daemon).</para>
+    <para>D-Bus - система межпроцессного взаимодействия, которая позволяет приложениям в операционной системе сообщаться друг с другом. D-Bus предоставляет собой системную службу (для обработки таких событий, как
+    "Добавлено новое аппаратное устройство" или "очередь принтеров изменена") и
+    системную службу сеанса для каждого пользователя (для общих потребностей IPC среди пользовательских
+    приложений.) Кроме того, D-Bus построен поверх общей платформы передачи сообщений от одного к другому, которая может использоваться любыми двумя приложениями для связки (в обход шины сообщений).</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -63,8 +60,7 @@
       <varlistentry>
         <term><parameter>--with-console-auth-dir=/run/console</parameter></term>
         <listitem>
-          <para>This specifies the location of the ConsoleKit auth
-          directory.</para>
+          <para>В значении аргумента содержится информация о расположении каталога аутентификации ConsoleKit.</para>
         </listitem>
       </varlistentry>
 
@@ -74,9 +70,9 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package does come with a test suite, but it requires several
-    packages that are not included in LFS. Instructions for running the
-    test suite can be found in the BLFS book at
+    <para>В этом пакете имеются тесты, однако для их сборки требуется несколько
+    пакеты, которых нет в LFS. Инструкции по запуску
+    тестов можно найти в книге BLFS по адресу
     <ulink url="&blfs-book;general/dbus.html"/>.</para>
 
     <para>Установите пакет:</para>
@@ -91,8 +87,7 @@
 <screen><userinput remap="install">mv -v /usr/lib/libdbus-1.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</userinput></screen>
 
-    <para>Create a symlink, so that D-Bus and systemd can use the same
-    <filename>machine-id</filename> file:</para>
+    <para>Создайте символическую ссылку, для того, чтобы D-Bus и systemd могли использовать один и тот же файл <filename>machine-id</filename>:</para>
 
 <screen><userinput remap="install">ln -sfv /etc/machine-id /var/lib/dbus</userinput></screen>
 
