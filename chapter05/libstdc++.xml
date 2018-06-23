@@ -14,7 +14,7 @@
     <address>&gcc-url;</address>
   </sect1info>
 
-  <title>Libstdc++-&gcc-version;</title>
+  <title>Libstdc++ из пакета GCC-&gcc-version;</title>
 
   <indexterm zone="ch-tools-libstdcpp">
     <primary sortas="a-GCC">GCC</primary>
@@ -24,7 +24,8 @@
   <sect2 role="package">
     <title/>
 
-    <para>Libstdc++ является стандартной библиотекой языка Cи++. Он необходим для правильной работы компилятора g++</para>
+    <para>Libstdc++ является стандартной библиотекой языка Cи++. Она необходима для правильной работы компилятора g++ (часть GCC написана на языке Си++).
+	 Сборку пришлось отложить на этапе <xref linkend="ch-tools-gcc-pass1"/> потому что присутствует зависимость с glibc, которая еще недоступна в каталоге /tools.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
