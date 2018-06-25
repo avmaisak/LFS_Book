@@ -23,10 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>The LFS-Bootscripts пакет содержит  a set of scripts to start/stop
-    the LFS system at bootup/shutdown.
-    The configuration files and procedures needed to
-    customize the boot process are described in the following sections.</para>
+    <para>Пакет LFS-Bootscripts содержит набор сценариев для запуска/остановки LFS системы. Файлы конфигурации и процедуры необходимы, чтобы настроить процесс загрузки, писанные в следующих разделах.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -52,7 +49,7 @@
   <sect2 id="contents-bootscripts" role="content">
     <title>Содержимое пакета LFS-Bootscripts</title>
     <segmentedlist>
-      <segtitle>Installed scripts</segtitle>
+      <segtitle>Установленные сценарии</segtitle>
       <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
@@ -73,8 +70,7 @@
       <varlistentry id="checkfs-bootscripts">
         <term><command>checkfs</command></term>
         <listitem>
-          <para>Checks the integrity of the file systems before they are mounted
-          (with the exception of journal and network based file systems)</para>
+          <para>Проверяет целостность файловых систем, после того, как они были примонтированы (за исключением журналов и сетевых файловых систем)</para>
           <indexterm zone="ch-scripts-bootscripts checkfs-bootscripts">
             <primary sortas="d-checkfs">checkfs</primary>
           </indexterm>
@@ -84,12 +80,11 @@
       <varlistentry id="cleanfs-bootscripts">
         <term><command>cleanfs</command></term>
         <listitem>
-          <para>Removes files that should not be preserved between reboots, such
-          as those in <filename class="directory">/var/run/</filename> and
-          <filename class="directory">/var/lock/</filename>; it re-creates
-          <filename>/var/run/utmp</filename> and removes the possibly present
-          <filename>/etc/nologin</filename>, <filename>/fastboot</filename>, and
-          <filename>/forcefsck</filename> files</para>
+          <para>Удаляет файлы, которые не должны быть сохранены между циклами включения/выключения системы, такие как в каталоге <filename class="directory">/var/run/</filename> и
+          <filename class="directory">/var/lock/</filename>; также создается заново
+          <filename>/var/run/utmp</filename> и удаляют, возможные наличия файлов
+          <filename>/etc/nologin</filename>, <filename>/fastboot</filename>, и
+          <filename>/forcefsck</filename></para>
           <indexterm zone="ch-scripts-bootscripts cleanfs-bootscripts">
             <primary sortas="d-cleanfs">cleanfs</primary>
           </indexterm>
@@ -99,8 +94,7 @@
       <varlistentry id="console-bootscripts">
         <term><command>console</command></term>
         <listitem>
-          <para>Loads the correct keymap table for the desired keyboard layout;
-          it also sets the screen font</para>
+          <para>Загружает правильные таблицы раскладки клавиатуры для клавиатуры, и устанавливает шрифт экрана</para>
           <indexterm zone="ch-scripts-bootscripts console-bootscripts">
             <primary sortas="d-console">console</primary>
           </indexterm>
