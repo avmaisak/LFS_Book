@@ -47,7 +47,7 @@
 
     <itemizedlist>
       <listitem>
-          <para>Established, well understood system. Устоявшаяся, хорошо понятая система</para>
+          <para>Устоявшаяся, хорошо понятая система</para>
       </listitem>
 
       <listitem>
@@ -61,26 +61,20 @@
 
     <itemizedlist>
       <listitem>
-          <para>Slower to boot.  A medium speed base LFS system
-          takes 8-12 seconds where the boot time is measured from the
-          first kernel message to the login prompt.  Network
-          connectivity is typically established about 2 seconds
-          after the login prompt.</para>
+          <para>Медленная загрузка. Средняя скорость загрузки LFS системы составляет 8-12 секунд, если измерить время с начала первого отображения приглашения командной строки ядра. Соединение с сетью как правило устанавливается примерно 2 секунды после приглашения командной строки.</para>
       </listitem>
 
       <listitem>
-          <para>Serial processing of boot tasks. This is related to the previous
-          point.  A delay in any process such as a file system check, will
-          delay the entire boot process.</para>
+          <para>Последовательная обработка задач загрузки. Это связано с предыдущим пунктом. Задержка в работе любого процесса, например проверка файловой системы, задержит соответственно и весь процесс загрузки.</para>
       </listitem>
 
       <listitem>
-          <para>Does not directly support advanced features like
-          control groups (cgroups), and per-user fair share scheduling.</para>
+          <para>Не поддерживает напрямую дополнительные функции, такие как
+           контроль групп (cgroups) и расписания для каждого пользователя.</para>
       </listitem>
 
       <listitem>
-          <para>Adding scripts requires manual, static sequencing decisions.</para>
+          <para>Для добавления сценариев требуются ручные, статические последовательные решения.</para>
       </listitem>
 
     </itemizedlist>
