@@ -66,7 +66,7 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов (около 1 SBU), выполните следующую команду:</para>
+    <para>Для выполнения тестов (около 3 SBU), выполните следующую команду:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
