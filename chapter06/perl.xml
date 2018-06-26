@@ -112,12 +112,12 @@ export BUILD_BZIP2=0</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов (приблизительное время 2.5 SBU), выполните следующую команду:</para>
+    <para>Для выполнения тестов (приблизительное время 11 SBU), выполните следующую команду:</para>
 
 <screen><userinput remap="test">make -k test</userinput></screen>
 
-    <note><para>Некоторые тесты относящиеся к библиотеке zlib не пройдут тестирование, из-за использования системной библиотеки zlib вместо внутренней версии.</para></note>
-
+	 <note>
+	 <para>Один тест не пройдет из-за использования последней версии gdbm.</para></note>
     <para>Установите пакет and clean up:</para>
 
 <screen><userinput remap="install">make install

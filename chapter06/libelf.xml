@@ -42,12 +42,7 @@
 
       <para>Libelf является частью пакета elfutils-&elfutils-version;. Необходимо использовать файл elfutils-&elfutils-version;.tar.xz как архив с исходными текстами.</para>
 
-		<para>Для начала, необходимо исправить файл, для обеспечения совместимости с компилятором GCC-8</para>
-		<screen><userinput remap="pre">sed -e '/ALIGN_PRSTATUS)/{
- 		        s/__attribute/attribute_packed &amp;/
- 		        s/packed, //}' \
-	    -i backends/linux-core-note.c</userinput></screen>
-    <para>Подготовьте Libelf к компиляции:</para>
+		<para>Подготовьте Libelf к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
@@ -55,8 +50,8 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения набора тестов, необходимо выполнить команду <command>make check</command>.</para>
-
+    <para>Для выполнения набора тестов, выполните команду:</para>
+	 <screen><userinput remap="test">make check</userinput></screen>
     <para>Выполните установку только Libelf:</para>
 
 <screen><userinput remap="install">make -C libelf install

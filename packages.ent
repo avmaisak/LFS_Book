@@ -237,10 +237,10 @@
 <!ENTITY libstdcpp-ch5-du "752 MB">
 <!ENTITY libstdcpp-ch5-sbu "0.4 SBU">
 
-<!ENTITY gdbm-version "1.14.1">
-<!ENTITY gdbm-size "874 KB">
+<!ENTITY gdbm-version "1.15">
+<!ENTITY gdbm-size "908 KB">
 <!ENTITY gdbm-url "&gnu;gdbm/gdbm-&gdbm-version;.tar.gz">
-<!ENTITY gdbm-md5 "c2ddcb3897efa0f57484af2bd4f4f848">
+<!ENTITY gdbm-md5 "8d990067ae46c75d16e8a9c79b0c4fd7">
 <!ENTITY gdbm-home "&gnu-software;gdbm/">
 <!ENTITY gdbm-ch6-du "10 MB">
 <!ENTITY gdbm-ch6-sbu "0.1 SBU">
@@ -419,9 +419,9 @@
 <!ENTITY linux-patch-version "2">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "99,781 KB">
+<!ENTITY linux-size "99,773 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "1b25fd66e33f78b5d860898e7910b3d7">
+<!ENTITY linux-md5 "dfe836c521c754a3f54f5f535f2ea588">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 4.8.3 / gcc-6.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -530,10 +530,10 @@
 <!ENTITY patch-ch6-du "12 MB">
 <!ENTITY patch-ch6-sbu "0.2 SBU">
 
-<!ENTITY perl-version "5.26.2">
-<!ENTITY perl-size "11,652 KB">
+<!ENTITY perl-version "5.28.0">
+<!ENTITY perl-size "12,120 KB">
 <!ENTITY perl-url "https://www.cpan.org/src/5.0/perl-&perl-version;.tar.xz">
-<!ENTITY perl-md5 "1fa1b53eeff76aa37b17bfc9b2771671">
+<!ENTITY perl-md5 "f3245183c0a08f65e94a3333995af08e">
 <!ENTITY perl-home "https://www.perl.org/">
 <!ENTITY perl-ch5-du "261 MB">
 <!ENTITY perl-ch5-sbu "1.3 SBU">
@@ -622,10 +622,10 @@
 <!ENTITY systemd-ch6-du   "297 MB">
 <!ENTITY systemd-ch6-sbu  "1.1 SBU">
 
-<!ENTITY sysvinit-version "2.89">
+<!ENTITY sysvinit-version "2.90">
 <!ENTITY sysvinit-size "111 KB">
 <!ENTITY sysvinit-url "&savannah;releases/sysvinit/sysvinit-&sysvinit-version;.tar.bz2">
-<!ENTITY sysvinit-md5 "6a2e0776a9a3e29264ddec738ef0031c">
+<!ENTITY sysvinit-md5 "7b6a16bde3da494b6aac7283b79c81de">
 <!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
 <!ENTITY sysvinit-ch6-du "1.1 MB">
 <!ENTITY sysvinit-ch6-sbu "меньше чем 0.1 SBU">

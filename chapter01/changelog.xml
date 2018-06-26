@@ -41,26 +41,56 @@
 -->
 
 	<listitem>
+	<para>2018-06-25</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - некоторые обновления URL. Исправления
+           <ulink url="&lfs-ticket-root;4299">#4293</ulink> and
+           <ulink url="&lfs-ticket-root;4299">#4294</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до perl-5.28.0. Исправления
+           <ulink url="&lfs-ticket-root;4299">#4299</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до Sysvinit 2.90. Исправления
+           <ulink url="&lfs-ticket-root;4297">#4297</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до gdbm-1.15. Исправления
+           <ulink url="&lfs-ticket-root;4296">#4296</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до elfutils-0.172. Исправления
+           <ulink url="&lfs-ticket-root;4292">#4292</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до linux-4.17.2. Исправления
+           <ulink url="&lfs-ticket-root;4280">#4295</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
 	<para>2018-06-12</para>
       <itemizedlist>
         <listitem>
-           <para>[bdubbs] - Typo fix in xz page.  Исправления 
+           <para>[bdubbs] - Typo fix in xz page. Исправления
            <ulink url="&lfs-ticket-root;4285">#4285</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлены некоторые urls http ссылки на https in gcc.  Исправления 
+           <para>[bdubbs] - Обновлены некоторые urls http ссылки на https in gcc.  Исправления
            <ulink url="&lfs-ticket-root;4281">#4281</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до iproute2-4.17.0.  Исправления 
+           <para>[bdubbs] - Обновлено до iproute2-4.17.0.  Исправления
            <ulink url="&lfs-ticket-root;4288">#4288</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до bison-3.0.5.  Исправления 
+           <para>[bdubbs] - Обновлено до bison-3.0.5.  Исправления
            <ulink url="&lfs-ticket-root;4284">#4284</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[bdubbs] - Обновлено до linux-4.17.1.  Исправления 
+           <para>[bdubbs] - Обновлено до linux-4.17.1.  Исправления
            <ulink url="&lfs-ticket-root;4280">#4280</ulink>.</para>
         </listitem>
       </itemizedlist>
