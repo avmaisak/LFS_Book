@@ -15,11 +15,7 @@
     <secondary>usage</secondary>
   </indexterm>
 
-  <para>In <xref linkend="chapter-building-system"/>, we installed the Udev
-  package when <phrase revision="sysv">eudev</phrase>
-  <phrase revision="systemd">systemd</phrase> was built. Before we go into the
-  details regarding how this works, a brief history of previous methods of
-  handling devices is in order.</para>
+  <para>В главе 6 был установлен пакет <phrase revision="sysv">eudev</phrase> когда <phrase revision="sysv">eudev</phrase> <phrase revision="systemd">systemd</phrase> был собран. Перед тем, как приступить к описанию процесса как это работает, будет кратко рассказана история предыдущих методов работы устройств.</para>
 
   <para>Linux systems in general traditionally used a static device creation
   method, whereby a great many device nodes were created under <filename
