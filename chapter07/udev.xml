@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-udev">
   <?dbhtml filename="udev.html"?>
 
-  <title>Обзор обработки устройств и модулей</title>
+  <title>Обработка устройств и модулей</title>
 
   <indexterm zone="ch-scripts-udev">
     <primary sortas="a-Udev">Udev</primary>
