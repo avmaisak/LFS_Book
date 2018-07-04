@@ -15,33 +15,19 @@
     <secondary>usage</secondary>
   </indexterm>
 
-  <para>В главе 6 был установлен пакет <phrase revision="sysv">eudev</phrase> когда <phrase revision="sysv">eudev</phrase> <phrase revision="systemd">systemd</phrase> был собран. Перед тем, как приступить к описанию процесса как это работает, будет кратко рассказана история предыдущих методов работы устройств.</para>
+  <para>В главе 6 был установлен пакет <phrase revision="sysv">eudev</phrase> после сборки <phrase revision="sysv">eudev</phrase> <phrase revision="systemd">systemd</phrase>. Перед тем, как приступить к описанию процесса как это работает, будет кратко рассказана история предыдущих методов работы устройств.</para>
 
-  <para>Linux systems in general traditionally used a static device creation
-  method, whereby a great many device nodes were created under <filename
-  class="directory">/dev</filename> (sometimes literally thousands of nodes),
-  regardless of whether the corresponding hardware devices actually existed. This
-  was typically done via a <command>MAKEDEV</command> script, which contains a
-  number of calls to the <command>mknod</command> program with the relevant
-  major and minor device numbers for every possible device that might exist in
-  the world.</para>
+  <para>Системы Linux традиционно используют метод статического создания устройств, посредством чего, большое число узлов устройств (иногда буквально тысячи узлов) создается в каталоге <filename class="directory">/dev</filename>, независимо от того, существуют ли соответствующие аппаратные устройства. Это
+  обычно делается посредством выполнения сценария <command>MAKEDEV</command>, который содержит команды вызова программы <command>mknod</command> с соответствующим числом для каждого возможного устройства которое только может существовать в мире.</para>
 
-  <para>Using the Udev method, only those devices which are detected by the
-  kernel get device nodes created for them. Because these device nodes will be
-  created each time the system boots, they will be stored on a <systemitem
-  class="filesystem">devtmpfs</systemitem> file system (a virtual file system
-  that resides entirely in system memory). Device nodes do not require much
-  space, so the memory that is used is negligible.</para>
+  <para>Используя метод Udev, только те устройства, которые были обнаружены ядром, получают свой узел. Поскольку эти узлы будут создаваться каждый раз, при загрузке системы, они будут располагаться в каталоге файловой системы <systemitem class="filesystem">devtmpfs</systemitem> (виртуальная файловая система, которая полностью находится в оперативной памяти). Узлы не занимают много места в памяти, и их общий размер незначителен.</para>
 
   <sect2>
-    <title>History</title>
+    <title>История</title>
 
-    <para>In February 2000, a new filesystem called <systemitem
-    class="filesystem">devfs</systemitem> was merged into the 2.3.46 kernel
-    and was made available during the 2.4 series of stable kernels. Although
-    it was present in the kernel source itself, this method of creating devices
-    dynamically never received overwhelming support from the core kernel
-    developers.</para>
+    <para>В феврале 2000 года, новая файловая система <systemitem
+    class="filesystem">devfs</systemitem> была принята в ветку ядра 2.3.46 и была доступна на протяжении выпуска стабильных релизов ветки 2.4. Хотя она присутствовала в ядре, такой способ создания устройств
+    динамически никогда не получал подавляющей поддержки от разработчиков ядра.</para>
 
     <para>The main problem with the approach adopted by <systemitem
     class="filesystem">devfs</systemitem> was the way it handled device
