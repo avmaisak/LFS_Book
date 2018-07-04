@@ -39,40 +39,30 @@
 
   <sect2 role="installation">
     <title>Установка пакета Attr</title>
-
-    <para>Измените каталог документации так, чтобы он включал в себя номер версии в наименовании каталога:</para>
-
-<screen><userinput remap="pre">sed -i -e 's|/@pkg_name@|&amp;-@pkg_version@|' include/builddefs.in</userinput></screen>
-
-    <para>Запретить установку уже установленных справочных страниц, пакетом <xref linkend="man-pages"/></para>
-
-<screen><userinput remap="pre">sed -i -e "/SUBDIRS/s|man[25]||g" man/Makefile</userinput></screen>
-
-    <para>Устранить проблему в процедурах тестирования, вызванную изменениями в perl-5.26:</para>
-
-<screen><userinput remap="pre">sed -i 's:{(:\\{(:' test/run</userinput></screen>
-
     <para>Подготовьте пакет Attr к компиляции:</para>
 
-<screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr \
-            --bindir=/bin \
-            --disable-static</userinput></screen>
+<screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr     \
+            --bindir=/bin     \
+            --disable-static  \
+            --sysconfdir=/etc \
+            --docdir=/usr/share/doc/attr-&attr-version;</userinput></screen>
 
-<screen revision="systemd"><userinput remap="configure">./configure --prefix=/usr \
-            --disable-static</userinput></screen>
+<screen revision="systemd"><userinput remap="configure">./configure --prefix=/usr     \
+            --disable-static  \
+            --sysconfdir=/etc \
+            --docdir=/usr/share/doc/attr-&attr-version;</userinput></screen>
 
     <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Тесты необходимо запускать на тех файловых системах, в которых есть поддержка расширенных файловых атрибутов. Например, такая поддержка присутствует в файловых системах ext2, ext3, и ext4. Как известно, не пройдут тесты при парралельном выполнении (если значение аргумента -j больше чем 1). Для выполнения тестов, выполните команду:</para>
+    <para>Тесты необходимо запускать на тех файловых системах, в которых есть поддержка расширенных файловых атрибутов. Например, такая поддержка присутствует в файловых системах ext2, ext3, и ext4. Для выполнения тестов, выполните команду:</para>
 
-<screen><userinput remap="test">make -j1 tests root-tests</userinput></screen>
+<screen><userinput remap="test">make check</userinput></screen>
 
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">make install install-dev install-lib
-chmod -v 755 /usr/lib/libattr.so</userinput></screen>
+<screen><userinput remap="install">make install</userinput></screen>
 
     <para>Разделяемые библиотеки необходимо перенести в каталог
     <filename class="directory">/lib</filename>, и в результате файлы
