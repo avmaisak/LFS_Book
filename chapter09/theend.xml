@@ -22,11 +22,10 @@
     <primary sortas="e-/etc/os-release">/etc/os-release</primary>
   </indexterm>
 
-  <para>Well done! The new LFS system is installed! We wish you much
-  success with your shiny new custom-built Linux system.</para>
+  <para>Отлично! Новая система LFS установлена! Желаем успехов в работе с вашей новой, блестящей, самостоятельно созданной Linux системой.</para>
 
-  <para revision="systemd">Create an <filename>/etc/os-release</filename>
-        file required by systemd:</para>
+  <para revision="systemd">Создайте файл <filename>/etc/os-release</filename>
+        необходимый для systemd:</para>
 
 <screen revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
 NAME="Linux From Scratch"
@@ -36,25 +35,19 @@ PRETTY_NAME="Linux From Scratch &versiond;"
 VERSION_CODENAME="&lt;your name here&gt;"
 EOF</userinput></screen>
 
-  <para revision="sysv">It may be a good idea to create an
-  <filename>/etc/lfs-release</filename> file. By having this file, it is very
-  easy for you (and for us if you need to ask for help at some point) to find
-  out which LFS version is installed on the system. Create this file by
-  running:</para>
+  <para revision="sysv">Хорошая идея создать файл <filename>/etc/lfs-release</filename>. При наличии такого файла, вы будете знать об установленной версии LFS. Если понадобится помощь, вы сможете указать соответствующий номер версий. Создайте такой файл:</para>
 
 <screen revision="sysv"><userinput>echo &version; &gt; /etc/lfs-release</userinput></screen>
 
-  <para revision="systemd">Creating the file
-  <filename>/etc/lfs-release</filename> is recommended for compatibility with
-  the non-systemd branch. By having this file, it is very easy for you (and for
-  us if you need to ask for help at some point) to find out which LFS version
-  is installed on the system. Create this file выполнив команду:</para>
+  <para revision="systemd">Создание файла
+  <filename>/etc/lfs-release</filename> рекомендуется создать для совместимости с системой без systemd.При наличии такого файла, вы будете знать об установленной версии LFS. Если понадобится помощь, вы сможете указать соответствующий номер версий. Создайте такой файл:</para>
 
 <screen revision="systemd"><userinput>echo &versiond; &gt; /etc/lfs-release</userinput></screen>
 
-  <para>It is also a good idea to create a file to show the status of your
-  new system with respect to the Linux Standards Base (LSB).  To create
-  this file, run:</para>
+  <para>
+  Также неплохо создать файл, которые покажет статус вашей
+   новой системы по отношению к стандартам LSB. Чтобы создать
+   этот файл, запустите:</para>
 
 <screen revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
 DISTRIB_ID="Linux From Scratch"
@@ -70,7 +63,6 @@ DISTRIB_CODENAME="&lt;your name here&gt;"
 DISTRIB_DESCRIPTION="Linux From Scratch"
 EOF</userinput></screen>
 
-  <para>Be sure to put some sort of customization for the field
-  'DISTRIB_CODENAME' to make the system uniquely yours.</para>
+  <para>Не забудьте указать в поле 'DISTRIB_CODENAME' уникальное название вашей новой системы, на ваше усмотрение.</para>
 
 </sect1>
