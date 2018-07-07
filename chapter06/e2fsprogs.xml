@@ -51,10 +51,12 @@ cd build</userinput></screen>
 
     <para>Подготовьте пакет E2fsprogs к компиляции:</para>
 
-<screen><userinput remap="configure">LIBS=-L/tools/lib                    \
+<!--<screen><userinput remap="configure">LIBS=-L/tools/lib                    \
+CFLAGS=-I/tools/include              \
 CFLAGS=-I/tools/include              \
 PKG_CONFIG_PATH=/tools/lib/pkgconfig \
-../configure --prefix=/usr           \
+../configure - -prefix=/usr           \-->
+<screen><userinput remap="configure">../configure --prefix=/usr           \
              --bindir=/bin           \
              --with-root-prefix=""   \
              --enable-elf-shlibs     \
@@ -65,13 +67,13 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
     <variablelist>
       <title>Значения переменных среды и аргументов конфигурации:</title>
-      <varlistentry>
+      <!--<varlistentry>
         <term><parameter>PKG_CONFIG_PATH, LIBS, CFLAGS</parameter></term>
         <listitem>
           <para>Переменные указывают e2fsprogs, выполнить сборку используя ранее установленный пакет
           <xref linkend="ch-tools-util-linux"/>.</para>
         </listitem>
-      </varlistentry>
+      </varlistentry>-->
       <varlistentry>
         <term><parameter>--with-root-prefix=""</parameter> и
               <parameter>--bindir=/bin</parameter></term>

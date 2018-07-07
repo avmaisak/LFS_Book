@@ -29,7 +29,9 @@
     class="filesystem">devfs</systemitem> была принята в ветку ядра 2.3.46 и была доступна на протяжении выпуска стабильных релизов ветки 2.4. Хотя она присутствовала в ядре, такой способ создания устройств
     динамически никогда не получал подавляющей поддержки от разработчиков ядра.</para>
 
-    <para>The main problem with the approach adopted by <systemitem
+    <para>
+
+	 The main problem with the approach adopted by <systemitem
     class="filesystem">devfs</systemitem> was the way it handled device
     detection, creation, and naming. The latter issue, that of device node
     naming, was perhaps the most critical. It is generally accepted that if
@@ -309,7 +311,6 @@
         <para>The <systemitem class="filesystem">sysfs</systemitem> Filesystem
         <ulink url="http://www.kernel.org/pub/linux/kernel/people/mochel/doc/papers/ols-2005/mochel.pdf"/></para>
       </listitem>
-
 <!--  No longer available
       <listitem>
         <para>Pointers to further reading
