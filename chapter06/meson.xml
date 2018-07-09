@@ -38,6 +38,8 @@
 
   <sect2 role="installation">
     <title>Установка пакета Meson</title>
+	<para>Внесите в файл установки некоторые upstream исправления:</para>
+	<screen><userinput remap="pre">sed -i '309 s/os.getcwd/-C, &amp;/' mesonbuild/minstall.py</userinput></screen>
 
     <para>Для компиляции пакета Meson, необходимо выполнить следующую команду:</para>
 
@@ -47,13 +49,31 @@
 
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">python3 setup.py install</userinput></screen>
+<screen><userinput remap="install">python3 setup.py install --root=dest
+cp -rv dest/* /</userinput></screen>
+<!--
 <para>Теперь, необходимо переместить документацию пакета в правильное местоположение:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg/share/man/man1/*.1 \
       /usr/share/man/man1
 rm -r /usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg/share</userinput></screen>
+-->
 
+  <variablelist>
+      <title>Значения параметров установки:</title>
+      <varlistentry>
+        <term><parameter>--root=dest</parameter></term>
+        <listitem>
+          <para>By default <command>python3 setup.py install</command>
+          installs various files (such as man pages) into Python Eggs.
+          With a specified root location, <command>setup.py</command> installs
+          these files into a standard hierarchy.  Then we can just copy
+          the hierarchy so the files will be in the standard location.
+        </para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
   </sect2>
 
 

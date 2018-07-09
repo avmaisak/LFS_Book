@@ -39,8 +39,27 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+
+
 <listitem>
-      <para>2018-07-09</para>
+      <para>2018-07-08</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Fix failures in texinfo regression tests.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до linux-4.17.5.  Исправления
+           <ulink url="&lfs-ticket-root;4300">#4300</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до meson-0.47.0.  Исправления
+           <ulink url="&lfs-ticket-root;4306">#4306</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+<listitem>
+      <para>2018-07-07</para>
       <itemizedlist>
         <listitem>
            <para>[bdubbs] - Add a configuration option to libffi to
