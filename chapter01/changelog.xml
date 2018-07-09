@@ -23,7 +23,7 @@
 
 <!-- Changelog template
 
-    <listitem>
+<listitem>
       <para>Date</para>
       <itemizedlist>
         <listitem>
@@ -33,7 +33,7 @@
           <para>[name] - Previous changelog entry.</para>
         </listitem>
       </itemizedlist>
-    </listitem>
+</listitem>
 
     Note:  If a change is only specific to sysv or systemd, then use
     <listitem revision="sysv"> or <listitem revision="systemd"> as
@@ -43,14 +43,30 @@
 <listitem>
       <para>2018-07-07</para>
       <itemizedlist>
-        <listitem>
+		   <listitem>
            <para>[bdubbs] - Make symbolic links in inital part of
            Chapter 6 consistent for all versions of the book.  Allows
            removing environment variables no longer needed with e2fsprogs.
            </para>
         </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до Python-3.7.0.  Исправления
+           <ulink url="&lfs-ticket-root;4301">#4301</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до gdbm-1.16.  Исправления
+           <ulink url="&lfs-ticket-root;4302">#4302</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до elfutils-0.173.  Исправления
+           <ulink url="&lfs-ticket-root;4304">#4304</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до coreutils-8.30.  Исправления
+           <ulink url="&lfs-ticket-root;4305">#4305</ulink>.</para>
+        </listitem>
       </itemizedlist>
-    </listitem>
+</listitem>
 
  <listitem>
       <para>2018-07-03</para>

@@ -49,9 +49,9 @@
 
 <screen><userinput remap="install">python3 setup.py install</userinput></screen>
 <para>Теперь, необходимо переместить man pages пакета в правильное местоположение:</para>
-<screen><userinput remap="install">mv -v /usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg/share/man/man1/*.1 \
+<screen><userinput remap="install">mv -v /usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg/share/man/man1/*.1 \
       /usr/share/man/man1
-rm -r /usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg/share</userinput></screen>
+rm -r /usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg/share</userinput></screen>
   </sect2>
 
 
@@ -64,7 +64,7 @@ rm -r /usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg/share</us
 
        <seglistitem>
         	<seg>meson, mesonconf, mesonintrospect, mesontest, and wraptool</seg>
-			<seg>/usr/lib/python3.6/site-packages/meson-&meson-version;-py3.6.egg</seg>
+			<seg>/usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg</seg>
       </seglistitem>
     </segmentedlist>
 
