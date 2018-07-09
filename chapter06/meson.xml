@@ -48,10 +48,12 @@
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">python3 setup.py install</userinput></screen>
-<para>Теперь, необходимо переместить man pages пакета в правильное местоположение:</para>
-<screen><userinput remap="install">mv -v /usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg/share/man/man1/*.1 \
+<para>Теперь, необходимо переместить документацию пакета в правильное местоположение:</para>
+
+<screen><userinput remap="install">mv -v /usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg/share/man/man1/*.1 \
       /usr/share/man/man1
-rm -r /usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg/share</userinput></screen>
+rm -r /usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg/share</userinput></screen>
+
   </sect2>
 
 
@@ -63,8 +65,8 @@ rm -r /usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg/share</us
       <segtitle>Каталог установки</segtitle>
 
        <seglistitem>
-        	<seg>meson, mesonconf, mesonintrospect, mesontest, and wraptool</seg>
-			<seg>/usr/lib/python3.7/site-packages/meson-&meson-version;-py3.7.egg</seg>
+        <seg>meson, mesonconf, mesonintrospect, mesontest, and wraptool</seg>
+		<seg>/usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg</seg>
       </seglistitem>
     </segmentedlist>
 
