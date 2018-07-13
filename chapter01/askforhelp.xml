@@ -45,7 +45,7 @@
         <para>Информацию о дистрибутиве и его версия, на котором выполнялось создание системы LFS</para>
       </listitem>
       <listitem>
-        <para>Вывод скрипта <xref linkend='version-check'/></para>
+        <para>Вывод сценария <xref linkend='version-check'/></para>
       </listitem>
       <listitem>
         <para>Пакет или раздел где возникла проблема.</para>
