@@ -45,7 +45,7 @@
       <para>2018-07-08</para>
       <itemizedlist>
         <listitem>
-           <para>[bdubbs] - Fix failures in texinfo regression tests.</para>
+           <para>[bdubbs] - Исправлены ошибки в регрессионных тестах texinfo.</para>
         </listitem>
         <listitem>
            <para>[bdubbs] - Обновлено до linux-4.17.5.  Исправления
@@ -62,9 +62,8 @@
       <para>2018-07-07</para>
       <itemizedlist>
         <listitem>
-           <para>[bdubbs] - Add a configuration option to libffi to
-           ensure proper architecture selection.  Include an explanation
-           and how to select alternative options.  Fixes
+           <para>[bdubbs] - Добвалены аргументы конфигурации libffi для корректного выбора архитектуры. Добавлены объяснения
+            как использовать альтернативные варианты.  Исправления
            <ulink url="&lfs-ticket-root;4303">#4303</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -74,9 +73,7 @@
       <para>2018-07-07</para>
       <itemizedlist>
 		   <listitem>
-           <para>[bdubbs] - Make symbolic links in inital part of
-           Chapter 6 consistent for all versions of the book.  Allows
-           removing environment variables no longer needed with e2fsprogs.
+           <para>[bdubbs] - Сделаны символические ссылки в первой части главы 6 для всех редакций книги. Позволяет удалить ненужные переменные среды в e2fsprogs.
            </para>
         </listitem>
         <listitem>
