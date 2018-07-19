@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Замечания по поводу совместимости с FHS</title>
 
-    <para>В стандарте FHS рекомендуется использовать каталог <filename
+    <para>Стандарт FHS рекомендует использовать каталог <filename
     class="directory">/var/lib/hwclock</filename> вместо обычного использования каталога
 	 <filename class="directory">/etc</filename> где располагается файл <filename>adjtime</filename>.
 	 Создадим каталог чтобы включить хранилище программы <command>hwclock</command>:</para>
@@ -58,9 +58,8 @@
 <screen><userinput remap="pre">sed -e 's/2^64/(2^64/' -e 's/E &lt;/E) &lt;=/' -e 's/ne /eq /' \
     -i tests/ts/ipcs/limits2</userinput></screen>
 -->
-    <para revision="systemd">Удалим ранее созданные символические ссылки:</para>
-
-<screen revision="systemd"><userinput remap="pre">rm -vf /usr/include/{blkid,libmount,uuid}</userinput></screen>
+	<para>Удалим ранее созданные символические ссылки:</para>
+	<screen><userinput remap="pre">rm -vf /usr/include/{blkid,libmount,uuid}</userinput></screen>
 
     <para>Подготовьте пакет Util-linux к компиляции:</para>
 
