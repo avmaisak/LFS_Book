@@ -15,300 +15,153 @@
     <secondary>usage</secondary>
   </indexterm>
 
-  <para>В главе 6 был установлен пакет <phrase revision="sysv">eudev</phrase> после сборки <phrase revision="sysv">eudev</phrase> <phrase revision="systemd">systemd</phrase>. Перед тем, как приступить к описанию процесса как это работает, будет кратко рассказана история предыдущих методов работы устройств.</para>
+  <para>Ранее, в шестой главе, был установлен пакет <phrase revision="sysv">eudev</phrase> <phrase revision="systemd">systemd</phrase>. Перед тем, как приступить к описанию процесса как это работает, будет кратко рассказана история предыдущих методов работы устройств.</para>
 
-  <para>Системы Linux традиционно используют метод статического создания устройств, посредством чего, большое число узлов устройств (иногда буквально тысячи узлов) создается в каталоге <filename class="directory">/dev</filename>, независимо от того, существуют ли соответствующие аппаратные устройства. Это
-  обычно делается посредством выполнения сценария <command>MAKEDEV</command>, который содержит команды вызова программы <command>mknod</command> с соответствующим числом для каждого возможного устройства которое только может существовать в мире.</para>
+  <para>Системы Linux традиционно используют метод статического создания устройств, посредством чего, большое число узлов устройств (иногда буквально тысячи узлов) создается в каталоге <filename class="directory">/dev</filename>, независимо от того, существуют ли соответствующие аппаратные устройства. Это обычно делается средствами сценария <command>MAKEDEV</command>, который содержит команды вызова программы <command>mknod</command> с соответствующим числом для каждого возможного устройства которое только может существовать в мире.</para>
 
-  <para>Используя метод Udev, только те устройства, которые были обнаружены ядром, получают свой узел. Поскольку эти узлы будут создаваться каждый раз, при загрузке системы, они будут располагаться в каталоге файловой системы <systemitem class="filesystem">devtmpfs</systemitem> (виртуальная файловая система, которая полностью находится в оперативной памяти). Узлы не занимают много места в памяти, и их общий размер незначителен.</para>
+  <para>Используя метод Udev, только те устройства, которые были обнаружены ядром, получают свой узел. Поскольку эти узлы будут создаваться каждый раз, при загрузке системы, они будут располагаться в каталоге виртуальной файловой системы <systemitem class="filesystem">devtmpfs</systemitem> (виртуальная файловая система, которая полностью находится в оперативной памяти). Узлы не занимают много места в памяти, и их общий размер незначителен.</para>
 
   <sect2>
     <title>История</title>
 
     <para>В феврале 2000 года, новая файловая система <systemitem
-    class="filesystem">devfs</systemitem> была принята в ветку ядра 2.3.46 и была доступна на протяжении выпуска стабильных релизов ветки 2.4. Хотя она присутствовала в ядре, такой способ создания устройств
-    динамически никогда не получал подавляющей поддержки от разработчиков ядра.</para>
+    class="filesystem">devfs</systemitem> была принята в ветку ядра 2.3.46 и была доступна на протяжении выпуска стабильных релизов ветки 2.4. Хотя она и присутствовала в ядре, такой способ динамического создания устройств никогда не получал поддержки от разработчиков ядра.</para>
 
-    <para>
+    <para>Главная проблема в этом подходе заключалась в механизме обнаружения, создания и назначения имен устройствам. Последняя из которых, связанная с назначением имен узлам устройств была, самой важной. Как правило, если имена устройствам можно настраивать, то политика назначения имён должна быть установлена системным администратором и не должна быть навязана разработчиками. Файловая система <systemitem
+    class="filesystem">devfs</systemitem> также страдала от условий гонки, которые были присущи ее дизайну и не могли быть исправлены без существенной переработки самого ядра. В конечном счёте, эта файловая система была отмечена как устаревшая, на протяжении достаточно долгого периода, по причине отсутствия её ненадлежащей поддержки, и была удалена из ветки ядра в июне 2006 года.</para>
 
-	 The main problem with the approach adopted by <systemitem
-    class="filesystem">devfs</systemitem> was the way it handled device
-    detection, creation, and naming. The latter issue, that of device node
-    naming, was perhaps the most critical. It is generally accepted that if
-    device names are allowed to be configurable, then the device naming policy
-    should be up to a system administrator, not imposed on them by any
-    particular developer(s). The <systemitem
-    class="filesystem">devfs</systemitem> file system also suffered from race
-    conditions that were inherent in its design and could not be fixed without a
-    substantial revision to the kernel. It was marked as deprecated for a long
-    period &ndash; due to a lack of maintenance &ndash; and was finally removed
-    from the kernel in June, 2006.</para>
-
-    <para>With the development of the unstable 2.5 kernel tree, later released
-    as the 2.6 series of stable kernels, a new virtual filesystem called
-    <systemitem class="filesystem">sysfs</systemitem> came to be. The job of
-    <systemitem class="filesystem">sysfs</systemitem> is to export a view of
-    the system's hardware configuration to userspace processes. With this
-    userspace-visible representation, the possibility of developing a userspace
-    replacement for <systemitem class="filesystem">devfs</systemitem> became
-    much more realistic.</para>
+    <para>При развитии нестабильной ветки ядра 2.5, позднее, выпущенной как стабильный релиз 2.6, появилась новая виртуальная файловая система <systemitem class="filesystem">sysfs</systemitem>. Задача этой файловой системы заключалась в экспорте представления об аппаратной конфигурации системы в процессах пользовательского окружения. Благодаря этому, разработка замены пользовательского окружения для <systemitem class="filesystem">devfs</systemitem> стала гораздо реалистичнее.</para>
 
   </sect2>
 
   <sect2>
-    <title>Udev Implementation</title>
+    <title>Реализация Udev</title>
 
     <sect3>
       <title>Sysfs</title>
 
-      <para>The <systemitem class="filesystem">sysfs</systemitem> filesystem
-      was mentioned briefly above. One may wonder how <systemitem
-      class="filesystem">sysfs</systemitem> knows about the devices present on
-      a system and what device numbers should be used for them. Drivers that
-      have been compiled into the kernel directly register their objects with a
-      <systemitem class="filesystem">sysfs</systemitem> (devtmpfs internally)
-      as they are detected by the kernel. For drivers compiled as modules, this
-      registration will happen when the module is loaded. Once the <systemitem
-      class="filesystem">sysfs</systemitem> filesystem is mounted (on /sys),
-      data which the drivers register with <systemitem
-      class="filesystem">sysfs</systemitem> are available to userspace
-      processes and to udevd for processing (including modifications to device
-      nodes).</para>
-
+      <para>Краткое описание файловой системы <systemitem class="filesystem">sysfs</systemitem> было представлено выше. Можно задаться вопросом, как <systemitem class="filesystem">sysfs</systemitem> получает информацию об устройствах в системе, и о том, какие номера устройств должны использоваться для них. Драйверы, скомпилированные в ядро, напрямую регистрируют объекты с помощью <systemitem class="filesystem">sysfs</systemitem> ( внутри <systemitem class="filesystem">devtmpfs</systemitem>  ), так как они обнаруживаются ядром. Для драйверов, которые скомпилированы в виде модулей, регистрация будет происходить при его загрузке. После того, как файловая система <systemitem class="filesystem">sysfs</systemitem> будет примонтирована в каталог <filename class="directory">/sys</filename>, данные, которые регистрируются драйверами, с помощью <systemitem class="filesystem">sysfs</systemitem>, станут доступны для процессов пользовательского окружения и для udevd, для последующей обработки (включая изменения узлов устройств).</para>
     </sect3>
 
     <sect3>
-      <title>Device Node Creation</title>
+      <title>Создание узлов устройств</title>
 
-      <para>Device files are created by the kernel by the <systemitem
-      class="filesystem">devtmpfs</systemitem> filesystem.  Any driver that
-      wishes to register a device node will go through the <systemitem
-      class="filesystem">devtmpfs</systemitem> (via the driver core) to do it.
-      When a <systemitem class="filesystem">devtmpfs</systemitem> instance is
-      mounted on <filename class="directory">/dev</filename>, the device node
-      will initially be created with a fixed name, permissions, and
-      owner.</para>
+      <para>Файлы устройств создаются ядром при помощи файловой системы <systemitem class="filesystem">devtmpfs</systemitem>. Любой драйвер, которому необходимо зарегистрировать узел устройства, будет проходить через файловую систему <systemitem class="filesystem">devtmpfs</systemitem> (через системный драйвер ядра). Когда экземпляр <systemitem class="filesystem">devtmpfs</systemitem> монтируется в каталог <filename class="directory">/dev</filename>, узел устройства будет создан с фиксированным наименованием, соответствующими разрешениями и владельцем.</para>
 
-      <para>A short time later, the kernel will send a uevent to <command>
-      udevd</command>.  Based on the rules specified in the files within the
-      <filename class="directory">/etc/udev/rules.d</filename>, <filename
-      class="directory">/lib/udev/rules.d</filename>, and <filename
-      class="directory">/run/udev/rules.d</filename> directories, <command>
-      udevd</command> will create additional symlinks to the device node, or
-      change its permissions, owner, or group, or modify the internal
-      <command>udevd</command> database entry (name) for that object.</para>
+      <para>Через некоторое время, ядро отправит uevent в <command>udevd</command>. На основе правил, которые указанны в файлах в каталогах <filename class="directory">/etc/udev/rules.d</filename>, <filename
+      class="directory">/lib/udev/rules.d</filename>, и <filename
+      class="directory">/run/udev/rules.d</filename>, udevd создаст дополнительные символические ссылки на узлы устройств, или сменит разрешения, владельца или группу, или сменит запись (наименование) во внутренней базе данных udevd для этого объекта.</para>
 
-      <para>The rules in these three directories are numbered and all three
-      directories are merged together. If <command>udevd</command> can't find a
-      rule for the device it is creating, it will leave the permissions and
-      ownership at whatever <systemitem
-      class="filesystem">devtmpfs</systemitem> used initially.</para> </sect3>
+      <para>Правила в этих трёх каталогах нумеруются и объединяются вместе. Если <command>udevd</command> не может найти правило для устройства, он оставит права доступа и права собственности на все первоначально используемые <systemitem
+      class="filesystem">devtmpfs</systemitem>.</para> </sect3>
 
     <sect3 id="module-loading">
-      <title>Module Loading</title>
+      <title>Загрузка модулей</title>
+      <para>Драйверы устройств, скомпилированные в виде модулей ядра могут содержать встроенные псевдонимы. Псевдонимы можно увидеть просмотрев вывод программы <command>modinfo</command>. Они, как правило, связаны с идентификаторам шины устройства, поддерживаемым модулем. Например, драйвер <emphasis>snd-fm801</emphasis> подерживает PCI устройства с идентификатором поставщика 0x1319 и идентификатором устройства 0x0801, и имеет псевдоним <quote>pci:v00001319d00000801sv*sd*bc04sc01i*</quote>. Для большинства устройств, драйвер шины экспортирует псевдонимы драйвера, которые будет обрабатывать устройство через <systemitem class="filesystem">sysfs</systemitem>. Например, файл <filename>/sys/bus/pci/devices/0000:00:0d.0/modalias</filename> может содержать строку <quote>pci:v00001319d00000801sv00001319sd00001319bc04sc01i00</quote>. Правила по умолчанию, которые предоставлены Udev, заставят <command>udevd</command> вызвать <command>/sbin/modprobe</command> с содержимым, которое находится в значении переменной окружения <envar>MODALIAS</envar> uevent (которая должна совпадать с содержимым файла <filename>modalias</filename> в sysfs), тем самым загружая все модули, чьи псевдонимы совпадают в строке после расширение подстановочных знаков.</para>
 
-      <para>Device drivers compiled as modules may have aliases built into them.
-      Aliases are visible in the output of the <command>modinfo</command>
-      program and are usually related to the bus-specific identifiers of devices
-      supported by a module. For example, the <emphasis>snd-fm801</emphasis>
-      driver supports PCI devices with vendor ID 0x1319 and device ID 0x0801,
-      and has an alias of <quote>pci:v00001319d00000801sv*sd*bc04sc01i*</quote>.
-      For most devices, the bus driver exports the alias of the driver that
-      would handle the device via <systemitem
-      class="filesystem">sysfs</systemitem>. E.g., the
-      <filename>/sys/bus/pci/devices/0000:00:0d.0/modalias</filename> file
-      might contain the string
-      <quote>pci:v00001319d00000801sv00001319sd00001319bc04sc01i00</quote>.
-      The default rules provided with Udev will cause <command>udevd</command>
-      to call out to <command>/sbin/modprobe</command> with the contents of the
-      <envar>MODALIAS</envar> uevent environment variable (which should be the
-      same as the contents of the <filename>modalias</filename> file in sysfs),
-      thus loading all modules whose aliases match this string after wildcard
-      expansion.</para>
+      <para>К указанному выше примеру, это означает, что в дополнение к snd-fm801 устаревший (и нежелательный) драйвер forte будет загружен, если он будет доступен. Ниже описано, как можно предотвратить загрузку нежелательных драйверов.</para>
 
-      <para>In this example, this means that, in addition to
-      <emphasis>snd-fm801</emphasis>, the obsolete (and unwanted)
-      <emphasis>forte</emphasis> driver will be loaded if it is
-      available. See below for ways in which the loading of unwanted drivers can
-      be prevented.</para>
-
-      <para>The kernel itself is also able to load modules for network
-      protocols, filesystems and NLS support on demand.</para>
-
+      <para>Само ядро также может загружать модули для сетевых протоколов, файловых систем и поддержки NLS по требованию.</para>
     </sect3>
 
     <sect3>
-      <title>Handling Hotpluggable/Dynamic Devices</title>
+      <title>Обработка устройств с горячей заменой или динамических устройств</title>
 
-      <para>When you plug in a device, such as a Universal Serial Bus (USB) MP3
-      player, the kernel recognizes that the device is now connected and
-      generates a uevent. This uevent is then handled by
-      <command>udevd</command> as described above.</para>
+      <para>При подключении устройства, например, MP3-плеер, к универсальной последовательной шине (USB), ядро распознает, что устройство подключено, и сгенерирует событие uevent. Это событие затем обрабатывается <command>udevd</command>, как было описано выше.</para>
 
     </sect3>
 
   </sect2>
 
   <sect2>
-    <title>Problems with Loading Modules and Creating Devices</title>
-
-    <para>There are a few possible problems when it comes to automatically
-    creating device nodes.</para>
+    <title>Проблемы с загрузкой модулей и созданием устройств</title>
+    <para>Есть несколько возможных проблем, когда дело доходит до автоматического создания узлов устройств.</para>
 
     <sect3>
-      <title>A kernel module is not loaded automatically</title>
+      <title>Модуль ядра не загружается автоматически</title>
 
-      <para>Udev will only load a module if it has a bus-specific alias and the
-      bus driver properly exports the necessary aliases to <systemitem
-      class="filesystem">sysfs</systemitem>. In other cases, one should
-      arrange module loading by other means. With Linux-&linux-version;, Udev is
-      known to load properly-written drivers for INPUT, IDE, PCI, USB, SCSI,
-      SERIO, and FireWire devices.</para>
+      <para>Udev будет загружать модуль, только если он имеет указанный псевдоним шины, и драйвер шины правильно экспортирует необходимые псевдонимы в sysfs. В других случаях следует организовать загрузку модуля другими способами. начиная с версии Linux-&linux-version;, в udev, как известно,выполняет загрузку правильно написанных драйверов для INPUT, IDE, PCI, USB, SCSI, SERIO, и FireWire устройств.</para>
 
-      <para>To determine if the device driver you require has the necessary
-      support for Udev, run <command>modinfo</command> with the module name as
-      the argument.  Now try locating the device directory under
-      <filename class="directory">/sys/bus</filename> and check whether there is
-      a <filename>modalias</filename> file there.</para>
+      <para>Чтобы определить, имеет ли требуемый драйвер устройства необходимую поддержку Udev, запустите <command>modinfo</command> с именем модуля в качестве аргумента. Далее, попробуйте найти каталог устройства в <filename class="directory">/sys/bus</filename> и проверьте, есть ли там файл <filename>modalias</filename>.</para>
 
-      <para>If the <filename>modalias</filename> file exists in <systemitem
-      class="filesystem">sysfs</systemitem>, the driver supports the device and
-      can talk to it directly, but doesn't have the alias, it is a bug in the
-      driver. Load the driver without the help from Udev and expect the issue
-      to be fixed later.</para>
+      <para>Если файл <filename>modalias</filename> существует в <systemitem class="filesystem">sysfs</systemitem>, то драйвер, который поддерживает устройство, может общаться с ним напрямую, но не имеет псевдонима, это ошибка в драйвере. Загрузите драйвер без помощи Udev и ожидайте, что проблема будет исправлена позднее.</para>
 
-      <para>If there is no <filename>modalias</filename> file in the relevant
-      directory under <filename class="directory">/sys/bus</filename>, this
-      means that the kernel developers have not yet added modalias support to
-      this bus type. With Linux-&linux-version;, this is the case with ISA
-      busses. Expect this issue to be fixed in later kernel versions.</para>
+      <para>Если же в каталоге <filename class="directory">/sys/bus</filename> нет файла <filename>modalias</filename>, это означает, что разработчики ядра еще не добавили поддержку <filename>modalias</filename> к этому типу шины. В Linux-&linux-version;, это относится к шинам ISA. Ожидайте, что эта проблема будет исправлена в более поздних версиях ядра.</para>
 
-      <para>Udev is not intended to load <quote>wrapper</quote> drivers such as
-      <emphasis>snd-pcm-oss</emphasis> and non-hardware drivers such as
-      <emphasis>loop</emphasis> at all.</para>
+      <para>Udev не предназначен для загрузки драйверов <quote>обёрток</quote>, таких как
+      <emphasis>snd-pcm-oss</emphasis>и драйверов, не относящихся к оборудованию, например
+      <emphasis>loop</emphasis></para>
 
     </sect3>
 
     <sect3>
-      <title>A kernel module is not loaded automatically, and Udev is not
-      intended to load it</title>
+      <title>Модуль ядра не загружается автоматически, и Udev не предназначен для его загрузки</title>
 
-      <para>If the <quote>wrapper</quote> module only enhances the
-      functionality provided by some other module (e.g.,
-      <emphasis>snd-pcm-oss</emphasis> enhances the functionality of
-      <emphasis>snd-pcm</emphasis> by making the sound cards available to OSS
-      applications), configure <command>modprobe</command> to load the wrapper
-      after Udev loads the wrapped module. To do this, add a
-      <quote>softdep</quote> line to the corresponding
-      <filename>/etc/modprobe.d/<replaceable>&lt;filename&gt;</replaceable>.conf</filename>
-      file. For example:</para>
+      <para>Если модуль <quote>обёртка</quote> только расширяет функциональность, которая может быть предоставлена иным модулем (например  модуль <emphasis>snd-pcm-oss</emphasis> расширяет функциональность модуля <emphasis>snd-pcm</emphasis>, давая возможность звуковым картам быть доступными для OSS приложений),  настройте <command>modprobe</command> для загрузки оболочки после того, как Udev загрузит обернутый модуль. Для этого добавьте строку <quote>softdep</quote> в файл, который находится в каталоге <filename>/etc/modprobe.d/<replaceable>&lt;filename&gt;</replaceable>.conf</filename>. Например:</para>
 
-<screen role="nodump"><literal>softdep snd-pcm post: snd-pcm-oss</literal></screen>
+		<screen role="nodump"><literal>softdep snd-pcm post: snd-pcm-oss</literal></screen>
 
-      <para>Note that the <quote>softdep</quote> command also allows
-      <literal>pre:</literal> dependencies, or a mixture of both
-      <literal>pre:</literal> and <literal>post:</literal>.  See the
-      <filename>modprobe.d(5)</filename> manual page for more information
-      on <quote>softdep</quote> syntax and capabilities.</para>
+      <para>Обратите внимание, что команда <quote>softdep</quote> разрешает добавлять <literal>pre:</literal> зависимости, или одновременно  <literal>pre:</literal> и <literal>post:</literal>. Обратитесь к документации <filename>modprobe.d(5)</filename> для изучения синтаксиса и возможностей <quote>softdep</quote>.</para>
 
-      <para>If the module in question is not a wrapper and is useful by itself,
-      configure the <command>modules</command> bootscript to load this
-      module on system boot. To do this, add the module name to the
-      <filename>/etc/sysconfig/modules</filename> file on a separate line.
-      This works for wrapper modules too, but is suboptimal in that case.</para>
+      <para>Если модуль не является обёрткой, и полезен сам по себе, настройте загрузочный сценарий модулей, чтобы он добавлялся при загрузке системы. Для этого добавьте имя модуля в файл <filename>/etc/sysconfig/modules</filename> в отдельной строке. Этот способ сработает и для оберточных модулей, но не является оптимальным.</para>
 
     </sect3>
 
     <sect3>
-      <title>Udev loads some unwanted module</title>
+      <title>Udev загружает ненужные модули</title>
 
-      <para>Either don't build the module, or blacklist it in a
-      <filename>/etc/modprobe.d/blacklist.conf</filename> file as done with the
-      <emphasis>forte</emphasis> module in the example below:</para>
+      <para>Либо не создавайте модуль, либо занесите его в черный список в файле <filename>/etc/modprobe.d/blacklist.conf</filename>, как это сделано с модулем <emphasis>forte</emphasis> в примере ниже:</para>
 
-<screen role="nodump"><literal>blacklist forte</literal></screen>
+		<screen role="nodump"><literal>blacklist forte</literal></screen>
+      <para>Блокированные модули могут быть загружены вручную с явным указанием в команде <command>modprobe</command>.</para>
+    </sect3>
 
-      <para>Blacklisted modules can still be loaded manually with the
-      explicit <command>modprobe</command> command.</para>
+    <sect3>
+      <title>Udev создает устройство неправильно или создает некорректную символическую ссылку</title>
+      <para>Это обычно происходит, если правило неожиданно совпадает с устройством. Например, плохо написанное правило может соответствовать как диску SCSI (по желанию), так и соответствующему универсальному устройству SCSI (неправильно) указанному поставщиком. Найдите нарушающее правило и уточните его с помощью команды <command>udevadm info</command>.</para>
 
     </sect3>
 
     <sect3>
-      <title>Udev creates a device incorrectly, or makes a wrong symlink</title>
+      <title>Правило Udev работает ненадежно</title>
 
-      <para>This usually happens if a rule unexpectedly matches a device. For
-      example, a poorly-written rule can match both a SCSI disk (as desired)
-      and the corresponding SCSI generic device (incorrectly) by vendor.
-      Find the offending rule and make it more specific, with the help of the
-      <command>udevadm info</command> command.</para>
+      <para>Это может быть проявлением предыдущей проблемы. В ином случае, если правило использует атрибуты файловой системы <systemitem class="filesystem">sysfs</systemitem>, то это может быть проблемой синхронизации ядра, которая будет исправлена в более поздних версиях ядра. Но вы можете обойти проблему, создав правило, которое ожидает используемый атрибут <systemitem class="filesystem">sysfs</systemitem> и добавляет его к файлу правил (создайте его, если он не существует)<filename>. Пожалуйста, оповестите в списке рассылки разработчиков  LFS, если вы делаете это, и это помогает.</para>
 
     </sect3>
 
     <sect3>
-      <title>Udev rule works unreliably</title>
+      <title>Udev не создаёт устройство</title>
 
-      <para>This may be another manifestation of the previous problem. If not,
-      and your rule uses <systemitem class="filesystem">sysfs</systemitem>
-      attributes, it may be a kernel timing issue, to be fixed in later kernels.
-      For now, you can work around it by creating a rule that waits for the used
-      <systemitem class="filesystem">sysfs</systemitem> attribute and appending
-      it to the <filename>/etc/udev/rules.d/10-wait_for_sysfs.rules</filename>
-      file (create this file if it does not exist). Please notify the LFS
-      Development list if you do so and it helps.</para>
+      <para>Предполагается, что драйвер статически встроен в ядро или уже загружен как модуль, и что вы уже проверили, что Udev не создает устройство с неправильным наименованием.</para>
+
+      <para>Udev не обладает информацией, необходимой для создания узла устройства, если драйвер ядра не экспортирует свои данные в <systemitem class="filesystem">sysfs</systemitem>. Как правило, такое происходит с внешними драйверами, которых нет в дереве исходного кода ядра. Создайте статический узел в каталоге <filename>/lib/udev/devices</filename> с соответствующими первичными и второстепенными номерами (см. файл devices.txt внутри документации ядра или документации, предоставленной сторонним поставщиком драйвера). Статический узел
+		 будет скопирован в <filename class="directory">/dev</filename> с помощью <command>udev</command>.</para>
 
     </sect3>
 
     <sect3>
-      <title>Udev does not create a device</title>
+      <title>Порядок именования устройств изменяется случайным образом после перезагрузки</title>
 
-      <para>Further text assumes that the driver is built statically into the
-      kernel or already loaded as a module, and that you have already checked
-      that Udev doesn't create a misnamed device.</para>
-
-      <para>Udev has no information needed to create a device node if a kernel
-      driver does not export its data to
-      <systemitem class="filesystem">sysfs</systemitem>. This is most common
-      with third party drivers from outside the kernel tree. Create a static
-      device node in <filename>/lib/udev/devices</filename> with the
-      appropriate major/minor numbers (see the file
-      <filename>devices.txt</filename> inside the kernel documentation or the
-      documentation provided by the third party driver vendor). The static
-      device node will be copied to <filename class="directory">/dev</filename>
-      by <command>udev</command>.</para>
-
-    </sect3>
-
-    <sect3>
-      <title>Device naming order changes randomly after rebooting</title>
-
-      <para>This is due to the fact that Udev, by design, handles uevents and
-      loads modules in parallel, and thus in an unpredictable order. This will
-      never be <quote>fixed</quote>. You should not rely upon the kernel device
-      names being stable. Instead, create your own rules that make symlinks with
-      stable names based on some stable attributes of the device, such as a
-      serial number or the output of various *_id utilities installed by Udev.
-      See <xref linkend="ch-scripts-symlinks"/> and
-      <xref linkend="ch-scripts-network"/> for examples.</para>
+      <para>Это связано с тем, что Udev обрабатывает события и загружает модули параллельно, а значит в непредсказуемом порядке. Это никогда не будет <quote>исправлено</quote>. Не следует полагаться на стабильность имен устройств ядра. Вместо этого создайте свои собственные правила, которые делают символические ссылки со стабильными именами на основе некоторых стабильных атрибутов устройства, таких как серийный номер или вывод различных утилит *_id, установленных Udev. В разделе <xref linkend="ch-scripts-symlinks"/> и <xref linkend="ch-scripts-network"/>, есть примеры.</para>
 
     </sect3>
 
   </sect2>
 
   <sect2>
-    <title>Useful Reading</title>
+    <title>Полезно для ознакомления</title>
 
-    <para>Additional helpful documentation is available at the following
-    sites:</para>
+    <para>Дополнительная полезная документация доступна по следующим ссылкам:</para>
 
     <itemizedlist>
 
       <listitem>
-        <para>A Userspace Implementation of <systemitem class="filesystem">devfs</systemitem>
+        <para>Реализация  <systemitem class="filesystem">devfs</systemitem> в пользовательском окружении
         <ulink url="http://www.kroah.com/linux/talks/ols_2003_udev_paper/Reprint-Kroah-Hartman-OLS2003.pdf"/></para>
       </listitem>
 
       <listitem>
-        <para>The <systemitem class="filesystem">sysfs</systemitem> Filesystem
+        <para>Файловая система <systemitem class="filesystem">sysfs</systemitem>
         <ulink url="http://www.kernel.org/pub/linux/kernel/people/mochel/doc/papers/ols-2005/mochel.pdf"/></para>
       </listitem>
 <!--  No longer available
