@@ -9,7 +9,7 @@
 <sect1 id="ch-scripts-usage" revision="sysv">
   <?dbhtml filename="usage.html"?>
 
-  <title>System V Bootscript Usage and Configuration</title>
+  <title>System V Bootscript Использование и конфигурация</title>
 
   <indexterm zone="ch-scripts-usage">
     <primary sortas="a-Bootscripts">Bootscripts</primary>
@@ -17,34 +17,24 @@
   </indexterm>
 
   <sect2>
-    <title>How Do the System V Bootscripts Work?</title>
+    <title>Как работает System V Bootscripts?</title>
 
-    <para>Linux uses a special booting facility named SysVinit that is based on a
-    concept of <emphasis>run-levels</emphasis>. It can be quite different from one
-    system to another, so it cannot be assumed that because things worked in one
-    particular Linux distribution, they should work the same in LFS too. LFS has its
-    own way of doing things, but it respects generally accepted standards.</para>
+    <para>В Linux используется специальное средство загрузки SysVinit, основанное на концепции уровней выполнения (<emphasis>run-levels</emphasis>). Он может сильно отличаться от одной системы к другой, поэтому нельзя предположить, что, корректная работа  в одном дистрибутиве Linux, должны работать одинаково и в LFS. У LFS есть свой собственный способ управления, но она уважает общепринятые стандарты.</para>
 
-    <para>SysVinit (which will be referred to as <quote>init</quote> from now on)
-    works using a run-levels scheme. There are seven (numbered 0 to 6) run-levels
-    (actually, there are more run-levels, but they are for special cases and are
-    generally not used. See <filename>init(8)</filename> for more details), and
-    each one of those corresponds to the actions the computer is supposed to
-    perform when it starts up. The default run-level is 3. Here are the
-    descriptions of the different run-levels as they are implemented:</para>
+    <para>SysVinit (который теперь будет называться <quote>init</quote>) работает по схеме уровней выполнения. Есть семь (пронумерованных от 0 до 6) уровней выполнения (на самом деле, есть больше уровней выполнения, но они предназначены для особых случаев и обычно не используются. См. <filename>init(8)</filename> Для получения более подробной информации), и каждый из них соответствует действиям, которые компьютер должен выполнять при запуске. Уровень запуска по умолчанию-3. Ниже приведены описания различных уровней запуска по мере их реализации:</para>
 
-<literallayout>0: halt the computer
-1: single-user mode
-2: multi-user mode without networking
-3: multi-user mode with networking
-4: reserved for customization, otherwise does the same as 3
-5: same as 4, it is usually used for GUI login (like X's <command>xdm</command> or KDE's <command>kdm</command>)
-6: reboot the computer</literallayout>
+<literallayout>0: остановить компьютер
+1: однопользовательский режим
+2: многопользовательский режим без сети
+3: многопользовательский режим с сетью
+4: зарезервированный для настроек, в ином случае аналогичен уровню 3
+5: аналогичен уровню 3 4, обычно используется для GUI авторизации (например <command>xdm</command> или <command>kdm</command>)
+6: перезагрузка компьютера</literallayout>
 
   </sect2>
 
   <sect2 id="conf-sysvinit" role="configuration">
-  <title>Configuring Sysvinit</title>
+  <title>Настройка Sysvinit</title>
 
   <indexterm zone="conf-sysvinit">
     <primary sortas="a-Sysvinit">Sysvinit</primary>
@@ -55,10 +45,7 @@
     <primary sortas="e-/etc/inittab">/etc/inittab</primary>
   </indexterm>
 
-  <para>During the kernel initialization, the first program that is run
-  is either specified on the command line or, by default
-  <command>init</command>.  This program reads the initialization file
-  <filename>/etc/inittab</filename>.  Create this file with:</para>
+  <para>Во время инициализации ядра первая запущенная программа указывается либо в командной строке, либо по умолчанию в init. Эта программа читает файл инициализации <filename>/etc/inittab</filename>. Создайте этот файл:</para>
 
 <screen><userinput>cat &gt; /etc/inittab &lt;&lt; "EOF"
 <literal># Begin /etc/inittab
@@ -89,14 +76,7 @@ su:S016:once:/sbin/sulogin
 # End /etc/inittab</literal>
 EOF</userinput></screen>
 
-  <para>An explanation of this initialization file is in the man page for
-  <emphasis>inittab</emphasis>.  For LFS, the key command that is run is
-  <command>rc</command>. The initialization file above will instruct
-  <command>rc</command> to run all the scripts starting with an S in the
-  <filename class="directory">/etc/rc.d/rcS.d</filename> directory
-  followed by all the scripts starting with an S in the <filename
-  class="directory">/etc/rc.d/rc?.d</filename> directory where the question
-  mark is specified by the initdefault value.</para>
+  <para>Объяснение содержимого файла инициализации находится на справочных страницах <emphasis>inittab</emphasis>. Для LFS ключевой командой является rc. В приведенном выше файле инициализации rc будет выполнять все сценарии, начиная с символа S в каталоге <filename class="directory">/etc/rc.d/rcS.d</filename>, за которым следуют все скрипты, начинающиеся с S в /etc/rc.d / rc?.D каталог, в котором знак вопроса задается значением initdefault.</para>
 
   <para>As a convenience, the <command>rc</command> script reads a library of
   functions in <filename class="directory">/lib/lsb/init-functions</filename>.
