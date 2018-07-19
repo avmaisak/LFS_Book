@@ -40,6 +40,34 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
 
+<listitem>
+      <para>2018-07-18</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Обновлено до util-linux 2.32.1.  Исправления
+           <ulink url="&lfs-ticket-root;4315">#4315</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до binutils-2.31.1.  Исправления
+           <ulink url="&lfs-ticket-root;4314">#4314</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до meson-0.47.1.  Исправления
+           <ulink url="&lfs-ticket-root;4313">#4313</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Указаны некоторые новые ошибки регрессионных тестов.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до linux-4.17.8.  Исправления
+           <ulink url="&lfs-ticket-root;4312">#4312</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до e2fsprogs-1.44.3.  Исправления
+           <ulink url="&lfs-ticket-root;4310">#4310</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
 <listitem>
       <para>2018-07-08</para>

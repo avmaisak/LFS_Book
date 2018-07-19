@@ -145,6 +145,12 @@ unset GCC_INCDIR</userinput></screen>
         <emphasis>posix/tst-getaddrinfo5</emphasis>
 		  на некоторых архитектурах может завершиться с ошибкой.</para>
       </listitem>
+
+		<listitem>
+        <para><emphasis>nss/tst-nss-files-hosts-multi</emphasis>
+		  может завершиться с ошибкой по неизвестным причинам.</para>
+      </listitem>
+
 <!--
       <listitem>
         <para>The <emphasis>rt/tst-cputimer1</emphasis> and

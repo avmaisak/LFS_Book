@@ -1,13 +1,13 @@
-<!ENTITY version         "20180709">
+<!ENTITY version         "20180719">
 <!ENTITY short-version   "8.2">  <!-- Used below in &blfs-book;
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20180709-systemd">
+<!ENTITY versiond        "20180719-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd">
 
-<!ENTITY releasedate     "9 Июля, 2018">
+<!ENTITY releasedate     "19 Июля, 2018">
 
 <!ENTITY copyrightdate   "1999-2018"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "8.2">
@@ -23,7 +23,6 @@
 <!ENTITY livecd-root     "&lfs-root;livecd/">
 <!ENTITY test-results    "&lfs-root;lfs/build-logs/&generic-version;/">
 <!ENTITY errata          "&lfs-root;lfs/errata/&generic-version;/">
-<!ENTITY erratad         "&lfs-root;lfs/errata/&generic-versiond;/">
 <!ENTITY min-kernel      "3.2">
 
 <!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-versiond;/">
