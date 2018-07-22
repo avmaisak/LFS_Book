@@ -40,40 +40,24 @@
   <sect2 role="installation">
     <title>Установка пакета the kernel</title>
 
-    <para>Building the kernel involves a few steps&mdash;configuration,
-    compilation, and installation. Read the <filename>README</filename> file
-    in the kernel source tree for alternative methods to the way this book
-    configures the kernel.</para>
+    <para>Процесс сборки ядра состоит из нескольких этапов: настройка, компиляция и установка. Ознакомьтесь с файлом
+	 <filename>README</filename> в дереве исходных кодов пакета чтобы узнать о других способах настройки ядра.</para>
 
-    <para>Подготовьте пакет for compilation by running the следующую команду:</para>
+    <para>Подготовьте пакет к компиляции выполнив следующую команду:</para>
 
 <screen><userinput remap="pre">make mrproper</userinput></screen>
 
-    <para>This ensures that the kernel tree is absolutely clean. The
-    kernel team recommends that this command be issued prior to each
-    kernel compilation. Do not rely on the source tree being clean after
-    un-tarring.</para>
+    <para>Выполнение этой команды гарантирует, что дерево исходных кодов ядра абсолютно чистое. Разработчики ядра рекомендуют, чтобы эта команда выполнялась перед каждым процессом компиляции. Обратите внимание что после распаковки пакета с исходным кодом не следует полагаться на его "чистоту".</para>
 
     <!-- Support for compiling a keymap into the kernel is deliberately removed -->
 
-    <para>Configure the kernel via a menu-driven interface. For general
-    information on kernel configuration see <ulink
-    url="&hints-root;kernel-configuration.txt"/>.  BLFS has some information
-    regarding particular kernel configuration requirements of packages outside
-    of LFS at <ulink
-    url="&blfs-book;longindex.html#kernel-config-index"/>.  Additional
-    information about configuring and building the kernel can be found at
-    <ulink url="http://www.kroah.com/lkn/"/> </para>
+    <para>Настройте ядро с помощью псевдографического интерфейса. Для получения общей информации перейдите по ссылке <ulink url="&hints-root;kernel-configuration.txt"/>. В книге BLFS есть информация по поводу некоторых требований к конфигурации ядра для поддержки пакетов, которые отсутствуют в книге LFS. Эта информация доступна по ссылке  <ulink url="&blfs-book;longindex.html#kernel-config-index"/>. Дополнительная информация о настройке и сборке  ядра расположена по ссылке <ulink url="http://www.kroah.com/lkn/"/></para>
 
     <note>
 
-      <para>A good starting place for setting up the kernel configuration is to
-      run <command>make defconfig</command>. This will set the base
-      configuration to a good state that takes your current system architecture
-      into account.</para>
+      <para>Хорошей отправной точкой для настройки ядра, может стать запуск команды <command>make defconfig</command>. В результате её выполнения будет создана базовая конфигурация с учётом архитектуры машины.</para>
 
-      <para>Be sure to enable/disable/set the following features or the system might
-      not work correctly or boot at all:</para>
+      <para>Убедитесь в том, что вы включили/отключили/указали указанные ниже параметры настройки, в ином случае, система может работать не правильно, или вовсе не загрузится:</para>
 
       <screen role="nodump" revision="sysv">
 Device Drivers  ---&gt;
@@ -114,53 +98,40 @@ Kernel hacking  ---&gt;
     </note>
 
     <note revision="systemd">
-      <para>While "The IPv6 Protocol" is not strictly
-      required, it is настоятельно рекомендуется by the systemd developers.</para>
+      <para>Параметр "The IPv6 Protocol" строго не обязателен, однако разработчиками пакета systemd настоятельно рекомендуется его включить.</para>
     </note>
 
-    <para revision="sysv">There are several other options that may be desired
-    depending on the requirements for the system. For a list of options needed
-    for BLFS packages, see the <ulink
-    url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS
-    Index of Kernel Settings</ulink>
-    (&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index).</para>
+    <para revision="sysv">Также, есть некоторые опции, которые могут понадобиться в зависимости от конфигурации системы. Список параметров, необходимых для пакетов в книге BLFS - <ulink
+    url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS.</para>
 
     <note>
-      <para>If your host hardware is using UEFI, then the 'make defconfig'
-      above should automatically add in some EFI-related kernel options.</para>
+      <para>Если на хост системе используется UEFI, то после выполнения команды 'make defconfig' должны автоматически примениться параметры ядра, связанные с EFI.</para>
 
-      <para>In order to allow your LFS kernel to be booted from within your
-      host's UEFI boot environment, your kernel must have this option
-      selected:</para>
+      <para>Для того, чтобы ядро LFS могло загружаться из среды UEFI, необходимо включить соответствующий параметр:</para>
 
 <screen role="nodump">Processor type and features  ---&gt;
    [*]   EFI stub support  [CONFIG_EFI_STUB]</screen>
 
-      <para>A fuller description of managing UEFI environments from within LFS
-      is covered by the lfs-uefi.txt hint at
+      <para>Более полное описание управления UEFI из LFS доступно по ссылке:
       <ulink
         url="http://www.linuxfromscratch.org/hints/downloads/files/lfs-uefi.txt"/>.
       </para>
     </note>
 
     <variablelist>
-      <title>The rationale for the above configuration items:</title>
+      <title>Разъяснение указанных параметров конфигурации:</title>
 
       <varlistentry>
         <term><parameter>Support for uevent helper</parameter></term>
         <listitem>
-          <para>Having this option set may interfere with device
-          management when using Udev/Eudev. </para>
+          <para>Наличие этого параметра может вызвать конфликт при управление устройствами через Udev / Eudev.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>Maintain a devtmpfs</parameter></term>
         <listitem>
-          <para>This will create automated device nodes which are populated by the
-          kernel, even without Udev running.  Udev then runs on top of this,
-          managing permissions and adding symlinks.  This configuration
-          item is required for all users of Udev/Eudev.</para>
+          <para>При использовании этого параметра, будет осуществлена поддержка узлов устройств, заполняемых самим ядром, даже без запуска Udev. Udev будет работать поверх, управляя разрешениями и добавляя необходимые символические ссылки. Этот элемент конфигурации необходим всем пользователям Udev / Eudev.</para>
         </listitem>
       </varlistentry>
 
@@ -169,161 +140,95 @@ Kernel hacking  ---&gt;
 <screen role="nodump"><userinput>make menuconfig</userinput></screen>
 
     <variablelist>
-      <title>The meaning of optional make environment variables:</title>
+      <title>Значение необязательных переменных окружения программы make:</title>
 
       <varlistentry>
         <term><parameter>LANG=&lt;host_LANG_value&gt; LC_ALL=</parameter></term>
         <listitem>
-          <para>This establishes the locale setting to the one used on the
-          host.  This may be needed for a proper menuconfig ncurses interface
-          line drawing on a UTF-8 linux text console.</para>
+          <para>Задаёт настройку локали на ту, которая используется в хост системе для корректного отображения menuconfig при использовании интерфейса ncurses при генерации строк на текстовой консоли Linux с кодировкой UTF-8.</para>
 
-          <para>If used, be sure to replace
-          <replaceable>&lt;host_LANG_value&gt;</replaceable> by the value of
-          the <envar>$LANG</envar> variable from your host.  You can
-          alternatively use instead the host's value of <envar>$LC_ALL</envar>
-          or <envar>$LC_CTYPE</envar>.</para>
+          <para>Если используете, то убедитесь что заменили переменную <replaceable>&lt;host_LANG_value&gt;</replaceable> на значение переменной окружения <envar>$LANG</envar> их хост системы. Или можно использовать значение переменной окружения хос системы <envar>$LC_ALL</envar> или <envar>$LC_CTYPE</envar>.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Alternatively, <command>make oldconfig</command> may be more
-    appropriate in some situations. See the <filename>README</filename>
-    file for more information.</para>
+    <para>Кроме того, команда <command>make oldconfig</command> может быть более уместна в некоторых случаях. Дополнительную информацию см. В файле <filename>README</filename>.</para>
 
-    <para>If desired, skip kernel configuration by copying the kernel
-    config file, <filename>.config</filename>, from the host system
-    (assuming it is available) to the unpacked <filename
-    class="directory">linux-&linux-version;</filename> directory. However,
-    we do not recommend this option. It is often better to explore all the
-    configuration menus and create the kernel configuration from
-    scratch.</para>
+    <para>При желании, можно пропустить этап настройки, скопировав файл конфигурации ядра <filename>.config</filename> с вашей хост системы (в том случае, если такой файл присутствует) в предварительно распакованный каталог ядра <filename class="directory">linux-&linux-version;</filename>. Мы не рекомендуем такой подход. Гораздо полезнее изучить все параметры настройки и создать файл конфигурации ядра самостоятельно.</para>
 
-    <para>Compile the kernel image and modules:</para>
+    <para>Скомпилируйте образ ядра и модули:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>If using kernel modules, module configuration in <filename
-    class="directory">/etc/modprobe.d</filename> may be required.
-    Information pertaining to modules and kernel configuration is
-    located in <xref linkend="ch-scripts-udev"/> and in the kernel
-    documentation in the <filename
-    class="directory">linux-&linux-version;/Documentation</filename> directory.
-    Also, <filename>modprobe.d(5)</filename> may be of interest.</para>
+    <para>При использовании модулей, могут потребоваться файлы конфигурации, которые должны находиться в каталоге <filename class="directory">/etc/modprobe.d</filename>. Информация о модулях и конфигурации ядра
+     находится в <xref linkend="ch-scripts-udev"/> и в каталоге с документацией ядра <filename
+    class="directory">linux-&linux-version;/Documentation</filename>. Также будет интересным изучение информации <filename>modprobe.d(5)</filename>.</para>
 
-    <para>Установите the modules, if the kernel configuration uses them:</para>
+    <para>Установите модули, если ядро их использует:</para>
 
 <screen><userinput remap="install">make modules_install</userinput></screen>
 
-    <para>After kernel compilation is complete, additional steps are
-    required to complete the installation. Some files need to be copied to
-    the <filename class="directory">/boot</filename> directory.</para>
+    <para>После завершения компиляции, необходимо выполнить еще несколько шагов. Некоторые файлы должны быть скопированы в каталог <filename class="directory">/boot</filename>.</para>
 
     <caution>
-      <para>If the host system has a separate /boot partition, the files copied
-      below should go there. The easiest way to do that is to bind /boot on the
-      host (outside chroot) to /mnt/lfs/boot before proceeding.  As the root
-      user in the <emphasis>host system</emphasis>:</para>
+      <para>Если хост система содержит отдельный раздел для каталога /boot, файлы скопированные ниже, должны находится в нём. Самый простой способ это сделать -  выполнить привязку (bind) каталога /boot хост системы (за пределами выполнения в среде chroot) к каталогу /mnt/lfs/boot перед тем, как продолжить. Из-под пользователя root в <emphasis>хост системе</emphasis> выполните команду:</para>
 
 <screen role="nodump"><userinput>mount --bind /boot /mnt/lfs/boot</userinput></screen>
     </caution>
 
-    <para>The path to the kernel image may vary depending on the platform being
-    used. The filename below can be changed to suit your taste, but the stem of
-    the filename should be <emphasis>vmlinuz</emphasis> to be compatible with
-    the automatic setup of the boot process described in the next section.  The
-    following command assumes an x86 architecture:</para>
+    <para>Путь к образу ядра зависит от используемой платформы. Имя файла, указанное ниже, может иметь произвольное наименование, на ваш вкус, но имя файла должно  начинаться с <emphasis>vmlinuz</emphasis> для обеспечения совместимости автоматической настройки процесса загрузки, описанного в следующей главе. При выполнении следующей команды, будет считать что используется архитектура x86:</para>
 
 <screen revision="sysv"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&version;</userinput></screen>
 
 <screen revision="systemd"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&versiond;</userinput></screen>
 
-    <para><filename>System.map</filename> is a symbol file for the kernel.
-    It maps the function entry points of every function in the kernel API,
-    as well as the addresses of the kernel data structures for the running
-    kernel.  It is used as a resource when investigating kernel problems.
-    Issue the following command to install the map file:</para>
+    <para><filename>System.map</filename> файл, внутри которого находится символьная таблица адресов функций и процедур, используемых ядром операционной системы Linux. В этой таблице перечислены имена переменных и функций и их адреса в памяти компьютера. Эта таблица весьма полезна при отладке ядра в случае Kernel panic или Linux oops. System.map генерируется при компиляции ядра. Выполните следующщую команду для установки файла <filename>System.map</filename>:</para>
 
 <screen><userinput remap="install">cp -iv System.map /boot/System.map-&linux-version;</userinput></screen>
 
-    <para>The kernel configuration file <filename>.config</filename>
-    produced by the <command>make menuconfig</command> step
-    above contains all the configuration selections for the kernel
-    that was just compiled. It is a good idea to keep this file for future
-    reference:</para>
+    <para>Файл конфигурации ядра <filename>.config</filename> полученный в результате настройки <command>make menuconfig</command> содержит в себе все опции конфигурации скомпилированного ядра. Хорошей идеей будет оставить этот файл для будующей работы:</para>
 
 <screen><userinput remap="install">cp -iv .config /boot/config-&linux-version;</userinput></screen>
 
-    <para>Установите the documentation for the Linux kernel:</para>
+    <para>Установите документацию ядра:</para>
 
 <screen><userinput remap="install">install -d /usr/share/doc/linux-&linux-version;
 cp -r Documentation/* /usr/share/doc/linux-&linux-version;</userinput></screen>
 
-    <para>It is important to note that the files in the kernel source
-    directory are not owned by <emphasis>root</emphasis>. Whenever a
-    package is unpacked as user <emphasis>root</emphasis> (like we did
-    inside chroot), the files have the user and group IDs of whatever
-    they were on the packager's computer. This is usually not a problem
-    for any other package to be installed because the source tree is
-    removed after the installation. However, the Linux source tree is
-    often retained for a long time.  Because of this, there is a chance
-    that whatever user ID the packager used will be assigned to somebody
-    on the machine. That person would then have write access to the kernel
-    source.</para>
+    <para>Важно отметить, что файлы в каталоге исходных кодов ядра не принадлежат пользователю <emphasis>root</emphasis>. Всякий раз, когда пакет распаковывается от пользователя <emphasis>root</emphasis> (как это и выполнялось внутри среды chroot), файлы имеют те идентификаторы пользователя и группы, которые были назначены при распаковке. Обычно это не вызывает проблем для других устанавливаемых пакетов, так как каталог с исходными кодами удаляется после установки пакета. Однако исходный код ядра Linux часто сохраняется в течение длительного времени. Из-за этого существует вероятность того, что идентификатор пользователя, используемый при распаковке, будет назначен другому пользователю. В таком случае, этот пользователь будет иметь доступ на запись в этот каталог.</para>
 
     <note>
-      <para>In many cases, the configuration of the kernel will need to be
-      updated for packages that will be installed later in BLFS.  Unlike
-      other packages, it is not necessary to remove the kernel source tree
-      after the newly built kernel is installed.</para>
+      <para>Во многих случаях конфигурация ядра должна быть
+      обновлена для пакетов, которые будут установлены позже в BLFS.  В отличие от
+      других пакетов удалять дерево исходного кода ядра не требуется
+      после компиляции и установки.</para>
 
-      <para>If the kernel source tree is going to be retained, run
-      <command>chown -R 0:0</command> on the <filename
-      class="directory">linux-&linux-version;</filename> directory to ensure
-      all files are owned by user <emphasis>root</emphasis>.</para>
+      <para>Если вы планируете оставить каталог с исходным кодом ядра, выполните команду:
+      <command>chown -R 0:0</command> для каталога <filename
+      class="directory">linux-&linux-version;</filename> чтобы указать права для пользователя <emphasis>root</emphasis>.</para>
     </note>
 
     <warning>
-      <para>Some kernel documentation recommends creating a symlink from
-      <filename class="symlink">/usr/src/linux</filename> pointing to the kernel
-      source directory.  This is specific to kernels prior to the 2.6 series and
-      <emphasis>must not</emphasis> be created on an LFS system as it can cause
-      problems for packages you may wish to build once your base LFS system is
-      complete.</para>
+      <para>В документации ядра рекомендуется создать символическую ссылку <filename class="symlink">/usr/src/linux</filename> для указания местоположения каталога с исходными кодами ядра. Это рекомендация относится к ядрам до версии 2.6 и не должна выполняться в системе LFS, так как это может вызвать проблемы с пакетами, которые вы, возможно, захотите создать, когда ваша базовая система LFS будет готова.</para>
     </warning>
 
     <warning>
-      <para>The headers in the system's <filename
-      class="directory">include</filename> directory (<filename
-      class="directory">/usr/include</filename>) should
-      <emphasis>always</emphasis> be the ones against which Glibc was compiled,
-      that is, the sanitised headers installed in <xref
-      linkend="ch-system-linux-headers"/>.  Therefore, they should
-      <emphasis>never</emphasis> be replaced by either the raw kernel headers
-      or any other kernel sanitized headers.</para>
+      <para>Заголовочные файлы в системном каталоге <filename class="directory">include</filename> (<filename class="directory">/usr/include</filename>) должны <emphasis>всегда</emphasis> быть те, которые использовались при компиляции Glibc в главе <xref linkend="ch-system-linux-headers"/>. Поэтому их <emphasis>никогда</emphasis> не следует заменять на чистые заголовочные файлы ядра или любые другие подготовленные заголовочные файлы.</para>
     </warning>
 
   </sect2>
 
   <sect2 id="conf-modprobe" role="configuration">
-    <title>Configuring Linux Module Load Order</title>
+    <title>Настройка порядка загрузки модулей Linux</title>
 
     <indexterm zone="conf-modprobe">
       <primary sortas="e-/etc/modprobe.d/usb.conf">/etc/modprobe.d/usb.conf</primary>
     </indexterm>
 
-    <para>Most of the time Linux modules are loaded automatically, but
-    sometimes it needs some specific direction.  The program that loads
-    modules, <command>modprobe</command> or <command>insmod</command>, uses
-    <filename>/etc/modprobe.d/usb.conf</filename> for this purpose.  This file
-    needs to be created so that if the USB drivers (ehci_hcd, ohci_hcd and
-    uhci_hcd) have been built as modules, they will be loaded in the correct
-    order; ehci_hcd needs to be loaded prior to ohci_hcd and uhci_hcd in order
-    to avoid a warning being output at boot time.</para>
+    <para>Обычно модули Linux загружаются автоматически, но иногда требуется определенный порядок. Программа, которая загружает модули, <command>modprobe</command> или <command>insmod</command>, использует файл  <filename>/etc/modprobe.d/usb.conf</filename> как раз для этой цели. Этот файл должен быть создан так, что если USB-драйверы (ehci_hcd, ohci_hcd и uhci_hcd) были созданы в виде модулей, то они будут загружены в требуемом  порядке; ehci_hcd должен быть загружен до ohci_hcd и uhci_hcd для того, чтобы избежать предупреждений во время загрузки.</para>
 
-    <para>Create a new file <filename>/etc/modprobe.d/usb.conf</filename> by running
-    the following:</para>
+    <para>Создайте новый файл<filename>/etc/modprobe.d/usb.conf</filename> выполнив следующую команду:</para>
 
 <screen><userinput>install -v -m755 -d /etc/modprobe.d
 cat &gt; /etc/modprobe.d/usb.conf &lt;&lt; "EOF"
@@ -361,7 +266,7 @@ EOF</userinput></screen>
       <varlistentry id="config">
         <term><filename>config-&linux-version;</filename></term>
         <listitem>
-          <para>Содержит all the configuration selections for the kernel</para>
+          <para>Файл конфигурации ядра <filename>.config</filename> содержит в себе все опции конфигурации скомпилированного ядра.</para>
           <indexterm zone="ch-bootable-kernel config">
             <primary sortas="e-/boot/config">/boot/config-&linux-version;</primary>
           </indexterm>
@@ -372,12 +277,7 @@ EOF</userinput></screen>
         <term revision="sysv"><filename>vmlinuz-&linux-version;-lfs-&version;</filename></term>
         <term revision="systemd"><filename>vmlinuz-&linux-version;-lfs-&versiond;</filename></term>
         <listitem>
-          <para>The engine of the Linux system. When turning on the computer,
-          the kernel is the first part of the operating system that gets loaded.
-          It detects and initializes all components of the computer's hardware,
-          then makes these components available as a tree of files to the
-          software and turns a single CPU into a multitasking machine capable
-          of running scores of programs seemingly at the same time</para>
+          <para>Ядро системы Linux. При включении компьютера ядро - первая часть операционной системы, которая будет загружена. Она обнаруживает и инициализирует все компоненты оборудования компьютера, делает их доступными в виде дерева каталогов с файлами для доступа к ним программам и превращает один процессор в мультизадачную машину, способную выполнять множество программ как будто одновременно.</para>
           <indexterm zone="ch-bootable-kernel lfskernel">
             <primary sortas="b-lfskernel">lfskernel-&linux-version;</primary>
           </indexterm>
@@ -387,9 +287,7 @@ EOF</userinput></screen>
       <varlistentry id="System.map">
         <term><filename>System.map-&linux-version;</filename></term>
         <listitem>
-          <para>A list of addresses and symbols; it maps the entry points and
-          addresses of all the functions and data structures in the
-          kernel</para>
+          <para>файл, внутри которого находится символьная таблица адресов функций и процедур, используемых ядром операционной системы Linux. В этой таблице перечислены имена переменных и функций и их адреса в памяти компьютера. Эта таблица весьма полезна при отладке ядра в случае Kernel panic или Linux oops. System.map генерируется при компиляции ядра.</para>
           <indexterm zone="ch-bootable-kernel System.map">
             <primary sortas="e-/boot/System.map">/boot/System.map-&linux-version;</primary>
           </indexterm>
