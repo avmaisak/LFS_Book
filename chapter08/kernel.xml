@@ -101,8 +101,7 @@ Kernel hacking  ---&gt;
       <para>Параметр "The IPv6 Protocol" строго не обязателен, однако разработчиками пакета systemd настоятельно рекомендуется его включить.</para>
     </note>
 
-    <para revision="sysv">Также, есть некоторые опции, которые могут понадобиться в зависимости от конфигурации системы. Список параметров, необходимых для пакетов в книге BLFS - <ulink
-    url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS.</para>
+    <para revision="sysv">Также, есть некоторые опции, которые могут понадобиться в зависимости от конфигурации системы. Список параметров, необходимых для пакетов в книге BLFS - <ulink url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS</ulink>.</para>
 
     <note>
       <para>Если на хост системе используется UEFI, то после выполнения команды 'make defconfig' должны автоматически примениться параметры ядра, связанные с EFI.</para>
