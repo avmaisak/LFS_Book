@@ -78,24 +78,16 @@ EOF</userinput></screen>
 
   <para>Объяснение содержимого файла инициализации находится на справочных страницах <emphasis>inittab</emphasis>. Для LFS ключевой командой является rc. В приведенном выше файле инициализации rc будет выполнять все сценарии, начиная с символа S в каталоге <filename class="directory">/etc/rc.d/rcS.d</filename>, за которым следуют все скрипты, начинающиеся с S в /etc/rc.d / rc?.D каталог, в котором знак вопроса задается значением initdefault.</para>
 
-  <para>As a convenience, the <command>rc</command> script reads a library of
-  functions in <filename class="directory">/lib/lsb/init-functions</filename>.
-  This library also reads an optional configuration file,
-  <filename>/etc/sysconfig/rc.site</filename>.  Any of the system
-  configuration file parameters described in subsequent sections can be
-  alternatively placed in this file allowing consolidation of all system
-  parameters in this one file.</para>
+  <para>Для удобства, сценарий <command>rc</command> считывает функции из библиотеки <filename class="directory">/lib/lsb/init-functions</filename>. Библиотека, в свою очередь, считывает опциональные файлы конфигурации из файла <filename>/etc/sysconfig/rc.site</filename>. Любой из системных конфигурационных файлов описанных в последующих разделах можно, в качестве альтернативы, поместить в этот файл, что позволит объединить все системные параметры в один файл.</para>
 
-  <para>As a debugging convenience, the functions script also logs all output
-  to <filename>/run/var/bootlog</filename>.  Since the <filename
-  class="directory">/run</filename> directory is a tmpfs, this file is not
-  persistent across boots, however it is appended to the more permanent file
-  <filename>/var/log/boot.log</filename> at the end of the boot process.</para>
+  <para>Для удобства отладки, функции сценария журналируют весь вывод в файл <filename>/run/var/bootlog</filename>. Поскольку каталог <filename
+  class="directory">/run</filename> является tmpfs, файла может не быть, в процессе загрузки, однако уго содержимое добавляется к фиксированному файлу <filename>/var/log/boot.log</filename> при завершении процесса загрузки.</para>
 
   <sect3 id="init-levels" >
-  <title>Changing Run Levels</title>
+  <title>Изменение уровней выполнения (Run Levels)</title>
 
-  <para>Changing run-levels is done with <command>init
+  <para>Изменить уровень выполнения
+  Changing run-levels is done with <command>init
   <replaceable>&lt;runlevel&gt;</replaceable></command>, where
   <replaceable>&lt;runlevel&gt;</replaceable> is the target run-level. For example, to
   reboot the computer, a user could issue the <command>init 6</command> command,
