@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Системный менеджер, демон инициализации других демонов в Linux, пришедший на замену используемого ранее SysV. Его особенностью является интенсивное распараллеливание запуска служб в процессе загрузки системы, что позволяло существенно ускорить запуск операционной системы. Он используется многими коммерческими дистрибутивами.</para>
+    <para>Системный менеджер, демон инициализации других демонов в Linux, пришедший на замену используемого ранее SysV. Его особенностью является интенсивное распараллеливание запуска служб в процессе загрузки системы, что позволяет существенно ускорить запуск операционной системы. Systemd используется во многих коммерческих дистрибутивах.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -39,25 +39,21 @@
   <sect2 role="installation">
     <title>Установка пакета systemd</title>
 
-    <para>Создайте символическую ссылку, чтобы обойти проблему из-за отсутствия программы xsltproc:</para>
-
-<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>
-
-    <para>Выполните настройку страниц руководств:</para>
-
-<screen><userinput remap="pre">tar -xf ../systemd-man-pages-&systemd-version;.tar.xz</userinput></screen>
-
-    <para>Удалите тесты, которые не могут быть собраны в среде chroot:</para>
-
-<screen><userinput remap="pre">sed '171,$ d' -i src/resolve/meson.build</userinput></screen>
+   <para>Создайте символическую ссылку, чтобы обойти проблему из-за отсутствия программы xsltproc:</para>
+	<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>
+   <para>Выполните настройку страниц руководств:</para>
+	<screen><userinput remap="pre">tar -xf ../systemd-man-pages-&systemd-version;.tar.xz</userinput></screen>
+   <para>Удалите тесты, которые не могут быть собраны в среде chroot:</para>
+	<screen><userinput remap="pre">sed '166,$ d' -i src/resolve/meson.build</userinput></screen>
 
 <!-- These are from upstream.  There will probably be a new release shortly,
-     so don't bother with a patch. -->
+     so don't bother with a patch.
     <para>Внесём некоторые исправления:</para>
 
 <screen><userinput remap="pre">sed -i '527,565 d'                  src/basic/missing.h
 sed -i '24 d'                       src/core/load-fragment.c
 sed -i '53 a#include &lt;sys/mount.h&gt;' src/shared/bus-unit-util.c</userinput></screen>
+ -->
 
     <para>Удалим ненужную группу, <systemitem class="groupname">render</systemitem>, из стандартных правил udev:</para>
 
@@ -176,13 +172,10 @@ meson --prefix=/usr                \
 
 <screen><userinput remap="test">LANG=en_US.UTF-8 ninja test</userinput></screen>
 -->
-    <para>Установите пакет:</para>
-
-<screen><userinput remap="install">LANG=en_US.UTF-8 ninja install</userinput></screen>
-
-    <para>Удалите ненужный каталог:</para>
-
-<screen><userinput remap="install">rm -rfv /usr/lib/rpm</userinput></screen>
+   <para>Установите пакет:</para>
+	<screen><userinput remap="install">LANG=en_US.UTF-8 ninja install</userinput></screen>
+   <para>Удалите ненужные каталоги:</para>
+	<screen><userinput remap="install">rm -rfv /usr/lib/rpm
 <!--
     <para>Create the Sysvinit compatibility symlinks, so systemd is used
     as the default init system:</para>
@@ -194,13 +187,11 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
     <para>Remove our earlier created symlink for xsltproc:</para>
 -->
-<screen><userinput remap="install">rm -f /usr/bin/xsltproc</userinput></screen>
+rm -f /usr/bin/xsltproc</userinput></screen>
 
-    <para>Создайте файл <filename>/etc/machine-id</filename> необходимый <command>systemd-journald</command>:</para>
-
-<screen><userinput remap="adjust">systemd-machine-id-setup</userinput></screen>
-
-    <para>Создайте сценарий <filename>/lib/systemd/systemd-user-sessions</filename> для разрешения обычным пользователям, выполнять авторизацию без <application>systemd-logind</application>:</para>
+   <para>Создайте файл <filename>/etc/machine-id</filename> необходимый <command>systemd-journald</command>:</para>
+	<screen><userinput remap="adjust">systemd-machine-id-setup</userinput></screen>
+   <para>Создайте сценарий <filename>/lib/systemd/systemd-user-sessions</filename> для разрешения обычным пользователям, выполнять авторизацию без <application>systemd-logind</application>:</para>
 
 <screen><userinput remap="adjust">cat &gt; /lib/systemd/systemd-user-sessions &lt;&lt; "EOF"
 #!/bin/bash
@@ -271,7 +262,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
       <varlistentry id="coredumpctl">
         <term><command>coredumpctl</command></term>
         <listitem>
-          <para>Used to retrieve coredumps from the systemd Journal</para>
+          <para>Used to retrieve coredumps from the systemd journal</para>
           <indexterm zone="ch-system-systemd coredumpctl">
             <primary sortas="b-coredumpctl">coredumpctl</primary>
           </indexterm>
