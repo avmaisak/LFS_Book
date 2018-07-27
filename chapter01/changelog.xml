@@ -40,11 +40,33 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
 
+    <listitem>
+      <para>2018-07-26</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Обновлена информация о зеркалах и переводах. Исправления
+           <ulink url="&lfs-ticket-root;4318">#4318</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до версии  gcc-8.2.0.  Исправления
+           <ulink url="&lfs-ticket-root;4320">#4320</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до версии  file-5.34.  Исправления
+           <ulink url="&lfs-ticket-root;4319">#4319</ulink>.</para>
+        </listitem>
+        <listitem>
+           <para>[bdubbs] - Обновлено до версии  linux-4.17.10.  Исправления
+           <ulink url="&lfs-ticket-root;4316">#4316</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
 <listitem revision="systemd">
       <para>2018-07-23</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - Обновлено до версии версии systemd-239. Исправления
+          <para>[renodr] - Обновлено до версии systemd-239. Исправления
           <ulink url="&lfs-ticket-root;4298">#4298</ulink>.</para>
         </listitem>
       </itemizedlist>

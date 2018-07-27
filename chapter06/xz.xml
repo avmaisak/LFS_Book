@@ -53,8 +53,7 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-  <para>Установите пакет and make sure that all essential files are in the
-  correct directory:</para>
+  <para>Установите пакет и убедитесь что основные файлы находятся в необходимом каталоге:</para>
 
 <screen><userinput remap="install">make install
 mv -v   /usr/bin/{lzma,unlzma,lzcat,xz,unxz,xzcat} /bin
