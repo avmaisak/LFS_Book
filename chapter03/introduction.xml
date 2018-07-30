@@ -27,12 +27,12 @@
 
 <screen role="nodump"><userinput>chmod -v a+wt $LFS/sources</userinput></screen>
 
-  <para>Самый простой способ загрузки всех требуемых пакетов и патчей  - воспользоваться файлом <ulink url="https://linuxfromscratch.org.ru/lfs/view/development/wget-list">wget-list</ulink>. Далее его можно передать как параметр программе <command>wget</command>.
+  <para>Самый простой способ загрузки всех требуемых пакетов и патчей  - воспользоваться файлом <ulink url="https://book.linuxfromscratch.org.ru/systemv/wget-list">wget-list</ulink>. Далее его можно передать как параметр программе <command>wget</command>.
   Например:</para>
 
 <screen role="nodump"><userinput>wget --input-file=wget-list --continue --directory-prefix=$LFS/sources</userinput></screen>
 
-  <para>Начиная с 7 версии, есть два отдельных файла - <ulink url="https://linuxfromscratch.org.ru/lfs/view/development/md5sums">md5sums</ulink>,
+  <para>Начиная с 7 версии, есть два отдельных файла - <ulink url="https://book.linuxfromscratch.org.ru/systemv/md5sums">md5sums</ulink>,
   которые могут понадобится для проверки пакетов. Поместите этот файл в каталог <filename class="directory">$LFS/sources</filename> и выполните команду:</para>
 
 <screen role="nodump"><userinput>pushd $LFS/sources
