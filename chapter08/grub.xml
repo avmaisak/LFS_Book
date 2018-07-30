@@ -19,44 +19,32 @@
   <sect2>
     <title>Введение</title>
 
-    <warning><para>Configuring GRUB incorrectly can render your system
-    inoperable without an alternate boot device such as a CD-ROM.  This
-    section is not required to boot your LFS system.  You may just
-    want to modify your current boot loader, e.g. Grub-Legacy, GRUB2, or
+    <warning><para>Если вы настроите GRUB не правильно, то возможно, не получится штатно загрузиться в систему, без использования иного загрузочного устройства (например компакт-диска). Для загрузки системы LFS, данная глава не обязательна. Вы можете просто модифицировать ваш текущий системный загрузчик, например Grub-Legacy, GRUB2, или
     LILO.</para></warning>
 
 
-    <para> Ensure that an emergency boot disk is ready to <quote>rescue</quote>
-    the computer if the computer becomes unusable (un-bootable).  If you do not
-    already have a boot device, you can create one.  In order for the procedure
-    below to work, you need to jump ahead to BLFS and install
-    <userinput>xorriso</userinput> from the <ulink
+    <para>Убедитесь, что аварийный загрузочный диск готов «спасти» ваш компьютер, если он перестанет правильно загружаться. Если у вас еще нет загрузочного устройства, вы можете его создать. Чтобы нижеследующая процедура работала, вам нужно перейти в BLFS и установить программу <userinput>xorriso</userinput> из пакета  <ulink
     url="&blfs-book;multimedia/libisoburn.html">
-    libisoburn</ulink> package.</para>
+    libisoburn</ulink>.</para>.
+
 
 <screen role="nodump"><userinput>cd /tmp
 grub-mkrescue --output=grub-img.iso
 xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></screen>
 
     <note>
-      <para>
-        To boot LFS on host systems that have UEFI enabled, the kernel needs to
-        have been built with the CONFIG_EFI_STUB capabality described in the
-        previous section.  However, LFS can be booted using GRUB2 without such
-        an addition. To do this, the UEFI Mode and Secure Boot capabilities in
-        the host system's BIOS need to be turned off.  For details, see <ulink
+      <para>Чтобы загрузить LFS в хост-системах с UEFI, ядро должно быть собрано с указанием соответствующего ключа конфигурации CONFIG_EFI_STUB. О сборке ядра, наиболее подробно, обсуждается в предыдущем разделе. Однако LFS можно загружать с помощью GRUB2 без такого дополнения. Для этого необходимо отключить функции UEFI Mode и Secure Boot в BIOS хост-системе. Для получения дополнительной информации см. <ulink
         url="http://www.linuxfromscratch.org/hints/downloads/files/lfs-uefi.txt">
-        the lfs-uefi.txt hint</ulink> at
-        http://www.linuxfromscratch.org/hints/downloads/files/lfs-uefi.txt.
-      </para>
+        the lfs-uefi.txt подсказку</ulink>.</para>
     </note>
 
   </sect2>
 
   <sect2>
-    <title>GRUB Naming Conventions</title>
+    <title>Соглашения о именовании в GRUB</title>
+    <para>GRUB использует собственную структуру именования для дисков и разделов в виде (hdn, m), где n - номер диска, а m - номер раздела. Номер диска начинается с нуля, но номер раздела начинается с одного, для обычных разделов и пяти для расширенных разделов. Обратите внимание, что именование отличается от предыдущих версий, когда оба номера начинались с нуля. Например, раздел sda1 равен (hd0,1) в GRUB, а sdb3 - (hd1,3). В отличие от Linux, GRUB не считает диски CD-ROM жесткими дисками. Например, если вы используете CD на hdb и второй жесткий диск на hdc, этот второй жесткий диск будет (hd1).
 
-    <para>GRUB uses its own naming structure for drives and partitions in
+	 GRUB uses its own naming structure for drives and partitions in
     the form of <emphasis>(hdn,m)</emphasis>, where <emphasis>n</emphasis>
     is the hard drive number and <emphasis>m</emphasis> is the partition
     number. The hard drive number starts from zero, but the partition number
