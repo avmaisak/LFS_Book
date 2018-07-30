@@ -19,7 +19,7 @@
   <sect2>
     <title>Введение</title>
 
-    <warning><para>Если вы настроите GRUB не правильно, то возможно, не получится штатно загрузиться в систему, без использования иного загрузочного устройства (например компакт-диска). Для загрузки системы LFS, данная глава не обязательна. Вы можете просто модифицировать ваш текущий системный загрузчик, например Grub-Legacy, GRUB2, или
+    <warning><para>Если вы настроите GRUB не правильно, то возможно, не получится штатно загрузиться в систему, без использования другого загрузочного устройства (например компакт-диска). Для загрузки системы LFS, эта глава не обязательна. Вы можете просто модифицировать ваш текущий системный загрузчик, например Grub-Legacy, GRUB2, или
     LILO.</para></warning>
 
 
@@ -42,61 +42,32 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
 
   <sect2>
     <title>Соглашения о именовании в GRUB</title>
-    <para>GRUB использует собственную структуру именования для дисков и разделов в виде (hdn, m), где n - номер диска, а m - номер раздела. Номер диска начинается с нуля, но номер раздела начинается с одного, для обычных разделов и пяти для расширенных разделов. Обратите внимание, что именование отличается от предыдущих версий, когда оба номера начинались с нуля. Например, раздел sda1 равен (hd0,1) в GRUB, а sdb3 - (hd1,3). В отличие от Linux, GRUB не считает диски CD-ROM жесткими дисками. Например, если вы используете CD на hdb и второй жесткий диск на hdc, этот второй жесткий диск будет (hd1).
-
-	 GRUB uses its own naming structure for drives and partitions in
-    the form of <emphasis>(hdn,m)</emphasis>, where <emphasis>n</emphasis>
-    is the hard drive number and <emphasis>m</emphasis> is the partition
-    number. The hard drive number starts from zero, but the partition number
-    starts from one for normal partitions and five for extended partitions.
-    Note that this is different from earlier versions where
-    both numbers started from zero. For example, partition <filename
-    class="partition">sda1</filename> is <emphasis>(hd0,1)</emphasis> to
-    GRUB and <filename class="partition">sdb3</filename> is
-    <emphasis>(hd1,3)</emphasis>. In contrast to Linux, GRUB does not
-    consider CD-ROM drives to be hard drives. For example, if using a CD
-    on <filename class="partition">hdb</filename> and a second hard drive
-    on <filename class="partition">hdc</filename>, that second hard drive
-    would still be <emphasis>(hd1)</emphasis>.</para>
+    <para>GRUB использует собственную структуру именования дисков и разделов в виде <emphasis>(hdn,m)</emphasis>, где <emphasis>n</emphasis> - номер диска, а <emphasis>m</emphasis> - номер раздела. Номер диска начинается с нуля, а номер раздела начинается с единицы, для обычных разделов и с пяти для расширенных разделов. Обратите внимание, что именование отличается от предыдущих версий, когда оба номера начинались с нуля. Например, раздел sda1 равен <emphasis>(hd0,1)</emphasis> в GRUB, а <filename class="partition">sdb3</filename> - <emphasis>(hd1,3)</emphasis>. В отличие от Linux, GRUB не считает диски CD-ROM жесткими дисками. Например, если вы используете CD на <filename class="partition">hdb</filename> и второй жесткий диск на <filename class="partition">hdс</filename>, этот второй жесткий диск будет <emphasis>(hd1)</emphasis>.</para>
 
   </sect2>
 
   <sect2>
-    <title>Setting Up the Configuration</title>
+    <title>Настройка </title>
 
-    <para>GRUB works by writing data to the first physical track of the
-    hard disk.  This area is not part of any file system.  The programs
-    there access GRUB modules in the boot partition.  The default location
-    is /boot/grub/.</para>
+    <para>GRUB записывает данные на первый физический сектор
+     жесткого диска. Эта область не является частью какой-либо файловой системы. Программы
+     доступны как модули GRUB в загрузочном разделе в каталоге по умолчанию -/boot/grub/.</para>
 
-    <para>The location of the boot partition is a choice of the user that
-    affects the configuration.  One recommendation is to have a separate small
-    (suggested size is 100 MB) partition just for boot information.  That way
-    each build, whether LFS or some commercial distro, can access the same boot
-    files and access can be made from any booted system.  If you choose to do
-    this, you will need to mount the separate partition, move all files in the
-    current <filename class="directory">/boot</filename> directory (e.g. the
-    linux kernel you just built in the previous section) to the new partition.
-    You will then need to unmount the partition and remount it as <filename
-    class="directory">/boot</filename>.  If you do this, be sure to update
-    <filename>/etc/fstab</filename>.</para>
+    <para>Расположение загрузочного раздела - это ваш выбор, его можно настроить. Одна рекомендация состоит в том, чтобы иметь отдельный небольшой (рекомендуемый размер - 100 МБ) раздел только для загрузочной информации. Таким образом, каждая сборка, будь то LFS или какой-либо другой дистрибутив, может обращаться к тем же загрузочным файлам, и доступ может быть сделан из любой загруженной системы. Если вы решите это сделать, вам нужно будет примонтировать отдельный раздел, переместить все файлы из текущего каталога <filename class="directory">/boot</filename> (например, ядро Linux, которое вы только что создали в предыдущем разделе), в новый раздел. Затем вам нужно размонтировать раздел и примонтировать заново в каталог <filename
+    class="directory">/boot</filename>. Если вы это сделаете, обязательно обновите данные в файле <filename>/etc/fstab</filename>.</para>
 
-    <para>Using the current lfs partition will also work, but configuration
-    for multiple systems is more difficult.</para>
+    <para>Использование текущего раздела lfs будет работать, но настройка для нескольких систем сложнее.</para>
 
-    <para>Using the above information, determine the appropriate
-    designator for the root partition (or boot partition, if a separate
-    one is used). For the following example, it is assumed that the root
-    (or separate boot) partition is <filename
+    <para>Используя приведенную выше информацию, определите соответствующие точки монтирования для корневого раздела (или загрузочного раздела, если используется отдельный). В следующем примере предполагается, что корневой (или отдельный загрузочный) раздел является <filename
     class="partition">sda2</filename>.</para>
 
-    <para>Установите the GRUB files into <filename
-    class="directory">/boot/grub</filename> and set up the boot track:</para>
+    <para>Установите файлы GRUB в каталог<filename
+    class="directory">/boot/grub</filename> и настройте загрузочный сектор:</para>
 
     <warning>
-      <para>The following command will overwrite the current boot loader. Do not
-      run the command if this is not desired, for example, if using a third party
-      boot manager to manage the Master Boot Record (MBR).</para>
+      <para>Следующая команда перезапишет текущий загрузчик. Не
+       выполняйте эту команду, если это нежелательно, например, если вы используете сторонний 
+       менеджер загрузки для управления главной загрузочной записью (MBR).</para>
     </warning>
 
 <screen role="nodump"><userinput>grub-install /dev/sda</userinput></screen>
@@ -117,7 +88,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   <sect2 id="grub-cfg">
     <title>Создание файла конфигурации GRUB </title>
 
-    <para>Generate <filename>/boot/grub/grub.cfg</filename>:</para>
+    <para>Создайте файл конфигурации <filename>/boot/grub/grub.cfg</filename>:</para>
 
     <screen revision="sysv"><userinput>cat &gt; /boot/grub/grub.cfg &lt;&lt; "EOF"
 <literal># Begin /boot/grub/grub.cfg
@@ -146,25 +117,15 @@ menuentry "GNU/Linux, Linux &linux-version;-lfs-&versiond;" {
 EOF</userinput></screen>
 
 
-    <note><para>From <application>GRUB</application>'s perspective, the
-    kernel files are relative to the partition used.  If you
-    used a separate /boot partition, remove /boot from the above
-    <emphasis>linux</emphasis> line.  You will also need to change the
-    <emphasis>set root</emphasis> line to point to the boot partition.
-    </para></note>
+    <note><para>С точки зрения <application>GRUB</application>, файлы ядра относительны от используемого раздела. Если вы используете отдельныф /boot раздел, удалите /boot из строки linux. Вам также потребуется изменить строку <emphasis>set root</emphasis>, чтобы указать на загрузочный раздел.</para></note>
 
-    <para>GRUB is an extremely powerful program and it provides a tremendous
-    number of options for booting from a wide variety of devices, operating
-    systems, and partition types.  There are also many options for customization
-    such as graphical splash screens, playing sounds, mouse input, etc.  The
-    details of these options are beyond the scope of this introduction.</para>
+    <para>GRUB - чрезвычайно мощная программа, и она обеспечивает огромное 
+     количество вариантов загрузки с самых разных устройств, работающих
+     систем и типов разделов. Существует также множество вариантов настройки
+     таких как графические экраны заставок, звуки воспроизведения, ввод мыши и т. д.
+     детали этих вариантов выходят за рамки этого раздела.</para>
 
-    <caution><para>There is a command, <application>grub-mkconfig</application>, that
-    can write a configuration file automatically.  It uses a set of scripts in
-    /etc/grub.d/ and will destroy any customizations that you make.  These scripts
-    are designed primarily for non-source distributions and are not recommended for
-    LFS.  If you install a commercial Linux distribution, there is a good chance
-    that this program will be run.  Be sure to back up your grub.cfg file.</para></caution>
+    <caution><para>Существует команда <application>grub-mkconfig</application>, которая может автоматически записывать файл конфигурации. Она использует набор скриптов в файле /etc/grub.d/ и уничтожит любые сделанные вами настройки. Эти сценарии предназначены в первую очередь для обычных дистрибутивов и не рекомендуются для LFS. Если вы устанавливаете коммерческий дистрибутив Linux, есть вероятность, что эта программа будет запущена. Обязательно создайте резервную копию файла grub.cfg.</para></caution>
 
    </sect2>
 
