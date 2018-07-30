@@ -9,7 +9,7 @@
 <sect1 id="ch-scripts-usage" revision="sysv">
   <?dbhtml filename="usage.html"?>
 
-  <title>System V Bootscript Использование и конфигурация</title>
+  <title>Настройка и использование System V Bootscript</title>
 
   <indexterm zone="ch-scripts-usage">
     <primary sortas="a-Bootscripts">Bootscripts</primary>
