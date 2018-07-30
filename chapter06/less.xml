@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Программа Less используемая для просмотра (но не изменения) содержимого текстовых файлов на экране.
-	 Она также используется пакетом Man-DB для просмотра страниц руководств.	 </para>
+    <para>Программа Less используется для просмотра (но не изменения) содержимого текстовых файлов на экране.Она также используется пакетом Man-DB для просмотра страниц руководств. </para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -90,8 +89,8 @@
       <varlistentry id="less">
         <term><command>less</command></term>
         <listitem>
-          <para>A file viewer or pager; it displays the contents of the given
-          file, letting the user scroll, find strings, and jump to marks</para>
+          <para>Просмотрщик файлов; он отображает содержимое указанного
+           файла, позволяя пользователю выполнять навигацию по файлу, находить строки и переходить к заметкам</para>
           <indexterm zone="ch-system-less less">
             <primary sortas="b-less">less</primary>
           </indexterm>
@@ -101,8 +100,7 @@
       <varlistentry id="lessecho">
         <term><command>lessecho</command></term>
         <listitem>
-          <para>Needed to expand meta-characters, such as <emphasis>*</emphasis>
-          and <emphasis>?</emphasis>, in filenames on Unix systems</para>
+          <para>Необходим для расширения мета-символов, таких как <emphasis>*</emphasis> и <emphasis>?</emphasis> в наименованиях файлов систем Unix</para>
           <indexterm zone="ch-system-less lessecho">
             <primary sortas="b-lessecho">lessecho</primary>
           </indexterm>
@@ -112,7 +110,7 @@
       <varlistentry id="lesskey">
         <term><command>lesskey</command></term>
         <listitem>
-          <para>Used to specify the key bindings for <command>less</command></para>
+          <para>Используется для указания привязок клавиш для<command>less</command></para>
           <indexterm zone="ch-system-less lesskey">
             <primary sortas="b-lesskey">lesskey</primary>
           </indexterm>

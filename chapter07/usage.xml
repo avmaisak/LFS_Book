@@ -86,95 +86,67 @@ EOF</userinput></screen>
   <sect3 id="init-levels" >
   <title>Изменение уровней выполнения (Run Levels)</title>
 
-  <para>Изменить уровень выполнения
-  Changing run-levels is done with <command>init
-  <replaceable>&lt;runlevel&gt;</replaceable></command>, where
-  <replaceable>&lt;runlevel&gt;</replaceable> is the target run-level. For example, to
-  reboot the computer, a user could issue the <command>init 6</command> command,
-  which is an alias for the <command>reboot</command> command. Likewise,
-  <command>init 0</command> is an alias for the <command>halt</command>
-  command.</para>
+  <para>Изменить уровень выполнения можно с помощью команды <command>init
+  <replaceable>&lt;runlevel&gt;</replaceable></command>, где <replaceable>&lt;runlevel&gt;</replaceable> - будет целевым уровнем выполнения. Например, чтобы перезагрузить компьютер, пользователь должен выполнить команду  <command>init 6</command>, которая является псевдонимом команды <command>reboot</command>. Аналогично, init 0 является псевдонимом команды <command>halt</command>.</para>
 
-  <para>There are a number of directories under <filename
-  class="directory">/etc/rc.d</filename> that look like <filename
-  class="directory">rc?.d</filename> (where ? is the number of the run-level) and
-  <filename class="directory">rcsysinit.d</filename>, all containing a number of
-  symbolic links. Some begin with a <emphasis>K</emphasis>, the others begin with
-  an <emphasis>S</emphasis>, and all of them have two numbers following the
-  initial letter. The K means to stop (kill) a service and the S means to start a
-  service. The numbers determine the order in which the scripts are run, from 00
-  to 99&mdash;the lower the number the earlier it gets executed. When
-  <command>init</command> switches to another run-level, the appropriate services
-  are either started or stopped, depending on the runlevel chosen.</para>
+  <para>В каталоге <filename
+  class="directory">/etc/rc.d</filename> есть ещё несколько каталогов, которые выглядят как <filename
+  class="directory">rc?.d</filename> (где ? номер уровня выполнения) и каталог <filename class="directory">rcsysinit.d</filename>, содержащий некоторый набор символических ссылок. Некоторые начинаются с K, другие начинаются с S, и все они имеют два числа после начальной буквы. K означает остановить (kill) службу, а S означает запустить службу. Числа определяют порядок выполнения сценариев от 00 до 99 - чем меньше число, тем раньше он запустится.  Когда <command>init</command> переключается на другой уровень выполнения, соответствующие службы запускаются или останавливаются в зависимости от выбранного уровня запуска.</para>
 
-  <para>The real scripts are in <filename
-  class="directory">/etc/rc.d/init.d</filename>. They do the actual work, and
-  the symlinks all point to them. K links and S links point to
-  the same script in <filename class="directory">/etc/rc.d/init.d</filename>.
-  This is because the scripts can be called with different parameters like
-  <parameter>start</parameter>, <parameter>stop</parameter>,
-  <parameter>restart</parameter>, <parameter>reload</parameter>, and
-  <parameter>status</parameter>. When a K link is encountered, the appropriate
-  script is run with the <parameter>stop</parameter> argument. When an S link
-  is encountered, the appropriate script is run with the
-  <parameter>start</parameter> argument.</para>
+  <para>Реальные сценарии находятся в каталоге <filename
+  class="directory">/etc/rc.d/init.d</filename>. Они выполняют фактическую работу, и символические ссылки указывают на них. Ссылки  К и ссылки S указывают на тот же сценарий в <filename
+  class="directory">/etc/rc.d/init.d</filename>. Это связано с тем, что сценарии можно вызывать с различными параметрами, такими как <parameter>start</parameter>, <parameter>stop</parameter>,
+  <parameter>restart</parameter>, <parameter>reload</parameter>, и
+  <parameter>status</parameter>. Когда встречается ссылка K, соответствующий скрипт запускается с аргументом <parameter>stop</parameter>. Когда встречается S-ссылка, соответствующий скрипт запускается с аргументом <parameter>start</parameter>.</para>
 
-  <para>There is one exception to this explanation. Links that start
-  with an <emphasis>S</emphasis> in the <filename
-  class="directory">rc0.d</filename> and <filename
-  class="directory">rc6.d</filename> directories will not cause anything
-  to be started. They will be called with the parameter
-  <parameter>stop</parameter> to stop something. The logic behind this
-  is that when a user is going to reboot or halt the system, nothing
-  needs to be started.  The system only needs to be stopped.</para>
+  <para>Есть одно исключение. Ссылки, которые начинаются с <emphasis>S</emphasis> в каталогах <filename
+  class="directory">rc0.d</filename> и <filename
+  class="directory">rc6.d</filename>, не будут запускать что-либо. Они будут вызываться с параметром <parameter>stop</parameter>, для того, чтобы остановить какую либо службу. Логика этого заключается в том, что когда пользователь собирается перезагрузить или остановить систему, при этом, ему ничего не нужно запускать. Систему нужно только остановить.</para>
 
-  <para>These are descriptions of what the arguments make the scripts
-  do:</para>
+  <para>Ниже приведены описания к аргументам для сценариев и их значения:</para>
 
   <variablelist>
 
     <varlistentry>
       <term><parameter>start</parameter></term>
       <listitem>
-        <para>The service is started.</para>
+        <para>Служба запущена</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter>stop</parameter></term>
       <listitem>
-        <para>The service is stopped.</para>
+        <para>Служба остановлена</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter>restart</parameter></term>
       <listitem>
-        <para>The service is stopped and then started again.</para>
+        <para>Остановка службы и затем повторный её запуск</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter>reload</parameter></term>
       <listitem>
-        <para>The configuration of the service is updated.
-        This is used after the configuration file of a service was modified, when
-        the service does not need to be restarted.</para>
+        <para>Конфигурация службы была обновлена. Используется  после того, как файлы конфигурации были обновлены, когда службу не нужно перезапускать.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><parameter>status</parameter></term>
       <listitem>
-        <para>Tells if the service is running and with which PIDs.</para>
+        <para>Сообщает, работает ли служба и какие ей назначены PID</para>
       </listitem>
     </varlistentry>
 
   </variablelist>
 
-  <para>Feel free to modify the way the boot process works (after all,
-  it is your own LFS system). The files given here are an example of how
-  it can be done.</para>
+  <para>Не стесняйтесь изменять способ загрузки процесса (в конце концов,
+   это ваша собственная система LFS). Приведенные здесь файлы являются примером того, как
+   это можно сделать.</para>
 
   </sect3>
   </sect2>

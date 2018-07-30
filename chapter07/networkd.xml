@@ -8,78 +8,63 @@
 <sect1 id="ch-scripts-network" revision="systemd">
   <?dbhtml filename="network.html"?>
 
-  <title>General Network Configuration</title>
+  <title>Конфигурация Сети</title>
 
   <indexterm zone="ch-scripts-network">
     <primary sortas="d-network">network</primary>
   <secondary>configuring</secondary></indexterm>
 
-  <para>This section only applies if a network card is to be
-  configured.</para>
+  <para>Изучите этот раздел если необходимо настроить сетевую карту.</para>
 
   <sect2>
-    <title>Network Interface Configuration Files</title>
+    <title>Файлы конфигурации сетевого интерфейса</title>
 
-    <para>Starting with version 209, systemd ships a network configuration
-    daemon called <command>systemd-networkd</command> which can be used for
-    basic network configuration. Additionally, since version 213, DNS name
-    resolution can be handled by <command>systemd-resolved</command> in place
-    of a static <filename>/etc/resolv.conf</filename> file. Both services are
-    enabled by default.</para>
+    <para>Начиная с версии systemd 209, в комплекте есть служба конфигурирования сети - <command>systemd-networkd</command>. Она может быть использована для базовой настройки сети. В версии 213 разрешение имен DNS может выполняться при помощи службы  <command>systemd-resolved</command> вместо использования статического файла <filename>/etc/resolv.conf</filename>. Обе службы по умолчанию включены.</para>
 
-    <para>Configuration files for <command>systemd-networkd</command> (and
-    <command>systemd-resolved</command>) can be placed in
+    <para>Файлы конфигурации для  <command>systemd-networkd</command> (и
+    <command>systemd-resolved</command>) могут располагаться в каталоге
     <filename class="directory">/usr/lib/systemd/network</filename>
-    or <filename class="directory">/etc/systemd/network</filename>. Files in
-    <filename class="directory">/etc/systemd/network</filename> have a
-    higher priority than the ones in
-    <filename class="directory">/usr/lib/systemd/network</filename>.
-    There are three types of configuration files:
+    или <filename class="directory">/etc/systemd/network</filename>. Файлам в каталоге
+    <filename class="directory">/etc/systemd/network</filename> будет отдаваться больший приоритет чем файлу в каталоге <filename class="directory">/usr/lib/systemd/network</filename>.
+	 Существует три типа файлов конфигурации:
+
     <filename class="extension">.link</filename>,
-    <filename class="extension">.netdev</filename> and
-    <filename class="extension">.network</filename> files. For detailed
-    descriptions and example contents of these configuration files, consult
-    the <filename>systemd-link(5)</filename>,
-    <filename>systemd-netdev(5)</filename> and
-    <filename>systemd-network(5)</filename> manual pages.</para>
+    <filename class="extension">.netdev</filename> и
+    <filename class="extension">.network</filename>. Подробные
+    описания и примеры содержимого файлов конфигурации, содержатся в файле руководств
+    <filename>systemd-link(5)</filename>,
+    <filename>systemd-netdev(5)</filename> и
+    <filename>systemd-network(5)</filename>.</para>
 
     <sect3 id="systemd-network-devices">
-      <title>Network Device Naming</title>
+      <title>Именование Сетевых Устройств</title>
 
       <para>
-        Udev normally assigns network card interface names based
-        on system physical characteristics such as enp2s1. If you are
-        not sure what your interface name is, you can always run
-        <command>ip link</command> after you have booted your system.
+		Udev обычно назначает имена интерфейсов сетевой карты на основе
+         физических характеристик системы, например enp2s1. Если вы
+         не знаете, имени сетевого интерфейса, вы всегда можете запустить команду
+         <command> ip link</command> после загрузки системы.</para>
+
+      <para>Для большинства систем существует только один сетевой интерфейс для
+         каждого типа соединения. Например, наименование классического интерфейса
+        для проводного соединения - eth0. Беспроводное соединение
+         обычно именнуются как wifi0 или wlan0.
       </para>
 
-      <para>
-        For most systems, there is only one network interface for
-        each type of connection.  For example, the classic interface
-        name for a wired connection is eth0.  A wireless connection
-        will usually have the name wifi0 or wlan0.
-      </para>
-
-      <para>
-        If you prefer to use the classic or customized network interface names,
-        there are three alternative ways to do that:</para>
+      <para>Если вы предпочитаете использовать классические или настраиваемые имена сетевого интерфейса,
+         есть три способа как это сделать:</para>
 
       <itemizedlist>
         <listitem>
           <para>
-            Mask udev's .link file for the default policy:
-<screen role="nodump"><userinput>ln -s /dev/null /etc/systemd/network/99-default.link</userinput></screen>
+			 	Замаскируйте файл .link для использования политики по умолчанию:
+				<screen role="nodump"><userinput>ln -s /dev/null /etc/systemd/network/99-default.link</userinput></screen>
           </para>
         </listitem>
 
         <listitem>
           <para>
-             Create a manual naming scheme, for example by naming the
-             interfaces something like "internet0", "dmz0", or "lan0".
-             For that, create .link
-             files in /etc/systemd/network/, that choose an explicit name or a
-             better naming scheme for one, some, or all of your interfaces.
-             For example:
+			 	 Создайте собственную схему именования, например, вы можете именовать интерфейсы "internet0", "dmz0", и "lan0". Для этого, создайте файл .link  в каталоге /etc/systemd/network/, в дальнейшем будет выбрана наиболее подходящая схема именования сетевых устройств для одного, или нескольких интерфейсов. Нарпимер:
           </para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-ether0.link &lt;&lt; "EOF"
@@ -92,23 +77,25 @@ Name=ether0</literal>
 EOF</userinput></screen>
 
           <para>
-             See the man page systemd.link(5) for more information.
+            Дополнительную информацию можно найти на страницах руководств systemd.link(5).
           </para>
         </listitem>
 
         <listitem>
           <para>
-            In /boot/grub/grub.cfg, pass the option net.ifnames=0 on the
-            kernel command line.
+            В файле /boot/grub/grub.cfg, укажите аргумент net.ifnames=0 в строке ядра.
           </para>
         </listitem>
       </itemizedlist>
     </sect3>
 
     <sect3 id="systemd-networkd-static">
-      <title>Static IP Configuration</title>
+      <title>Настройка статического IP</title>
 
-      <para>The command below creates a basic configuration file for a
+      <para>Команда ниже создает файл базовой конфигурации для
+            Настройка статического IP (используя обе системы-сети и
+      добавлена решен)
+		The command below creates a basic configuration file for a
       Static IP setup (using both systemd-networkd and
       systemd-resolved):</para>
 

@@ -23,8 +23,7 @@
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит программы для сжатия и распаковки файлов. Он необходим, чтобы
-        выполнять распаковку многих пакетов LFS.</para>
+    <para>Пакет содержит программы для сжатия и распаковки файлов. Он необходим, чтобы выполнять распаковку большинства пакетов LFS.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -39,29 +38,18 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Gzip</title>
-
-    <para>Подготовьте пакет Gzip к компиляции:</para>
-
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
-
-    <para>Скомпилируйте пакет:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Для выполнения тестов, выполните команду:</para>
-
-<screen><userinput remap="test">make check</userinput></screen>
-
-    <para>Как известно, два теста не пройдут в среде LFS: help-version и zmore.</para>
-
-    <para>Установите пакет:</para>
-
-<screen><userinput remap="install">make install</userinput></screen>
-
-    <para>Переместите программу, которая должна находиться в корневой файловой системе:</para>
-
-<screen><userinput remap="install">mv -v /usr/bin/gzip /bin</userinput></screen>
+   <title>Установка пакета Gzip</title>
+   <para>Подготовьте пакет Gzip к компиляции:</para>
+	<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+   <para>Скомпилируйте пакет:</para>
+	<screen><userinput remap="make">make</userinput></screen>
+   <para>Для выполнения тестов, выполните команду:</para>
+	<screen><userinput remap="test">make check</userinput></screen>
+   <para>Как известно, два теста не пройдут в среде LFS: help-version и zmore.</para>
+   <para>Установите пакет:</para>
+	<screen><userinput remap="install">make install</userinput></screen>
+   <para>Переместите программу, которая должна находиться в корневой файловой системе:</para>
+	<screen><userinput remap="install">mv -v /usr/bin/gzip /bin</userinput></screen>
 
   </sect2>
 
@@ -85,7 +73,7 @@
       <varlistentry id="gunzip">
         <term><command>gunzip</command></term>
         <listitem>
-          <para>Decompresses gzipped files</para>
+          <para>Распаковывает сжатые файлы</para>
           <indexterm zone="ch-system-gzip gunzip">
             <primary sortas="b-gunzip">gunzip</primary>
           </indexterm>
@@ -95,7 +83,7 @@
       <varlistentry id="gzexe">
         <term><command>gzexe</command></term>
         <listitem>
-          <para>Creates self-decompressing executable files</para>
+          <para>Создает самораспаковывающиеся исполняемые файлы</para>
           <indexterm zone="ch-system-gzip gzexe">
             <primary sortas="b-gzexe">gzexe</primary>
           </indexterm>
@@ -105,7 +93,7 @@
       <varlistentry id="gzip">
         <term><command>gzip</command></term>
         <listitem>
-          <para>Compresses the given files using Lempel-Ziv (LZ77) coding</para>
+          <para>Сжимает данные файлы с помощью алгоритма Lempel-Ziv (LZ77) </para>
           <indexterm zone="ch-system-gzip gzip">
             <primary sortas="b-gzip">gzip</primary>
           </indexterm>
@@ -115,7 +103,7 @@
       <varlistentry id="uncompress">
         <term><command>uncompress</command></term>
         <listitem>
-          <para>Decompresses compressed files</para>
+          <para>Распаковывает сжатые файлы</para>
           <indexterm zone="ch-system-gzip uncompress">
             <primary sortas="b-uncompress">uncompress</primary>
           </indexterm>
@@ -125,7 +113,7 @@
       <varlistentry id="zcat">
         <term><command>zcat</command></term>
         <listitem>
-          <para>Decompresses the given gzipped files to standard output</para>
+          <para>Распаковывает GZIP-файлы в стандартный вывод</para>
           <indexterm zone="ch-system-gzip zcat">
             <primary sortas="b-zcat">zcat</primary>
           </indexterm>
@@ -135,7 +123,7 @@
       <varlistentry id="zcmp">
         <term><command>zcmp</command></term>
         <listitem>
-          <para>Запускает программу <command>cmp</command> on gzipped files</para>
+          <para>Запускает программу <command>cmp</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zcmp">
             <primary sortas="b-zcmp">zcmp</primary>
           </indexterm>
@@ -145,7 +133,7 @@
       <varlistentry id="zdiff">
         <term><command>zdiff</command></term>
         <listitem>
-          <para>Запускает программу <command>diff</command> on gzipped files</para>
+          <para>Запускает программу <command>diff</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zdiff">
             <primary sortas="b-zdiff">zdiff</primary>
           </indexterm>
@@ -155,7 +143,7 @@
       <varlistentry id="zegrep">
         <term><command>zegrep</command></term>
         <listitem>
-          <para>Запускает программу <command>egrep</command> on gzipped files</para>
+          <para>Запускает программу <command>egrep</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zegrep">
             <primary sortas="b-zegrep">zegrep</primary>
           </indexterm>
@@ -165,7 +153,7 @@
       <varlistentry id="zfgrep">
         <term><command>zfgrep</command></term>
         <listitem>
-          <para>Запускает программу <command>fgrep</command> on gzipped files</para>
+          <para>Запускает программу <command>fgrep</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zfgrep">
             <primary sortas="b-zfgrep">zfgrep</primary>
           </indexterm>
@@ -175,10 +163,7 @@
       <varlistentry id="zforce">
         <term><command>zforce</command></term>
         <listitem>
-          <para>Forces a <filename class="extension">.gz</filename> extension on
-          all given files that are gzipped files, so that <command>gzip</command>
-          will not compress them again; this can be useful when file names were
-          truncated during a file transfer</para>
+          <para>присваивает расширение .gz всем архивам gzip, чтобы gzip не сжимал их дважды. Это может быть полезно для файлов, чьи имена были усечены при перемещении файлов. Для файловых систем с максимальной длиной имени файла в 14 символов исходное имя укорачивается, чтобы вместить суффикс .gz. Например, файл 12345678901234 переименовывается в 12345678901.gz. Файлы с именами, подобными файл.tgz, не затрагиваются.</para>
           <indexterm zone="ch-system-gzip zforce">
             <primary sortas="b-zforce">zforce</primary>
           </indexterm>
@@ -188,7 +173,7 @@
       <varlistentry id="zgrep">
         <term><command>zgrep</command></term>
         <listitem>
-          <para>Запускает программу <command>grep</command> on gzipped files</para>
+          <para>Запускает программу <command>grep</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zgrep">
             <primary sortas="b-zgrep">zgrep</primary>
           </indexterm>
@@ -198,7 +183,7 @@
       <varlistentry id="zless">
         <term><command>zless</command></term>
         <listitem>
-          <para>Запускает программу <command>less</command> on gzipped files</para>
+          <para>Запускает программу <command>less</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zless">
             <primary sortas="b-zless">zless</primary>
           </indexterm>
@@ -208,7 +193,7 @@
       <varlistentry id="zmore">
         <term><command>zmore</command></term>
         <listitem>
-          <para>Запускает программу <command>more</command> on gzipped files</para>
+          <para>Запускает программу <command>more</command> для сжатых файлов</para>
           <indexterm zone="ch-system-gzip zmore">
             <primary sortas="b-zmore">zmore</primary>
           </indexterm>
@@ -218,10 +203,7 @@
       <varlistentry id="znew">
         <term><command>znew</command></term>
         <listitem>
-          <para>Re-compresses files from <command>compress</command> format to
-          <command>gzip</command> format&mdash;<filename
-          class="extension">.Z</filename> to <filename
-          class="extension">.gz</filename></para>
+          <para>перепаковывает файлы из формата .Z (compress) в формат .gz (gzip). Если вы хотите перепаковать файл, уже находящийся в формате gzip, присвойте ему расширение .Z и выполните znew.</para>
           <indexterm zone="ch-system-gzip znew">
             <primary sortas="b-znew">znew</primary>
           </indexterm>
