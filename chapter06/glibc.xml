@@ -140,6 +140,11 @@ unset GCC_INCDIR</userinput></screen>
 		  завершается с ошибкой в среде chroot LFS.</para>
       </listitem>
 
+       <listitem>
+        <para><emphasis>inet/tst-idna_name_classify</emphasis> 
+        завершается с ошибкой в среде chroot LFS.</para>
+      </listitem>
+
       <listitem>
         <para><emphasis>posix/tst-getaddrinfo4</emphasis> and
         <emphasis>posix/tst-getaddrinfo5</emphasis>

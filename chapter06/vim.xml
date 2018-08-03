@@ -73,6 +73,8 @@
      успешный тест приведет к словам ALL DONE в файле журнала
      по окончании процесса тестирования.</para>
 
+    <para>Один тест, Test_terminal_composing_unicode, известно, что завершится с ошибкой.</para>
+
     <para>Установите пакет:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>

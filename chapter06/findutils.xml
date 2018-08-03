@@ -46,6 +46,10 @@
    <para>Уберем тест, который на некоторых машинах может привести к вечному зацикливанию:</para>
 
 <screen><userinput remap="pre">sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in</userinput></screen>
+<para>Далее, сделаем некоторые исправления, требуемые glibc-2.28:</para>
+<screen><userinput remap="pre">sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' gl/lib/*.c
+sed -i '/unistd/a #include &lt;sys/sysmacros.h&gt;' gl/lib/mountlist.c
+echo "#define _IO_IN_BACKUP 0x100" >> gl/lib/stdio-impl.h</userinput></screen>
 
     <para>Подготовьте пакет Findutils к компиляции:</para>
 
