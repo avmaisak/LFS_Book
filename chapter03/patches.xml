@@ -121,7 +121,13 @@
       </listitem>
     </varlistentry>
 -->
-
+ <varlistentry revision="systemd">
+      <term>systemd glibc patch - <token>&systemd-glibc-patch-size;</token>:</term>
+      <listitem>
+        <para>Ссылка на загрузку: <ulink url="&patches-root;&systemd-glibc-patch;"/></para>
+        <para>Контрольная сумма MD5: <literal>&systemd-glibc-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
   </variablelist>
 
   <para>Размер патчей примерно: <returnvalue/></para>
