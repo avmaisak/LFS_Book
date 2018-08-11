@@ -10,13 +10,13 @@
 
   <title>Перезагрузка системы</title>
 
-  <para>Now that all of the software has been installed, it is time to reboot
-  your computer. However, you should be aware of a few things. The system you
-  have created in this book is quite minimal, and most likely will not have
-  the functionality you would need to be able to continue forward. By installing
-  a few extra packages from the BLFS book while still in our current chroot
-  environment, you can leave yourself in a much better position to continue on
-  once you reboot into your new LFS installation. Here are some suggestions:</para>
+  <para>Теперь, когда все программное обеспечение установлено, пришло время перезагрузить
+   компьютер. Однако вы должны знать о нескольких вещах. Система, которую вы
+   создали в этой книге, весьма минималистична и, скорее всего, в ней не будет
+   функциональности, которая вам нужна. Установив
+   некотороые дополнительные пакеты из книги BLFS, пока вы ещё остаетесь в chroot
+   окружении, вы сможете расширить функциональность системы, и продолжить
+   работу после перезагрузки в новую систему LFS. Вот некоторые предложения:</para>
 
   <itemizedlist>
 
