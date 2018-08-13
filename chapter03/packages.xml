@@ -89,7 +89,7 @@
     <varlistentry>
       <term>Bzip2 (&bzip2-version;) - <token>&bzip2-size;</token>:</term>
       <listitem>
-        <para>Домашняя страница:  <ulink url="&bzip2-home;"/></para>
+        <!-- <para>Домашняя страница:  <ulink url="&bzip2-home;"/></para> -->
         <para>Ссылка на загрузку: <ulink url="&bzip2-url;"/></para>
         <para>Контрольная сумма MD5: <literal>&bzip2-md5;</literal></para>
       </listitem>

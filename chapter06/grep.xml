@@ -50,7 +50,7 @@
 
     <para>Для выполнения тестов, выполните команду:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">make -k check</userinput></screen>
 
     <para>Установите пакет:</para>
 

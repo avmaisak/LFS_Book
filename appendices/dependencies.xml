@@ -819,7 +819,7 @@
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
          Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch, Perl, Sed, Tar,
-         and Texinfo</seg>
+         и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -827,7 +827,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>DejaGNU and Expect</seg>
+          <seg>DejaGNU, Expect, и Shadow</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -857,7 +857,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Grep, Make,
-         and Sed</seg>
+         и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -893,7 +893,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
-         Sed, and Texinfo</seg>
+         Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -901,7 +901,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils, Perl, and Tcl</seg>
+          <seg>Diffutils, Perl, и Tcl</seg>
         </seglistitem>
       </segmentedlist>
 

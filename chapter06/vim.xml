@@ -65,15 +65,13 @@
 
     <para>Для выполнения тестов, выполните команду:</para>
 
-<screen><userinput remap="test">make -j1 test &amp;&gt; vim-test.log</userinput></screen>
+<screen><userinput remap="test">LANG=en_US.UTF-8 make -j1 test &amp;&gt; vim-test.log</userinput></screen>
 
     <para>Набор тестов выводит на экран множество двоичных данных. Это может
      вызвать проблемы с настройками текущего терминала. Проблема может быть
      решена путем перенаправления вывода в файл журнала, как показано выше.
      успешный тест приведет к словам ALL DONE в файле журнала
      по окончании процесса тестирования.</para>
-
-    <para>Один тест, Test_terminal_composing_unicode, известно, что завершится с ошибкой.</para>
 
     <para>Установите пакет:</para>
 

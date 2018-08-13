@@ -102,10 +102,12 @@ cd       build</userinput></screen>
     поэтому увеличьте его размер до запуска тестов:</para>
 
 <screen><userinput remap="test">ulimit -s 32768</userinput></screen>
+<para>Удалите один тест, который вызывает проблему:</para>
+<screen><userinput remap="test">rm ../gcc/testsuite/g++.dg/pr83239.C</userinput></screen>
 
-    <para>Проверьте результаты, но не останавливайтесь на ошибках:</para>
-
-<screen><userinput remap="test">make -k check</userinput></screen>
+ <para>Проверьте результаты тестирования от непривилегированного пользователя, но не останавливайтесь на ошибках:</para>
+<screen><userinput remap="test">chown -Rv nobody . 
+su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
 
     <para>Чтобы получить сводку результатов о выполнении тестов, запустите:</para>
 
