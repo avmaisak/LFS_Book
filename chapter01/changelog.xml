@@ -42,6 +42,13 @@
 <listitem>
       <para>2018-08-12</para>
       <itemizedlist>
+      <listitem revision="systemd">
+          <para>[bdubbs] - Обновлено до dbus-1.12.10. Исправления
+          <ulink url="&lfs-ticket-root;4328">#4328</ulink>.</para>
+        </listitem>
+         <listitem>
+          <para>[bdubbs] - Add a note to glibc about using libidn2.</para>
+        </listitem>
         <listitem>
           <para>[bdubbs] - Add LANG to vim test instructions.</para>
         </listitem>
@@ -64,11 +71,11 @@
           glibc-2.28.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update bzip2 url to a new location. Fixes
+          <para>[bdubbs] - Update bzip2 url to a new location. Исправления
           <ulink url="&lfs-ticket-root;4331">#4331</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Обновлено доlinux-4.17.14. Fixes
+          <para>[bdubbs] - Обновлено до linux-4.17.14. Исправления
           <ulink url="&lfs-ticket-root;4330">#4330</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -78,7 +85,7 @@
       <para>2018-08-08</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - Обновлено до версии linux-4.17.13. Fixes
+          <para>[renodr] - Обновлено до версии linux-4.17.13. Исправления
           <ulink url="&lfs-ticket-root;4327">#4327</ulink>.</para>
         </listitem>
       </itemizedlist>

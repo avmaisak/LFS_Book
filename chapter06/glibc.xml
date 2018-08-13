@@ -242,10 +242,16 @@ localedef -i zh_CN -f GB18030 zh_CN.GB18030</userinput></screen>
 
     <para>Затем, используйте команду <command>localedef</command> чтобы создать и установить те локали, которые не представленны в файле <filename>glibc-&glibc-version;/localedata/SUPPORTED</filename> если они необходимы.</para>
 
+<note><para>Glibc now uses libidn2 when resolving internationalized 
+    domain names.  This is a run time dependency.  If this capability
+    is needed, the instrucions for installing libidn2 are in the 
+    <ulink url="&blfs-book;general/libidn2.html">BLFS libidn2 page</ulink>.
+    </para></note>
+    
   </sect2>
 
   <sect2 id="conf-glibc" role="configuration">
-    <title>Конфигурирование Glibc</title>
+    <title>Настройка Glibc</title>
 
     <indexterm zone="conf-glibc">
       <primary sortas="e-/etc/nsswitch.conf">/etc/nsswitch.conf</primary>
