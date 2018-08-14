@@ -5,7 +5,7 @@
 
 <!ENTITY versiond        "8.3-rc1-systemd">
 <!ENTITY short-versiond  "systemd">
-<!ENTITY generic-versiond "systemd">
+<!ENTITY generic-versiond "8.3-systemd-rc1"> 
 
 <!ENTITY releasedate     "12 Августа, 2018">
 
