@@ -39,15 +39,24 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+
 <listitem>
-      <para>2018-08-12</para>
+      <para>2018-08-14</para>
       <itemizedlist>
-       <listitem>
+        <listitem>
+          <para>[bdubbs] - Релиз LFS-8.3-rc1.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Обновлено до linux-4.18. Fixes
           <ulink url="&lfs-ticket-root;4330">#4332</ulink>.</para>
         </listitem>
       </itemizedlist>
+    </listitem>
 
+<listitem>
+
+      <para>2018-08-12</para>
+      <itemizedlist>
       <listitem revision="systemd">
           <para>[bdubbs] - Обновлено до dbus-1.12.10. Исправления
           <ulink url="&lfs-ticket-root;4328">#4328</ulink>.</para>
