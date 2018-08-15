@@ -47,7 +47,7 @@
           <ulink url="&lfs-ticket-root;4330">#4332</ulink>.</para>
         </listitem>
       </itemizedlist>
-
+</listitem>
       <listitem revision="systemd">
           <para>[bdubbs] - Обновлено до dbus-1.12.10. Исправления
           <ulink url="&lfs-ticket-root;4328">#4328</ulink>.</para>
