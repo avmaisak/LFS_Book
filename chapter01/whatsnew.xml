@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
@@ -9,7 +9,7 @@
 <sect1 id="ch-intro-whatsnew">
   <?dbhtml filename="whatsnew.html"?>
 
-  <title>Что нового в релизе</title>
+<title>Что нового в релизе</title>
 
   <para>Ниже приведен список обновлений пакетов, сделанных с предыдущего
    выпуска книги.</para>
@@ -21,7 +21,7 @@
   -->
 
   <itemizedlist>
-    <title>Обновлено:</title>
+    <title>Обновлено до:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
     <!--<listitem>
     <para>None</para>
@@ -56,7 +56,7 @@
     <!--<listitem>
       <para>Check-&check-version;</para>
     </listitem>-->
-   <listitem>
+    <listitem>
       <para>Coreutils-&coreutils-version;</para>
    </listitem>
     <!--<listitem>
@@ -74,9 +74,9 @@
    <listitem>
       <para>E2fsprogs-&e2fsprogs-version;</para>
    </listitem>
-   <!--<listitem>
+   <listitem>
       <para>Expat-&expat-version;</para>
-   </listitem>-->
+   </listitem>
    <!-- <listitem>
       <para>Expect-&expect-version;</para>
    </listitem>-->
@@ -185,7 +185,7 @@
    <!--<listitem>
       <para>Ncurses-&ncurses-version;</para>
    </listitem>-->
-	 <listitem>
+   <listitem>
       <para>Openssl-&openssl-version;</para>
    </listitem>
    <!-- <listitem>
@@ -203,13 +203,16 @@
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
+    <listitem>
+      <para>Python-&python-version;</para>
+    </listitem>
     <!--<listitem>
       <para>Readline-&readline-version;</para>
     </listitem>-->
     <listitem>
       <para>Sed-&sed-version;</para>
     </listitem>
-   <listitem>
+    <listitem>
       <para>Shadow-&shadow-version;</para>
     </listitem>
     <!--<listitem revision="sysv">
@@ -218,7 +221,7 @@
     <listitem revision="systemd">
       <para>Systemd-&systemd-version;</para>
    </listitem>
-   <listitem revision="sysv">
+    <listitem revision="sysv">
       <para>SysVinit-&sysvinit-version;</para>
     </listitem>
     <!--<listitem>
@@ -260,13 +263,13 @@
   </itemizedlist>-->
 
   <itemizedlist>
-    <title>Добавлено:</title>
+    <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
   </itemizedlist>
 
   <itemizedlist>
-    <title>Удалено:</title>
+    <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <!--<listitem>

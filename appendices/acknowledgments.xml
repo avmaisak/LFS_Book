@@ -36,17 +36,22 @@
 
     <listitem>
       <para><ulink url="mailto:pierre@linuxfromscratch.org">Pierre Labastie</ulink>
-      &lt;pierre@linuxfromscratch.org&gt; &ndash; BLFS Editor and ALFS Lead</para>
+      &lt;pierre@linuxfromscratch.org&gt; &ndash; BLFS Editor и ALFS руководитель</para>
     </listitem>
 
     <listitem>
       <para><ulink url="mailto:dj@linuxfromscratch.org">DJ Lucas</ulink>
-      &lt;dj@linuxfromscratch.org&gt; &ndash; LFS and BLFS Editor</para>
+      &lt;dj@linuxfromscratch.org&gt; &ndash; LFS и BLFS редактор</para>
     </listitem>
 
     <listitem>
       <para><ulink url="mailto:ken@linuxfromscratch.org">Ken Moffat</ulink>
-      &lt;ken@linuxfromscratch.org&gt; &ndash; BLFS Editor</para>
+      &lt;ken@linuxfromscratch.org&gt; &ndash; BLFS редактор</para>
+    </listitem>
+
+	 <listitem>
+      <para><ulink url="mailto:renodr@linuxfromscratch.org">Douglas Reno</ulink>
+      &lt;renodr@linuxfromscratch.org&gt; &ndash; systemd редактор</para>
     </listitem>
 
     <listitem>

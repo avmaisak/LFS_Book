@@ -1,16 +1,16 @@
-<!ENTITY version         "20180813">
-<!ENTITY short-version   "8.2">  <!-- Used below in &blfs-book;
+<!ENTITY version         "8.3">
+<!ENTITY short-version   "8.3">  <!-- Used below in &blfs-book;
                                       Change to x.y for release but not -rc releases -->
-<!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
+<!ENTITY generic-version "8.3"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20180813-systemd">
+<!ENTITY versiond        "8.3-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd">
 
-<!ENTITY releasedate     "12 Августа, 2018">
+<!ENTITY releasedate     "1 Сентября, 2018">
 
 <!ENTITY copyrightdate   "1999-2018"><!-- jhalfs needs a literal dash, not &ndash; -->
-<!ENTITY milestone       "8.2">
+<!ENTITY milestone       "8.3">
 
 <!ENTITY lfs-root        "https://linuxfromscratch.org.ru/">
 <!ENTITY blfs-root       "&lfs-root;blfs/">
@@ -25,10 +25,10 @@
 <!ENTITY errata          "&lfs-root;lfs/errata/&generic-version;/">
 <!ENTITY min-kernel      "3.2">
 
-<!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-versiond;/">
-<!ENTITY downloads-rootd "&lfs-root;lfs/downloads/&generic-versiond;/">
-<!ENTITY test-resultsd   "&lfs-root;lfs/build-logs/&generic-versiond;/">
-<!ENTITY erratad         "&lfs-root;lfs/errata/&generic-versiond;/">
+<!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-version;/">
+<!ENTITY downloads-rootd "&lfs-root;lfs/downloads/&versiond;/">
+<!ENTITY test-resultsd   "&lfs-root;lfs/build-logs/&generic-version;/">
+<!ENTITY erratad         "&lfs-root;lfs/errata/&versiond;/">
 
 <!ENTITY lfs-ticket-root "http://wiki.linuxfromscratch.org/lfs/ticket/">
 

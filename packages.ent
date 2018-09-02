@@ -374,13 +374,13 @@
 <!ENTITY less-ch6-du "3.9 MB">
 <!ENTITY less-ch6-sbu "менее чем 0.1 SBU">
 
-<!ENTITY lfs-bootscripts-version "20170626">      <!-- Scripts depend on this format -->
-<!ENTITY lfs-bootscripts-size "BOOTSCRIPTS-SIZE KB">        
+<!ENTITY lfs-bootscripts-version "20180820">      <!-- Scripts depend on this format -->
+<!ENTITY lfs-bootscripts-size "32 KB">
 <!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.bz2">
-<!ENTITY lfs-bootscripts-md5 "BOOTSCRIPTS-MD5SUM">  
+<!ENTITY lfs-bootscripts-md5 "57c9501afe65b95bc4428f344ab2c85e">
 <!ENTITY lfs-bootscripts-home " ">
-<!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB"> 
-<!ENTITY lfs-bootscripts-ch7-sbu "менее чем 0.1 SBU">
+<!ENTITY lfs-bootscripts-ch7-du "244 KB">
+<!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
 
 <!ENTITY libcap-version "2.25">
 <!ENTITY libcap-size "64 KB">
@@ -416,12 +416,12 @@
 
 <!ENTITY linux-major-version "4">
 <!ENTITY linux-minor-version "18">
-<!ENTITY linux-patch-version "0">
-<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> 
-<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;"> -->
-<!ENTITY linux-size "99,397 KB">
+<!ENTITY linux-patch-version "5">
+<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> -->
+<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
+<!ENTITY linux-size "99,411 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "bee5fe53ee1c3142b8f0c12c0d3348f9">
+<!ENTITY linux-md5 "22851fe6c82db6673a844bbb7c62df67">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 4.8.3 / gcc-6.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -564,7 +564,7 @@
 <!ENTITY psmisc-ch6-du "4.3 MB">
 <!ENTITY psmisc-ch6-sbu "менее чем 0.1 SBU">
 
-<!-- If python minor version changes, updates in python and 
+<!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
 <!ENTITY python-version "3.7.0">
@@ -601,7 +601,7 @@
 <!ENTITY shadow-size "1,639 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
 <!ENTITY shadow-md5 "b491fecbf1232632c32ff8f1437fd60e">
-<!ENTITY shadow-home "https://pkg-shadow.alioth.debian.org/"> 
+<!ENTITY shadow-home "https://pkg-shadow.alioth.debian.org/">
 <!ENTITY shadow-ch6-du "46 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
