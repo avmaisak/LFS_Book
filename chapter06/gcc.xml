@@ -65,6 +65,7 @@ cd       build</userinput></screen>
              --enable-languages=c,c++ \
              --disable-multilib       \
              --disable-bootstrap      \
+				 --disable-libmpx         \
              --with-system-zlib</userinput></screen>
 
     <para>Обратите внимание, что другие языки имеют некоторые дополнительные зависимости, которые на данный момент еще не доступны. Обратитесь к документации
@@ -79,6 +80,14 @@ cd       build</userinput></screen>
         <listitem>
           <para>Установка этой переменной среды предотвращает использование жестко закодированного
            пути к каталогу /tools/bin/sed.</para>
+        </listitem>
+      </varlistentry>
+
+		<varlistentry>
+        <term><parameter>--disable-libmpx</parameter></term>
+        <listitem>
+          <para>Аргумент указывает GCC не выполнять сборку mpx (Memory Protection
+           Extensions), которая могжет вызвать проблемы на некоторых процессорах. Не войдёт в следующую версию GCC.</para>
         </listitem>
       </varlistentry>
 
@@ -106,7 +115,7 @@ cd       build</userinput></screen>
 <screen><userinput remap="test">rm ../gcc/testsuite/g++.dg/pr83239.C</userinput></screen>
 
  <para>Проверьте результаты тестирования от непривилегированного пользователя, но не останавливайтесь на ошибках:</para>
-<screen><userinput remap="test">chown -Rv nobody . 
+<screen><userinput remap="test">chown -Rv nobody .
 su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
 
     <para>Чтобы получить сводку результатов о выполнении тестов, запустите:</para>

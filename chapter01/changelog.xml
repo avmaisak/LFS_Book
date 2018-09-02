@@ -39,6 +39,16 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+
+<listitem>
+      <para>2018-08-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Запрет использования устаревшего mpx кода в gcc.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
 <listitem>
       <para>2018-08-12</para>
       <itemizedlist>
@@ -64,7 +74,7 @@
           <para>[bdubbs] - Run gcc tests in Chapter 6 as a non-privileged user.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Move shadow to before gcc so the gcc tests can 
+          <para>[bdubbs] - Move shadow to before gcc so the gcc tests can
           use su to run as a non-privileged user.</para>
         </listitem>
         <listitem>
