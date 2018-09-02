@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Start of Common Patches -->
 <!--
@@ -57,7 +57,7 @@
 <!ENTITY sysvinit-consolidated-patch-md5 "b7872b43a97a81bac4f9fc8ffaef4364">
 <!ENTITY sysvinit-consolidated-patch-size "2.5 KB">
 
-<!-- 
+<!--
 <!ENTITY systemd-security-patch "systemd-&systemd-version;-security_fix-1.patch">
 <!ENTITY systemd-security-patch-md5 "aa9d81fec9a3875a54e63af86904513a">
 <!ENTITY systemd-security-patch-size "4 KB">
