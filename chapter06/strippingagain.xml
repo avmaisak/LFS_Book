@@ -33,9 +33,8 @@ for LIB in $save_lib; do
     objcopy --add-gnu-debuglink=$LIB.dbg $LIB
 done
 
-	save_usrlib="libquadmath.so.&libquadmath-version; libstdc++.so.&libstdcpp-version;
-             libmpx.so.&libmpx-version; libmpxwrappers.so.&libmpxwrap-version; libitm.so.&libitm-version;
-             libatomic.so.&libatomic-version;" <!-- libcilkrts.so.&libcilkrts-version;-->"
+save_usrlib="libquadmath.so.&libquadmath-version; libstdc++.so.&libstdcpp-version;
+             libitm.so.&libitm-version; libatomic.so.&libatomic-version;" <!-- libcilkrts.so.&libcilkrts-version;-->
 
 cd /usr/lib
 
