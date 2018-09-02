@@ -20,7 +20,7 @@
   <para>Последний список зависимостей - это опциональные пакеты, которые могут не упоминаться в книге LFS, но все же, могут быть полезными для пользователя. Эти пакеты могут иметь дополнительные как обязательные,  так и необязательные зависимости. Такие зависимости - рекомендуется разрешать после завершения сборки всей системы LFS. В некоторых случаях, повторная установка некоторых таких пакетов рассматривается в BLFS.</para>
 
 <!-- Begin Acl dependency info -->
-  <bridgehead renderas="sect2" id="acl-dep">acl</bridgehead>
+  <bridgehead renderas="sect2" id="acl-dep">Acl</bridgehead>
 
       <segmentedlist>
         <segtitle>&dependencies;</segtitle>
@@ -56,7 +56,7 @@
       </segmentedlist>
 
 <!-- Begin Attr dependency info -->
-  <bridgehead renderas="sect2" id="attr-dep">attr</bridgehead>
+  <bridgehead renderas="sect2" id="attr-dep">Attr</bridgehead>
 
       <segmentedlist>
         <segtitle>&dependencies;</segtitle>
