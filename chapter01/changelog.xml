@@ -42,6 +42,27 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+<listitem>
+      <para>2018-09-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] -Обновлено до версии bison-3.1. Исправления
+          <ulink url="&lfs-ticket-root;4342">#4342</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] -Обновлено до версии meson-0.47.2. Исправления
+          <ulink url="&lfs-ticket-root;4341">#4341</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] -Обновлено до версии gdbm-1.18. Исправления
+          <ulink url="&lfs-ticket-root;4340">#4340</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] -Обновлено до версии e2fsprogs-1.44.4. Исправления
+          <ulink url="&lfs-ticket-root;4338">#4338</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2018-09-01</para>
