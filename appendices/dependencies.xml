@@ -1457,7 +1457,40 @@
           <seg>Linux-PAM</seg>
         </seglistitem>
       </segmentedlist>
+<!-- Begin Libelf dependency info -->
+  <bridgehead renderas="sect2" id="libelf-dep">Libelf</bridgehead>
 
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, and Make</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>No test suite available</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>Linux Kernel</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
 <!-- Begin Libffi dependency info -->
   <bridgehead renderas="sect2" id="libffi-dep">Libffi</bridgehead>
 
