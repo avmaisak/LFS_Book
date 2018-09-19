@@ -40,7 +40,7 @@
   <sect2 role="installation">
     <title>Установка пакета Libelf</title>
 
-      <para>Libelf является частью пакета elfutils-&elfutils-version;. Необходимо использовать файл elfutils-&elfutils-version;.tar.xz как архив с исходными текстами.</para>
+      <para>Libelf является частью пакета elfutils-&elfutils-version;. Необходимо использовать файл elfutils-&elfutils-version;.tar.bz2 как архив с исходными текстами.</para>
 
 		<para>Подготовьте Libelf к компиляции:</para>
 
