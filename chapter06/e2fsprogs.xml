@@ -58,7 +58,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 ../configure - -prefix=/usr           \-->
 <screen><userinput remap="configure">../configure --prefix=/usr           \
              --bindir=/bin           \
-             --with-roto-prefix=""   \
+             --with-root-prefix=""   \
              --enable-elf-shlibs     \
              --disable-libblkid      \
              --disable-libuuid       \
@@ -75,7 +75,7 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
         </listitem>
       </varlistentry>-->
       <varlistentry>
-        <term><parameter>--with-roto-prefix=""</parameter> и
+        <term><parameter>--with-root-prefix=""</parameter> и
               <parameter>--bindir=/bin</parameter></term>
         <listitem>
           <para>Некоторые программы (такие как <command>e2fsck</command>
