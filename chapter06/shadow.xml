@@ -45,7 +45,7 @@
       <ulink url="&blfs-book;postlfs/cracklib.html"/> для установки библиотеки CrackLib до того, как будет установлен пакет Shadow. Потом добавьте еще один аргумент <parameter>--with-libcrack</parameter> в сценарий конфигурирования пакета.</para>
     </note>
 
-    <para>Запретим установку программы <command>groups</command> и её руководств, так как пакет Coreutils предоставляет более лучшую версию. Также предотвратите установку страниц руководств которые уже содержатся в пакете <xref linkend="man-pages"/>:</para>
+    <para>Запретим установку программы <command>groups</command> и её руководств, так как пакет Coreutils предоставляет более лучшую версию. Также предотвратите установку страниц руководств которые уже содержатся в пакете <xref linkend="ch-system-man-pages"/>:</para>
 
 <screen><userinput remap="pre">sed -i 's/groups$(EXEEXT) //' src/Makefile.in
 find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;
