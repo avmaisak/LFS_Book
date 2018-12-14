@@ -85,8 +85,6 @@
       </itemizedlist>
     </listitem>
 
-    <listitem>
-
  <listitem>
       <para>2018-11-09</para>
       <itemizedlist>
@@ -192,7 +190,7 @@
       </itemizedlist>
     </listitem>
 
-<listitem>
+     <listitem>
       <para>2018-09-30</para>
       <itemizedlist>
         <listitem revision="systemd">
@@ -205,7 +203,7 @@
     </listitem>
 
 
- <listitem>
+    <listitem>
       <para>2018-09-20</para>
       <itemizedlist>
         <listitem>
