@@ -60,17 +60,8 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
       <varlistentry>
         <term><parameter>--with-gcc-arch=native</parameter></term>
         <listitem>
-          <para>Erfpsdftn, что gcc оптимизирован для текущей системы. Если аргумент явно не указан, то система будет определена автоматически, и генерируемый код может быть неправильным для некоторых систем. Если сгенерированный код будет скопирован из системы в менее совместимую, задаёте её в качестве параметра. Подробнее о альтернативных типах систем см. <ulink
-          url='https://gcc.gnu.org/onlinedocs/gcc-8.1.0/gcc/x86-Options.html'> параметры x86 в руководстве gcc </ulink>.
-
-			 Ensure gcc optimizes for the current system.  If this
-          is not specified, the system is guessed and the code generated
-          may not be correct for some systems.  If the generated code
-          will be copied from the native system to a less capable
-          system, use the less capable system as a parameter. For details
-          about alternative system types, see <ulink
-          url='https://gcc.gnu.org/onlinedocs/gcc-8.1.0/gcc/x86-Options.html'>
-          the x86 options in the gcc manual</ulink>.</para>
+          <para>Убедитесь, что GCC оптимизирован для текущей системы. Если аргумент явно не указан, то система будет определена автоматически, и генерируемый код может быть неправильным для некоторых систем. Если сгенерированный код будет скопирован из системы в менее совместимую, задайте её в качестве параметра. Подробнее об альтернативных типах систем см. <ulink
+          url='https://gcc.gnu.org/onlinedocs/gcc-&gcc-version;/gcc/x86-Options.html'> параметры x86 в руководстве GCC </ulink>.</para>
         </listitem>
       </varlistentry>
 
