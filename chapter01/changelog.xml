@@ -40,6 +40,21 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
 
+<listitem>
+      <para>2018-11-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии bison-3.2.2. Исправления
+          <ulink url="&lfs-ticket-root;4380">#4380</ulink>.</para>
+        </listitem>
+        <listitem revision="sysv">
+          <para>[bdubbs] - Обновлено до версии sysvinit-2.93. Исправления
+          <ulink url="&lfs-ticket-root;4360">#4360</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+
  <listitem>
       <para>2018-11-24</para>
       <itemizedlist>
