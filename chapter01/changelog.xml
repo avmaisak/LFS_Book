@@ -43,6 +43,27 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
 
+    <listitem>
+      <para>2018-10-10</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[dj] - Удалена некорректная ссылка на /toold/lib64 в инструкции к пакету systemd. Исправления
+          <ulink url="&lfs-ticket-root;4355">#4355</ulink>.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[dj] - Добавлен патч systemd-239-meson-0.40.0_fixes-1.patch исправляющий проблему сборки с пакетом meson.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии meson-0.40.0. Исправления
+          <ulink url="&lfs-ticket-root;4351">#4351</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии linux-4.18.12. Исправления
+          <ulink url="&lfs-ticket-root;4352">#4352</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
 <listitem>
       <para>2018-09-30</para>
       <itemizedlist>

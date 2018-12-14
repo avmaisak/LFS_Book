@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Установка пакета Module-Init-Tools</title>
 
-    <para>Apply a patch that contains the generated man pages that were missing
+    <para>Приментие патч that contains the generated man pages that were missing
     from the released source tarball:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&module-init-tools-man-patch;</userinput></screen>

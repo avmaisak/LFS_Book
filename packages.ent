@@ -413,12 +413,12 @@
 
 <!ENTITY linux-major-version "4">
 <!ENTITY linux-minor-version "18">
-<!ENTITY linux-patch-version "9">
+<!ENTITY linux-patch-version "12">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> -->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "99,413 KB">
+<!ENTITY linux-size "99,432 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "6f082741ab20f03a334fe533d533880e">
+<!ENTITY linux-md5 "4f6af94e58a89e89aa1683475544a58a">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 4.8.3 / gcc-6.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,

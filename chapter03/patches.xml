@@ -130,6 +130,14 @@
     </varlistentry>
   </variablelist>
 
+   <varlistentry revision="systemd">
+      <term>systemd meson fixes patch - <token>&systemd-meson-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&systemd-meson-patch;"/></para>
+        <para>MD5 sum: <literal>&systemd-meson-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
   <para>Размер патчей примерно: <returnvalue/></para>
 
   <para>В дополнение к необходимым патчам, существует множество опциональных, созданных сообществом LFS. Эти патчи исправляют проблемы или добавляют функциональность которая не включена по умолчанию. Не забудьте ознакомиться с базой патчей, расположенной по адресу <ulink url="&lfs-root;patches/downloads/"/> и воспользуйтесь ими в соответствии с требованиями к вашей системе.</para>
