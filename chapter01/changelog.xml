@@ -41,6 +41,41 @@
 -->
 
 <listitem>
+      <para>2018-11-21</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Добавлена группа "wheel" необходимая для пакета systemd. Исправления
+          <ulink url="&lfs-ticket-root;4376">#4376</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Add a sed to fix a bug in autoconf's test suite.
+          Исправления
+          <ulink url="&lfs-ticket-root;4372">#4372</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Обновлено до версии tcl-8.6.9. Обновление безопасности. Исправления
+          <ulink url="&lfs-ticket-root;4375">#4375</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] -Обновлено до версии openssl-1.1.1a. Обновление безопасности. Исправления
+          <ulink url="&lfs-ticket-root;4379">#4379</ulink>.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[renodr] - Обновлено до версии systemd-239-25d1ba1. Исправляет три ошибки безопасности в пакете systemd. Исправления
+          <ulink url="&lfs-ticket-root;4377">#4377</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Обновлено до версии linux-4.19.3. Исправления
+          <ulink url="&lfs-ticket-root;4373">#4373</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Обновлено до версии elfutils-0.175. Исправления
+          <ulink url="&lfs-ticket-root;4374">#4374</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+<listitem>
       <para>2018-11-19</para>
       <itemizedlist>
         <listitem>
