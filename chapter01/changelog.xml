@@ -8,21 +8,18 @@
 <sect1 id="ch-scatter-changelog">
   <?dbhtml filename="changelog.html"?>
 
-  <title>Changelog</title>
+  <title>Журнал изменений</title>
 
-  <para>This is version
+  <para>Эта версия -
         <phrase revision="sysv">&version;</phrase>
         <phrase revision="systemd">&versiond;</phrase>
-  of the Linux From Scratch book, dated
-  &releasedate;. If this book is more than six months old, a newer and better
-  version is probably already available. To find out, please check one of the
-  mirrors via <ulink url="&lfs-root;mirrors.html"/>.</para>
+  книги Linux From Scratch book, от
+  &releasedate;. Если этой книге более чем пол года, скорее всего, более свежая версия уже доступна. Чтобы найти новую версию, можно воспользоваться зеркалами проекта <ulink url="&lfs-root;mirrors.html"/>.</para>
 
-  <para>Below is a list of changes made since the previous release of the
-  book.</para>
+  <para>Ниже представлен перечень изменений, сделанных с предыдущей версии.</para>
 
   <itemizedlist>
-    <title>Changelog Entries:</title>
+    <title>Журнал изменений:</title>
 
 <!-- Changelog template
 
@@ -42,6 +39,20 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+<listitem>
+      <para>2018-10-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Обновлено до версии gdbm-1.18.1. Исправления
+          <ulink url="&lfs-ticket-root;4364">#4364</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии Python-3.7.1. Исправления
+          <ulink url="&lfs-ticket-root;4361">#4361</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
    <listitem>
       <para>2018-10-27</para>
       <itemizedlist>
