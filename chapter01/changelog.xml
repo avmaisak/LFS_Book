@@ -42,6 +42,31 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+   <listitem>
+      <para>2018-10-27</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Обновлено до версии iproute2-4.19.0. Исправления
+          <ulink url="&lfs-ticket-root;4363">#4363</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии file-5.35. Исправления
+          <ulink url="&lfs-ticket-root;4359">#4359</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии tzdata-2018f. Исправления
+          <ulink url="&lfs-ticket-root;4358">#4358</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии meson-0.48.1. Исправления
+          <ulink url="&lfs-ticket-root;4357">#4357</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии linux-4.19. Исправления
+          <ulink url="&lfs-ticket-root;4356">#4356</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2018-10-10</para>
@@ -51,7 +76,7 @@
           <ulink url="&lfs-ticket-root;4355">#4355</ulink>.</para>
         </listitem>
         <listitem revision="systemd">
-          <para>[dj] - Добавлен патч systemd-239-meson-0.48.0_fixes-1.patch исправляющий проблему сборки с пакетом meson.</para>
+          <para>[dj] - Добавлен патч systemd-239-meson-0.48.0_Исправления-1.patch исправляющий проблему сборки с пакетом meson.</para>
         </listitem>
         <listitem>
           <para>[dj] - Обновлено до версии meson-0.48.0. Исправления
