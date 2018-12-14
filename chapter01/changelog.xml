@@ -39,6 +39,27 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+<listitem>
+      <para>2018-12-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - перенесено /etc/bash_completions.d/grub в наиболее подходящее место. Исправления
+          <ulink url="&lfs-ticket-root;4385">#4385</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии dejagnu-1.6.2. Исправления
+          <ulink url="&lfs-ticket-root;4382">#4382</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии linux-4.19.6. Исправления
+          <ulink url="&lfs-ticket-root;4383">#4383</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии perl-5.28.1. Исправления
+          <ulink url="&lfs-ticket-root;4384">#4384</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
 <listitem>
       <para>2018-11-25</para>
