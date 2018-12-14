@@ -43,6 +43,13 @@
  <listitem>
       <para>2018-11-24</para>
       <itemizedlist>
+		<listitem>
+          <para>[dj] - Обновлено до версии linux-4.19.4. Исправления
+          <ulink url="&lfs-ticket-root;4381">#4381</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Обновлено до версии systemd-239-6b4878d.</para>
+        </listitem>
         <listitem revision="systemd">
           <para>[dj] - Добавлена группа "wheel" к группам, необходимым для systemd.</para>
         </listitem>
