@@ -23,7 +23,7 @@
   <sect2 role="package">
     <title/>
 
-	 <para>Coreutils - пакет программного обеспечения GNU, содержащий большое количество основных утилит, таких как cat, ls и rm, необходимых для UNIX-подобных операционных систем. Пакет включает несколько более ранних пакетов — textutils, shellutils и fileutils — и другие разнообразные утилиты.</para>
+	 <para>Coreutils - пакет программного обеспечения GNU, содержащий большое количество основных утилит, таких как cat, ls и rm, необходимых для UNIX-подобных операционных систем. Пакет включает несколько более ранних пакетов — textutils, shellutils, fileutils и другие различные утилиты.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -132,14 +132,11 @@ mv -v /usr/bin/chroot /usr/sbin
 mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8
 sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8</userinput></screen>
 
-    <para revision="sysv">Некоторые сценарии в пакете LFS-Bootscripts зависят от <command>head</command>, <command>sleep</command>, и
-    <command>nice</command>.  Так как каталог <filename class="directory">/usr</filename>
-	 может быть недоступен на ранних стадиях процесса загрузки, то эти бинарные файлы должны находится в корневом каталоге раздела:</para>
+    <para revision="sysv">Некоторые сценарии в пакете LFS-Bootscripts зависят от <command>head</command>, <command>sleep</command>,
+    <command>nice</command> и <command>touch</command>.  Так как каталог <filename class="directory">/usr</filename>
+	 может быть недоступен на ранних стадиях процесса загрузки, то эти бинарные файлы должны находится в корневом каталоге раздела для соблюдния совместимости с FHS:</para>
 
-    <para revision="systemd">Некоторые пакеты из книги BLFS и за её пределами ожидают что
-     следующие программы находятся в каталоге <filename class="directory">/bin</filename> ,поэтому, необходимо убедиться, что они находятся в требуемом месте:</para>
-
-<screen><userinput remap="install">mv -v /usr/bin/{head,sleep,nice} /bin</userinput></screen>
+	 <screen><userinput remap="install">mv -v /usr/bin/{head,nice,sleep,touch} /bin</userinput></screen>
 
   </sect2>
 

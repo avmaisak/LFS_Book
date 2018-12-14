@@ -40,6 +40,19 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
 
+ <listitem>
+      <para>2018-11-24</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[dj] - Добавлена группа "wheel" к группам, необходимым для systemd.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Добавлен touch в список перемещенных программ coreutils и
+           пояснеения необходимости шагов по соблюдению FHS.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
 <listitem>
       <para>2018-11-21</para>
       <itemizedlist>
