@@ -39,6 +39,19 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+
+<listitem>
+      <para>2018-11-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] -  Обновлено до версии libcap-2.26. Исправления
+          <ulink url="&lfs-ticket-root;4378">#4378</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+
  <listitem>
       <para>2018-11-09</para>
       <itemizedlist>
