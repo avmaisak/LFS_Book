@@ -43,6 +43,19 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
 
+<listitem>
+      <para>2018-09-30</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[dj] - Возобновлена сборка пакета Util-Linux в главе 5 чтобы избежать взаимной зависимости для Systemd.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Установка Util-Linux и E2fsprogs перенесены после Procps для правильного порядка сборки в книге Systemd. Редакцию SysV - не затрагивает.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+
  <listitem>
       <para>2018-09-20</para>
       <itemizedlist>
