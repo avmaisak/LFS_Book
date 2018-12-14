@@ -70,10 +70,10 @@
 <!ENTITY binutils-ch6-du "4.9 GB">
 <!ENTITY binutils-ch6-sbu "6.6 SBU">
 
-<!ENTITY bison-version "3.2">
-<!ENTITY bison-size "2,040 KB">
+<!ENTITY bison-version "3.2.1">
+<!ENTITY bison-size "2,043 KB">
 <!ENTITY bison-url "&gnu;bison/bison-&bison-version;.tar.xz">
-<!ENTITY bison-md5 "35b07c9c7108d5aba9baff05b97cee3c">
+<!ENTITY bison-md5 "ce8dfaa5725245bfb8a366344a4c097f">
 <!ENTITY bison-home "&gnu-software;bison/">
 <!ENTITY bison-ch5-du "35 MB">
 <!ENTITY bison-ch5-sbu "0.3 SBU">
