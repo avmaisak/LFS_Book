@@ -1,9 +1,9 @@
-<!ENTITY version         "20181201">
+<!ENTITY version         "20181211">
 <!ENTITY short-version   "8.2">  <!-- Used below in &blfs-book;
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20181201-systemd">
+<!ENTITY versiond        "20181211-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd">
 
