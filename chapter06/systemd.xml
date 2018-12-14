@@ -55,9 +55,9 @@ done</userinput></screen>
 	<screen><userinput remap="pre">sed '166,$ d' -i src/resolve/meson.build</userinput></screen>
   <para>Приментие патч, который устраняет проблему сборки с glibc-2.28:</para>
   <screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-glibc_statx_fix-1.patch</userinput></screen>
-      <para>Приментие патч чтобы исправить ошибку сборки с meson-0.40.0:</para>
+      <para>Приментие патч чтобы исправить ошибку сборки с meson-0.48.0:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-meson-0.40.0_fixes-1.patch</userinput></screen>
+<screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-meson-0.48.0_fixes-1.patch</userinput></screen>
 
     <para>Удалим ненужную группу, <systemitem class="groupname">render</systemitem>, из стандартных правил udev:</para>
 
