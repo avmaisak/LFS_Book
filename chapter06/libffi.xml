@@ -40,6 +40,15 @@
   <sect2 role="installation">
     <title>Установка пакета Libffi</title>
 
+	 <note>
+      <para>
+		 Подобно GMP, libffi собирается с оптимизацией, специфичной
+       для процессора. Если происходит сборка для другой системы, установите значения для
+       CFLAGS и CXXFLAGS, чтобы указать общую сборку для вашей архитектуры.
+       Если этого не сделать, все приложения, которые ссылаются на libffi, выдадут ошибку
+      Illegal Operation Errors.</para>
+    </note>
+
     <para>Модифицируйте Makefile чтобы установить заголовочные файлы в стандартный каталог
     <filename class="directory">/usr/include</filename> вместо
     <filename class="directory">/usr/lib/libffi-3.2.1/include</filename>.</para>

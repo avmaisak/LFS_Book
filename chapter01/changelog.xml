@@ -39,7 +39,19 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+ <listitem>
+      <para>2018-12-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Добавлено примечание к libffi по оптимизации для
+           процессора, которая применяется во время компиляции. Подобно GMP, это вызывает
+           Ошибки Illegal Operation error, если пакет был скопирован на другую
+           систему.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
+    <listitem>
 <listitem>
       <para>2018-12-11</para>
       <itemizedlist>
