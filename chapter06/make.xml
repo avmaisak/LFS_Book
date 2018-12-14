@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Установка пакета Make</title>
 
-    <para>Необходимо обойти ошибку, вызванную glibc-2.27:</para>
+    <para>Необходимо обойти ошибку, вызванную glibc-2.27 и в более поздних версиях:</para>
 
 <screen><userinput remap="pre">sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c</userinput></screen>
     <para>Подготовьте пакет Make к компиляции:</para>

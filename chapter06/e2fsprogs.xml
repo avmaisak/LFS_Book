@@ -110,11 +110,13 @@ PKG_CONFIG_PATH=/tools/lib/pkgconfig \
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов, нужно сначала создать некоторые символические ссылки на библиотеки из каталога
-	 /tools/lib куда ссылаются программы тестирования.Для выполнения тестов, выполните следующую команду:</para>
+    <!--<para>Для выполнения тестов, нужно сначала создать некоторые символические ссылки на библиотеки из каталога
+	 /tools/lib куда ссылаются программы тестирования.Для выполнения тестов, выполните следующую команду:</para>-->
+<para>Для выполнения тестов, выполните команду:</para>
+<screen><userinput remap="test">make check</userinput></screen>
 
-<screen><userinput remap="test">ln -sfv /tools/lib/lib{blk,uu}id.so.1 lib
-make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>
+<!-- <screen><userinput remap="test">ln -sfv /tools/lib/lib{blk,uu}id.so.1 lib
+make LD_LIBRARY_PATH=/tools/lib check</userinput></screen> -->
 
     <para>Один из тестов пакета E2fsprogs попытается выделить 256 MB памяти. Если у вас нет такого объема оперативной памяти, не забудьте включить требуемое пространство в файл подкачки для выполнения теста. Смотрите  <xref
     linkend="space-creatingfilesystem"/> и <xref linkend="space-mounting"/>

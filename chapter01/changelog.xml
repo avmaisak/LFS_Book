@@ -42,7 +42,40 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
-<listitem>
+
+ <listitem>
+      <para>2018-09-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Очистка от ненужных символических ссылок.
+			 Изменён порядок сборки пакетов, зависящих от версии. В 6 главе, сборка происходит как можно позднее. В 5 главе, сборка util-linux более не требуется. Удалено.
+          Исправления <ulink url="&lfs-ticket-root;4345">#4345</ulink> и
+          <ulink url="&lfs-ticket-root;4349">#4349</ulink>.</para>
+        </listitem>
+        <listitem revision='sysv'>
+          <para>[bdubbs] - Обновлено до версии eudev-3.2.6. Исправления
+          <ulink url="&lfs-ticket-root;4350">#4350</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии elfutils-0.174 (libelf). Исправления
+          <ulink url="&lfs-ticket-root;4348">#4348</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии psmisc-23.2. Исправления
+          <ulink url="&lfs-ticket-root;4347">#4347</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии openssl-1.1.1. Исправления
+          <ulink url="&lfs-ticket-root;4346">#4346</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до версии linux-4.18.9. Исправления
+          <ulink url="&lfs-ticket-root;4344">#4344</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+	<listitem>
       <para>2018-09-02</para>
       <itemizedlist>
         <listitem>

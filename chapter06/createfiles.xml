@@ -35,41 +35,31 @@
   </indexterm>
 
   <para>Некоторые программы используют жестко зашитые пути к другим программам, которые еще не установлены. Чтобы скорректировать этот недостаток, требуется создать ряд символических ссылок, которые
-   будут заменены реальными файлами на протяжении установки программ в этой главе.</para>
-<!--
-<screen revision="sysv"><userinput>ln -sv /tools/bin/{bash,cat,dd,echo,ln,pwd,rm,stty} /bin
-ln -sv /tools/bin/{install,perl} /usr/bin
-ln -sv /tools/lib/libgcc_s.so{,.1} /usr/lib
-ln -sv /tools/lib/libstdc++.{a,so{,.6}} /usr/lib
-ln -sv bash /bin/sh
-
-</userinput></screen>-->
-<!--sed 's/tools/usr/' /tools/lib/libstdc++.la > /usr/lib/libstdc++.la -->
-
-<!--<screen revision="systemd"><userinput>ln -sv /tools/bin/{bash,cat,dd,echo,ln,pwd,rm,stty} /bin-->
+   будут заменены реальными файлами в процессе установки программ в этой главе.</para>
 <screen><userinput>ln -sv /tools/bin/{bash,cat,dd,echo,ln,pwd,rm,stty} /bin
-ln -sv /tools/bin/{env,install,perl} /usr/bin
-ln -sv /tools/lib/libgcc_s.so{,.1} /usr/lib
-ln -sv /tools/lib/libstdc++.{a,so{,.6}} /usr/lib
-for lib in blkid lzma mount uuid
+ln -sv /tools/bin/{env,install,perl}                /usr/bin
+ln -sv /tools/lib/libgcc_s.so{,.1}                  /usr/lib
+ln -sv /tools/lib/libstdc++.{a,so{,.6}}             /usr/lib
+
+install -vdm755 /usr/lib/pkgconfig
+
+ln -sv bash /bin/sh</userinput></screen>
+
+<!--for lib in blkid lzma mount uuid
 do
     ln -sv /tools/lib/lib$lib.so* /usr/lib
-done
-ln -svf /tools/include/blkid    /usr/include
+done-->
+<!--ln -svf /tools/include/blkid    /usr/include
 ln -svf /tools/include/libmount /usr/include
-ln -svf /tools/include/uuid     /usr/include
-install -vdm755 /usr/lib/pkgconfig
-for pc in blkid mount uuid
+ln -svf /tools/include/uuid     /usr/include-->
+<!--for pc in blkid mount uuid
 do
     sed 's@tools@usr@g' /tools/lib/pkgconfig/${pc}.pc \
         > /usr/lib/pkgconfig/${pc}.pc
-done
-ln -sv bash /bin/sh</userinput></screen>
+done-->
 
-<!--sed 's/tools/usr/' /tools/lib/libstdc++.la > /usr/lib/libstdc++.la
-   sed 's/tools/usr/' /tools/lib/lib${lib}.la > /usr/lib/lib${lib}.la-->
   <variablelist>
-    <title>Описание ссылок</title>
+    <title>Описание каждоый ссылки</title>
 
     <varlistentry>
       <term><parameter><filename>/bin/bash</filename></parameter></term>
@@ -99,6 +89,15 @@ ln -sv bash /bin/sh</userinput></screen>
       <listitem>
         <para>Используется для тестирования Glibc. Наборам тестов требуется
         <filename>/bin/echo</filename>.</para>
+      </listitem>
+    </varlistentry>
+
+	 <varlistentry>
+      <term><parameter><filename>/usr/bin/env</filename></parameter></term>
+      <listitem>
+        <para>
+		  Этот путь жестко зашит в процедуры сборки некоторых пакетов
+        <!-- systemd  This may not be needed if we move sysd to the end--></para>
       </listitem>
     </varlistentry>
 
@@ -174,7 +173,7 @@ ln -sv bash /bin/sh</userinput></screen>
       </listitem>
     </varlistentry>
 -->
-    <!--<varlistentry revision="systemd">-->
+    <!--<varlistentry revision="systemd">
 	 <varlistentry>
       <term><parameter><filename>/usr/lib/lib{blkid,lzma,mount,uuid}.{a,la,so*}</filename></parameter></term>
       <listitem>
@@ -182,7 +181,7 @@ ln -sv bash /bin/sh</userinput></screen>
         <filename class="directory">/tools</filename>.</para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term><parameter><filename>/bin/sh</filename></parameter></term>
       <listitem>
