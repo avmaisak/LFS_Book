@@ -11,7 +11,7 @@
 
   <title>Зависимости</title>
 
-  <para>Каждый пакет в системе LFS может ссылаться на один или несколько других пакетов в определённом порядке, для того чтобы сборка и установка пакета была выполнена правильно. Некоторые могут иметь циклическую зависимость, то есть первый пакет зависит от второго, который в свою очередь, зависит от первого. Именно по этой причине, указанный порядок сборки пакетов в LFS очень важен. Цель этой страницы заключается в описании зависимостей каждого пакета</para>
+  <para>Каждый пакет в системе LFS может ссылаться на один или несколько других пакетов в определённом порядке, для того чтобы сборка и установка пакета была выполнена правильно. Некоторые пакеты могут иметь циклическую зависимость, то есть первый пакет зависит от второго, который в свою очередь, зависит от первого. Именно по этой причине, указанный порядок сборки пакетов в LFS очень важен. Цель этой страницы заключается в описании зависимостей каждого пакета</para>
 
   <para>Для каждого пакета, будет перечислено три, а иногда даже четыре типа зависимостей.
   Первый список перечисляет какие пакеты должны быть, для компиляции и установки текущего пакета.
@@ -27,7 +27,7 @@
 
         <seglistitem>
           <seg>Attr, Bash, Binutils, Coreutils, GCC, Gettext, Grep, M4, Make,
-          Perl, Sed, and Texinfo</seg>
+          Perl, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -35,7 +35,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Automake, Diffutils, Findutils, and Libtool</seg>
+          <seg>Automake, Diffutils, Findutils, и Libtool</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -43,7 +43,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Coreutils, Sed, Tar, and Vim</seg>
+          <seg>Coreutils, Sed, Tar, и Vim</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -63,7 +63,7 @@
 
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, GCC, Gettext, Grep, M4, Make,
-          Perl, Sed, and Texinfo</seg>
+          Perl, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -71,7 +71,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Automake, Diffutils, Findutils, and Libtool</seg>
+          <seg>Automake, Diffutils, Findutils, и Libtool</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -98,7 +98,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-          <seg>Bash, Coreutils, Grep, M4, Make, Perl, Sed, and Texinfo</seg>
+          <seg>Bash, Coreutils, Grep, M4, Make, Perl, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -106,7 +106,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Automake, Diffutils, Findutils, GCC, and Libtool</seg>
+          <seg>Automake, Diffutils, Findutils, GCC, и Libtool</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -134,7 +134,7 @@
 
         <seglistitem>
           <seg>Autoconf, Bash, Coreutils, Gettext, Grep, M4, Make, Perl,
-          Sed, and Texinfo</seg>
+          Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -143,7 +143,7 @@
 
         <seglistitem>
           <seg>Binutils, Bison, Bzip2, DejaGNU, Diffutils, Expect, Findutils,
-          Flex, GCC, Gettext, Gzip, Libtool, and Tar</seg>
+          Flex, GCC, Gettext, Gzip, Libtool, и Tar</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -171,7 +171,7 @@
 
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, Diffutils, Gawk, GCC, Glibc,
-          Grep, Make, Ncurses, Patch, Readline, Sed, and Texinfo</seg>
+          Grep, Make, Ncurses, Patch, Readline, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -207,7 +207,7 @@
 
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, GCC, Glibc,
-          Grep, Make, and Readline</seg>
+          Grep, Make, и Readline</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -279,7 +279,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc,
-         Grep, M4, Make, Perl, and Sed</seg>
+         Grep, M4, Make, Perl, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -287,7 +287,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils, Findutils, and Flex</seg>
+          <seg>Diffutils, Findutils, и Flex</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -350,7 +350,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>GCC, Grep, Make, Sed, and Texinfo</seg>
+         <seg>GCC, Grep, Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -386,7 +386,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, GMP, Grep, Make,
-         Patch, Perl, Sed, and Texinfo</seg>
+         Patch, Perl, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -394,7 +394,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils, E2fsprogs, Findutils, Shadow, and Util-linux</seg>
+          <seg>Diffutils, E2fsprogs, Findutils, Shadow, и Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -402,7 +402,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Bash, Diffutils, Eudev, Findutils, and Man-DB</seg>
+          <seg>Bash, Diffutils, Eudev, Findutils, и Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -423,7 +423,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-         Make, Sed, and Util-linux</seg>
+         Make, Sed, и Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -458,7 +458,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Coreutils, Diffutils, GCC, Grep, Make, and Sed</seg>
+         <seg>Bash, Coreutils, Diffutils, GCC, Grep, Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -494,7 +494,7 @@
 
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Gawk, GCC, Gettext, Glibc, Grep,
-          Make, Sed, and Texinfo</seg>
+          Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -530,7 +530,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Gperf,
-         Make, and Sed</seg>
+         Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -566,7 +566,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep,
-         Make, and Sed</seg>
+         Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -602,7 +602,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, Grep, Make,
-         Patch, Sed, and Tcl</seg>
+         Patch, Sed, и Tcl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -638,7 +638,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-         Gzip, Make, Sed, Texinfo, and Util-linux</seg>
+         Gzip, Make, Sed, Texinfo, и Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -674,7 +674,7 @@
 
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-          Make, Sed, and Zlib</seg>
+          Make, Sed, и Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -710,7 +710,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, Make,
-         Sed, and Texinfo</seg>
+         Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -718,7 +718,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>DejaGNU, Diffutils, and Expect</seg>
+          <seg>DejaGNU, Diffutils, и Expect</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -746,7 +746,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, M4, Make,
-         Patch, Sed, and Texinfo</seg>
+         Patch, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -762,7 +762,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>IPRoute2, Kbd, and Man-DB</seg>
+          <seg>IPRoute2, Kbd, и Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -782,7 +782,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, GMP, Grep, Make,
-         MPFR, Patch, Readline, Sed, and Texinfo</seg>
+         MPFR, Patch, Readline, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -929,7 +929,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Gettext,
-         Grep, Gzip, Linux API Headers, Make, Perl, Sed, and Texinfo</seg>
+         Grep, Gzip, Linux API Headers, Make, Perl, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -965,7 +965,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-         M4, Make, Sed, and Texinfo</seg>
+         M4, Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1000,7 +1000,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, and Make</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, и Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1036,7 +1036,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Gettext, Glibc, Grep,
-         Make, Patch, Sed, and Texinfo</seg>
+         Make, Patch, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1072,7 +1072,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Bison, Coreutils,  Gawk, GCC, Glibc, Grep, Make,
-         Patch, Sed, and Texinfo</seg>
+         Patch, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1108,7 +1108,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Bison, Coreutils, Diffutils, GCC, Gettext, Glibc,
-         Grep, Make, Ncurses, Sed, Texinfo, and Xz</seg>
+         Grep, Make, Ncurses, Sed, Texinfo, и Xz</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1144,7 +1144,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make,
-         Sed, and Texinfo</seg>
+         Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1179,7 +1179,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Coreutils, Gawk, and Make</seg>
+         <seg>Coreutils, Gawk, и Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1215,7 +1215,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, Ncurses,
-         Patch, Sed, Texinfo, and Zlib</seg>
+         Patch, Sed, Texinfo, и Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1250,7 +1250,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Gawk, Glibc, Make, Perl, Sed, and XML::Parser</seg>
+         <seg>Bash, Gawk, Glibc, Make, Perl, Sed, и XML::Parser</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1322,7 +1322,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Bison, Check, Coreutils, Flex, GCC, Gettext,
-         Glibc, Gzip, Make, Patch, and Sed</seg>
+         Glibc, Gzip, Make, Patch, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1358,7 +1358,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-         Gzip, Make, Sed, Xz-Utils, and Zlib</seg>
+         Gzip, Make, Sed, Xz-Utils, и Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1394,7 +1394,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, Grep, Make,
-         Ncurses, and Sed</seg>
+         Ncurses, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1464,7 +1464,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, and Make</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, и Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1498,7 +1498,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, and Sed</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1534,7 +1534,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-         Make, Sed, and Texinfo</seg>
+         Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1570,7 +1570,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-         Make, Sed, and Texinfo</seg>
+         Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1578,7 +1578,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Autoconf, Automake, and Findutils</seg>
+          <seg>Autoconf, Automake, и Findutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1606,7 +1606,7 @@
 
         <seglistitem>
          <seg>Bash, Bc, Binutils, Coreutils, Diffutils, Findutils, GCC, Glibc,
-         Grep, Gzip, Kmod, Make, Ncurses, OpenSSL, Perl, and Sed</seg>
+         Grep, Gzip, Kmod, Make, Ncurses, OpenSSL, Perl, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1678,7 +1678,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep,
-         Make, Sed, and Texinfo</seg>
+         Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1714,7 +1714,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Bzip2, Coreutils, Flex, GCC, GDBM, Gettext,
-         Glibc, Grep, Groff, Gzip, Less, Libpipeline, Make, Sed, and Xz</seg>
+         Glibc, Grep, Groff, Gzip, Less, Libpipeline, Make, Sed, и Xz</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1749,7 +1749,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Coreutils, and Make</seg>
+         <seg>Bash, Coreutils, и Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1820,7 +1820,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep, GMP,
-         Make, MPFR, Sed, and Texinfo</seg>
+         Make, MPFR, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1856,7 +1856,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep, GMP,
-         Make, Sed, and Texinfo</seg>
+         Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1892,7 +1892,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-         Make, Patch, and Sed</seg>
+         Make, Patch, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1909,7 +1909,7 @@
 
         <seglistitem>
           <seg>Bash, GRUB, Inetutils, Less, Procps-ng, Psmisc, Readline,
-          Texinfo, Util-linux, and Vim</seg>
+          Texinfo, Util-linux, и Vim</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1928,7 +1928,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Binutils, Coreutils, Gcc, and Python</seg>
+         <seg>Binutils, Coreutils, Gcc, и Python</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1952,7 +1952,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Asciidoc, Doxygen, Emacs, and re2c</seg>
+          <seg>Asciidoc, Doxygen, Emacs, и re2c</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1963,7 +1963,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Binutils, Coreutils, Gcc, Make, and Perl</seg>
+         <seg>Binutils, Coreutils, Gcc, Make, и Perl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1998,7 +1998,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and Sed</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2034,7 +2034,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep,
-         Groff, Make, Sed, and Zlib</seg>
+         Groff, Make, Sed, и Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2070,7 +2070,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
-         Popt, and Sed</seg>
+         Popt, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2105,7 +2105,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, and Make</seg>
+         <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, и Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2140,7 +2140,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, and Ncurses</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, и Ncurses</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2176,7 +2176,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, Make,
-         Ncurses, and Sed</seg>
+         Ncurses, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2212,7 +2212,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gdbm, Gettext, Glibc, Grep,
-         Libffi, Make, Ncurses, and Sed</seg>
+         Libffi, Make, Ncurses, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2236,7 +2236,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Berkeley DB, OpenSSL, SQLite, and Tk</seg>
+          <seg>Berkeley DB, OpenSSL, SQLite, и Tk</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2248,7 +2248,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make, Ncurses,
-         Patch, Sed, and Texinfo</seg>
+         Patch, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2284,7 +2284,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, Make,
-         Sed, and Texinfo</seg>
+         Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2300,7 +2300,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>E2fsprogs, File, Libtool, and Shadow</seg>
+          <seg>E2fsprogs, File, Libtool, и Shadow</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2320,7 +2320,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-         Gettext, Glibc, Grep, Make, and Sed</seg>
+         Gettext, Glibc, Grep, Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2344,7 +2344,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Acl, Attr, Cracklib, and PAM</seg>
+          <seg>Acl, Attr, Cracklib, и PAM</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2355,7 +2355,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Binutils, Coreutils, GCC, Glibc, Make, and Patch</seg>
+         <seg>Binutils, Coreutils, GCC, Glibc, Make, и Patch</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2392,7 +2392,7 @@
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
          GCC, Glibc, Gperf, Grep, Intltool, Libcap,
-         Make, Sed, and Util-linux</seg>
+         Make, Sed, и Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2427,7 +2427,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Binutils, Coreutils, GCC, Glibc, Make, and Sed</seg>
+         <seg>Binutils, Coreutils, GCC, Glibc, Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2463,7 +2463,7 @@
 
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Bison, Coreutils, GCC, Gettext, Glibc,
-         Grep, Inetutils, Make, Sed, and Texinfo</seg>
+         Grep, Inetutils, Make, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2471,7 +2471,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Autoconf, Diffutils, Findutils, Gawk, and Gzip</seg>
+          <seg>Autoconf, Diffutils, Findutils, Gawk, и Gzip</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2499,7 +2499,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, Grep,
-         Make, and Sed</seg>
+         Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2535,7 +2535,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, Make,
-         Ncurses, Patch, and Sed</seg>
+         Ncurses, Patch, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2571,7 +2571,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Eudev, Findutils, Gawk, GCC,
-         Gettext, Glibc, Grep, Make, Ncurses, Sed, and Zlib</seg>
+         Gettext, Glibc, Grep, Make, Ncurses, Sed, и Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2607,7 +2607,7 @@
 
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, GCC, Glibc,
-         Grep, Make, Ncurses, and Sed</seg>
+         Grep, Make, Ncurses, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2631,7 +2631,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Xorg, GTK+2, LessTif, Python, Tcl, Ruby, and GPM</seg>
+          <seg>Xorg, GTK+2, LessTif, Python, Tcl, Ruby, и GPM</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2642,7 +2642,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Expat, GCC, Glibc, Make, and Perl</seg>
+         <seg>Bash, Binutils, Coreutils, Expat, GCC, Glibc, Make, и Perl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2677,7 +2677,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, and Make</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, и Make</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2693,7 +2693,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Eudev, GRUB, Kmod, and Man-DB</seg>
+          <seg>Eudev, GRUB, Kmod, и Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2712,7 +2712,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, and Sed</seg>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, и Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2728,7 +2728,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>File, Kmod, Perl, and Util-linux</seg>
+          <seg>File, Kmod, Perl, и Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
