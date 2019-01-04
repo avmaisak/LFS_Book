@@ -88,8 +88,7 @@
       <varlistentry id="addftinfo">
         <term><command>addftinfo</command></term>
         <listitem>
-          <para>Reads a troff font file and adds some additional font-metric
-          information that is used by the <command>groff</command> system</para>
+          <para>Выполняет чтение файла шрифта troff и добавляет некоторую дополнительную информацию по метрикам шрифта которая используется системой<command>groff</command></para>
           <indexterm zone="ch-system-groff addftinfo">
             <primary sortas="b-addftinfo">addftinfo</primary>
           </indexterm>
@@ -99,7 +98,7 @@
       <varlistentry id="afmtodit">
         <term><command>afmtodit</command></term>
         <listitem>
-          <para>Creates a font file for use with <command>groff</command> and
+          <para>Создаёт файл шрифта для использования с <command>groff</command> и
           <command>grops</command></para>
           <indexterm zone="ch-system-groff afmtodit">
             <primary sortas="b-afmtodit">afmtodit</primary>
@@ -110,7 +109,7 @@
       <varlistentry id="chem">
         <term><command>chem</command></term>
         <listitem>
-          <para>Groff preprocessor for producing chemical structure diagrams</para>
+          <para>Препроцессор Groff preprocessor для создания диаграмм химической структуры</para>
           <indexterm zone="ch-system-groff chem">
             <primary sortas="b-chem">chem</primary>
           </indexterm>
@@ -120,8 +119,8 @@
       <varlistentry id="eqn">
         <term><command>eqn</command></term>
         <listitem>
-          <para>Compiles descriptions of equations embedded within troff
-          input files into commands that are understood by
+          <para>Составляет описания уравнений, встроенные во входные данные troff
+          , которые понимаются
           <command>troff</command></para>
           <indexterm zone="ch-system-groff eqn">
             <primary sortas="b-eqn">eqn</primary>
@@ -132,7 +131,7 @@
       <varlistentry id="eqn2graph">
         <term><command>eqn2graph</command></term>
         <listitem>
-          <para>Converts a troff EQN (equation) into a cropped image</para>
+          <para>Преобразует a troff EQN (уравнение) в обрезанное изображение</para>
           <indexterm zone="ch-system-groff eqn2graph">
             <primary sortas="b-eqn2graph">eqn2graph</primary>
           </indexterm>
@@ -142,7 +141,7 @@
       <varlistentry id="gdiffmk">
         <term><command>gdiffmk</command></term>
         <listitem>
-          <para>Marks differences between groff/nroff/troff files</para>
+          <para>Отображает различия между файлами groff/nroff/troff</para>
           <indexterm zone="ch-system-groff gdiffmk">
             <primary sortas="b-gdiffmk">gdiffmk</primary>
           </indexterm>
@@ -152,8 +151,8 @@
       <varlistentry id="glilypond">
         <term><command>glilypond</command></term>
         <listitem>
-          <para>Transforms sheet music written in the lilypond language into
-          the groff language</para>
+          <para>Преобразует ноты, записанные на языке lilypond
+           в язык groff</para>
           <indexterm zone="ch-system-groff glilypond">
             <primary sortas="b-glilypond">glilypond</primary>
           </indexterm>
@@ -163,8 +162,8 @@
       <varlistentry id="gperl">
         <term><command>gperl</command></term>
         <listitem>
-          <para>Preprocesor for groff, allowing addition of perl code
-          into groff files</para>
+          <para>Препроцессор groff, позволяя добавлять perl-код
+           в файлы groff</para>
           <indexterm zone="ch-system-groff gperl">
             <primary sortas="b-gperl">gperl</primary>
           </indexterm>
@@ -174,8 +173,7 @@
       <varlistentry id="gpinyin">
         <term><command>gpinyin</command></term>
         <listitem>
-          <para>Preprocesor for groff, allowing addition of Chinese
-          European-like language Pinyin into groff files.</para>
+          <para>Препроцессор для groff, позволяя добавлять Китайский и Европейские языки Pinyin в файлы groff.</para>
           <indexterm zone="ch-system-groff gpinyin">
             <primary sortas="b-gpinyin">gpinyin</primary>
           </indexterm>
@@ -185,7 +183,7 @@
       <varlistentry id="grap2graph">
         <term><command>grap2graph</command></term>
         <listitem>
-          <para>Converts a grap diagram into a cropped bitmap image</para>
+          <para>Преобразует диаграммы в обрезанное растровое изображение</para>
           <indexterm zone="ch-system-groff grap2graph">
             <primary sortas="b-grap2graph">grap2graph</primary>
           </indexterm>
@@ -195,7 +193,7 @@
       <varlistentry id="grn">
         <term><command>grn</command></term>
         <listitem>
-          <para>A <command>groff</command> preprocessor for gremlin files</para>
+          <para>Препроцессор <command>groff</command> для файлов gremlin</para>
           <indexterm zone="ch-system-groff grn">
             <primary sortas="b-grn">grn</primary>
           </indexterm>
