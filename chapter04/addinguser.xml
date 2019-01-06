@@ -53,7 +53,7 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
     <varlistentry>
       <term><parameter>lfs</parameter></term>
       <listitem>
-        <para>Это наименнование созданного пользователя и группы.</para>
+        <para>Это наименование созданного пользователя и группы.</para>
       </listitem>
     </varlistentry>
 
