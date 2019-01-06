@@ -76,7 +76,7 @@ cd /tmp
 rm -rfv e2fsprogs-&e2fsprogs-version;</userinput></screen>
   </note>
 -->
-  <para>Если вы используете существующий <systemitem class="filesystem">swap</systemitem> раздел, форматироать его не требуется.
+  <para>Если вы используете существующий <systemitem class="filesystem">swap</systemitem> раздел, форматировать его не требуется.
   Если был создан новый раздел <systemitem class="filesystem"> swap</systemitem> его необходимо инициализировать командой:</para>
 
 <screen role="nodump"><userinput>mkswap /dev/<replaceable>&lt;yyy&gt;</replaceable></userinput></screen>
