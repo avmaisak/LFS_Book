@@ -20,45 +20,39 @@
 
   <itemizedlist>
 
-    <listitem><para>A text mode browser such as <ulink
+    <listitem><para>Текстовый браузер, например, 
+    <ulink
     url='&blfs-book;basicnet/lynx.html'>Lynx</ulink>
-    will allow you to easily view the BLFS book in one virtual terminal, while
-    building packages in another.</para></listitem>
+    позволит легко изучать книгу BLFS в окне виртуального терминала, по мере сборки пакетов в другом.</para></listitem>
 
-    <listitem><para>The <ulink
-    url='&blfs-book;general/gpm.html'>GPM</ulink> package will allow
-    you to perform copy/paste actions in your virtual
-    terminals.</para></listitem>
+    <listitem><para>Пакет <ulink
+    url='&blfs-book;general/gpm.html'>GPM</ulink> 
+    позволит работать с буфером обмена в виртуальных терминалах.</para></listitem>
 
-    <listitem><para>If you are in a situation where static IP configuration
-    does not meet your networking requirements, installing a package
-    such as <ulink url='&blfs-book;basicnet/dhcpcd.html'>dhcpcd</ulink>
-    or the client portion of <ulink
-    url='&blfs-book;basicnet/dhcp.html'>dhcp</ulink> may be
-    useful.</para></listitem>
+    <listitem><para>Если настройка статического IP адреса не соответствует вашим сетевым требованиям, установка пакета <ulink url='&blfs-book;basicnet/dhcpcd.html'>dhcpcd</ulink>
+    или его клиентской части <ulink
+    url='&blfs-book;basicnet/dhcp.html'>dhcp</ulink> может быть полезным.</para></listitem>
 
-    <listitem><para>Установитеing <ulink
-    url='&blfs-book;postlfs/sudo.html'>sudo</ulink> may be useful for
-    building packages as a non-root user and easily installing the resulting
-    packages in your new system.  </para></listitem>
+    <listitem><para>Установка пакета <ulink
+    url='&blfs-book;postlfs/sudo.html'>sudo</ulink> 
+    может быть полезна для сборки пакетов от непревилегированного пользователя и более упрощенной установки пакетов в систему.</para></listitem>
 
-    <listitem><para>If you want to access your new system from a remote system
-    within a comfortable GUI environment, install <ulink
+    <listitem><para>Если вам необходим доступ к новой системе удалённо, с удобным интерфейсом, установите пакет<ulink
     url='&blfs-book;postlfs/openssh.html'>openssh</ulink>.
     </para></listitem>
 
-    <listitem><para>To make fetching files over the internet easier, install
+    <listitem><para>Для загрузки файлов через сеть, установите пакет
     <ulink url='&blfs-book;basicnet/wget.html'>wget</ulink>.
     </para></listitem>
 
-    <listitem><para>If one or more of your disk drives have a GUID partition
-    table (GPT), either <ulink
-    url='&blfs-book;postlfs/gptfdisk.html'>gptfdisk</ulink> or <ulink
-    url='&blfs-book;postlfs/parted.html'>parted</ulink> will be useful.
+    <listitem><para>Если один или несколько дисков имеют разделы GUID 
+    (GPT), пакет <ulink
+    url='&blfs-book;postlfs/gptfdisk.html'>gptfdisk</ulink> или <ulink
+    url='&blfs-book;postlfs/parted.html'>parted</ulink> будет полезным.
     </para></listitem>
 
-    <listitem><para>Finally, a review of the following configuration files
-    is also appropriate at this point.  </para>
+    <listitem><para>Наконец, обзор следующих файлов конфигурации
+     будет уместным на этом этапе.</para>
 
       <itemizedlist>
         <listitem><para>/etc/bashrc                  </para></listitem>
@@ -77,12 +71,11 @@
     </listitem>
   </itemizedlist>
 
-  <para>Now that we have said that, let's move on to booting our shiny new LFS
-  installation for the first time! First exit from the chroot environment:</para>
+  <para>Теперь, после всего, давайте наконец перейдём к процессу загрузки нашей новой, созданной системы LFS. Для начала, выйдем из окружения chroot:</para>
 
 <screen><userinput>logout</userinput></screen>
 
-  <para>Then unmount the virtual file systems:</para>
+  <para>отмонтируйте виртуальный файловые системы:</para>
 
 <screen><userinput>umount -v $LFS/dev/pts
 umount -v $LFS/dev
@@ -90,25 +83,24 @@ umount -v $LFS/run
 umount -v $LFS/proc
 umount -v $LFS/sys</userinput></screen>
 
-  <para>Unmount the LFS file system itself:</para>
+  <para>отмонтируйте файловую систему LFS:</para>
 
 <screen><userinput>umount -v $LFS</userinput></screen>
 
-  <para>If multiple partitions were created, unmount the other
-  partitions before unmounting the main one, like this:</para>
+  <para>Если было созданно несколько разделов, отмонтируйте их прежде, чем выполните размонтирование основного. Примерно так:</para>
 
 <screen role="nodump"><userinput>umount -v $LFS/usr
 umount -v $LFS/home
 umount -v $LFS</userinput></screen>
 
-  <para>Now, reboot the system with:</para>
+  <para>Теперь, выполним перезагрузку системы:</para>
 
 <screen role="nodump"><userinput>shutdown -r now</userinput></screen>
 
-  <para>Assuming the GRUB boot loader was set up as outlined earlier, the menu
-  is set to boot <emphasis>LFS &version;</emphasis> automatically.</para>
+  <para>Предполагая, что загрузчик GRUB был настроен, как описано ранее, пункт меню
+   <emphasis>LFS &version;</emphasis> будет настроен для загрузки системы.</para>
 
-  <para>When the reboot is complete, the LFS system is ready for use and
-  more software may be added to suit your needs.</para>
+  <para>По завершении перезагрузки, система LFS готова к использованию и
+  необходимое программное обеспечение может быть добавлено на ваше усмотрение.</para>
 
 </sect1>
