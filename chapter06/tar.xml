@@ -39,6 +39,8 @@
 
   <sect2 role="installation">
     <title>Установка пакета Tar</title>
+	 <para>Необходимо исправить ошибку в версии tar-1.31:</para>
+	 <screen><userinput remap="pre">sed -i 's/abort.*/FALLTHROUGH;/' src/extract.c</userinput></screen>
 <!--
     <para>Add a program that generates a man page for tar from the source code:</para>
 
@@ -70,7 +72,7 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>Один тест на несоответствие ссылки (link mismatch) известно что не пройдет.</para>
+    <!-- <para>Один тест на несоответствие ссылки (link mismatch) известно что не пройдет.</para> -->
 
     <para>Установите пакет:</para>
 
