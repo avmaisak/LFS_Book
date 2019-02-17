@@ -88,13 +88,13 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry>
+    <!-- <varlistentry>
       <term>Ninja Limit Jobs Patch - <token>&ninja-limit-jobs-patch-size;</token>:</term>
       <listitem>
         <para>Ссылка на загрузку: <ulink url="&patches-root;&ninja-limit-jobs-patch;"/></para>
         <para>Контрольная сумма MD5: <literal>&ninja-limit-jobs-patch-md5;</literal></para>
       </listitem>
-    </varlistentry>
+    </varlistentry> -->
 <!--
     <varlistentry>
       <term>Readline Upstream Fixes Patch - <token>&readline-fixes-patch-size;</token>:</term>

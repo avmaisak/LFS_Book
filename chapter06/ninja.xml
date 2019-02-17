@@ -39,13 +39,13 @@
 
   <sect2 role="installation">
     <title>Установка пакета Ninja</title>
-
+	<!--
     <para>Когда программа ninja запущена, как правило, используется максимальное количество процессов параллельно. По умолчанию этому числу присваивается значение количество ядер компьютера плюс два. В некоторых случаях это может привести к перегреву центрального процессора, и (или) переполнению оперативной памяти. Если выполнять запуск через командную строку, можно передать аргумент -jN, в котором можно явно указать количество потоков для выполнения. Но в некоторых пакетах данное  значение встроено и аргумент -jN будет игнорирован.</para>
 
     <para>Можно использовать <emphasis>опциональный</emphasis> патч, который позволит устанавливать количество потоков выполнения через переменную среды, NINJAJOBS. <command>Например</command> указание значения переменной среды:
-     <!-- Using <command> here to make the output bold.  We really don't want
+     <!- - Using <command> here to make the output bold.  We really don't want
      users setting this now and experience shows that many users blindly
-     copy/paste anything in a box. -->
+     copy/paste anything in a box. - ->
 
     <screen>export NINJAJOBS=4</screen>
 		ограничит одновременное выполнение ninja в четыре процесса.</para>
@@ -53,8 +53,8 @@
     <para>При желании установите патч выполнив команду:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../ninja-1.8.2-add_NINJAJOBS_var-1.patch</userinput></screen>
-
-    <para>Выполните сборку Ninja выполнив команду:</para>
+-->
+    <para>Выполните сборку пакета Ninja выполнив команду:</para>
 
 <screen><userinput remap="configure">python3 configure.py --bootstrap</userinput></screen>
 

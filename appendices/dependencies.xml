@@ -929,7 +929,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Gettext,
-         Grep, Gzip, Linux API Headers, Make, Perl, Sed, и Texinfo</seg>
+         Grep, Gzip, Linux API Headers, Make, Perl, Python, Sed, и Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
