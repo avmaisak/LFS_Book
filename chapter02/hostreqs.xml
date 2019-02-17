@@ -66,7 +66,7 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Glibc-2.26</emphasis> (Версия старше чем
+      <para><emphasis role="strong">Glibc-2.11</emphasis> (Версия старше чем
        &glibc-version; не рекомендуется,
       потому что тестирование таковой не проводилось.)</para>
     </listitem>
