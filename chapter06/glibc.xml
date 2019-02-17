@@ -129,7 +129,11 @@ unset GCC_INCDIR</userinput></screen>
 
     <para>Как правило, некоторые тесты завершатся с ошибкой. Тесты, завершенные с ошибкой и перечисленные ниже, можно  игнорировать.</para>
 
-<screen><userinput remap="test">ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2
+<screen><userinput remap="test">case $(uname -m) in
+  i?86)   ln -sfnv $PWD/elf/ld-linux.so.2        /lib ;;
+  x86_64) ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib ;;
+esac
+
 make check</userinput></screen>
 
     <para>Можно наблюдать некоторые ошибки при тестировании. Выполнение набора тестов Glibc сильно зависит от хост-системы. Ниже приведен список наиболее распространённых проблем, наблюдаемых в некоторых версиях LFS:</para>
@@ -159,8 +163,8 @@ make check</userinput></screen>
 
 
       <listitem>
-        <para>The <emphasis>rt/tst-cputimer{1,2,3}</emphasis> как известно, завершаются с ошибкой. Причина не совсем понятна, и такие показания  являются признаком
-         что незначительные проблемы со временем могут вызвать сбои.</para>
+        <para><emphasis>rt/tst-cputimer{1,2,3}</emphasis>
+			выполнение тестов зависит от версии ядра хост системы. Версии 4.14.91&ndash;4.14.96,4.19.13&ndash;4.19.18, and 4.20.0&ndash;4.20.5 - как известн, вызовут ошибки в этих тестах.</para>
       </listitem>
 
       <listitem>

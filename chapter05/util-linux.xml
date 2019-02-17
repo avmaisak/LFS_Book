@@ -101,4 +101,12 @@
 
   </sect2>
 
+  <sect2 role="content">
+    <title/>
+
+    <para>Подробная информация об этом пакете находится в
+    <xref linkend="contents-utillinux" role="."/></para>
+
+  </sect2>
+
 </sect1>
