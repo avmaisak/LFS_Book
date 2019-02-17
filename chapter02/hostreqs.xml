@@ -60,13 +60,13 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">GCC-4.9</emphasis> включая компилятор Си++
+      <para><emphasis role="strong">GCC-5.2</emphasis> включая компилятор Си++
       , <command>g++</command> (Версия старше чем  &gcc-version; не рекомендуется,
       потому что тестирование таковой не проводилось.)</para>
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Glibc-2.11</emphasis> (Версия старше чем
+      <para><emphasis role="strong">Glibc-2.26</emphasis> (Версия старше чем
        &glibc-version; не рекомендуется,
       потому что тестирование таковой не проводилось.)</para>
     </listitem>
