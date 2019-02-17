@@ -42,7 +42,7 @@
 
     <para>Подготовьте пакет GDBM к компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr \
+<screen><userinput remap="configure">./configure --prefix=/usr    \
             --disable-static \
             --enable-libgdbm-compat</userinput></screen>
 
