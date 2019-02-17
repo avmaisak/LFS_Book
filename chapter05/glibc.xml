@@ -55,10 +55,11 @@ cd       build</userinput></screen>
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;             \
-      --with-headers=/tools/include      \
+      --with-headers=/tools/include</userinput></screen>
+<!--
       libc_cv_forced_unwind=yes          \
       libc_cv_c_cleanup=yes</userinput></screen>
-
+ -->
     <variablelist>
       <title>Значение параметров конфигурации:</title>
 
@@ -83,7 +84,7 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry>
+      <!-- <varlistentry>
         <term><parameter>libc_cv_forced_unwind=yes</parameter></term>
         <listitem>
           <para>компоновщик, установленный в главе <xref linkend="ch-tools-binutils-pass1"/> был кросс-компилирован и не может использоваться, пока не будет установлен пакет Glibc. Это означает, что тест конфигурирования для функции force-unwind будет провален,поскольку он полагается на рабочий компоновщик. Значение аргумента libc_cv_forced_unwind=yes передается, чтобы сообщить, сценарию <command>configure</command> что поддержка функция force-unwind доступна без необходимости проведения тестирования.</para>
@@ -94,7 +95,7 @@ cd       build</userinput></screen>
         <listitem>
           <para>Аналогично, передается значение аргумента libc_cv_c_cleanup=yes сценарию <command>configure</command> для того, чтобы тестирование не выполнялось и поддержка обработки очистки была сконфигурирована.</para>
         </listitem>
-      </varlistentry>
+      </varlistentry> -->
 <!--  <varlistentry>
         <term><parameter>libc_cv_ctors_header=yes</parameter></term>
         <listitem>
