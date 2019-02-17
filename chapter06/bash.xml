@@ -78,7 +78,7 @@
     <para>Запустите тесты от пользователя <systemitem
     class="username">nobody</systemitem>:</para>
 
-<screen><userinput remap="test">su nobody -s /bin/bash -c "PATH=$PATH make tests"</userinput></screen>
+<screen><userinput remap="test">su nobody -s /bin/bash -c "PATH=$PATH HOME=/home make tests"</userinput></screen>
 
     <para>Установите пакет и переместите основные исполняемые файлы в каталог <filename class='directory'>/bin</filename>:</para>
 

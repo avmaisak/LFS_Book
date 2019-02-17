@@ -43,9 +43,26 @@
   <sect2 role="installation">
     <title>Установка пакета Python</title>
 
+	  <para>Пакет сначала выполняет сборку интерпретатора Python, затем, некоторые стандартные модули. Основной файл сценария для сборки модулей написан на Python, и использует жестко прописанные пути к каталогам хост системы
+	<filename class="directory">/usr/include</filename> и <filename
+    class="directory">/usr/lib</filename>. Необходимо предотвратить такое поведение и скорректировать файл сценария:</para>
+
+<screen><userinput remap="pre">sed -i '/def add_multiarch_paths/a \        return' setup.py</userinput></screen>
+
     <para>Подготовьте пакет Python к компиляции::</para>
 
-<screen><userinput remap="configure">./configure --prefix=/tools --with-ensurepip=no</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/tools --without-ensurepip</userinput></screen>
+    <variablelist>
+      <title>Значение параметров конфигурации::</title>
+
+      <varlistentry>
+        <term><parameter>--without-ensurepip</parameter></term>
+        <listitem>
+          <para>Аргумент отключает установщик Python, котрые не требуется на этом этапе.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
 
     <para>Скомпилируйте пакет:</para>
 
