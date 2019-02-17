@@ -129,7 +129,7 @@ unset GCC_INCDIR</userinput></screen>
 
     <para>Как правило, некоторые тесты завершатся с ошибкой. Тесты, завершенные с ошибкой и перечисленные ниже, можно  игнорировать.</para>
 
-<screen><userinput remap="test">ln -sfnv /tools/lib/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2
+<screen><userinput remap="test">ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2
 make check</userinput></screen>
 
     <para>Можно наблюдать некоторые ошибки при тестировании. Выполнение набора тестов Glibc сильно зависит от хост-системы. Ниже приведен список наиболее распространённых проблем, наблюдаемых в некоторых версиях LFS:</para>
