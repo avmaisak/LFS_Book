@@ -112,7 +112,6 @@
       </listitem>
     </varlistentry>
 
-<!--
     <varlistentry revision="systemd">
       <term>Systemd security patch - <token>&systemd-security-patch-size;</token>:</term>
       <listitem>
@@ -120,7 +119,7 @@
         <para>Контрольная сумма MD5: <literal>&systemd-security-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
+
 <!--
  <varlistentry revision="systemd">
       <term>systemd glibc patch - <token>&systemd-glibc-patch-size;</token>:</term>
