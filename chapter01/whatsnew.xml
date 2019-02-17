@@ -22,7 +22,7 @@
   <itemizedlist>
     <title>Обновлено до версии:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-    <!--<listitem>
+   <!--<listitem>
     <para>None</para>
     </listitem>-->
     <!--<listitem>
@@ -37,15 +37,15 @@
     <!--<listitem>
       <para>Automake-&automake-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Bash &bash-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Bc &bc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Binutils-&binutils-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Bison-&bison-version;</para>
     </listitem>
@@ -64,9 +64,9 @@
     <listitem revision="systemd">
       <para>D-Bus-&dbus-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Diffutils-&diffutils-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem revision="sysv">
       <para>Eudev-&eudev-version;</para>
    </listitem>
@@ -100,9 +100,9 @@
     <!--<listitem>
       <para>Gettext-&gettext-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Glibc-&glibc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>GMP-&gmp-version;</para>
     </listitem>-->
@@ -130,15 +130,15 @@
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
-   <listitem>
+    <listitem>
       <para>IPRoute2-&iproute2-version;</para>
    </listitem>
     <!--<listitem>
       <para>Kbd-&kbd-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Kmod-&kmod-version;</para>
-   </listitem>-->
+   </listitem>
    <!--<listitem>
       <para>Less-&less-version;</para>
    </listitem>-->
@@ -149,11 +149,11 @@
       <para>Libcap-&libcap-version;</para>
     </listitem>
     <listitem>
-      <para>Libelf-&elfutils-version;</para>
+      <para>Libelf-&elfutils-version; (from elfutils)</para>
    </listitem>
-   <!--<listitem>
+   <listitem>
       <para>Libpipeline-&libpipeline-version;</para>
-   </listitem>-->
+   </listitem>
     <!--<listitem>
       <para>Libtool-&libtool-version;</para>
     </listitem>-->
@@ -166,9 +166,9 @@
     <!--<listitem>
       <para>Make-&make-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-DB-&man-db-version;</para>
-   </listitem>-->
+   </listitem>
    <!--<listitem>
       <para>Man-pages-&man-pages-version;</para>
    </listitem>-->
@@ -178,12 +178,15 @@
    <!-- <listitem>
       <para>MPC-&mpc-version;</para>
    </listitem>-->
-   <!-- <listitem>
+   <listitem>
       <para>MPFR-&mpfr-version;</para>
-   </listitem>-->
+   </listitem>
    <!--<listitem>
       <para>Ncurses-&ncurses-version;</para>
    </listitem>-->
+   <listitem>
+      <para>Ninja-&ninja-version;</para>
+   </listitem>
    <listitem>
       <para>Openssl-&openssl-version;</para>
    </listitem>
@@ -202,12 +205,12 @@
     <listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>
-   <listitem>
+    <listitem>
       <para>Python-&python-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Readline-&readline-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Sed-&sed-version;</para>
     </listitem>
@@ -217,15 +220,15 @@
     <!--<listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
-   <listitem revision="systemd">
+    <listitem revision="systemd">
       <para>Systemd-&systemd-version;</para>
     </listitem>
     <listitem revision="sysv">
       <para>SysVinit-&sysvinit-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Tar-&tar-version;</para>
-   </listitem>-->
+   </listitem>
    <listitem>
       <para>Tcl-&tcl-version;</para>
    </listitem>

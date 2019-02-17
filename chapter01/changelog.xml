@@ -39,6 +39,180 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+ <listitem>
+      <para>2019-02-011</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Обновлено до linux-4.20.8. Исправления
+          <ulink url="&lfs-ticket-root;4423">#4423</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Исправлена пробема сборки Python в главе 5, когда на некторые хост системы используют собственные заголовочные файлы.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-02-011</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Обновлено до linux-4.20.7. Исправления
+          <ulink url="&lfs-ticket-root;4421">#4421</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до kmod-26. Исправления
+          <ulink url="&lfs-ticket-root;4422">#4422</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-02-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Обновлены требования для хост системы.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-02-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Упрощены инструкции для glibc в Главе 5. Спасибо Romain Geissler за отчёт.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-02-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Обновлено до bison-3.3.2. Исправления
+          <ulink url="&lfs-ticket-root;4418">#4419</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до meson-0.49.2. Исправления
+          <ulink url="&lfs-ticket-root;4420">#4420</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-02-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Fix psmisc URL. Исправления
+          <ulink url="&lfs-ticket-root;4418">#4418</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до binutils-2.32. Исправления
+          <ulink url="&lfs-ticket-root;4417">#4417</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-02-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Обновлено до bison-3.3.1. Исправления
+          <ulink url="&lfs-ticket-root;4412">#4412</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до glibc-2.29. Исправления
+          <ulink url="&lfs-ticket-root;4415">#4415</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до libpipeline-1.5.1. Исправления
+          <ulink url="&lfs-ticket-root;4413">#4413</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до linux-4.20.6. Исправления
+          <ulink url="&lfs-ticket-root;4409">#4409</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до meson-0.49.1. Исправления
+          <ulink url="&lfs-ticket-root;4410">#4410</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до mpfr-4.0.2. Исправления
+          <ulink url="&lfs-ticket-root;4416">#4416</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено до ninja-1.9.0. Исправления
+          <ulink url="&lfs-ticket-root;4414">#4414</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-01-27</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Исправлена ошибка, проявляемая в tar-1.31. Добавлена команда sed к инструкции по сборке пакета. Удалён ненужный комментарий о неудачных тестах.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2019-01-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Восстановлен пакет справки для пакета systemd без использования пространств имён для Docbook XSL Stylesheets.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+   <listitem revision="systemd">
+      <para>2019-01-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Добавлен патч для  systemd-240. Который исправляет CVE-2018-16865 and CVE-2018-16864 (повреждение памяти в journald
+          переполнение стека / выполнение произвольного кода). Примените патч можно скорее. Исправления.
+          <ulink url="&lfs-ticket-root;4408">#4408</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+
+<listitem>
+      <para>2019-01-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Обновлено доlinux-4.20.1. Исправления
+          <ulink url="&lfs-ticket-root;4398">#4398</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доdiffutils-3.7. Исправления
+          <ulink url="&lfs-ticket-root;4401">#4401</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доtar-1.31. Исправления
+          <ulink url="&lfs-ticket-root;4402">#4402</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доman-db-2.8.5. Исправления
+          <ulink url="&lfs-ticket-root;4403">#4403</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доbash-5.0. Исправления
+          <ulink url="&lfs-ticket-root;4404">#4404</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доreadline-8.0. Исправления
+          <ulink url="&lfs-ticket-root;4401">#4405</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доiproute2-4.20.0. Исправления
+          <ulink url="&lfs-ticket-root;4406">#4406</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Обновлено доutil-linux-2.33.1. Исправления
+          <ulink url="&lfs-ticket-root;4407">#4407</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2019-01-01</para>
       <itemizedlist>
