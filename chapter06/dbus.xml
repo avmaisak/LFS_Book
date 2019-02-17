@@ -45,14 +45,14 @@
 
     <para>Подготовьте пакет D-Bus к компиляции:</para>
 
-<screen><userinput remap="configure">  ./configure --prefix=/usr                       \
-              --sysconfdir=/etc                   \
-              --localstatedir=/var                \
-              --disable-static                    \
-              --disable-doxygen-docs              \
-              --disable-xml-docs                  \
-              --docdir=/usr/share/doc/dbus-&dbus-version; \
-              --with-console-auth-dir=/run/console</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr                       \
+            --sysconfdir=/etc                   \
+            --localstatedir=/var                \
+            --disable-static                    \
+            --disable-doxygen-docs              \
+            --disable-xml-docs                  \
+            --docdir=/usr/share/doc/dbus-&dbus-version; \
+            --with-console-auth-dir=/run/console</userinput></screen>
 
     <variablelist>
       <title>Значение параметров конфигурации:</title>
