@@ -73,13 +73,13 @@
 
     <para>Скомпилируйте пакет:</para>
 
-<screen><userinput remap="make">make -C src</userinput></screen>
+<screen><userinput remap="make">make</userinput></screen>
 
     <para>У этого пакета нет тестов.</para>
 
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">make -C src install</userinput></screen>
+<screen><userinput remap="install">make install</userinput></screen>
 
   </sect2>
 
