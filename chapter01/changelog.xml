@@ -39,6 +39,44 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
 -->
+
+ <listitem>
+      <para>2019-03-01</para>
+      <itemizedlist>
+      <listitem>
+        <para>[bdubbs] - Update to texinfo-6.6. Fixes
+        <ulink url="&lfs-ticket-root;4427">#4427</ulink>.</para>
+      </listitem>
+      <listitem>
+        <para>[bdubbs] - Update to tar-1.32. Fixes
+        <ulink url="&lfs-ticket-root;4431">#4431</ulink>.</para>
+      </listitem>
+      <listitem revision='sysv'>
+        <para>[bdubbs] - Update to sysvinit-2.94. Fixes
+        <ulink url="&lfs-ticket-root;4433">#4433</ulink>.</para>
+      </listitem>
+      <listitem>
+        <para>[bdubbs] - Update to openssl-1.1.1b. Fixes
+        <ulink url="&lfs-ticket-root;4435">#4435</ulink>.</para>
+      </listitem>
+      <listitem>
+        <para>[bdubbs] - Update to gcc-8.3.0. Fixes
+        <ulink url="&lfs-ticket-root;4430">#4430</ulink>.</para>
+      </listitem>
+      <listitem>
+        <para>[bdubbs] - Update to linux-4.20.13. Fixes
+        <ulink url="&lfs-ticket-root;4434">#4434</ulink>.</para>
+      </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-03-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-8.4 released.</para>
+        </listitem>
+
 <listitem revision="systemd">
       <para>2019-02-25</para>
       <itemizedlist>
