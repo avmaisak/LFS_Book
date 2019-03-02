@@ -76,7 +76,8 @@
         <listitem>
           <para>[bdubbs] - LFS-8.4 released.</para>
         </listitem>
-
+ </itemizedlist>
+    </listitem>
 <listitem revision="systemd">
       <para>2019-02-25</para>
       <itemizedlist>
