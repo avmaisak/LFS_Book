@@ -102,8 +102,8 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
 
-      <seglistitem>
-        <seg>code, find, locate, oldfind, updatedb, and xargs</seg>
+     <seglistitem>
+        <seg>find, locate, updatedb, and xargs</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -111,16 +111,6 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
       <bridgehead renderas="sect3">Краткое описание</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="code">
-        <term><command>code</command></term>
-        <listitem>
-          <para>Раньше использовался для воспроизведения базы данных <command>locate</command>; является предшественником программы <command>frcode</command></para>
-          <indexterm zone="ch-system-findutils code">
-            <primary sortas="b-code">code</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
 
       <varlistentry id="find">
         <term><command>find</command></term>
@@ -138,16 +128,6 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
           <para>быстрый поиск файлов в одной или нескольких базах данных имён файлов с использованием заданных пользователем критериев.</para>
           <indexterm zone="ch-system-findutils locate">
             <primary sortas="b-locate">locate</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="oldfind">
-        <term><command>oldfind</command></term>
-        <listitem>
-          <para>Старая версия find, использует иной алгоритм</para>
-          <indexterm zone="ch-system-findutils oldfind">
-            <primary sortas="b-oldfind">oldfind</primary>
           </indexterm>
         </listitem>
       </varlistentry>

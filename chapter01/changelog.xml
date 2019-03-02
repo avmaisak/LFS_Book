@@ -42,6 +42,18 @@
 <listitem revision="systemd">
       <para>2019-02-25</para>
       <itemizedlist>
+		<listitem>
+          <para>[bdubbs] - Update to linux-4.20.12. Fixes
+          <ulink url="&lfs-ticket-root;4425">#4425</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.176. Fixes
+          <ulink url="&lfs-ticket-root;4426">#4426</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.36. Fixes
+          <ulink url="&lfs-ticket-root;4429">#4429</ulink>.</para>
+        </listitem>
         <listitem>
           <para>[renodr] - Add a security patch for systemd-240
           to fix a PID1 crash over D-Bus. Fixes
