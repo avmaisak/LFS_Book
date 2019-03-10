@@ -38,8 +38,8 @@
 
   <sect2 role="installation">
     <title>Установка пакета systemd</title>
-	 <para>Примените патч, чтобы исправить две критические уязвимости безопасности:</para>
-	<screen><userinput remap="pre">patch -Np1 -i ../systemd-240-security_fixes-2.patch</userinput></screen>
+	 <!-- <para>Примените патч, чтобы исправить две критические уязвимости безопасности:</para>
+	<screen><userinput remap="pre">patch -Np1 -i ../systemd-240-security_fixes-2.patch</userinput></screen> -->
 
    <para>Создайте символическую ссылку, чтобы обойти проблему из-за отсутствия программы xsltproc:</para>
 	<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>

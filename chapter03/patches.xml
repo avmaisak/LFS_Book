@@ -112,13 +112,13 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="systemd">
+    <!-- <varlistentry revision="systemd">
       <term>Systemd security patch - <token>&systemd-security-patch-size;</token>:</term>
       <listitem>
         <para>Ссылка на загрузку: <ulink url="&patches-root;&systemd-security-patch;"/></para>
         <para>Контрольная сумма MD5: <literal>&systemd-security-patch-md5;</literal></para>
       </listitem>
-    </varlistentry>
+    </varlistentry> -->
 
 <!--
  <varlistentry revision="systemd">
