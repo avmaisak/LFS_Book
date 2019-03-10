@@ -40,8 +40,6 @@
 
   <sect2 role="installation">
     <title>Установка пакета Texinfo</title>
-<para>Исправьте файл, который создает множество сбоев в регрессионных тестах:</para>
-<screen><userinput remap="pre">sed -i '5481,5485 s/({/(\\{/' tp/Texinfo/Parser.pm</userinput></screen>
 
     <para>Подготовьте пакет Texinfo к компиляции:</para>
 
