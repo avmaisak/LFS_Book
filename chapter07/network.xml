@@ -34,6 +34,8 @@
 
     <para>Следующая команда создает пример конфигурационного файла для устройства <emphasis>eth0</emphasis> со статическим IP-адресом:</para>
 
+<!-- jhalfs relies on the values for IFACE, IP, etc. If you want to change
+     them, please inform the jhalfs maintainer. -->
 <screen><userinput>cd /etc/sysconfig/
 cat &gt; ifconfig.eth0 &lt;&lt; "EOF"
 <literal>ONBOOT=yes
