@@ -51,7 +51,7 @@
 
     <para>Модифицируйте Makefile чтобы установить заголовочные файлы в стандартный каталог
     <filename class="directory">/usr/include</filename> вместо
-    <filename class="directory">/usr/lib/libffi-3.2.1/include</filename>.</para>
+    <filename class="directory">/usr/lib/libffi-&libffi-version;/include</filename>.</para>
 
 <screen><userinput remap="pre">sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' \
     -i include/Makefile.in
