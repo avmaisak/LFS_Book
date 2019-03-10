@@ -37,21 +37,21 @@
 <!-- jhalfs relies on the values for IFACE, IP, etc. If you want to change
      them, please inform the jhalfs maintainer. -->
 <screen><userinput>cd /etc/sysconfig/
-cat &gt; ifconfig.eth0 &lt;&lt; "EOF"
-<literal>ONBOOT=yes
-IFACE=eth0
-SERVICE=ipv4-static
-IP=192.168.1.2
-GATEWAY=192.168.1.1
-PREFIX=24
-BROADCAST=192.168.1.255</literal>
+cat &gt; ifconfig.<replaceable>eth0</replaceable> &lt;&lt; "EOF"
+<literal>ONBOOT=<replaceable>yes</replaceable>
+IFACE=<replaceable>eth0</replaceable>
+SERVICE=<replaceable>ipv4-static</replaceable>
+IP=<replaceable>192.168.1.2</replaceable>
+GATEWAY=<replaceable>192.168.1.1</replaceable>
+PREFIX=<replaceable>24</replaceable>
+BROADCAST=<replaceable>192.168.1.255</replaceable></literal>
 EOF</userinput></screen>
 
     <para>Значения этих переменных должны быть изменены в каждом файле, для правильной настройки и работы сети.</para>
 
     <para>Если переменной <envar>ONBOOT</envar> указать значение <quote>yes</quote>, сценарий работы сети пакета System V вызовет сетевую карту в процессе загрузки системы. Если задано значение, отличное от <quote>yes</quote> , сетевой адаптер будет игнорироваться сценарием и не будет автоматически вызываться. Интерфейс можно запустить или остановить вручную с помощью команд  <command>ifup</command> и <command>ifdown</command>.</para>
 
-    <para>Переменная <envar>IFACE</envar> определяет имя сетевого интерфейса, например, eth0. Она необходима для всех файлов конфигураций сетевых устройств.</para>
+    <para>Переменная <envar>IFACE</envar> определяет имя сетевого интерфейса, например, eth0. Она необходима для всех файлов конфигураций сетевых устройств. Расширение файла должно соответствовать этому значению.</para>
 
     <para>Переменная <envar>SERVICE</envar>  определяет метод получения IP-адреса. Пакет LFS-Bootscripts имеет модульный формат назначения IP, и создание дополнительных файлов в каталоге <filename
     class="directory">/lib/services/</filename> позволит использовать другие методы назначения IP. Как правило, используется для протокола DHCP (Dynamic Host Configuration Protocol), который рассматривается в книге BLFS.</para>
