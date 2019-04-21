@@ -44,10 +44,10 @@
 
 <screen><userinput remap="pre">sed -i -e 's:\[\.-\]::' tests/filter.sed</userinput></screen>
 -->
-    <para>В документации к E2fsprogs указанно, что следует выполнять сборку в отдельном каталоге:</para>
+    <para>В документации к E2fsprogs указано, что следует выполнять сборку в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
-cd build</userinput></screen>
+cd       build</userinput></screen>
 
     <para>Подготовьте пакет E2fsprogs к компиляции:</para>
 
