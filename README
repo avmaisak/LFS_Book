@@ -2,7 +2,7 @@ LFS Book README
 
 В этом документе содержится информация о том, как выполнить преобразование книги из XML формата в другой формат (например HTML, PDF, PS и TXT). Для начала, если вы ещё этого не сделали, пожалуйста, откройте и прочитайте информацию, представленную в файле INSTALL, чтобы установить необходимое программное обеспечение. Если вы уже выполнили все шаги в файле INSTALL, ознакомьтесь с примерами того, как выполнить преобразование файлов в другие форматы.
 
-Во всех примерах, указание аргумента REV=systemd необходимо, если требуется сборка книги редакции systemd
+Во всех примерах необходимо указание аргумента REV=systemd, если требуется сборка книги редакции systemd.
 
 XML в XHTML:
 -------------
@@ -16,12 +16,11 @@ make BASEDIR=/path/to/output/location nochunks
 
 XML в TXT
 ----------
-Follow the instructions for nochunks and then run:
-lynx -dump /path/to/nochunks >/path/to/output
+Следуйте инструкциям для nochunks и затем введите:
+lynx -dump /path/to/nochunks > /path/to/output
 
 
 XML в PDF:
 -----------
 make BASEDIR=/path/to/output/location pdf
-
 
