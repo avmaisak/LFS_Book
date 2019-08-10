@@ -107,8 +107,6 @@ cd       build</userinput></screen>
     поэтому увеличьте его размер до запуска тестов:</para>
 
 <screen><userinput remap="test">ulimit -s 32768</userinput></screen>
-<para>Удалите один тест, который вызывает проблему:</para>
-<screen><userinput remap="test">rm ../gcc/testsuite/g++.dg/pr83239.C</userinput></screen>
 
  <para>Проверьте результаты тестирования от непривилегированного пользователя, но не останавливайтесь на ошибках:</para>
 <screen><userinput remap="test">chown -Rv nobody .
@@ -126,6 +124,12 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
 	 <para>Шесь тестов, которые относятся к get_time известн, что не пройдут. Это явно связано с en_HK locale.</para>
+
+	 <para>Two tests named lookup.cc and reverse.cc in experimental/net
+    are known to fail in LFS chroot environment because they require
+    /etc/hosts and iana-etc.</para>
+
+    <para>Two tests named pr57193.c and pr90178.c are known to fail.</para>
 
     <para>Несколько неожиданных сбоев не всегда удается избежать. Разработчики GCC
     как правило знают о таких проблемах, но некоторые из них могут быть ещё не решены. В частности известно, что шесть тестов
