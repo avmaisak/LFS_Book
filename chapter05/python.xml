@@ -58,7 +58,7 @@
       <varlistentry>
         <term><parameter>--without-ensurepip</parameter></term>
         <listitem>
-          <para>Аргумент отключает установщик Python, котрые не требуется на этом этапе.</para>
+          <para>Аргумент отключает установщик Python, котрый не требуется на этом этапе.</para>
         </listitem>
       </varlistentry>
 
