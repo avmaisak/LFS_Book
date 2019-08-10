@@ -49,10 +49,6 @@
   ;;
 esac</userinput></screen>
 
-    <para>Удалите символическую ссылку, созданную ранее, так как окончательная версия gcc после сборки будет содержать необходимые файлы:</para>
-
-<screen><userinput remap="pre">rm -f /usr/lib/gcc</userinput></screen>
-
     <para>В документации к пакету рекомендуется выполнять процедуру сборки из отдельного каталога:</para>
 
 <screen><userinput remap="pre">mkdir -v build
