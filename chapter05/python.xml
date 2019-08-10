@@ -43,6 +43,12 @@
   <sect2 role="installation">
     <title>Установка пакета Python</title>
 
+	  <note>
+      <para>Есть два файла пакета, имя которых начинается с
+      <quote>python</quote>. Необхдимо распаковать пакет
+      <filename>Python-&python-version;.tar.xz</filename> (первая буква - заглавная).</para>
+    </note>
+
 	  <para>Пакет сначала выполняет сборку интерпретатора Python, затем, некоторые стандартные модули. Основной файл сценария для сборки модулей написан на Python, и использует жестко прописанные пути к каталогам хост системы
 	<filename class="directory">/usr/include</filename> и <filename
     class="directory">/usr/lib</filename>. Необходимо предотвратить такое поведение и скорректировать файл сценария:</para>
