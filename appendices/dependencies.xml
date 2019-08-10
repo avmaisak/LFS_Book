@@ -1799,8 +1799,8 @@
       <segmentedlist>
         <segtitle>&before;</segtitle>
 
-        <seglistitem>
-          <seg>Нет</seg>
+       <seglistitem>
+          <seg>Systemd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2392,7 +2392,7 @@
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
          GCC, Glibc, Gperf, Grep, Intltool, Libcap,
-         Make, Sed, и Util-linux</seg>
+         Meson, Sed, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2416,7 +2416,10 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Нет</seg>
+          <seg>Много, подробнее -
+            <ulink url="&blfs-root;view/systemd/general/systemd.html">BLFS
+            systemd page</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
