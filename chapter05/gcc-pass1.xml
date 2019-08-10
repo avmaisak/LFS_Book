@@ -166,12 +166,12 @@ cd       build</userinput></screen>
 
       <varlistentry>
         <term><parameter>--disable-decimal-float, --disable-threads,
-        --disable-libatomic, --disable-libgomp, --disable-libmpx,
+              --disable-libatomic, --disable-libgomp, <!--- -disable-libmpx,-->
         --disable-libquadmath, --disable-libssp, --disable-libvtv,
         --disable-libstdcxx</parameter></term>
         <listitem>
           <para>
-			 Этот аргумент отключает поддержку расширений для работы с десятичными числами и числами с плавающей запятой, потоками, библиотеками libatomic, libgomp, libmpx, libquadmath, libssp,
+			 Этот аргумент отключает поддержку расширений для работы с десятичными числами и числами с плавающей запятой, потоками, библиотеками libatomic, libgomp, <!--libmpx,--> libquadmath, libssp,
           libvtv и стандартной библиотеки C++ соответственно. При компиляции этих функций, возникнет ошибка и для кросс-компилятора, эти функции не нужны, для того чтобы выполнить кросс-компиляцию временной библиотеки C (libc).</para>
         </listitem>
       </varlistentry>
