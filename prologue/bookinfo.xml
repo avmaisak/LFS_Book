@@ -19,17 +19,14 @@
       <firstname>Главный редактор: Bruce</firstname>
       <surname>Dubbs</surname>
     </author>
-    <!--
     <author revision="systemd">
       <firstname>Editor: Douglas R.</firstname>
       <surname>Reno</surname>
     </author>
-    -->
     <author revision="systemd">
       <firstname>Редактор: DJ</firstname>
       <surname>Lucas</surname>
     </author>
-
 	 <author>
       <firstname>Технический перевод: Антон</firstname>
       <surname>Майсак</surname>
