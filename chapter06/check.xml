@@ -42,7 +42,9 @@
 
     <para>Подготовьте пакет Check к компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr
+            --docdir=/usr/share/doc/check-&check-version;</userinput></screen>
+
 
     <para>Выполните сборку пакета:</para>
 
