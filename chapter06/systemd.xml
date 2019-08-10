@@ -47,7 +47,7 @@
 <para>Поскольку мы еще не установили финальную версию Util-Linux,
      необходимо создать символические ссылки на библиотеки в необходимом месте:</para>
 
-<screen><userinput remap="pre">for file in /tools/lib/lib{blkid,mount,uuid}*; do
+<screen><userinput remap="pre">for file in /tools/lib/lib{blkid,mount,uuid}.so*; do
     ln -sf $file /usr/lib/
 done</userinput></screen>
 
