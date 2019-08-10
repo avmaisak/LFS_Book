@@ -61,7 +61,6 @@ cd       build</userinput></screen>
              --enable-languages=c,c++ \
              --disable-multilib       \
              --disable-bootstrap      \
-				 --disable-libmpx         \
              --with-system-zlib</userinput></screen>
 
     <para>Обратите внимание, что другие языки имеют некоторые дополнительные зависимости, которые на данный момент еще не доступны. Обратитесь к документации
