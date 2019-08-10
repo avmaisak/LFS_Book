@@ -39,13 +39,19 @@
 
   <sect2 role="installation">
     <title>Установка пакета Bison</title>
+
+    <para>First, fix a build problem with the current version:</para>
+
+<screen><userinput remap="pre">sed -i '6855 s/mv/cp/' Makefile.in</userinput></screen>
+
     <para>Подготовьте пакет Bison к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/bison-&bison-version;</userinput></screen>
 
-    <para>Скомпилируйте пакет:</para>
+        <para>Compile the package, but work around a race condition in the
+    current version:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make -j1</userinput></screen>
 
 <!--
     <para>Для выполнения тестов  (about 2.2 SBU), выполните следующую команду:</para>
