@@ -205,9 +205,9 @@
       <segmentedlist>
         <segtitle>&dependencies;</segtitle>
 
-        <seglistitem>
+         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, GCC, Glibc,
-          Grep, Make, и Readline</seg>
+          Grep, Make, Perl, и Readline</seg>
         </seglistitem>
       </segmentedlist>
 

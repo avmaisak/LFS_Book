@@ -81,6 +81,7 @@ cd       build</userinput></screen>
              --disable-werror                       \
              --enable-kernel=&min-kernel;                    \
              --enable-stack-protector=strong        \
+				 --with-headers=/usr/include            \
              libc_cv_slibdir=/lib</userinput></screen>
 
    <variablelist>
@@ -106,6 +107,14 @@ cd       build</userinput></screen>
         <term><parameter>--enable-stack-protector=strong</parameter></term>
         <listitem>
           <para>Аргумент усиливает безопасность системы, добавляя дополнительный код для проверки на переполнение буфера, например при переполнении буфера в стеке (Stack smashing).</para>
+        </listitem>
+      </varlistentry>
+
+		 <varlistentry>
+        <term><parameter>--with-headers=/usr/include</parameter></term>
+        <listitem>
+          <para>Аргумент сообщает системе сборке местоположение заголовочных файлов API ядра. По умолчанию поиск заголовков будет в каталоге
+          <filename class="directory">/tools/include</filename>.</para>
         </listitem>
       </varlistentry>
 
