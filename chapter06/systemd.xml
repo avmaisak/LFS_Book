@@ -181,7 +181,7 @@ meson --prefix=/usr                \
 -->
    <para>Установите пакет:</para>
 	<screen><userinput remap="install">LANG=en_US.UTF-8 ninja install</userinput></screen>
-   <para>Удалите ненужные каталоги:</para>
+   <para>Удалите ненужные каталоги и файлы:</para>
 	<screen><userinput remap="install">rm -rfv /usr/lib/rpm
 rm -f /usr/bin/xsltproc</userinput></screen>
 
