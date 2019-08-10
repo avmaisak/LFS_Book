@@ -187,13 +187,12 @@ rm -f /usr/bin/xsltproc</userinput></screen>
 
    <para>Создайте файл <filename>/etc/machine-id</filename> необходимый <command>systemd-journald</command>:</para>
 	<screen><userinput remap="adjust">systemd-machine-id-setup</userinput></screen>
-   <para>Создайте сценарий <filename>/lib/systemd/systemd-user-sessions</filename> для разрешения обычным пользователям, выполнять авторизацию без <application>systemd-logind</application>:</para>
 
-<screen><userinput remap="adjust">cat &gt; /lib/systemd/systemd-user-sessions &lt;&lt; "EOF"
-#!/bin/bash
-rm -f /run/nologin
-EOF
-chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
+   <para>Stop systemd to create <filename>/run/nologin</filename>
+    to allow unprivileged user logins without
+    <application>systemd-logind</application>:</para>
+
+<screen><userinput remap="adjust">rm -f /usr/lib/tmpfiles.d/systemd-nologin.conf</userinput></screen>
 
   </sect2>
 
