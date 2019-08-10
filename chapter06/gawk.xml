@@ -77,13 +77,15 @@ cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-&gawk-version;</
       <segtitle>Установленные каталоги</segtitle>
 
       <seglistitem>
-        <seg>awk (ссылка на gawk), gawk, и awk-&gawk-version;</seg>
-        <seg>filefuncs.so, fnmatch.so, fork.so, inplace.so, ordchr.so,
+        <seg>awk (link to gawk), gawk, and awk-&gawk-version;</seg>
+        <seg>filefuncs.so, fnmatch.so, fork.so, inplace.so, intdiv.so, ordchr.so,
         readdir.so, readfile.so, revoutput.so, revtwoway.so, rwarray.so,
-        testext.so, and time.so</seg>
+        and time.so (all in /usr/lib/gawk)</seg>
         <seg>/usr/lib/gawk, /usr/libexec/awk, /usr/share/awk, and
         /usr/share/doc/gawk-&gawk-version;</seg>
       </seglistitem>
+    </segmentedlist>
+
     </segmentedlist>
 
     <variablelist>

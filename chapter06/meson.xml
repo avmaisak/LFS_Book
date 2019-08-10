@@ -72,8 +72,8 @@ cp -rv dest/* /</userinput></screen>
       <segtitle>Каталог установки</segtitle>
 
        <seglistitem>
-        <seg>meson, mesonconf, mesonintrospect, mesontest, and wraptool</seg>
-		<seg>/usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg</seg>
+        <seg>meson</seg>
+        <seg>/usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg-info and /usr/lib/python&python-minor;/site-packages/mesonbuild</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -92,46 +92,6 @@ cp -rv dest/* /</userinput></screen>
         </listitem>
       </varlistentry>
 
-		<varlistentry id="mesonconf">
-		<term><command>mesonconf</command></term>
-        <listitem>
-          <para>Инструмент для конфигурации процесса сборки с помощью meson</para>
-          <indexterm zone="ch-system-meson mesonconf">
-            <primary sortas="b-mesonconf">mesonconf</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-
-		<varlistentry id="mesonintrospect">
-		<term><command>mesonintrospect</command></term>
-        <listitem>
-          <para>Инструмент для получения информации о сборке Meson</para>
-          <indexterm zone="ch-system-meson mesonintrospect">
-            <primary sortas="b-mesonintrospect">mesonintrospect</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-		<varlistentry id="mesontest">
-		<term><command>mesontest</command></term>
-        <listitem>
-          <para>Инструмент тестирования для системы сборки Meson</para>
-          <indexterm zone="ch-system-meson mesontest">
-            <primary sortas="b-mesontest">mesontest</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-		<varlistentry id="wraptool">
-		<term><command>wraptool</command></term>
-        <listitem>
-          <para>Загрузчик исходного кода зависимостей</para>
-          <indexterm zone="ch-system-meson wraptool">
-            <primary sortas="b-wraptool">wraptool</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
     </variablelist>
 
   </sect2>

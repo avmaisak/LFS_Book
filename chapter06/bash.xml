@@ -106,7 +106,8 @@ mv -vf /usr/bin/bash /bin</userinput></screen>
 
       <seglistitem>
         <seg>bash, bashbug, and sh (ссылка на bash)</seg>
-        <seg>/usr/share/doc/bash-&bash-version;</seg>
+        <seg>/usr/include/bash, /usr/lib/bash, и
+        /usr/share/doc/bash-&bash-version;</seg>
       </seglistitem>
     </segmentedlist>
 

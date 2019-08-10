@@ -94,9 +94,9 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
       <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Установленные каталоги</segtitle>
 
-      <seglistitem>
-        <seg>libhistory.so and libreadline.so</seg>
-        <seg>/usr/include/readline, /usr/share/readline, and
+     <seglistitem>
+        <seg>libhistory.so и libreadline.so</seg>
+        <seg>/usr/include/readline и
         /usr/share/doc/readline-&readline-version;</seg>
       </seglistitem>
     </segmentedlist>

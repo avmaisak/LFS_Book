@@ -157,15 +157,17 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
       <segtitle>Установленные библиотеки</segtitle>
       <segtitle>Установленные каталоги</segtitle>
 
-      <seglistitem>
+    <seglistitem>
         <seg>badblocks, chattr, compile_et, debugfs, dumpe2fs,e2freefrag,
-        e2fsck, e2image, e2label, e2undo, e4defrag, filefrag, fsck.ext2,
-        fsck.ext3, fsck.ext4, fsck.ext4dev, logsave, lsattr, mk_cmds, mke2fs,
-        mkfs.ext2, mkfs.ext3, mkfs.ext4, mkfs.ext4dev, mklost+found,
+        e2fsck, e2image, e2label, e2mmpstatus, e2scrub, e2scrub_all, e2undo,
+        e4crypt, e4defrag, filefrag, fsck.ext2,
+        fsck.ext3, fsck.ext4, logsave, lsattr, mk_cmds, mke2fs,
+        mkfs.ext2, mkfs.ext3, mkfs.ext4, mklost+found,
         resize2fs, and tune2fs</seg>
         <seg>libcom_err.so, libe2p.so, libext2fs.so, and libss.so</seg>
         <seg>/usr/include/e2p, /usr/include/et, /usr/include/ext2fs,
-        /usr/include/ss, /usr/share/et, and /usr/share/ss</seg>
+        /usr/include/ss, /usr/lib/e2fsprogs, /usr/share/et, and
+        /usr/share/ss</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -278,6 +280,36 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
         </listitem>
       </varlistentry>
 
+      <varlistentry id="e2mmpstatus">
+        <term><command>e2mmpstatus</command></term>
+        <listitem>
+          <para>Checks MMP status of an ext4 filesystem</para>
+          <indexterm zone="ch-system-e2fsprogs e2mmpstatus">
+            <primary sortas="b-e2mmpstatus">e2mmpstatus</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="e2scrub">
+        <term><command>e2scrub</command></term>
+        <listitem>
+          <para>Checks the contents of a mounted ext[234] filesystem</para>
+          <indexterm zone="ch-system-e2fsprogs e2scrub">
+            <primary sortas="b-e2scrub">e2scrub</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="e2scrub_all">
+        <term><command>e2scrub_all</command></term>
+        <listitem>
+          <para>Checks all mounted ext[234] filesystems for errors</para>
+          <indexterm zone="ch-system-e2fsprogs e2scrub_all">
+            <primary sortas="b-e2scrub_all">e2scrub_all</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="e2undo">
         <term><command>e2undo</command></term>
         <listitem>
@@ -285,6 +317,16 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
           на данном устройстве [можно использовать для отмены неудачной операции при использовании программы e2fsprogs.]</para>
           <indexterm zone="ch-system-e2fsprogs e2undo">
             <primary sortas="b-e2undo">e2undo</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+		<varlistentry id="e4crypt">
+        <term><command>e4crypt</command></term>
+        <listitem>
+          <para>Ext4 filesystem encryption utility</para>
+          <indexterm zone="ch-system-e2fsprogs e4crypt">
+            <primary sortas="b-e4crypt">e4crypt</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -338,18 +380,6 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
           и жесткая ссылка на <command>e2fsck</command></para>
           <indexterm zone="ch-system-e2fsprogs fsck.ext4">
             <primary sortas="b-fsck.ext4">fsck.ext4</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="fsck.ext4dev">
-        <term><command>fsck.ext4dev</command></term>
-        <listitem>
-          <para>Проверка файловой системы <systemitem class="filesystem">ext4</systemitem>
-          для разработчиков и жесткая ссылка на
-          <command>e2fsck</command></para>
-          <indexterm zone="ch-system-e2fsprogs fsck.ext4dev">
-            <primary sortas="b-fsck.ext4dev">fsck.ext4dev</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -426,17 +456,6 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
          и является жесткой ссылкой на <command>mke2fs</command></para>
           <indexterm zone="ch-system-e2fsprogs mkfs.ext4">
             <primary sortas="b-mkfs.ext4">mkfs.ext4</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="mkfs.ext4dev">
-        <term><command>mkfs.ext4dev</command></term>
-        <listitem>
-          <para>Создает файловую систему <systemitem class="filesystem">ext4</systemitem>
-          для разработчиков и является жесткой ссылкой на <command>mke2fs</command></para>
-          <indexterm zone="ch-system-e2fsprogs mkfs.ext4dev">
-            <primary sortas="b-mkfs.ext4dev">mkfs.ext4dev</primary>
           </indexterm>
         </listitem>
       </varlistentry>

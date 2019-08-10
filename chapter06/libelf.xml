@@ -64,10 +64,13 @@ install -vm644 config/libelf.pc /usr/lib/pkgconfig</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленная библиотека</segtitle>
-
+		<segtitle>Установленный каталог</segtitle>
       <seglistitem>
         <seg>
           libelf.so
+        </seg>
+		   <seg>
+          /usr/include/elfutils
         </seg>
       </seglistitem>
     </segmentedlist>

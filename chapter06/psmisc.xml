@@ -68,8 +68,8 @@ mv -v /usr/bin/killall /bin</userinput></screen>
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
 
-      <seglistitem>
-        <seg>fuser, killall, peekfd, prtstat, pstree, and pstree.x11 (link to pstree)</seg>
+     <seglistitem>
+        <seg>fuser, killall, peekfd, prtstat, pslog, pstree, and pstree.x11 (ссылка на pstree)</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -115,6 +115,16 @@ mv -v /usr/bin/killall /bin</userinput></screen>
           <para>Отображает информацию о процессе</para>
           <indexterm zone="ch-system-psmisc prtstat">
             <primary sortas="b-prtstat">prtstat</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+		<varlistentry id="pslog">
+        <term><command>pslog</command></term>
+        <listitem>
+          <para>Reports current logs path of a process</para>
+          <indexterm zone="ch-system-psmisc pslog">
+            <primary sortas="b-pslog">pslog</primary>
           </indexterm>
         </listitem>
       </varlistentry>

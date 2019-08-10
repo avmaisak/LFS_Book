@@ -101,9 +101,11 @@ sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
 
     <segmentedlist>
       <segtitle>Установленные программы</segtitle>
+		<segtitle>Установленные каталоги</segtitle>
 
-     <seglistitem>
+      <seglistitem>
         <seg>find, locate, updatedb, and xargs</seg>
+        <seg>/var/lib/locate</seg>
       </seglistitem>
     </segmentedlist>
 
