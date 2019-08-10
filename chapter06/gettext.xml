@@ -50,18 +50,20 @@
 
 	There is no reference to 'test' or TEST in  gettext-tools/gnulib-tests/Makefile.am
 	-->
+	 <!--
    <para>Во-первых, подавите два вызова test-lock, которые на некоторых машинах
    могут вызвать бесконечный цикл:</para>
 
 <screen><userinput remap="pre">sed -i '/^TESTS =/d' gettext-runtime/tests/Makefile.in &amp;&amp;
 sed -i 's/test-lock..EXEEXT.//' gettext-tools/gnulib-tests/Makefile.in</userinput></screen>
 
-<!-- As of April 11, 2018 appdata.* is NOT in git master, but appears
-   to be in metainfo.{its,loc},  When updating, check BLFS gnome-screenshot. -->
+As of April 11, 2018 appdata.* is NOT in git master, but appears
+   to be in metainfo.{its,loc},  When updating, check BLFS gnome-screenshot.
+
    <para>Исправьте файл конфигурации:</para>
 	<screen><userinput remap="pre">sed -e '/AppData/{N;N;p;s/\.appdata\./.metainfo./}' \
     -i gettext-tools/its/appdata.loc</userinput></screen>
-
+-->
     <para>Подготовьте пакет Gettext к компиляции:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \

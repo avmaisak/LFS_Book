@@ -47,18 +47,18 @@
 
     <para>Подготовьте пакет Gettext к компиляции:</para>
 
-<screen><userinput remap="configure">cd gettext-tools
-EMACS="no" ./configure --prefix=/tools --disable-shared</userinput></screen>
+
+<screen><userinput remap="configure">./configure --disable-shared</userinput></screen>
 
     <variablelist>
       <title>Значения параметров конфигурации:</title>
-
+<!--
       <varlistentry>
         <term><parameter>EMACS="no"</parameter></term>
         <listitem>
           <para>Аргумент сообщает сценарию конфигурирования не определять куда установить файлы Emacs Lisp. Как известно, такая проверка может вызывать зваисание, на некоторых хост-системах.</para>
         </listitem>
-      </varlistentry>
+      </varlistentry> -->
 
       <varlistentry>
         <term><parameter>--disable-shared</parameter></term>
@@ -71,18 +71,17 @@ EMACS="no" ./configure --prefix=/tools --disable-shared</userinput></screen>
 
     <para>Скомпилируйте пакет:</para>
 
-<screen><userinput remap="make">make -C gnulib-lib
-make -C intl pluralx.c
-make -C src msgfmt
-make -C src msgmerge
-make -C src xgettext</userinput></screen>
-
-    <para>Поскольку было скомпилировано всего три программы, запустить набор тестов невозможно, без компиляции дополнительных библиотек пакета Gettext. Поэтому не рекомендуется запускать наборы тестов на этом этапе.</para>
+<screen><userinput remap="make">make</userinput></screen>
+ <para>
+    Due to the limited environment, running the test suite at this stage
+    is not recommended.</para>
 
     <para>Установите the <command>msgfmt</command>, <command>msgmerge</command> and
     <command>xgettext</command> programs:</para>
 
-<screen><userinput remap="install">cp -v src/{msgfmt,msgmerge,xgettext} /tools/bin</userinput></screen>
+
+<screen><userinput remap="install">cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /tools/bin</userinput></screen>
+
 
   </sect2>
 
