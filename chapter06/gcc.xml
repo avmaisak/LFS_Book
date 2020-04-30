@@ -125,13 +125,13 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> и
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-	 <para>Шесь тестов, которые относятся к get_time известн, что не пройдут. Это явно связано с en_HK locale.</para>
+	 <para>Шесь тестов, которые относятся к get_time известно, что не пройдут. Это явно связано с en_HK locale.</para>
 
-	 <para>Two tests named lookup.cc and reverse.cc in experimental/net
-    are known to fail in LFS chroot environment because they require
+	 <para>Два теста - lookup.cc и reverse.cc в experimental/net
+    известно что не пройдут в chroot среде LFS, потому что требуют
     /etc/hosts and iana-etc.</para>
 
-    <para>Two tests named pr57193.c and pr90178.c are known to fail.</para>
+    <para>Два теста - pr57193.c и pr90178.c известно что не пройдут.</para>
 
     <para>Несколько неожиданных сбоев не всегда удается избежать. Разработчики GCC
     как правило знают о таких проблемах, но некоторые из них могут быть ещё не решены. В частности известно, что шесть тестов
@@ -139,12 +139,14 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
 	 выполнения тестов не особо отличаются от результатов, опубликованных по ссылку выше, то можно продолжать далее.</para>
 
 
-    <note><para>
-	 	При некоторых конфигурациях ядра хост-системы и при наличии процессора AMD, могут возникать ошибки при тестировании.
-		Ошибок может быть более 1100 в тестах gcc.target/i386/mpx (которые спроектированы для тестирования опции MPX для современных процессоров
-		Intel). Такие ошибки можно игнорировать, если у вас процессор AMD. Эти тесты также не выполнятся на процессорах Intel, если поддержка MPX
-       не включена в ядро, даже если они и поддерживаются процессором.
-    </para></note>
+    <!--note><para>
+      On some combinations of kernel configuration and AMD processors
+      there may be more than 1100 failures in the gcc.target/i386/mpx
+      tests (which are designed to test the MPX option on recent
+      Intel processors). These can safely be ignored on AMD
+      processors. These tests will also fail on Intel processors if MPX support
+      is not enabled in the kernel even though it is present on the CPU.
+    </para></note-->
 
     <para>Установите пакет:</para>
 
