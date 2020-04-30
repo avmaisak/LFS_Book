@@ -38,7 +38,16 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
-
+<listitem revision="systemd">
+      <para>2019-06-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to dbus-1.12.16. Fixes
+          <ulink url="&lfs-ticket-root;4470">#4470</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
  <listitem>
       <para>2019-06-08</para>
       <itemizedlist>
@@ -48,7 +57,7 @@
         </listitem>
       </itemizedlist>
     </listitem>
-    
+
 	  <listitem>
       <para>2019-05-03</para>
       <itemizedlist>
