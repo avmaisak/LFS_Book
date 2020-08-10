@@ -8,12 +8,12 @@
 <sect1 id="pre-standards">
   <?dbhtml filename="standards.html"?>
 
-  <title>LFS and стандарты</title>
+  <title>LFS и стандарты</title>
 
   <!--<sect2>
     <title/> -->
 
-     <para>Структура LFS следует стандартам Linux на столько, на сколько это возможно:</para>
+     <para>Структура LFS следует стандартам Linux настолько, насколько это возможно:</para>
 
     <itemizedlist>
       <listitem>
@@ -30,23 +30,23 @@
         Standard Base (LSB) Version 5.0 (2015)</ulink></para>
 
         <para>LSB имеет четыре отдельных стандарта: Core, Desktop, Runtime Languages и Imaging.
-				Кроме того, существуют требования специфичные для архитектуры. Есть также две области
+				Кроме того, существуют требования, специфичные для определённых архитектур. Есть также две области
 				для пробного или ознакомительного использования: Gtk3 и Graphics. LFS старается соответствовать
-				 стандартам предусмотренными архитектурами, рассмотренными в предыдущем разделе.</para>
+				 стандартам для архитектур, указанных в предыдущем разделе.</para>
 
         <note><para>
-				Многие не согласны с требованиями LSB. Основные цели стандартов - быть уверенным в том,
-				что проприетарное ПО будет правильно установлено и сможет корректно работать на совместимой системе. Поскольку в LFS установка программ идёт из исходных кодов, у пользователя имеется полный контроль над тем, какие пакеты ему необходимы и многие предпочитают не устанавливать некоторые пакеты, которые определяются в стандартах LSB.</para></note>
+				Многие не согласны с требованиями LSB. Основная цель стандартов - дать гарантию того,
+				что проприетарное ПО будет правильно установлено и сможет корректно работать на совместимой системе. Поскольку в LFS установка программ идёт из исходного кода, у пользователя имеется полный контроль над процессом сборки, и многие предпочитают не устанавливать некоторые пакеты, требуемые стандартами.</para></note>
 
       </listitem>
     </itemizedlist>
 
-    <para>Создание окончательной системы LFS, способной успешно выполнять сертификационные тесты LSB - возможно
-		с установкой некоторых дополнительных пакетов, которые выходят за рамки этой книги. Но инструкции по их установке
+    <para>Создание окончательной системы LFS, способной успешно выполнять сертификационные тесты LSB, возможно
+		с установкой некоторых дополнительных пакетов, которые выходят за рамки этой книги. Инструкции по их установке
 		есть в книге BLFS.</para>
 
     <variablelist>
-      <bridgehead renderas="sect3">Пакеты LFS которые необходимы для следования требованиям LSB</bridgehead>
+      <bridgehead renderas="sect3">Пакеты LFS, необходимые для следования требованиям LSB</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -90,7 +90,7 @@
     </variablelist>
 
     <variablelist>
-			<bridgehead renderas="sect3">Пакеты BLFS которые необходимы для следования требованиям LSB</bridgehead>
+			<bridgehead renderas="sect3">Пакеты BLFS, необходимые для следования требованиям LSB</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -98,7 +98,7 @@
         <term><emphasis>LSB Core:</emphasis></term>
         <listitem>
           <para>At, Batch (a part of At), Cpio, Ed, Fcrontab, Initd-tools,
-          Lsb_release, NSPR, NSS, PAM, Pax, Sendmail (or Postfix or Exim), time
+          Lsb_release, NSPR, NSS, PAM, Pax, Sendmail (or Postfix or Exim), Time
           </para>
         </listitem>
       </varlistentry>
@@ -136,7 +136,7 @@
     </variablelist>
 
     <variablelist>
-			<bridgehead renderas="sect3">Пакеты которые отсутствуют в LFS и BLFS, которые необходимы для следования требованиям LSB</bridgehead>
+			<bridgehead renderas="sect3">Пакеты, отсутствующие в LFS и BLFS, но необходимые для следования требованиям LSB</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
