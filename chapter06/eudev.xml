@@ -45,8 +45,8 @@
 	<!--
     <para>Next, remove an unneeded line that causes a build failure:</para>
 	<screen><userinput remap="pre">sed -i '/keyboard_lookup_key/d' src/udev/udev-builtin-keyboard.c</userinput></screen>
-	-->
-    <para>Затем обойдем проблему при которой   каталог /tools
+
+    <para>Затем обойдем проблему при которой каталог /tools
     будет жестко закодирован в библиотеки Eudev:</para>
 
 <screen><userinput remap="pre">cat &gt; config.cache &lt;&lt; "EOF"
@@ -54,6 +54,7 @@ HAVE_BLKID=1
 BLKID_LIBS="-lblkid"
 BLKID_CFLAGS="-I/tools/include"
 EOF</userinput></screen>
+-->
 
 <para>Подготовьте пакет Eudev к компиляции:</para>
 
@@ -66,14 +67,15 @@ EOF</userinput></screen>
             --with-rootprefix=      \
             --with-rootlibdir=/lib  \
             --enable-manpages       \
-            --disable-static        \
-            --config-cache</userinput></screen>
+            --disable-static</userinput></screen>
+            <!-- config-cache</userinput></screen> -->
 
 <para>Скомпилируйте пакет:</para>
-
+ <!--
 <screen><userinput remap="make">LIBRARY_PATH=/tools/lib make</userinput></screen>
 
 <note><para>Переменная окружения LIBRARY_PATH и LD_LIBRARY_PATH, ниже, необходимы для того, чтобы использовать библиотеки, которые были установлены в каталоге /tools, но не были установлены в создаваемой системе. Переменная окружения LIBRARY_PATH используется для поиска библиотек в процессе компоновки. Переменная окружения LD_LIBRARY_PATH используется для поиска библиотек в процессе выполнения.</para></note>
+ -->
 
 <para>Создайте каталоги, которые необходимы для успешного прохождения тестов, которые также будут использоваться в процессе установки:</para>
 
@@ -82,11 +84,14 @@ mkdir -pv /etc/udev/rules.d</userinput></screen>
 
 <para>Для выполнения тестов, выполните команду:</para>
 
-<screen><userinput remap="test">make LD_LIBRARY_PATH=/tools/lib check</userinput></screen>
+<screen><userinput remap="test">make check</userinput></screen>
+<!-- <screen><userinput remap="test">make LD_LIBRARY_PATH=/tools/lib check</userinput></screen> -->
 
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
+
+<screen><userinput remap="install">make install</userinput></screen>
+<!--<screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>-->
 
     <para>Установите дополнительные правила и файлы, используемые в окружении LFS:</para>
 
@@ -112,7 +117,8 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
     <filename class="directory">/lib/udev/hwdb.d</filename>.
     <application>Eudev</application> требуется чтобы эта информация была скомпилирована в двоичную базу данных в каталоге <filename>/etc/udev/hwdb.bin</filename>. Создадим пустую базу данных:</para>
 
-<screen><userinput>LD_LIBRARY_PATH=/tools/lib udevadm hwdb --update</userinput></screen>
+<!--<screen><userinput>LD_LIBRARY_PATH=/tools/lib udevadm hwdb - -update</userinput></screen>-->
+<screen><userinput>udevadm hwdb --update</userinput></screen>
 
     <para>Эта команда должна быть запущена каждый раз, когда информация об оборудовании обновится.</para>
 

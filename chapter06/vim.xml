@@ -63,7 +63,14 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов, выполните команду:</para>
+<para>Чтобы подготовить тесты к выполнению, убедитесь что пользователь  <systemitem class="username">nobody</systemitem> может выполнять запись в дерево исходных текстов пакета:</para>
+
+<screen><userinput remap="test">chown -Rv nobody .</userinput></screen>
+
+<para>Теперь запустите тесты от пользователя<systemitem
+    class="username">nobody</systemitem>:</para>
+
+<screen><userinput remap="test">su nobody -s /bin/bash -c "LANG=en_US.UTF-8 make -j1 test" &amp;> vim-test.log</userinput></screen>
 
 <screen><userinput remap="test">LANG=en_US.UTF-8 make -j1 test &amp;&gt; vim-test.log</userinput></screen>
 
