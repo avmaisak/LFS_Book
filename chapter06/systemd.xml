@@ -189,11 +189,11 @@ meson --prefix=/usr                \
    <para>Удалите ненужные ссылки:</para>
 	<screen><userinput remap="install">rm -f /usr/bin/xsltproc</userinput></screen>
 
-	<para>Удалите ссылки на библиотеки Util-Linux:</para>
-	<screen><userinput remap="install">rm -fv /usr/lib/lib{blkid,uuid,mount}.so*</userinput></screen>
-
    <para>Создайте файл <filename>/etc/machine-id</filename> необходимый <command>systemd-journald</command>:</para>
 	<screen><userinput remap="adjust">systemd-machine-id-setup</userinput></screen>
+
+	<para>Удалите ссылки на библиотеки Util-Linux:</para>
+	<screen><userinput remap="install">rm -fv /usr/lib/lib{blkid,uuid,mount}.so*</userinput></screen>
 
    <para>Prevent systemd from creating <filename>/run/nologin</filename>
     to allow unprivileged user logins without
