@@ -72,7 +72,7 @@
       должен быть ссылкой на gawk)</para>
 		</listitem>
 
-		<!-- glibc-2.30 requires bcc-6.2 or later -->
+		<!-- glibc-2.30 requires gcc-6.2 or later -->
 		<listitem>
 			<para>
 				<emphasis role="strong">GCC-6.2</emphasis> включая компилятор Си++
