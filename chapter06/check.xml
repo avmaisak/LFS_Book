@@ -42,9 +42,7 @@
 
 		<para>Подготовьте пакет Check к компиляции:</para>
 
-		<screen>
-			<userinput remap="configure">./configure --prefix=/usr</userinput>
-		</screen>
+		<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
 		<para>Выполните сборку пакета:</para>
 
@@ -62,10 +60,8 @@
 
 		<para>Установите пакет и скорректируйте сценарий:</para>
 
-		<screen>
-			<screen><userinput remap="install">make docdir=/usr/share/doc/check-&check-version; install
+    <screen><userinput remap="install">make docdir=/usr/share/doc/check-&check-version; install
 sed -i '1 s/tools/usr/' /usr/bin/checkmk</userinput></screen>
-		</screen>
 
 	</sect2>
 
