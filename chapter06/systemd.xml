@@ -52,22 +52,18 @@
 done</userinput></screen>
 
    <para>Выполните настройку страниц руководств:</para>
-	<screen><userinput remap="pre">tar -xf ../systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz</userinput></screen>
+	<screen><userinput remap="pre">tar -xf ../systemd-man-pages-&systemd-version;.tar.xz</userinput></screen>
    <para>Удалите тесты, которые не могут быть собраны в среде chroot:</para>
 	<screen><userinput remap="pre">sed '177,$ d' -i src/resolve/meson.build</userinput></screen>
-	<!--
-  <para>Приментие патч, который устраняет проблему сборки с glibc-2.28:</para>
-  <screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-glibc_statx_fix-1.patch</userinput></screen>
-  <para>Приментие патч чтобы исправить ошибку сборки с meson-0.48.0:</para>
-  <screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-meson-0.48.0_fixes-1.patch</userinput></screen>
-  -->
-  <para>Удалите ненужную группу, <systemitem class="groupname">render</systemitem>, из стандартных правил udev:</para>
+
+  <para>Удалите ненужную группу,  <systemitem class="groupname">render</systemitem>, from the default udev
+    rules:</para>
 
 <screen><userinput remap="pre">sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in</userinput></screen>
 
-    <para>Подготовьте пакет systemd к компиляции:</para>
+    <para>Подготовьте пакет к компиляции:</para>
 
-    <screen><userinput remap="configure">mkdir -p build
+        <screen><userinput remap="configure">mkdir -p build
 cd       build
 
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:/tools/lib/pkgconfig" \
