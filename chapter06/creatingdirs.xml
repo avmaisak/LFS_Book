@@ -40,7 +40,7 @@ mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}</userinput></screen>
   <sect2>
     <title>Примечания по поводу соответствия FHS</title>
 
-    <para>Дерево каталогов основано на стандарте иерархий файловой системы (Filesystem Hierarchy Standard,FHS).  (спецификация доступна по ссылке <ulink url="https://wiki.linuxfoundation.org/en/FHS"/>). В FHS также указано
+    <para>Дерево каталогов основано на стандарте иерархий файловой системы (Filesystem Hierarchy Standard,FHS).  (спецификация доступна по ссылке <ulink url="https://refspecs.linuxfoundation.org/fhs.shtml"/>). В FHS также указано
      необязательное наличие некоторых каталогов, таких как <filename
     class="directory">/usr/local/games</filename> and <filename
     class="directory">/usr/share/games</filename>. В этой книге будут созданы только необходимые каталоги. Однако вы свободны в ваших действиях, и можете создать эти каталоги в том числе.</para>
