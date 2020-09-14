@@ -6,117 +6,134 @@
 ]>
 
 <sect1 id="ch-system-libtool" role="wrap">
-  <?dbhtml filename="libtool.html"?>
+	<?dbhtml filename="libtool.html"?>
 
-  <sect1info condition="script">
-    <productname>libtool</productname>
-    <productnumber>&libtool-version;</productnumber>
-    <address>&libtool-url;</address>
-  </sect1info>
+	<sect1info condition="script">
+		<productname>libtool</productname>
+		<productnumber>&libtool-version;</productnumber>
+		<address>&libtool-url;</address>
+	</sect1info>
 
-  <title>Libtool-&libtool-version;</title>
+	<title>Libtool-&libtool-version;</title>
 
-  <indexterm zone="ch-system-libtool">
-    <primary sortas="a-Libtool">Libtool</primary>
-  </indexterm>
+	<indexterm zone="ch-system-libtool">
+		<primary sortas="a-Libtool">Libtool</primary>
+	</indexterm>
 
-  <sect2 role="package">
-    <title/>
+	<sect2 role="package">
+		<title/>
 
-    <para>GNU libtool является общей библиотекой поддержки скриптов. Libtool скрывает сложность использования распределенных библиотек под последовательным, переносимым интерфейсом. Библиотека необходима для выполнения тестов других пакетов LFS.</para>
+		<para>GNU libtool является общей библиотекой поддержки скриптов. Libtool скрывает сложность использования распределенных библиотек под последовательным, переносимым интерфейсом. Библиотека необходима для выполнения тестов других пакетов LFS.</para>
 
-    <segmentedlist>
-      <segtitle>&buildtime;</segtitle>
-      <segtitle>&diskspace;</segtitle>
+		<segmentedlist>
+			<segtitle>&buildtime;</segtitle>
+			<segtitle>&diskspace;</segtitle>
 
-      <seglistitem>
-        <seg>&libtool-ch6-sbu;</seg>
-        <seg>&libtool-ch6-du;</seg>
-      </seglistitem>
-    </segmentedlist>
+			<seglistitem>
+				<seg>&libtool-ch6-sbu;</seg>
+				<seg>&libtool-ch6-du;</seg>
+			</seglistitem>
+		</segmentedlist>
 
-  </sect2>
+	</sect2>
 
-  <sect2 role="installation">
-    <title>Установка пакета Libtool</title>
+	<sect2 role="installation">
+		<title>Установка пакета Libtool</title>
 
-    <para>Подготовьте пакет Libtool к компиляции:</para>
+		<para>Подготовьте пакет Libtool к компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+		<screen>
+			<userinput remap="configure">./configure --prefix=/usr</userinput>
+		</screen>
 
-    <para>Скомпилируйте пакет:</para>
+		<para>Скомпилируйте пакет:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+		<screen>
+			<userinput remap="make">make</userinput>
+		</screen>
 
-    <para>Для выполнения тестов (примерно время выполнения 11.0 SBU), выполните следующую команду:</para>
+		<para>Для выполнения тестов, выполните следующую команду:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+		<screen>
+			<userinput remap="test">make check</userinput>
+		</screen>
 
-    <note><para>Вреся выполнения тестов можно сократить на машине с несколькими ядрами. Чтобы это сделать добавьте к команде аргумент к вышеуказанной команде: <command>TESTSUITEFLAGS=-j&lt;N&gt;</command>. Используя значение -j4 может сократить время выполнения тестов более чем на 60 процентов.</para></note>
+		<note>
+			<para>Вреся выполнения тестов можно сократить на машине с несколькими ядрами. Чтобы это сделать добавьте к команде аргумент к вышеуказанной команде:				<command>TESTSUITEFLAGS=-j&lt;N&gt;</command>. Используя значение -j4 может сократить время выполнения тестов более чем на 60 процентов.</para>
+		</note>
 
-    <para>Как известно, пять тестов не пройдут в окружении сборки LFS из-за циклических зависимостей, но все тесты пройдут, если их повторно запустить после установки пакета automake.</para>
+		<para>Как известно, пять тестов не пройдут в окружении сборки LFS из-за циклических зависимостей, но все тесты пройдут, если их повторно запустить после установки пакета automake.</para>
 
-    <para>Установите пакет:</para>
+		<para>Установите пакет:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+		<screen>
+			<userinput remap="install">make install</userinput>
+		</screen>
 
-  </sect2>
+	</sect2>
 
 
-  <sect2 id="contents-libtool" role="content">
-    <title>Содержимое пакета Libtool</title>
+	<sect2 id="contents-libtool" role="content">
+		<title>Содержимое пакета Libtool</title>
 
-    <segmentedlist>
-      <segtitle>Установленные программы</segtitle>
-      <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Установленные каталоги</segtitle>
+		<segmentedlist>
+			<segtitle>Установленные программы</segtitle>
+			<segtitle>Установленные библиотеки</segtitle>
+			<segtitle>Установленные каталоги</segtitle>
 
-      <seglistitem>
-        <seg>libtool and libtoolize</seg>
-        <seg>libltdl.so</seg>
-        <seg>/usr/include/libltdl and /usr/share/libtool</seg>
-      </seglistitem>
-    </segmentedlist>
+			<seglistitem>
+				<seg>libtool and libtoolize</seg>
+				<seg>libltdl.so</seg>
+				<seg>/usr/include/libltdl and /usr/share/libtool</seg>
+			</seglistitem>
+		</segmentedlist>
 
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
+		<variablelist>
+			<bridgehead renderas="sect3">Краткое описание</bridgehead>
+			<?dbfo list-presentation="list"?>
+			<?dbhtml list-presentation="table"?>
 
-      <varlistentry id="libtool">
-        <term><command>libtool</command></term>
-        <listitem>
-          <para>Обеспечивает вспомогательные общие службы для сборки</para>
-          <indexterm zone="ch-system-libtool libtool">
-            <primary sortas="b-libtool">libtool</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
+			<varlistentry id="libtool">
+				<term>
+					<command>libtool</command>
+				</term>
+				<listitem>
+					<para>Обеспечивает вспомогательные общие службы для сборки</para>
+					<indexterm zone="ch-system-libtool libtool">
+						<primary sortas="b-libtool">libtool</primary>
+					</indexterm>
+				</listitem>
+			</varlistentry>
 
-      <varlistentry id="libtoolize">
-        <term><command>libtoolize</command></term>
-        <listitem>
-          <para>Обеспечивает стандартный путь для добавления поддержки
-			 <command>libtool</command>
-          для пакета</para>
-          <indexterm zone="ch-system-libtool libtoolize">
-            <primary sortas="b-libtoolize">libtoolize</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
+			<varlistentry id="libtoolize">
+				<term>
+					<command>libtoolize</command>
+				</term>
+				<listitem>
+					<para>Обеспечивает стандартный путь для добавления поддержки
+						<command>libtool</command>
+          для пакета
+					</para>
+					<indexterm zone="ch-system-libtool libtoolize">
+						<primary sortas="b-libtoolize">libtoolize</primary>
+					</indexterm>
+				</listitem>
+			</varlistentry>
 
-      <varlistentry id="libltdl">
-        <term><filename class="libraryfile">libltdl</filename></term>
-        <listitem>
-          <para>Скрывает различные трудности dlopening библиотек</para>
-          <indexterm zone="ch-system-libtool libltdl">
-            <primary sortas="c-libltdl">libltdl</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
+			<varlistentry id="libltdl">
+				<term>
+					<filename class="libraryfile">libltdl</filename>
+				</term>
+				<listitem>
+					<para>Скрывает различные трудности dlopening библиотек</para>
+					<indexterm zone="ch-system-libtool libltdl">
+						<primary sortas="c-libltdl">libltdl</primary>
+					</indexterm>
+				</listitem>
+			</varlistentry>
 
-    </variablelist>
+		</variablelist>
 
-  </sect2>
+	</sect2>
 
 </sect1>
