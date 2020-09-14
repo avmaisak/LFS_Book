@@ -153,11 +153,6 @@ esac</userinput></screen>
 
     <itemizedlist>
 
-	 <listitem>
-        <para><emphasis>misc/check-installed-headers-c</emphasis>
-        is known to fail due to changes in the kernel headers.</para>
-      </listitem>
-
       <listitem>
         <para><emphasis>misc/tst-ttyname</emphasis>
 		  завершается с ошибкой в среде chroot LFS.</para>
