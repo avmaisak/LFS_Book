@@ -9,7 +9,7 @@
 	<title>Linux From Scratch</title>
 	<subtitle revision='sysv'   >Версия &version; </subtitle>
 	<subtitle revision='systemd'>Версия &versiond;</subtitle>
-	<subtitle subtitle>Published &releasedate;</subtitle>
+	<subtitle>Дата публикации &releasedate;</subtitle>
 
 	<authorgroup>
 		<author>
