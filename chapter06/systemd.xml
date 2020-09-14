@@ -38,8 +38,6 @@
 
   <sect2 role="installation">
     <title>Установка пакета systemd</title>
-	 <!-- <para>Примените патч, чтобы исправить две критические уязвимости безопасности:</para>
-	<screen><userinput remap="pre">patch -Np1 -i ../systemd-240-security_fixes-2.patch</userinput></screen> -->
 
    <para>Создайте символическую ссылку, чтобы обойти проблему из-за отсутствия программы xsltproc:</para>
 	<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>
@@ -59,6 +57,7 @@ done</userinput></screen>
   <para>Удалите ненужную группу,  <systemitem class="groupname">render</systemitem>, from the default udev
     rules:</para>
 
+<!-- EDITORS NOTE: At the next systemd release, see if the CFLAGS can be removed. -->
 <screen><userinput remap="pre">sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in</userinput></screen>
 
     <para>Подготовьте пакет к компиляции:</para>
@@ -68,6 +67,7 @@ cd       build
 
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:/tools/lib/pkgconfig" \
 LANG=en_US.UTF-8                   \
+CFLAGS+="-Wno-format-overflow"     \
 meson --prefix=/usr                \
       --sysconfdir=/etc            \
       --localstatedir=/var         \
@@ -87,6 +87,7 @@ meson --prefix=/usr                \
       -Dsysusers=false             \
       -Dumount-path=/bin/umount    \
       -Db_lto=false                \
+		-Drpmmacrosdir=no            \
       ..</userinput></screen>
 
     <variablelist>
@@ -165,6 +166,14 @@ meson --prefix=/usr                \
         </listitem>
       </varlistentry>
 
+  <varlistentry>
+        <term><parameter>-Drpmmacrosdir=no</parameter></term>
+        <listitem>
+          <para>This switch disables installation of RPM Macros
+          for use with systemd because LFS does not support RPM.</para>
+        </listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>Скомпилируйте пакет:</para>
@@ -177,9 +186,11 @@ meson --prefix=/usr                \
 -->
    <para>Установите пакет:</para>
 	<screen><userinput remap="install">LANG=en_US.UTF-8 ninja install</userinput></screen>
-   <para>Удалите ненужные каталоги и файлы:</para>
-	<screen><userinput remap="install">rm -rfv /usr/lib/rpm
-rm -f /usr/bin/xsltproc</userinput></screen>
+   <para>Удалите ненужные ссылки:</para>
+	<screen><userinput remap="install">rm -f /usr/bin/xsltproc</userinput></screen>
+
+	<para>Удалите ссылки на библиотеки Util-Linux:</para>
+	<screen><userinput remap="install">rm -fv /usr/lib/lib{blkid,uuid,mount}.so*</userinput></screen>
 
    <para>Создайте файл <filename>/etc/machine-id</filename> необходимый <command>systemd-journald</command>:</para>
 	<screen><userinput remap="adjust">systemd-machine-id-setup</userinput></screen>
