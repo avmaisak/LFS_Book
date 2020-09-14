@@ -39,7 +39,7 @@
 
   <sect2 role="installation">
     <title>Установка пакета Bc</title>
-
+<!--
     <para>Сначала, изменим внутренний файл сценария, чтобы он использовал программу <command>sed</command> вместо <command>ed</command>:</para>
 
 <screen><userinput remap="pre">cat &gt; bc/fix-libmath_h &lt;&lt; "EOF"
@@ -62,34 +62,54 @@ ln -sfv libncursesw.so.6 /usr/lib/libncurses.so</userinput></screen>
     <para>Исправьте проблему отсутствия некоторых файлов на раннем этапе сборки LFS в файле <command>configure</command>:</para>
 
 <screen><userinput remap="pre">sed -i -e '/flex/s/as_fn_error/: ;; # &amp;/' configure</userinput></screen>
-
+-->
     <para>Подготовьте пакет Bc к компиляции:</para>
-
-<screen><userinput remap="configure">./configure --prefix=/usr           \
-            --with-readline         \
-            --mandir=/usr/share/man \
-            --infodir=/usr/share/info</userinput></screen>
+<!--
+<screen><userinput remap="configure">./configure - -prefix=/usr           \
+            - -with-readline         \
+            - -mandir=/usr/share/man \
+            - -infodir=/usr/share/info</userinput></screen>
+-->
+<screen><userinput remap="configure">PREFIX=/usr CC=gcc CFLAGS="-std=c99" ./configure.sh -G -O3</userinput></screen>
 
     <variablelist>
       <title>Значение параметров конфигурации:</title>
-
+<!--
       <varlistentry>
-        <term><parameter>--with-readline</parameter></term>
+        <term><parameter>- -with-readline</parameter></term>
         <listitem>
           <para>Аргумент сообщает BC использовать библиотеку <filename
           class="libraryfile">readline</filename> которая была установлена ранее в системе, вместо использования встроенной.</para>
         </listitem>
       </varlistentry>
+-->
+ <varlistentry>
+        <term><parameter>CC=gcc CFLAGS="-std=c99"</parameter></term>
+        <listitem>
+          <para>Эти параметры указывают компилятор и стандарт Си для использования.</para>
+        </listitem>
+      </varlistentry>
 
+      <varlistentry>
+        <term><parameter>-G -O3</parameter></term>
+        <listitem>
+          <para>Эти параметры определяют используемую оптимизацию. Символы отладки
+           будут сохранены.</para>
+        </listitem>
+      </varlistentry>
     </variablelist>
 
     <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
-
+<!--
     <para>Для того, чтобы выполнить тестирования пакета BC, выполните команды, приведенные ниже. В процессе выполнения тестирования на экране будет отображаться достаточно большое количество информации о результатах. Можно выполнить перенаправление вывода в файл. Будет небольшой процент тестов (10 из 12,144) указывающих на ошибку округления на последней цифре.</para>
 
+
 <screen><userinput remap="test">echo "quit" | ./bc/bc -l Test/checklib.b</userinput></screen>
+-->
+ <para>Выполните тесты bc, выполнив:</para>
+<screen><userinput remap="test">make test</userinput></screen>
 
     <para>Установите пакет:</para>
 

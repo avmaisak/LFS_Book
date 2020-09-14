@@ -1,16 +1,16 @@
-<!ENTITY version         "20190712">
-<!ENTITY short-version   "8.4">  <!-- Used below in &blfs-book;
+<!ENTITY version         "20190714">
+<!ENTITY short-version   "svn">  <!-- Used below in &blfs-book;
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20190712-systemd">
+<!ENTITY versiond        "20190714-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd">
 
-<!ENTITY releasedate     "12 Июля, 2019">
+<!ENTITY releasedate     "14 Июля, 2019">
 
 <!ENTITY copyrightdate   "1999-2019"><!-- jhalfs needs a literal dash, not &ndash; -->
-<!ENTITY milestone       "8.5">
+<!ENTITY milestone       "9.0">
 
 <!ENTITY lfs-root        "https://linuxfromscratch.ru/">
 <!ENTITY blfs-root       "&lfs-root;blfs/">

@@ -6,51 +6,55 @@
 ]>
 
 <bookinfo>
-  <title>Linux From Scratch</title>
-  <subtitle revision='sysv'   >Версия &version; </subtitle>
-  <subtitle revision='systemd'>Версия &versiond;</subtitle>
+	<title>Linux From Scratch</title>
+	<subtitle revision='sysv'   >Версия &version; </subtitle>
+	<subtitle revision='systemd'>Версия &versiond;</subtitle>
+	<subtitle subtitle>Published &releasedate;</subtitle>
 
-  <authorgroup>
-    <author>
-      <firstname>Создатель - Gerard</firstname>
-      <surname>Beekmans</surname>
-    </author>
-    <author>
-      <firstname>Главный редактор: Bruce</firstname>
-      <surname>Dubbs</surname>
-    </author>
-    <author revision="systemd">
-      <firstname>Editor: Douglas R.</firstname>
-      <surname>Reno</surname>
-    </author>
-    <author revision="systemd">
-      <firstname>Редактор: DJ</firstname>
-      <surname>Lucas</surname>
-    </author>
-	 <author>
-      <firstname>Технический перевод: Антон</firstname>
-      <surname>Майсак</surname>
-    </author>
+	<authorgroup>
+		<author>
+			<firstname>Создатель - Gerard</firstname>
+			<surname>Beekmans</surname>
+		</author>
+		<author>
+			<firstname>Главный редактор: Bruce</firstname>
+			<surname>Dubbs</surname>
+		</author>
+		<author revision="systemd">
+			<firstname>Editor: Douglas R.</firstname>
+			<surname>Reno</surname>
+		</author>
+		<author revision="systemd">
+			<firstname>Редактор: DJ</firstname>
+			<surname>Lucas</surname>
+		</author>
+		<author>
+			<firstname>Технический перевод: Антон</firstname>
+			<surname>Майсак</surname>
+		</author>
 
-	  <author>
-      <firstname>Редактор перевода: Елена</firstname>
-		<surname>Шевцова</surname>
-    </author>
+		<author>
+			<firstname>Редактор перевода: Елена</firstname>
+			<surname>Шевцова</surname>
+		</author>
 
-  </authorgroup>
+	</authorgroup>
 
-    <copyright id="copyright">
-    <year>&copyrightdate;</year>
-    <holder>Gerard Beekmans</holder>
-  </copyright>
+	<copyright id="copyright">
+		<year>&copyrightdate;</year>
+		<holder>Gerard Beekmans</holder>
+	</copyright>
 
-  <legalnotice>
+	<legalnotice>
 
-    <para>Все права защищены.</para>
-    <para>Эта книга лицензирована в соответствии с <xref linkend="CC"/>.</para>
-    <para>Инструкции для компьютера из книги могут быть использованы под лицензией <xref linkend="MIT"/>.</para>
-    <para><trademark class='registered'>Linux</trademark>является зарегистрированным товарным знаком Linus Torvalds.</para>
+		<para>Все права защищены.</para>
+		<para>Эта книга лицензирована в соответствии с			<xref linkend="CC"/>
+.</para>
+		<para>Инструкции для компьютера из книги могут быть использованы под лицензией			<xref linkend="MIT"/>
+.</para>
+		<para>
+			<trademark class='registered'>Linux</trademark>является зарегистрированным товарным знаком Linus Torvalds.</para>
 
-  </legalnotice>
+	</legalnotice>
 
 </bookinfo>

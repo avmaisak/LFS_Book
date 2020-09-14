@@ -55,6 +55,12 @@
 <screen><computeroutput>The system has no more ptys.
 Ask your system administrator to create more.</computeroutput></screen>
 
+ <para>Теперь удалите один тест, который мешает запускать тесты.
+     до завершения:</para>
+
+<screen><userinput remap="pre">sed -i '/@\tincremental_copy/d' gold/testsuite/Makefile.in</userinput></screen>
+
+
     <para>В документации к пакету BinUtils рекомендуется выполнять компиляцию в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -137,6 +143,9 @@ cd       build</userinput></screen>
     <para>Для выполнения тестов, выполните команду:</para>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
+
+   <para>The PC-relative offset и
+    the debug_msg.sh могут не пройти в окружении LFS.</para>
 
     <para>Один тест, debug_msg.sh, как известно, не проходит</para>
 
