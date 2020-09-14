@@ -6,102 +6,113 @@
 ]>
 
 <sect1 id="ch-tools-check" role="wrap">
-  <?dbhtml filename="check.html"?>
+	<?dbhtml filename="check.html"?>
 
-  <sect1info condition="script">
-    <productname>check</productname>
-    <productnumber>&check-version;</productnumber>
-    <address>&check-url;</address>
-  </sect1info>
+	<sect1info condition="script">
+		<productname>check</productname>
+		<productnumber>&check-version;</productnumber>
+		<address>&check-url;</address>
+	</sect1info>
 
-  <title>Check-&check-version;</title>
+	<title>Check-&check-version;</title>
 
-  <indexterm zone="ch-tools-check">
-    <primary sortas="a-Check">Check</primary>
-  </indexterm>
+	<indexterm zone="ch-tools-check">
+		<primary sortas="a-Check">Check</primary>
+	</indexterm>
 
-  <sect2 role="package">
-    <title/>
+	<sect2 role="package">
+		<title/>
 
-    <para>Check - платформа для работы с модульными тестами для языка программирования Си</para>
+		<para>Check - платформа для работы с модульными тестами для языка программирования Си</para>
 
-    <segmentedlist>
-      <segtitle>&buildtime;</segtitle>
-      <segtitle>&diskspace;</segtitle>
+		<segmentedlist>
+			<segtitle>&buildtime;</segtitle>
+			<segtitle>&diskspace;</segtitle>
 
-      <seglistitem>
-        <seg>&check-ch5-sbu;</seg>
-        <seg>&check-ch5-du;</seg>
-      </seglistitem>
-    </segmentedlist>
+			<seglistitem>
+				<seg>&check-ch5-sbu;</seg>
+				<seg>&check-ch5-du;</seg>
+			</seglistitem>
+		</segmentedlist>
 
-  </sect2>
+	</sect2>
 
-  <sect2 role="installation">
-    <title>Установка пакета Check</title>
+	<sect2 role="installation">
+		<title>Установка пакета Check</title>
 
-    <para>Подготовьте пакет Check к компиляции:</para>
+		<para>Подготовьте пакет Check к компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr \
-            --docdir=/usr/share/doc/check-&check-version;</userinput></screen>
+		<screen>
+			<userinput remap="configure">./configure --prefix=/usr</userinput>
+		</screen>
 
+		<para>Выполните сборку пакета:</para>
 
-    <para>Выполните сборку пакета:</para>
+		<screen>
+			<userinput remap="make">make</userinput>
+		</screen>
 
-<screen><userinput remap="make">make</userinput></screen>
+		<para>Когда компиляция будет завершена, можно запустить тесты, выполнив следующую команду:</para>
 
-    <para>Когда компиляция будет завершена, можно запустить тесты, выполнив следующую команду:</para>
+		<screen>
+			<userinput remap="test">make check</userinput>
+		</screen>
 
-<screen><userinput remap="test">make check</userinput></screen>
+		<para>Обратите внимание, что тесты могут выполняться довольно продолжительное время (до 4 SBU).</para>
 
-    <para>Обратите внимание, что тесты могут выполняться довольно продолжительное время (до 4 SBU).</para>
+		<para>Установите пакет и скорректируйте сценарий:</para>
 
-    <para>Установите пакет:</para>
+		<screen>
+			<screen><userinput remap="install">make docdir=/usr/share/doc/check-&check-version; install
+sed -i '1 s/tools/usr/' /usr/bin/checkmk</userinput></screen>
+		</screen>
 
-<screen><userinput remap="install">make install</userinput></screen>
+	</sect2>
 
-  </sect2>
+	<sect2 id="contents-check" role="content">
+		<title>Содержимое пакета Check</title>
 
-  <sect2 id="contents-check" role="content">
-    <title>Содержимое пакета Check</title>
+		<segmentedlist>
+			<segtitle>Установленная программа</segtitle>
+			<segtitle>Установленная библиотека</segtitle>
 
-    <segmentedlist>
-      <segtitle>Установленная программа</segtitle>
-      <segtitle>Установленная библиотека</segtitle>
+			<seglistitem>
+				<seg>checkmk</seg>
+				<seg>libcheck.{a,so}</seg>
+			</seglistitem>
+		</segmentedlist>
 
-      <seglistitem>
-        <seg>checkmk</seg>
-        <seg>libcheck.{a,so}</seg>
-      </seglistitem>
-    </segmentedlist>
+		<variablelist>
+			<bridgehead renderas="sect3">Краткое описание</bridgehead>
+			<?dbfo list-presentation="list"?>
+			<?dbhtml list-presentation="table"?>
 
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
+			<varlistentry id="checkmk">
+				<term>
+					<command>checkmk</command>
+				</term>
+				<listitem>
+					<para>Сценарий Awk для создания модульных тестов Си для использования с Check</para>
+					<indexterm zone="ch-tools-check checkmk">
+						<primary sortas="b-checmk">checkmk</primary>
+					</indexterm>
+				</listitem>
+			</varlistentry>
 
-      <varlistentry id="checkmk">
-        <term><command>checkmk</command></term>
-        <listitem>
-          <para>Сценарий Awk для создания модульных тестов Си для использования с Check</para>
-          <indexterm zone="ch-tools-check checkmk">
-            <primary sortas="b-checmk">checkmk</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
+			<varlistentry id="libcheck">
+				<term>
+					<filename class="libraryfile">libcheck.{a,so}</filename>
+				</term>
+				<listitem>
+					<para>Содержит функции, позволяющие вызывать Check из программ для тестирования</para>
+					<indexterm zone="ch-tools-check libcheck">
+						<primary sortas="c-libcheck">libcheck</primary>
+					</indexterm>
+				</listitem>
+			</varlistentry>
 
-      <varlistentry id="libcheck">
-        <term><filename class="libraryfile">libcheck.{a,so}</filename></term>
-        <listitem>
-          <para>Содержит функции, позволяющие вызывать Check из программ для тестирования</para>
-          <indexterm zone="ch-tools-check libcheck">
-            <primary sortas="c-libcheck">libcheck</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
+		</variablelist>
 
-    </variablelist>
-
-  </sect2>
+	</sect2>
 
 </sect1>
