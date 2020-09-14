@@ -389,11 +389,11 @@
 
 <!ENTITY lfs-bootscripts-version "20190524">      <!-- Scripts depend on this format -->
 <!ENTITY lfs-bootscripts-size "BOOTSCRIPTS-SIZE KB">
-<!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.bz2">
+<!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.xz">
 <!ENTITY lfs-bootscripts-md5 "BOOTSCRIPTS-MD5SUM">
 <!ENTITY lfs-bootscripts-home " ">
 <!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB">
-<!ENTITY lfs-bootscripts-ch7-sbu "менее чем 0.1 SBU">
+<!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
 
 <!ENTITY libcap-version "2.27">
 <!ENTITY libcap-size "67 KB">
