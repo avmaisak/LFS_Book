@@ -148,11 +148,13 @@ su nobody -s /bin/bash -c "PATH=$PATH make -k check"</userinput></screen>
       is not enabled in the kernel even though it is present on the CPU.
     </para></note-->
 
-    <para>Установите пакет:</para>
+    <para>Установите пакет и удалите ненужный каталог:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make install
+rm -rf /usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include-fixed/bits/</userinput></screen>
 
-    <para>По историческим причинам, создайте символическую ссылку <ulink
+
+    <para>По историческим причинам, создайте символическую ссылку и<ulink
     url="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
     </para>
 
