@@ -78,7 +78,7 @@
 
     <para>Для выполнения тестов, выполните команду:</para>
 
-<screen><userinput remap="test">python3 configure.py
+<screen><userinput remap="test">./ninja ninja_test
 ./ninja ninja_test
 ./ninja_test --gtest_filter=-SubprocessTest.SetWithLots</userinput></screen>
 

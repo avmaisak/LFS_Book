@@ -20,13 +20,13 @@
 
   <itemizedlist>
 
-    <listitem><para>Текстовый браузер, например, 
+    <listitem><para>Текстовый браузер, например,
     <ulink
     url='&blfs-book;basicnet/lynx.html'>Lynx</ulink>
     позволит легко изучать книгу BLFS в окне виртуального терминала, по мере сборки пакетов в другом.</para></listitem>
 
     <listitem><para>Пакет <ulink
-    url='&blfs-book;general/gpm.html'>GPM</ulink> 
+    url='&blfs-book;general/gpm.html'>GPM</ulink>
     позволит работать с буфером обмена в виртуальных терминалах.</para></listitem>
 
     <listitem><para>Если настройка статического IP адреса не соответствует вашим сетевым требованиям, установка пакета <ulink url='&blfs-book;basicnet/dhcpcd.html'>dhcpcd</ulink>
@@ -34,7 +34,7 @@
     url='&blfs-book;basicnet/dhcp.html'>dhcp</ulink> может быть полезным.</para></listitem>
 
     <listitem><para>Установка пакета <ulink
-    url='&blfs-book;postlfs/sudo.html'>sudo</ulink> 
+    url='&blfs-book;postlfs/sudo.html'>sudo</ulink>
     может быть полезна для сборки пакетов от непревилегированного пользователя и более упрощенной установки пакетов в систему.</para></listitem>
 
     <listitem><para>Если вам необходим доступ к новой системе удалённо, с удобным интерфейсом, установите пакет<ulink
@@ -45,7 +45,7 @@
     <ulink url='&blfs-book;basicnet/wget.html'>wget</ulink>.
     </para></listitem>
 
-    <listitem><para>Если один или несколько дисков имеют разделы GUID 
+    <listitem><para>Если один или несколько дисков имеют разделы GUID
     (GPT), пакет <ulink
     url='&blfs-book;postlfs/gptfdisk.html'>gptfdisk</ulink> или <ulink
     url='&blfs-book;postlfs/parted.html'>parted</ulink> будет полезным.
@@ -65,7 +65,6 @@
         <listitem><para>/etc/vimrc                   </para></listitem>
         <listitem><para>/root/.bash_profile          </para></listitem>
         <listitem><para>/root/.bashrc                </para></listitem>
-        <listitem revision="sysv"><para>/etc/sysconfig/network       </para></listitem>
         <listitem revision="sysv"><para>/etc/sysconfig/ifconfig.eth0 </para></listitem>
       </itemizedlist>
     </listitem>
