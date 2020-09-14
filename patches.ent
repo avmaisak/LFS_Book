@@ -63,3 +63,6 @@
 <!ENTITY systemd-security-patch-size "14 KB">
 -->
 
+<!ENTITY systemd-networkd-patch "systemd-&systemd-version;-networkd_and_rdrand_fixes-1.patch">
+<!ENTITY systemd-networkd-patch-md5 "bb26f26d7c3a17d1888ab3171366906b">
+<!ENTITY systemd-networkd-patch-size "8 KB">

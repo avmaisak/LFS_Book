@@ -39,6 +39,12 @@
   <sect2 role="installation">
     <title>Установка пакета systemd</title>
 
+
+    <para>Сначала, примените патч чтобы исправить проблемы с systemd-networkd на ядрах Linux 5.2+ и с процессорами  AMD Ryzen:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-networkd_and_rdrand_fixes-1.patch</userinput></screen>
+
+
    <para>Создайте символическую ссылку, чтобы обойти проблему из-за отсутствия программы xsltproc:</para>
 	<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>
 
