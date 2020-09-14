@@ -91,10 +91,18 @@ ln -sfv libncursesw.so.6 /usr/lib/libncurses.so</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-G -O3</parameter></term>
+        <term><parameter>-O3</parameter></term>
         <listitem>
-          <para>Эти параметры определяют используемую оптимизацию. Символы отладки
+          <para>Определяют используемую оптимизацию. Символы отладки
            будут сохранены.</para>
+        </listitem>
+      </varlistentry>
+
+		<varlistentry>
+        <term><parameter>-G</parameter></term>
+        <listitem>
+          <para>Исключает тесты, которые не работают
+           без GNU bc.</para>
         </listitem>
       </varlistentry>
     </variablelist>
