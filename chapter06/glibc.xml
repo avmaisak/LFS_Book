@@ -368,9 +368,7 @@ unset ZONEINFO</userinput></screen>
 
     <para>Создайте файл <filename>/etc/localtime</filename> выполнив команду:</para>
 
-<screen revision="sysv"><userinput>cp -v /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> /etc/localtime</userinput></screen>
-
-<screen revision="systemd"><userinput>ln -sfv /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> /etc/localtime</userinput></screen>
+	<screen><userinput>ln -sfv /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> /etc/localtime</userinput></screen>
 
     <para>Замените <replaceable>&lt;xxx&gt;</replaceable> наименованием выбранной временной зоны (например, Canada/Eastern).</para>
 
