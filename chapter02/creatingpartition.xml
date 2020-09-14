@@ -40,11 +40,14 @@
   <para>Так как доступной оперативной памяти (RAM) может быть не достаточно,
   рекомендуется использовать небольшой дисковый раздел <systemitem class="filesystem">swap</systemitem>. Он будет использоваться ядром для хранения редко используемых данных и освобождать оперативную память для активных процессов. Раздел <systemitem class="filesystem">swap</systemitem> для системы LFS можно использовать тот, который используется хост-системой, и создавать новый раздел - необязательно.</para>
 
-  <para>Начать создание разделов можно при помощи так утилит, как <command>cfdisk</command> или <command>fdisk</command>
-
-  Start a disk partitioning program such as <command>cfdisk</command> с опцией командной строки, указывающей на наименование устройства, на котором необходимо произвести соответствующую разметку. Например <filename class="devicefile">/dev/sda</filename>
-  для первого диска (IDE). Создайте Linux раздел и раздел <systemitem class="filesystem">swap</systemitem>, если он необходим.
-  Обратитесь к документации <filename>cfdisk(8)</filename> или <filename>fdisk(8)</filename> если вы еще не умеете использовать вышеуказанные программы.</para>
+  <para>Start a disk partitioning program such as <command>cfdisk</command>
+  or <command>fdisk</command> with a command line option naming the hard
+  disk on which the new partition will be created&mdash;for example
+  <filename class="devicefile">/dev/sda</filename> for the primary
+  disk drive. Create a Linux native partition and a
+  <systemitem class="filesystem">swap</systemitem> partition, if needed. Please
+  refer to <filename>cfdisk(8)</filename> or <filename>fdisk(8)</filename> if
+  you do not yet know how to use the programs.</para>
 
   <note><para>Для опытных пользователей возможны другие варианты разбивки диска. Система LFS может быть установлена на
   <ulink
