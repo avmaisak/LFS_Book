@@ -259,7 +259,7 @@ SEARCH_DIR("/usr/local/lib")
 SEARCH_DIR("/lib")
 SEARCH_DIR("/usr/lib");</computeroutput></screen>
 
-   <para>На 32-битных машинах можно заместить что появились некоторые другие каталоги. Например, вывод на архитектуре i686 может быть
+   <para>На 32-битных машинах можно заметить что появились некоторые другие каталоги. Например, вывод на архитектуре i686 может быть
 	такой:</para>
 
 <screen><computeroutput>SEARCH_DIR("/usr/i686-pc-linux-gnu/lib32")
