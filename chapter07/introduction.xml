@@ -5,207 +5,28 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-scripts-introduction" revision="sysv">
+<sect1 id="ch-tools-introduction-chroot">
   <?dbhtml filename="introduction.html"?>
 
   <title>Введение</title>
 
-    <para>Загрузка Linux системы включает в себя несколько задач. Процесс сперва должен
-     примонтировать как виртуальные, так и реальные файловые системы, инициализировать устройства, активировать файл подкачки,
-     проверить целостность файловых систем, примонтировать другие разделы или файл подкачки, установить
-     системные часы, создать сети, запустить службы, требуемые
-     системой и выполнить любые другие задачи, необходимые пользователю. Этот
-     процесс должен быть организован для выполнения задач в правильном порядке
-     и, в то же время, выполняться как можно быстрее.</para>
+  <para>В этой главе показано как собрать последние недостающие детали временной
+  системы: инструменты машинерии сборки различных пакетов,
+  а также три пакета нужные для запуска тестов. Теперь, когда все зависимости удовлетворены
+  можно использовать среду <quote>chroot</quote> и полностью изолироваться от
+  операционной системы хоста, кроме запущенного ядра.</para>
 
-<!--    <para>In the packages that were installed in Chapter&nbsp;6, there were two
-    different boot systems installed.  LFS provides the ability to easily
-    select which system the user wants to use and to compare and contrast the
-    two systems by actually running each system on the local computer.  The
-    advantages and disadvantages of these systems is presented below.</para>-->
+  <para>Для корректной работы изолированной среды необходимо установить некоторую связь с
+  запущенным ядром. Это делается посредством так называемых 
+  <emphasis>виртуальных файловых систем ядра</emphasis>, которые должны быть
+  примонтированы перед входом в среду chroot. Вы можете проверить их примонтированность
+  выполнив команду <command>findmnt</command>.</para>
 
-  <sect2 id='sysv-desc'>
-    <title>System V</title>
+  <para>До <xref linkend="ch-tools-chroot"/> все команды должны вызываться
+  от имени пользователя <systemitem class="username">root</systemitem> с установленной
+  переменной окружения <envar>LFS</envar>. После входа в chroot все команды выполняются
+  от root, к счастью, без возможности доступа к операционной системе компьютера на которой вы
+  собираете LFS. Тем не менее, будьте аккуратны, так как плохо составленные команды
+  могут легко сломать всю LFS.</para>
 
-    <para>System V - представляет классический процесс загрузки, который использовался в Unix и Unix-подобных системах, таких как Linux с 1983 года. Он состоит из небольшой программы <command>init</command>, которая устанавливает базовые программы, такие как <command>login</command> (через getty) и запускает другие сценарии. Этот сценарий, как правило, называется rc, и управляет выполнением дополнительных сценариев, необходимых для инициализации системы.</para>
-
-<para>Программа init управляется файлом <filename>/etc/inittab</filename> и структурирована на уровни запуска, которые могут выполнятся пользователем:</para>
-
-<literallayout>
-0 &mdash; Halt - остановка
-1 &mdash; Single user mode - Однопользовательский режим
-2 &mdash; Multiuser, without networking - Многопользовательский режим, без сети
-3 &mdash; Full multiuser mode - Полный многопользовательский режим
-4 &mdash; User definable - Режим, определяемый пользователем
-5 &mdash; Full multiuser mode with display manager - Полный многопользовательский режим с экранным менеджером
-6 &mdash; reboot - перезагрузка
-</literallayout>
-
-    <para>Обычно, стандартный уровень запуска - 3 или 5.</para>
-
-    <bridgehead renderas="sect3">Преимущества</bridgehead>
-
-    <itemizedlist>
-      <listitem>
-          <para>Устоявшаяся, хорошо понятая система</para>
-      </listitem>
-
-      <listitem>
-          <para>Легко настроить.</para>
-      </listitem>
-
-    </itemizedlist>
-
-
-    <bridgehead renderas="sect3">Недостатки</bridgehead>
-
-    <itemizedlist>
-      <listitem>
-          <para>Медленная загрузка. Средняя скорость загрузки LFS системы составляет 8-12 секунд, если измерить время с начала первого отображения приглашения командной строки ядра. Соединение с сетью как правило устанавливается примерно 2 секунды после приглашения командной строки.</para>
-      </listitem>
-
-      <listitem>
-          <para>Последовательная обработка задач загрузки. Это связано с предыдущим пунктом. Задержка в работе любого процесса, например проверка файловой системы, задержит соответственно и весь процесс загрузки.</para>
-      </listitem>
-
-      <listitem>
-          <para>Не поддерживает напрямую дополнительные функции, такие как
-           контроль групп (cgroups) и расписания для каждого пользователя.</para>
-      </listitem>
-
-      <listitem>
-          <para>Для добавления сценариев требуются ручные, статические последовательные решения.</para>
-      </listitem>
-
-    </itemizedlist>
-
-  </sect2>
-<!--
-  <sect2 id='sysd-desc'>
-    <title>Systemd</title>
-
-    <para>Systemd is a group of interconnected programs that handles system and
-    individual process requests.  It provides a dependency system between
-    various entities called "units".  It automatically addresses dependencies
-    between units and can execute several startup tasks in parallel.  It
-    provides login, inetd, logging, time, and networking services. </para>
-
-    <bridgehead renderas="sect3">Advantages</bridgehead>
-
-    <itemizedlist>
-      <listitem>
-          <para>Used on many established distributions by default.</para>
-      </listitem>
-
-      <listitem>
-          <para>There is extensive documentation.
-          See <ulink url="http://www.freedesktop.org/wiki/Software/systemd/"/>.</para>
-      </listitem>
-
-      <listitem>
-          <para>Parallel execution of boot processes. A medium speed
-          base LFS system takes 6-10 seconds from kernel start to a
-          login prompt.  Network connectivity is typically established
-          about 2 seconds after the login prompt.  More complex startup
-          procedures may show a greater speedup when compared to System V.</para>
-      </listitem>
-
-      <listitem>
-          <para>Implements advanced features such as control groups to
-          manage related processes.</para>
-      </listitem>
-
-      <listitem>
-          <para>Maintains backward compatibility with System V programs
-          and scripts.</para>
-      </listitem>
-    </itemizedlist>
-
-    <bridgehead renderas="sect3">Disadvantages</bridgehead>
-
-    <itemizedlist>
-      <listitem>
-          <para>There is a substantial learning curve.</para>
-      </listitem>
-
-      <listitem>
-          <para>Some advanced features such as dbus or cgroups cannot be
-          disabled if they are not otherwise needed.</para>
-      </listitem>
-
-      <listitem>
-          <para>Although implemented as several executable programs
-          the user cannot choose to implement only the portions desired.</para>
-      </listitem>
-
-      <listitem>
-          <para>Due to the nature of using compiled programs, systemd is
-          more difficult to debug.</para>
-      </listitem>
-
-      <listitem>
-          <para>Logging is done in a binary format.  Extra tools must
-          be used to process logs or additional processes must be implemented
-          to duplicate traditional logging programs.</para>
-      </listitem>
-
-    </itemizedlist>
-
-  </sect2>
--->
-<!--
-  <sect2 id='sysv'>
-    <title>Selecting a Boot Method</title>
-
-    <para>Selecting a boot method in LFS is relatively easy.
-    Both systems are installed side-by-side.  The only task needed is to
-    ensure the files that are needed by the system have the correct names.
-    The following scripts do that.</para>
-
-<screen><userinput remap="install">cat &gt; /usr/sbin/set-systemd &lt;&lt; "EOF"
-#! /bin/bash
-
-ln -svfn init-systemd   /sbin/init
-ln -svfn init.d-systemd /etc/init.d
-
-for tool in halt poweroff reboot runlevel shutdown telinit; do
-  ln -sfvn  ${tool}-systemd   /sbin/${tool}
-  ln -svfn  ${tool}-systemd.8 /usr/share/man/man8/${tool}.8
-done
-
-echo "Now reboot with /sbin/reboot-sysv"
-EOF
-
-chmod 0744 /usr/sbin/set-systemd
-
-cat &gt; /usr/sbin/set-sysv &lt;&lt; "EOF"
-#! /bin/bash
-
-ln -sfvn init-sysv    /sbin/init
-ln -svfn init.d-sysv  /etc/init.d
-
-for tool in halt poweroff reboot runlevel shutdown telinit; do
-  ln -sfvn  ${tool}-sysv   /sbin/${tool}
-  ln -svfn  ${tool}-sysv.8 /usr/share/man/man8/${tool}.8
-done
-
-echo "Now reboot with /sbin/reboot-systemd"
-EOF
-
-chmod 0744 /usr/sbin/set-sysv</userinput></screen>
-
-  <note><para>The comment about the correct command to reboot in the
-  above scripts is correct.  The reboot command for the current boot
-  system must be used after the script changes the default reboot command.
-  </para></note>
-
-  <para>Now set the desired boot system.  The default is System V:</para>
-
-<screen><userinput remap="install">/usr/sbin/set-sysv</userinput></screen>
-
-  <para>Changing the boot system can be done at any time by running the
-  appropriate script above and rebooting.</para>
-
-  </sect2>
--->
 </sect1>

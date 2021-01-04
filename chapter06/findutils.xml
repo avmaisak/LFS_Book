@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-findutils" role="wrap">
+<sect1 id="ch-tools-findutils" role="wrap">
   <?dbhtml filename="findutils.html"?>
 
   <sect1info condition="script">
@@ -16,145 +16,59 @@
 
   <title>Findutils-&findutils-version;</title>
 
-  <indexterm zone="ch-system-findutils">
+  <indexterm zone="ch-tools-findutils">
     <primary sortas="a-Findutils">Findutils</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>The Findutils пакет содержит программы для поиска файлов. Программы предоставляют способы для рекурсивного поиска файлов по дереву каталогов, создания, обслуживания и поиска в базе данных (как правильно поиск выполняется быстрее, чем рекурсивный поиск, но менее надёжен, если база данных не в актуальном состоянии).</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/findutils.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&findutils-ch6-sbu;</seg>
-        <seg>&findutils-ch6-du;</seg>
+        <seg>&findutils-tmp-sbu;</seg>
+        <seg>&findutils-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Findutils</title>
+    <title>Установка Findutils</title>
 
-   <!-- this has been fixed in upstream gnulib, when a new version of
-   findutils is released, please check #4055 to see if the change has been
-   picked up in this package -->
-   <para>Уберем тест, который на некоторых машинах может привести к вечному зацикливанию:</para>
+    <para>Подготовка  Findutils к компиляции:</para>
 
-<screen><userinput remap="pre">sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in</userinput></screen>
-<para>Далее, сделаем некоторые исправления, требуемые glibc-2.28:</para>
-<screen><userinput remap="pre">sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' gl/lib/*.c
-sed -i '/unistd/a #include &lt;sys/sysmacros.h&gt;' gl/lib/mountlist.c
-echo "#define _IO_IN_BACKUP 0x100" >> gl/lib/stdio-impl.h</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)</userinput></screen>
 
-    <para>Подготовьте пакет Findutils к компиляции:</para>
-
-<screen><userinput remap="configure">./configure --prefix=/usr --localstatedir=/var/lib/locate</userinput></screen>
-
-    <variablelist>
-      <title>Значение параметров конфигурации:</title>
-
-      <varlistentry>
-        <term><parameter>--localstatedir</parameter></term>
-        <listitem>
-          <para>Этот аргумент изменяет местоположение базы данных
-			 <command>locate</command> на каталог <filename class="directory">/var/lib/locate</filename>,
-          для совместимости с FHS.</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
-
-    <para>Скомпилируйте пакет:</para>
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов, выполните команду:</para>
+    <para>Установка пакета:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
-    <para>Установите пакет:</para>
+    <para>Переместите исполняемый файл на свое конечное ожидаемое место:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
-
-    <para revision="sysv">Некоторые сценарии в пакете LFS-Bootscripts
-    зависят от <command>find</command>. Так как каталог <filename
-    class="directory">/usr</filename> может быть не доступен на ранних стадиях загрузки системы,
-	 эти программы должны быть размещены в корневом каталоге раздела. Сценарий <command>updatedb</command>
-	 также должен быть модифицирован для указания правильного пути:</para>
-
-    <para revision="systemd">Некоторые пакеты из книги BLFS и за её пределами ожидают, что программа
-    <command>find</command> будет размещена в каталоге <filename
-    class="directory">/bin</filename> ,поэтому, необходимо убедиться, что она находится в требуемом месте:</para>
-
-<screen><userinput remap="install">mv -v /usr/bin/find /bin
-sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
+<screen><userinput remap="install">mv -v $LFS/usr/bin/find $LFS/bin
+sed -i 's|find:=${BINDIR}|find:=/bin|' $LFS/usr/bin/updatedb</userinput></screen>
 
   </sect2>
 
-  <sect2 id="contents-findutils" role="content">
-    <title>Содержимое пакета Findutils</title>
+  <sect2 role="content">
+    <title/>
 
-    <segmentedlist>
-      <segtitle>Установленные программы</segtitle>
-		<segtitle>Установленные каталоги</segtitle>
-
-      <seglistitem>
-        <seg>find, locate, updatedb, and xargs</seg>
-        <seg>/var/lib/locate</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="find">
-        <term><command>find</command></term>
-        <listitem>
-          <para>Ищет файлы в указанном каталоге, по указанным критериям</para>
-          <indexterm zone="ch-system-findutils find">
-            <primary sortas="b-find">find</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="locate">
-        <term><command>locate</command></term>
-        <listitem>
-          <para>быстрый поиск файлов в одной или нескольких базах данных имён файлов с использованием заданных пользователем критериев.</para>
-          <indexterm zone="ch-system-findutils locate">
-            <primary sortas="b-locate">locate</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="updatedb">
-      <term><command>updatedb</command></term>
-        <listitem>
-          <para>создание и/или обновление баз данных, используемых программой locate.</para>
-          <indexterm zone="ch-system-findutils updatedb">
-            <primary sortas="b-updatedb">updatedb</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="xargs">
-        <term><command>xargs</command></term>
-        <listitem>
-          <para>формирование и исполнение команд на основании данных, считанных из стандартного ввода.</para>
-          <indexterm zone="ch-system-findutils xargs">
-            <primary sortas="b-xargs">xargs</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    <para>Подробная информация о пакете находится в
+    <xref linkend="contents-findutils" role="."/></para>
 
   </sect2>
 

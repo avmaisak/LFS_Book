@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-tar" role="wrap">
+<sect1 id="ch-tools-tar" role="wrap">
   <?dbhtml filename="tar.html"?>
 
   <sect1info condition="script">
@@ -16,101 +16,54 @@
 
   <title>Tar-&tar-version;</title>
 
-  <indexterm zone="ch-system-tar">
+  <indexterm zone="ch-tools-tar">
     <primary sortas="a-Tar">Tar</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Этот пакет обеспечивает возможности архивирования и извлечения почти всех пакетов, используемых в LFS.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/tar.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&tar-ch6-sbu;</seg>
-        <seg>&tar-ch6-du;</seg>
+        <seg>&tar-tmp-sbu;</seg>
+        <seg>&tar-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Tar</title>
+    <title>Установка Tar</title>
 
-<!--
-    <para>Add a program that generates a man page for tar from the source code:</para>
+    <para>Подготовка  Tar к компиляции:</para>
 
- <screen><userinput remap="pre">patch -Np1 -i ../&tar-manpage-patch;</userinput></screen>
--->
-    <para>Подготовьте пакет Tar к компиляции:</para>
-
-<screen><userinput remap="configure">FORCE_UNSAFE_CONFIGURE=1  \
-./configure --prefix=/usr \
+<screen><userinput remap="configure">./configure --prefix=/usr                     \
+            --host=$LFS_TGT                   \
+            --build=$(build-aux/config.guess) \
             --bindir=/bin</userinput></screen>
 
-    <variablelist>
-      <title>Значение параметров конфигурации:</title>
-
-      <varlistentry>
-        <term><envar>FORCE_UNSAFE_CONFIGURE=1</envar></term>
-        <listitem>
-          <para>Аргумент явно указывает чтобы тесты для <function>mknod</function> выполнялись от имени корневого пользователя root. Как правило, опасно выполнять такие тесты от корневого пользователя, но так как тест запускается в системе, которая ещё до конца не
-          построена, такое переопределение аргумента можно считать допустимым.</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>
-
-    <para>Скомпилируйте пакет:</para>
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов (около 3 SBU), выполните следующую команду:</para>
+    <para>Установка пакета:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
-
-    <!-- <para>Один тест на несоответствие ссылки (link mismatch) известно что не пройдет.</para> -->
-
-    <para>Установите пакет:</para>
-
-<screen><userinput remap="install">make install
-make -C doc install-html docdir=/usr/share/doc/tar-&tar-version;</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
+  <sect2 role="content">
+    <title/>
 
-  <sect2 id="contents-tar" role="content">
-    <title>Содержимое пакета Tar</title>
-
-    <segmentedlist>
-      <segtitle>Установленные программы</segtitle>
-      <segtitle>Каталог установки</segtitle>
-
-      <seglistitem>
-        <seg>tar</seg>
-        <seg>/usr/share/doc/tar-&tar-version;</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="tar">
-        <term><command>tar</command></term>
-        <listitem>
-          <para>Создает, извлекает файлы и перечисляет содержимое архивов,
-          также известный как тарболы</para>
-          <indexterm zone="ch-system-tar tar">
-            <primary sortas="b-tar">tar</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    <para>Подробная информация о пакете находится в <xref linkend="contents-tar" role="."/></para>
 
   </sect2>
 

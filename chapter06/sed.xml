@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-sed" role="wrap">
+<sect1 id="ch-tools-sed" role="wrap">
   <?dbhtml filename="sed.html"?>
 
   <sect1info condition="script">
@@ -16,96 +16,54 @@
 
   <title>Sed-&sed-version;</title>
 
-  <indexterm zone="ch-system-sed">
+  <indexterm zone="ch-tools-sed">
     <primary sortas="a-Sed">Sed</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-     <para>Sed - потоковый текстовый редактор (а также язык программирования), применяющий различные предопределённые текстовые преобразования к последовательному потоку текстовых данных. Он необходим для многих пакетов LFS, на этапе конфигурирования.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/sed.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
-      <segtitle>&buildtime;</segtitle>
+    <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&sed-ch6-sbu;</seg>
-        <seg>&sed-ch6-du;</seg>
+        <seg>&sed-tmp-sbu;</seg>
+        <seg>&sed-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Sed</title>
+    <title>Установка Sed</title>
 
-    <para>Сначала устраните проблему в среде LFS и удалите ошибочный тест:</para>
+    <para>Подготовка Sed к компиляции:</para>
 
-<screen><userinput remap="pre">sed -i 's/usr/tools/'                 build-aux/help2man
-sed -i 's/testsuite.panic-tests.sh//' Makefile.in</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --bindir=/bin</userinput></screen>
 
-    <para>Подготовьте пакет Sed к компиляции:</para>
+    <para>Компиляция пакета:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --bindir=/bin</userinput></screen>
-<!--
-    <variablelist>
-      <title>Значение новых параметров конфигурации:</title>
+<screen><userinput remap="make">make</userinput></screen>
 
-      <varlistentry>
-        <term><parameter>-i -htmldir</parameter></term>
-        <listitem>
-          <para>This sets the installation directory for the HTML documentation.</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>
--->
-    <para>Выполните компиляцию пакета, и сгенерируйте HTML документацию:</para>
+    <para>Компиляция пакета:</para>
 
-<screen><userinput remap="make">make
-make html</userinput></screen>
-
-    <para>Для выполнения тестов, выполните команду:</para>
-
-<screen><userinput remap="test">make check</userinput></screen>
-
-    <para>Установите пакет и его документацию:</para>
-
-<screen><userinput remap="install">make install
-install -d -m755           /usr/share/doc/sed-&sed-version;
-install -m644 doc/sed.html /usr/share/doc/sed-&sed-version;</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
-  <sect2 id="contents-sed" role="content">
-    <title>Содержимое пакета Sed</title>
+  <sect2 role="content">
+    <title/>
 
-    <segmentedlist>
-      <segtitle>Установленная программа</segtitle>
-      <segtitle>Каталог установки</segtitle>
-
-      <seglistitem>
-        <seg>sed</seg>
-        <seg>/usr/share/doc/sed-&sed-version;</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="sed">
-        <term><command>sed</command></term>
-        <listitem>
-          <para>Фильтрация и преобразование текстовых файлов за один проход</para>
-          <indexterm zone="ch-system-sed sed">
-            <primary sortas="b-sed">sed</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    <para>Подробная информация о пакете находится в
+    <xref linkend="contents-sed" role="."/></para>
 
   </sect2>
 

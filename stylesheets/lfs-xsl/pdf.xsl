@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!--
-$LastChangedBy: matthew $
-$Date: 2013-10-16 22:55:24 +0400 (Ср, 16 окт 2013) $
+$LastChangedBy: pierre $
+$Date: 2020-03-13 17:38:37 +0300 (Пт, 13 мар 2020) $
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -14,7 +14,7 @@ $Date: 2013-10-16 22:55:24 +0400 (Ср, 16 окт 2013) $
 
   <!-- Upstream FO templates. Profiled version is not supported by
        xsltproc, thus pofiling must be done in two steps (see Makefile) -->
-  <xsl:import href="docbook-xsl-1.78.1/fo/docbook.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl"/>
 
   <!-- Uncomment the following to make debugging the raw FO code easier.
        Note that FOP will complaints about a lot of paragraph overflows

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-autoconf" role="wrap">
+  <?dbhtml filename="autoconf.html"?>
+
+  <sect1info condition="script">
+    <productname>autoconf</productname>
+    <productnumber>&autoconf-version;</productnumber>
+    <address>&autoconf-url;</address>
+  </sect1info>
+
+  <title>Autoconf-&autoconf-version;</title>
+
+  <indexterm zone="ch-system-autoconf">
+    <primary sortas="a-Autoconf">Autoconf</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Autoconf содержит программы для создания сценариев, которые могут
+    автоматически конфигурировать исходный код.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&autoconf-fin-sbu;</seg>
+        <seg>&autoconf-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Autoconf</title>
+<!--
+    <para>Сначала примените патч исправляющий ошибки, возникающие в последней версии
+    perl, libtool и bash.</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&autoconf-fixes-patch;</userinput></screen>
+-->
+    <para>Подготовьте Autoconf для компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+
+    <para>Скомпилируйте пакет:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Для проверки результатов выполните:</para>
+<!--
+    <para>Тест на данный момент сломан по причине bash-5 и libtool-2.4.3.
+    Чтобы запустить тест, не смотря на это, выполните:</para>
+ -->
+<screen><userinput remap="test">make check</userinput></screen>
+<!--
+    <para>Выполнение может занять продолжительное время, около &autoconf-fin-sbu-tests; SBU.
+    Кроме того, будет пропущено несколько тестов, использующих Automake.
+    Для полного покрытия тестами, Autoconf можно перепроверить после установки
+    Automake. Также, два теста не пройдут из-за изменений в библиотеке libtool-2.4.3
+    и её более поздних версиях.</para>
+
+    <note><para>Время тестирования autoconf можно значительно сохратить на многоядерых
+    системах.
+    Для этого добавьте <command>TESTSUITEFLAGS=-j&lt;N&gt;</command> к строке выше.
+    Для примера, использование аргумента -j4 может сократить время тестирования более чем
+    на 60 процентов.</para></note>
+-->
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-autoconf" role="content">
+    <title>Содержимое Autoconf</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>autoconf, autoheader, autom4te, autoreconf, autoscan, autoupdate,
+        and ifnames</seg>
+        <seg>/usr/share/autoconf</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="autoconf">
+        <term><command>autoconf</command></term>
+        <listitem>
+          <para>Генерирует сценарии оболочки, которые автоматически выполняют
+          конфигурирование исходного кода пакетов для адаптации его ко многим разновидностям
+          Unix-подобных систем. Создаваемые сценарии конфигурирования независимы и
+          не нуждаются в программе <command>autoconf</command></para>
+          <indexterm zone="ch-system-autoconf autoconf">
+            <primary sortas="b-autoconf">autoconf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="autoheader">
+        <term><command>autoheader</command> </term>
+        <listitem>
+          <para>Инструмент для создания шаблонных файлов с выраженями
+          <emphasis>#define</emphasis> языка Си, которые использует configure</para>
+          <indexterm zone="ch-system-autoconf autoheader">
+            <primary sortas="b-autoheader">autoheader</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="autom4te">
+        <term><command>autom4te</command></term>
+        <listitem>
+          <para>Обертка для макропроцессора M4</para>
+          <indexterm zone="ch-system-autoconf autom4te">
+            <primary sortas="b-autom4te">autom4te</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="autoreconf">
+        <term><command>autoreconf</command></term>
+        <listitem>
+          <para>Автоматически запускает <command>autoconf</command>,
+          <command>autoheader</command>, <command>aclocal</command>,
+          <command>automake</command>, <command>gettextize</command> и
+          <command>libtoolize</command> в правильном порядке, чтобы сохранить время,
+          когда в файлах-шаблонах <command>autoconf</command> и
+          <command>automake</command> произошли изменения.</para>
+          <indexterm zone="ch-system-autoconf autoreconf">
+            <primary sortas="b-autoreconf">autoreconf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="autoscan">
+        <term><command>autoscan</command> </term>
+        <listitem>
+          <para>Помогает создать файл <filename>configure.in</filename> для пакета;
+          он проверяет исходные файлы в дереве каталогов в поиске общих проблем
+          с переносимостью и создаёт файл <filename>configure.scan</filename>,
+          который является предшественником <filename>configure.in</filename>.</para>
+          <indexterm zone="ch-system-autoconf autoscan">
+            <primary sortas="b-autoscan">autoscan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="autoupdate">
+        <term><command>autoupdate</command></term>
+        <listitem>
+          <para>Изменяет файл <filename>configure.in</filename>,
+          вызывающий макросы <command>autoconf</command> по их старым
+          именам для использования текущих имен макросов</para>
+          <indexterm zone="ch-system-autoconf autoupdate">
+            <primary sortas="b-autoupdate">autoupdate</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ifnames">
+        <term><command>ifnames</command> </term>
+        <listitem>
+          <para>Помогает при написании файла <filename>configure.in</filename> для пакета;
+          выводит идентификаторы, которые использует пакет в условиях препроцессора Си.
+          (Если пакет уже был настроен для переносимости, эта программа может помочь
+          определить, что нужно проверять сценарию <command>configure</command>.
+          Он также может заполнить пробелы в файле <filename>configure.in</filename>,
+          сформированным <command>autoscan</command>.)</para>
+          <indexterm zone="ch-system-autoconf ifnames">
+            <primary sortas="b-ifnames">ifnames</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

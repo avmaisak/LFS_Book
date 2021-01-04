@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-gmp" role="wrap">
+  <?dbhtml filename="gmp.html"?>
+
+  <sect1info condition="script">
+    <productname>gmp</productname>
+    <productnumber>&gmp-version;</productnumber>
+    <address>&gmp-url;</address>
+  </sect1info>
+
+  <title>GMP-&gmp-version;</title>
+
+  <indexterm zone="ch-system-gmp">
+    <primary sortas="a-GMP">GMP</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет GMP содержит математические библиотеки. Они содержат полезные функции для
+    арифметики с произвольной точностью.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&gmp-fin-sbu;</seg>
+        <seg>&gmp-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка GMP</title>
+
+    <note>
+      <para>Если вы выполняете сборку для 32-битной машины x86, но у вас процессор
+      способный выполнять 64-битные инструкции <emphasis>и</emphasis> указана
+      переменная окружения <envar>CFLAGS</envar>, то скрипт configure
+      будет пытаться сконфигурировать для 64-битной системы и процесс
+      завершиться ошибкой. Обходной путь это запуск configure следующей строкой:
+<screen role="nodump"><userinput><parameter>ABI=32</parameter> ./configure ...</userinput></screen></para>
+    </note>
+
+    <note>
+      <para>При настройках по умолчанию GMP создаст библиотеки оптимизированные для
+      процессора хост-системы. Если нужны библиотеки подходящие для процессоров с меньшими
+      способностями, чем у процессора хост-системы, то они могут быть созданы
+      следующим образом:
+
+<screen role="nodump"><userinput>cp -v configfsf.guess config.guess
+cp -v configfsf.sub   config.sub</userinput></screen></para>
+    </note>
+
+    <para>Подготовка GMP к компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr    \
+            --enable-cxx     \
+            --disable-static \
+            --docdir=/usr/share/doc/gmp-&gmp-version;</userinput></screen>
+
+    <variablelist>
+      <title>Значения новых параметров конфигурации:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-cxx</parameter></term>
+        <listitem>
+          <para>Аргумент включает поддержку C++ </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--docdir=/usr/share/doc/gmp-&gmp-version;</parameter></term>
+        <listitem>
+          <para>Аргумент указывает правильное  местоположение документации</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Компиляция пакета и генерация HTML документации:</para>
+
+<screen><userinput remap="make">make
+make html</userinput></screen>
+
+    <important>
+      <para>Прохождение тестов GMP в этой главе считается критичным.
+      Не пропускайте их выполнение ни при каких обстоятельствах.</para>
+    </important>
+
+    <para>Тестирование:</para>
+
+<screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
+
+    <caution><para>Код gmp сильно оптимизирован для процессора,
+    на котором он компилируется.
+    Иногда код, который определяет процессор, неверно идентифицирует
+    возможности системы и возникают ошибки в тестах или других приложениях,
+    использующих библиотеки gmp, с сообщением "Illegal instruction".
+    В таком случае, необходимо выполнить повторную конфигурацию пакета с аргументом
+    --build=x86_64-unknown-linux-gnu и выполнить сборку повторно.</para></caution>
+
+    <para>Убедитесь, что все 197 тестов прошли успешно.
+    Проверьте результаты тестирования следующей командой:</para>
+
+<screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
+
+    <para>Установка пакета и его документации:</para>
+
+<screen><userinput remap="install">make install
+make install-html</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-gmp" role="content">
+    <title>Содержимое пакета GMP</title>
+
+    <segmentedlist>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>libgmp.so and libgmpxx.so</seg>
+        <seg>/usr/share/doc/gmp-&gmp-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libgmp">
+        <term><filename class="libraryfile">libgmp</filename></term>
+        <listitem>
+          <para>Содержит функции арифметики с произвольной точностью.</para>
+          <indexterm zone="ch-system-gmp libgmp">
+            <primary sortas="c-libgmp">libgmp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgmpxx">
+        <term><filename class="libraryfile">libgmpxx</filename></term>
+        <listitem>
+          <para>Содержит функции C++ арифметики c произвольной точностью.</para>
+          <indexterm zone="ch-system-gmp libgmpxx">
+            <primary sortas="c-libgmpxx">libgmpxx</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>

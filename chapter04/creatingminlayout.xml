@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-creatingminlayout">
+  <?dbhtml filename="creatingminlayout.html"?>
+
+  <title>Создание структуры каталогов в файловой системе LFS</title>
+
+  <para>Первой задачей является создание небольшой структуры каталогов в разделе LFS, такой
+  чтобы скомпилированные в <xref
+  linkend="chapter-temporary-tools"/> программы могли быть установлены по
+  своим путям. Пути должны быть такими, чтобы эти временные программы были перезаписаны
+  при пересборке в <xref linkend="chapter-building-system"/>.</para>
+
+  <para>Создайте необходимую структуру каталогов запустив от имени
+  <systemitem class="username">root</systemitem> команду:</para>
+
+<screen><userinput>mkdir -pv $LFS/{bin,etc,lib,sbin,usr,var}
+case $(uname -m) in
+  x86_64) mkdir -pv $LFS/lib64 ;;
+esac</userinput></screen>
+
+  <para>Программы из <xref linkend="chapter-temporary-tools"/> будут скомпилированны
+  кросс-компилятором (детально разобрано в <xref
+  linkend="ch-tools-toolchaintechnotes"/>). Для отделения кросс-компилятора
+  от остальных программ он будет установлен в специальный каталог.
+  Создайте этот каталог:</para>
+
+<screen><userinput>mkdir -pv $LFS/tools</userinput></screen>
+
+</sect1>

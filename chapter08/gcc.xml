@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-gcc" role="wrap">
+  <?dbhtml filename="gcc.html"?>
+
+  <sect1info condition="script">
+    <productname>gcc</productname>
+    <productnumber>&gcc-version;</productnumber>
+    <address>&gcc-url;</address>
+  </sect1info>
+
+  <title>GCC-&gcc-version;</title>
+
+  <indexterm zone="ch-system-gcc">
+    <primary sortas="a-GCC">GCC</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет содержит набор компиляторов GNU включая Си и C++.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&gcc-fin-sbu;</seg>
+        <seg>&gcc-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка GCC</title>
+
+    <para>Если сборка происходит на x86_64, то измените каталог по
+    умолчанию для 64-битных библиотек на <quote>lib</quote>:</para>
+
+<screen><userinput remap="pre">case $(uname -m) in
+  x86_64)
+    sed -e '/m64=/s/lib64/lib/' \
+        -i.orig gcc/config/i386/t-linux64
+  ;;
+esac</userinput></screen>
+
+    <para>Документация GCC рекомендует проводить сборку в отдельном каталоге:</para>
+
+<screen><userinput remap="pre">mkdir -v build
+cd       build</userinput></screen>
+
+    <para>Подготовка GCC к компиляции:</para>
+
+<screen><userinput remap="configure">../configure --prefix=/usr            \
+             LD=ld                    \
+             --enable-languages=c,c++ \
+             --disable-multilib       \
+             --disable-bootstrap      \
+             --with-system-zlib</userinput></screen>
+
+    <para>Обратите внимание, есть некоторые дополнительные зависимости для других языков,
+    которые пока недоступны. Смотрите
+    <ulink url="&blfs-book;general/gcc.html">раздел GCC книги BLFS</ulink>
+    для инструкций по сборке GCC со всеми поддерживаемыми языками программирования.</para>
+
+    <variablelist>
+      <title>Значения новых параметров конфигурации:</title>
+
+      <varlistentry>
+        <term><parameter>LD=ld</parameter></term>
+        <listitem>
+          <para>Параметр говорит сценарию configure использовать ld из
+          binutils, установленный ранее в этой главе, вместо
+          кросс-компилированной версии, которая будет использована в обратном случае.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-system-zlib</parameter></term>
+        <listitem>
+          <para>Аргумент говорит GCC ссылаться на установленную в систему
+          копию библиотеки zlib вместо использования своей встроенной версии.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <important>
+      <para>Тестирование GCC в этом разделе считается критично важным.
+      Не пропускайте их выполнение ни при каких обстоятельствах.</para>
+    </important>
+
+   <para>Один набор тестов GCC известен как исчерпывающий стек,
+   поэтому увеличьте размер стека до запуска тестов:</para>
+
+<screen><userinput remap="test">ulimit -s 32768</userinput></screen>
+
+    <para>Тестирование от имени непривилегированного пользователя без остановки в случае ошибки:</para>
+
+<screen><userinput remap="test">chown -Rv tester .
+su tester -c "PATH=$PATH make -k check"</userinput></screen>
+
+    <para>Чтобы получить сводку результатов тестирования запустите:</para>
+
+<screen><userinput remap="test">../contrib/test_summary</userinput></screen>
+
+    <para>Только сводку можно получить пропустив вывод через
+    <userinput>grep -A7 Summ</userinput>.</para>
+
+    <para>Полученные результаты можно сравнить с результатами <ulink
+    url="&test-results;"/> и
+    <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
+
+    <para>Шесь тестов относяшихся к get_time известны как нерабочие. Это явно
+    связано с локалью en_HK.</para>
+
+    <para>Также следующие тесты относящиеся к перечисленным файлам известны как нерабочие
+    для версии glibc-2.32: asan_test.C, co-ret-17-void-ret-coro.C,
+    pr95519-05-gro.C, pr80166.c.</para>
+
+<!-- больше не падают после перемещения iana-etc и /etc/hosts
+    <para>Два теста: lookup.cc и reverse.cc в experimental/net
+    известны как нерабочие chroot среде LFS, потому что требуют
+    /etc/hosts and iana-etc.</para>
+-->
+    <para>Несколько неожиданных сбоев не всегда удается избежать. Разработчики GCC
+    обычно знают о таких проблемах, но некоторые из них ещё не решены.
+    Если результаты тестов не особо отличаются от опубликованных
+    по ссылке выше, то безопасно продолжать.</para>
+
+    <!--note><para>
+      On some combinations of kernel configuration and AMD processors
+      there may be more than 1100 failures in the gcc.target/i386/mpx
+      tests (which are designed to test the MPX option on recent
+      Intel processors). These can safely be ignored on AMD
+      processors. These tests will also fail on Intel processors if MPX support
+      is not enabled in the kernel even though it is present on the CPU.
+    </para></note-->
+
+    <para>Установка пакета и удаление ненужного каталога:</para>
+
+<screen><userinput remap="install">make install
+rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include-fixed/bits/</userinput></screen>
+
+    <para>Теперь владельцем каталога сборки GCC является <systemitem class="username">
+    tester</systemitem>, владелец каталога с установленными заголовками (и его содержимым)
+    теперь будет некорректным. Измените владельца на пользователя и группу
+    <systemitem class="username">root</systemitem>:</para>
+
+<screen><userinput remap="install">chown -v -R root:root \
+    /usr/lib/gcc/*linux-gnu/&gcc-version;/include{,-fixed}</userinput></screen>
+
+    <para>Создайте символическую ссылку необходимую <ulink
+    url="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
+    по "историческим" причинам.</para>
+
+<screen><userinput remap="install">ln -sv ../usr/bin/cpp /lib</userinput></screen>
+  <!-- уже сделано ранее
+    <para>Многие пакеты используют команду <command>cc</command> для вызова компилятора
+    Си. Для совместимости с такими пакетами, создайте символическую ссылку:</para>
+
+<screen><userinput remap="install">ln -sv gcc /usr/bin/cc</userinput></screen>
+  -->
+    <para>Добавьте символическую ссылку для соблюдения совместимости и возможности
+    сборки программ с поддержкой LTO (оптимизацией времени линковки):</para>
+
+<screen><userinput remap="install">install -v -dm755 /usr/lib/bfd-plugins
+ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
+        /usr/lib/bfd-plugins/</userinput></screen>
+
+    <para>Теперь, когда все инструменты на своем месте, важно снова убедиться в том,
+    что компиляция и линковка работают правильно.
+    Выполним проверки:</para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='a'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='b'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='c'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='d'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='e'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='f'])"/>
+
+<screen><computeroutput>/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crt1.o succeeded
+/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
+/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
+
+  <para>В зависимости от архитектуры машины, вывод может немного отличаться.
+  Разница может быть в имени каталога после
+  <filename class="directory">/usr/lib/gcc</filename>. Важным здесь является то, что
+  <command>gcc</command> нашел все три файла
+  <filename>crt*.o</filename> в каталоге
+  <filename class="directory">/usr/lib</filename>.</para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='g'])"/>
+
+<screen><userinput>grep -B4 '^ /usr/include' dummy.log</userinput></screen>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='h'])"/>
+
+<screen><computeroutput>#include &lt;...&gt; search starts here:
+ /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include-fixed
+ /usr/include</computeroutput></screen>
+
+   <para>Опять же, имя каталога после целевого триплета может отличаться в
+   зависимости от архитектуры вашей системы.</para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='i'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='j'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='k'])"/>
+
+<screen><computeroutput>SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib64")
+SEARCH_DIR("/usr/local/lib64")
+SEARCH_DIR("/lib64")
+SEARCH_DIR("/usr/lib64")
+SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")
+SEARCH_DIR("/usr/local/lib")
+SEARCH_DIR("/lib")
+SEARCH_DIR("/usr/lib");</computeroutput></screen>
+
+   <para>На 32-битных машинах можно заметить несколько других каталогов. Например,
+   вывод на архитектуре i686 может быть такой:</para>
+
+<screen><computeroutput>SEARCH_DIR("/usr/i686-pc-linux-gnu/lib32")
+SEARCH_DIR("/usr/local/lib32")
+SEARCH_DIR("/lib32")
+SEARCH_DIR("/usr/lib32")
+SEARCH_DIR("/usr/i686-pc-linux-gnu/lib")
+SEARCH_DIR("/usr/local/lib")
+SEARCH_DIR("/lib")
+SEARCH_DIR("/usr/lib");</computeroutput></screen>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='l'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='m'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='n'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='o'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='p'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='q'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='r'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='s'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='t'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='u'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="adjusting.xml"
+    xpointer="xpointer(//*[@os='v'])"/>
+
+    <para>Наконец, переместите неправильно расположенный файл:</para>
+
+<screen><userinput remap="install">mkdir -pv /usr/share/gdb/auto-load/usr/lib
+mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-gcc" role="content">
+    <title>Содержимое пакета GCC</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>c++, cc (link to gcc), cpp, g++, gcc,
+        gcc-ar, gcc-nm, gcc-ranlib, gcov, gcov-dump, and gcov-tool</seg>
+
+        <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
+        libgcc_s.so, libgcov.a, libgomp.{a,so}, libitm.{a,so},
+        liblsan.{a,so}, liblto_plugin.so,
+        libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
+        libstdc++.{a,so}, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
+        and libubsan.{a,so}</seg>
+
+        <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc и
+        /usr/share/gcc-&gcc-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="c">
+        <term><command>c++</command></term>
+        <listitem>
+          <para>Компилятор C++</para>
+          <indexterm zone="ch-system-gcc c">
+            <primary sortas="b-c++">c++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="cc">
+        <term><command>cc</command></term>
+        <listitem>
+          <para>Компилятор Си</para>
+          <indexterm zone="ch-system-gcc cc">
+            <primary sortas="b-cc">cc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="cpp">
+        <term><command>cpp</command></term>
+        <listitem>
+          <para>Препроцессор Си. Используется компилятором для замены в исходном
+          коде инструкций #include, #define и аналогичных</para>
+          <indexterm zone="ch-system-gcc cpp">
+            <primary sortas="b-cpp">cpp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="g">
+        <term><command>g++</command></term>
+        <listitem>
+          <para>Компилятор C++</para>
+          <indexterm zone="ch-system-gcc g">
+            <primary sortas="b-g++">g++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcc">
+        <term><command>gcc</command></term>
+        <listitem>
+          <para>Компилятор Си</para>
+          <indexterm zone="ch-system-gcc gcc">
+            <primary sortas="b-gcc">gcc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcc-ar">
+        <term><command>gcc-ar</command></term>
+        <listitem>
+          <para>Обёртка для команды <command>ar</command> добавляющая плагин к командной строке. Эта программа
+          используется только чтобы добавлять опцию "Оптимизация времени линковки" и не особо полезна для выполнения сборки
+          с аргументами по умолчанию.</para>
+          <indexterm zone="ch-system-gcc gcc-ar">
+            <primary sortas="b-gcc-ar">gc-ar</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcc-nm">
+        <term><command>gcc-nm</command></term>
+        <listitem>
+          <para>Обёртка для команды <command>nm</command> добавляющая плагин к командной строке. Эта программа
+          используется только чтобы добавлять опцию "Оптимизация времени линковки" и не особо полезна для выполнения сборки
+          с аргументами по умолчанию.</para>
+          <indexterm zone="ch-system-gcc gcc-nm">
+            <primary sortas="b-gcc-nm">gc-nm</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcc-ranlib">
+        <term><command>gcc-ranlib</command></term>
+        <listitem>
+          <para>Обёртка для команды <command>ranlib</command> добавляющая плагин к командной строке. Эта программа
+          используется только чтобы добавлять опцию "Оптимизация времени линковки" и не особо полезна для выполнения сборки
+          с аргументами по умолчанию.</para>
+          <indexterm zone="ch-system-gcc gcc-ranlib">
+            <primary sortas="b-gcc-ranlib">gc-ranlib</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcov">
+        <term><command>gcov</command></term>
+        <listitem>
+          <para>Инструмент покрытия тестами; он используется для анализа программ
+          и определяет, будет-ли оптимизация наиболее эффективной</para>
+          <indexterm zone="ch-system-gcc gcov">
+            <primary sortas="b-gcov">gcov</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcov-dump">
+        <term><command>gcov-dump</command></term>
+        <listitem>
+          <para>Offline gcda and gcno profile dump tool</para>
+          <indexterm zone="ch-system-gcc gcov-dump">
+            <primary sortas="b-gcov-dump">gcov-dump</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gcov-tool">
+        <term><command>gcov-tool</command></term>
+        <listitem>
+          <para>Offline gcda profile processing tool</para>
+          <indexterm zone="ch-system-gcc gcov-tool">
+            <primary sortas="b-gcov-tool">gcov-tool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libasan">
+        <term><filename class="libraryfile">libasan</filename></term>
+        <listitem>
+          <para>Библиотека времени выполнения очистки адресного пространства</para>
+          <indexterm zone="ch-system-gcc libasan">
+            <primary sortas="b-libasan">libasan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libatomic">
+        <term><filename class="libraryfile">libatomic</filename></term>
+        <listitem>
+          <para>GCC atomic built-in runtime library</para>
+          <indexterm zone="ch-system-gcc libatomic">
+            <primary sortas="b-libatomic">libatomic</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libcc1">
+        <term><filename class="libraryfile">libcc1</filename></term>
+        <listitem>
+          <para>The C preprocessing library</para>
+          <indexterm zone="ch-system-gcc libcc1">
+            <primary sortas="b-libcc1">libcc1</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgcc">
+        <term><filename class="libraryfile">libgcc</filename></term>
+        <listitem>
+          <para>Содержит поддержка времени выполнения для <command>gcc</command></para>
+          <indexterm zone="ch-system-gcc libgcc">
+            <primary sortas="c-libgcc">libgcc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgcov">
+        <term><filename class="libraryfile">libgcov</filename></term>
+        <listitem>
+          <para>Библиотека связывается с указанной программой. когда GCC необходимо выполнить профилирование</para>
+          <indexterm zone="ch-system-gcc libgcov">
+            <primary sortas="c-libgcov">libgcov</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgomp">
+        <term><filename class="libraryfile">libgomp</filename></term>
+        <listitem>
+          <para>Реализация проекта GNU API библиотеки OpenMP для кроссплатформенного программирования в разделяемой памяти парралельного программирования на языках Си,Си ++ и Фортран</para>
+          <indexterm zone="ch-system-gcc libgomp">
+            <primary sortas="c-libgomp">libgomp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="liblsan">
+        <term><filename class="libraryfile">liblsan</filename></term>
+        <listitem>
+          <para>The Leak Sanitizer runtime library</para>
+          <indexterm zone="ch-system-gcc liblsan">
+            <primary sortas="c-liblsan">liblsan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="liblto_plugin">
+        <term><filename class="libraryfile">liblto_plugin</filename></term>
+        <listitem>
+          <para>GCC's расширение оптимизации времени линковки (LTO), GCC позволяющее выполнять оптимизацию при компиляции модулей</para>
+          <indexterm zone="ch-system-gcc liblto_plugin">
+            <primary sortas="c-liblto_plugin">liblto_plugin</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libquadmath">
+        <term><filename class="libraryfile">libquadmath</filename></term>
+        <listitem>
+          <para>API математической библиотеки GCC четверной точности</para>
+          <indexterm zone="ch-system-gcc libquadmath">
+            <primary sortas="c-libquadmath">libquadmath</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libssp">
+        <term><filename class="libraryfile">libssp</filename></term>
+        <listitem>
+          <para>Содержит функционал защиты процедур GCC от атак
+          переполнения буфера в стеке (stack-smashing).</para>
+          <indexterm zone="ch-system-gcc libssp">
+            <primary sortas="c-libssp">libssp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libstdc">
+        <term><filename class="libraryfile">libstdc++</filename></term>
+        <listitem>
+          <para>Стандартная библиотека C++</para>
+          <indexterm zone="ch-system-gcc libstdc">
+            <primary sortas="c-libstdc++">libstdc++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libstdcfs">
+        <term><filename class="libraryfile">libstdc++fs</filename></term>
+        <listitem>
+          <para>ISO/IEC TS 18822:2015 Filesystem library</para>
+          <indexterm zone="ch-system-gcc libstdcfs">
+            <primary sortas="c-libstdc++fs">libstdc++fs</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libsupc">
+        <term><filename class="libraryfile">libsupc++</filename></term>
+        <listitem>
+          <para>Предоставляет вспомогательные процедуры для языка
+          программирования C++</para>
+          <indexterm zone="ch-system-gcc libsupc">
+            <primary sortas="c-libsupc++">libsupc++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libtsan">
+        <term><filename class="libraryfile">libtsan</filename></term>
+        <listitem>
+          <para>Библиотека времени выполнения для очистки потоков</para>
+          <indexterm zone="ch-system-gcc libtsan">
+            <primary sortas="c-libtsan">libtsan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libubsan">
+        <term><filename class="libraryfile">libubsan</filename></term>
+        <listitem>
+          <para>The Undefined Behavior Sanitizer runtime library</para>
+          <indexterm zone="ch-system-gcc libubsan">
+            <primary sortas="c-libubsan">libubsan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

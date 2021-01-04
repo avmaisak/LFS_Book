@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-bootable-grub" role="wrap">
+  <?dbhtml filename="grub.html"?>
+
+  <sect1info condition="script">
+    <productname>grub</productname>
+    <productnumber>&grub-version;</productnumber>
+    <address>&grub-url;</address>
+  </sect1info>
+
+  <title>Использование GRUB для загрузки</title>
+
+  <sect2>
+    <title>Введение</title>
+
+    <warning><para>При неправильной настройке GRUB ваша система перестанет загружаться без
+    вспомогательно загрузочного CD-ROM или USB диска.
+    Для загрузки системы LFS эта глава необязательна. Возможно достаточным будет изменить
+    существующий загрузчик, например Grub-Legacy, GRUB2 или LILO.</para></warning>
+
+    <para>Убедитесь, что аварийный загрузочный диск готов <quote>спасти</quote> 
+    компьютер, если он перестанет загружаться. Если у вас еще нет загрузочного диска, то его
+    можно создать следующей командой. Для её выполнения понадобится перейти в раздел BLFS и
+    установить программу <userinput>xorriso</userinput> из пакета <ulink
+    url="&blfs-book;multimedia/libisoburn.html">libisoburn</ulink>.</para>
+
+<screen role="nodump"><userinput>cd /tmp 
+grub-mkrescue --output=grub-img.iso 
+xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></screen>
+
+    <note>
+      <para>
+        Для загрузки LFS в хост-системах с UEFI, ядро должно быть собрано с указанием
+        ключа конфигурации CONFIG_EFI_STUB, как это описано в предыдущем разделе.
+        Однако можно загрузить  LFS и без такого дополнения с помощью GRUB2 .
+        Для этого в BIOS хост-системы необходимо отключить функции UEFI Mode и Secure Boot.
+        Подробная информация доступна в
+        <ulink url="&hints-root;lfs-uefi.txt">подсказке по lfs-uefi.txt</ulink>.
+      </para>
+    </note>
+
+  </sect2>
+
+  <sect2>
+    <title>Именование в GRUB</title>
+
+    <para>GRUB использует собственную систему именования дисков и разделов вида
+    <emphasis>(hdn,m)</emphasis>, где <emphasis>n</emphasis> - номер диска, а 
+    <emphasis>m</emphasis> - номер раздела. Номер диска начинается с нуля, а номер раздела
+    с единицы - для первичных разделов и с пяти для расширенных. Обратите
+    внимание, именование отличалось в предыдущих версиях, где оба номера начинались
+    с нуля. Например, раздел <filename class="partition">sda1</filename> это
+    <emphasis>(hd0,1)</emphasis> в GRUB, а
+    <filename class="partition">sdb3</filename> - <emphasis>(hd1,3)</emphasis>.
+    В отличие от Linux, GRUB не считает CD-ROM жесткими дисками. 
+    Например, если вы используете CD по имени <filename class="partition">hdb</filename>,
+    а второй жесткий диск как <filename class="partition">hdc</filename>, этот второй жесткий
+    диск будет всё равно <emphasis>(hd1)</emphasis>.</para>
+
+  </sect2>
+
+  <sect2>
+    <title>Настройка</title>
+
+    <para>GRUB записывает данные на первый физический сектор жесткого диска. Эта область не
+    является частью какой-либо файловой системы. Программы доступны как модули GRUB в
+    загрузочном разделе в каталоге по умолчанию -/boot/grub/.</para>
+
+    <para>Расположение загрузочного раздела это выбор пользователя. Одна из рекомендаций
+    - держать отдельный небольшой раздел (примерно 200 МБ) исключительно для загрузочных
+    данных.
+    В этом случае каждая сборка, будь то LFS или другой дистрибутив, может
+    обращаться к тем же загрузочным файлам, а доступ может быть получен из любой загруженной
+    системы. Если вы решите так сделать, вам понадобится примонтировать отдельный раздел,
+    переместить все файлы из текущего каталога /boot (например, ядро Linux, которое вы только
+    что создали в предыдущем разделе) в новый раздел. Затем нужно отмонтировать раздел и
+    примонтировать его заново в каталог /boot. Когда вы это сделаете, обязательно обновите
+    данные в файле /etc/fstab.</para>
+
+    <para>Использование текущего раздела lfs будет работать, но настройка для нескольких
+    систем сложнее.</para>
+
+    <para>Используя информацию выше, определите соответствующие точки монтирования для
+    корневого раздела (или загрузочного раздела, если используется отдельный). В следующем
+    примере предполагается, что корневой (или отдельный загрузочный) раздел является
+    <filename class="partition">sda2</filename>.</para>
+
+    <para>Установите файлы GRUB в каталог<filename
+    class="directory">/boot/grub</filename> и настройте загрузочный сектор:</para>
+
+    <warning>
+      <para>Следующая команда перезапишет текущий загрузчик. Не выполняйте эту команду,
+      если это нежелательно, например, если вы используете сторонний менеджер загрузки для
+      управления главной загрузочной записью (MBR).</para>
+    </warning>
+
+<screen role="nodump"><userinput>grub-install /dev/sda</userinput></screen>
+
+    <note>
+      <para>Если система была загружена с использованием UEFI, 
+      <command>grub-install</command> попытается установить файлы для 
+      <emphasis>x86_64-efi</emphasis>, но эти файлы не были установлены в главе 6.
+      В этом случае, добавьте к комманде выше аргумент 
+      <option>--target i386-pc</option>.</para>
+    </note>
+
+<!-- This does not seem to be true any more
+    <note><para><application>grub-install</application> is a script and calls another
+    program, grub-probe, that may fail with a message "cannot stat `/dev/root'".
+    If so, create a temporary symbolic link from your root partition to /dev/root:</para>
+
+<screen role="nodump"><userinput>ln -sv /dev/sda2 /dev/root</userinput></screen>
+
+    <para>The symbolic link will only be present until the system is rebooted.
+    The link is only needed for the installation procedure.
+    </para></note>
+-->
+  </sect2>
+
+  <sect2 id="grub-cfg">
+    <title>Создание файла конфигурации GRUB</title>
+
+    <para>Создайте файл конфигурации /boot/grub/grub.cfg:</para>
+
+    <screen revision="sysv"><userinput>cat &gt; /boot/grub/grub.cfg &lt;&lt; "EOF"
+<literal># Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+insmod ext2
+set root=(hd0,2)
+
+menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
+        linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
+}</literal>
+EOF</userinput></screen>
+
+    <screen revision="systemd"><userinput>cat &gt; /boot/grub/grub.cfg &lt;&lt; "EOF"
+<literal># Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+insmod ext2
+set root=(hd0,2)
+
+menuentry "GNU/Linux, Linux &linux-version;-lfs-&versiond;" {
+        linux   /boot/vmlinuz-&linux-version;-lfs-&versiond; root=/dev/sda2 ro
+}</literal>
+EOF</userinput></screen>
+
+
+    <note><para>С точки зрения GRUB, файлы ядра относительны от используемого раздела. Если вы используете отдельные /boot раздел, удалите /boot из строки linux. Вам также потребуется изменить строку set root, чтобы указать на загрузочный раздел.
+    </para></note>
+
+    <para>GRUB - чрезвычайно мощная программа, и она обеспечивает огромное      количество вариантов загрузки с самых разных устройств, работающих      систем и типов разделов. Существует также множество вариантов настройки      таких как графические экраны заставок, звуки воспроизведения, ввод мыши и т. д.      детали этих вариантов выходят за рамки этого раздела.</para>
+
+    <caution><para>Существует команда grub-mkconfig, которая может автоматически записывать файл конфигурации. Она использует набор скриптов в файле /etc/grub.d/ и уничтожит любые сделанные вами настройки. Эти сценарии предназначены в первую очередь для обычных дистрибутивов и не рекомендуются для LFS. Если вы устанавливаете коммерческий дистрибутив Linux, есть вероятность, что эта программа будет запущена. Обязательно создайте резервную копию файла grub.cfg.</para></caution>
+
+   </sect2>
+
+</sect1>

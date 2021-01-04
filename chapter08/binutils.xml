@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-binutils" role="wrap">
+  <?dbhtml filename="binutils.html"?>
+
+  <sect1info condition="script">
+    <productname>binutils</productname>
+    <productnumber>&binutils-version;</productnumber>
+    <address>&binutils-url;</address>
+  </sect1info>
+
+  <title>Binutils-&binutils-version;</title>
+
+  <indexterm zone="ch-system-binutils">
+    <primary sortas="a-Binutils">Binutils</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Binutils содержит линковщик, ассемблер и другие инструменты для работы с
+    объектными файлам.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&binutils-fin-sbu;</seg>
+        <seg>&binutils-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Binutils</title>
+
+    <para>Проверим, что псевдотерминалы (PTY) правильно работают в среде chroot.
+    Для этого выполним простой тест:</para>
+
+<screen><userinput remap="test">expect -c "spawn ls"</userinput></screen>
+
+    <para>Результатом выполнения команды, на экране должна появиться следующая строка:</para>
+
+<screen><computeroutput>spawn ls</computeroutput></screen>
+
+    <para>Однако, если вместо вышеуказанного результата, появилось сообщение,
+    как показано ниже, это означает что среда не правильно настроена для работы
+    с псевдотерминалами. Эту проблему необходимо решить до запуска тестов пакета
+    Binutils и GCC:</para>
+
+<screen><computeroutput>The system has no more ptys.
+Ask your system administrator to create more.</computeroutput></screen>
+
+    <para>Теперь удалите один тест, который мешает запускать тесты.
+     до завершения:</para>
+
+<screen><userinput remap="pre">sed -i '/@\tincremental_copy/d' gold/testsuite/Makefile.in</userinput></screen>
+
+    <para>Документация Binutils рекомендует выполнять компиляцию в
+    отдельном каталоге:</para>
+
+<screen><userinput remap="pre">mkdir -v build
+cd       build</userinput></screen>
+
+    <para>Подготовьте пакет Binutils к компиляции:</para>
+
+<screen><userinput remap="configure">../configure --prefix=/usr       \
+             --enable-gold       \
+             --enable-ld=default \
+             --enable-plugins    \
+             --enable-shared     \
+             --disable-werror    \
+             --enable-64-bit-bfd \
+             --with-system-zlib</userinput></screen>
+    <variablelist>
+      <title>Значение параметров configure:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-gold</parameter></term>
+        <listitem>
+          <para>Выполнять сборку gold-компоновщика и устанавливает его как ld.gold (рядом с линковщиком по умолчанию).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-ld=default</parameter></term>
+        <listitem>
+          <para>Выполнить сборку обычного bdf компоновщика и установить его как ld (компоновщик по умолчанию) и как ld.bfd.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-plugins</parameter></term>
+        <listitem>
+          <para>Включить поддержку плагинов для компоновщика</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-64-bit-bfd</parameter></term>
+        <listitem>
+           <para>Включение 64-битной поддержки (для хостов с ограниченным размером слова). Может не потребоваться на 64-битной системе, однако эта опция не нанесет вреда.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-system-zlib</parameter></term>
+        <listitem>
+          <para>Использовать уже установленную библиотеку zlib, вместо использования встроенной версии.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Скомпилируйте пакет:</para>
+
+<screen><userinput remap="make">make tooldir=/usr</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров make:</title>
+
+      <varlistentry>
+        <term><parameter>tooldir=/usr</parameter></term>
+        <listitem>
+          <para>Как правило, значение tooldir (каталог в котором будут располагаться
+          исполняемые файлы) установлено как <filename
+          class="directory">$(exec_prefix)/$(target_alias)</filename>. На пример, на
+          машине x86_64 значение приобретёт вид
+          <filename class="directory">/usr/x86_64-unknown-linux-gnu</filename>. Потому
+          что это пользовательская система, и её целевой каталог в <filename
+          class="directory">/usr</filename> не требуется. Путь <filename
+          class="directory">$(exec_prefix)/$(target_alias)</filename> будет использоваться
+          только в том случае, если система будет задействована в качестве
+          кросс-компилятора (например, необходимо выполнить компиляцию пакета на
+          машине Intel которая должна сгенерировать код, работающий на машинах
+          PowerPC).</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <important>
+      <para>Выполнение тестов пакета Binutils считается критичным. Не пропускайте их
+      выполнение ни при каких обстоятельствах.</para>
+    </important>
+
+    <para>Для выполнения тестов, выполните команду:</para>
+
+<screen><userinput remap="test">make -k check</userinput></screen>
+
+<!--    <para>The ver_test_pr16504.sh test is known to fail.</para>-->
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make tooldir=/usr install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-binutils" role="content">
+    <title>Содержимое пакета Binutils</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>addr2line, ar, as, c++filt, dwp, elfedit, gprof, ld, ld.bfd, ld.gold, nm,
+        objcopy, objdump, ranlib, readelf, size, strings, and strip</seg>
+        <seg>libbfd.{a,so} and libopcodes.{a,so}</seg>
+        <seg>/usr/lib/ldscripts</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="addr2line">
+        <term><command>addr2line</command></term>
+        <listitem>
+          <para>Переводит адреса программ на имена файлов и номера строк;
+          учитывая адрес и имя исполняемого файла, он использует отладочную
+          информацию в исполняемом файле, чтобы определить, какой исходный файл и строка
+          число связано с адресом</para>
+          <indexterm zone="ch-system-binutils addr2line">
+            <primary sortas="b-addr2line">addr2line</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ar">
+        <term><command>ar</command></term>
+        <listitem>
+          <para>создаёт и изменяет архивы, а также извлекает файлы из них</para>
+          <indexterm zone="ch-system-binutils ar">
+            <primary sortas="b-ar">ar</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="as">
+        <term><command>as</command></term>
+        <listitem>
+          <para>Ассемблер, известный как GAS (Gnu Assembler). Выполняет создание объектного файла из вывода команды <command>gcc</command></para>
+          <indexterm zone="ch-system-binutils as">
+            <primary sortas="b-as">as</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="c-filt">
+        <term><command>c++filt</command></term>
+        <listitem>
+          <para>Используется компоновщиком для удаления символов C ++ и Java и сохранения
+          перегруженных функции от конфликтов</para>
+          <indexterm zone="ch-system-binutils c-filt">
+            <primary sortas="b-c++filt">c++filt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="dwp">
+        <term><command>dwp</command></term>
+        <listitem>
+          <para>утилита для упаковки DWARF</para>
+          <indexterm zone="ch-system-binutils dwp">
+            <primary sortas="dwp">dwp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="elfedit">
+        <term><command>elfedit</command></term>
+        <listitem>
+          <para>Обновляет ELF заголовок в файлах ELF</para>
+          <indexterm zone="ch-system-binutils elfedit">
+            <primary sortas="b-elfedit">elfedit</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gprof">
+        <term><command>gprof</command></term>
+        <listitem>
+          <para>Отображает график вызовов данных профилирования</para>
+          <indexterm zone="ch-system-binutils gprof">
+            <primary sortas="b-gprof">gprof</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ld">
+        <term><command>ld</command></term>
+        <listitem>
+          <para>Компоновщик, который объединяет ряд объектных и архивных файлов в один файл, перемещая их данные и связывает  ссылки</para>
+          <indexterm zone="ch-system-binutils ld">
+            <primary sortas="b-ld">ld</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ld.gold">
+        <term><command>ld.gold</command></term>
+        <listitem>
+          <para>gold — это компоновщик для ELF файлов. Он стал официальным пакетом GNU и был добавлен в binutils в марте 2008 года и был впервые выпущен в составе binutils версии 2.19. Мотивацией для написания gold было создание компоновщика, который является более быстрым, чем GNU linker, особенно для больших приложений, написанных на C++.</para>
+          <indexterm zone="ch-system-binutils ld.gold">
+            <primary sortas="b-ld.gold">ld.gold</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ld.bfd">
+        <term><command>ld.bfd</command></term>
+        <listitem>
+          <para>Жесткая ссылка на <command>ld</command></para>
+          <indexterm zone="ch-system-binutils ld.bfd">
+            <primary sortas="b-ld.bfd">ld.bfd</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="nm">
+        <term><command>nm</command></term>
+        <listitem>
+          <para>Перечисляет символы, встречающиеся в данном объектном файле</para>
+          <indexterm zone="ch-system-binutils nm">
+            <primary sortas="b-nm">nm</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="objcopy">
+        <term><command>objcopy</command></term>
+        <listitem>
+          <para>Копирование объектных файлов (возможно с изменениями)</para>
+          <indexterm zone="ch-system-binutils objcopy">
+            <primary sortas="b-objcopy">objcopy</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="objdump">
+        <term><command>objdump</command></term>
+        <listitem>
+          <para>Отображает информацию о данном объектном файле с возможностью
+          контроля необходимой информации для отображения; Эта информация
+          может быть полезна для программистов, которые работают над инструментами для компиляции</para>
+          <indexterm zone="ch-system-binutils objdump">
+            <primary sortas="b-objdump">objdump</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ranlib">
+        <term><command>ranlib</command></term>
+        <listitem>
+          <para>Создает индекс содержимого архива и сохраняет его
+          в архиве; индекс перечисляет все символы, определенные архивом, которые
+          являются перемещаемыми объектными файлами</para>
+          <indexterm zone="ch-system-binutils ranlib">
+            <primary sortas="b-ranlib">ranlib</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="readelf">
+        <term><command>readelf</command></term>
+        <listitem>
+          <para>показ содержимого исполняемых файлов в формате ELF</para>
+          <indexterm zone="ch-system-binutils readelf">
+            <primary sortas="b-readelf">readelf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="size">
+        <term><command>size</command></term>
+        <listitem>
+          <para>вывод общего размера и размера секций</para>
+          <indexterm zone="ch-system-binutils size">
+            <primary sortas="b-size">size</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="strings">
+        <term><command>strings</command></term>
+        <listitem>
+          <para>Выводит для каждого заданного файла, последовательности печатаемых
+          символов, которые имеют, по меньшей мере, указанную длину (по умолчанию
+          4); для объектных файлов он печатает по умолчанию только строки из
+          разделов инициализации и загрузки, а для других типов файлов - сканирует весь файл</para>
+          <indexterm zone="ch-system-binutils strings">
+            <primary sortas="b-strings">strings</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="strip">
+        <term><command>strip</command></term>
+        <listitem>
+          <para>Отбрасывает символы из объектных файлов</para>
+          <indexterm zone="ch-system-binutils strip">
+            <primary sortas="b-strip">strip</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libbfd">
+        <term><filename class="libraryfile">libbfd</filename></term>
+        <listitem>
+          <para>Библиотека двоичных файловых дескрипторов (Binary File Descriptor)</para>
+          <indexterm zone="ch-system-binutils libbfd">
+            <primary sortas="c-libbfd">libbfd</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libctf">
+        <term><filename class="libraryfile">libctf</filename></term>
+        <listitem>
+          <para>The Compat ANSI-C Type Format debugging support library</para>
+          <indexterm zone="ch-system-binutils libctf">
+            <primary sortas="c-libctf">libctf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libctf-nobfd">
+        <term><filename class="libraryfile">libctf-nobfd</filename></term>
+        <listitem>
+          <para>A libctf variant which does not use libbfd functionality</para>
+          <indexterm zone="ch-system-binutils libctf-nobfd">
+            <primary sortas="c-libctf-nobfd">libctf-nobfd</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libopcodes">
+        <term><filename class="libraryfile">libopcodes</filename></term>
+        <listitem>
+          <para>Библиотека для работы с опкодами - <quote>читаемыми</quote>
+          версиями инструкций процессора.
+          Используется в сборке утилит вроде
+          <command>objdump</command></para>
+          <indexterm zone="ch-system-binutils libopcodes">
+            <primary sortas="c-libopcodes">libopcodes</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

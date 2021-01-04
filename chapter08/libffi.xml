@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-libffi" role="wrap">
+  <?dbhtml filename="libffi.html"?>
+
+  <sect1info condition="script">
+    <productname>libffi</productname>
+    <productnumber>&libffi-version;</productnumber>
+    <address>&libffi-url;</address>
+  </sect1info>
+
+  <title>Libffi-&libffi-version;</title>
+
+  <indexterm zone="ch-system-libffi">
+    <primary sortas="a-libffi">libffi</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Библиотека Libffi предоставляет переносимый, высокоуровневый интерфейс
+    по различным соглашениям о вызовах. Это позволяет программисту во время исполнения
+    вызывать любую функцию указанную в описании интерфейса вызова.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&libffi-fin-sbu;</seg>
+        <seg>&libffi-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Libffi</title>
+
+    <note>
+      <para>Подобно GMP, libffi собирается с оптимизацией специфичной
+      для текущего процессора. Если происходит сборка для другой системы,
+      установите значения CFLAGS и CXXFLAGS, чтобы конкретезировать архитектуру сборки.
+      Если этого не сделать, все приложения слинкованные с libffi будут выдавать ошибку
+      Illegal Operation Errors.</para>
+    </note>
+
+    <para>Подготовка libffi к компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr --disable-static --with-gcc-arch=native</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров configure:</title>
+
+      <varlistentry>
+        <term><parameter>--with-gcc-arch=native</parameter></term>
+        <listitem>
+          <para>Гарантирует отптимизацию GCC для текущей системы. Если
+          аргумент не указан, система будет угадана и
+          созданный код может быть неправильным в некоторых случаях. Если
+          создаваемый код будет скопирован в систему с меньшими
+          возможностями, укажите эту систему в качестве параметра.
+          Подробнее об альтернативных типах систем смотрите <ulink
+          url='https://gcc.gnu.org/onlinedocs/gcc-&gcc-version;/gcc/x86-Options.html'>
+          параметры x86 в руководстве GCC </ulink>.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Тестирование:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Установите пакет:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-libffi" role="content">
+    <title>Содержимое пакета Libffi</title>
+
+    <segmentedlist>
+      <segtitle>&contentlibs;</segtitle>
+
+      <seglistitem>
+        <seg>libffi.so</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libffi">
+        <term><filename class="libraryfile">libffi</filename></term>
+        <listitem>
+          <para>Содержит функции libffi API</para>
+          <indexterm zone="ch-system-libffi">
+            <primary sortas="c-libffi">libffi</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+

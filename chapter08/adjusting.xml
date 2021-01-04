@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-adjusting">
+  <?dbhtml filename="adjusting.html"?>
+
+  <title>Настройка инструментария</title>
+
+  <para>Теперь, когда все библиотеки Си были установлены, пришло время настроить
+  инструментарий, чтобы он компоновал любые свежесобранные программы с этими
+  новыми библиотеками.</para>
+
+  <para>Сначала, выполните резервное копирование компоновщика из
+  <filename class="directory">/tools</filename> и замените его настроенным компоновщиком,
+  которые был собран в главе 5. Также будет создана ссылка на его ответную часть 
+  в каталоге <filename class="directory">/tools/$(uname -m)-pc-linux-gnu/bin</filename>:</para>
+
+<screen><userinput>mv -v /tools/bin/{ld,ld-old}
+mv -v /tools/$(uname -m)-pc-linux-gnu/bin/{ld,ld-old}
+mv -v /tools/bin/{ld-new,ld}
+ln -sv /tools/bin/ld /tools/$(uname -m)-pc-linux-gnu/bin/ld</userinput></screen>
+
+  <para>следующая команда исправляет файл спецификации GCC для достижения трёх целей:
+  во-первых, направить GCC на новый динамический компоновщик.
+  Обычное удаление всех экземпляров из каталога <quote>/tools</quote> оставит нас с
+  правильным путем к динамическому компоновщику.
+  Во-вторых, дать понять GCC где искать стартовые файлы Glibc.
+  В-третьих, добавить каталог /usr/include в конец пути поиска по умолчанию, чтобы 
+  заголовочные файлы добавленные в главе 6 были найдены.
+  Команда <command>sed</command> исполнит всё перечисленное:</para>
+
+<screen><userinput>gcc -dumpspecs | sed -e 's@/tools@@g'                   \
+    -e '/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}' \
+    -e '/\*cpp:/{n;s@$@ -idirafter /usr/include@}' &gt;      \
+    `dirname $(gcc --print-libgcc-file-name)`/specs</userinput></screen>
+
+  <para>Хорошей идеей будет выполнить визуальную проверку файла спецификации
+  и убедиться, что нужные изменения были сделаны.</para>
+
+  <para>На этом этапе необходимо убедиться в том, что базовые функции
+  (компиляция и компоновка) перенастроенного инструментария работают 
+  как ожидается. Выполните следующие проверки:</para>
+
+<screen os="a"><userinput>echo 'int main(){}' &gt; dummy.c
+cc dummy.c -v -Wl,--verbose &amp;&gt; dummy.log
+readelf -l a.out | grep ': /lib'</userinput></screen>
+
+  <para os="b">Не должно быть ошибок, а вывод (в зависимости от платформы) 
+  должен соответствовать следующей строке:</para>
+
+<screen os="c"><computeroutput>[Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
+
+  <para>Заметьте, что в 64-битной системе динамический компоновщик находится в каталоге
+  <filename class="directory">/lib</filename>, но доступ к нему происходит через
+  символическую ссылку из /lib64.</para>
+
+  <note><para>Для 32-битных систем интерпретатором будет /lib/ld-linux.so.2.</para></note>
+
+  <para os="d">Теперь убедитесь, что настроили использовать нужные стартовые файлы:</para>
+
+<screen os="e"><userinput>grep -o '/usr/lib.*/crt[1in].*succeeded' dummy.log</userinput></screen>
+
+  <para os="f">Последняя команда должна вывести:</para>
+
+<screen><computeroutput>/usr/lib/../lib/crt1.o succeeded
+/usr/lib/../lib/crti.o succeeded
+/usr/lib/../lib/crtn.o succeeded</computeroutput></screen>
+
+  <para os="g">Проверьте, что компилятор ищет нужные заголовочные файлы:</para>
+
+<screen><userinput>grep -B4 '^ /usr/include' dummy.log</userinput></screen>
+
+  <para os="h">Эта команда должна вернуть следующее:</para>
+
+<screen><computeroutput>#include &lt;...&gt; search starts here:
+ /tools/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include
+ /tools/include
+ /tools/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include-fixed
+ /usr/include</computeroutput></screen>
+
+  <note><para>На 32-битной системе x86_64 будет заменено на i686.</para></note>
+
+  <para os="i">Далее, убедитесь, что новый компоновщик используется с правильными путями поиска:</para>
+
+<screen os="j"><userinput>grep 'SEARCH.*/usr/lib' dummy.log |sed 's|; |\n|g'</userinput></screen>
+
+  <para os="k">Ссылки на пути с у которых есть суффикс '-linux-gnu' должны быть
+  проигнорированы, а вывод должен быть:</para>
+
+<screen><computeroutput>SEARCH_DIR("/usr/lib")
+SEARCH_DIR("/lib")</computeroutput></screen>
+
+  <para os="l">Далее убедитесь, что используется нужная библиотека libc:</para>
+
+<screen os="m"><userinput>grep "/lib.*/libc.so.6 " dummy.log</userinput></screen>
+
+  <para os="n">Вывод последней команды будет:</para>
+
+<screen os="o"><computeroutput>attempt to open /lib/libc.so.6 succeeded</computeroutput></screen>
+
+  <para os="p">Проверьте, что GCC использует правильный динамический компоновщик:</para>
+
+<screen os="q"><userinput>grep found dummy.log</userinput></screen>
+
+  <para os="r">Вывод (в зависимости от платформы в наименовании динамического компоновщика) будет:</para>
+
+<screen os="s"><computeroutput>found ld-linux-x86-64.so.2 at /lib/ld-linux-x86-64.so.2</computeroutput></screen>
+
+  <para os="t">Если вывод не соответствует или вообще отсутствует, то где-то
+  была допущена серьезная ошибка. Исследуйте предыдущие шаги, чтобы найти и исправить
+  проблему. <!--Скорее всего причина в неправильной настройке файла спецификации.-->
+  Все проблемы должны быть исправлены до выполнения следующих этапов.</para>
+
+  <para os="u">Если все работает правильно, удалите тестовые файлы:</para>
+
+<screen os="v"><userinput>rm -v dummy.c a.out dummy.log</userinput></screen>
+
+</sect1>

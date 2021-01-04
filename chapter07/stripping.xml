@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-stripping">
+  <?dbhtml filename="stripping.html"?>
+
+  <title>Уборка и сохранение временной системы</title>
+
+  <para>Файлы .la используются только для линковки со статичными библиотеками.
+  Они не нужны и потенциально опасны при использовании динамических библиотек,
+  особенно при использовании неавтоматических систем сборки.
+  Сейчас, находясь в среде chroot, удалите эти файлы:</para>
+
+<screen><userinput>find /usr/{lib,libexec} -name \*.la -delete</userinput></screen>
+
+    <para>Удалите документацию временных инструментов, чтобы предотвратить их
+    попадание в конечную систему и сэкономить порядка 35 MB:</para>
+
+<screen><userinput>rm -rf /usr/share/{info,man,doc}/*</userinput></screen>
+
+  <note><para>
+    Все оставшиеся шаги этой главы необязательны. Тем не менее,
+    как только вы начнете устанавливать пакеты из <xref
+    linkend="chapter-building-system"/>, временные инструменты будут перезаписаны.
+    Так что будет хорошей идеей сделать копии временных инструментов как показано ниже.
+    Остальные шаги нужны лишь, если вы действительно стеснены в дисковом пространстве.
+  </para></note>
+
+  <para>
+    Последующие шаги выполняются вне среды chroot.
+    Это означает, вы должны выйти из среды chroot прежде, чем продолжить.
+    Причины этому следующие:
+    <itemizedlist>
+      <listitem>
+        <para>
+          быть уверенным, что объекты не используются во время манипуляций с ними.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          иметь доступ к файловой системе вне среды chroot для резервного копирования
+          данных, которые не должны находиться в файловой иерархии
+          <filename class="directory">$LFS</filename> по соображениям безопасности.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </para>
+
+  <para>
+    Выйдите из среды chroot и отмонтируйте виртуальные файловые системы ядра:
+  </para>
+
+  <note>
+    <para>Все последующие инструкции выполняются от имени
+      <systemitem class="username">root</systemitem>. 
+      Будьте предельно аккуратны с выполняемыми командами, так как ошибки могут
+      изменить вашу хост-систему.
+      Помните, что переменная окружения <envar>LFS</envar> по умолчанию установлена
+      для пользователя <systemitem class="username">lfs</systemitem>, но может быть 
+      <emphasis>не</emphasis> установленна для 
+      <systemitem class="username">root</systemitem>. Каждый раз, выполняя команды
+      от имени <systemitem class="username">root</systemitem>, 
+      проверяйте установлена ли переменная <envar>LFS</envar> корректно.
+      Более подробно это обсуждается в <xref linkend='ch-partitioning-aboutlfs'/>.
+    </para>
+  </note>
+
+<screen role="nodump"><userinput>exit
+umount $LFS/dev{/pts,}
+umount $LFS/{sys,proc,run}</userinput></screen>
+
+  <sect2>
+    <title>Зачистка</title>
+
+    <para>Если раздел LFS невелик, будет приятно знать, что
+    ненужные элементы можно удалить. Исполняемые файлы и библиотеки
+    собранные к этому моменту содержат чуть более 90 MB ненужных отладочных данных.</para>
+
+    <para>Удалите отладочную информацию из двоичных файлов:</para>
+<screen role="nodump"><userinput>strip --strip-debug $LFS/usr/lib/*
+strip --strip-unneeded $LFS/usr/{,s}bin/*
+strip --strip-unneeded $LFS/tools/bin/*</userinput></screen>
+
+    <para>Эти команды пропустят обработку нескольких файлов из-за невозможности
+    распознать их формат. Большинство из них являются скриптами, а не двоичными файлами.
+    <!--Обратите внимание, мы используем программу <command>strip</command> собранную
+    в разделе <quote>Binutils проход 2</quote>, так как она умеет работать с этими
+    кросс-компилированными программами.--></para>
+
+    <para>Ни в коем случае <emphasis>НЕ</emphasis> используйте параметр
+    <parameter>--strip-unneeded</parameter> на библиотеках. Статичные библиотеки
+    будут уничтожены и пакеты инструментария придется пересобирать.</para>
+
+    <para>На этом этапе у вас должно оставаться не менее 5 GB свободного места на
+    chroot разделе, которые можно использовать для последующей сборки и
+    установки Glibc и GCC. Если вы можете собрать и установить Glibc, то
+    вы можете собрать и установить всё остальное.
+    Проверьте доступное на диске место командой 
+    <command>df -h $LFS</command>.</para>
+
+  </sect2>
+
+  <sect2>
+    <title>Резервное копирование</title>
+
+    <para>
+      Теперь, когда важные инструменты созданы, время подумать о резервном копировании.
+      Если все проверки собранных пакетов удачно проходят, временные инструменты 
+      можно считать рабочими и сохранить их для дальнейшего переиспользования.
+      В случае аварии в следующих главах может оказаться, что удалить
+      всё и начать сначала (более аккуратно на этот раз) это лучший выход из положения.		
+      К сожалению, все временные инструменты будут тоже потеряны.
+      Сделайте их резервную копию, чтобы не терять времени на переделывание того,
+      что уже было однажды удачно собрано.
+    </para>
+
+    <para>
+      Убедитесь в наличии как минимум 600 MB свободного места (архивы исходных кодов
+      будут включены в резервную копию) в домашнем каталоге пользователя
+      <systemitem class="username">root</systemitem>.
+    </para>
+
+    <para>
+      Создайте архив с резерной копией запустив следующую команду:
+    </para>
+
+<screen role="nodump" revision="sysv"><userinput>cd $LFS &amp;&amp;
+tar -cJpf $HOME/lfs-temp-tools-&version;.tar.xz .</userinput></screen>
+
+<screen role="nodump" revision="systemd"><userinput>cd $LFS &amp;&amp;
+tar -cJpf $HOME/lfs-temp-tools-&versiond;.tar.xz .</userinput></screen>
+
+    <para>
+      Замените <envar>$HOME</envar> на любой желаемый каталог, если не хотите
+      сохранять архив в домашнем каталоге пользователя <systemitem 
+      class="username">root</systemitem>.
+    </para>
+  </sect2>
+
+  <sect2>
+    <title>Восстановление</title>
+
+    <para>
+      Если ошибки случились и нужно начинать все сначала, вы можете использовать
+      резервную копию для восстановления временных инструментов и сэкономить время.
+      Так как исходники находятся в каталоге  
+      <filename class="directory">$LFS</filename>, они также включены в резервную копию
+      и нет необходимость загружать их снова. После проверки корректности переменной 
+      <envar>$LFS</envar> восстановите данные из резервной копии запустив команду:
+    </para>
+
+<!-- Make the following look different so users don't blindly run the
+     restore when they don't need to. -->
+
+<screen role="nodump" revision="sysv"><computeroutput>cd $LFS &amp;&amp;
+rm -rf ./* &amp;&amp;
+tar -xpf $HOME/lfs-temp-tools-&version;.tar.xz</computeroutput></screen>
+
+<screen role="nodump" revision="systemd"><computeroutput>cd $LFS &amp;&amp;
+rm -rf ./* &amp;&amp;
+tar -xpf $HOME/lfs-temp-tools-&versiond;.tar.xz</computeroutput></screen>
+
+    <para>
+      Еще раз проверьте корректность окружения и продолжайте собирать оставшуюся
+      часть системы.
+    </para>
+
+    <important>
+      <para>
+        Если вы вышли из среды chroot (для удаления отладочных данных,
+        создания резервной копии или решили начать сначала используя резервную копию), 
+        не забудьте примонтировать виртуальные файловые системы ядра снова, как
+        это описано в <xref linkend='ch-tools-kernfs'/>, а затем снова войдите в
+        среду chroot (см. <xref linkend='ch-tools-chroot'/>).
+      </para>
+    </important>
+    
+  </sect2>
+
+</sect1>

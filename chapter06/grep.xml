@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-grep" role="wrap">
+<sect1 id="ch-tools-grep" role="wrap">
   <?dbhtml filename="grep.html"?>
 
   <sect1info condition="script">
@@ -16,95 +16,54 @@
 
   <title>Grep-&grep-version;</title>
 
-  <indexterm zone="ch-system-grep">
+  <indexterm zone="ch-tools-grep">
     <primary sortas="a-Grep">Grep</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит программу, которая находит на вводе строки, отвечающие заданному регулярному выражению, и выводит их, если вывод не отменён специальным ключом. Пакет используется в процедурах сборки для большинства пакетов.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/grep.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&grep-ch6-sbu;</seg>
-        <seg>&grep-ch6-du;</seg>
+        <seg>&grep-tmp-sbu;</seg>
+        <seg>&grep-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Grep</title>
+    <title>Установка Grep</title>
 
-    <para>Подготовьте пакет Grep к компиляции:</para>
+    <para>Подготовьте Grep для компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --bindir=/bin</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --bindir=/bin</userinput></screen>
 
     <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов, выполните команду:</para>
-
-<screen><userinput remap="test">make -k check</userinput></screen>
-
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
-  <sect2 id="contents-grep" role="content">
-    <title>Содержимое пакета Grep</title>
+  <sect2 role="content">
+    <title/>
 
-    <segmentedlist>
-      <segtitle>Установленные программы</segtitle>
-
-      <seglistitem>
-        <seg>egrep, fgrep, and grep</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="egrep">
-        <term><command>egrep</command></term>
-        <listitem>
-          <para>Печать строк, соответствующих расширенному регулярному выражению</para>
-          <indexterm zone="ch-system-grep egrep">
-            <primary sortas="b-egrep">egrep</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="fgrep">
-        <term><command>fgrep</command></term>
-        <listitem>
-          <para>Печать строк, соответствующих списку фиксированных строк</para>
-          <indexterm zone="ch-system-grep fgrep">
-            <primary sortas="b-fgrep">fgrep</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="grep">
-        <term><command>grep</command></term>
-        <listitem>
-          <para>Печать строк, соответствующих базовому регулярному выражению</para>
-          <indexterm zone="ch-system-grep grep">
-            <primary sortas="b-grep">grep</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    <para>Подробная информация о пакете находится в
+    <xref linkend="contents-grep" role="."/></para>
 
   </sect2>
 

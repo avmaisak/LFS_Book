@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-kbd" role="wrap">
+  <?dbhtml filename="kbd.html"?>
+
+  <sect1info condition="script">
+    <productname>kbd</productname>
+    <productnumber>&kbd-version;</productnumber>
+    <address>&kbd-url;</address>
+  </sect1info>
+
+  <title>Kbd-&kbd-version;</title>
+
+  <indexterm zone="ch-system-kbd">
+    <primary sortas="a-Kbd">Kbd</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Kbd содержит файлы таблиц клавиш, консольные шрифты и утилиты
+    клавиатуры.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&kbd-fin-sbu;</seg>
+        <seg>&kbd-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Kbd</title>
+
+    <para>Поведение клавиш backspace и delete отличается
+    в разных раскладках пакета Kbd. Следующий патч исправляет эту ситуацию
+    для раскладок i386:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&kbd-backspace-patch;</userinput></screen>
+
+    <para>После исправления клавиша backspace будет генерировать символ с кодом 127,
+    а клавиша delete хорошо известную управляющую последовательность.</para>
+
+    <para>Удалите избыточную программу <command>resizecons</command> (она требует
+    файлы видеорежима от отсутствующей библиотеке svgalib - для установки
+    соответствующих размеров <command>setfont</command> в консоли) вместе с её
+    страницами руководства.</para>
+
+<screen><userinput remap="pre">sed -i '/RESIZECONS_PROGS=/s/yes/no/' configure
+sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in</userinput></screen>
+
+    <para>Подготовка Kbd к компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr --disable-vlock</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров configure:</title>
+
+      <varlistentry>
+        <term><parameter>--disable-vlock</parameter></term>
+        <listitem>
+          <para>Этот аргумент запрещает создание утилиты vlock, потому что
+          она требует библиотеку PAM недоступную в среде chroot.</para>
+       </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Тестирование:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+    <para>Удалите внутреннюю побочно установленную библиотеку:</para>
+
+<screen><userinput remap="install">rm -v /usr/lib/libtswrap.{a,la,so*}</userinput></screen>
+
+    <note>
+      <para>Для некоторых языков (например белоруссого) пакет Kbd не предоставляет
+      подходящую раскладку, штатная раскладка <quote>by</quote> подразумевает
+      кодировку ISO-8859-5, а раскладка CP1251 используется в обычном режиме. Пользователи
+      подобных языков должны скачать раскладку отдельно.</para>
+    </note>
+
+    <para>Если пожелаете, установите документацию:</para>
+
+<screen><userinput remap="install">mkdir -v            /usr/share/doc/kbd-&kbd-version;
+cp -R -v docs/doc/* /usr/share/doc/kbd-&kbd-version;</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-kbd" role="content">
+    <title>Содержимое пакета Kbd</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>chvt, deallocvt, dumpkeys, fgconsole, getkeycodes, kbdinfo,
+        kbd_mode, kbdrate, loadkeys, loadunimap,
+        mapscrn, openvt, psfaddtable (link to psfxtable), psfgettable (link to
+        psfxtable), psfstriptable (link to psfxtable), psfxtable, <!--resizecons,-->
+        setfont, setkeycodes, setleds, setmetamode, setvtrgb,
+        showconsolefont, showkey, unicode_start, and unicode_stop</seg>
+        <seg>/usr/share/consolefonts, /usr/share/consoletrans, /usr/share/keymaps,
+        /usr/share/doc/kbd-&kbd-version;,  and /usr/share/unimaps</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="chvt">
+        <term><command>chvt</command></term>
+        <listitem>
+          <para>Меняет передний фон виртуального терминала</para>
+          <indexterm zone="ch-system-kbd chvt">
+            <primary sortas="b-chvt">chvt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="deallocvt">
+        <term><command>deallocvt</command></term>
+        <listitem>
+          <para>Деаллоцирует неиспользуемые виртуальные терминалы</para>
+          <indexterm zone="ch-system-kbd deallocvt">
+            <primary sortas="b-deallocvt">deallocvt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="dumpkeys">
+        <term><command>dumpkeys</command></term>
+        <listitem>
+          <para>Создает дамп таблиц перевода клавиатуры</para>
+          <indexterm zone="ch-system-kbd dumpkeys">
+            <primary sortas="b-dumpkeys">dumpkeys</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="fgconsole">
+        <term><command>fgconsole</command></term>
+        <listitem>
+          <para>Выводит количество активных виртуальных терминалов</para>
+          <indexterm zone="ch-system-kbd fgconsole">
+            <primary sortas="b-fgconsole">fgconsole</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="getkeycodes">
+        <term><command>getkeycodes</command></term>
+        <listitem>
+          <para>Выводит таблицу ядра соответствия сканкода и кода клавиши</para>
+          <indexterm zone="ch-system-kbd getkeycodes">
+            <primary sortas="b-getkeycodes">getkeycodes</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="kbdinfo">
+        <term><command>kbdinfo</command></term>
+        <listitem>
+          <para>Получает информацию о статусе консоли</para>
+          <indexterm zone="ch-system-kbd kbdinfo">
+            <primary sortas="b-kbdinfo">kbdinfo</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="kbd_mode">
+        <term><command>kbd_mode</command></term>
+        <listitem>
+          <para>Выводит или устанавливает режим клавиатуры</para>
+          <indexterm zone="ch-system-kbd kbd_mode">
+            <primary sortas="b-kbd_mode">kbd_mode</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="kbdrate">
+        <term><command>kbdrate</command></term>
+        <listitem>
+          <para>Устанавливает задержку и скорость повтора нажатий клавиатуры</para>
+          <indexterm zone="ch-system-kbd kbdrate">
+            <primary sortas="b-kbdrate">kbdrate</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="loadkeys">
+        <term><command>loadkeys</command></term>
+        <listitem>
+          <para>Загружает таблицу перевода клавиатуры</para>
+          <indexterm zone="ch-system-kbd loadkeys">
+            <primary sortas="b-loadkeys">loadkeys</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="loadunimap">
+        <term><command>loadunimap</command></term>
+        <listitem>
+          <para>Загружает таблицу соответствия юникодных символов для ядра</para>
+          <indexterm zone="ch-system-kbd loadunimap">
+            <primary sortas="b-loadunimap">loadunimap</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mapscrn">
+        <term><command>mapscrn</command></term>
+        <listitem>
+          <para>Устаревшая программа, которая использовалась для загрузки
+          определенной пользователем таблицы соответствий выводимых символов в
+          драйвер консоли; теперь эту функцию выполняет <command>setfont</command></para>
+          <indexterm zone="ch-system-kbd mapscrn">
+            <primary sortas="b-mapscrn">mapscrn</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="openvt">
+        <term><command>openvt</command></term>
+        <listitem>
+          <para>Запускает программу в новом виртуальном терминале (VT)</para>
+          <indexterm zone="ch-system-kbd openvt">
+            <primary sortas="b-openvt">openvt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="psfaddtable">
+        <term><command>psfaddtable</command></term>
+        <listitem>
+          <para>Добавляет таблицу символов юникода в шрифт консоли</para>
+          <indexterm zone="ch-system-kbd psfaddtable">
+            <primary sortas="b-psfaddtable">psfaddtable</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="psfgettable">
+        <term><command>psfgettable</command></term>
+        <listitem>
+          <para>Достает встроенную таблицу символов юникода из шрифта
+          консоли</para>
+          <indexterm zone="ch-system-kbd psfgettable">
+            <primary sortas="b-psfgettable">psfgettable</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="psfstriptable">
+        <term><command>psfstriptable</command></term>
+        <listitem>
+          <para>Удаляет встроенную таблицу символов юникода из шрифта
+          консоли</para>
+          <indexterm zone="ch-system-kbd psfstriptable">
+            <primary sortas="b-psfstriptable">psfstriptable</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="psfxtable">
+        <term><command>psfxtable</command></term>
+        <listitem>
+          <para>Обрабатывает таблицы символов юникода для шрифтов консоли</para>
+          <indexterm zone="ch-system-kbd psfxtable">
+            <primary sortas="b-psfxtable">psfxtable</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="setfont">
+        <term><command>setfont</command></term>
+        <listitem>
+          <para>Изменяет шрифты консоли для Enhanced Graphic Adapter (EGA) и
+          Video Graphics Array (VGA)</para>
+          <indexterm zone="ch-system-kbd setfont">
+            <primary sortas="b-setfont">setfont</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="setkeycodes">
+        <term><command>setkeycodes</command></term>
+        <listitem>
+          <para>Загружает таблицу соответствия сканкодов и кодов клавиш в ядро; это
+          полезно, когда на клавиатуре есть необычные клавиши</para>
+          <indexterm zone="ch-system-kbd setkeycodes">
+            <primary sortas="b-setkeycodes">setkeycodes</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="setleds">
+        <term><command>setleds</command></term>
+        <listitem>
+          <para>Устанавливает флаги клавиатуры и светодиоды (LEDs)</para>
+          <indexterm zone="ch-system-kbd setleds">
+            <primary sortas="b-setleds">setleds</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="setmetamode">
+        <term><command>setmetamode</command></term>
+        <listitem>
+          <para>Определяет обработку метаклавиш клавиатуры</para>
+          <indexterm zone="ch-system-kbd setmetamode">
+            <primary sortas="b-setmetamode">setmetamode</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="setvtrgb">
+        <term><command>setvtrgb</command></term>
+        <listitem>
+          <para>Устанавливает цветовую схему консоли для всех виртуальных терминалов</para>
+          <indexterm zone="ch-system-kbd setvtrgb">
+            <primary sortas="b-setvtrgb">setvtrgb</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="showconsolefont">
+        <term><command>showconsolefont</command></term>
+        <listitem>
+          <para>Отображает текущий шрифт консоли EGA/VGA</para>
+          <indexterm zone="ch-system-kbd showconsolefont">
+            <primary sortas="b-showconsolefont">showconsolefont</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="showkey">
+        <term><command>showkey</command></term>
+        <listitem>
+          <para>Выводит сканкоды, коды клавиш и ASCII коды всех нажатых клавиш</para>
+          <indexterm zone="ch-system-kbd showkey">
+            <primary sortas="b-showkey">showkey</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="unicode_start">
+        <term><command>unicode_start</command></term>
+        <listitem>
+          <para>Переводит клавиатуру и консоль в режим UNICODE (Не используете
+          эту программу пока ваша раскладка не в кодировке ISO-8859-1. Для
+          остальных кодировок эта утилита даёт некорректные результаты.)</para>
+          <indexterm zone="ch-system-kbd unicode_start">
+            <primary sortas="b-unicode_start">unicode_start</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="unicode_stop">
+        <term><command>unicode_stop</command></term>
+        <listitem>
+          <para>Возвращает клавиатуру и консоль из режима UNICODE</para>
+          <indexterm zone="ch-system-kbd unicode_stop">
+            <primary sortas="b-unicode_stop">unicode_stop</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

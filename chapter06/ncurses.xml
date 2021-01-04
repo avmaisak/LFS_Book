@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-ncurses" role="wrap">
+<sect1 id="ch-tools-ncurses" role="wrap">
   <?dbhtml filename="ncurses.html"?>
 
   <sect1info condition="script">
@@ -16,64 +16,92 @@
 
   <title>Ncurses-&ncurses-version;</title>
 
-  <indexterm zone="ch-system-ncurses">
+  <indexterm zone="ch-tools-ncurses">
     <primary sortas="a-Ncurses">Ncurses</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит библиотеку, предназначенную для управления вводом-выводом на терминал, в числе прочего, библиотека позволяет задавать экранные координаты (в знакоместах) и цвет выводимых символов. Предоставляет программисту уровень абстракции, позволяющий не беспокоиться об аппаратных различиях терминалов и писать переносимый код. Он необходим для ряда пакетов.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/ncurses.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&ncurses-ch6-sbu;</seg>
-        <seg>&ncurses-ch6-du;</seg>
+        <seg>&ncurses-tmp-sbu;</seg>
+        <seg>&ncurses-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Ncurses</title>
+    <title>Установка Ncurses</title>
 
-    <para>Не следует устанавливать статическую библиотеку, которая не обрабатывается сценарием configure:</para>
+    <para>Сначала убедитесь, что пакет <command>gawk</command> найден первым во время конфигурирования:</para>
 
-<screen><userinput remap="pre">sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in</userinput></screen>
+<screen><userinput remap="pre">sed -i s/mawk// configure</userinput></screen>
 
-    <para>Подготовьте пакет Ncurses к компиляции:</para>
+    <para>Затем запустите следующую команду для сборки программы <quote>tic</quote>
+    на хосте:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr           \
-            --mandir=/usr/share/man \
-            --with-shared           \
-            --without-debug         \
-            --without-normal        \
-            --enable-pc-files       \
+<screen><userinput remap="pre">mkdir build
+pushd build
+  ../configure
+  make -C include
+  make -C progs tic
+popd</userinput></screen>
+
+    <para>Подготовьте Ncurses для компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr                \
+            --host=$LFS_TGT              \
+            --build=$(./config.guess)    \
+            --mandir=/usr/share/man      \
+            --with-manpage-format=normal \
+            --with-shared                \
+            --without-debug              \
+            --without-ada                \
+            --without-normal             \
             --enable-widec</userinput></screen>
 
     <variablelist>
-      <title>Значения новых параметров конфигурации:</title>
+      <title>Значение параметров configure:</title>
 
       <varlistentry>
-        <term><parameter>--enable-widec</parameter></term>
+        <term><parameter>--with-manpage-format=normal</parameter></term>
         <listitem>
-          <para>Этот аргумент указывает, что необходимо скомпилировать библиотеки расширенных символов (таких как, <filename
-          class="libraryfile">libncursesw.so.&ncurses-version;</filename>)
-          вместо обычных (таких как, <filename class="libraryfile">libncurses.so.&ncurses-version;</filename>).
-			 Эти библиотеки расширенных символов используются и в многобайтовой и
-          традиционной 8-битной локали, в то время как обычные библиотеки работают должным образом
-          только в 8-битных локалях. библиотеки расширенных символов и обычные совместимы на уровне исходного кода, но не совместимы в двоичном.</para>
+          <para>Отключает установку сжатых страниц документации Ncurses.
+          Это может произойти, если на самом дистрибутиве хоста есть сжатые 
+          страницы документации.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--enable-pc-files</parameter></term>
+        <term><parameter>--without-ada</parameter></term>
         <listitem>
-          <para>Этот аргумент создает и устанавливает .pc файлы для pkg-config.
-          </para>
+          <para>Это гарантирует сборку Ncurses без поддежки компилятора Ada
+          который может присутствовать на хосте, но будет недоступен после
+          входа в <command>chroot</command> окружение.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-widec</parameter></term>
+        <listitem>
+          <para>Эта опция включает сборку библиотек с многобайтными символами 
+          (например <filename class="libraryfile">libncursesw.so.&ncurses-version;</filename>)
+          вместо обычных (например <filename
+          class="libraryfile">libncurses.so.&ncurses-version;</filename>).
+          Библиотеки многобайтных символов могут работать как с многобайтыми локалями
+          так и с традиционными 8-битными, в то время как обычные библиотеки работают
+          корректно только с 8-битными локалями. Многобайтные и обычные библиотеки
+          совместимы на уровне исходных кодов, но несовместимы в двоичном варианте.</para>
         </listitem>
       </varlistentry>
 
@@ -91,267 +119,53 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>У пакета присутствуют наборы тестов, однако их запуск возможен только после установки пакета. Наборы тестов располагаются в каталоге <filename class="directory">test/</filename>. Прочитайте файл <filename>README</filename> в этом каталоге для получения дополнительной информации.</para>
-
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
-
-    <para>Переместите разделяемые библиотеки в каталог <filename class="directory">/lib</filename> где они и должны находиться:</para>
-
-<screen><userinput remap="install">mv -v /usr/lib/libncursesw.so.6* /lib</userinput></screen>
-
-    <para>Поскольку разделяемые библиотеки были перемещены, одна символическая ссылка теперь указывает на несуществующий файл. Создадим эту ссылку заново:</para>
-
-<screen><userinput remap="install">ln -sfv ../../lib/$(readlink /usr/lib/libncursesw.so) /usr/lib/libncursesw.so</userinput></screen>
-
-    <para>Многие приложения по-прежнему ожидают, что компоновщик сможет найти
-    библиотеки Ncurses не расширенных символов, а обычных. Обмануть такие программы и связать их с
-    библиотеками расширенных символов при помощи создания символических ссылок и сценариев компоновщика:</para>
-
-<screen><userinput remap="install">for lib in ncurses form panel menu ; do
-    rm -vf                    /usr/lib/lib${lib}.so
-    echo "INPUT(-l${lib}w)" &gt; /usr/lib/lib${lib}.so
-    ln -sfv ${lib}w.pc        /usr/lib/pkgconfig/${lib}.pc
-done</userinput></screen>
-
-    <para>Наконец, убедимся что старые программы будут искать файлы <filename class="libraryfile">-lcurses</filename> во время
-	 сборки и останутся пригодными для последующей сборки:</para>
-
-<screen><userinput remap="install">rm -vf                     /usr/lib/libcursesw.so
-echo "INPUT(-lncursesw)" &gt; /usr/lib/libcursesw.so
-ln -sfv libncurses.so      /usr/lib/libcurses.so</userinput></screen>
-
-    <para>При желании установите документацию к Ncurses:</para>
-
-<screen><userinput remap="install">mkdir -v       /usr/share/doc/ncurses-&ncurses-version;
-cp -v -R doc/* /usr/share/doc/ncurses-&ncurses-version;</userinput></screen>
-
-    <note>
-
-      <para>Приведенные выше инструкции не создают библиотеки расширенных символов, так как ни один пакет, установленный путем компиляции из исходного кода, не будет ссылаться на них во время выполнения. Тем не менее, единственные известные двоичные приложения, которые связываются с библиотеками Ncurses нерасширенных символов, требуют версии 5. Если такие библиотеки необходимы из-за какого-либо приложения только для двоичных файлов или для совместимости с LSB, выполните компиляцию пакета снова с помощью следующих команд:</para>
-
-<screen role="nodump"><userinput>make distclean
-./configure --prefix=/usr    \
-            --with-shared    \
-            --without-normal \
-            --without-debug  \
-            --without-cxx-binding \
-            --with-abi-version=5
-make sources libs
-cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
-    </note>
-
-  </sect2>
-
-  <sect2 id="contents-ncurses" role="content">
-    <title>Содержимое пакета Ncurses</title>
-
-    <segmentedlist>
-      <segtitle>Установленные программы</segtitle>
-      <segtitle>Установленные библиотеки</segtitle>
-      <segtitle>Установленные каталоги</segtitle>
-
-      <seglistitem>
-        <seg>
-           captoinfo (link to tic),
-           clear,
-           infocmp,
-           infotocap (link to tic),
-           ncursesw6-config,
-           reset (link to tset),
-           tabs,
-           tic,
-           toe,
-           tput, and
-           tset
-        </seg>
-        <seg>
-           libcursesw.so (symlink and linker script to libncursesw.so),
-           libformw.so,
-           libmenuw.so,
-           libncursesw.so,
-           libncurses++w.a,
-           libpanelw.so, and their non-wide-character counterparts without "w"
-              in the library names.</seg>
-        <seg>
-           /usr/share/tabset,
-           /usr/share/terminfo, and
-           /usr/share/doc/ncurses-&ncurses-version;
-        </seg>
-      </seglistitem>
-    </segmentedlist>
+<screen><userinput remap="install">make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
+echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</userinput></screen>
 
     <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
+      <title>Значение параметров установки:</title>
 
-      <varlistentry id="captoinfo">
-        <term><command>captoinfo</command></term>
+      <varlistentry>
+        <term><parameter>TIC_PATH=$(pwd)/build/progs/tic</parameter></term>
         <listitem>
-          <para>Преобразовывает termcap описание в terminfo</para>
-          <indexterm zone="ch-system-ncurses captoinfo">
-            <primary sortas="b-captoinfo">captoinfo</primary>
-          </indexterm>
+          <para>Нужно передать путь к созданной утилите 
+          <command>tic</command>, способной запускаться на собираемой машине, для создания
+          терминальной базы данных без ошибок.</para>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="clear">
-        <term><command>clear</command></term>
+      <varlistentry>
+        <term><command>echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</command></term>
         <listitem>
-          <para>По возможности, очищает экран</para>
-          <indexterm zone="ch-system-ncurses clear">
-            <primary sortas="b-clear">clear</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="infocmp">
-        <term><command>infocmp</command></term>
-        <listitem>
-          <para>Сравнивает или распечатывает описания terminfo</para>
-          <indexterm zone="ch-system-ncurses infocmp">
-            <primary sortas="b-infocmp">infocmp</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="infotocap">
-        <term><command>infotocap</command></term>
-        <listitem>
-          <para>Преобразует описание terminfo в описание termcap</para>
-          <indexterm zone="ch-system-ncurses infotocap">
-            <primary sortas="b-infotocap">infotocap</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="ncursesw6-config">
-        <term><command>ncursesw6-config</command></term>
-        <listitem>
-          <para>Предоставляет сведения о конфигурации для ncurses</para>
-          <indexterm zone="ch-system-ncurses ncursesw6-config">
-            <primary sortas="b-ncursesw6-config">ncursesw6-config</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="reset">
-        <term><command>reset</command></term>
-        <listitem>
-          <para>Повторная инициализация терминала до значений по умолчанию</para>
-          <indexterm zone="ch-system-ncurses reset">
-            <primary sortas="b-reset">reset</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="tabs">
-        <term><command>tabs</command></term>
-        <listitem>
-          <para>Очищает и устанавливает табуляторы на терминале</para>
-          <indexterm zone="ch-system-ncurses tabs">
-            <primary sortas="b-tabs">tabs</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="tic">
-        <term><command>tic</command></term>
-        <listitem>
-          <para>Компилятор описания записи terminfo, преобразующий
-          файл terminfo из исходного формата в двоичный формат, необходимый для
-          процедур библиотеки ncurses [файл terminfo содержит информацию о
-          возможности определенного терминала.]</para>
-          <indexterm zone="ch-system-ncurses tic">
-            <primary sortas="b-tic">tic</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="toe">
-        <term><command>toe</command></term>
-        <listitem>
-          <para>Выводит список всех доступных типов терминалов с основным именем и
-          описанием</para>
-          <indexterm zone="ch-system-ncurses toe">
-            <primary sortas="b-toe">toe</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="tput">
-        <term><command>tput</command></term>
-        <listitem>
-          <para>Принимает значения зависимыз от терминала доступных в оболочке ; ее можно также использовать для того чтобы переустановить или инициализировать терминал или сообщить его полное наименование</para>
-          <indexterm zone="ch-system-ncurses tput">
-            <primary sortas="b-tput">tput</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="tset">
-        <term><command>tset</command></term>
-        <listitem>
-          <para>Может быть использована для инициализации терминала</para>
-          <indexterm zone="ch-system-ncurses tset">
-            <primary sortas="b-tset">tset</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libcursesw">
-        <term><filename class="libraryfile">libcursesw</filename></term>
-        <listitem>
-          <para>Ссылка на файл <filename>libncursesw</filename></para>
-          <indexterm zone="ch-system-ncurses libcursesw">
-            <primary sortas="c-libcursesw">libcursesw</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libncursesw">
-        <term><filename class="libraryfile">libncursesw</filename></term>
-        <listitem>
-          <para>Содержит функции для отображения текста многими сложными способами на экране терминала; хорошим примером использования этих функций является меню, отображаемое во время создания файла конфигурации ядра <command>make menuconfig</command></para>
-          <indexterm zone="ch-system-ncurses libncursesw">
-            <primary sortas="c-libncursesw">libncursesw</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libformw">
-        <term><filename class="libraryfile">libformw</filename></term>
-        <listitem>
-          <para>Содержит функции для реализации форм</para>
-          <indexterm zone="ch-system-ncurses libformw">
-            <primary sortas="c-libformw">libformw</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libmenuw">
-        <term><filename class="libraryfile">libmenuw</filename></term>
-        <listitem>
-          <para>Содержитфункции для реализации меню</para>
-          <indexterm zone="ch-system-ncurses libmenuw">
-            <primary sortas="c-libmenuw">libmenuw</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libpanelw">
-        <term><filename class="libraryfile">libpanelw</filename></term>
-        <listitem>
-          <para>Содержит функции для реализации панелей</para>
-          <indexterm zone="ch-system-ncurses libpanelw">
-            <primary sortas="c-libpanelw">libpanelw</primary>
-          </indexterm>
+          <para>Библиотека <filename>libncurses.so</filename> нужна для нескольких
+          пакетов, которые скоро будут собраны. Мы создаем этот небольшой
+          скрипт линковщик аналогично с <xref
+          linkend="chapter-building-system"/>.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
+
+    <para>Переместите динамическую библиотеку в каталог
+    <filename class="directory">/lib</filename> где ему самое место:</para>
+
+<screen><userinput remap="install">mv -v $LFS/usr/lib/libncursesw.so.6* $LFS/lib</userinput></screen>
+
+    <para>Так как библиотеки переместились одна символическая ссылка указывает на
+    несуществующий файл. Пересоздайте её:</para>
+
+<screen><userinput remap="install">ln -sfv ../../lib/$(readlink $LFS/usr/lib/libncursesw.so) $LFS/usr/lib/libncursesw.so</userinput></screen>
+
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Подробная информация о пакете находится в
+    <xref linkend="contents-ncurses" role="."/></para>
 
   </sect2>
 

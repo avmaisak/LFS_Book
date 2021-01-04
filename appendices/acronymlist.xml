@@ -18,28 +18,28 @@
     <varlistentry>
       <term><emphasis role="bold">ABI</emphasis></term>
       <listitem>
-        <para>Application Binary Interface (Двоичный (бинарный) интерфейс приложений)</para>
+        <para>Application Binary Interface (двоичный (бинарный) интерфейс приложений)</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><emphasis role="bold">ALFS</emphasis></term>
       <listitem>
-        <para>Automated Linux From Scratch (Автоматизированный Linux From Scratch)</para>
+        <para>Automated Linux From Scratch (автоматизированный Linux From Scratch)</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><emphasis role="bold">API</emphasis></term>
       <listitem>
-        <para>Application Programming Interface (программный интерфейс приложения, интерфейс прикладного программирования)</para>
+        <para>Application Programming Interface (программный интерфейс приложения)</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term><emphasis role="bold">ASCII</emphasis></term>
       <listitem>
-        <para>American Standard Code for Information Interchange (Американский стандартный код для обмена информацией)</para>
+        <para>American Standard Code for Information Interchange (американский стандартный код для обмена информацией)</para>
       </listitem>
     </varlistentry>
 

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-flex" role="wrap">
+  <?dbhtml filename="flex.html"?>
+
+  <sect1info condition="script">
+    <productname>flex</productname>
+    <productnumber>&flex-version;</productnumber>
+    <address>&flex-url;</address>
+  </sect1info>
+
+  <title>Flex-&flex-version;</title>
+
+  <indexterm zone="ch-system-flex">
+    <primary sortas="a-Flex">Flex</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Flex содержит утилиту для генерации программ распознающих
+    шаблонный текст.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&flex-fin-sbu;</seg>
+        <seg>&flex-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Flex</title>
+
+<!--
+    <para>Сначала исправьте проблему обнаруженную в glibc-2.26:</para>
+
+<screen><userinput remap="pre">sed -i "/math.h/a #include &lt;malloc.h&gt;" src/flexdef.h</userinput></screen>
+
+    <para>Сборка предполагает доступность программы <application>help2man</application>
+    для создания опции -help - подсказки исполняемого файла.
+    Программа отсутствует, поэтому мы используем переменную окружения чтобы пропустить
+    этот процесс.
+    Подготовка Flex к компиляции:</para> -->
+
+    <para>Подготовка Flex к компиляции:</para>
+
+<!-- <screen><userinput remap="configure">HELP2MAN=/tools/bin/true \ -->
+<screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/flex-&flex-version;</userinput></screen>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Для выполнения тестов (около 0.5 SBU) выполните команду:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+    <para>Некоторые программы пока не знают о <command>flex</command> и
+    пытаются запустить его предшественника - <command>lex</command>. Чтобы
+    обеспечить их работоспособность, создайте символическую ссылку <command>lex</command>,
+    которая запускает <filename>flex</filename> в режиме
+    эмуляции <command>lex</command>:</para>
+
+<screen><userinput remap="install">ln -sv flex /usr/bin/lex</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-flex" role="content">
+    <title>Содержимое пакета Flex</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>flex, flex++ (link to flex), and lex (link to flex)</seg>
+        <seg>libfl.so</seg>
+        <seg>/usr/share/doc/flex-&flex-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="flex">
+        <term><command>flex</command></term>
+        <listitem>
+          <para>Инструмент для генерации программ распознающих шаблонный текст.
+          Позволяет универсально определять правила для поиска паттернов,
+          исключая необходимость разработки специализированной программы</para>
+          <indexterm zone="ch-system-flex flex">
+            <primary sortas="b-flex">flex</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="flexpp">
+        <term><command>flex++</command></term>
+        <listitem>
+          <para>Расширение flex используемое для генерации кода C++ и
+          классов. Является символической ссылкой на <command>flex</command></para>
+          <indexterm zone="ch-system-flex flexpp">
+            <primary sortas="b-flex++">flex++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="lex">
+        <term><command>lex</command></term>
+        <listitem>
+          <para>Символическая ссылка запускающая <command>flex</command> в
+          режиме эмуляции <command>lex</command></para>
+          <indexterm zone="ch-system-flex lex">
+            <primary sortas="b-lex">lex</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libfl">
+        <term><filename class="libraryfile">libfl</filename></term>
+        <listitem>
+          <para>Библиотека <filename class="libraryfile">flex</filename></para>
+          <indexterm zone="ch-system-flex libfl">
+            <primary sortas="c-libfl">libfl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

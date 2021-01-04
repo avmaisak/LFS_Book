@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-patch" role="wrap">
+<sect1 id="ch-tools-patch" role="wrap">
   <?dbhtml filename="patch.html"?>
 
   <sect1info condition="script">
@@ -16,80 +16,54 @@
 
   <title>Patch-&patch-version;</title>
 
-  <indexterm zone="ch-system-patch">
+  <indexterm zone="ch-tools-patch">
     <primary sortas="a-Patch">Patch</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит программу предназначенную для переноса правок (изменений) между разными версиями текстовых файлов.
-        Информация о правке обычно содержится в отдельном файле, называемом &quot;заплаткой&quot; (<emphasis>patch</emphasis>), &quot;правкой&quot;
-        или &quot;файлом правки&quot; (англ. patch file).
-        Подобный файл, как правило, создается с помощью другой утилиты Unix — <application>diff</application>,
-        позволяющей автоматически извлечь информацию о различиях в тексте файлов.
-        Он необходим для выполнения сборки некоторых пакетов LFS.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/patch.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&patch-ch6-sbu;</seg>
-        <seg>&patch-ch6-du;</seg>
+        <seg>&patch-tmp-sbu;</seg>
+        <seg>&patch-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Patch</title>
+    <title>Установка Patch</title>
 
-    <para>Подготовьте пакет Patch к компиляции:</para>
+    <para>Подготовьте Patch для компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)</userinput></screen>
 
     <para>Скомпилируйте пакет:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов, выполните команду:</para>
-
-<screen><userinput remap="test">make check</userinput></screen>
-
     <para>Установите пакет:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
-  <sect2 id="contents-patch" role="content">
-    <title>Содержимое пакета Patch</title>
+  <sect2 role="content">
+    <title/>
 
-    <segmentedlist>
-      <segtitle>Установленная программа</segtitle>
-
-      <seglistitem>
-        <seg>patch</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="patch">
-        <term><command>patch</command></term>
-        <listitem>
-          <para>Изменяет файлы в соответствии с файлом патча (исправления). [Патч-файл обычно представляет собой список различий, созданный с помощью программы <command>diff</command>. Применяя эти различия к исходным файлам, патч создает исправленные версии.]</para>
-          <indexterm zone="ch-system-patch patch">
-            <primary sortas="b-patch">patch</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    <para>Подробная информация о пакете находится в
+    <xref linkend="contents-patch" role="."/></para>
 
   </sect2>
 

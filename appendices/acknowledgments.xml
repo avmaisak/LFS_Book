@@ -12,7 +12,7 @@
   <title>Благодарности</title>
 
   <para>Мы хотели бы поблагодарить следующих людей и организации
-   за  вклад в проект Linux From Scratch.</para>
+  за вклад в проект Linux From Scratch.</para>
 
   <itemizedlist>
 
@@ -50,8 +50,10 @@
     </listitem>
 
     <listitem>
-      <para>Многие другие люди в списках рассылки LFS и BLFS  которые помогли сделать эту книгу, предоставив свои предложения, тестирование
-       книги, а также отправки отчетов об ошибках, инструкций и опыт установки различных пакетов.</para>
+      <para>Безчисленное количество людей в списках рассылки LFS и BLFS, которые помогли
+      сделать эту книгу возможной, предлагая свои нововведения, тестируя
+      книгу, публикуя отчеты об ошибках, инструкции и свой опыт установки различных
+      пакетов.</para>
     </listitem>
 
   </itemizedlist>
@@ -73,13 +75,13 @@
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:jmengual@linuxfromscratch.org">Jean-Philippe
+      <para><ulink url="mailto:jmengual@linuxfromscratch.org">Jean-Philippe 
       Mengual </ulink> &lt;jmengual@linuxfromscratch.org&gt; &ndash; French LFS
       translation project 2008-2016</para>
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:jlepiller@linuxfromscratch.org">Julien
+      <para><ulink url="mailto:jlepiller@linuxfromscratch.org">Julien 
       Lepiller </ulink> &lt;jlepiller@linuxfromscratch.org&gt; &ndash; French LFS
       translation project 2017-present</para>
     </listitem>
@@ -97,14 +99,14 @@
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:info@linuxfromscratch.ru">Anton Maisak</ulink>
-      &lt;info@linuxfromscratch.ru&gt; &ndash; Russian LFS
+      <para><ulink url="mailto:info@linuxfromscratch.org.ru">Anton Maisak</ulink> 
+      &lt;info@linuxfromscratch.org.ru&gt; &ndash; Russian LFS
       translation project</para>
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:helen@linuxfromscratch.ru">Elena Shevcova</ulink>
-      &lt;helen@linuxfromscratch.ru&gt; &ndash; Russian LFS
+      <para><ulink url="mailto:helen@linuxfromscratch.org.ru">Elena Shevcova</ulink> 
+      &lt;helen@linuxfromscratch.org.ru&gt; &ndash; Russian LFS
       translation project</para>
     </listitem>
 
@@ -216,22 +218,18 @@
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:kontakt@wankoo.org">Benjamin Heil</ulink>
-      &lt;kontakt@wankoo.org&gt; &ndash; lfs.wankoo.org mirror</para>
-    </listitem>
-
-  </itemizedlist>
-
-  <bridgehead renderas="sect3">Россия</bridgehead>
-  <itemizedlist>
-    <listitem>
       <para><ulink url="mailto:gyouja@pilgrims.ru">Vitaly Chekasin</ulink>
       &lt;gyouja@pilgrims.ru&gt; &ndash; lfs.pilgrims.ru mirror</para>
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:am@rus-bit.com">Anton Maisak</ulink>
-      &lt;info@linuxfromscratch.ru&gt; &ndash; linuxfromscratch.ru mirror</para>
+      <para><ulink url="mailto:kontakt@wankoo.org">Benjamin Heil</ulink>
+      &lt;kontakt@wankoo.org&gt; &ndash; lfs.wankoo.org mirror</para>
+    </listitem>
+
+    <listitem>
+      <para><ulink url="mailto:info@linuxfromscratch.org.ru">Anton Maisak</ulink>
+      &lt;info@linuxfromscratch.org.ru&gt; &ndash; linuxfromscratch.org.ru mirror</para>
     </listitem>
 
   </itemizedlist>

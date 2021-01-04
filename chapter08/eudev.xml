@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-eudev" role="wrap" revision="sysv">
+  <?dbhtml filename="eudev.html"?>
+
+  <sect1info condition="script">
+    <productname>eudev</productname>
+    <productnumber>&eudev-version;</productnumber>
+    <address>&eudev-url;</address>
+  </sect1info>
+
+  <title>Eudev-&eudev-version;</title>
+
+  <indexterm zone="ch-system-eudev">
+    <primary sortas="a-Eudev">Eudev</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Eudev содержит программы для динамического создания точек (nodes) устройств.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&eudev-fin-sbu;</seg>
+        <seg>&eudev-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Eudev</title>
+	<!--
+    <para>Сначала исправьте тестовый стрипт:</para>
+
+<screen><userinput remap="pre">sed -r -i 's|/usr(/bin/test)|\1|' test/udev-test.pl</userinput></screen>
+-->
+<!--
+    <para>Потом удалите ненужную строку вызывающую ошибку сборки:</para>
+
+<screen><userinput remap="pre">sed -i '/keyboard_lookup_key/d' src/udev/udev-builtin-keyboard.c</userinput></screen>
+-->
+
+<para>Подготовьте пакет Eudev к компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr           \
+            --bindir=/sbin          \
+            --sbindir=/sbin         \
+            --libdir=/usr/lib       \
+            --sysconfdir=/etc       \
+            --libexecdir=/lib       \
+            --with-rootprefix=      \
+            --with-rootlibdir=/lib  \
+            --enable-manpages       \
+            --disable-static</userinput></screen>
+            <!-- config-cache</userinput></screen> -->
+
+<para>Скомпилируйте пакет:</para>
+ <!--
+<screen><userinput remap="make">LIBRARY_PATH=/tools/lib make</userinput></screen>
+
+<note><para>Переменная окружения LIBRARY_PATH и LD_LIBRARY_PATH, ниже, необходимы для того, чтобы использовать библиотеки, которые были установлены в каталоге /tools, но не были установлены в создаваемой системе. Переменная окружения LIBRARY_PATH используется для поиска библиотек в процессе компоновки. Переменная окружения LD_LIBRARY_PATH используется для поиска библиотек в процессе выполнения.</para></note>
+ -->
+
+<para>Создайте каталоги, которые необходимы для успешного прохождения тестов, которые также будут использоваться в процессе установки:</para>
+
+<screen><userinput remap="test">mkdir -pv /lib/udev/rules.d
+mkdir -pv /etc/udev/rules.d</userinput></screen>
+
+<para>Для выполнения тестов, выполните команду:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+<!-- <screen><userinput remap="test">make LD_LIBRARY_PATH=/tools/lib check</userinput></screen> -->
+
+    <para>Установка пакета:</para>
+
+
+<screen><userinput remap="install">make install</userinput></screen>
+<!--<screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>-->
+
+    <para>Установите дополнительные правила и файлы, используемые в окружении LFS:</para>
+
+<screen><userinput remap="install">tar -xvf ../&udev-lfs-version;.tar.xz
+make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="conf-eudev" role="configuration">
+    <title>Настройка Eudev</title>
+
+    <indexterm zone="conf-eudev">
+      <primary sortas="a-Eudev">Eudev</primary>
+      <secondary>configuring</secondary>
+    </indexterm>
+
+    <indexterm zone="conf-eudev">
+      <primary sortas="e-/etc/udev/hwdb.bin">/etc/udev/hwdb.bin</primary>
+    </indexterm>
+
+    <para>Информация об устройствах располагается в файлах
+    <filename class="directory">/etc/udev/hwdb.d</filename> и каталогах
+    <filename class="directory">/lib/udev/hwdb.d</filename>.
+    <application>Eudev</application> требуется чтобы эта информация была скомпилирована в двоичную базу данных в каталоге <filename>/etc/udev/hwdb.bin</filename>. Создадим пустую базу данных:</para>
+
+<!--<screen><userinput>LD_LIBRARY_PATH=/tools/lib udevadm hwdb - -update</userinput></screen>-->
+<screen><userinput>udevadm hwdb --update</userinput></screen>
+
+    <para>Эта команда должна быть запущена каждый раз, когда информация об оборудовании обновится.</para>
+
+  </sect2>
+
+  <sect2 id="contents-eudev" role="content">
+    <title>Содержимое пакета Eudev</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg><!-- These are in /lib/udev and not to be called by the user:
+         accelerometer, ata_id, cdrom_id, collect, mtd_probe,
+         scsi_id, v4l_id,--> udevadm and udevd</seg>
+
+        <seg>libudev.so</seg>
+
+        <seg>/etc/udev, /lib/udev, and /usr/share/doc/udev-&udev-lfs-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+      <varlistentry id="udevadm" revision="sysv">
+        <term><command>udevadm</command></term>
+        <listitem>
+          <para>Generic udev administration tool: controls the udevd daemon,
+          provides info from the Udev database, monitors uevents, waits for
+          uevents to finish, tests Udev configuration, and triggers uevents
+          for a given device</para>
+          <indexterm zone="ch-system-eudev udevadm">
+            <primary sortas="b-udevadm">udevadm</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="udevd">
+        <term><command>udevd</command></term>
+        <listitem>
+          <para>A daemon that listens for uevents on the netlink socket,
+          creates devices и выполните командуs the configured external programs in
+          response to these uevents</para>
+          <indexterm zone="ch-system-eudev udevd">
+            <primary sortas="b-udevd">udevd</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libudev">
+        <term><filename class="libraryfile">libudev</filename></term>
+        <listitem>
+          <para>A library interface to udev device information</para>
+          <indexterm zone="ch-system-eudev libudev">
+            <primary sortas="c-libudev">libudev</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="etc-udev">
+        <term><filename class="directory">/etc/udev</filename></term>
+        <listitem>
+          <para>Содержит Udev configuration files,
+          device permissions, and rules for device naming</para>
+          <indexterm zone="ch-system-eudev etc-udev">
+            <primary sortas="e-/etc/udev">/etc/udev</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

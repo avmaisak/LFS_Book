@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-toolchaintechnotes" xreflabel="Технические заметки об инструментарии">
+  <?dbhtml filename="toolchaintechnotes.html"?>
+
+  <title>Технические заметки об инструментарии</title>
+
+  <para>Этот раздел объясняет некоторые причины и технические детали всего метода сборки.
+  Не требуется сразу разобраться со всем разделом. Большая часть станет понятнее после
+  выполнения сборки. К этому разделу можно обратиться в любое время.</para>
+
+  <para>Главной задачей <xref linkend="chapter-cross-tools"/> и <xref
+  linkend="chapter-temporary-tools"/> является создание временной области с заведомо-рабочими
+  инструментами, которая может быть изолирована от хоста. Выполнение инструкций оставшихся
+  глав внутри среды <command>chroot</command> гарантирует чистую и безпроблемную сборку
+  конечной LFS системы. Процесс сборки построен так, чтобы минимизировать риски для нового
+  читателя и в то же время дать ему больше обучающего матерала.</para>
+
+  <para>Построение LFS основано на процессе <emphasis>кросс-компиляции</emphasis>. Обычно при 
+  кросс-компиляции создаются компилятор и его инструменты, предназначенные
+  генерировать код для платформы отличной от той, на которой они сами запускаются.
+  Это необязательно в случае LFS, т.к. новая система будет компилироваться и запускаться на
+  одной и той же машине. Но кросс-компиляция обладает огромным плюсом - всё собранное 
+  кросс-компилятором не может зависить от окружения хост-машины.</para>
+
+  <sect2 id="cross-compile" xreflabel="О кросс-компиляции">
+
+    <title>О кросс-компиляции</title>
+
+    <para>Кросс-компиляция включает в себя несколько концепций, заслуживающих собственного
+    раздела. Можно пропустить его при первом чтении, но крайне рекомендуется вернуться сюда
+    позже, чтобы полностью разобраться в процессе сборки.</para>
+
+    <para>Определимся с терминами для текущего контекста:</para>
+
+    <variablelist>
+      <varlistentry><term>билд-машина</term><listitem>
+        <para>это машина на которой компилируются программы. Заметьте, в других разделах эта
+        же машина называется <quote>хост</quote>.</para></listitem>
+      </varlistentry>
+
+      <varlistentry><term>хост</term><listitem>
+        <para>это машина на которой будет запущена скомпилированная программа.
+        Заметьте, значение <quote>хост</quote> здесь не такое, как в остальных 
+        разделах.</para></listitem>
+      </varlistentry>
+
+      <varlistentry><term>целевая архитектура</term><listitem>
+        <para>исключетельно термин компиляторов. Это архитектура под которую компилятор будет
+        генерировать код. Может не совпадать с билд-машиной и хостом.</para></listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Для примера, представим следующий сценарий (иногда называемый
+    <quote>канадский крест</quote>). Есть компилятор на медленной машине А, на ней установлен
+    компилятор ccA.
+    Есть быстрая машина B, но без компилятора. 
+    Код нужно компилировать для третьей медленной машины C. Собрать компилятор для машины C
+    можно в три стадии:</para>
+
+    <informaltable align="center">
+      <tgroup cols="5">
+        <colspec colnum="1" align="center"/>
+        <colspec colnum="2" align="center"/>
+        <colspec colnum="3" align="center"/>
+        <colspec colnum="4" align="center"/>
+        <colspec colnum="5" align="left"/>
+        <thead>
+          <row><entry>Стадия</entry><entry>Билд-машина</entry><entry>Хост</entry>
+               <entry>Целевая архитектура</entry><entry>Действие</entry></row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>1</entry><entry>A</entry><entry>A</entry><entry>B</entry>
+            <entry>собрать кросс-компилятор cc1, используя ccA на машине A</entry>
+          </row>
+          <row>
+            <entry>2</entry><entry>A</entry><entry>B</entry><entry>C</entry>
+            <entry>собрать кросс-компилятор cc2, используя cc1 на машине A</entry>
+          </row>
+          <row>
+            <entry>3</entry><entry>B</entry><entry>C</entry><entry>C</entry>
+            <entry>собрать компилятор ccC, используя cc2 на машине B</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>После этого все необходимые машине C программы могут быть собраны
+    используя cc2 на быстрой машине B. Заметьте, что машина B не может запускать программы
+    собранные для C, следовательно нет способа протестировать их без машины C.
+    Наример, для тестирования ccC понадобится четвертая стадия:</para>
+
+    <informaltable align="center">
+      <tgroup cols="5">
+        <colspec colnum="1" align="center"/>
+        <colspec colnum="2" align="center"/>
+        <colspec colnum="3" align="center"/>
+        <colspec colnum="4" align="center"/>
+        <colspec colnum="5" align="left"/>
+        <thead>
+          <row><entry>Стадия</entry><entry>Машина сборки</entry><entry>Хост</entry>
+               <entry>Целевая архитектура</entry><entry>Действие</entry></row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>4</entry><entry>C</entry><entry>C</entry><entry>C</entry>
+            <entry>пересборка и тестирование ccC используя себя же на машине C</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>В этом примере только cc1 и cc2 являются кросс-компиляторами, т.к.
+    они генерируют код для платформы отличной от собственной.
+    ccA и ccC называются <emphasis>нативными</emphasis> компиляторами, они генерируют код для
+    собственной платформы.</para>
+
+  </sect2>
+
+  <sect2 id="lfs-cross">
+    <title>Применение кросс-компиляции для LFS</title>
+
+    <note>
+      <para>Почти все системы сборки оперируют именами машин в формате cpu-vendor-kernel-os,
+      это называется триплет. Внимательный читатель удивится, почему слово
+      <quote>триплет</quote> используется для имени из четырёх компонентов.
+      Причина тут историческая - раньше трёх компонентов хватало для однозначного описания
+      машины. С появлением новых машин и систем этого стало недостаточно, а слово
+      <quote>триплет</quote> сохранилось.
+      Простой способ определить триплет вашей машины это запустить скрипт
+      <command>config.guess</command>, он входит в состав многих пакетов. Распакуйте исходники
+      binutils, запустите скрипт <userinput>./config.guess</userinput>
+      и запомните вывод. Например, для процессора 32-bit Intel вывод будет
+      <emphasis>i686-pc-linux-gnu</emphasis>, а на 64-битной системе получится
+      <emphasis>x86_64-pc-linux-gnu</emphasis>.</para>
+
+      <para>Имя динамического линковщика также зависит от платформы. Динамический
+      линковщик (не путать со стандартным линковщиком <command>ld</command> из состава
+      binutils) часто называется динамическим загрузчиком. Динамический линковщик
+      поставляемый с Glibc находит и загружает разделяемые библиотеки нужные программе,
+      подготавливает программу к запуску и запускает её. Имя динамического линковщика
+      на 32-битной Intel машине будет <filename class="libraryfile">ld-linux.so.2</filename>
+      (<filename class="libraryfile">ld-linux-x86-64.so.2</filename> на 64-битной системе).
+      Верный способ определить имя динамического линковщика это исследовать любой двоичный
+      файл на хосте запустив <userinput>readelf -l &lt;имя двоичного файла&gt; | grep interpreter</userinput>
+      и запомнив результат.
+      Авторитетный источник, описывающий все платформы, это файл
+      <filename>shlib-versions</filename> в корне исходников Glibc.</para>
+    </note>
+
+    <para>Для обмана кросс-компиляции, в переменной <envar>LFS_TGT</envar> изменяется
+    триплет хоста (поле &quot;vendor&quot;). Также, при сборке кросс-линковщика и
+    кросс-компилятора используется опция <parameter>--with-sysroot</parameter>, чтобы
+    сообщить им, где искать необходимые файлы хоста. Это гарантирует, что ни одна программа,
+    собранная в <xref linkend="chapter-temporary-tools"/> не будет слинкована с библиотеками
+    билд-машины. Только первые две стадии являются обязательными, последняя используется для 
+    проверки:</para>
+
+    <informaltable align="center">
+      <tgroup cols="5">
+        <colspec colnum="1" align="center"/>
+        <colspec colnum="2" align="center"/>
+        <colspec colnum="3" align="center"/>
+        <colspec colnum="4" align="center"/>
+        <colspec colnum="5" align="left"/>
+        <thead>
+          <row><entry>Стадия</entry><entry>Билд-машина</entry><entry>Хост</entry>
+               <entry>Целевая архитектура</entry><entry>Действие</entry></row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>1</entry><entry>pc</entry><entry>pc</entry><entry>lfs</entry>
+            <entry>собрать кросс-компилятор cc1, используя cc-pc на машине pc</entry>
+          </row>
+          <row>
+            <entry>2</entry><entry>pc</entry><entry>lfs</entry><entry>lfs</entry>
+            <entry>собрать компилятор cc-lfs, используя cc1 на машине pc</entry>
+          </row>
+          <row>
+            <entry>3</entry><entry>lfs</entry><entry>lfs</entry><entry>lfs</entry>
+            <entry>пересобрать и протестировать cc-lfs, используя себя же на машине lfs</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>В этой таблице <quote>на машине pc</quote> означает, что команды запускаются на
+    машине, используя уже установленный дистрибутив. <quote>На машине lfs</quote> означает,
+    что команды запускаются в среде chroot.</para>
+
+    <para>Еще немного слов о кросс-компиляции: язык Си это не только компилятор,
+    но еще и стандартная библиотека. В этой книге используется библиотека GNU C, 
+    называемая glibc. Эта библиотека должна быть скомпилирована для lfs машины с помощью
+    кросс-компилятора cc1. 
+    Но сам компилятор использует внутреннюю библиотеку реализующую сложные функции
+    недоступные набору инструкций ассемблера. Эта внутренняя библиотека называется libgcc,
+    она должна быть слинкована с библиотекой glibc для полной работоспособности!
+    А также стандартная библиотека C++ (libstdc++) должна быть слинкована с glibc.
+    Чтобы решить эту проблему курицы и яйца, сначала собирается деградированная версия
+    libgcc основанная на cc1, без поддержки некоторого функционала вроде потоков и
+    перехвата исключений, затем собирается glibc используя этот деградированный компилятор
+    (glibc при этом не деградирует), затем собирается libstdc++. Но в этой последней библиотеке
+    не будет функционала libgcc.</para>
+
+    <para>И это еще не конец истории: из предыдущего параграфа следует, что
+    cc1 не может собрать полностью рабочую libstdc++, но
+    это единственный доступный компилятор для сборки библиотек C/C++ 
+    во время стадии 2! Конечно, компилятор cc-lfs, собранный на стадии 2, может
+    собрать эти библиотеки, но (1) система сборки GCC не знает, что она используется на pc,
+    и (2) использование его на pc
+    вызывает риск линковки с библиотеками pc, т.к. cc-lfs это нативный компилятор.
+    Поэтому придется собирать libstdc++ позже в среде chroot.</para>
+
+  </sect2>
+
+  <sect2 id="other-details">
+
+    <title>Прочие подробности</title>
+
+    <para>Кросс-компилятор будет установлен в отдельный каталог <filename
+    class="directory">$LFS/tools</filename> так как он не будет частью результирующей 
+    системы.</para>
+
+    <para>Binutils is installed first because the <command>configure</command>
+    runs of both GCC and Glibc perform various feature tests on the assembler
+    and linker to determine which software features to enable or disable. Это
+    сильно важнее, чем может казаться. Некореектно сконфигурированный
+    GCC или Glibc может привести к тонко сломанному инструментарию, такая поломка
+    не будет выдавать себя до конца сборки всего дистрибутива.
+    Обычно тестирование помогает такую обнаружить проблему пока не сделано слишком много
+    дополнительной работы.</para>
+
+    <para>Binutils installs its assembler and linker in two locations,
+    <filename class="directory">$LFS/tools/bin</filename> and <filename
+    class="directory">$LFS/tools/$LFS_TGT/bin</filename>. The tools in one
+    location are hard linked to the other. An important facet of the linker is
+    its library search order. Detailed information can be obtained from
+    <command>ld</command> by passing it the <parameter>--verbose</parameter>
+    flag. For example, <command>$LFS_TGT-ld --verbose | grep SEARCH</command>
+    will illustrate the current search paths and their order. It shows which
+    files are linked by <command>ld</command> by compiling a dummy program and
+    passing the <parameter>--verbose</parameter> switch to the linker. For
+    example,
+    <command>$LFS_TGT-gcc dummy.c -Wl,--verbose 2&gt;&amp;1 | grep succeeded</command>
+    will show all the files successfully opened during the linking.</para>
+
+    <para>Следующим пакетом устанавливается GCC. Пример вывода <command>configure</command>
+    для него:</para>
+
+<screen><computeroutput>checking what assembler to use... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/as
+checking what linker to use... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ld</computeroutput></screen>
+
+    <para>Это важно по перечисленным выше причинам. Это демонстрирует
+    что скрипт configure пакета GCC не ищет в каталогах PATH
+    какие инструменты использовать. Тем не мене, during the actual
+    operation of <command>gcc</command> itself, the same search paths are not
+    necessarily used. Чтобы понять какой стандартный линковщик <command>gcc</command>
+    будет использовать запустите: <command>$LFS_TGT-gcc -print-prog-name=ld</command>.</para>
+
+    <para>Детальная информация может быть получена из <command>gcc</command>
+    с помощью параметра  командной строки <parameter>-v</parameter> во время сборки
+    любой программы. Например, <command>gcc -v dummy.c</command> выведет
+    детальную информацую о препроцессоре, стадиях компиляции и ассемблирования,
+    а также путях для поиска нужных файлов <command>gcc</command> и их порядке
+    следования.</para>
+
+    <para>Следующими устанавливаются заголовочные файлы Linux API. Они позволяют
+    стандартного библиотеке Си (Glibc) использовать возможности ядра Linux.</para>
+
+    <para>The next package installed is Glibc. The most important
+    considerations for building Glibc are the compiler, binary tools, and
+    kernel headers. The compiler is generally not an issue since Glibc will
+    always use the compiler relating to the <parameter>--host</parameter>
+    parameter passed to its configure script; e.g. in our case, the compiler
+    will be <command>$LFS_TGT-gcc</command>. The binary tools and kernel
+    headers can be a bit more complicated. Therefore, take no risks and use
+    the available configure switches to enforce the correct selections. After
+    the run of <command>configure</command>, check the contents of the
+    <filename>config.make</filename> file in the <filename
+    class="directory">build</filename> directory for all important details.
+    Note the use of <parameter>CC="$LFS_TGT-gcc"</parameter> (with
+    <envar>$LFS_TGT</envar> expanded) to control which binary tools are used
+    and the use of the <parameter>-nostdinc</parameter> and
+    <parameter>-isystem</parameter> flags to control the compiler's include
+    search path. These items highlight an important aspect of the Glibc
+    package&mdash;it is very self-sufficient in terms of its build machinery
+    and generally does not rely on toolchain defaults.</para>
+
+    <para>As said above, the standard C++ library is compiled next, followed in
+    <xref linkend="chapter-temporary-tools"/> by all the programs that need
+    themselves to be built. The install step of all those packages uses the
+    <envar>DESTDIR</envar> variable to have the
+    programs land into the LFS filesystem.</para>
+
+    <para>At the end of <xref linkend="chapter-temporary-tools"/> the native
+    lfs compiler is installed. First binutils-pass2 is built,
+    with the same <envar>DESTDIR</envar> install as the other programs,
+    then the second pass of GCC is constructed, omitting libstdc++
+    and other non-important libraries.  Due to some weird logic in GCC's
+    configure script, <envar>CC_FOR_TARGET</envar> ends up as
+    <command>cc</command> when the host is the same as the target, but is
+    different from the build system. This is why
+    <parameter>CC_FOR_TARGET=$LFS_TGT-gcc</parameter> is put explicitly into
+    the configure options.</para>
+
+    <para>Upon entering the chroot environment in <xref
+    linkend="chapter-chroot-temporary-tools"/>, the first task is to install
+    libstdc++. Then temporary installations of programs needed for the proper
+    operation of the toolchain are performed. From this point onwards, the
+    core toolchain is self-contained and self-hosted.  In 
+    <xref linkend="chapter-building-system"/>, final versions of all the
+    packages needed for a fully functional system are built, tested and
+    installed.</para>
+
+  </sect2>
+
+</sect1>

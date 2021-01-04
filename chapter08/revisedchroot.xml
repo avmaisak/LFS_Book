@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-revisedchroot">
+  <?dbhtml filename="revisedchroot.html"?>
+
+  <title>Выполнение очистки</title>
+
+  <para>Наконец, очистите некоторые дополнительные файлы, оставшиеся от запускаемых
+  ранее тестов:</para>
+
+<screen><userinput>rm -rf /tmp/*</userinput></screen>
+
+  <para>Теперь выйдите и перезайдите в среду chroot с помощь обновленной команды
+  chroot. С этих пор используйте эту обновленную chroot команду каждый раз,
+  когда вам нужно войти в chroot окружение:</para>
+
+<screen role="nodump"><userinput>logout
+
+chroot "$LFS" /usr/bin/env -i          \
+    HOME=/root TERM="$TERM"            \
+    PS1='(lfs chroot) \u:\w\$ '        \
+    PATH=/bin:/usr/bin:/sbin:/usr/sbin \
+    /bin/bash --login</userinput></screen>
+
+  <para>Тут больше не используется параметр <parameter>+h</parameter>, так как
+  все предыдущие программы были заменены хеширование стало возможным.</para>
+
+  <para>Если виртуальные файловые системы ядра были отмонтированы (вручную
+  или из-за перезагрузки), убедитесь в том, что они примонтированы перед входом в chroot.
+  Этот процесс объясняется в <xref
+  linkend="ch-tools-bindmount"/> и <xref
+  linkend="ch-tools-kernfsmount"/>.</para>
+
+  <para>Остались несколько статичных библиотек, не удаленных ранее в этой главе, для
+  прохождения регрессионных тестов нескольких пакетов. Это библиотеки от пакетов 
+  binutils, bzip2, e2fsprogs, flex, libtool и zlib. Если хотите,
+  можете удалить их сейчас:</para>
+
+<screen><userinput>rm -f /usr/lib/lib{bfd,opcodes}.a
+rm -f /usr/lib/libctf{,-nobfd}.a
+rm -f /usr/lib/libbz2.a
+rm -f /usr/lib/lib{com_err,e2p,ext2fs,ss}.a
+rm -f /usr/lib/libltdl.a
+rm -f /usr/lib/libfl.a
+rm -f /usr/lib/libz.a</userinput></screen>
+
+  <para>Есть еще несколько файлов с расширением .la установленных в каталогах /usr/lib и
+  /usr/libexec. Это "архивы libtool". Как уже говорилось, они нужны только для линковки
+  со статичными библиотеками. Они не нужны и потенциально опасны при
+  использовании динамических разделяемых библиотек, особенно при использовании
+  неавтоматических систем сборки. Для их удаления выполните команду:</para>
+
+<screen><userinput>find /usr/lib /usr/libexec -name \*.la -delete</userinput></screen>
+
+   <para>Более подробную информацию об архивах libtool вы можете найти в книге BLFS,
+   по ссылке <ulink
+   url="&blfs-book;/introduction/la-files.html">раздел BLFS "Файлы архивов Libtool (.la)"</ulink>.</para>
+
+   <para>Компилятор собранный в <xref linkend="chapter-temporary-tools"/> и
+   <xref linkend="chapter-chroot-temporary-tools"/> все еще частично установлен
+   и больше не нужен. Удалите его:</para>
+
+<screen><userinput>find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
+
+   <para>Каталог <filename class="directory">/tools</filename> тоже может быть удален
+   для освобождения места:</para>
+
+<screen><userinput>rm -rf /tools</userinput></screen>
+
+   <para>Наконец удалите аккаунт временного пользователя 'tester' созданный в начале 
+   предыдущей главы.</para>
+
+<screen><userinput>userdel -r tester</userinput></screen>
+</sect1>

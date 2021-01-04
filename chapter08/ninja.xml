@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-ninja" role="wrap">
+  <?dbhtml filename="ninja.html"?>
+
+  <sect1info condition="script">
+    <productname>ninja</productname>
+    <productnumber>&ninja-version;</productnumber>
+    <address>&ninja-url;</address>
+  </sect1info>
+
+  <title>Ninja-&ninja-version;</title>
+
+  <indexterm zone="ch-system-ninja">
+    <primary sortas="a-Ninja">Ninja</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Ninja - небольшая система сборки ориентированная на скорость.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&ninja-fin-sbu;</seg>
+        <seg>&ninja-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <tip revision="sysv">
+      <para>Этот раздел необязателен, если LFS не использует systemd.
+      С другой стороны, связка ninja с meson является мощной системой сборки, которая,
+      скорее всего, будет использоваться всё чаще. Она необходима для нескольких
+      пакетов из <ulink url="&blfs-book;">книги BLFS</ulink>.</para>
+    </tip>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Ninja</title>
+
+    <para>Во время работы ninja, как правило, использует максимальное количество
+    параллельных процессов. По умолчанию это количество ядер системы плюс два.
+    В некоторых случаях это может привести к перегреву процессора или переполнению
+    оперативной памяти. Если запускать ninja из командной строки, то можно указать
+    количество параллельных процессов через аргумент -jN. Но у некоторых пакетов
+    запуск ninja встроен и аргумент -jN игнорируется.</para>
+
+    <para>Следующая <emphasis>опциональная</emphasis> процедура даст пользователю
+    возможность управлять количеством параллельных процессов через переменную окружения
+    NINJAJOBS.
+    <command>Например</command> установка:
+     <!-- <command> тут чтоб сделать вывод жирным текстом.  We really don't want
+     users setting this now and experience shows that many users blindly
+     copy/paste anything in a box. -->
+
+    <screen>export NINJAJOBS=4</screen>
+
+    ограничит ninja до четырёх паралеллельных процессов.</para>
+
+    <para>Чтобы добавить возможность управления через переменную NINJAJOBS запустите:</para>
+
+<screen><userinput remap="pre">sed -i '/int Guess/a \
+  int   j = 0;\
+  char* jobs = getenv( "NINJAJOBS" );\
+  if ( jobs != NULL ) j = atoi( jobs );\
+  if ( j > 0 ) return j;\
+' src/ninja.cc</userinput></screen>
+
+    <para>Сборка Ninja:</para>
+
+<screen><userinput remap="configure">python3 configure.py --bootstrap</userinput></screen>
+
+    <variablelist>
+      <title>Значения параметров сборки:</title>
+
+      <varlistentry>
+        <term><parameter>--bootstrap</parameter></term>
+        <listitem>
+          <para>указывает ninja пересобрать себя для текущей системы.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Тестирование:</para>
+
+<screen><userinput remap="test">./ninja ninja_test
+./ninja_test --gtest_filter=-SubprocessTest.SetWithLots</userinput></screen>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">install -vm755 ninja /usr/bin/
+install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja
+install -vDm644 misc/zsh-completion  /usr/share/zsh/site-functions/_ninja</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-ninja" role="content">
+    <title>Содержимое пакета Ninja</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+
+      <seglistitem>
+        <seg>ninja</seg>
+      </seglistitem>
+    </segmentedlist>
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="ninja">
+        <term><command>ninja</command></term>
+        <listitem>
+          <para>системы сборки ninja.</para>
+          <indexterm zone="ch-system-ninja ninja">
+            <primary sortas="b-ninja">ninja</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+

@@ -18,14 +18,14 @@
 
   <indexterm zone="ch-tools-binutils-pass1">
     <primary sortas="a-Binutils">Binutils</primary>
-    <secondary>tools, pass 1</secondary>
+    <secondary>инструменты, проход 1</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="../chapter06/binutils.xml"
+    href="../chapter08/binutils.xml"
     xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
@@ -33,8 +33,8 @@
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&binutils-ch5p1-sbu;</seg>
-        <seg>&binutils-ch5p1-du;</seg>
+        <seg>&binutils-tmpp1-sbu;</seg>
+        <seg>&binutils-tmpp1-du;</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -43,60 +43,62 @@
   <sect2 role="installation">
     <title>Установка кросс-пакета Binutils</title>
 
-    <note><para>Вернитесь назад и перечитайте информацию в предыдущем разделе.
-     Понимание значительно сэкономит вам время и поможет избежать дальнейших проблем.</para></note>
+    <note><para>Вернитесь назад и перечитайте замечания в разделе <xref
+    linkend="ch-tools-generalinstructions"/>.
+    Понимание важных замечаний убережет от множества проблем.</para></note>
 
-    <para>Очень важно чтобы пакет BinUtils был скомпилирован первым. потому что пакеты Glibc и  GCC в процессе конфигурирования выполняют проверки доступности компоновщика и ассемблера, чтобы определить какие функциональные возможности включить или выключить.</para>
+    <para>Важно чтобы Binutils был первым скомпилированным пакетом, потому что 
+    Glibc и GCC ориентируются на компоновщик и ассемблер, чтобы определить
+    какие из собственных возможностей включать.</para>
 
-    <para>В документации пакета Binutils рекомендуется выполнять сборку в отдельном каталоге:</para>
+    <para>Документация Binutils рекомендует выполнять сборку в отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
     <note>
-      <para>Для того, чтобы воспользоваться значением SBU (Стандартная единица времени сборки) в процессе компиляции пакетов во всей книге, необходимо измерить время конфигурирования и последующей компиляции этого пакета. Это можно легко сделать. Необходимо обернуть команды следующей инструкцией:<userinput>time { ./configure ... &amp;&amp; ...
+      <para>Для использования SBU (стандартные единицы времени сборки)
+      перечисленных в книге, засеките время сборки этого пакета от конфигурации
+      до первой установки включительно.
+      Это легко сделать обернув команды инструкцией <command>time</command>:
+      <userinput>time { ../configure ... &amp;&amp; make
       &amp;&amp; make install; }</userinput>.</para>
     </note>
 
-    <note><para>Приблизительное время сборки, значение SBU и требуемое дисковое пространство в главе &nbsp;5 не включает информацию по выполнению наборов тестов пакетов.</para></note>
+    <para>Подготовка Binutils к компиляции:</para>
 
-<para>Необходимо подготовить пакет Binutils к компиляции:</para>
-
-<screen><userinput remap="configure">../configure --prefix=/tools            \
+<screen><userinput remap="configure">../configure --prefix=$LFS/tools       \
              --with-sysroot=$LFS        \
-             --with-lib-path=/tools/lib \
              --target=$LFS_TGT          \
              --disable-nls              \
              --disable-werror</userinput></screen>
 
     <variablelist>
-      <title>Значение параметров конфигурации:</title>
+      <title>Значение параметров configure:</title>
 
       <varlistentry>
-        <term><parameter>--prefix=/tools</parameter></term>
+        <term><parameter>--prefix=$LFS/tools</parameter></term>
         <listitem>
-          <para>Указывает сценарию configure подготовить установку программ пакета Binutils в каталог <filename class="directory">/tools</filename>.</para>
+          <para>Говорит скрипту configure подготовиться к установке программ binutils 
+          в каталог <filename class="directory">$LFS/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-sysroot=$LFS</parameter></term>
         <listitem>
-          <para>Для выполнения кросс-компиляции, значение передается в систему сборки для поиска в каталоге $LFS целевых системных библиотек по мере необходимости.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--with-lib-path=/tools/lib</parameter></term>
-        <listitem>
-          <para>Указывает в каком каталоге должен находится компоновщик.</para>
+          <para>При выполнении кросс-компиляции в каталоге $LFS
+          будет осуществлен поиск недостающих системных библиотек, если это понадобится.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><envar>--target=$LFS_TGT</envar></term>
         <listitem>
-          <para>Поскольку название машины в значении переменной <envar>LFS_TGT</envar> может отличаться от значения, которое вернут сценарий <command>config.guess</command>, этот аргумент укажет сценарию <command>configure</command> настроить систему сборки пакета Binutils для создания кросс-линковщика.</para>
+          <para>Поскольку описание машины в переменной <envar>LFS_TGT</envar>
+          немного отличается от значения, которое вернет сценарий <command>config.guess</command>,
+          этот аргумент укажет сценарию <command>configure</command> настроить систему
+          сборки binutils для создания кросс-линковщика.</para>
         </listitem>
       </varlistentry>
 
@@ -104,34 +106,25 @@ cd       build</userinput></screen>
         <term><parameter>--disable-nls</parameter></term>
         <listitem>
           <para>Отключает интернационализацию, поскольку i18n не требуется во
-           временном наборе инструментов.</para>
+          временном наборе инструментов.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-werror</parameter></term>
         <listitem>
-          <para>Это предотвращает остановку сборки в том случае, если
-           появляются предупреждения  компилятора хост-системы.</para>
+          <para>Предотвращает остановку сборки в случае предупреждений компилятора
+          хоста.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Чтобы скомпилировать пакет, необходимо выполнить команду:</para>
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Компиляция завершена. Как правило, на данном этапе необходимо выполнить наборы тестов для пакета, но сейчас пока рано, потому что инструменты для выполнения тестирования  (Tcl, Expect, and DejaGNU)  пока не на своём месте. Преимущества использования
-     тестов на данный момент минимальны, поскольку программы из сборки первого прохода будут заменены на программы из сборки второго прохода.</para>
-
-    <para>Если сборка происходит на 64-разрядной машине, необходимо создать символическую ссылку для нормальной работы временного набора инструментов.</para>
-
-<screen><userinput remap="install">case $(uname -m) in
-  x86_64) mkdir -v /tools/lib &amp;&amp; ln -sv lib /tools/lib64 ;;
-esac</userinput></screen>
-
-    <para>Установите пакет:</para>
+    <para>Установка пакета:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
@@ -140,7 +133,7 @@ esac</userinput></screen>
   <sect2 role="content">
     <title/>
 
-    <para>Подробная информация об этом пакете находится в
+    <para>Детальная информация о пакете находится в
     <xref linkend="contents-binutils" role="."/></para>
 
   </sect2>

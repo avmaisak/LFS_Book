@@ -18,14 +18,14 @@
 
   <indexterm zone="ch-tools-gcc-pass1">
     <primary sortas="a-GCC">GCC</primary>
-    <secondary>tools, pass 1</secondary>
+    <secondary>инструменты, проход 1</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="../chapter06/gcc.xml"
+    href="../chapter08/gcc.xml"
     xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
@@ -33,8 +33,8 @@
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&gcc-ch5p1-sbu;</seg>
-        <seg>&gcc-ch5p1-du;</seg>
+        <seg>&gcc-tmpp1-sbu;</seg>
+        <seg>&gcc-tmpp1-du;</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -43,10 +43,16 @@
   <sect2 role="installation">
     <title>Установка кросс-пакета GCC</title>
 
-    <para>Пакет GCC требует пакеты GMP, MPFR и MPC. Так как эти пакеты могут не быть установлены в хост-системе, они будут скомпилированы вместе с GCC. Распакуйте каждый пакет в каталог с исходным кодом пакета GCC и переименуйте их чтобы эти пакеты использовались в процессе сборки GCC и были скомпилированы автоматически.</para>
+    <para>Пакет GCC зависит от пакетов GMP, MPFR и MPC. Так как эти пакеты могут
+    не входить в состав дистрибутива вашей хост-системы, они будут скомпилированы вместе с GCC.
+    Распакуйте каждый пакет в каталог с исходным кодом GCC и переименуйте,
+    процесс сборки GCC сможет автоматически использовал их.</para>
 
-    <note><para>В этом разделе часто возникают недоразумения. Процедуры таки же же как и в любом другом разделе, и полностью соответствуют инструкции по сборке пакетов (<xref
-    linkend='buildinstr'/>). Сначала распакуйте пакет GCC из архива, который находится в каталоге с другими архивами пакетов и патчами, затем перейдите в распакованный каталог. Только после этого вы должны следовать приведенным ниже инструкциям.</para></note>
+    <note><para>В этом разделе часто возникают недопонимания. Последовательность такая
+    же как и в любой другой главе описанной ранее (<xref
+    linkend='buildinstr'/>). Сначала распакуйте архив gcc из каталога
+    исходников, затем перейдите в созданный каталог. Только после этого выполняйте 
+    приведенные ниже инструкции.</para></note>
 
 <screen><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
@@ -55,27 +61,8 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para>Следующая команда изменит место расположения динамического компоновщика чтобы использовать тот, который находится в каталоге <filename class="directory">/tools</filename>. Команда также удалит каталог <filename
-    class="directory">/usr/include</filename> из путей поиска GCC. Выполните команду:</para>
-
-<screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
-do
-  cp -uv $file{,.orig}
-  sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&amp;@g' \
-      -e 's@/usr@/tools@g' $file.orig &gt; $file
-  echo '
-#undef STANDARD_STARTFILE_PREFIX_1
-#undef STANDARD_STARTFILE_PREFIX_2
-#define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
-#define STANDARD_STARTFILE_PREFIX_2 ""' &gt;&gt; $file
-  touch $file.orig
-done</userinput></screen>
-
-    <para>Если команда приведенная выше кажется непонятной, давайте разберем ее содержимое.
-	 Сначала мы копируем файлы <filename>gcc/config/linux.h</filename>, <filename>gcc/config/i386/linux.h</filename>,и <filename>gcc/config/i368/linux64.h</filename> в файлы с таким же наименованием, но с добавлением суффикса <quote>.orig</quote>. Затем первое выражение добавляет <quote>/tools</quote> к каждому экземпляру <quote>/lib/ld</quote>, <quote>/lib64/ld</quote> или <quote>/lib32/ld</quote> в то время как второй заменяет жестко закодированные экземпляры <quote>/usr</quote>. Потом мы добавляем нашу директиву define которая изменяет префикс начальных файлов на префикс конечных файлов. Обратите внимание что начальный символ <quote>/</quote> в <quote>/tools/lib/</quote> является обязательным. Потом мы используем команду <command>touch</command> для обновления даты и времени модификации скопированных файлов. При использовании в сочетании с <command>cp -u</command> предотвращает непредвиденные изменения исходных файлов, если команды случайно выполнили дважды.</para>
-
-    <para>Наконец, для хост-системы x86_64 устанавливаем каталогом по умолчанию наименование 64-битных библиотек
-	 в <quote>lib</quote>:</para>
+    <para>При использовании x86_64 платформы хоста назначьте каталог <quote>lib</quote>
+    каталогом по умолчанию для 64-битных библиотек:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
   x86_64)
@@ -84,35 +71,22 @@ done</userinput></screen>
  ;;
 esac</userinput></screen>
 
-<!--
-    <para>GCC doesn't detect stack protection correctly, which causes problems
-    for the build of Glibc-&glibc-version;, so fix that by issuing the following
-    command:</para>
-
-<screen><userinput remap="pre">sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure</userinput></screen>
--->
-
-<!--
-    <para>Also fix a problem identified upstream:</para>
-
-<screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
--->
-    <para>В документации пакета GCC рекомендуется выполнять сборку в отдельном каталоге:</para>
+    <para>Документация GCC рекомендует выполнять сборку в 
+    отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Подготовьте пакет GCC к компиляции:</para>
+    <para>Подготовка GCC к компиляции:</para>
 
 <screen><userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
-    --prefix=/tools                                \
+    --prefix=$LFS/tools                            \
     --with-glibc-version=2.11                      \
     --with-sysroot=$LFS                            \
     --with-newlib                                  \
     --without-headers                              \
-    --with-local-prefix=/tools                     \
-    --with-native-system-header-dir=/tools/include \
+    --enable-initfini-array                        \
     --disable-nls                                  \
     --disable-shared                               \
     --disable-multilib                             \
@@ -126,92 +100,109 @@ cd       build</userinput></screen>
     --disable-libstdcxx                            \
     --enable-languages=c,c++</userinput></screen>
     <variablelist>
-      <title>Значение параметров конфигурации:</title>
+      <title>Значение параметров configure:</title>
+
+      <varlistentry>
+        <term><parameter>--with-glibc-version=2.11</parameter></term>
+        <listitem>
+          <para>Гарантирует совместимость создаваемого пакета с версией glibc хоста.
+          Устанавливается минимально необходимая версия glibc указанная
+          в <xref linkend="ch-partitioning-hostreqs"/>.</para>
+        </listitem>
+      </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-newlib</parameter></term>
         <listitem>
-          <para>Так как рабочая библиотека C пока недоступна, необходимо убедиться в том, что константа inhibit_libc определена, когда выполняется сборка libgcc. Также это предотвратит компиляцию любого кода, которому необходима поддержка библиотеки libc.</para>
+          <para>До тех пор пока рабочая библиотека C недоступна, эта опция гарантирует,
+          что константа inhibit_libc будет определена во время сборки libgcc.
+          Это предотвратит компиляцию любого кода, которому необходима 
+          поддержка libc.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--without-headers</parameter></term>
         <listitem>
-          <para>Когда создается кросс-компилятор, пакету GCC необходимы стандартные заголовки, совместимые с целевой системой. Для требуемой задачи эти заголовочные файлы не нужны. Этот аргумент предотвращает поиск этих файлов пакетом GCC.</para>
+          <para>При создании кросс-компилятора пакету GCC необходимы 
+          стандартные заголовки совместимые с целевой системой. Для наших целей
+          эти заголовочные файлы не понадобятся. Аргумент отключает 
+          поиск заголовочных файлов пакетом GCC.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-local-prefix=/tools</parameter></term>
+        <term><parameter>--enable-initfini-array</parameter></term>
         <listitem>
-          <para>Этот аргумент (локальный префикс) является местом в системе, где GCC будет искать локально установленные include файлы. По умолчанию этот путь <filename>/usr/local</filename>.
-			 Указание на каталог <filename>/tools</filename> поможет оставить каталог <filename>/usr/local</filename> хост-системы за пределами поиска файлов устанавливаемого пакета GCC.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--with-native-system-header-dir=/tools/include</parameter></term>
-        <listitem>
-          <para>По умолчанию, GCC выполняет поиск системных заголовочных файлов в каталоге <filename>/usr/include</filename>. В сочетании с аргументом sysroot, поиск системных заголовочных файлов будет производится в каталоге <filename>$LFS/tools/include</filename>.Однако заголовочные файлы , которые будут установлены в следующих двух разделах, будут располагаться в каталоге <filename>$LFS/tools/include</filename>. Этот аргумент позволит искать их по указанному в значении пути. Вторым проходом сборки GCC, этот же аргумент обеспечит отсутствие заголовочных файлов из хост-системы.</para>
+          <para>Аргумент включает обязательность использования некоторых
+          внутренних структур данных, которые не могут быть обнаружены при 
+          сборке кросс-компилятора.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-shared</parameter></term>
         <listitem>
-          <para>Аргумент указывает GCC, что необходимо произвести статическую линковку внутренних библиотек. Ето необходимо сделать, чтобы избежать возможных проблем с хост-системой.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-decimal-float, --disable-threads,
-              --disable-libatomic, --disable-libgomp, <!--- -disable-libmpx,-->
-        --disable-libquadmath, --disable-libssp, --disable-libvtv,
-        --disable-libstdcxx</parameter></term>
-        <listitem>
-          <para>
-			 Этот аргумент отключает поддержку расширений для работы с десятичными числами и числами с плавающей запятой, потоками, библиотеками libatomic, libgomp, <!--libmpx,--> libquadmath, libssp,
-          libvtv и стандартной библиотеки C++ соответственно. При компиляции этих функций, возникнет ошибка и для кросс-компилятора, эти функции не нужны, для того чтобы выполнить кросс-компиляцию временной библиотеки C (libc).</para>
+          <para>Аргумент обязывает GCC статически слинковать свои внутренние библиотеки.
+          Это необходимо, так как динамическим библиотекам нужен glibc, а он пока 
+          не установлен на целевой системе.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
-          <para>Для платформы x86_64, LFS пока не поддерживает конфигурацию multilib. Этот аргумент ни как не повлияет, если установка выполняется на платформе x86.</para>
+          <para>LFS не поддерживает multilib для платформы x86_64.
+          А на платформу x86 этот аргумент не влияет.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-decimal-float, --disable-threads,
+              --disable-libatomic, --disable-libgomp, 
+        --disable-libquadmath, --disable-libssp, --disable-libvtv,
+        --disable-libstdcxx</parameter></term>
+        <listitem>
+          <para>Отключение поддержки десятичной плавающей точки,
+          многопоточности, libatomic, libgomp, libquadmath, libssp, libvtv и
+          стандартной библиотеки C++.
+          Эти возможности не могут быть включены при сборке кросс-компилятора и 
+          не нужны для кросс-компиляции временной версии libc.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-languages=c,c++</parameter></term>
         <listitem>
-          <para>Этот параметр гарантирует, что будут созданы только компиляторы C и C ++. Это единственные языки, которые нужны сейчас.</para>
+          <para>Этот параметр гарантирует, что будут созданы только компиляторы C и C++.
+          Этих языков будет достаточно.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Чтобы скомпилировать пакет, необходимо выполнить команду:</para>
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Компиляция завершена. Как правило, на данном этапе необходимо выполнить наборы тестов для пакета, но сейчас пока рано, потому что инструменты для выполнения тестирования (Tcl, Expect, and DejaGNU) пока не на своём месте. Преимущества использования тестов на данный момент минимальны, поскольку программы из сборки первого прохода будут заменены на программы из сборки второго прохода.</para>
+    <para>Установка пакета:</para>
 
-    <para>Установите пакет:</para>
+    <screen><userinput remap="install">make install</userinput></screen>
 
-<screen><userinput remap="install">make install</userinput></screen>
-<!--
-    <para>Using <parameter>- -disable-shared</parameter> means that the
-    <filename>libgcc_eh.a</filename> file isn't created and installed. The
-    Glibc package depends on this library as it uses
-    <parameter>-lgcc_eh</parameter> within its build system. This dependency
-    can be satisfied by creating a symlink to <filename>libgcc.a</filename>,
-    since that file will end up containing the objects normally contained in
-    <filename>libgcc_eh.a</filename>:</para>
+    <para>Сборка GCC установила несколько внутренних системных заголовков.
+    Обычно <filename>limits.h</filename> подключает 
+    системный <filename>limits.h</filename>, а в данном случае это будет
+    <filename>$LFS/usr/include/limits.h</filename>.
+    Однако, на этапе сборки <filename>$LFS/usr/include/limits.h</filename>
+    не существует. Поэтому установленный заголовок является частичным и не 
+    содержит возможностей системного заголовка. Это нормально для сборки
+    glibc, но полный внутренний заголовок понадобится позже. Создайте полную
+    версию заголовка используя команду схожую с тем, что выполняет сборка GCC
+    при нормальных условиях:</para>
 
-<screen><userinput remap="install">ln -sv libgcc.a `$LFS_TGT-gcc -print-libgcc-file-name | sed 's/libgcc/&amp;_eh/'`</userinput></screen>
--->
+<screen><userinput remap="install">cd ..
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h</userinput></screen>
   </sect2>
 
   <sect2 role="content">

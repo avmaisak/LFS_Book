@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-config-network" revision="sysv">
+  <?dbhtml filename="network.html"?>
+
+  <title>Конфигурация Сети</title>
+
+  <indexterm zone="ch-config-network">
+    <primary sortas="d-network">network</primary>
+  <secondary>configuring</secondary></indexterm>
+
+  <sect2>
+    <title>Создание файлов конфигурации сетевого интерфейса</title>
+
+    <para>Какие интерфейсы вызываются и выключаются сетевым сценарием, обычно зависит
+    от файлов, которые находятся в каталоге <filename
+    class="directory">/etc/sysconfig/</filename>. Этот каталог должен содержать файл
+    для каждого настраиваемого интерфейса, например <filename>ifconfig.xyz</filename>,
+    где "xyz" должен описывать сетевую карту. Имя интерфейса (например, eth0)
+    обычно является подходящим. Внутри этого файла находятся атрибуты этого
+    интерфейса, такие как IP-адреса, маски подсети и так далее. Необходимо,
+    чтобы название файла начиналось с <emphasis>ifconfig</emphasis>.</para>
+
+    <note><para>Если процедура в предыдущем разделе не использовалась, Udev назначит
+    имена интерфейсов сетевых карт на основе физических характеристик системы,
+    таких как enp2s1. Если Вы не уверены, каково ваше имя интерфейса, вы всегда
+    можете запустить команду <command>ip link</command> или <command>ls
+    /sys/class/net</command> после загрузки вашей системы.</para></note>
+
+    <para>Следующая команда создает пример конфигурационного файла для
+    устройства <emphasis>eth0</emphasis> со статическим IP-адресом:</para>
+<!-- jhalfs relies on the values for IFACE, IP, etc. If you want to change
+     them, please inform the jhalfs maintainer(s). -->
+<screen><userinput>cd /etc/sysconfig/
+cat &gt; ifconfig.<replaceable>eth0</replaceable> &lt;&lt; "EOF"
+<literal>ONBOOT=<replaceable>yes</replaceable>
+IFACE=<replaceable>eth0</replaceable>
+SERVICE=<replaceable>ipv4-static</replaceable>
+IP=<replaceable>192.168.1.2</replaceable>
+GATEWAY=<replaceable>192.168.1.1</replaceable>
+PREFIX=<replaceable>24</replaceable>
+BROADCAST=<replaceable>192.168.1.255</replaceable></literal>
+EOF</userinput></screen>
+
+    <para>Значения этих переменных должны быть изменены в каждом файле, для
+    правильной настройки и работы сети.</para>
+
+    <para>Если переменной <envar>ONBOOT</envar> указать значение <quote>yes</quote>,
+    сценарий работы сети пакета System V вызовет сетевую карту в процессе загрузки
+    системы. Если задано значение, отличное от <quote>yes</quote> , сетевой адаптер
+    будет игнорироваться сценарием и не будет автоматически вызываться. Интерфейс
+    можно запустить или остановить вручную с помощью команд  <command>ifup</command>
+    и <command>ifdown</command>.</para>
+
+    <para>Переменная <envar>IFACE</envar> определяет имя сетевого интерфейса, например,
+    eth0. Она необходима для всех файлов конфигураций сетевых устройств. Расширение
+    файла должно соответствовать этому значению.</para>
+
+    <para>Переменная <envar>SERVICE</envar>  определяет метод получения IP-адреса. Пакет
+    LFS-Bootscripts имеет модульный формат назначения IP, и создание дополнительных файлов
+    в каталоге <filename class="directory">/lib/services/</filename> позволит использовать
+    другие методы назначения IP. Как правило, используется для протокола DHCP
+    (Dynamic Host Configuration Protocol), который рассматривается в книге BLFS.</para>
+
+    <para>Переменная <envar>GATEWAY</envar> должна содержать значение по умолчанию 
+    IP-адрес шлюза, если таковой имеется. Если нет, то закомментируйте строку.</para>
+
+    <para>Переменная <envar>PREFIX</envar> переменная содержит количество
+    бит, используемых в подсети. Каждый байт в IP адресе - 8 бит. Если маска
+    подсети 255.255.255.0, в таком случае, используется первые три байта (24 бита)
+    для указания сетевого номера. Если маска подсети 255.255.255.240, то будет
+    использовано первые 24 бита. Префиксы длиннее, чем 24 бита используются в
+    основном провайдерами с сDSL и кабельными соединениями. В этом примере
+    (PREFIX=24) маска подсети 255.255.255.0. Настройте переменную <envar>PREFIX</envar>
+    в соответствии конфигурацией вашей подсети. Если опустить префикс, по умолчанию
+    будет значение 24.</para>
+
+    <para>Для получения подробностей прочитайте руководство <command>ifup</command>.</para>
+
+  </sect2>
+  <sect2 id="resolv.conf">
+    <title>Создание файла /etc/resolv.conf</title>
+
+    <indexterm zone="resolv.conf">
+      <primary sortas="e-/etc/resolv.conf">/etc/resolv.conf</primary>
+    </indexterm>
+
+    <para>Системе потребуются некоторые средства для получения имен службы доменных
+    имен (DNS) для преобразования доменных имен сети Интернет в IP-адреса и наоборот.
+    Это достигается путем размещения IP-адреса DNS-сервера, доступного от провайдера
+    или администратора сети, в <filename>/etc/resolv.conf</filename>. Создайте файл,
+    выполнив следующие действия:</para>
+
+<screen><userinput>cat &gt; /etc/resolv.conf &lt;&lt; "EOF"
+<literal># Begin /etc/resolv.conf
+
+domain <replaceable>&lt;Your Domain Name&gt;</replaceable>
+nameserver <replaceable>&lt;IP address of your primary nameserver&gt;</replaceable>
+nameserver <replaceable>&lt;IP address of your secondary nameserver&gt;</replaceable>
+
+# End /etc/resolv.conf</literal>
+EOF</userinput></screen>
+
+    <para>Запись <varname>domain</varname> может быть опущена
+    или заменена  <varname>search</varname> записью. Прочитайте руководство 
+    resolv.conf для более подробной информации.</para>
+
+    <para>Замените <replaceable>&lt;IP address of the nameserver&gt;</replaceable> адресом наиболее подходящего DNS сервера. DNS серверов, может быть указано более одной записи (необходимо для вторичных серверов для возможности резервного переключения). Если вам нужен  только один DNS-сервер, удалите вторую строку <emphasis> nameserver </emphasis> из файла. IP-адрес
+    также может быть маршрутизатором в локальной сети.</para>
+
+    <note>
+      <para>Адреса общедоступных DNS серверов Google - 8.8.8.8 и 8.8.4.4.</para>
+    </note>
+
+  </sect2>
+
+  <sect2 id="ch-config-hostname">
+    <title>Настройка имени хоста</title>
+
+    <indexterm zone="ch-config-hostname">
+      <primary sortas="d-hostname">hostname</primary>
+      <secondary>configuring</secondary>
+    </indexterm>
+
+     <para>В процессе загрузки файл <filename>/etc/hostname</filename> используется для
+     установки имени хоста системы.</para>
+
+     <para>Создайте файл <filename>/etc/hostname</filename> и внесите в имя хоста,
+     выполнив команду:</para>
+
+<screen><userinput>echo "<replaceable>&lt;lfs&gt;</replaceable>" &gt; /etc/hostname</userinput></screen>
+
+     <para><replaceable>&lt;lfs&gt;</replaceable> замените на имя вашего компьютера.
+     Не вносите FQDN имя. Эта информация должна располагаться в файле 
+     <filename>/etc/hosts</filename> file.</para>
+
+  </sect2>
+
+  <sect2 id="ch-config-hosts">
+     <title>Настройка файла /etc/hosts</title>
+
+     <indexterm zone="ch-config-hosts">
+       <primary sortas="e-/etc/hosts">/etc/hosts</primary>
+     </indexterm>
+   
+     <indexterm zone="ch-config-hosts">
+       <primary sortas="d-localnet">localnet</primary>
+       <secondary>/etc/hosts</secondary>
+     </indexterm>
+   
+     <indexterm zone="ch-config-hosts">
+       <primary sortas="d-network">network</primary>
+       <secondary>/etc/hosts</secondary>
+     </indexterm>
+   
+     <para>Определите IP-адрес, полное доменное имя (FQDN) и возможные псевдонимы
+     для использования в файле <filename>/etc/hosts</filename>. Синтаксис команды:</para>
+
+<screen><literal>IP_address myhost.example.org aliases</literal></screen>
+
+     <para>Если компьютер не должен быть виден в Интернете (т. е. есть зарегистрированный
+     домен и допустимый блок назначенных IP—адресов  не имеются), убедитесь, что
+     IP-адрес находится в диапазоне IP-адресов частной сети. Допустимые диапазоны:</para>
+
+<screen><literal>Private Network Address Range      Normal Prefix
+10.0.0.1 - 10.255.255.254           8
+172.x.0.1 - 172.x.255.254           16
+192.168.y.1 - 192.168.y.254         24</literal></screen>
+
+     <para>x может быть номером в пределах 16-31. y может быть номером в 
+     пределах 0-255.</para>
+   
+     <para>Правильный IP адрес может быть 192.168.1.1. Правильный FQDN для этого IP
+     адреса может быть lfs.example.org.</para>
+   
+     <para>Даже если сетевая карта не используется, полное доменное имя должно быть
+     корректным. Это необходимо для правильной работы некоторых программ</para>
+   
+     <para>Создайте файл <filename>/etc/hosts</filename> выполнив команду:</para>
+
+<screen><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
+<literal># Begin /etc/hosts
+
+127.0.0.1 localhost.localdomain localhost
+127.0.1.1 <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable>
+<replaceable>&lt;192.168.1.1&gt;</replaceable> <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable> <replaceable>[alias1] [alias2 ...]</replaceable>
+::1       localhost ip6-localhost ip6-loopback
+ff02::1   ip6-allnodes
+ff02::2   ip6-allrouters
+
+# End /etc/hosts</literal>
+EOF</userinput></screen>
+
+     <para>Значения <replaceable>&lt;192.168.1.1&gt;</replaceable>,
+     <replaceable>&lt;FQDN&gt;</replaceable> и
+     <replaceable>&lt;HOSTNAME&gt;</replaceable> должны быть изменены в соответствии
+     с предпочтениями пользователя и параметрами сети (если имеется IP-адрес выданный
+     сетевым/системным администратором и машина подключена к существующей сети).
+     Необязательные псевдонимы могут быть опущены.</para>
+
+<!--  This is not very useful
+
+     <para>Если сетевая карта не будет конфигурироваться, создайте файл
+     <filename>/etc/hosts</filename> выполнив команду:</para>
+
+<screen role="nodump"><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
+<literal># Begin /etc/hosts (no network card version)
+
+127.0.0.1 localhost
+127.0.1.1 <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable>
+::1       localhost ip6-localhost ip6-loopback
+ff02::1   ip6-allnodes
+ff02::2   ip6-allrouters
+
+# End /etc/hosts (no network card version)</literal>
+EOF</userinput></screen> -->
+
+   </sect2>
+
+</sect1>

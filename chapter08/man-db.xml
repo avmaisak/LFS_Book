@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-man-db" role="wrap">
+  <?dbhtml filename="man-db.html"?>
+
+  <sect1info condition="script">
+    <productname>man-db</productname>
+    <productnumber>&man-db-version;</productnumber>
+    <address>&man-db-url;</address>
+  </sect1info>
+
+  <title>Man-DB-&man-db-version;</title>
+
+  <indexterm zone="ch-system-man-db">
+    <primary sortas="a-Man-DB">Man-DB</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Man-DB содержит программы для поиска и просмотра справочных страниц.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&man-db-fin-sbu;</seg>
+        <seg>&man-db-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Man-DB</title>
+
+    <para>Подготовка  Man-DB к компиляции:</para>
+
+<screen revision="systemd"><userinput remap="configure">sed -i '/find/s@/usr@@' init/systemd/man-db.service.in
+
+./configure --prefix=/usr                        \
+            --docdir=/usr/share/doc/man-db-&man-db-version; \
+            --sysconfdir=/etc                    \
+            --disable-setuid                     \
+            --enable-cache-owner=bin             \
+            --with-browser=/usr/bin/lynx         \
+            --with-vgrind=/usr/bin/vgrind        \
+            --with-grap=/usr/bin/grap</userinput></screen>
+
+<screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr                        \
+            --docdir=/usr/share/doc/man-db-&man-db-version; \
+            --sysconfdir=/etc                    \
+            --disable-setuid                     \
+            --enable-cache-owner=bin             \
+            --with-browser=/usr/bin/lynx         \
+            --with-vgrind=/usr/bin/vgrind        \
+            --with-grap=/usr/bin/grap            \
+            --with-systemdtmpfilesdir=           \
+            --with-systemdsystemunitdir=</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров configure:</title>
+
+      <varlistentry revision="systemd">
+        <term><command>sed -i '/find/s@/usr@@' init/systemd/man-db.service.in</command></term>
+        <listitem>
+          <para>Изменяет жестко заданный путь к утилите <command>find</command>,
+          которую установили в
+          <filename class="directory">/bin</filename>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-setuid</parameter></term>
+        <listitem>
+          <para>запрещает задавать программе <command>man</command> setuid пользователю <systemitem class="username">man</systemitem>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-cache-owner=bin</parameter></term>
+        <listitem>
+          <para>Устаналивает владельцем файлов общесистемного кеша пользователя
+          <systemitem class="username">bin</systemitem>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-...</parameter></term>
+        <listitem>
+          <para>Эти три аргумента используются для настройки программ по умолчанию.
+          <command>lynx</command> текстовый веб-браузер (см. инструкции по установке в
+          книге BLFS),
+          <command>vgrind</command> конвертирует исходные коды программ
+          во входные данные Groff, <command>grap</command> полезен для набора графов
+          в документах Groff. Программы <command>vgrind</command> и <command>grap</command>
+          обычно не нужны для просмотра справочных страниц. Они не входят в состав книг
+          LFS или BLFS, но при желании вы можете установить их самостоятельно после
+          сборки LFS.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry revision="sysv">
+        <term><parameter>--with-systemd...</parameter></term>
+        <listitem>
+          <para>Эти параметры отключают установку ненужных каталогов
+          и файлов systemd.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+   <para>Тестирование:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2>
+    <title>Не англоязычные страницы руководств в LFS</title>
+
+    <para>В нижеприведенной таблице показана кодировка, которая допускается при
+    использовании в Man-DB страницах, расположенных в каталоге
+<filename class="directory">/usr/share/man/&lt;ll&gt;</filename>. Также, Man-DB правильно
+    определит, если
+    страницы руководств были установлены вручную в этот каталог в кодировке utf-8.</para>
+
+    <!-- Origin: man-db-2.5.9/lib/encodings.c -->
+    <table>
+<title>Expected character encoding of legacy 8-bit manual pages</title>
+      <?dbfo table-width="6in" ?>
+
+      <tgroup cols="4">
+
+        <colspec colnum="1" colwidth="1.5in"/>
+        <colspec colnum="2" colwidth="1in"/>
+        <colspec colnum="3" colwidth="2.5in"/>
+        <colspec colnum="4" colwidth="1in"/>
+
+        <thead>
+          <row>
+            <entry>Язык (код)</entry>
+            <entry>Кодировка</entry>
+            <entry>Язык (код)</entry>
+            <entry>Кодировка</entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry>Danish (da)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Croatian (hr)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>German (de)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Hungarian (hu)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>English (en)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Japanese (ja)</entry>
+            <entry>EUC-JP</entry>
+          </row>
+          <row>
+            <entry>Spanish (es)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Korean (ko)</entry>
+            <entry>EUC-KR</entry>
+          </row>
+          <row>
+            <entry>Estonian (et)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Lithuanian (lt)</entry>
+            <entry>ISO-8859-13</entry>
+          </row>
+          <row>
+            <entry>Finnish (fi)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Latvian (lv)</entry>
+            <entry>ISO-8859-13</entry>
+          </row>
+          <row>
+            <entry>French (fr)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Macedonian (mk)</entry>
+            <entry>ISO-8859-5</entry>
+          </row>
+          <row>
+            <entry>Irish (ga)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Polish (pl)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>Galician (gl)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Romanian (ro)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>Indonesian (id)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Russian (ru)</entry>
+            <entry>KOI8-R</entry>
+          </row>
+          <row>
+            <entry>Icelandic (is)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Slovak (sk)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>Italian (it)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Slovenian (sl)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>Norwegian Bokmal (nb)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Serbian Latin (sr@latin)</entry>
+            <entry>ISO-8859-2</entry>
+          </row>
+          <row>
+            <entry>Dutch (nl)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Serbian (sr)</entry>
+            <entry>ISO-8859-5</entry>
+          </row>
+          <row>
+            <entry>Norwegian Nynorsk (nn)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Turkish (tr)</entry>
+            <entry>ISO-8859-9</entry>
+          </row>
+          <row>
+            <entry>Norwegian (no)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Ukrainian (uk)</entry>
+            <entry>KOI8-U</entry>
+          </row>
+          <row>
+            <entry>Portuguese (pt)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Vietnamese (vi)</entry>
+            <entry>TCVN5712-1</entry>
+          </row>
+          <row>
+            <entry>Swedish (sv)</entry>
+            <entry>ISO-8859-1</entry>
+            <entry>Simplified Chinese (zh_CN)</entry>
+            <entry>GBK</entry>
+          </row>
+          <row>
+            <entry>Belarusian (be)</entry>
+            <entry>CP1251</entry>
+            <entry>Simplified Chinese, Singapore (zh_SG)</entry>
+            <entry>GBK</entry>
+          </row>
+          <row>
+            <entry>Bulgarian (bg)</entry>
+            <entry>CP1251</entry>
+            <entry>Traditional Chinese, Hong Kong (zh_HK)</entry>
+            <entry>BIG5HKSCS</entry>
+          </row>
+          <row>
+            <entry>Czech (cs)</entry>
+            <entry>ISO-8859-2</entry>
+            <entry>Traditional Chinese (zh_TW)</entry>
+            <entry>BIG5</entry>
+          </row>
+          <row>
+            <entry>Greek (el)</entry>
+            <entry>ISO-8859-7</entry>
+            <entry></entry>
+            <entry></entry>
+          </row>
+
+        </tbody>
+
+      </tgroup>
+
+    </table>
+
+    <note>
+      <para>Справочные страницы на языках, отсутствующих в списке, не поддерживаются.</para>
+    </note>
+
+  </sect2>
+
+  <sect2 id="contents-man-db" role="content">
+    <title>Содержимое пакета Man-DB</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>accessdb, apropos (ссылка на whatis), catman, lexgrog, man, mandb,
+        manpath, and whatis</seg>
+        <seg>libman.so и libmandb.so (оба в /usr/lib/man-db)</seg>
+        <seg>/usr/lib/man-db, /usr/libexec/man-db,
+        и /usr/share/doc/man-db-&man-db-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="accessdb">
+        <term><command>accessdb</command></term>
+        <listitem>
+          <para>Сохраняет содержимое базы данных <command>whatis</command> в
+          человекочитаемой форме</para>
+          <indexterm zone="ch-system-man-db accessdb">
+            <primary sortas="b-accessdb">accessdb</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="apropos">
+        <term><command>apropos</command></term>
+        <listitem>
+          <para>Ищет по базе данных <command>whatis</command> и отображает
+          краткое описание системных команд содержащих заданную строку</para>
+          <indexterm zone="ch-system-man-db apropos">
+            <primary sortas="b-apropos">apropos</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="catman">
+        <term><command>catman</command></term>
+        <listitem>
+          <para>Создает или обновляет преформатированные страницы руководств</para>
+          <indexterm zone="ch-system-man-db catman">
+            <primary sortas="b-catman">catman</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="lexgrog">
+        <term><command>lexgrog</command></term>
+        <listitem>
+          <para>Отображает одной строкой краткую информацию об указанной странице
+          руководства</para>
+          <indexterm zone="ch-system-man-db lexgrog">
+            <primary sortas="b-lexgrog">lexgrog</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="man">
+        <term><command>man</command></term>
+        <listitem>
+          <para>Форматирует и отображает запрошенную страницу руководства</para>
+          <indexterm zone="ch-system-man-db man">
+            <primary sortas="b-man">man</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mandb">
+        <term><command>mandb</command></term>
+        <listitem>
+          <para>Создает или обновляет базу данных <command>whatis</command></para>
+          <indexterm zone="ch-system-man-db mandb">
+            <primary sortas="b-mandb">mandb</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="manpath">
+        <term><command>manpath</command></term>
+        <listitem>
+          <para>Отображает содержимое $MANPATH или (если $MANPATH не задан)
+          подходящего пути поиска на основе настроек из man.conf и
+          пользовательского окружения</para>
+          <indexterm zone="ch-system-man-db manpath">
+            <primary sortas="b-manpath">manpath</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="whatis">
+        <term><command>whatis</command></term>
+        <listitem>
+          <para>Ищет по базе данных <command>whatis</command> и отображает
+          краткое описание системных команд, которые содержат заданный текст
+          как отдельное слово</para>
+          <indexterm zone="ch-system-man-db whatis">
+            <primary sortas="b-whatis">whatis</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libman">
+        <term><filename class="libraryfile">libman</filename></term>
+        <listitem>
+          <para>Содержит поддержку выполнения <command>man</command></para>
+          <indexterm zone="ch-system-man-db libman">
+            <primary sortas="c-libman">libman</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libmandb">
+        <term><filename class="libraryfile">libmandb</filename></term>
+        <listitem>
+          <para>Содержит поддержку выполнения <command>man</command></para>
+          <indexterm zone="ch-system-man-db libmandb">
+            <primary sortas="c-libmandb">libmandb</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

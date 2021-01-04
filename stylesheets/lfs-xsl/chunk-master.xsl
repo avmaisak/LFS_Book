@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!--
-$LastChangedBy: matthew $
-$Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
+$LastChangedBy: pierre $
+$Date: 2020-03-13 17:38:37 +0300 (Пт, 13 мар 2020) $
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -18,10 +18,10 @@ $Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
   <xsl:import href="chunk-slave.xsl"/>
 
   <!-- Upstream chunk code named templates -->
-  <xsl:import href="docbook-xsl-1.78.1/xhtml/chunk-common.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml/chunk-common.xsl"/>
 
   <!-- Upstream chunk code match templates -->
-  <xsl:include href="docbook-xsl-1.78.1/xhtml/chunk-code.xsl"/>
+  <xsl:include href="http://docbook.sourceforge.net/release/xsl/current/xhtml/chunk-code.xsl"/>
 
   <!-- Customized chunk templates -->
   <xsl:include href="xhtml/lfs-index.xsl"/>

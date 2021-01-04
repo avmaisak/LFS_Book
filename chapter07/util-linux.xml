@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-util-linux" role="wrap">
+  <?dbhtml filename="util-linux.html"?>
+
+  <sect1info condition="script">
+    <productname>util-linux</productname>
+    <productnumber>&util-linux-version;</productnumber>
+    <address>&util-linux-url;</address>
+  </sect1info>
+
+  <title>Util-linux-&util-linux-version;</title>
+
+  <indexterm zone="ch-tools-util-linux">
+    <primary sortas="a-Util-linux">Util-linux</primary>
+    <secondary>инструменты</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+     <para>Пакет Util-linux содержит служебные утилиты.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&util-linux-tmp-sbu;</seg>
+        <seg>&util-linux-tmp-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Util-linux</title>
+
+    <para>Сначала создайте каталог для включения хранилища программы <command>hwclock</command>:</para>
+
+<screen><userinput remap="pre">mkdir -pv /var/lib/hwclock</userinput></screen>
+
+    <para>Подготовьте Util-linux для компиляции:</para>
+
+<screen><userinput remap="configure">./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
+            --docdir=/usr/share/doc/util-linux-&util-linux-version; \
+            --disable-chfn-chsh  \
+            --disable-login      \
+            --disable-nologin    \
+            --disable-su         \
+            --disable-setpriv    \
+            --disable-runuser    \
+            --disable-pylibmount \
+            --disable-static     \
+            --without-python</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров configure:</title>
+
+      <varlistentry>
+        <term><parameter>ADJTIME_PATH=/var/lib/hwclock/adjtime</parameter></term>
+        <listitem>
+          <para>Указывает путь файла сохранения информации об аппаратных часах
+          в соответствии с FHS. Это необязательно для текущего пакета,
+          но предупреждает создание файла по другому пути, который не будет
+          перезаписан или удален при финальной сборке пакета util-linux.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-*</parameter></term>
+        <listitem>
+          <para>Эти опции отключают предупреждения о сборке компонентов, которым
+          нужны пакеты не из LFS или неустановленные пока пакеты.
+          that require packages not in LFS or not installed yet.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--without-python</parameter></term>
+        <listitem>
+          <para>Отключает использоване <application>Python</application>.
+          Это обходит попытки собрать нунужное.</para>
+        </listitem>
+      </varlistentry>
+
+     </variablelist>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Подробная информация о пакете находится в <xref linkend="contents-utillinux" role="."/></para>
+
+  </sect2>
+
+</sect1>

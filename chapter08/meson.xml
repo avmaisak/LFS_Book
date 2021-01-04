@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-meson" role="wrap">
+  <?dbhtml filename="meson.html"?>
+
+  <sect1info condition="script">
+    <productname>meson</productname>
+    <productnumber>&meson-version;</productnumber>
+    <address>&meson-url;</address>
+  </sect1info>
+
+  <title>Meson-&meson-version;</title>
+
+  <indexterm zone="ch-system-meson">
+    <primary sortas="a-Meson">Meson</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Meson - система сборки с открытым исходным кодом, созданная быть экстремально
+    быстрой и максимально дружелюбной к пользователю.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+      <seglistitem>
+        <seg>&meson-fin-sbu;</seg>
+        <seg>&meson-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <tip revision="sysv">
+      <para>Этот раздел необязателен, если LFS не использует systemd. С другой стороны, связка
+      ninja с meson является мощной системой сборки, которая, скорее всего, будет
+      использоваться всё чаще. Она необходима для нескольких пакетов из
+      <ulink url="&blfs-book;">книги BLFS</ulink>.</para>
+    </tip>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Meson</title>
+
+    <para>Примените патч, исправляющий проблему pkgconfig файлов для статичных
+    библиотек:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&meson-fix-patch;</userinput></screen>
+
+    <para>Компиляция Meson:</para>
+
+<screen><userinput remap="make">python3 setup.py build</userinput></screen>
+
+    <para>У этого пакета нет тестов.</para>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">python3 setup.py install --root=dest
+cp -rv dest/* /</userinput></screen>
+
+    <variablelist>
+      <title>Значения параметров установки:</title>
+
+      <varlistentry>
+        <term><parameter>--root=dest</parameter></term>
+        <listitem>
+          <para>По умолчанию команда <command>python3 setup.py install</command>
+          выполняет установку различных файлов (например, файлов руководств) в
+          Python Eggs. При указанном аргументе root, <command>setup.py</command> установит
+          файлы в стандартную иерархию каталогов. Эту иерархию можно затем скопировать в
+          стундарное местоположение.
+        </para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </sect2>
+
+  <sect2 id="contents-meson" role="content">
+    <title>Содержимое пакета Meson</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>meson</seg>
+        <seg>/usr/lib/python&python-minor;/site-packages/meson-&meson-version;-py&python-minor;.egg-info and /usr/lib/python&python-minor;/site-packages/mesonbuild</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="meson">
+		<term><command>meson</command></term>
+        <listitem>
+          <para>Высокопроизводительная система сборки</para>
+          <indexterm zone="ch-system-meson meson">
+            <primary sortas="b-meson">meson</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+

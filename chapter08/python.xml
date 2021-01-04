@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-Python" role="wrap">
+  <?dbhtml filename="Python.html"?>
+
+  <sect1info condition="script">
+    <productname>Python</productname>
+    <productnumber>&python-version;</productnumber>
+    <address>&python-url;</address>
+  </sect1info>
+
+  <title>Python-&python-version;</title>
+
+  <indexterm zone="ch-system-Python">
+    <primary sortas="a-Python">Python</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Python 3 содержит окружение разработчика Python. Его можно использовать
+    для объектно-ориентированного программирования, написания скриптов, прототипирования
+    больших проектов или разработки приложений.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&python-fin-sbu;</seg>
+        <seg>&python-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Python 3</title>
+
+    <para>Подготовка Python к компиляции:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr       \
+            --enable-shared     \
+            --with-system-expat \
+            --with-system-ffi   \
+            --with-ensurepip=yes</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров configure:</title>
+
+    <varlistentry>
+      <term><parameter>--with-system-expat</parameter></term>
+      <listitem>
+        <para>Включает линковку с системной версией <application>Expat</application>.</para>
+       </listitem>
+     </varlistentry>
+
+    <varlistentry>
+      <term><parameter>--with-system-ffi</parameter></term>
+      <listitem>
+        <para>Включает линковку с системной версией <application>libffi</application>.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><parameter>--with-ensurepip=yes</parameter></term>
+      <listitem>
+        <para>Включает сборку программ <command>pip</command> и
+        <command>setuptools</command>.</para>
+      </listitem>
+    </varlistentry>
+
+    </variablelist>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Тестирование:</para>
+
+<screen><userinput remap="test">make test</userinput></screen>
+
+    <para>Некоторые тесты будует пропущены из-за отсутсвия сети или дополнительных,
+    необходимых пакетов.
+    Тест test_unicodedata не пройдет, т.к. конфигурация сети еще не завершена.
+    Более объемное тестирование возможно перезапуском тестов после переустановки Python 3
+    в BLFS.</para>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install
+chmod -v 755 /usr/lib/libpython&python-minor;.so
+chmod -v 755 /usr/lib/libpython3.so
+ln -sfv pip&python-minor; /usr/bin/pip3</userinput></screen>
+
+    <variablelist>
+      <title>Значение команд установки:</title>
+<!-- ======  Change 8m if Python minor version changes ======= -->
+    <varlistentry>
+      <term><command>chmod -v 755 /usr/lib/libpython3.{8.,}so</command></term>
+      <listitem>
+        <para>Исправление прав доступа для библиотеки для сохранения консистентности с
+        остальными библиотеками.</para>
+      </listitem>
+    </varlistentry>
+
+    </variablelist>
+
+    <para>По желанию можно установить документацию:</para>
+
+<screen><userinput remap="install">install -v -dm755 /usr/share/doc/python-&python-version;/html
+
+tar --strip-components=1  \
+    --no-same-owner       \
+    --no-same-permissions \
+    -C /usr/share/doc/python-&python-version;/html \
+    -xvf ../python-&python-version;-docs-html.tar.bz2</userinput></screen>
+
+    <variablelist>
+      <title>Значение параметров установки документации:</title>
+
+    <varlistentry>
+      <term><option>--no-same-owner</option> и <option>--no-same-permissions</option></term>
+      <listitem>
+        <para>Гарантирует корректные права и владельца для устанавливаемых файлов.
+        Без этих опций <application>tar</application> установит файлы с правами пользователя
+        создававшего пакет.
+        </para>
+      </listitem>
+    </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+  <sect2 id="contents-python" role="content">
+    <title>Содержимое Python 3</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>
+          2to3, idle3, pip3, pydoc3, python3 и python3-config
+        </seg>
+        <seg>
+          libpython&python-minor;.so и libpython3.so
+        </seg>
+        <seg>
+          /usr/include/python&python-minor;,
+          /usr/lib/python3 и
+          /usr/share/doc/python-&python-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="python-2to3">
+        <term><command>2to3</command></term>
+        <listitem>
+          <para>
+            программа на <application>Python</application>, которая читает файлы написанные
+            на <application>Python 2.x</application>, применяет к ним серию изменений и
+            переводит их в валидный код <application>Python 3.x</application>.
+          </para>
+          <indexterm zone="ch-system-Python">
+            <primary sortas="b-2to3">2to3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="idle3">
+        <term><command>idle3</command></term>
+        <listitem>
+          <para>
+            скрипт-обертка, запускающая GUI редактор <application>Python</application>.
+            Для работы, перед установкой Python, должен быть установлен
+            <application>Tk</application>. В этом случае будет собран необходимый Python
+            модуль Tkinter.
+          </para>
+          <indexterm zone="ch-system-Python">
+            <primary sortas="b-idle3">idle3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="pip3">
+        <term><command>pip3</command></term>
+        <listitem>
+          <para>
+            менеджер пакетов Python. Позволяет устанавливать пакеты из
+            Python Package Index и других источников.
+          </para>
+          <indexterm zone="ch-system-Python">
+            <primary sortas="b-pip3">pip3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="pydoc3">
+        <term><command>pydoc3</command></term>
+        <listitem>
+          <para>
+            инструмент документации <application>Python</application>.
+          </para>
+          <indexterm zone="ch-system-Python">
+            <primary sortas="b-pydoc3">pydoc3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="python3">
+        <term><command>python3</command></term>
+        <listitem>
+          <para>
+            динамический, интерактивный, объектно-ориентированный язык программирования.
+          </para>
+          <indexterm zone="ch-system-Python">
+            <primary sortas="b-python3">python3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+

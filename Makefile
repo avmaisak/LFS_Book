@@ -26,7 +26,7 @@ ifeq ($(REV), sysv)
   BASEDIR         ?= ~/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
-  DUMPDIR         ?= ~/lfs-commands
+  DUMPDIR         ?= ~/cross-lfs-commands
 else
   BASEDIR         ?= ~/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
@@ -46,9 +46,6 @@ book: validate profile-html
 	@echo "Copying CSS code and images..."
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
-	$(Q)pushd $(BASEDIR)/ > /dev/null;                     \
-       sed -i -e "s@../stylesheets@stylesheets@g" *.html; \
-       popd > /dev/null
 
 	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp images/*.png $(BASEDIR)/images
@@ -89,15 +86,7 @@ pdf: validate
 
 	$(Q)mkdir -p $(BASEDIR)
 
-	@echo "Copying fonts to tmp dir"
-	$(Q)cp pdf/fonts $(RENDERTMP) -r
-
-	@echo "Creating configuration file"
-	$(Q)python3 pdf/change_config.py pdf/config.xml $(RENDERTMP)/user_config.xml
-
-	@echo "Running fop"
-	$(Q)fop -q  $(RENDERTMP)/lfs-pdf.fo -c $(RENDERTMP)/user_config.xml $(BASEDIR)/$(PDF_OUTPUT) 2>fop.log
-
+	$(Q)fop -q  $(RENDERTMP)/lfs-pdf.fo $(BASEDIR)/$(PDF_OUTPUT) 2>fop.log
 	@echo "$(BASEDIR)/$(PDF_OUTPUT) created"
 	@echo "fop.log created"
 
@@ -107,7 +96,8 @@ nochunks: validate profile-html
                 --stringparam rootid "$(ROOT_ID)"      \
                 --output $(BASEDIR)/$(NOCHUNKS_OUTPUT) \
                 stylesheets/lfs-nochunks.xsl           \
-                $(RENDERTMP)/lfs-html2.xml
+                $(RENDERTMP)/lfs-html.xml
+#                $(RENDERTMP)/lfs-html2.xml
 
 	@echo "Running Tidy..."
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
@@ -152,7 +142,7 @@ validate: tmpdir
 	$(Q)./aux-file-data.sh $(RENDERTMP)/lfs-full.xml
 	@echo "Validation complete."
 
-profile-html:
+profile-html: 
 	@echo "Generating profiled XML for XHTML..."
 	$(Q)xsltproc --nonet                              \
                 --stringparam profile.condition html \

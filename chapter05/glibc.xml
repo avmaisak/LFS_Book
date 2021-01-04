@@ -18,14 +18,14 @@
 
   <indexterm zone="ch-tools-glibc">
     <primary sortas="a-Glibc">Glibc</primary>
-    <secondary>tools</secondary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="../chapter06/glibc.xml"
+    href="../chapter08/glibc.xml"
     xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
@@ -33,81 +33,96 @@
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&glibc-ch5-sbu;</seg>
-        <seg>&glibc-ch5-du;</seg>
+        <seg>&glibc-tmp-sbu;</seg>
+        <seg>&glibc-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Glibc</title>
+    <title>Установка Glibc</title>
 
-    <para>В документации пакета Glibc рекомендуется выполнять сборку в отдельном каталоге:</para>
+    <para>Сначала создайте символическую ссылку для соответствия стандарту LSB. Дополнительно,
+    на x86_64-платформе создание символической ссылки необходимо для корректной
+    работы динамичского загрузчика библиотек:</para>
+
+<screen><userinput remap="pre">case $(uname -m) in
+    i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
+    ;;
+    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
+            ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
+    ;;
+esac</userinput></screen>
+
+    <para>Некоторые программы Glibc используют несоответствующий FHS 
+    (иерархия файловой системы) каталог <filename class="directory">/var/db</filename>
+    для хранения своих данных.
+    Примените следующий патч чтобы подобные программы хранили свои данные
+    в каталогах в соответствии с FHS:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch</userinput></screen>
+
+    <para>Документация пакета Glibc рекомендует выполнять сборку в 
+    отдельном каталоге:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Подготовьте пакет Glibc к компиляции:</para>
+    <para>Подготовка Glibc к компиляции:</para>
 
 <screen><userinput remap="configure">../configure                             \
-      --prefix=/tools                    \
+      --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;             \
-      --with-headers=/tools/include</userinput></screen>
+      --enable-kernel=&min-kernel;                \
+      --with-headers=$LFS/usr/include    \
+      libc_cv_slibdir=/lib</userinput></screen>
 <!--
       libc_cv_forced_unwind=yes          \
-      libc_cv_c_cleanup=yes</userinput></screen>
- -->
+      libc_cv_c_cleanup=yes</userinput></screen> -->
+
     <variablelist>
-      <title>Значение параметров конфигурации:</title>
+      <title>Значение параметров configure:</title>
 
       <varlistentry>
         <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>
         <listitem>
-          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять кросс-компиляцию пакета, используя кросс-компоновщик и кросс-компилятор из каталога <filename class="directory">/tools</filename>.</para>
+          <para>Комбинация этих аргументов указывает системе сборки Glibc выполнять 
+          кросс-компиляцию пакета, используя кросс-компоновщик и кросс-компилятор 
+          из каталога <filename class="directory">$LFS/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-kernel=&min-kernel;</parameter></term>
         <listitem>
-          <para>Аргумент позволяет выполнять компиляцию с поддержкой ядер начиная с версии &min-kernel; и более поздних. Поддержка более старых ядер не будет включена.</para>
+          <para>Указывает Glibc компилировать библиотеку с поддержкой Linux ядер
+          от &min-kernel; до более поздних. Поддержка более старых ядер не будет включена.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-headers=/tools/include</parameter></term>
+        <term><parameter>--with-headers=$LFS/usr/include</parameter></term>
         <listitem>
-          <para>Аргумент позволяет выполнять компиляцию с указанием заголовочных файлов, установленных в каталог с временным набором инструментов, таким образом пакету будет известно, какие функции ядра используются, и будет выполнена оптимизация.</para>
+          <para>Аргумент говорит Glibc компилировать себя с заголовочными файлами,
+          установленными в каталог $LFS/usr/include. Таким образом пакету будет
+          точно известно, какие функции ядра используются, и будет возможна
+          оптимизация.</para>
         </listitem>
       </varlistentry>
 
-      <!-- <varlistentry>
-        <term><parameter>libc_cv_forced_unwind=yes</parameter></term>
+      <varlistentry>
+        <term><parameter>libc_cv_slibdir=/lib</parameter></term>
         <listitem>
-          <para>компоновщик, установленный в главе <xref linkend="ch-tools-binutils-pass1"/> был кросс-компилирован и не может использоваться, пока не будет установлен пакет Glibc. Это означает, что тест конфигурирования для функции force-unwind будет провален,поскольку он полагается на рабочий компоновщик. Значение аргумента libc_cv_forced_unwind=yes передается, чтобы сообщить, сценарию <command>configure</command> что поддержка функция force-unwind доступна без необходимости проведения тестирования.</para>
+          <para>Гарантирует установку библиотеки в /lib
+          вместо /lib64 включенного по умолчанию для 64-битных машин.</para>
         </listitem>
       </varlistentry>
-      <varlistentry>
-        <term><parameter>libc_cv_c_cleanup=yes</parameter></term>
-        <listitem>
-          <para>Аналогично, передается значение аргумента libc_cv_c_cleanup=yes сценарию <command>configure</command> для того, чтобы тестирование не выполнялось и поддержка обработки очистки была сконфигурирована.</para>
-        </listitem>
-      </varlistentry> -->
-<!--  <varlistentry>
-        <term><parameter>libc_cv_ctors_header=yes</parameter></term>
-        <listitem>
-          <para>Similarly, we pass libc_cv_ctors_header=yes through to the
-          <command>configure</command> script so that the test is skipped and
-          gcc constructor support is configured.</para>
-        </listitem>
-      </varlistentry>-->
 
     </variablelist>
 
-    <para>На этапе конфигурирования могут появиться следующие предупреждения:</para>
+    <para>На текущем этапе возможны следующие предупреждения:</para>
 
     <blockquote>
 <screen><computeroutput>configure: WARNING:
@@ -117,41 +132,80 @@ cd       build</userinput></screen>
 *** Check the INSTALL file for required versions.</computeroutput></screen>
     </blockquote>
 
-    <para>Отсутствие или несовместимость программы <command>msgfmt</command> безвредно. Это программа является частью пакета Gettext, который должен быть предоставлен хост-системой.</para>
+    <para>Обычно является безопасным отсутствие или несовместимость 
+    программы <command>msgfmt</command>. <command>msgfmt</command> является 
+    частью пакета Gettext, который предоставляет хост-система.</para>
 
-    <note><para>Сообщалось, что этот пакет может не компилироваться при выполнении процедуры "параллельной сборки". Если это произойдет, повторите команду make с аргументом "-j1".</para></note>
+    <note><para>Сообщалось, что ошибка возникает при выполнении
+    "параллельной сборки". Если такое случилось, повторите команду make 
+    с аргументом "-j1".</para></note>
 
-    <para>Скомпилируйте пакет:</para>
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Установите пакет:</para>
+    <para>Установка пакета:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+    <warning><para>Если переменная <envar>LFS</envar> установленна некорректно и вы,
+    несмотря на рекомендации, работаете от имени root, то последующая
+    команда установит созданный glibc на вашу хост-систему, что, скорее всего, 
+    сделает систему нерабочей.
+    Убедитесь, что переменная корректно установлена для пользователя
+    <systemitem class="username">lfs</systemitem>.</para></warning>
 
-  <caution>
-    <para>На этом этапе, необходимо остановиться, и проверить что базовый функционал (компиляция и линовка) созданных инструментов работает так, как необходимо. Чтобы выполнить проверку работоспособности, выполните следующие команды:</para>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
+
+    <variablelist>
+      <title>Значение аргументов <command>make install</command>:</title>
+
+      <varlistentry>
+        <term><parameter>DESTDIR=$LFS</parameter></term>
+        <listitem>
+          <para>Переменная make <envar>DESTDIR</envar> используется почти для всех
+          пакетов и указывает путь для установки собранного пакета.
+          Если переменная не указана, то значением по умолчанию является
+          корневой каталог (<filename class="directory">/</filename>).
+          Здесь пакет устанавливается в <filename class="directory">$LFS
+          </filename>, который станет корневым каталогом после <xref linkend=
+          "ch-tools-chroot"/>.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <caution>
+      <para>На этом этапе необходимо остановиться и убедиться, что базовый функционал
+      (компиляция и линовка) созданных инструментов работает как и ожидается.
+      Для проверки работоспособности, выполните следующие команды:</para>
 
 <screen><userinput>echo 'int main(){}' &gt; dummy.c
 $LFS_TGT-gcc dummy.c
-readelf -l a.out | grep ': /tools'</userinput></screen>
+readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
-    <para>Если все работает правильно, не должно быть ошибок, и вывод последней команды будет иметь вид:</para>
+      <para>Если все работает правильно, то ошибок не будет, а вывод последней команды 
+      будет иметь вид:</para>
 
-<screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
+<screen><computeroutput>[Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
 
-    <para>Обратите внимание, что на 32-битной машине наименование интерпретатора будет:<filename>/tools/lib/ld-linux.so.2</filename>.</para>
+      <para>Обратите внимание - на 32-битной машине интерпретатор
+      будет называться <filename>/lib/ld-linux.so.2</filename>.</para>
 
-    <para>Если вывод не соответствует тому, как показано выше, или вообще вывода нет, значит,что-то не так. Изучите и повторите шаги выше, чтобы выяснить
-     где проблема и устраните её. Важно, устранить проблему до того, как вы продолжите следующие шаги.</para>
+      <para>Если вывод не похож на приведенный выше или вообще отсутствует, то
+      что-то пошло не так. Исследуйте предыдущие шаги и повторите их, чтобы
+      обозначить проблему и устраните её. Важно устранить проблему до того, как
+      вы продвинетесь дальше.</para>
 
-    <para>Когда все будет хорошо, очистите тестовые файлы:</para>
+    <para>Если все готово, очистите тестовые файлы:</para>
 
 <screen><userinput>rm -v dummy.c a.out</userinput></screen>
 
-  </caution>
+    </caution>
 
-  <note><para>При сборке пакета Binutils в следующем разделе, будут производиться дополнительные проверки, что временный набор инструментов был собран правильно. Если пакет Binutils не получится скомпилировать, или сконфигурировать, это будет явный признак того, что что-то пошло не так с предыдущими установками пакетов Binutils, GCC, или Glibc.</para></note>
+    <note><para>Сборка пакетов в следующей главе будет дополнительной проверкой
+    корректности сборки временных инструментов.
+    Если некоторые пакеты, в частности binutils-pass2 или gcc-pass2, не удается
+    скомпилировать, это признак проблем установки Binutils, GCC
+    или Glibc.</para></note>
 
   </sect2>
 

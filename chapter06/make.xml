@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
 ]>
-
-<sect1 id="ch-system-make" role="wrap">
+<sect1 id="ch-tools-make" role="wrap">
   <?dbhtml filename="make.html"?>
 
   <sect1info condition="script">
@@ -16,83 +15,68 @@
 
   <title>Make-&make-version;</title>
 
-  <indexterm zone="ch-system-make">
+  <indexterm zone="ch-tools-make">
     <primary sortas="a-Make">Make</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит программы которые автоматизируют процесс преобразования файлов из одной формы в другую.
-        Чаще всего это компиляция исходного кода в объектные файлы и последующая компоновка в исполняемые файлы или библиотеки.
-        Он необходим для сборки пакетов LFS.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/make.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&make-ch6-sbu;</seg>
-        <seg>&make-ch6-du;</seg>
+        <seg>&make-tmp-sbu;</seg>
+        <seg>&make-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета Make</title>
+    <title>Установка Make</title>
 
-    <para>Необходимо обойти ошибку, вызванную glibc-2.27 и в более поздних версиях:</para>
+    <para>Подготовка Make к компиляции:</para>
 
-<screen><userinput remap="pre">sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c</userinput></screen>
-    <para>Подготовьте пакет Make к компиляции:</para>
+<screen><userinput remap="configure">./configure --prefix=/usr   \
+            --without-guile \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)</userinput></screen>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+    <variablelist>
+      <title>Значение новых параметров конфигурации:</title>
 
-    <para>Скомпилируйте пакет:</para>
+      <varlistentry>
+        <term><parameter>--without-guile</parameter></term>
+        <listitem>
+          <para>Не обращая внимания на кросс-компиляцию скрипт configure попытается
+          использовать guile с хост-системы, если найдет его, а это вызовет ошибку сборки. 
+          Текущая опция предупреждает возникнование такой проблемы.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Набор тестов должен знать, где находятся файлы perl.
-     Для этого будем использовать переменную окружения. Для выполнения тестов, выполните следующую команду:</para>
+    <para>Установка пакета:</para>
 
-<screen><userinput remap="test">make PERL5LIB=$PWD/tests/ check</userinput></screen>
-
-    <para>Установите пакет:</para>
-
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
+  <sect2 role="content">
+    <title/>
 
-  <sect2 id="contents-make" role="content">
-    <title>Содержимое пакета Make</title>
-
-    <segmentedlist>
-      <segtitle>Установленная программа</segtitle>
-
-      <seglistitem>
-        <seg>make</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="make">
-        <term><command>make</command></term>
-        <listitem>
-          <para>Автоматически определяет, какие части пакета должны
-           быть (повторно) скомпилированы, и затем выдает соответствующие команды</para>
-          <indexterm zone="ch-system-make make">
-            <primary sortas="b-make">make</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    <para>Подробная информация о пакете находится в
+    <xref linkend="contents-make" role="."/></para>
 
   </sect2>
 

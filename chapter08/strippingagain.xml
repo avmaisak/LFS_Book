@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-strippingagain">
+  <?dbhtml filename="strippingagain.html"?>
+
+  <title>Повторная очистка от отладочных символов</title>
+
+  <para>Этот раздел является необязательным. Если вы не
+  программист и не планируете выполнять отладку системного программного обеспечения,
+  то размер системы можно сократить примерно на 2 GB удалив отладочные символы из
+  двоичных файлов и библиотек. Такая операция не вызовет проблем кроме дальнейшей
+  невозможности отладки программного обеспечения.</para>
+
+  <para>Большинство пользователей, использующих приведенные ниже команды,
+  не испытывают никаких сложностей. Тем не менее, легко опечататься и сделать
+  новую систему непригодной для использования. Поэтому будет хорошей идеей перед запуском
+  команд <command>strip</command> создать резервную копию системы LFS в её 
+  текущем состоянии.</para>
+
+  <para>Сначала поместите отладочные символы для выбранных библиотек в отдельные файлы.
+  Эта отладочная информация понадобится для запуска регрессионных тестов, которые
+  используют <ulink
+  url='&blfs-book;/general/valgrind.html'>valgrind</ulink> или <ulink
+  url='&blfs-book;/general/gdb.html'>gdb</ulink> позднее в книге BLFS.
+  </para>
+
+<!-- also of interest are libgfortan, libgo, libgomp, and libobjc from GCC -->
+
+<!--<screen><userinput>save_lib="ld-2.25.so libc-2.25.so libpthread-2.25.so libthread_db-1.0.so"-->
+<screen><userinput>save_lib="ld-&glibc-version;.so libc-&glibc-version;.so libpthread-&glibc-version;.so libthread_db-&libthread_db-version;.so"
+
+cd /lib
+
+for LIB in $save_lib; do
+    objcopy --only-keep-debug $LIB $LIB.dbg 
+    strip --strip-unneeded $LIB
+    objcopy --add-gnu-debuglink=$LIB.dbg $LIB 
+done    
+
+save_usrlib="libquadmath.so.&libquadmath-version; libstdc++.so.&libstdcpp-version;
+             libitm.so.&libitm-version; libatomic.so.&libatomic-version;" <!-- libcilkrts.so.&libcilkrts-version;-->
+
+cd /usr/lib
+
+for LIB in $save_usrlib; do
+    objcopy --only-keep-debug $LIB $LIB.dbg
+    strip --strip-unneeded $LIB
+    objcopy --add-gnu-debuglink=$LIB.dbg $LIB
+done
+
+unset LIB save_lib save_usrlib</userinput></screen>
+
+<!--  <para>Перед выполнением очистки тщательно следите за тем, чтобы
+  ни один из исполняемых файлов, который планируется удалить, не был запущен:</para>
+
+<screen role="nodump"><userinput>exec /tools/bin/bash</userinput></screen>
+  
+  <para>Теперь двоичные файлы и библиотеки могут быть безопасно очищены:</para>
+-->
+  <para>Теперь двоичные файлы и библиотеки могут быть очищены:</para>
+<screen><userinput>find /usr/lib -type f -name \*.a \
+   -exec strip --strip-debug {} ';'
+
+find /lib /usr/lib -type f -name \*.so* ! -name \*dbg \
+   -exec strip --strip-unneeded {} ';'
+
+find /{bin,sbin} /usr/{bin,sbin,libexec} -type f \
+    -exec strip --strip-all {} ';'</userinput></screen>
+
+  <para>Большое количество файлов сообщит о невозможности распознать формат
+  файлов (format not recognized). Такие предупреждения можно игнорировать. Они указывают,
+  что файлы являются сценариями, а не двоичными файлами.</para>
+
+</sect1>

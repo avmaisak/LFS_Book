@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-finish-reboot">
+  <?dbhtml filename="reboot.html"?>
+
+  <title>Перезагрузка системы</title>
+
+  <para>Теперь, когда все программного обеспечение установлено, наступило 
+  время перезагрузить компьютер. Тем не менее, стоит быть предупрежденным.
+  Система, которую вы собрали
+  очень минималистична и, скорее всего, её не хватит для продвижения вперед.
+  Пока вы внутри chroot окружения, установка нескольких дополнительных пакетов из
+  книги BLFS даст вам преимущество перед обычной загрузкой LFS. Вот несколько
+  советов:</para>
+
+  <itemizedlist>
+
+    <listitem><para>Текстовый браузер вроде <ulink
+    url='&blfs-book;basicnet/lynx.html'>Lynx</ulink>
+    позволит легко читать книгу BLFS в одном терминале пока вы будете собирать пакеты
+    в другом.</para></listitem>
+
+    <listitem><para>Пакет <ulink
+    url='&blfs-book;general/gpm.html'>GPM</ulink> позволит копировать и вставлять
+    текст в ваших виртуальных терминалах.</para></listitem>
+
+    <listitem><para>Если статичный IP адрес не подходит для вашей сети, 
+    может понадобится установка пакета
+    <ulink url='&blfs-book;basicnet/dhcpcd.html'>dhcpcd</ulink>
+    или его клиентской части 
+    <ulink url='&blfs-book;basicnet/dhcp.html'>dhcp</ulink>.</para></listitem>
+
+    <listitem><para>Установка <ulink
+    url='&blfs-book;postlfs/sudo.html'>sudo</ulink> может быть полезной для
+    сборки пакетов не-root-пользователем, а так же легкой установки 
+    полученных пакетов в вашу новую систему.</para></listitem>
+
+    <listitem><para>Если вы хотите удаленно подключаться к своей новой системе
+    из удобного графического окружения, установите <ulink
+    url='&blfs-book;postlfs/openssh.html'>openssh</ulink>. 
+    </para></listitem>
+
+    <listitem><para>Для упрощения загрузки файлов из интернер установите
+    <ulink url='&blfs-book;basicnet/wget.html'>wget</ulink>.
+    </para></listitem>
+
+    <listitem><para>Если ваш диск использует таблицу разделов GUID (GPT), то
+    <ulink url='&blfs-book;postlfs/gptfdisk.html'>gptfdisk</ulink> или <ulink
+    url='&blfs-book;postlfs/parted.html'>parted</ulink> могут быть полезны.
+    </para></listitem>
+
+    <listitem><para>И наконец, на текущем этапе стоит еще раз просмотреть следующие
+    файлы конфигурации.</para>
+
+      <itemizedlist>
+        <listitem><para>/etc/bashrc                  </para></listitem>
+        <listitem><para>/etc/dircolors               </para></listitem>
+        <listitem><para>/etc/fstab                   </para></listitem>
+        <listitem><para>/etc/hosts                   </para></listitem>
+        <listitem><para>/etc/inputrc                 </para></listitem>
+        <listitem><para>/etc/profile                 </para></listitem>
+        <listitem><para>/etc/resolv.conf             </para></listitem>
+        <listitem><para>/etc/vimrc                   </para></listitem>
+        <listitem><para>/root/.bash_profile          </para></listitem>
+        <listitem><para>/root/.bashrc                </para></listitem>
+        <listitem revision="sysv"><para>/etc/sysconfig/ifconfig.eth0 </para></listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+
+  <para>Теперь, когда всё готово, давайте загрузим нашу новую блестящую LFS
+  сборку в первый раз! Для начала выйдите из chroot окружения:</para>
+
+<screen><userinput>logout</userinput></screen>
+
+  <para>Теперь отмонтируйте виртуальные файловые системы:</para>
+
+<screen><userinput>umount -v $LFS/dev/pts
+umount -v $LFS/dev
+umount -v $LFS/run
+umount -v $LFS/proc
+umount -v $LFS/sys</userinput></screen>
+
+  <para>Если было создано несколько дисковых разделов, то сначала отключайте дочерние,
+  а затем основную. Например:</para>
+
+<screen role="nodump"><userinput>umount -v $LFS/usr
+umount -v $LFS/home
+umount -v $LFS</userinput></screen>
+
+  <para>Отмонтируйте саму систему LFS:</para>
+
+<screen><userinput>umount -v $LFS</userinput></screen>
+
+  <para>Теперь перезагрузите систему:</para>
+
+<screen role="nodump"><userinput>shutdown -r now</userinput></screen>
+
+  <para>Предполагая, что загрузчик GRUB был настроен ранее, меню загрузки
+  выберет <emphasis>LFS &version;</emphasis> автоматически.</para>
+
+  <para>После загрузки система LFS готова к работе и установке нового программного 
+  обеспечения, если это необходимо.</para>
+
+</sect1>

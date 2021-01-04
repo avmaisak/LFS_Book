@@ -5,50 +5,64 @@
   %general-entities;
 ]>
 
-<sect1 id="space-mounting">
+<sect1 id="ch-partitioning-mounting">
   <?dbhtml filename="mounting.html"?>
 
   <title>Монтирование нового раздела</title>
 
-  <para>Теперь, когда файловые системы были созданы, необходимо сделать разделы доступными. Чтобы это сделать, необходимо примонтировать разделы в выбранные точки монтирования. В книге предполагается что файловая система монтируется в каталог, который был указан в переменной окружения <envar>LFS</envar>, как было описано в предыдущем разделе книги. </para>
+  <para>Теперь, когда файловая система создана, её раздел необходимо сделать доступным.
+  Для этого необходимо примонтировать раздел в выбранную точку монтирования. 
+  В книге предполагается, что файловая система монтируется в каталог указанный
+  в переменной окружения <envar>LFS</envar>, как описано в предыдущем разделе.</para>
 
-  <para>Создадим точку монтирования и выполним монтирование файловой системы LFS, выполнив команду:</para>
+  <para>Создайте точку монтирования и примонтируйте файловую систему LFS командой:</para>
 
 <screen role="nodump"><userinput>mkdir -pv $LFS
 mount -v -t ext4 /dev/<replaceable>&lt;xxx&gt;</replaceable> $LFS</userinput></screen>
 
-  <para>Замените <replaceable>&lt;xxx&gt;</replaceable> наименованием форматированного раздела LFS.</para>
+  <para>Замените <replaceable>&lt;xxx&gt;</replaceable> на имя раздела LFS.</para>
 
-  <para>Если вы используете несколько разделов (например один для <filename class="directory">/</filename>, другой для
-  <filename class="directory">/usr</filename>), выполните их монтирование выполнив команды:</para>
+  <para>Если для LFS используется несколько разделов (например, один для
+  <filename class="directory">/</filename>, другой для
+  <filename class="directory">/usr</filename>), то примонтируйте их командами:</para>
 
 <screen role="nodump"><userinput>mkdir -pv $LFS
 mount -v -t ext4 /dev/<replaceable>&lt;xxx&gt;</replaceable> $LFS
 mkdir -v $LFS/usr
 mount -v -t ext4 /dev/<replaceable>&lt;yyy&gt;</replaceable> $LFS/usr</userinput></screen>
 
-  <para>Замените <replaceable>&lt;xxx&gt;</replaceable> and
-  <replaceable>&lt;yyy&gt;</replaceable> соответствующим наименованием раздела.</para>
+  <para>Замените <replaceable>&lt;xxx&gt;</replaceable> и
+  <replaceable>&lt;yyy&gt;</replaceable> на соответствующие имена разделов.</para>
 
-  <para>Убедитесь что монтирование не было выполнено с  ограниченными правами (такими как <option>nosuid</option> or
-  <option>nodev</option> опциями). Выполните команду <command>mount</command> без каких либо параметров чтобы посмотреть какие опции заданы для смонтированных разделов LFS. Если опции  <option>nosuid</option> и (или) <option>nodev</option> установлены, разделы необходимо размонтировать и выполнить монтирование заново.</para>
+  <para>Убедитесь, что эти новые разделы не было примонтированы со слишком
+  жесткими ограниченниями (такими опциями как <option>nosuid</option> или
+  <option>nodev</option>). Выполните команду <command>mount</command> без 
+  параметров, чтобы увидеть какие опции заданы для смонтированных разделов LFS.
+  Если опции  <option>nosuid</option> и/или <option>nodev</option> установлены, то
+  разделы необходимо перемонтировать без них.</para>
 
-  <warning><para>В приведенных выше инструкциях предполагается, что вы не будете перезапускать
-   ваш компьютер в процессе сборки LFS. Если вы выключите компьютер, вам потребуется выполнять монтирование повторно каждый раз, после перезагрузки хост-системы. Вы можете отредактировать файл /etc/fstab, чтобы разделы автоматически монтировались после перезагрузки. Например:
+  <warning><para>Приведенные выше инструкции предполагают, что вы не будете перезапускать
+  компьютер в процессе сборки LFS. При перезагрузке нужно будет либо каждый раз повторно
+  монтировать раздел LFS, либо отредактировать файл /etc/fstab, чтобы разделы монтировались
+  автоматически. Например:
+
 <screen role="nodump">/dev/<replaceable>&lt;xxx&gt;</replaceable>  /mnt/lfs ext4   defaults      1     1</screen>
 
-  Если вы используете другие разделы, добавьте их также.
+  Если вы используете несколько разделов, не забудьте добавить и их тоже.
 
   </para></warning>
 
 
-  <para>Если вы используете <systemitem
-  class="filesystem">swap</systemitem> раздел, убедитесь что он включен, используя команду <command>swapon</command>:</para>
+  <para>Если используется <systemitem
+  class="filesystem">swap</systemitem> раздел команда <command>swapon</command>
+  поможет убедится, что он включен:</para>
 
 <screen role="nodump"><userinput>/sbin/swapon -v /dev/<replaceable>&lt;zzz&gt;</replaceable></userinput></screen>
 
-  <para>Замените <replaceable>&lt;zzz&gt;</replaceable> названием раздела <systemitem class="filesystem">swap</systemitem>.</para>
-  <para>Теперь, когда место для работы организовано, самое время приступить к загрузке пакетов.</para>
+  <para>Замените <replaceable>&lt;zzz&gt;</replaceable> на имя 
+  <systemitem class="filesystem">swap</systemitem> раздела.</para>
+
+  <para>Теперь, когда рабочее место организовано, пришло время загрузить пакеты.</para>
 
 </sect1>
 

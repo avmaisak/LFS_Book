@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-generalinstructions"
+       xreflabel="Общие инструкции по компиляции">
+  <?dbhtml filename="generalinstructions.html"?>
+
+  <title>Общие инструкции по компиляции</title>
+
+  <para>Во время сборки пакетов действуют несколько предположений:</para>
+
+  <itemizedlist>
+
+  <listitem>
+    <para>Several of the packages are patched before compilation, but only when
+    the patch is needed to circumvent a problem. A patch is often needed in
+    both this and the following chapters, but sometimes in only one location.
+    Therefore, do not be concerned if instructions for a downloaded patch seem
+    to be missing.  Warning messages about <emphasis>offset</emphasis> or
+    <emphasis>fuzz</emphasis> may also be encountered when applying a patch. Do
+    not worry about these warnings, as the patch was still successfully
+    applied.</para>
+  </listitem>
+
+  <listitem>
+    <para>Во время компиляции большинства пакетов на экране будут пробегать несколько
+    предупржедений. Это нормально и будет безопасно проигнорировать их.
+    Эти сообщения предупреждают об устаревшем, но все еще валидном синтаксисе Си или C++.
+    Стандарты Си меняются довольно часто, а некоторые пакеты все еще используют устаревшие
+    стандарты. Это не является ошибкой, но выдает предупрждение.</para>
+  </listitem>
+
+  <listitem>
+    <para>Последний раз убедитесь, что переменная окружения <envar>LFS</envar>
+    установлена правильно:</para>
+
+<screen role="nodump"><userinput>echo $LFS</userinput></screen>
+
+    <para>Вывод должен указывать на точку монтирования LFS раздела. Это
+    <filename class="directory">/mnt/lfs</filename>, если вы испульзовали наш пример.</para>
+  </listitem>
+
+  <listitem>
+
+    <para>И наконец, еще две вещи следует выделить:</para>
+
+    <important>
+
+      <para>Инструкции сборки подразумевают, что условия <xref
+      linkend='ch-partitioning-hostreqs'/>, включая символические ссылки, были
+      соблюдены:</para>
+
+      <itemizedlist role='important'>
+
+        <listitem override='bullet'><para><command>bash</command> установлена используемой
+        оболочкой.</para></listitem>
+
+        <listitem override='bullet'><para><command>sh</command> это символическая
+        ссылка на <command>bash</command>.</para></listitem>
+
+        <listitem override='bullet'><para><command>/usr/bin/awk</command> это симовлическая
+        ссылка на <command>gawk</command>.</para></listitem>
+
+        <listitem override='bullet'><para><command>/usr/bin/yacc</command> это символическая
+        ссылка на <command>bison</command> или на небольшой скрипт запускающий
+        bison.</para></listitem>
+
+      </itemizedlist>
+    </important>
+
+    <important>
+      <para>Еще раз процесс сборки по пунктам:</para>
+
+      <orderedlist numeration="arabic" spacing="compact">
+        <listitem>
+          <para>Поместите все исходники и патчи в каталог доступный из среды chroot,
+          например <filename class="directory">/mnt/lfs/sources/</filename>.<!-- Do
+          <emphasis>not</emphasis> put sources in
+	  <filename class="directory">/mnt/lfs/tools/</filename>. --></para>
+        </listitem>
+        <listitem>
+          <para>Перейдите в каталог с исходниками.</para>
+        </listitem>
+        <listitem id='buildinstr' xreflabel='Инструкции по сборке пакета'>
+          <para>Для каждого пакета:</para>
+          <orderedlist numeration="loweralpha" spacing="compact">
+            <listitem>
+              <para>С помощью программы <command>tar</command> распакуйте нужный пакет.
+              В <xref linkend="chapter-cross-tools"/> и
+              <xref linkend="chapter-temporary-tools"/> убедитесь, что во время распаковки
+              пакета работаете от имени пользователя <emphasis>lfs</emphasis>.</para>
+            </listitem>
+            <listitem>
+              <para>Перейдите в каталог созданный распаковкой пакета.</para>
+            </listitem>
+            <listitem>
+              <para>Следуйте инструкциям книги по сборке пакета.</para>
+            </listitem>
+            <listitem>
+              <para>Вернитесь в каталог исходников.</para>
+            </listitem>
+            <listitem>
+              <para>Удалите каталог с распакованными исходниками, если нет инструкций
+              поступить иначе.</para>
+            </listitem>
+          </orderedlist>
+        </listitem>
+      </orderedlist>
+    </important>
+  </listitem>
+
+  </itemizedlist>
+
+</sect1>

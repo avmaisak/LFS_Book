@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-file" role="wrap">
+<sect1 id="ch-tools-file" role="wrap">
   <?dbhtml filename="file.html"?>
 
   <sect1info condition="script">
@@ -16,89 +16,55 @@
 
   <title>File-&file-version;</title>
 
-  <indexterm zone="ch-system-file">
+  <indexterm zone="ch-tools-file">
     <primary sortas="a-File">File</primary>
+    <secondary>инструменты</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Пакет содержит утилиты для определения типов файлов. Некоторым пакетам требуется,
-				чтобы этот пакет был установлен.</para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/file.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&file-ch6-sbu;</seg>
-        <seg>&file-ch6-du;</seg>
+        <seg>&file-tmp-sbu;</seg>
+        <seg>&file-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Установка пакета File</title>
+    <title>Установка File</title>
 
-    <para>Подготовьте пакет File к компиляции:</para>
+    <para>Подготовка File к компиляции:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr --host=$LFS_TGT</userinput></screen>
 
-    <para>Скомпилируйте пакет:</para>
+<!-- devs: если здесь использовать - -build, то собирающая система захочет
+     скомпилировать файл сигнатуры с "file" на собирающей системе, но остановится, если
+     версии будут несовпадать. Один из вариантов решения - предварительно скомпилировать "file"
+     на собирающей системе, но проще заставить систему думать, что это не кросс-компиляция и 
+     просто использовать полученный "file". -->
+    <para>Компиляция пакета:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Для выполнения тестов, выполните команду:</para>
+    <para>Установка пакета:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
-
-    <para>Установите пакет:</para>
-
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
-
-  <sect2 id="contents-file" role="content">
-    <title>Содержимое пакета File</title>
-
-    <segmentedlist>
-      <segtitle>Установленные программы</segtitle>
-      <segtitle>Установленная библиотека</segtitle>
-
-      <seglistitem>
-        <seg>file</seg>
-        <seg>libmagic.so</seg>
-      </seglistitem>
-    </segmentedlist>
-
-    <variablelist>
-      <bridgehead renderas="sect3">Краткое описание</bridgehead>
-      <?dbfo list-presentation="list"?>
-      <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="file">
-        <term><command>file</command></term>
-        <listitem>
-          <para>Пытается классифицировать каждый переданный файл; он делает это, выполняя несколько тестов: тесты файловой системы, тесты магических чисел и языковые тесты</para>
-          <indexterm zone="ch-system-file file">
-            <primary sortas="b-file">file</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libmagic">
-        <term><filename class="libraryfile">libmagic</filename></term>
-        <listitem>
-          <para>Подпрограммы для распознавания магических чисел, используемые программой <command>file</command></para>
-          <indexterm zone="ch-system-file libmagic">
-            <primary sortas="c-libmagic">libmagic</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+  <sect2 role="content">
+    <title/>
+    <para>Подробная информация о пакете находится в <xref linkend="contents-file" role="."/></para>
 
   </sect2>
 

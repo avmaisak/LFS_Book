@@ -1,8 +1,8 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='ISO-8859-1'?>
 
 <!--
-$LastChangedBy: matthew $
-$Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
+$LastChangedBy: pierre $
+$Date: 2020-03-13 17:38:37 +0300 (Пт, 13 мар 2020) $
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -13,7 +13,7 @@ $Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
        Replaces {docbook-xsl}/xhtml/profile-docbook.xsl -->
 
   <!-- Upstream XHTML templates -->
-  <xsl:import href="docbook-xsl-1.78.1/xhtml/docbook.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml/docbook.xsl"/>
 
   <!-- Fix encoding issues with default UTF-8 output of the xhtml stylesheet -->
   <xsl:output method="html" encoding="UTF-8" indent="no" />
@@ -99,14 +99,14 @@ $Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
       <xsl:text>
 /* Global settings */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: verdana, tahoma, helvetica, arial, sans-serif;
   text-align: left;
   background: #fff;
   color: #222;
   margin: 1em;
   padding: 0;
-  font-size: 1.1rem;
-  line-height: 1.9rem;
+  font-size: 1em;
+  line-height: 1.2em
 }
 
 
@@ -176,8 +176,8 @@ div.sect1, div.appendix {
 
 /* Headers */
 h1, h2, h3, h4, h5, h6, b, .strong {
-  color: #283593;
-  font-weight: 500;
+  color: #000;
+  font-weight: bold;
   line-height: 1em;
 }
 

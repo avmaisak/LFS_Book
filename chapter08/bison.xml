@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-bison" role="wrap">
+  <?dbhtml filename="bison.html"?>
+
+  <sect1info condition="script">
+    <productname>bison</productname>
+    <productnumber>&bison-version;</productnumber>
+    <address>&bison-url;</address>
+  </sect1info>
+
+  <title>Bison-&bison-version;</title>
+
+  <indexterm zone="ch-system-bison">
+    <primary sortas="a-Bison">Bison</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Bison содержит генератор парсеров.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&bison-fin-sbu;</seg>
+        <seg>&bison-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Bison</title>
+
+    <para>Подготовка Bison к компиляции: </para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/bison-&bison-version;</userinput></screen>
+
+    <para>Компиляция пакета:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Тестирование (примерно 5.5 SBU):</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Установка пакета:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-bison" role="content">
+    <title>Содержимое Bison</title>
+
+    <segmentedlist>
+      <segtitle>&contentprogs;</segtitle>
+      <segtitle>&contentlibs;</segtitle>
+      <segtitle>&contentdirs;</segtitle>
+
+      <seglistitem>
+        <seg>bison и yacc</seg>
+        <seg>liby.a</seg>
+        <seg>/usr/share/bison</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="bison">
+        <term><command>bison</command></term>
+        <listitem>
+          <para>Генерирует программу, на основе серии правил, для анализа структуры
+          текстовых файлов; Bison это замена Yacc (Yet Another
+          Compiler Compiler)</para>
+          <indexterm zone="ch-system-bison bison">
+            <primary sortas="b-bison">bison</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="yacc">
+        <term><command>yacc</command></term>
+        <listitem>
+          <para>Обертка для <command>bison</command> предназначенная для программ,
+          которые еще вызывают<command>yacc</command> вместо <command>bison</command>;
+          обертка вызывает <command>bison</command> с параметром
+          <parameter>-y</parameter></para>
+          <indexterm zone="ch-system-bison yacc">
+            <primary sortas="b-yacc">yacc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="liby">
+        <term><filename class="libraryfile">liby</filename></term>
+        <listitem>
+          <para>Библиотека Yacc с реализацией совместимых с Yacc функций
+          <function>yyerror</function> и <function>main</function>;
+          эта библиотека обычно не очень полезна, но POSIX нуждается в ней</para>
+          <indexterm zone="ch-system-bison liby">
+            <primary sortas="c-liby">liby</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

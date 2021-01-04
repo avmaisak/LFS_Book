@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!--
-$LastChangedBy: matthew $
-$Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
+$LastChangedBy: pierre $
+$Date: 2020-03-13 17:38:37 +0300 (Пт, 13 мар 2020) $
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -12,11 +12,11 @@ $Date: 2013-10-09 00:03:29 +0400 (Ср, 09 окт 2013) $
        Replaces {docbook-xsl}/profiling/profile.xsl -->
 
   <!-- Include common profiling stylesheet -->
-  <xsl:import href="docbook-xsl-1.78.1/profiling/profile-mode.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/profiling/profile-mode.xsl"/>
 
   <!-- This file must be included, because profile-mode uses
        templates from it -->
-  <xsl:import href="docbook-xsl-1.78.1/common/stripns.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/common/stripns.xsl"/>
 
   <!-- In two pass processing there is no need for the base URI fixup -->
   <xsl:param name="profile.baseuri.fixup" select="false()"/>

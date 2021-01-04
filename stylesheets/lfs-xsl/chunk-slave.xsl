@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!--
-$LastChangedBy: bdubbs $
-$Date: 2015-08-10 20:53:57 +0300 (Пн, 10 авг 2015) $
+$LastChangedBy: pierre $
+$Date: 2020-03-13 17:38:37 +0300 (Пт, 13 мар 2020) $
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -13,7 +13,7 @@ $Date: 2015-08-10 20:53:57 +0300 (Пн, 10 авг 2015) $
        Sets global params and include customized elements templates. -->
 
   <!-- Upstream XHTML presentation templates -->
-  <xsl:import href="docbook-xsl-1.78.1/xhtml/docbook.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml/docbook.xsl"/>
 
   <!-- Use ISO-8859-1 for output instead of default UTF-8 -->
   <xsl:param name="chunker.output.encoding" select="'UTF-8'"/>

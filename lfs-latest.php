@@ -16,6 +16,7 @@ $regex[ 'check'    ] = "/^.*Check (\d[\d\.]+\d).*$/";
 $regex[ 'intltool' ] = "/^.*Latest version is (\d[\d\.]+\d).*$/";
 $regex[ 'less'     ] = "/^.*current released version is less-(\d+).*$/";
 $regex[ 'mpfr'     ] = "/^mpfr-([\d\.]+)\.tar.*$/";
+$regex[ 'Python'   ] = "/^.*Latest Python 3.*Python (3[\d\.]+\d).*$/";
 $regex[ 'systemd'  ] = "/^.*v([\d]+)$/";
 //$regex[ 'sysvinit' ] = "/^.*sysvinit-([\d\.]+)dsf\.tar.*$/";
 $regex[ 'tzdata'   ] = "/^.*tzdata([\d]+[a-z]).*$/";
@@ -29,13 +30,13 @@ function find_max( $lines, $regex_match, $regex_replace )
 
   foreach ( $lines as $line )
   {
-     if ( ! preg_match( $regex_match, $line ) ) continue;
+     if ( ! preg_match( $regex_match, $line ) ) continue; 
 
      // Isolate the version and put in an array
      $slice = preg_replace( $regex_replace, "$1", $line );
-     if ( $slice == $line ) continue;
+     if ( $slice == $line ) continue; 
 
-     array_push( $a, $slice );
+     array_push( $a, $slice );     
   }
 
   // SORT_NATURAL requires php-5.4.0 or later
@@ -96,7 +97,7 @@ function max_parent( $dirpath, $prefix )
   $regex_replace = "#^.*(${prefix}[\d\.]+)/.*$#";
   $max           = find_max( $lines, $regex_match, $regex_replace );
 
-  return "$dirpath/$max";
+  return "$dirpath/$max"; 
 }
 
 function get_packages( $package, $dirpath )
@@ -104,35 +105,39 @@ function get_packages( $package, $dirpath )
   global $exceptions;
   global $regex;
 
-//if ( $package != "vim" ) return 0; // Debug
+//if ( $package != "zstd" ) return 0; // Debug
 
 if ( $package == "bc"         ) $dirpath = "https://github.com/gavinhoward/bc/releases";
 if ( $package == "check"      ) $dirpath = "https://github.com/libcheck/check/releases";
 if ( $package == "e2fsprogs"  ) $dirpath = "http://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
 if ( $package == "expat"      ) $dirpath = "http://sourceforge.net/projects/expat/files";
-if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
-if ( $package == "expect"     ) $dirpath = "http://sourceforge.net/projects/expect/files";
+if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";  
+if ( $package == "expect"     ) $dirpath = "http://sourceforge.net/projects/expect/files";  
 if ( $package == "file"       ) $dirpath = "https://github.com/file/file/releases";
 if ( $package == "flex"       ) $dirpath = "https://github.com/westes/flex/releases";
 if ( $package == "gcc"        ) $dirpath = max_parent( $dirpath, "gcc-" );
+if ( $package == "iana-etc"   ) $dirpath = "https://github.com/Mic92/iana-etc/releases";
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
 if ( $package == "meson"      ) $dirpath = "https://github.com/mesonbuild/meson/releases";
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
 if ( $package == "mpfr"       ) $dirpath = "http://mpfr.loria.fr/mpfr-current";
 if ( $package == "ninja"      ) $dirpath = "https://github.com/ninja-build/ninja/releases";
-if ( $package == "procps-ng"  ) $dirpath = "http://sourceforge.net/projects/procps-ng/files";
-if ( $package == "psmisc"     ) $dirpath = "http://sourceforge.net/projects/$package/files";
+//if ( $package == "procps-ng"  ) $dirpath = "http://sourceforge.net/projects/procps-ng/files";
+if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
+//if ( $package == "psmisc"     ) $dirpath = "http://sourceforge.net/projects/$package/files";
+if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
+if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
 if ( $package == "shadow"     ) $dirpath = "https://github.com/shadow-maint/shadow/releases";
 if ( $package == "systemd"    ) $dirpath = "https://github.com/systemd/systemd/releases";
 if ( $package == "tcl"        ) $dirpath = "http://sourceforge.net/projects/tcl/files";
 if ( $package == "util-linux" ) $dirpath = max_parent( $dirpath, "v." );
 if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases";
-	//if ( $package == "vim"        ) $dirpath = "ftp://ftp.vim.org/pub/vim/unix";
-
+if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/releases";
+//if ( $package == "vim"        ) $dirpath = "ftp://ftp.vim.org/pub/vim/unix";
 
   // Check for ftp
-  if ( preg_match( "/^ftp/", $dirpath ) )
-  {
+  if ( preg_match( "/^ftp/", $dirpath ) ) 
+  { 
     $dirpath  = substr( $dirpath, 6 );           // Remove ftp://
     $dirpath  = rtrim ( $dirpath, "/" );         // Trim any trailing slash
     $position = strpos( $dirpath, "/" );         // Divide at first slash
@@ -140,7 +145,7 @@ if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases"
     $path     = substr( $dirpath, $position );
 
     $conn = ftp_connect( $server );
-    ftp_login( $conn, "anonymous", "" );
+    ftp_login( $conn, "anonymous", "" ); 
 
     // See if we need special handling
     if ( isset( $exceptions[ $package ] ) )
@@ -159,7 +164,7 @@ if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases"
               $path = substr( $path, 0, $position );
 
               // Get dir listing
-              $lines = ftp_rawlist ($conn, $path);
+              $lines = ftp_rawlist ($conn, $path);              
               $max   = find_max( $lines, $regexp, $regexp );
               break;
 
@@ -192,7 +197,7 @@ if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases"
         $dirpath  = substr ( $dirpath, 0, $position );
      }
 
-     //if ( $package == "bzip2" )
+     //if ( $package == "bzip2" ) 
      //{
      //   // Remove one directory
      //   $dirpath  = rtrim  ( $dirpath, "/" );    // Trim any trailing slash
@@ -234,7 +239,7 @@ if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases"
      $lines = $tmp;
   }
 
-  if ( $package == "attr" ||
+  if ( $package == "attr" ||  
        $package == "acl"  )
   {
      return find_max( $lines, "/$package/", "/^.*$package-([\d\.-]*\d).tar.*$/" );
@@ -275,14 +280,23 @@ if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases"
      return str_replace( "_", ".", $max );
   }
 
+  if ( $package == "procps-ng" )
+     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+).*$/" );
+
+  if ( $package == "psmisc" )
+     return find_max( $lines, "/^v/", "/^v([\d\.]+).*$/" );
+
   if ( $package == "grub" )
      return find_max( $lines, "/grub/", "/^.*grub-(\d\..*).tar.xz.*$/" );
 
   if ( $package == "openssl" )
-	  return find_max( $lines, "/openssl/", "/^.*openssl-([\d\.p]*\d.?).tar.*$/" );
+     return find_max( $lines, "/openssl/", "/^.*openssl-([\d\.p]*\d.?).tar.*$/" );
 
-	if ( $package == "vim" )
+  if ( $package == "vim" )
      return find_max( $lines, "/v\d\./", "/^.*v([\d\.]+).*$/" );
+
+  if ( $package == "zstd" )
+     return find_max( $lines, "/Zstandard v/", "/^.*v([\d\.]+).*$/" );
 
   // Most packages are in the form $package-n.n.n
   // Occasionally there are dashes (e.g. 201-1)
@@ -343,8 +357,8 @@ function get_current()
         $pattern = "/\D*(\d.*[a-z]*)\.tar\D*/";
       }
 
-      else if ( preg_match( "/systemd-man-pages/", $file ) ) continue;
-      else if ( preg_match( "/python/"         , $file ) ) continue;
+      else if ( preg_match( "/systemd-man-pages/", $file ) ) continue; 
+      else if ( preg_match( "/python/"         , $file ) ) continue; 
 
       $version = preg_replace( $pattern, "$1", $file );   // Isolate version
       $version = preg_replace( "/^\d-/", "", $version );  // Remove leading #-

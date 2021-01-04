@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-finish-getcounted">
+  <?dbhtml filename="getcounted.html"?>
+
+  <title>Регистрация</title>
+
+  <para>Теперь, когда вы закончили книгу, хотите ли вы быть посчитанным LFS пользователем?
+  Перейдите по ссылке <ulink url="&lfs-root;cgi-bin/lfscounter.php"/>, введите
+  свое имя и версию своей первой LFS.</para>
+
+  <para>Теперь загрузите LFS.</para>
+
+</sect1>

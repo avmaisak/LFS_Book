@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-finish-theend">
+  <?dbhtml filename="theend.html"?>
+
+  <title>Конец</title>
+
+  <indexterm zone="ch-finish-theend">
+    <primary sortas="e-/etc/lfs-release">/etc/lfs-release</primary>
+  </indexterm>
+
+  <indexterm zone="ch-finish-theend">
+    <primary sortas="e-/etc/lsb-release">/etc/lsb-release</primary>
+  </indexterm>
+
+  <indexterm zone="ch-finish-theend">
+    <primary sortas="e-/etc/os-release">/etc/os-release</primary>
+  </indexterm>
+
+  <para>Отлично! Новая LFS система установлена! Мы желаем вам успехов с вашей
+  новой, блестящей, самостоятельно собранной Linux системой.</para>
+
+  <para>Будет хорошей идеей создать файл <filename>/etc/lfs-release</filename>.
+  Наличие этого файла поможет вам (и нам, если вы однажды решите обратиться за помощью)
+  найти какая же версия LFS установлена в системе. Создайте этот файл запустив:</para>
+
+<screen revision="sysv"><userinput>echo &version; &gt; /etc/lfs-release</userinput></screen>
+
+<screen revision="systemd"><userinput>echo &versiond; &gt; /etc/lfs-release</userinput></screen>
+
+  <para>Два файла с описанием установленной системы могут быть позже 
+  использованы устанавливаемыми пакетами. Неважно скомпилированные они будут или будут
+  собираться из исходников.</para>
+
+  <para>Первый отражает статус вашей новой системы и следует стандарту
+  Linux Standards Base (LSB). Для его создания запустите:</para>
+
+<screen revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="&version;"
+DISTRIB_CODENAME="&lt;your name here&gt;"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF</userinput></screen>
+
+<screen revision="systemd"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="&versiond;"
+DISTRIB_CODENAME="&lt;your name here&gt;"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF</userinput></screen>
+
+  <para>Второй файл содержит похожую информацию, он используется systemd и
+  некоторыми графическими оболочками. Для создания файла запустите:</para>
+
+<screen revision="sysv"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
+NAME="Linux From Scratch"
+VERSION="&version;"
+ID=lfs
+PRETTY_NAME="Linux From Scratch &version;"
+VERSION_CODENAME="&lt;your name here&gt;"
+EOF</userinput></screen>
+
+<screen revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
+NAME="Linux From Scratch"
+VERSION="&versiond;"
+ID=lfs
+PRETTY_NAME="Linux From Scratch &versiond;"
+VERSION_CODENAME="&lt;your name here&gt;"
+EOF</userinput></screen>
+
+  <para>Добавьте немного творчества в поля 'DISTRIB_CODENAME' и 'VERSION_CODENAME',
+  чтобы система была уникальна и только ваша.</para>
+
+</sect1>

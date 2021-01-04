@@ -1,14 +1,19 @@
+/*
+$LastChangedBy: bdubbs $
+$Date: 2020-06-22 04:21:48 +0300 (Пн, 22 июн 2020) $
+*/
 /* Global settings */
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	text-align: left;
-	background: #fff;
-	color: #222;
-	margin: 1em;
-	padding: 0;
-	font-size: 1.1rem;
-	line-height: 1.9rem;
- }
+  font-family: verdana, tahoma, helvetica, arial, sans-serif;
+  text-align: left;
+  background: #fff;
+  color: #222;
+  margin: 1em;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.2em
+}
+
 
 /* Links */
 a:link { color: #22b; }
@@ -16,6 +21,7 @@ a.ulink:link { font-weight: bold; color: #55f; }
 a:visited { color: #7e4988 ! important; }
 a:hover, a:focus { color: #d30e08 ! important; }
 a:active { color: #6b77b1 ! important;}
+
 
 /* Book titlepage */
 .book .titlepage {
@@ -94,7 +100,7 @@ h1 {
   padding: 0.4em;
 }
 
-.preface h1, .part h1, .chapter h1, .appendix h1, .index h1, .sect1 h1 {
+.preface h1, .part h1, .chapter h1, .appendix h1, .index h1, .sect1 h1, .glossary h1 {
   background: #f5f6f7;
   border-bottom: .1em solid #dbddec;
   margin-bottom: 1em;
@@ -156,6 +162,8 @@ div.navheader, div.navfooter {
 
 div.navheader {
   border-bottom: 1px solid #dbddec;
+   position: sticky;
+   top: 0;
 }
 
 div.navfooter {
@@ -229,8 +237,12 @@ div.toc {
   padding-left: 1em;
 }
 
-li.preface, .part li.appendix {
+.book li.preface, .part li.appendix {
   margin-left: 1em;
+}
+
+.part li.preface {
+  margin-left: 0em;
 }
 
 div.toc h3 {
@@ -334,7 +346,7 @@ div.important em, div.warning em, div.caution em {
   margin-bottom: .3em;
 }
 
-.table table {
+.table table, .informaltable {
   margin-left: auto;
   margin-right: auto;
 }
@@ -424,18 +436,39 @@ div.materials dd {
 
 .segtitle {
   float: left;
+  padding-left: 1em;
+  width: 14.5em;
 }
 
-.package .segbody, .appendix .segbody {
+.content .segtitle {
+  width: 12em;
+}
+
+.package .segbody {
   display: block;
   padding-left: 14em;
 }
 
-.content .segbody {
+.appendix .segbody{
   display: block;
-  padding-left: 12em;
+  padding-left: 16em;
 }
 
+.content .segbody {
+  display: block;
+  padding-left: 13em;
+}
+
+.content table tr td:first-child
+{
+  width: 9em;
+  padding-right: 0px;
+}
+
+.content table tr td:first-child p
+{
+  padding-right: 0px;
+}
 
 /* itemizedlist */
 ul {

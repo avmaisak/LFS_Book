@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-finish-whatnow">
+  <?dbhtml filename="whatnow.html"?>
+
+  <title>Что дальше?</title>
+
+  <para>Спасибо за время, посвященное этой книге. Недемся, что она оказалась полезной и
+  вы узнали что-то новое о процессе создания систем.</para>
+
+  <para>Теперь, когда LFS система установлена, можете задаться вопросом
+  <quote>Что дальше?</quote> Для ответа на этот вопрос есть список ресурсов.</para>
+
+  <itemizedlist>
+
+    <listitem>
+      <para>Поддержка</para>
+
+      <para>Ошибки и уязвимости находятся в любом програмном обеспечении и рапортуются
+      регулярно. Так как LFS собрана из исходных кодов, то от вас зависит упорядочивание
+      подобных рапортов. Существуют онлайн ресурсы для подобного учета, ниже приведен
+      список некоторых из них:</para>
+
+      <itemizedlist>
+
+        <listitem>
+          <para><ulink url="http://www.cert.org/">CERT</ulink> (Computer
+          Emergency Response Team)</para>
+
+          <para>У CERT есть список рассылок об уязвимостях безопасности различных операционных
+          систем и приложений. Информация о подписке доступна по ссылке <ulink
+          url="http://www.us-cert.gov/cas/signup.html"/>.</para>
+        </listitem>
+
+        <listitem>
+          <para>Bugtraq</para>
+
+          <para>Bugtraq это полностью открытый список рассылки по компьютерной безопасности.
+          Он публикует новые найденные уязвимости и проблемы безопасности, а иногда и
+          возможные варианты их исправлений. Информация о подписке доступна по ссылке <ulink
+          url="http://www.securityfocus.com/archive"/>.</para>
+        </listitem>
+
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>За пределами Linux From Scratch (Beyond Linux From Scratch)</para>
+
+      <para>Книга Beyond Linux From Scratch описывает установку большого списка программного
+      обеспечения, выходящего за рамки книги LFS. Проект BLFS доступен по ссылке
+      <ulink url="&blfs-book;"/>.</para>
+    </listitem>
+
+    <listitem>
+      <para>LFS подсказки</para>
+
+      <para>Это коллекция обучающих документов, собранная волонтерами сообщества LFS. Подсказки
+      доступны по ссылке <ulink url="&hints-root;"/>.</para>
+    </listitem>
+
+    <listitem>
+      <para>Списки рассылки</para>
+
+      <para>Если вам понадобится помощь, вы хотите быть в курсе последних изменений,
+      развивать проект или что-то еще - существуют подходящие списки рассылки.
+      Посетите <xref linkend="ch-intro-maillists"/> для более детальной информации.</para>
+    </listitem>
+
+    <listitem>
+      <para>Проект документации Linux</para>
+
+      <para>Основная цель проекта докуменции Linux (TLDP) это совместная работа над любыми
+      сложностями с документацией Linux. TLDP предлагает большой список инструкций, руководств
+      и справочников. Найти их можно по ссылке <ulink url="http://www.tldp.org/"/>.</para>
+    </listitem>
+
+  </itemizedlist>
+
+</sect1>

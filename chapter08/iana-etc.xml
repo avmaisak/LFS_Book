@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-iana-etc" role="wrap">
+  <?dbhtml filename="iana-etc.html"?>
+
+  <sect1info condition="script">
+    <productname>iana-etc</productname>
+    <productnumber>&iana-etc-version;</productnumber>
+    <address>&iana-etc-url;</address>
+  </sect1info>
+
+  <title>Iana-Etc-&iana-etc-version;</title>
+
+  <indexterm zone="ch-system-iana-etc">
+    <primary sortas="a-Iana-Etc">Iana-Etc</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Пакет Iana-Etc предоставляет данные для сетевых служб и протоколов.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&iana-etc-fin-sbu;</seg>
+        <seg>&iana-etc-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Установка Iana-Etc</title>
+
+    <para>Для этого пакета необходимо лишь скопировать нужные файлы:</para>
+
+<screen><userinput remap="install">cp services protocols /etc</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-iana-etc" role="content">
+    <title>Содержимое Iana-Etc</title>
+
+    <segmentedlist>
+      <segtitle>&contentfiles;</segtitle>
+
+      <seglistitem>
+        <seg>/etc/protocols and /etc/services</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">&shortdescr;</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="protocols">
+        <term><filename>/etc/protocols</filename></term>
+        <listitem>
+          <para>Описывает различные интернет-протоколы DARPA, которые
+          доступны из подсистемы TCP/IP</para>
+          <indexterm zone="ch-system-iana-etc">
+            <primary sortas="e-/etc/protocols">/etc/protocols</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="services">
+        <term><filename>/etc/services</filename></term>
+        <listitem>
+          <para>Описывает соответствие между именами интернет
+          служб и их номерами портов и протоколов</para>
+          <indexterm zone="ch-system-iana-etc">
+            <primary sortas="e-/etc/services">/etc/services</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

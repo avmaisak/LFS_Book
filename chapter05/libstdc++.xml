@@ -5,8 +5,8 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-tools-libstdcpp" role="wrap">
-  <?dbhtml filename="gcc-libstdc++.html"?>
+<sect1 id="ch-tools-libstdcpp-pass1" role="wrap">
+  <?dbhtml filename="gcc-libstdc++-pass1.html"?>
 
   <sect1info condition="script">
     <productname>gcc-libstdc++</productname>
@@ -14,26 +14,29 @@
     <address>&gcc-url;</address>
   </sect1info>
 
-  <title>Libstdc++ из пакета GCC-&gcc-version;</title>
+  <title>Libstdc++ из пакета GCC-&gcc-version;, Проход 1</title>
 
-  <indexterm zone="ch-tools-libstdcpp">
+  <indexterm zone="ch-tools-libstdcpp-pass1">
     <primary sortas="a-GCC">GCC</primary>
-    <secondary>tools, libstdc++</secondary>
+    <secondary>tools, libstdc++ проход 1</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>Libstdc++ является стандартной библиотекой языка Cи++. Она необходима для правильной работы компилятора g++ (часть GCC написана на языке Си++).
-	 Сборку пришлось отложить на этапе <xref linkend="ch-tools-gcc-pass1"/> потому что присутствует зависимость с glibc, которая еще недоступна в каталоге /tools.</para>
+    <para>Libstdc++ это стандартная библиотека языка C++. Она необходима для компиляции
+    кода C++ (часть GCC написана на C++).
+    Однако на этапе сборки <xref linkend="ch-tools-gcc-pass1"/> компиляцию этой
+    библиотеки необходимо отложить, так как она зависит от glibc, которая еще 
+    недоступна в целевом каталоге.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&libstdcpp-ch5-sbu;</seg>
-        <seg>&libstdcpp-ch5-du;</seg>
+        <seg>&libstdcpp-tmpp1-sbu;</seg>
+        <seg>&libstdcpp-tmpp1-du;</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -43,72 +46,72 @@
     <title>Установка целевой библиотеки Libstdc++</title>
 
     <note>
-      <para><application>Libstdc++</application> является частью исходных кодов пакета GCC. Сначала необходимо распаковать архив с исходным кодом пакета GCC и перейти в каталог <filename>gcc-&gcc-version;</filename>.</para>
+      <para><application>Libstdc++</application> является частью исходных кодов пакета GCC.
+      Сначала необходимо распаковать архив с исходным кодом пакета GCC и перейти в
+      каталог <filename>gcc-&gcc-version;</filename>.</para>
     </note>
 
-    <para>Создайте отдельный каталог для сборки Libstdc++:</para>
+    <para>Создайте отдельный каталог для сборки libstdc++ и перейдите в него:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
-    <para>Подготовьте пакет Libstdc++ к компиляции:</para>
+    <para>Подготовьте пакет libstdc++ к компиляции:</para>
 
 <screen><userinput remap="configure">../libstdc++-v3/configure           \
     --host=$LFS_TGT                 \
-    --prefix=/tools                 \
+    --build=$(../config.guess)      \
+    --prefix=/usr                   \
     --disable-multilib              \
     --disable-nls                   \
-    --disable-libstdcxx-threads     \
     --disable-libstdcxx-pch         \
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</userinput></screen>
 
     <variablelist>
-      <title>Значение параметров конфигурации:</title>
+      <title>Значение параметров configure:</title>
 
       <varlistentry>
         <term><parameter>--host=...</parameter></term>
         <listitem>
-          <para>Указывает на использование кросс-компилятора который был установлен вместо компилятора в каталоге <filename>/usr/bin</filename>.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-libstdcxx-threads</parameter></term>
-        <listitem>
-          <para>Поскольку сборка библиотеки Си для работы с потоками еще не создана, соответствующую библиотеку Си++ скомпилировать тоже не получится.</para>
+          <para>Указывает использовать кросс-компилятор который мы собрали
+          вместо того, что лежит в каталоге <filename>/usr/bin</filename>.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--disable-libstdcxx-pch</parameter></term>
         <listitem>
-          <para>Этот аргумент указывает на то, что не требуется установка предварительно скомпилированых заголовочных файлов, которые на данном этапе не требуются.</para>
+          <para>Запрещает установку предварительно скомпилированых заголовочных файлов,
+          которые на данном этапе не требуются.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</parameter></term>
         <listitem>
-          <para>Это каталог, где будет выполнятся поиск стандартных заголовочных файлов компилятором Си++. При обычной сборке, эта информация автоматически передается сценарию <command>configure</command> пакета Libstdc++ из каталога верхнего уровня. В нашем случае, эта информация должны быть указана явно.</para>
+          <para>Указывает каталог поиска компилятором C++ стандартных заголовочных файлов.
+          При обычной сборке эта информация автоматически передается 
+          сценарию <command>configure</command> пакета libstdc++ из каталога верхнего уровня.
+          В текущем случае эта информация должны быть указана явно.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Чтобы скомпилировать пакет Libstdc++, необходимо выполнить команду:</para>
+    <para>Скомпилируйте пакет libstdc++:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Установите бибоиотеку:</para>
+    <para>Установите библиотеку:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
   </sect2>
 
   <sect2 role="content">
     <title/>
 
-    <para>Подробная информация об этом пакете находится в
+    <para>Подробная информация о пакете находится в
     <xref linkend="contents-gcc" role="."/></para>
 
   </sect2>

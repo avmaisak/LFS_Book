@@ -1,16 +1,15 @@
-<!ENTITY version         "9.0">
+<!ENTITY version         "10.0">
 <!ENTITY short-version   "svn">  <!-- Used below in &blfs-book;
                                       Change to x.y for release but not -rc releases -->
-<!ENTITY generic-version "9.0"> <!-- Use "development"  or "x.y[-pre{x}]" -->
+<!ENTITY generic-version "10.0"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "9.0-systemd">
+<!ENTITY versiond        "10.0-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd">
 
-<!ENTITY releasedate     "1 Сентября, 2019">
+<!ENTITY releasedate     "15 Декабря 2020">
 
-<!ENTITY copyrightdate   "1999-2019"><!-- jhalfs needs a literal dash, not &ndash; -->
-<!ENTITY milestone       "9.0">
+<!ENTITY copyrightdate   "1999-2020"><!-- jhalfs needs a literal dash, not &ndash; -->
 
 <!ENTITY lfs-root        "https://linuxfromscratch.ru/">
 <!ENTITY blfs-root       "&lfs-root;blfs/">
@@ -34,19 +33,25 @@
 
 <!ENTITY anduin-sources  "http://anduin.linuxfromscratch.org/LFS">
 
-<!ENTITY buildtime       "Приблизительное время сборки">
-<!ENTITY diskspace       "Требуемое дисковое пространство">
+<!ENTITY buildtime       "Примерное время сборки">
+<!ENTITY diskspace       "Занимаемое место">
+<!ENTITY contentheaders  "Заголовочные файлы">
+<!ENTITY contentfiles    "Файлы">
+<!ENTITY contentprogs    "Программы">
+<!ENTITY contentlibs     "Библиотеки">
+<!ENTITY contentdirs     "Каталоги">
+<!ENTITY shortdescr      "Краткое описание">
 <!ENTITY dependencies    "Установка зависит от">
 <!ENTITY testsuites      "Набор тестов зависит от">
 <!ENTITY before          "Должен быть установлен до">
 <!ENTITY external        "Необязательные зависимости">
 
-<!ENTITY gnu             "https://ftp.gnu.org/gnu/">
-<!ENTITY gnu-software    "https://www.gnu.org/software/">
-<!ENTITY alpha-gnu       "https://alpha.gnu.org/gnu/">
+<!ENTITY gnu             "http://ftp.gnu.org/gnu/">
+<!ENTITY gnu-software    "http://www.gnu.org/software/">
+<!ENTITY alpha-gnu       "http://alpha.gnu.org/gnu/">
 <!ENTITY kernel          "https://www.kernel.org/pub/">
 <!ENTITY sourceforge     "https://prdownloads.sourceforge.net/">
-<!ENTITY savannah        "https://download.savannah.gnu.org/">
+<!ENTITY savannah        "http://download.savannah.gnu.org">
 <!ENTITY savannah-nongnu "https://savannah.nongnu.org">
 <!ENTITY github          "https://github.com">
 
